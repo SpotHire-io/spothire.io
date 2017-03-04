@@ -1,6 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import '../public/css/style.css';
+const React = require('react');
+const ReactDOM = require('react-dom');
 
 // ReactDOM.render(
 //   <App />,
