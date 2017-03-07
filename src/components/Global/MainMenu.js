@@ -4,7 +4,7 @@ class MainMenu extends React.Component {
     renderNavLink(linkText) {
         return (
             <div className="w-20 inline-flex items-start tc">
-                <a className="f6 pv3 w-100 bt bb bw1 b--near-white sh-bg-sea-blue white link dim" href="#">{linkText}</a>
+                <a className="f6 pv3 w-100 bt bb br bw1 b--near-white sh-bg-sea-blue white link dim" href="#">{linkText}</a>
             </div>
         )
     }
