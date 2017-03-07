@@ -7,3 +7,5 @@
 .sh-maximum-blue { color: #38AECC; }
 .sh-true-blue { color: #0074D9; }
 .sh-sea-blue { color: #046E8F; }
+
+.br--dotted { border-right-style: dotted; }
