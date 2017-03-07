@@ -4,7 +4,7 @@ const classNames = require('classnames');
 class MainMenu extends React.Component {
     renderNavLink(linkText, isLast) {
         const aClasses = classNames({
-            'f6 pv3 w-100 bt bb bw1 b--near-white sh-bg-sea-blue white link dim': true,
+            'f6 pv3 w-100 bt bb bw1 b--near-white sh-bg-sea-blue-gradient white link dim': true,
             'br br--dotted': ! isLast,
             'br': isLast,
         });

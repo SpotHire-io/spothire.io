@@ -1,11 +1,13 @@
-.sh-bg-rich-black { background-color: #022F40; }
-.sh-bg-maximum-blue { background-color: #38AECC; }
-.sh-bg-true-blue { background-color: #0074D9; }
-.sh-bg-sea-blue { background-color: #046E8F; }
+.sh-bg-rich-black { background-color: rgb(2, 47, 64); }
+.sh-bg-maximum-blue { background-color: rgb(56, 174, 204); }
+.sh-bg-true-blue { background-color: rgb(0, 116, 217); }
+.sh-bg-sea-blue { background-color: rgb(4, 110, 143); }
 
-.sh-rich-black { color: #022F40; }
-.sh-maximum-blue { color: #38AECC; }
-.sh-true-blue { color: #0074D9; }
-.sh-sea-blue { color: #046E8F; }
+.sh-rich-black { color: rgb(2, 47, 64); }
+.sh-maximum-blue { color: rgb(56, 174, 204); }
+.sh-true-blue { color: rgb(0, 116, 217); }
+.sh-sea-blue { color: rgb(4, 110, 143); }
+
+.sh-bg-sea-blue-gradient { background: linear-gradient( 180deg, rgba(4, 110, 143, 0.9), rgba(4, 110, 143, 1) ); }
 
 .br--dotted { border-right-style: dotted; }
