@@ -3,7 +3,7 @@
 
     font-family: 'PT Sans', -system-sans-serif, sans-serif;
 
-    padding: 0.5rem 1rem;
+    padding: 0.5em 1em;
 
     border-radius: 2px;
 
@@ -38,4 +38,24 @@
 
         .button--standard:hover {
             background: rgb(76, 111, 158);
+        }
+
+    .button--positive {
+        background: rgb(19, 119, 82);
+
+        color: #FFFDF0;
+    }
+
+        .button--positive:hover {
+            background: rgb(11, 111, 74);
+        }
+
+    .button--negative {
+        background: rgb(231, 4, 15);
+
+        color: #FFFDF0;
+    }
+
+        .button--negative:hover {
+            background: rgb(221, 0, 5);
         }

@@ -29,4 +29,18 @@ storiesOf('Buttons', module)
                 <BasicButton className="button--standard">Add Talent</BasicButton>
             </div>
         </WithNotes>
+    ))
+    .add('BasicButton:Positive', () => (
+        <WithNotes>
+            <div className="ma4">
+                <BasicButton className="button--positive">Add Talent</BasicButton>
+            </div>
+        </WithNotes>
+    ))
+    .add('BasicButton:Negative', () => (
+        <WithNotes>
+            <div className="ma4">
+                <BasicButton className="button--negative">Remove Talent</BasicButton>
+            </div>
+        </WithNotes>
     ));
