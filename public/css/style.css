@@ -23,9 +23,19 @@
     .button--neutral {
         background: rgb(119, 119, 119);
 
-        color: #FFFCEB;
+        color: #FFFDF0;
     }
 
         .button--neutral:hover {
             background: rgb(111, 111, 111);
+        }
+
+    .button--standard {
+        background: rgb(84, 119, 166);
+
+        color: #FFFDF0;
+    }
+
+        .button--standard:hover {
+            background: rgb(76, 111, 158);
         }
