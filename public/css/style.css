@@ -1,0 +1,25 @@
+.button {
+    border: 0;
+
+    font-family: 'PT Sans', -system-sans-serif, sans-serif;
+
+    padding: 0.5rem 1rem;
+
+    border-radius: 2px;
+
+    transition: background-color 0.15s;
+}
+
+    .button:hover {
+        cursor: pointer;
+    }
+
+    .button--neutral {
+        background: rgb(170, 170, 170);
+
+        color: #FFFCEB;
+    }
+
+        .button--neutral:hover {
+            background: rgb(162, 162, 162);
+        }
