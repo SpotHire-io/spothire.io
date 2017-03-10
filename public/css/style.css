@@ -37,6 +37,8 @@
         width: 1em;
 
         padding: 0.5em;
+
+        font-weight: 700;
     }
 
         .button--icon-plus:before {
