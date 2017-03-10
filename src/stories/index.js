@@ -16,17 +16,17 @@ storiesOf('Global', module)
     ));
 
 storiesOf('Buttons', module)
-    .add('BasicButton:Neutral', () => (
-        <WithNotes>
-            <div className="ma4">
-                <BasicButton className="button--neutral">Add Talent</BasicButton>
-            </div>
-        </WithNotes>
-    ))
     .add('BasicButton:Standard', () => (
         <WithNotes>
             <div className="ma4">
                 <BasicButton className="button--standard">Add Talent</BasicButton>
+            </div>
+        </WithNotes>
+    ))
+    .add('BasicButton:Neutral', () => (
+        <WithNotes>
+            <div className="ma4">
+                <BasicButton className="button--neutral">Add Talent</BasicButton>
             </div>
         </WithNotes>
     ))
