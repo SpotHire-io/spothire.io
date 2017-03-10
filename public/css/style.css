@@ -20,6 +20,33 @@
         top: 1px;
     }
 
+    .button--with-icon {
+        padding-left: 3em;
+    }
+
+    .button--with-icon:before {
+        border-right: 1px dotted #FFFDF0;
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        height: 100%;
+
+        width: 1em;
+
+        padding: 0.5em;
+    }
+
+        .button--icon-plus:before {
+            content: '+';
+        }
+
+        .button--icon-minus:before {
+            content: '–';
+        }
+
     .button--neutral {
         background: rgb(119, 119, 119);
 

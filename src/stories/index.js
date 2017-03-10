@@ -43,4 +43,18 @@ storiesOf('Buttons', module)
                 <BasicButton className="button--negative">Remove Talent</BasicButton>
             </div>
         </WithNotes>
+    ))
+    .add('IconButton:Plus', () => (
+        <WithNotes>
+            <div className="ma4">
+                <BasicButton className="button--positive button--with-icon button--icon-plus">Add Opportunity</BasicButton>
+            </div>
+        </WithNotes>
+    ))
+    .add('IconButton:Minus', () => (
+        <WithNotes>
+            <div className="ma4">
+                <BasicButton className="button--negative button--with-icon button--icon-minus">Delete Opportunity</BasicButton>
+            </div>
+        </WithNotes>
     ));
