@@ -1,7 +1,17 @@
+.pt-serif {
+    font-family: 'PT Sans', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
+}
+
+/**
+
+    BUTTONS
+
+ */
+
 .button {
     border: 0;
 
-    font-family: 'PT Sans', -system-sans-serif, sans-serif;
+    font-family: 'PT Sans', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
 
     padding: 0.5em 1em;
 
