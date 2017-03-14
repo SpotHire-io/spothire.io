@@ -2,6 +2,8 @@ const React      = require('react');
 const classNames = require('classnames');
 const moment     = require('moment');
 
+const BasicButton = require('../Buttons/BasicButton');
+
 const PostItem = ({ post, className }) => {
     let wrapperClasses = classNames({
         'pt-sans': true,
@@ -15,6 +17,19 @@ const PostItem = ({ post, className }) => {
 
                 <div className="mt3 georgia">
                     {post.content}
+                </div>
+            </div>
+            <div className="bg-white ba bt-0 b--black-20 flex">
+                <div className="pa3 br b--black-20 w-50 flex items-center justify-center">
+                    <p className="ma0">Response {post.isRequired ? 'required' : 'not required'}</p>
+                </div>
+                <div className="pa3 w-50">
+                    <textarea className="w-100 b--black-10" rows="3"/>
+
+                    <div className="tr mt2">
+                        <BasicButton className="button--neutral">Reset</BasicButton>
+                        <BasicButton className="button--positive ml2">Submit</BasicButton>
+                    </div>
                 </div>
             </div>
             <div className="bg-white-10 ba bt-0 b--black-10 ph3 pv2 f6">
