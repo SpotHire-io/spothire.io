@@ -1,5 +1,13 @@
-.pt-serif {
+.pt-sans {
     font-family: 'PT Sans', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
+}
+
+.bg-blue-yonder {
+    background-color: rgb(84, 119, 166);
+}
+
+.b--deep-koamaru {
+    border-color: #31486E;
 }
 
 /**
