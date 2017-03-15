@@ -8,6 +8,8 @@ const BasicButton = require('../components/Buttons/BasicButton');
 
 const PostItem = require('../components/Newsfeed/PostItem');
 
+const FilterContainer = require('../components/List/FilterContainer');
+
 import '../../public/css/style.css';
 
 storiesOf('Global', module)
@@ -80,6 +82,17 @@ storiesOf('Newsfeed', module)
                         responseRequired: true
                     }}
                 />
+            </div>
+        </WithNotes>
+    ));
+
+storiesOf('List', module)
+    .add('FilterContainer', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white mw6">
+                <FilterContainer>
+                    Filters...
+                </FilterContainer>
             </div>
         </WithNotes>
     ));
