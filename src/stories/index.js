@@ -8,7 +8,7 @@ const BasicButton = require('../components/Buttons/BasicButton');
 
 const PostItem = require('../components/Newsfeed/PostItem');
 
-const FilterContainer = require('../components/List/FilterContainer');
+const FilterContainer = require('../components/Filters/FilterContainer');
 
 import '../../public/css/style.css';
 
@@ -86,7 +86,7 @@ storiesOf('Newsfeed', module)
         </WithNotes>
     ));
 
-storiesOf('List', module)
+storiesOf('Filters', module)
     .add('FilterContainer', () => (
         <WithNotes>
             <div className="pa4 bg-near-white mw6">
