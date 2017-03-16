@@ -1,5 +1,6 @@
 const React = require('react');
 const storiesOf = require('@kadira/storybook').storiesOf;
+const action = require('@kadira/storybook').action;
 const WithNotes = require('@kadira/storybook-addon-notes').WithNotes;
 
 const MainMenu = require('../components/Global/MainMenu');
@@ -9,6 +10,7 @@ const BasicButton = require('../components/Buttons/BasicButton');
 const PostItem = require('../components/Newsfeed/PostItem');
 
 const FilterContainer = require('../components/Filters/FilterContainer');
+const Filter = require('../components/Filters/Filter');
 
 import '../../public/css/style.css';
 
@@ -91,8 +93,32 @@ storiesOf('Filters', module)
         <WithNotes>
             <div className="pa4 bg-near-white mw6">
                 <FilterContainer>
-                    Filters...
+                    <Filter
+                        type="text"
+                        data={{
+                            placeholder: 'A text filter'
+                        }}
+                        onChange={(e) => action('hey!!')}
+                    />
+                    <Filter
+                        type="text"
+                        data={{
+                            placeholder: 'Another text filter'
+                        }}
+                        onChange={(e) => action('ouc!!')}
+                    />
                 </FilterContainer>
             </div>
+        </WithNotes>
+    ))
+    .add('Filter:Text', () => (
+        <WithNotes notes="The `data` array should have a `value` set as the initial value. `onChange` should be a callback that alters the `data.value`.">
+            <Filter
+                type="text"
+                data={{
+                    placeholder: 'A text filter'
+                }}
+                onChange={(e) => action('hey!!')}
+            />
         </WithNotes>
     ));

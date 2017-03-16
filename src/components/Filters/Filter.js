@@ -1,20 +1,32 @@
 const React      = require('react');
 const classNames = require('classnames');
 
-const Filter = ({ type, onChange, className }) => {
-    let wrapperClasses = classNames({
-        '': true,
-        [className]: true
-    });
+class Filter extends React.Component {
+    render() {
+        const wrapperClasses = classNames({
+            '': true,
+            [this.props.className]: true
+        });
 
-    return (
-        <div className={wrapperClasses}>
+        let output;
 
-        </div>
-    );
+        switch (this.props.type) {
+            case 'text':
+                output = (
+                    <input type="text" value={this.props.data.value} placeholder={this.props.data.placeholder} onChange={this.props.onChange}/>
+                );
+        }
+
+        return (
+            <div className={wrapperClasses}>
+                {output}
+            </div>
+        );
+    }
 };
 
 Filter.defaultProps = {
+    type: 'text',
     className: ''
 };
 
