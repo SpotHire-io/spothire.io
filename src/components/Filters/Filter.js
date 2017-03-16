@@ -1,7 +1,11 @@
 const React      = require('react');
 const classNames = require('classnames');
 
-const Filter = ({ type, data, onChange, className }) => {
+const Select = require('react-select');
+
+import 'react-select/dist/react-select.css';
+
+const Filter = ({ id, label, type, data, onChange, className }) => {
     let wrapperClasses = classNames({
         'mt2': true,
         [className]: true
@@ -13,6 +17,8 @@ const Filter = ({ type, data, onChange, className }) => {
         case 'text':
             output = (
                 <input
+                    id={id}
+
                     type="text"
 
                     className="w-100 pa1 pt-sans"
@@ -26,19 +32,24 @@ const Filter = ({ type, data, onChange, className }) => {
 
         case 'select':
             output = (
-                <select value={data.currentlySelectedId} onChange={onChange}>
-                    {
-                        data.options.map((option) => {
-                            return <option key={option.id} value={option.id}>{option.text}</option>
-                        })
-                    }
-                </select>
+                <Select
+                    id={id}
+
+                    options={data.options}
+                    onChange={onChange}
+                    {...data.selectConfig}
+                />
             );
             break;
     }
 
     return (
         <div className={wrapperClasses}>
+            {
+                (typeof label != 'undefined' && label.length !== 0)
+                    ? <label htmlFor={id}>{label}</label>
+                    : null
+            }
             {output}
         </div>
     );
@@ -46,6 +57,10 @@ const Filter = ({ type, data, onChange, className }) => {
 
 Filter.defaultProps = {
     className: ''
+};
+
+Filter.propTypes = {
+    id: React.PropTypes.string.isRequired
 };
 
 module.exports = Filter;

@@ -94,15 +94,56 @@ storiesOf('Filters', module)
             <div className="pa4 bg-near-white mw6">
                 <FilterContainer>
                     <Filter
+                        id="text1"
+                        label="Other text filter"
                         type="text"
                         data={{
                             placeholder: 'A text filter'
                         }}
                     />
                     <Filter
+                        id="text2"
+                        label="Text filter"
                         type="text"
                         data={{
                             placeholder: 'Another text filter'
+                        }}
+                    />
+                    <Filter
+                        id="select1"
+                        label="Single select"
+                        type="select"
+                        data={{
+                            options: [
+                                {
+                                    value: '1',
+                                    label: 'Option 1'
+                                },
+                                {
+                                    value: '2',
+                                    label: 'Option 2'
+                                }
+                            ]
+                        }}
+                    />
+                    <Filter
+                        id="select2"
+                        label="Multi select"
+                        type="select"
+                        data={{
+                            options: [
+                                {
+                                    value: '1',
+                                    label: 'Option 1'
+                                },
+                                {
+                                    value: '2',
+                                    label: 'Option 2'
+                                }
+                            ],
+                            selectConfig: {
+                                multi: true
+                            }
                         }}
                     />
                 </FilterContainer>
@@ -112,6 +153,7 @@ storiesOf('Filters', module)
     .add('Filter:Text', () => (
         <WithNotes notes="The `data` array should have a `value` set as the initial value. `onChange` should be a callback that alters the `data.value`.">
             <Filter
+                id="text1"
                 type="text"
                 data={{
                     placeholder: 'A text filter'
@@ -122,6 +164,7 @@ storiesOf('Filters', module)
     .add('Filter:Select', () => (
         <WithNotes notes="The `data` array should have a `value` set as the initial value. `onChange` should be a callback that alters the `data.value`.">
             <Filter
+                id="select2"
                 type="select"
                 data={{
                     currentlySelectedId: 1,
