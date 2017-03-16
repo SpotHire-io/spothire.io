@@ -118,4 +118,24 @@ storiesOf('Filters', module)
                 }}
             />
         </WithNotes>
+    ))
+    .add('Filter:Select', () => (
+        <WithNotes notes="The `data` array should have a `value` set as the initial value. `onChange` should be a callback that alters the `data.value`.">
+            <Filter
+                type="select"
+                data={{
+                    currentlySelectedId: 1,
+                    options: [
+                        {
+                            id: 1,
+                            text: 'Option 1'
+                        },
+                        {
+                            id: 2,
+                            text: 'Option 2'
+                        }
+                    ]
+                }}
+            />
+        </WithNotes>
     ));

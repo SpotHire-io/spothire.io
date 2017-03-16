@@ -14,6 +14,19 @@ const Filter = ({ type, data, onChange, className }) => {
             output = (
                 <input type="text" value={data.value} placeholder={data.placeholder} onChange={onChange}/>
             );
+            break;
+
+        case 'select':
+            output = (
+                <select value={data.currentlySelectedId} onChange={onChange}>
+                    {
+                        data.options.map((option) => {
+                            return <option key={option.id} value={option.id}>{option.text}</option>
+                        })
+                    }
+                </select>
+            );
+            break;
     }
 
     return (
