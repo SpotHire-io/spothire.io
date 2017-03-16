@@ -3,7 +3,7 @@ const classNames = require('classnames');
 
 const Filter = ({ type, data, onChange, className }) => {
     let wrapperClasses = classNames({
-        '': true,
+        'mt2': true,
         [className]: true
     });
 
@@ -12,7 +12,15 @@ const Filter = ({ type, data, onChange, className }) => {
     switch (type) {
         case 'text':
             output = (
-                <input type="text" value={data.value} placeholder={data.placeholder} onChange={onChange}/>
+                <input
+                    type="text"
+
+                    className="w-100 pa1 pt-sans"
+
+                    value={data.value}
+                    placeholder={data.placeholder}
+                    onChange={onChange}
+                />
             );
             break;
 
