@@ -7,7 +7,7 @@ import 'react-select/dist/react-select.css';
 
 const Filter = ({ id, label, type, data, onChange, className }) => {
     let wrapperClasses = classNames({
-        'mt2': true,
+        'mt3': true,
         [className]: true
     });
 
@@ -47,7 +47,7 @@ const Filter = ({ id, label, type, data, onChange, className }) => {
         <div className={wrapperClasses}>
             {
                 (typeof label != 'undefined' && label.length !== 0)
-                    ? <label htmlFor={id}>{label}</label>
+                    ? <label className="db mb1 f6 b" htmlFor={id}>{label}</label>
                     : null
             }
             {output}
