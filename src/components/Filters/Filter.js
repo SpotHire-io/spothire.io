@@ -7,7 +7,7 @@ import 'react-select/dist/react-select.css';
 
 const Filter = ({ id, label, type, data, onChange, className }) => {
     let wrapperClasses = classNames({
-        'mt3': true,
+        'mt3 pt-sans': true,
         [className]: true
     });
 
