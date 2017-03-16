@@ -98,14 +98,12 @@ storiesOf('Filters', module)
                         data={{
                             placeholder: 'A text filter'
                         }}
-                        onChange={(e) => action('hey!!')}
                     />
                     <Filter
                         type="text"
                         data={{
                             placeholder: 'Another text filter'
                         }}
-                        onChange={(e) => action('ouc!!')}
                     />
                 </FilterContainer>
             </div>
@@ -118,7 +116,6 @@ storiesOf('Filters', module)
                 data={{
                     placeholder: 'A text filter'
                 }}
-                onChange={(e) => action('hey!!')}
             />
         </WithNotes>
     ));
