@@ -8,6 +8,7 @@ const MainMenu = require('../components/Global/MainMenu');
 const BasicButton = require('../components/Buttons/BasicButton');
 
 const Post = require('../components/Newsfeed/Post');
+const PostExcerpt = require('../components/Newsfeed/PostExcerpt');
 
 const FilterContainer = require('../components/Filters/FilterContainer');
 const Filter = require('../components/Filters/Filter');
@@ -70,6 +71,27 @@ storiesOf('Newsfeed', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Post
+                    post={{
+                        id: 1,
+                        title: "A very cool post",
+                        content: (
+                            <div>
+                                <p className="mt0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ducimus fugiat fugit, minus modi qui quod ratione repellat ut vero?</p>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque enim, illo odio temporibus vitae voluptatem! Adipisci amet architecto at cum doloremque dolorum ducimus eveniet ex, facere iure libero molestiae non numquam quam rem sit ut vel? Animi aperiam assumenda consectetur dolore dolorem eaque ex exercitationem facilis labore natus obcaecati quisquam quos recusandae rem sint totam vero, voluptatum? Accusamus animi aperiam aspernatur at distinctio dolor ducimus eveniet facere, fugiat incidunt ipsa magnam maxime molestiae molestias, officiis pariatur perspiciatis praesentium, quisquam rem saepe sunt velit voluptas voluptatibus. Assumenda odio provident quidem recusandae repellat. Distinctio ducimus facere illum ipsam similique sit voluptatem.</p>
+                            </div>
+                        ),
+                        date: "2017-03-13T12:00:00-04:00",
+                        responseRequired: true
+                    }}
+                />
+            </div>
+        </WithNotes>
+    ))
+    .add('PostExcerpt', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <PostExcerpt
                     post={{
                         id: 1,
                         title: "A very cool post",
