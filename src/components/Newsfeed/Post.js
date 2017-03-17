@@ -4,7 +4,7 @@ const moment     = require('moment');
 
 const BasicButton = require('../Buttons/BasicButton');
 
-const PostItem = ({ post, className }) => {
+const Post = ({ post, className }) => {
     let wrapperClasses = classNames({
         'pt-sans': true,
         [className]: true
@@ -39,8 +39,8 @@ const PostItem = ({ post, className }) => {
     );
 };
 
-PostItem.defaultProps = {
+Post.defaultProps = {
     className: ''
 };
 
-module.exports = PostItem;
+module.exports = Post;
