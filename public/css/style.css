@@ -1,5 +1,5 @@
-.pt-sans {
-    font-family: 'PT Sans', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
+.app-sans {
+    font-family: 'Source Sans Pro', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
 }
 
 .bg-blue-yonder {
@@ -33,7 +33,7 @@ p {
 .button {
     border: 0;
 
-    font-family: 'PT Sans', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
+    font-family: 'Source Sans Pro', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
 
     padding: 0.5em 1em;
 

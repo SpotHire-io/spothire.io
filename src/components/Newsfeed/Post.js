@@ -6,7 +6,7 @@ const BasicButton = require('../Buttons/BasicButton');
 
 const Post = ({ post, className, isOpen, toggleOpenState }) => {
     let wrapperClasses = classNames({
-        'pt-sans': true,
+        'app-sans': true,
         [className]: true
     });
 

@@ -24,7 +24,7 @@ class MainMenu extends React.Component {
         ];
 
         return (
-            <div className="flex pt-sans">
+            <div className="flex app-sans">
                 <p className="b bg-blue-yonder washed-yellow f4 pv3 ph4 ma0 lh-solid ba bw1 b--deep-koamaru">SpotHire</p>
                 <nav className="flex-auto flex items-center">
                     {
