@@ -28,13 +28,25 @@ const Post = ({ post, className, isOpen }) => {
         );
     };
 
+    const renderExcerpt = function () {
+        let excerptContent;
+
+        if (typeof post.excerpt != 'undefined') {
+            excerptContent = post.excerpt;
+        } else {
+            excerptContent = React.Children.toArray(post.content.props.children)[0];
+        }
+
+        return excerptContent;
+    };
+
     return (
         <div className={wrapperClasses}>
             <div className="bg-white ba b--black-20 pa3">
                 <h2 className="mv0 lh-title">{post.title}</h2>
 
                 <div className="mt3 georgia">
-                    {post.content}
+                    {(isOpen) ? post.content : renderExcerpt()}
                 </div>
             </div>
             {(isOpen) ? renderInteractionInterface() : null}

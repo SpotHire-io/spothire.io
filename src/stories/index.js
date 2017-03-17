@@ -8,7 +8,6 @@ const MainMenu = require('../components/Global/MainMenu');
 const BasicButton = require('../components/Buttons/BasicButton');
 
 const Post = require('../components/Newsfeed/Post');
-const PostExcerpt = require('../components/Newsfeed/PostExcerpt');
 
 const FilterContainer = require('../components/Filters/FilterContainer');
 const Filter = require('../components/Filters/Filter');
@@ -66,45 +65,50 @@ storiesOf('Buttons', module)
         </WithNotes>
     ));
 
+const samplePost = {
+    id: 1,
+    title: "A very cool post",
+    content: (
+        <div>
+            <p className="mt0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ducimus fugiat fugit, minus modi qui quod ratione repellat ut vero?</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque enim, illo odio temporibus vitae voluptatem! Adipisci amet architecto at cum doloremque dolorum ducimus eveniet ex, facere iure libero molestiae non numquam quam rem sit ut vel? Animi aperiam assumenda consectetur dolore dolorem eaque ex exercitationem facilis labore natus obcaecati quisquam quos recusandae rem sint totam vero, voluptatum? Accusamus animi aperiam aspernatur at distinctio dolor ducimus eveniet facere, fugiat incidunt ipsa magnam maxime molestiae molestias, officiis pariatur perspiciatis praesentium, quisquam rem saepe sunt velit voluptas voluptatibus. Assumenda odio provident quidem recusandae repellat. Distinctio ducimus facere illum ipsam similique sit voluptatem.</p>
+        </div>
+    ),
+    date: "2017-03-13T12:00:00-04:00",
+    responseRequired: true
+};
+
 storiesOf('Newsfeed', module)
-    .add('Post', () => (
+    .add('Open Post', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Post
-                    post={{
-                        id: 1,
-                        title: "A very cool post",
-                        content: (
-                            <div>
-                                <p className="mt0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ducimus fugiat fugit, minus modi qui quod ratione repellat ut vero?</p>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque enim, illo odio temporibus vitae voluptatem! Adipisci amet architecto at cum doloremque dolorum ducimus eveniet ex, facere iure libero molestiae non numquam quam rem sit ut vel? Animi aperiam assumenda consectetur dolore dolorem eaque ex exercitationem facilis labore natus obcaecati quisquam quos recusandae rem sint totam vero, voluptatum? Accusamus animi aperiam aspernatur at distinctio dolor ducimus eveniet facere, fugiat incidunt ipsa magnam maxime molestiae molestias, officiis pariatur perspiciatis praesentium, quisquam rem saepe sunt velit voluptas voluptatibus. Assumenda odio provident quidem recusandae repellat. Distinctio ducimus facere illum ipsam similique sit voluptatem.</p>
-                            </div>
-                        ),
-                        date: "2017-03-13T12:00:00-04:00",
-                        responseRequired: true
-                    }}
+                    post={samplePost}
+                    isOpen={true}
                 />
             </div>
         </WithNotes>
     ))
-    .add('PostExcerpt', () => (
+    .add('Closed Post with automatic excerpt', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
-                <PostExcerpt
+                <Post
+                    post={samplePost}
+                    isOpen={false}
+                />
+            </div>
+        </WithNotes>
+    ))
+    .add('Closed Post with custom excerpt', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <Post
                     post={{
-                        id: 1,
-                        title: "A very cool post",
-                        content: (
-                            <div>
-                                <p className="mt0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ducimus fugiat fugit, minus modi qui quod ratione repellat ut vero?</p>
-
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque enim, illo odio temporibus vitae voluptatem! Adipisci amet architecto at cum doloremque dolorum ducimus eveniet ex, facere iure libero molestiae non numquam quam rem sit ut vel? Animi aperiam assumenda consectetur dolore dolorem eaque ex exercitationem facilis labore natus obcaecati quisquam quos recusandae rem sint totam vero, voluptatum? Accusamus animi aperiam aspernatur at distinctio dolor ducimus eveniet facere, fugiat incidunt ipsa magnam maxime molestiae molestias, officiis pariatur perspiciatis praesentium, quisquam rem saepe sunt velit voluptas voluptatibus. Assumenda odio provident quidem recusandae repellat. Distinctio ducimus facere illum ipsam similique sit voluptatem.</p>
-                            </div>
-                        ),
-                        date: "2017-03-13T12:00:00-04:00",
-                        responseRequired: true
+                        ...samplePost,
+                        excerpt: (<p>Custom short excerpt.</p>)
                     }}
+                    isOpen={false}
                 />
             </div>
         </WithNotes>
