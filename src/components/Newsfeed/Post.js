@@ -4,7 +4,7 @@ const moment     = require('moment');
 
 const BasicButton = require('../Buttons/BasicButton');
 
-const Post = ({ post, className, isOpen }) => {
+const Post = ({ post, className, isOpen, toggleOpenState }) => {
     let wrapperClasses = classNames({
         'pt-sans': true,
         [className]: true
@@ -41,7 +41,7 @@ const Post = ({ post, className, isOpen }) => {
     };
 
     return (
-        <div className={wrapperClasses}>
+        <div className={wrapperClasses} onClick={toggleOpenState}>
             <div className="bg-white ba b--black-20 pa3">
                 <h2 className="mv0 lh-title">{post.title}</h2>
 
