@@ -8,6 +8,7 @@ const MainMenu = require('../components/Global/MainMenu');
 const BasicButton = require('../components/Buttons/BasicButton');
 
 const Post = require('../components/Newsfeed/Post');
+const PostList = require('../components/Newsfeed/PostList');
 
 const FilterContainer = require('../components/Filters/FilterContainer');
 const Filter = require('../components/Filters/Filter');
@@ -109,6 +110,21 @@ storiesOf('Newsfeed', module)
                         excerpt: (<p>Custom short excerpt.</p>)
                     }}
                     isOpen={false}
+                />
+            </div>
+        </WithNotes>
+    ))
+    .add('PostList', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <PostList
+                    posts={
+                        [
+                            samplePost,
+                            samplePost,
+                            samplePost
+                        ]
+                    }
                 />
             </div>
         </WithNotes>
