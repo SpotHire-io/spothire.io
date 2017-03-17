@@ -7,7 +7,7 @@ const MainMenu = require('../components/Global/MainMenu');
 
 const BasicButton = require('../components/Buttons/BasicButton');
 
-const PostItem = require('../components/Newsfeed/PostItem');
+const Post = require('../components/Newsfeed/Post');
 
 const FilterContainer = require('../components/Filters/FilterContainer');
 const Filter = require('../components/Filters/Filter');
@@ -66,10 +66,10 @@ storiesOf('Buttons', module)
     ));
 
 storiesOf('Newsfeed', module)
-    .add('PostItem', () => (
+    .add('Post', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
-                <PostItem
+                <Post
                     post={{
                         id: 1,
                         title: "A very cool post",
