@@ -80,6 +80,19 @@ const samplePost = {
     responseRequired: true
 };
 
+const samplePostList = (className) => (
+    <PostList
+        className={className}
+        posts={
+            [
+                {...samplePost},
+                {...samplePost, id: 2},
+                {...samplePost, id: 3}
+            ]
+        }
+    />
+);
+
 storiesOf('Newsfeed', module)
     .add('Open Post', () => (
         <WithNotes>
@@ -117,15 +130,7 @@ storiesOf('Newsfeed', module)
     .add('PostList', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
-                <PostList
-                    posts={
-                        [
-                            samplePost,
-                            samplePost,
-                            samplePost
-                        ]
-                    }
-                />
+                {samplePostList()}
             </div>
         </WithNotes>
     ))
@@ -134,16 +139,7 @@ storiesOf('Newsfeed', module)
             <div className="pa4 bg-near-white">
                 <div className="flex">
                     {sampleFilterContainer('mr3 w-third self-start')}
-                    <PostList
-                        className="w-two-thirds"
-                        posts={
-                            [
-                                samplePost,
-                                samplePost,
-                                samplePost
-                            ]
-                        }
-                    />
+                    {samplePostList('w-two-thirds')}
                 </div>
             </div>
         </WithNotes>
