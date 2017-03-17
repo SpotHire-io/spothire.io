@@ -10,17 +10,21 @@ const PostExcerpt = ({ post, className }) => {
         [className]: true
     });
 
+    let excerptContent;
+
+    if (typeof post.excerpt != 'undefined' && post.excerpt.length > 0) {
+        excerptContent = post.excerpt;
+    } else {
+        excerptContent = React.Children.toArray(post.content.props.children)[0];
+    }
+
     return (
         <div className={wrapperClasses}>
             <div className="bg-white ba b--black-20 pa3">
                 <h2 className="mv0 lh-title">{post.title}</h2>
 
                 <div className="mt3 georgia">
-                    {
-                        (typeof post.excerpt != 'undefined' && post.excerpt.length > 0)
-                            ? post.excerpt
-                            : post.content
-                    }
+                    {excerptContent}
                 </div>
             </div>
             <div className="bg-white-10 ba bt-0 b--black-10 ph3 pv2 f6">
