@@ -13,9 +13,9 @@ const FilterContainer = ({ children, className, headingSemanticLevel }) => {
         <div className={wrapperClasses}>
             {React.createElement('h' + headingSemanticLevel, { className: 'f6 mt0 lh-title ttu' }, 'Filters')}
             {children}
-            <div className="tr mt3">
-                <BasicButton className="button--neutral">Reset Filters</BasicButton>
-                <BasicButton className="button--standard ml2">Apply Filters</BasicButton>
+            <div className="tr">
+                <BasicButton className="button--neutral mt3">Reset Filters</BasicButton>
+                <BasicButton className="button--standard mt3 ml2">Apply Filters</BasicButton>
             </div>
         </div>
     );

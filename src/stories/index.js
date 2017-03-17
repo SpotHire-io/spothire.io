@@ -128,67 +128,90 @@ storiesOf('Newsfeed', module)
                 />
             </div>
         </WithNotes>
+    ))
+    .add('Newsfeed', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <div className="flex">
+                    {sampleFilterContainer('mr3 w-third self-start')}
+                    <PostList
+                        className="w-two-thirds"
+                        posts={
+                            [
+                                samplePost,
+                                samplePost,
+                                samplePost
+                            ]
+                        }
+                    />
+                </div>
+            </div>
+        </WithNotes>
     ));
+
+const sampleFilterContainer = (className) => (
+    <FilterContainer className={className}>
+        <Filter
+            id="text1"
+            label="Other text filter"
+            type="text"
+            data={{
+                placeholder: 'A text filter'
+            }}
+        />
+        <Filter
+            id="text2"
+            label="Text filter"
+            type="text"
+            data={{
+                placeholder: 'Another text filter'
+            }}
+        />
+        <Filter
+            id="select1"
+            label="Single select"
+            type="select"
+            data={{
+                options: [
+                    {
+                        value: '1',
+                        label: 'Option 1'
+                    },
+                    {
+                        value: '2',
+                        label: 'Option 2'
+                    }
+                ]
+            }}
+        />
+        <Filter
+            id="select2"
+            label="Multi select"
+            type="select"
+            data={{
+                options: [
+                    {
+                        value: '1',
+                        label: 'Option 1'
+                    },
+                    {
+                        value: '2',
+                        label: 'Option 2'
+                    }
+                ],
+                selectConfig: {
+                    multi: true
+                }
+            }}
+        />
+    </FilterContainer>
+);
 
 storiesOf('Filters', module)
     .add('FilterContainer', () => (
         <WithNotes>
             <div className="pa4 bg-near-white mw6">
-                <FilterContainer>
-                    <Filter
-                        id="text1"
-                        label="Other text filter"
-                        type="text"
-                        data={{
-                            placeholder: 'A text filter'
-                        }}
-                    />
-                    <Filter
-                        id="text2"
-                        label="Text filter"
-                        type="text"
-                        data={{
-                            placeholder: 'Another text filter'
-                        }}
-                    />
-                    <Filter
-                        id="select1"
-                        label="Single select"
-                        type="select"
-                        data={{
-                            options: [
-                                {
-                                    value: '1',
-                                    label: 'Option 1'
-                                },
-                                {
-                                    value: '2',
-                                    label: 'Option 2'
-                                }
-                            ]
-                        }}
-                    />
-                    <Filter
-                        id="select2"
-                        label="Multi select"
-                        type="select"
-                        data={{
-                            options: [
-                                {
-                                    value: '1',
-                                    label: 'Option 1'
-                                },
-                                {
-                                    value: '2',
-                                    label: 'Option 2'
-                                }
-                            ],
-                            selectConfig: {
-                                multi: true
-                            }
-                        }}
-                    />
-                </FilterContainer>
+                {sampleFilterContainer()}
             </div>
         </WithNotes>
     ))
