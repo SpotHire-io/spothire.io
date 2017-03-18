@@ -10,11 +10,11 @@ class MainMenu extends React.Component {
         this.commonItemWrapperClasses = 'bg-blue-yonder washed-yellow pv3 ph4 bb bw1 b--white-40';
     }
 
-    renderNavLink(linkText, isSelected, isLast) {
+    renderNavLink(linkText, isSelected) {
         const aClasses = classNames({
             [this.commonItemWrapperClasses]: true,
             'w-20 tc link dim pointer': true,
-            'hover-bl hover-br bw1': isSelected,
+            'bl br bw1 i': isSelected,
         });
 
         return (
@@ -38,7 +38,7 @@ class MainMenu extends React.Component {
                 </div>
                 <nav className="flex-auto flex items-start">
                     {
-                        menuItems.map((text, index) => this.renderNavLink(text, false, menuItems.length === index + 1))
+                        menuItems.map((text, index) => this.renderNavLink(text, index === 1))
                     }
                 </nav>
             </div>
