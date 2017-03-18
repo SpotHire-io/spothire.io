@@ -17,7 +17,7 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
         const headerClasses = classNames({
             'bg-white ba b--black-20 bb-0 pa3': true,
             'flex items-center justify-between': true,
-            'pointer bg-animate hover-bg-moon-gray': isOpen
+            'pointer bg-animate hover-bg-transparent': isOpen
         });
 
         return (
