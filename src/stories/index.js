@@ -120,7 +120,7 @@ storiesOf('Newsfeed', module)
                 <Post
                     post={{
                         ...samplePost,
-                        excerpt: (<p>Custom short excerpt.</p>)
+                        excerpt: (<p className="mt0">Custom short excerpt.</p>)
                     }}
                     isOpen={false}
                 />
