@@ -2,6 +2,8 @@ const React      = require('react');
 const classNames = require('classnames');
 const moment     = require('moment');
 
+const Arrow = require('react-svg-arrow');
+
 const BasicButton = require('../Buttons/BasicButton');
 
 const Post = ({ post, className, isOpen, toggleOpenState }) => {
@@ -10,6 +12,26 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
         'app-sans': true,
         [className]: true
     });
+
+    const renderHeader = function () {
+        const headerClasses = classNames({
+            'bg-white ba b--black-20 bb-0 pa3': true,
+            'flex items-center justify-between': true,
+            'pointer bg-animate hover-bg-moon-gray': isOpen
+        });
+
+        return (
+            <div className={headerClasses} onClick={(isOpen) ? toggleOpenState : null}>
+                <h2 className="mv0 lh-title">{post.title}</h2>
+
+                <Arrow
+                    color={(isOpen) ? "rgb(119, 119, 119)" : "rgb(111, 111, 111)"}
+                    size={6}
+                    direction={(isOpen) ? "bottom" : "top"}
+                />
+            </div>
+        );
+    };
 
     const renderInteractionInterface = function () {
         return (
@@ -42,11 +64,10 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
     };
 
     return (
-        <div className={wrapperClasses} onClick={toggleOpenState}>
+        <div className={wrapperClasses} onClick={(isOpen) ? null : toggleOpenState}>
+            {renderHeader()}
             <div className="bg-white ba b--black-20 pa3">
-                <h2 className="mv0 lh-title">{post.title}</h2>
-
-                <div className="mt3 georgia">
+                <div className="georgia">
                     {(isOpen) ? post.content : renderExcerpt()}
                 </div>
             </div>
