@@ -6,6 +6,7 @@ const BasicButton = require('../Buttons/BasicButton');
 
 const Post = ({ post, className, isOpen, toggleOpenState }) => {
     let wrapperClasses = classNames({
+        'o-70 glow pointer': ! isOpen,
         'app-sans': true,
         [className]: true
     });
