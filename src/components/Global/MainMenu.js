@@ -2,15 +2,23 @@ const React      = require('react');
 const classNames = require('classnames');
 
 class MainMenu extends React.Component {
-    renderNavLink(linkText, isLast) {
+    constructor() {
+        super();
+
+        this.renderNavLink = this.renderNavLink.bind(this);
+
+        this.commonItemWrapperClasses = 'bg-blue-yonder washed-yellow pv3 ph4 bb bw1 b--white-40';
+    }
+
+    renderNavLink(linkText, isSelected, isLast) {
         const aClasses = classNames({
-            'w-20 tc f6 w-100 bt bb bw1 b--deep-koamaru bg-blue-yonder washed-yellow link dim': true,
-            'br br--dotted': ! isLast,
-            'br': isLast,
+            [this.commonItemWrapperClasses]: true,
+            'w-20 tc link dim': true,
+            'hover-bl hover-br bw1': isSelected,
         });
 
         return (
-            <a className={aClasses} href="#">{linkText}</a>
+            <a key={linkText} className={aClasses} href="#">{linkText}</a>
         )
     }
 
@@ -25,10 +33,12 @@ class MainMenu extends React.Component {
 
         return (
             <div className="flex app-sans">
-                <p className="b bg-blue-yonder washed-yellow f4 pv3 ph4 ma0 lh-solid ba bw1 b--deep-koamaru">SpotHire</p>
-                <nav className="flex-auto flex items-center">
+                <div className={this.commonItemWrapperClasses}>
+                    <p className="b ma0 lh-solid">SpotHire</p>
+                </div>
+                <nav className="flex-auto flex items-start">
                     {
-                        menuItems.map((text, index) => this.renderNavLink(text, menuItems.length === index + 1))
+                        menuItems.map((text, index) => this.renderNavLink(text, false, menuItems.length === index + 1))
                     }
                 </nav>
             </div>

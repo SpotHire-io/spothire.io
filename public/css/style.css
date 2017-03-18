@@ -10,6 +10,14 @@
     border-color: #31486E;
 }
 
+.hover-bl:hover {
+    border-left-style: solid;
+}
+
+.hover-br:hover {
+    border-right-style: solid;
+}
+
 /**
 
     RESETS/BASE
