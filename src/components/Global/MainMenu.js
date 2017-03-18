@@ -7,7 +7,7 @@ class MainMenu extends React.Component {
 
         this.renderNavLink = this.renderNavLink.bind(this);
 
-        this.commonItemWrapperClasses = 'bg-blue-yonder washed-yellow pv3 ph4 bb bw1 b--white-40';
+        this.commonItemWrapperClasses = 'bg-blue-yonder washed-yellow pv3 ph4 bb bt bw1 b--white-40';
     }
 
     renderNavLink(linkText, isSelected) {
