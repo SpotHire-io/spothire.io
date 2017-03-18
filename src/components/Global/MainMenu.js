@@ -13,7 +13,7 @@ class MainMenu extends React.Component {
     renderNavLink(linkText, isSelected, isLast) {
         const aClasses = classNames({
             [this.commonItemWrapperClasses]: true,
-            'w-20 tc link dim': true,
+            'w-20 tc link dim pointer': true,
             'hover-bl hover-br bw1': isSelected,
         });
 
