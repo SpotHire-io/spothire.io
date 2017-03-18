@@ -32,7 +32,7 @@ class MainMenu extends React.Component {
         ];
 
         return (
-            <div className="flex app-sans">
+            <div className="flex app-sans shadow-4">
                 <div className={this.commonItemWrapperClasses}>
                     <p className="b ma0 lh-solid">SpotHire</p>
                 </div>
