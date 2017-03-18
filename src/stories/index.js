@@ -243,3 +243,16 @@ storiesOf('Filters', module)
             />
         </WithNotes>
     ));
+
+storiesOf('Views', module)
+    .add('Views:Newsfeed', () => (
+        <div>
+            <MainMenu/>
+            <div className="pa4 bg-near-white">
+                <div className="flex">
+                    {sampleFilterContainer('mr3 w-third self-start')}
+                    {samplePostList('w-two-thirds')}
+                </div>
+            </div>
+        </div>
+    ));
