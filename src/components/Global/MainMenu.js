@@ -7,7 +7,7 @@ class MainMenu extends React.Component {
 
         this.renderNavLink = this.renderNavLink.bind(this);
 
-        this.commonItemWrapperClasses = 'bg-blue-yonder washed-yellow pv3 ph4 bb bt bw1 b--white-40';
+        this.commonItemWrapperClasses = 'washed-yellow pv3 ph4';
     }
 
     renderNavLink(linkText, isSelected) {
@@ -32,7 +32,7 @@ class MainMenu extends React.Component {
         ];
 
         return (
-            <div className="flex app-sans shadow-4">
+            <div className="flex app-sans shadow-4 bg-blue-yonder bb bt bw1 b--white-40">
                 <div className={this.commonItemWrapperClasses}>
                     <p className="b ma0 lh-solid">SpotHire</p>
                 </div>
@@ -41,6 +41,9 @@ class MainMenu extends React.Component {
                         menuItems.map((text, index) => this.renderNavLink(text, index === 1))
                     }
                 </nav>
+                <div className="flex items-center ph4">
+                    <img className="w2 h2 br-100" src="http://placehold.it/200x200" alt="Avatar"/>
+                </div>
             </div>
         )
     }
