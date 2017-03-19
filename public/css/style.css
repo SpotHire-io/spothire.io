@@ -10,6 +10,10 @@
     border-color: #31486E;
 }
 
+.hover-bg-blue-yonder:hover {
+    background-color: rgb(84, 119, 166);
+}
+
 .hover-bl:hover {
     border-left-style: solid;
 }
