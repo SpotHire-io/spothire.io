@@ -36,7 +36,7 @@ class MainMenu extends React.Component {
 
     renderUserMenu() {
         const userMenuClasses = classNames({
-            'app-sans absolute right-2 w4 bg-white shadow-4 bb bl br b--black-20 br--bottom br1': true,
+            'app-sans absolute z-999 right-2 w4 bg-white shadow-4 bb bl br b--black-20 br--bottom br1': true,
             'dn': ! this.state.isUserMenuOpen,
             'db': this.state.isUserMenuOpen
         });
