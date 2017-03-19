@@ -77,7 +77,7 @@ class MainMenu extends React.Component {
 
         return (
             <div className="relative">
-                <div className="flex app-sans shadow-4 bg-blue-yonder bb bt bw1 b--white-40">
+                <div className="flex app-sans shadow-4 bg-blue-yonder bb bt bw1 b--white-40" onClick={() => (this.state.isUserMenuOpen) ? this.toggleUserMenu() : null}>
                     <div className={this.commonItemWrapperClasses}>
                         <p className="b ma0 lh-solid">SpotHire</p>
                     </div>
