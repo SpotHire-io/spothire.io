@@ -7,12 +7,19 @@ class MainMenu extends React.Component {
 
         this.renderNavLink = this.renderNavLink.bind(this);
         this.renderUserMenu = this.renderUserMenu.bind(this);
+        this.toggleUserMenu = this.toggleUserMenu.bind(this);
 
         this.commonItemWrapperClasses = 'washed-yellow pv3 ph4';
 
         this.state = {
-            isUserMenuOpen: true
+            isUserMenuOpen: false
         };
+    }
+
+    toggleUserMenu() {
+        let isUserMenuOpen = (this.state.isUserMenuOpen) ? false : true;
+
+        this.setState({ isUserMenuOpen });
     }
 
     renderNavLink(linkText, isSelected) {
@@ -80,7 +87,7 @@ class MainMenu extends React.Component {
                         }
                     </nav>
                     <div className="flex items-center ph4">
-                        <img className="w2 h2 br-100" src="http://placehold.it/200x200" alt="Avatar"/>
+                        <img className="w2 h2 br-100 pointer" onClick={() => this.toggleUserMenu()} src="http://placehold.it/200x200" alt="Avatar"/>
                     </div>
                 </div>
                 {this.renderUserMenu()}
