@@ -14,7 +14,7 @@ class MainMenu extends React.Component {
         const aClasses = classNames({
             [this.commonItemWrapperClasses]: true,
             'w-20 tc link dim pointer': true,
-            'bl br bw1 i': isSelected,
+            'i sh-inset-shadow-1': isSelected,
         });
 
         return (
