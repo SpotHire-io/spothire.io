@@ -28,8 +28,7 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
                 <h2 className="mv0 lh-title">{post.title}</h2>
 
                 <div>
-                    {(post.responseRequired) ? <BasicTag className="mr2">Response required</BasicTag> : null}
-                    {(post.isRespondedTo) ? <BasicTag className="tag--positive">You’ve responded!</BasicTag> : <BasicTag className="tag--negative">You need to respond!</BasicTag>}
+                    {renderStatusTag()}
 
                     <Arrow
                         className="ml2"
@@ -40,6 +39,18 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
                 </div>
             </div>
         );
+    };
+
+    const renderStatusTag = function () {
+        if (! post.responseRequired) {
+            return <BasicTag>Response not required</BasicTag>;
+        }
+
+        if (! post.isRespondedTo) {
+            return <BasicTag type="negative">You need to respond</BasicTag>;
+        }
+
+        return <BasicTag type="positive">You’ve responded</BasicTag>;
     };
 
     const renderInteractionInterface = function () {
