@@ -67,8 +67,8 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
     return (
         <div className={wrapperClasses} onClick={(isOpen) ? null : toggleOpenState}>
             {renderHeader()}
-            <div className="bg-white ba b--black-20 pa3">
-                <div className="georgia">
+            <div className="bg-white ba b--black-20 ph3 pv4">
+                <div className="georgia f4 measure">
                     {(isOpen) ? post.content : renderExcerpt()}
                 </div>
             </div>
