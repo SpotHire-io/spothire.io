@@ -43,7 +43,7 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
 
     const renderStatusTag = function () {
         if (! post.responseRequired) {
-            return <BasicTag>Response not required</BasicTag>;
+            return <BasicTag type="neutral">Response not required</BasicTag>;
         }
 
         if (! post.isRespondedTo) {
