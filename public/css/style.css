@@ -2,6 +2,10 @@
     font-family: 'Source Sans Pro', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
 }
 
+.app-serif {
+    font-family: Georgia, serif;
+}
+
 .bg-blue-yonder {
     background-color: rgb(84, 119, 166);
 }

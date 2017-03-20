@@ -28,7 +28,16 @@ storiesOf('Content', module)
             <div className="ma4 app-sans">
                 <p>Just a paragraph. Nothing special.</p>
                 <p>Put them one after the other, and they stack fine.</p>
-                <p className="measure">Add the <code className="bg-light-gray pa1 br1">.measure</code> class to constrain it to a reasonable width (works for any element). Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores impedit ipsam laudantium modi mollitia placeat sunt vero voluptas. Ab, accusamus ad aliquam animi asperiores aspernatur consectetur, earum fuga ipsam iste laudantium, molestias nemo neque nisi nostrum nulla numquam provident quas reiciendis rem sint sit tenetur ut. Animi eius enim ipsa ipsam molestiae.</p>
+                <p className="measure">Add the <code className="bg-light-gray pa1 br1 f6">.measure</code> class to constrain it to a reasonable width (works for any element). Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores impedit ipsam laudantium modi mollitia placeat sunt vero voluptas. Ab, accusamus ad aliquam animi asperiores aspernatur consectetur, earum fuga ipsam iste laudantium, molestias nemo neque nisi nostrum nulla numquam provident quas reiciendis rem sint sit tenetur ut. Animi eius enim ipsa ipsam molestiae.</p>
+            </div>
+        </WithNotes>
+    ))
+    .add('Paragraph:Serif', () => (
+        <WithNotes>
+            <div className="ma4 app-serif">
+                <p>Just a paragraph, nothing special.</p>
+                <p>Use the <code className="bg-light-gray pa1 br1 f6">.app-serif</code> class to set it to our serif font family stack.</p>
+                <p className="measure">Add the <code className="bg-light-gray pa1 br1 f6">.measure</code> class to constrain it to a reasonable width (works for any element). Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores impedit ipsam laudantium modi mollitia placeat sunt vero voluptas. Ab, accusamus ad aliquam animi asperiores aspernatur consectetur, earum fuga ipsam iste laudantium, molestias nemo neque nisi nostrum nulla numquam provident quas reiciendis rem sint sit tenetur ut. Animi eius enim ipsa ipsam molestiae.</p>
             </div>
         </WithNotes>
     ))
