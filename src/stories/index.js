@@ -143,7 +143,8 @@ const samplePost = {
         </div>
     ),
     date: "2017-03-13T12:00:00-04:00",
-    responseRequired: true
+    responseRequired: true,
+    isRespondedTo: (Math.random() > 0.5)
 };
 
 const samplePostList = (className) => (

@@ -6,6 +6,8 @@ const Arrow = require('react-svg-arrow');
 
 const BasicButton = require('../Buttons/BasicButton');
 
+const BasicTag = require('../Tags/BasicTag');
+
 const Post = ({ post, className, isOpen, toggleOpenState }) => {
     let wrapperClasses = classNames({
         'sh-shadow-2': isOpen,
@@ -25,11 +27,17 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
             <div className={headerClasses} onClick={(isOpen) ? toggleOpenState : null}>
                 <h2 className="mv0 lh-title">{post.title}</h2>
 
-                <Arrow
-                    color={(isOpen) ? "rgb(119, 119, 119)" : "rgb(111, 111, 111)"}
-                    size={6}
-                    direction={(isOpen) ? "bottom" : "top"}
-                />
+                <div>
+                    {(post.responseRequired) ? <BasicTag className="mr2">Response required</BasicTag> : null}
+                    {(post.isRespondedTo) ? <BasicTag className="tag--positive">You’ve responded!</BasicTag> : <BasicTag className="tag--negative">You need to respond!</BasicTag>}
+
+                    <Arrow
+                        className="ml2"
+                        color={(isOpen) ? "rgb(119, 119, 119)" : "rgb(111, 111, 111)"}
+                        size={6}
+                        direction={(isOpen) ? "bottom" : "top"}
+                    />
+                </div>
             </div>
         );
     };
@@ -38,7 +46,7 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
         return (
             <div className="bg-white ba bt-0 b--black-20 flex">
                 <div className="pa3 br b--black-20 w-50 flex items-center justify-center">
-                    <p className="ma0">Response {post.isRequired ? 'required' : 'not required'}</p>
+                    <p className="ma0">Response {post.responseRequired ? 'required' : 'not required'}</p>
                 </div>
                 <div className="pa3 w-50">
                     <textarea className="w-100 b--black-10" rows="3"/>
