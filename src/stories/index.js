@@ -22,6 +22,63 @@ storiesOf('Global', module)
         </WithNotes>
     ));
 
+storiesOf('Content', module)
+    .add('Paragraph', () => (
+        <WithNotes>
+            <div className="ma4 app-sans">
+                <p>Just a paragraph. Nothing special.</p>
+                <p>Put them one after the other, and they stack fine.</p>
+                <p className="measure">Add the <code className="bg-light-gray pa1 br1">.measure</code> class to constrain it to a reasonable width (works for any element). Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores impedit ipsam laudantium modi mollitia placeat sunt vero voluptas. Ab, accusamus ad aliquam animi asperiores aspernatur consectetur, earum fuga ipsam iste laudantium, molestias nemo neque nisi nostrum nulla numquam provident quas reiciendis rem sint sit tenetur ut. Animi eius enim ipsa ipsam molestiae.</p>
+            </div>
+        </WithNotes>
+    ))
+    .add('Headings', () => (
+        <WithNotes>
+            <div className="ma4 app-sans">
+                <h1>Top-level heading</h1>
+
+                <p>Should only ever contain the title of the page.</p>
+
+                <h2>Middle-grade heading</h2>
+
+                <p>Likely most common heading. Any first-class section.</p>
+
+                <h3>Third-tier heading</h3>
+
+                <p>If you need to divide up a first-class section.</p>
+            </div>
+        </WithNotes>
+    ))
+    .add('Lists', () => (
+        <WithNotes>
+            <div className="ma4 app-sans">
+                <p>Unordered:</p>
+
+                <ul>
+                    <li>An item</li>
+                    <li>Another</li>
+                    <li>A final</li>
+                </ul>
+
+                <p>Ordered:</p>
+
+                <ol>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ol>
+
+                <p>With longer content:</p>
+
+                <ol>
+                    <li className="measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eligendi, facere illo incidunt odit placeat quidem quod temporibus! Laboriosam, quidem.</li>
+                    <li className="measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cum ducimus odio perferendis voluptates voluptatibus. A dolorem error molestias nulla officia suscipit veniam. Animi architecto, assumenda culpa dolor eos non provident recusandae! Ab accusantium commodi consectetur dolorem esse et fuga id, ipsum magnam molestias obcaecati, odit quasi repudiandae tempora voluptatibus? Commodi earum ipsum iure perspiciatis quisquam? Aliquam amet beatae consectetur cumque delectus dolore dolores eaque, est explicabo, facere fugiat id illum iste libero magni, maxime molestiae nostrum omnis optio repellat similique suscipit tempora. Assumenda, autem debitis in nobis obcaecati odio placeat provident quae quidem recusandae rem sed totam ut vitae!</li>
+                    <li className="measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at, corporis dolorem id obcaecati veritatis voluptatum? Animi aperiam commodi corporis ex explicabo fuga fugiat id magni maiores maxime molestiae, nisi quidem, tenetur. At eveniet ex ipsam iste labore maiores maxime quam quas voluptatem voluptatibus? Architecto beatae doloremque esse excepturi, facilis magnam natus nemo soluta? Asperiores debitis, dolore eius eos excepturi illum iste labore molestiae nihil porro, similique soluta, ullam voluptas. Ad obcaecati quasi soluta sunt.</li>
+                </ol>
+            </div>
+        </WithNotes>
+    ));
+
 storiesOf('Buttons', module)
     .add('BasicButton:Standard', () => (
         <WithNotes>
