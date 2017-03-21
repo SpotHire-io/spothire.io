@@ -17,7 +17,7 @@ class UserList extends React.Component {
         this.renderUserCell = this.renderUserCell.bind(this);
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
 
-        this.commonCellClasses = 'ph2 pv2';
+        this.commonCellClasses = 'pa3';
 
         this.state = {};
     }
@@ -54,7 +54,7 @@ class UserList extends React.Component {
 
     renderHeaderCell(column, value) {
         const cellClasses = classNames({
-            'tl bg-blue-yonder washed-yellow': true,
+            'tl bg-blue-yonder washed-yellow bb bw1 b--white-40': true,
             [this.commonCellClasses]: true
         });
 
