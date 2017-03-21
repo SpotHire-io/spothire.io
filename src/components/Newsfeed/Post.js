@@ -84,7 +84,7 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
     };
 
     return (
-        <div className={wrapperClasses} onClick={(isOpen) ? null : toggleOpenState}>
+        <article className={wrapperClasses} onClick={(isOpen) ? null : toggleOpenState}>
             {renderHeader()}
             <div className="bg-white ba b--black-20 ph3 pv4">
                 <div className="app-serif f4 measure">
@@ -95,7 +95,7 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
             <div className="bg-white-10 ba bt-0 b--black-10 ph3 pv2 f6">
                 {moment(post.date).format("MMMM Do, h:mm a")}
             </div>
-        </div>
+        </article>
     );
 };
 
