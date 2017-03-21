@@ -76,7 +76,7 @@ class UserList extends React.Component {
 
         return (
             <div className={wrapperClasses}>
-                <Table className="w-100" cellSpacing="0">
+                <Table className="w-100" cellSpacing="0" sortable={true}>
                     <Thead>
                         {this.renderHeaderCell('name', 'Name')}
                         {this.renderHeaderCell('email', 'Email')}
