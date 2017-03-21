@@ -340,4 +340,15 @@ storiesOf('Views', module)
                 </div>
             </div>
         </div>
+    ))
+    .add('Views:Users', () => (
+        <div>
+            <MainMenu/>
+            <div className="pa4 bg-near-white">
+                <div className="flex">
+                    {sampleFilterContainer('mr3 w-third self-start')}
+                    <UserList className="w-two-thirds"/>
+                </div>
+            </div>
+        </div>
     ));

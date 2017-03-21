@@ -28,7 +28,7 @@ class UserList extends React.Component {
         });
 
         return (
-            <Tr className={userClasses}>
+            <Tr key={user.id} className={userClasses}>
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
                 {this.renderUserCell('email', user.email)}
                 {this.renderUserCell('phone', user.phone)}
@@ -70,7 +70,7 @@ class UserList extends React.Component {
 
     render() {
         const wrapperClasses = classNames({
-            'bg-white ba b--black-20 br1 sh-shadow-2 app-sans': true,
+            'bg-white ba b--black-20 sh-shadow-2 app-sans': true,
             [this.props.className]: true
         });
 
