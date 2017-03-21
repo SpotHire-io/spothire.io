@@ -24,7 +24,7 @@ class UserList extends React.Component {
 
     renderUserRow(user) {
         const userClasses = classNames({
-            'ph3 pa2 mt0': true
+            'ph3 pa2 mt0 hover-bg-black-10': true
         });
 
         return (
