@@ -13,6 +13,8 @@ const PostList = require('../components/Newsfeed/PostList');
 const FilterContainer = require('../components/Filters/FilterContainer');
 const Filter = require('../components/Filters/Filter');
 
+const UserList = require('../components/Miscellaneous/UserList');
+
 import '../../public/css/style.css';
 
 storiesOf('Global', module)
@@ -308,6 +310,22 @@ storiesOf('Filters', module)
                     ]
                 }}
             />
+        </WithNotes>
+    ));
+
+const users = [
+    {
+        id: 1,
+        name: ''
+    }
+];
+
+storiesOf('Miscellaneous', module)
+    .add('UserList', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <UserList/>
+            </div>
         </WithNotes>
     ));
 
