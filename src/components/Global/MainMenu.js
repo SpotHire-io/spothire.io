@@ -51,7 +51,7 @@ class MainMenu extends React.Component {
                 <ul className="list ph0 pv1 ma0">
                     {
                         userMenuItems.map((text) => (
-                            <li key={text}>
+                            <li className="mt0" key={text}>
                                 <a
                                     href="#"
                                     className="pa2 db no-underline near-black hover-bg-blue-yonder hover-washed-yellow"
