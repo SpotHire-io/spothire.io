@@ -332,7 +332,7 @@ storiesOf('Miscellaneous', module)
 storiesOf('Views', module)
     .add('Views:Newsfeed', () => (
         <div>
-            <MainMenu/>
+            <MainMenu selectedItem="Newsfeed"/>
             <div className="pa4 bg-near-white">
                 <div className="flex">
                     {sampleFilterContainer('mr3 w-third self-start')}
@@ -343,7 +343,7 @@ storiesOf('Views', module)
     ))
     .add('Views:Users', () => (
         <div>
-            <MainMenu/>
+            <MainMenu selectedItem="People"/>
             <div className="pa4 bg-near-white">
                 <div className="flex">
                     {sampleFilterContainer('mr3 w-third self-start')}

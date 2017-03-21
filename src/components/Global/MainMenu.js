@@ -83,7 +83,7 @@ class MainMenu extends React.Component {
                     </div>
                     <nav className="flex-auto flex items-start">
                         {
-                            menuItems.map((text, index) => this.renderNavLink(text, index === 1))
+                            menuItems.map((text) => this.renderNavLink(text, text === this.props.selectedItem))
                         }
                     </nav>
                     <div className="flex items-center ph4">
@@ -98,7 +98,7 @@ class MainMenu extends React.Component {
 
 MainMenu.defaultProps = {
     className: '',
-    menuItems: []
+    selectedItem: 'Dashboard'
 };
 
 module.exports = MainMenu;
