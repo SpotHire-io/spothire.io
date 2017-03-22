@@ -30,7 +30,7 @@ class UserList extends React.Component {
         return (
             <Tr key={user.id} className={userClasses}>
                 {this.renderUserCell('avatar', (
-                    <img className="w1 h1 br-100" src="http://placehold.it/40x40"/>
+                    <img className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40"/>
                 ), 'tc pr0')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
                 {this.renderUserCell('email', user.email)}
