@@ -10,13 +10,18 @@ class SecondaryMenu extends React.Component {
 
     renderNavItem(item) {
         return (
-            <a className="b near-black hover-gray dib pv3 ph1 mh1 no-underline animate-all bb bw1 b--blue-yonder hover-b--white-40" href={item.href} style={{marginBottom:'-0.125rem'}}>{item.text}</a>
+            <a className="b near-black hover-gray dib pv3 mr4 no-underline animate-all bb bw1 b--blue-yonder hover-b--white-40" href={item.href} style={{marginBottom:'-0.125rem'}}>{item.text}</a>
         )
     }
 
     render() {
+        const wrapperClasses = classNames({
+            'bb bw1 b--blue-yonder app-sans': true,
+            [this.props.className]: true
+        });
+
         return (
-            <nav className="bb bw1 b--blue-yonder ph3 app-sans">
+            <nav className={wrapperClasses}>
                 {this.props.items.map((item) => this.renderNavItem(item))}
             </nav>
         );
