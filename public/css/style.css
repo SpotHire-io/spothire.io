@@ -14,6 +14,14 @@
     border-color: #31486E;
 }
 
+.b--blue-yonder {
+    border-color: rgb(84, 119, 166);
+}
+
+.hover-b--white-40:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
 .hover-bg-blue-yonder:hover {
     background-color: rgb(84, 119, 166);
 }

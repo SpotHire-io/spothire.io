@@ -4,6 +4,7 @@ const action = require('@kadira/storybook').action;
 const WithNotes = require('@kadira/storybook-addon-notes').WithNotes;
 
 const MainMenu = require('../components/Global/MainMenu');
+const SecondaryMenu = require('../components/Global/SecondaryMenu');
 
 const BasicButton = require('../components/Buttons/BasicButton');
 
@@ -21,6 +22,26 @@ storiesOf('Global', module)
     .add('MainMenu', () => (
         <WithNotes>
             <MainMenu/>
+        </WithNotes>
+    ))
+    .add('SecondaryMenu', () => (
+        <WithNotes>
+            <SecondaryMenu
+                items={[
+                    {
+                        text: 'Item 1',
+                        href: '#item1'
+                    },
+                    {
+                        text: 'Item 2',
+                        href: '#item2'
+                    },
+                    {
+                        text: 'Item 3',
+                        href: '#item3'
+                    }
+                ]}
+            />
         </WithNotes>
     ));
 
