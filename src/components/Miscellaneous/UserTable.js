@@ -123,7 +123,7 @@ class UserList extends React.Component {
                         {this.renderHeaderCell('phone', 'Phone')}
                         {this.renderHeaderCell('actions', '')}
                     </Thead>
-                    {this.renderNewUserRow()}
+                    {(this.props.inlineAddingRowIsOpen) ? this.renderNewUserRow() : null}
                     {userData.map((user) => this.renderUserRow(user))}
                 </Table>
             </div>

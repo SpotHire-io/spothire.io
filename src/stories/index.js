@@ -320,6 +320,13 @@ storiesOf('Miscellaneous', module)
                 <UserTable/>
             </div>
         </WithNotes>
+    ))
+    .add('UserTable:Inline new user interface', () => (
+        <WithNotes notes="An experimental interface to add new users inline with the table interface.">
+            <div className="pa4 bg-near-white">
+                <UserTable inlineAddingRowIsOpen={true}/>
+            </div>
+        </WithNotes>
     ));
 
 storiesOf('Views', module)
