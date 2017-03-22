@@ -13,7 +13,7 @@ const PostList = require('../components/Newsfeed/PostList');
 const FilterContainer = require('../components/Filters/FilterContainer');
 const Filter = require('../components/Filters/Filter');
 
-const UserList = require('../components/Miscellaneous/UserList');
+const UserTable = require('../components/Miscellaneous/UserTable');
 
 import '../../public/css/style.css';
 
@@ -313,18 +313,11 @@ storiesOf('Filters', module)
         </WithNotes>
     ));
 
-const users = [
-    {
-        id: 1,
-        name: ''
-    }
-];
-
 storiesOf('Miscellaneous', module)
-    .add('UserList', () => (
+    .add('UserTable', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
-                <UserList/>
+                <UserTable/>
             </div>
         </WithNotes>
     ));
@@ -347,7 +340,7 @@ storiesOf('Views', module)
             <div className="pa4 bg-near-white">
                 <div className="flex">
                     {sampleFilterContainer('mr3 w-third self-start')}
-                    <UserList className="w-two-thirds"/>
+                    <UserTable className="w-two-thirds"/>
                 </div>
             </div>
         </div>
