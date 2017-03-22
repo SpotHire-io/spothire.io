@@ -5,7 +5,7 @@ const BasicButton = require('../Buttons/BasicButton');
 
 const FilterContainer = ({ children, className, headingSemanticLevel }) => {
     let wrapperClasses = classNames({
-        'app-sans bg-white ba b--black-20 pa3': true,
+        'app-sans bg-white ba b--black-20 pa3 sh-shadow-2 ': true,
         [className]: true
     });
 
