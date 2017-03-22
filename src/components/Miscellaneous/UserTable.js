@@ -9,6 +9,8 @@ const Th    = require('reactable').Th;
 const Tr    = require('reactable').Tr;
 const Td    = require('reactable').Td;
 
+const BasicButton = require('../Buttons/BasicButton');
+
 class UserList extends React.Component {
     constructor() {
         super();
@@ -20,6 +22,38 @@ class UserList extends React.Component {
         this.commonCellClasses = 'pa3';
 
         this.state = {};
+    }
+
+    renderNewUserRow() {
+        const inputClasses = 'w-100 pa1 app-sans';
+
+        return (
+            <Tr className="mt0">
+                {this.renderUserCell('avatar', '', 'pv1')}
+                {this.renderUserCell('name', (
+                    <input
+                        className={inputClasses}
+                        type="text"
+                        placeholder="Name"
+                    />
+                ), 'pv2')}
+                {this.renderUserCell('email', (
+                    <input
+                        className={inputClasses}
+                        type="email"
+                        placeholder="Email"
+                    />
+                ), 'pv2')}
+                {this.renderUserCell('phone', (
+                    <input
+                        className={inputClasses}
+                        type="tel"
+                        placeholder="Phone"
+                    />
+                ), 'pv2')}
+                {this.renderUserCell('actions', <BasicButton className="button--positive">Create</BasicButton>, 'pv1')}
+            </Tr>
+        )
     }
 
     renderUserRow(user) {
@@ -35,6 +69,7 @@ class UserList extends React.Component {
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
                 {this.renderUserCell('email', user.email)}
                 {this.renderUserCell('phone', user.phone)}
+                {this.renderUserCell('actions', '')}
             </Tr>
         );
     }
@@ -86,7 +121,9 @@ class UserList extends React.Component {
                         {this.renderHeaderCell('name', 'Name')}
                         {this.renderHeaderCell('email', 'Email')}
                         {this.renderHeaderCell('phone', 'Phone')}
+                        {this.renderHeaderCell('actions', '')}
                     </Thead>
+                    {this.renderNewUserRow()}
                     {userData.map((user) => this.renderUserRow(user))}
                 </Table>
             </div>
