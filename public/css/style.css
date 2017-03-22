@@ -34,6 +34,10 @@
     border-right-style: solid;
 }
 
+.animate-all {
+    transition: all 0.15s ease-in;
+}
+
 .animate-shadow {
     transition: box-shadow 0.15s;
 }
