@@ -29,6 +29,9 @@ class UserList extends React.Component {
 
         return (
             <Tr key={user.id} className={userClasses}>
+                {this.renderUserCell('avatar', (
+                    <img className="w1 h1 br-100" src="http://placehold.it/40x40"/>
+                ), 'tc pr0')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
                 {this.renderUserCell('email', user.email)}
                 {this.renderUserCell('phone', user.phone)}
@@ -36,10 +39,11 @@ class UserList extends React.Component {
         );
     }
 
-    renderUserCell(column, value) {
+    renderUserCell(column, value, className) {
         const cellClasses = classNames({
             'bb b--black-20': true,
-            [this.commonCellClasses]: true
+            [this.commonCellClasses]: true,
+            [className]: true
         });
 
         return (
@@ -76,8 +80,9 @@ class UserList extends React.Component {
 
         return (
             <div className={wrapperClasses}>
-                <Table className="w-100" cellSpacing="0" sortable={true}>
+                <Table className="w-100" cellSpacing="0" sortable={['name']}>
                     <Thead>
+                        {this.renderHeaderCell('avatar', '')}
                         {this.renderHeaderCell('name', 'Name')}
                         {this.renderHeaderCell('email', 'Email')}
                         {this.renderHeaderCell('phone', 'Phone')}
