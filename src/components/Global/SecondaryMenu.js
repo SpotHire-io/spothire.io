@@ -9,8 +9,24 @@ class SecondaryMenu extends React.Component {
     }
 
     renderNavItem(item) {
+        const boundOnClick = this.props.onClick.bind(null, item.key);
+
+        const aClasses = classNames({
+            'b near-black hover-gray dib pv3 mr4 no-underline animate-all bb bw1 hover-b--white-40': true,
+            'b--blue-yonder': ! item.isActive,
+            'b--white-40': item.isActive
+        });
+
         return (
-            <a className="b near-black hover-gray dib pv3 mr4 no-underline animate-all bb bw1 b--blue-yonder hover-b--white-40" href={item.href} style={{marginBottom:'-0.125rem'}}>{item.text}</a>
+            <a
+                key={item.key}
+                onClick={boundOnClick}
+                href={item.href}
+                className={aClasses}
+                style={{marginBottom:'-0.125rem'}}
+            >
+                {item.text}
+            </a>
         )
     }
 
