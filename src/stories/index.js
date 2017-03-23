@@ -384,7 +384,7 @@ storiesOf('Views', module)
                         content: (
                             <div className="flex">
                                 {sampleFilterContainer('mr3 w-third self-start')}
-                                hey
+                                List of groups...
                             </div>
                         )
                     }
