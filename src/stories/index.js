@@ -19,6 +19,80 @@ const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
 
 import '../../public/css/style.css';
 
+storiesOf('Overview', module)
+    .add('Welcome', () => (
+        <div className="ma4 app-sans">
+            <h1>Welcome!</h1>
+
+            <p className="measure-narrow f4">This is the pattern library for the SpotHire application. It contains the separate
+            blocks used to build the interface, and examples of them in action.</p>
+
+            <p className="measure">The components are loosely categorized according to their function or where they’re used. Some
+            components include notes in the bottom panel for usage instructions or to talk about what still needs doing.</p>
+
+            <p className="measure">Unless you really want to dig into the nitty-gritty of each part of the app, the most
+            interesting place to look will be the <code className="bg-light-gray pa1 br1 f6">Views</code> category, the
+            second item in the menu on the left. There I’ve put together previews of how the components will sit together
+            to build certain pages from our Information Architecture. You’ll have to navigate with the links on the left,
+            because the main menu functionality isn’t set up yet.</p>
+
+            <p className="measure">When looking through, keep in mind that things are still early stage. Quite a bit has
+            yet to be completed, and what is posted here is still in progress. That said, there are a few questions for
+            you to consider as you look through:</p>
+
+            <ul>
+                <li>Is the interface natural? Would an admin or talent be able to find their way around?</li>
+                <li>Are any aspects of the interface confusing? How so?</li>
+                <li>What does a more polished version of this look like?</li>
+                <li>Does anything seem out of place or unnecessary?</li>
+            </ul>
+
+            <p className="measure">Thanks, and I look forward to talking more!</p>
+        </div>
+    ));
+
+storiesOf('Views', module)
+    .add('Views:Newsfeed', () => (
+        <div>
+            <MainMenu selectedItem="Newsfeed"/>
+            <div className="pa4 bg-near-white">
+                <div className="flex">
+                    {sampleFilterContainer('mr3 w-third self-start')}
+                    {samplePostList('w-two-thirds')}
+                </div>
+            </div>
+        </div>
+    ))
+    .add('Views:People', () => (
+        <div>
+            <MainMenu selectedItem="People"/>
+            <SectionSwitcher
+                sections={[
+                    {
+                        key: 'people',
+                        name: 'People',
+                        content: (
+                            <div className="flex">
+                                {sampleFilterContainer('mr3 w-third self-start')}
+                                <UserTable className="w-two-thirds"/>
+                            </div>
+                        )
+                    },
+                    {
+                        key: 'groups',
+                        name: 'Groups',
+                        content: (
+                            <div className="flex">
+                                {sampleFilterContainer('mr3 w-third self-start')}
+                                List of groups...
+                            </div>
+                        )
+                    }
+                ]}
+            />
+        </div>
+    ));
+
 storiesOf('Global', module)
     .add('MainMenu', () => (
         <WithNotes>
@@ -349,46 +423,4 @@ storiesOf('Miscellaneous', module)
                 <UserTable inlineAddingRowIsOpen={true}/>
             </div>
         </WithNotes>
-    ));
-
-storiesOf('Views', module)
-    .add('Views:Newsfeed', () => (
-        <div>
-            <MainMenu selectedItem="Newsfeed"/>
-            <div className="pa4 bg-near-white">
-                <div className="flex">
-                    {sampleFilterContainer('mr3 w-third self-start')}
-                    {samplePostList('w-two-thirds')}
-                </div>
-            </div>
-        </div>
-    ))
-    .add('Views:People', () => (
-        <div>
-            <MainMenu selectedItem="People"/>
-            <SectionSwitcher
-                sections={[
-                    {
-                        key: 'people',
-                        name: 'People',
-                        content: (
-                            <div className="flex">
-                                {sampleFilterContainer('mr3 w-third self-start')}
-                                <UserTable className="w-two-thirds"/>
-                            </div>
-                        )
-                    },
-                    {
-                        key: 'groups',
-                        name: 'Groups',
-                        content: (
-                            <div className="flex">
-                                {sampleFilterContainer('mr3 w-third self-start')}
-                                List of groups...
-                            </div>
-                        )
-                    }
-                ]}
-            />
-        </div>
     ));
