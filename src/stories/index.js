@@ -15,6 +15,7 @@ const FilterContainer = require('../components/Filters/FilterContainer');
 const Filter = require('../components/Filters/Filter');
 
 const UserTable = require('../components/Miscellaneous/UserTable');
+const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
 
 import '../../public/css/style.css';
 
@@ -362,27 +363,32 @@ storiesOf('Views', module)
             </div>
         </div>
     ))
-    .add('Views:Users', () => (
+    .add('Views:People', () => (
         <div>
             <MainMenu selectedItem="People"/>
-            <SecondaryMenu
-                className="ph4"
-                items={[
+            <SectionSwitcher
+                sections={[
                     {
-                        text: 'People',
-                        href: '#people'
+                        key: 'people',
+                        name: 'People',
+                        content: (
+                            <div className="flex">
+                                {sampleFilterContainer('mr3 w-third self-start')}
+                                <UserTable className="w-two-thirds"/>
+                            </div>
+                        )
                     },
                     {
-                        text: 'Groups',
-                        href: '#groups'
+                        key: 'groups',
+                        name: 'Groups',
+                        content: (
+                            <div className="flex">
+                                {sampleFilterContainer('mr3 w-third self-start')}
+                                hey
+                            </div>
+                        )
                     }
                 ]}
             />
-            <div className="pa4 bg-near-white">
-                <div className="flex">
-                    {sampleFilterContainer('mr3 w-third self-start')}
-                    <UserTable className="w-two-thirds"/>
-                </div>
-            </div>
         </div>
     ));
