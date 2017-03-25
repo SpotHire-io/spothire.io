@@ -3,6 +3,16 @@ const storiesOf = require('@kadira/storybook').storiesOf;
 const action = require('@kadira/storybook').action;
 const WithNotes = require('@kadira/storybook-addon-notes').WithNotes;
 
+const SingleDatePicker = require('react-dates').SingleDatePicker;
+const DateRangePicker  = require('react-dates').DateRangePicker;
+
+const BigCalendar = require('react-big-calendar');
+const moment      = require('moment');
+
+BigCalendar.setLocalizer(
+    BigCalendar.momentLocalizer(moment)
+);
+
 const MainMenu = require('../components/Global/MainMenu');
 const SecondaryMenu = require('../components/Global/SecondaryMenu');
 
