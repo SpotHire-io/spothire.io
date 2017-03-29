@@ -436,20 +436,24 @@ const sampleEvents = [
 
 storiesOf('Scheduling', module)
     .add('DateRangePicker', () => (
-        <DateRangePicker
-            startDate={moment()}
-            endDate={moment().add(3, 'days')}
-            onDatesChange={({ startDate, endDate }) => console.log({ startDate, endDate })}
-            focusedInput={START_DATE}
-            onFocusChange={focusedInput => console.log({ focusedInput })}
-        />
-    ))
-    .add('Calendar', () => (
-        <div style={{ height: '400px' }}>
-            <BigCalendar
-                events={sampleEvents}
+        <div className="app-sans">
+            <DateRangePicker
+                startDate={moment()}
+                endDate={moment().add(3, 'days')}
+                onDatesChange={({ startDate, endDate }) => console.log({ startDate, endDate })}
+                focusedInput={START_DATE}
+                onFocusChange={focusedInput => console.log({ focusedInput })}
             />
         </div>
+    ))
+    .add('Calendar', () => (
+        <WithNotes notes="BigCalendar container must have an explicit height set.">
+            <div className="app-sans" style={{ height: '400px' }}>
+                <BigCalendar
+                    events={sampleEvents}
+                />
+            </div>
+        </WithNotes>
     ));
 
 storiesOf('Miscellaneous', module)

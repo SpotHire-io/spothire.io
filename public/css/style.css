@@ -93,7 +93,8 @@ ol {
 
  */
 
-.button {
+.button,
+button {
     border: 0;
 
     font-family: 'Source Sans Pro', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
