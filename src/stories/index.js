@@ -436,7 +436,7 @@ const sampleEvents = [
 
 storiesOf('Scheduling', module)
     .add('DateRangePicker', () => (
-        <div className="app-sans">
+        <div className="app-sans pa4">
             <DateRangePicker
                 startDate={moment()}
                 endDate={moment().add(3, 'days')}
@@ -448,7 +448,7 @@ storiesOf('Scheduling', module)
     ))
     .add('Calendar', () => (
         <WithNotes notes="BigCalendar container must have an explicit height set.">
-            <div className="app-sans" style={{ height: '100vh' }}>
+            <div className="app-sans pa4" style={{ height: '100vh' }}>
                 <BigCalendar
                     events={sampleEvents}
                 />
