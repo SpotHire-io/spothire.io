@@ -8,8 +8,12 @@
     "react-scripts": "0.9.3"
   },
   "dependencies": {
+    "autoprefixer": "^6.7.7",
     "classnames": "^2.2.5",
     "moment": "^2.18.1",
+    "postcss": "^5.2.16",
+    "postcss-cli": "^3.0.0",
+    "postcss-import": "^9.1.0",
     "react": "^15.4.2",
     "react-addons-shallow-compare": "^15.4.2",
     "react-big-calendar": "^0.13.0",
@@ -25,6 +29,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "watch-css": "postcss -w --config postcss.config.js --output public/css/app.css assets/css/app.css",
+    "build-css": "postcss --config postcss.config.js --output public/css/app.css assets/css/app.css"
   }
 }
