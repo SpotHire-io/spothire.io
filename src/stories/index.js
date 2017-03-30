@@ -448,7 +448,7 @@ storiesOf('Scheduling', module)
     ))
     .add('Calendar', () => (
         <WithNotes notes="BigCalendar container must have an explicit height set.">
-            <div className="app-sans" style={{ height: '400px' }}>
+            <div className="app-sans" style={{ height: '100vh' }}>
                 <BigCalendar
                     events={sampleEvents}
                 />
