@@ -13,6 +13,7 @@
     "moment": "^2.18.1",
     "postcss": "^5.2.16",
     "postcss-cli": "^3.0.0",
+    "postcss-css-variables": "^0.7.0",
     "postcss-import": "^9.1.0",
     "react": "^15.4.2",
     "react-addons-shallow-compare": "^15.4.2",

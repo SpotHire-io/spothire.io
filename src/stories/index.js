@@ -30,9 +30,9 @@ const UserTable = require('../components/Miscellaneous/UserTable');
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
 
 import 'react-dates/lib/css/_datepicker.css';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+// import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-import '../../public/css/style.css';
+import '../../public/css/app.css';
 
 storiesOf('Overview', module)
     .add('Welcome', () => (

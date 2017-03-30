@@ -1,10 +1,21 @@
-.app-sans {
-    font-family: 'Source Sans Pro', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
-}
+/**
 
-.app-serif {
-    font-family: Georgia, serif;
-}
+    GLOBAL
+
+ */
+
+@import 'global/_reset.css';
+@import 'global/_typography.css';
+
+/**
+
+    VENDOR
+
+    Component styles from third-party scripts, and overrides to them when necessary.
+
+ */
+
+@import 'vendor/_react-big-calendar.css';
 
 .bg-blue-yonder {
     background-color: rgb(84, 119, 166);
@@ -52,36 +63,6 @@
 
 .sh-inset-shadow-1 {
     box-shadow: inset 0px 0px 20px 2px rgba( 0, 0, 0, 0.2 );
-}
-
-/**
-
-    RESETS/BASE
-
- */
-p {
-    margin-bottom: 0;
-
-    line-height: 1.4;
-}
-
-p:first-child {
-    margin-top: 0;
-}
-
-ul li,
-ol li {
-    margin-top: 0.25rem;
-
-    line-height: 1.4;
-}
-
-ol {
-    padding-left: 2.25rem;
-}
-
-ol li {
-    padding-left: .25rem;
 }
 
 
