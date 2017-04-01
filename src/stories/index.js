@@ -421,6 +421,12 @@ storiesOf('Filters', module)
         </WithNotes>
     ));
 
+const BigCalendar = require('react-big-calendar');
+
+BigCalendar.setLocalizer(
+    BigCalendar.momentLocalizer(moment)
+);
+
 const sampleEvents = require('../data/events');
 
 storiesOf('Scheduling', module)
@@ -434,6 +440,15 @@ storiesOf('Scheduling', module)
                 onFocusChange={focusedInput => console.log({ focusedInput })}
             />
         </div>
+    ))
+    .add('DefaultCalendar', () => (
+        <WithNotes notes="The default, full calendar.">
+            <div className="app-sans pa4" style={{height: '100vh'}}>
+                <BigCalendar
+                    events={sampleEvents}
+                />
+            </div>
+        </WithNotes>
     ))
     .add('OverviewCalendar', () => (
         <WithNotes notes="">
