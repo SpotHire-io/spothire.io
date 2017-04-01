@@ -3,17 +3,12 @@ const storiesOf = require('@kadira/storybook').storiesOf;
 const action = require('@kadira/storybook').action;
 const WithNotes = require('@kadira/storybook-addon-notes').WithNotes;
 
+const moment = require('moment');
+
 const SingleDatePicker = require('react-dates').SingleDatePicker;
 const DateRangePicker  = require('react-dates').DateRangePicker;
 
 const START_DATE = require('react-dates/constants').START_DATE;
-
-const BigCalendar = require('react-big-calendar');
-const moment      = require('moment');
-
-BigCalendar.setLocalizer(
-    BigCalendar.momentLocalizer(moment)
-);
 
 const MainMenu = require('../components/Global/MainMenu');
 const SecondaryMenu = require('../components/Global/SecondaryMenu');
@@ -25,6 +20,8 @@ const PostList = require('../components/Newsfeed/PostList');
 
 const FilterContainer = require('../components/Filters/FilterContainer');
 const Filter = require('../components/Filters/Filter');
+
+const OverviewCalendar = require('../components/Scheduling/OverviewCalendar');
 
 const UserTable = require('../components/Miscellaneous/UserTable');
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
@@ -424,15 +421,7 @@ storiesOf('Filters', module)
         </WithNotes>
     ));
 
-const sampleEvents = [
-    {
-        id: 1,
-        start: new Date(2017, 2, 26, 0, 0, 0),
-        end: new Date(2017, 2, 28, 0, 0, 0),
-        title: 'Test',
-        desc: 'A testing description.'
-    }
-];
+const sampleEvents = require('../data/events');
 
 storiesOf('Scheduling', module)
     .add('DateRangePicker', () => (
@@ -446,10 +435,10 @@ storiesOf('Scheduling', module)
             />
         </div>
     ))
-    .add('Calendar', () => (
-        <WithNotes notes="BigCalendar container must have an explicit height set.">
-            <div className="app-sans pa4" style={{ height: '100vh' }}>
-                <BigCalendar
+    .add('OverviewCalendar', () => (
+        <WithNotes notes="">
+            <div className="app-sans pa4">
+                <OverviewCalendar
                     events={sampleEvents}
                 />
             </div>
