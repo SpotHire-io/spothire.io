@@ -1,8 +1,10 @@
 @import 'react-big-calendar';
 
-.rbc-day-slot .rbc-event {
+.rbc-event {
     border-radius: 0.125rem;
+}
 
+.rbc-day-slot .rbc-event {
     border-color: rgba(0, 0, 0, 0.2);
 }
 
