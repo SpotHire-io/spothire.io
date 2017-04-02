@@ -4,8 +4,6 @@ const classNames = require('classnames');
 const BigCalendar = require('react-big-calendar');
 const moment      = require('moment');
 
-const BigCalendarViews = require('react-big-calendar').views;
-
 BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
@@ -13,8 +11,6 @@ BigCalendar.setLocalizer(
 class OverviewCalendar extends React.Component {
     constructor() {
         super();
-
-        console.log(BigCalendarViews);
     }
 
     render() {
@@ -28,7 +24,7 @@ class OverviewCalendar extends React.Component {
                 <BigCalendar
                     events={this.props.events}
                     defaultView="week"
-                    views={() => [BigCalendarViews.WEEK, BigCalendarViews.DAY]}
+                    views={['week', 'day']}
                 />
             </div>
         )
