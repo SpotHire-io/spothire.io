@@ -16,7 +16,7 @@ class EventWrapper extends React.Component {
             this.props.children :
             <div className="rbc-alt-bg">{this.props.children}</div>;
     }
-};
+}
 
 class OverviewCalendar extends React.Component {
     constructor() {
