@@ -8,6 +8,16 @@ BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
 
+const filteredUsers = [0];
+
+class EventWrapper extends React.Component {
+    render() {
+        return (filteredUsers.indexOf(this.props.event.userId) !== -1) ?
+            this.props.children :
+            <div className="rbc-alt-bg">{this.props.children}</div>;
+    }
+};
+
 class OverviewCalendar extends React.Component {
     constructor() {
         super();
@@ -23,6 +33,9 @@ class OverviewCalendar extends React.Component {
             <div className={wrapperClasses} style={{height: '75vh'}}>
                 <BigCalendar
                     events={this.props.events}
+                    components={{
+                        eventWrapper: EventWrapper
+                    }}
                     defaultView="week"
                     views={['week', 'day']}
                 />

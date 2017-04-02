@@ -1,2 +1,6 @@
 @import 'react-big-calendar';
 
+.rbc-alt-bg .rbc-event {
+    z-index: 1;
+    background-color: #777777;
+}
