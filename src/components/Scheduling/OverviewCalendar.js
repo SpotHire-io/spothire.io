@@ -20,7 +20,7 @@ class OverviewCalendar extends React.Component {
         });
 
         return (
-            <div className={wrapperClasses} style={{height: '50vh'}}>
+            <div className={wrapperClasses} style={{height: '75vh'}}>
                 <BigCalendar
                     events={this.props.events}
                     defaultView="week"
