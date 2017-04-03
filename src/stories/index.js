@@ -457,6 +457,10 @@ storiesOf('Scheduling', module)
             <div className="app-sans pa4">
                 <OverviewCalendar
                     events={sampleEvents}
+                    filter={{
+                        property: 'userId',
+                        values: [0]
+                    }}
                 />
             </div>
         </WithNotes>

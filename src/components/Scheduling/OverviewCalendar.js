@@ -22,7 +22,7 @@ class OverviewCalendar extends React.Component {
         });
 
         const EventWrapper = (props) => {
-            return (filteredUsers.indexOf(props.event.userId) !== -1) ?
+            return (this.props.filter.values.indexOf( props.event[ this.props.filter.property ] ) !== -1) ?
                 props.children :
                 <div className="rbc-alt-bg">{props.children}</div>;
         };
