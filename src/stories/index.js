@@ -427,7 +427,7 @@ BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
 
-const sampleEvents = require('../data/events');
+const sampleEvents = require('../data/events.json');
 
 storiesOf('Scheduling', module)
     .add('DateRangePicker', () => (
@@ -446,6 +446,8 @@ storiesOf('Scheduling', module)
             <div className="app-sans pa4" style={{height: '100vh'}}>
                 <BigCalendar
                     events={sampleEvents}
+                    startAccessor={(event) => new Date(event.start)}
+                    endAccessor={(event) => new Date(event.end)}
                 />
             </div>
         </WithNotes>

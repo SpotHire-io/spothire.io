@@ -38,6 +38,8 @@ class OverviewCalendar extends React.Component {
                     }}
                     defaultView="week"
                     views={['week', 'day']}
+                    startAccessor={(event) => new Date(event.start)}
+                    endAccessor={(event) => new Date(event.end)}
                 />
             </div>
         )
