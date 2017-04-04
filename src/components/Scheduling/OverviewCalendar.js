@@ -29,11 +29,14 @@ class OverviewCalendar extends React.Component {
 
         const ImageEvent = ({ event }) => {
             return (
-                <div className="inline-flex mt1">
-                    <img className="w1 h1 br-100 v-btm mr1" src="http://placehold.it/40x40"/>
-                    <span>
+                <div className="mt1">
+                    <div>
+                        <img className="w1 h1 br-100 mr1" src="http://placehold.it/40x40"/>
+                        <img className="w1 h1 br-100 mr1" src="http://placehold.it/40x40"/>
+                    </div>
+                    <p className="ma0 pa0 lh-solid">
                         {event.title}
-                    </span>
+                    </p>
                 </div>
             );
         };
