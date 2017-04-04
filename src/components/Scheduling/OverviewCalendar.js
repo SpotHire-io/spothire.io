@@ -27,12 +27,25 @@ class OverviewCalendar extends React.Component {
                 <div className="rbc-alt-bg">{props.children}</div>;
         };
 
+        const ImageEvent = ({ event }) => {
+            return (
+                <div className="inline-flex mt1">
+                    <img className="w1 h1 br-100 v-btm mr1" src="http://placehold.it/40x40"/>
+                    <span>
+                        {event.title}
+                    </span>
+                </div>
+            );
+        };
+
         return (
             <div className={wrapperClasses} style={{height: '75vh'}}>
                 <BigCalendar
                     events={this.props.events}
                     components={{
-                        eventWrapper: EventWrapper
+                        event: ImageEvent,
+                        eventWrapper: EventWrapper,
+
                     }}
                     defaultView="week"
                     views={['week', 'day']}
