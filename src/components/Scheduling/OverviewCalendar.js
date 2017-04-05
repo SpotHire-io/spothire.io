@@ -44,6 +44,7 @@ class OverviewCalendar extends React.Component {
         return (
             <div className={wrapperClasses} style={{height: '75vh'}}>
                 <BigCalendar
+                    selectable
                     events={this.props.events}
                     components={{
                         event: ImageEvent,
