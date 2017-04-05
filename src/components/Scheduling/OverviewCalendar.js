@@ -4,6 +4,8 @@ const classNames = require('classnames');
 const BigCalendar = require('react-big-calendar');
 const moment      = require('moment');
 
+const Modal = require('react-modal');
+
 BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
@@ -13,6 +15,24 @@ const filteredUsers = [0];
 class OverviewCalendar extends React.Component {
     constructor() {
         super();
+
+        this.state = {
+            isModalOpen: false,
+            selectedDates: {
+                start: new Date(1970, 0, 0),
+                end: new Date(1970, 0, 0)
+            }
+        };
+
+        this.handleSelectSlot = this.handleSelectSlot.bind(this);
+    }
+
+    handleSelectSlot( selectedDates ) {
+        const isModalOpen = true;
+
+        this.setState({ isModalOpen, selectedDates });
+
+        return true;
     }
 
     render() {
@@ -55,7 +75,16 @@ class OverviewCalendar extends React.Component {
                     views={['week', 'day']}
                     startAccessor={(event) => new Date(event.start)}
                     endAccessor={(event) => new Date(event.end)}
+                    onSelectSlot={this.handleSelectSlot}
                 />
+                <Modal
+                    isOpen={this.state.isModalOpen}
+                    contentLabel={"New event modal"}
+                    overlayClassName="sh-modal-overlay"
+                >
+                    Start: {this.state.selectedDates.start.toLocaleString()}
+                    End: {this.state.selectedDates.end.toLocaleString()}
+                </Modal>
             </div>
         )
     }
