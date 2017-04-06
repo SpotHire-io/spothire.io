@@ -6,6 +6,8 @@ const moment      = require('moment');
 
 const Modal = require('react-modal');
 
+const BasicButton = require('../Buttons/BasicButton');
+
 BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
@@ -17,7 +19,7 @@ class OverviewCalendar extends React.Component {
         super();
 
         this.state = {
-            isModalOpen: false,
+            isModalOpen: true,
             selectedDates: {
                 start: new Date(1970, 0, 0),
                 end: new Date(1970, 0, 0)
@@ -81,9 +83,17 @@ class OverviewCalendar extends React.Component {
                     isOpen={this.state.isModalOpen}
                     contentLabel={"New event modal"}
                     overlayClassName="sh-modal-overlay"
+                    className="sh-modal sh-shadow-2 app-sans"
                 >
+                    <h2 className="mt0 mb2">New Event</h2>
+
                     Start: {this.state.selectedDates.start.toLocaleString()}
                     End: {this.state.selectedDates.end.toLocaleString()}
+
+                    <div className="tr">
+                        <BasicButton className="button--neutral mt3">Cancel</BasicButton>
+                        <BasicButton className="button--positive mt3 ml3">Create</BasicButton>
+                    </div>
                 </Modal>
             </div>
         )
