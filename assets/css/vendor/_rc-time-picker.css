@@ -1,1 +1,12 @@
 @import 'rc-time-picker/assets/index.css';
+
+.rc-time-picker-input {
+    height: auto;
+
+    font-size: 1rem;
+    line-height: 1.4;
+
+    padding: 0.25rem;
+
+    color: #777777;
+}
