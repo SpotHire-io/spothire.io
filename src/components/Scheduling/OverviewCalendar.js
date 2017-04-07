@@ -10,6 +10,8 @@ const BasicButton = require('../Buttons/BasicButton');
 
 const SingleDatePicker = require('react-dates').SingleDatePicker;
 
+const TimePicker = require('rc-time-picker');
+
 BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
@@ -93,7 +95,7 @@ class OverviewCalendar extends React.Component {
                         'Start',
                         'End'
                     ].map((end) => (
-                        <div className="cf">
+                        <div className="cf" key={end}>
                             <dl className="fl mr4">
                                 <dt className="f6 ml0 mb2">{end} date</dt>
                                 <dd className="ml0">
@@ -109,7 +111,9 @@ class OverviewCalendar extends React.Component {
                             <dl className="fl">
                                 <dt className="f6 ml0 mb2">{end} time</dt>
                                 <dd className="ml0">
-
+                                    <TimePicker
+                                        defaultValue={moment(this.state.selectedDates[end.toLowerCase()])}
+                                    />
                                 </dd>
                             </dl>
                         </div>
