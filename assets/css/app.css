@@ -9,17 +9,9 @@
 
 /**
 
-    BASE
-
- */
-
-@import 'base/_buttons.css';
-
-/**
-
     VENDOR
 
-    Component styles from third-party scripts, and overrides to them when necessary.
+    Component styles from third-party scripts.
 
  */
 
@@ -28,6 +20,24 @@
 @import 'vendor/_react-modal.css';
 @import 'vendor/_rc-time-picker.css';
 @import 'vendor/_react-dates.css';
+
+/**
+
+    BASE
+
+ */
+
+@import 'base/_buttons.css';
+@import 'base/_inputs.css';
+
+/**
+
+
+    VENDOR OVERRIDES
+
+    Overrides to vendor styles, when necessary.
+
+ */
 
 .bg-blue-yonder {
     background-color: rgb(84, 119, 166);

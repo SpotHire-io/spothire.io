@@ -1,0 +1,8 @@
+@define-placeholder input-box {
+    font-size: 1rem;
+    line-height: 1.4;
+
+    padding: 0.25rem;
+
+    color: #777777;
+}
