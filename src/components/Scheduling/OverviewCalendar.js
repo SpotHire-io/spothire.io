@@ -8,6 +8,8 @@ const Modal = require('react-modal');
 
 const BasicButton = require('../Buttons/BasicButton');
 
+const SingleDatePicker = require('react-dates').SingleDatePicker;
+
 BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
@@ -19,7 +21,7 @@ class OverviewCalendar extends React.Component {
         super();
 
         this.state = {
-            isModalOpen: true,
+            isModalOpen: false,
             selectedDates: {
                 start: new Date(1970, 0, 0),
                 end: new Date(1970, 0, 0)
@@ -86,6 +88,27 @@ class OverviewCalendar extends React.Component {
                     className="sh-modal sh-shadow-2 app-sans"
                 >
                     <h2 className="mt0 mb2">New Event</h2>
+
+                    <div className="cf">
+                        <dl className="fl mr4">
+                            <dt className="f6 ml0 mb2">Start date</dt>
+                            <dd className="ml0">
+                                <SingleDatePicker
+                                    date={moment(this.state.selectedDates.start)}
+                                    onDateChange={( date ) => console.log({ date })}
+                                    focused={false}
+                                    onFocusChange={focusedInput => console.log({ focusedInput })}
+                                />
+                            </dd>
+                        </dl>
+
+                        <dl className="fl">
+                            <dt className="f6 ml0 mb2">Start time</dt>
+                            <dd className="ml0">
+
+                            </dd>
+                        </dl>
+                    </div>
 
                     Start: {this.state.selectedDates.start.toLocaleString()}
                     End: {this.state.selectedDates.end.toLocaleString()}
