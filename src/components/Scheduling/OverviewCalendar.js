@@ -89,26 +89,33 @@ class OverviewCalendar extends React.Component {
                 >
                     <h2 className="mt0 mb2">New Event</h2>
 
-                    <div className="cf">
-                        <dl className="fl mr4">
-                            <dt className="f6 ml0 mb2">Start date</dt>
-                            <dd className="ml0">
-                                <SingleDatePicker
-                                    date={moment(this.state.selectedDates.start)}
-                                    onDateChange={( date ) => console.log({ date })}
-                                    focused={false}
-                                    onFocusChange={focusedInput => console.log({ focusedInput })}
-                                />
-                            </dd>
-                        </dl>
+                    {[
+                        'Start',
+                        'End'
+                    ].map((end) => (
+                        <div className="cf">
+                            <dl className="fl mr4">
+                                <dt className="f6 ml0 mb2">{end} date</dt>
+                                <dd className="ml0">
+                                    <SingleDatePicker
+                                        date={moment(this.state.selectedDates[end.toLowerCase()])}
+                                        onDateChange={( date ) => console.log({ date })}
+                                        focused={false}
+                                        onFocusChange={focusedInput => console.log({ focusedInput })}
+                                    />
+                                </dd>
+                            </dl>
 
-                        <dl className="fl">
-                            <dt className="f6 ml0 mb2">Start time</dt>
-                            <dd className="ml0">
+                            <dl className="fl">
+                                <dt className="f6 ml0 mb2">{end} time</dt>
+                                <dd className="ml0">
 
-                            </dd>
-                        </dl>
-                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    ))}
+
+
 
                     Start: {this.state.selectedDates.start.toLocaleString()}
                     End: {this.state.selectedDates.end.toLocaleString()}
