@@ -31,6 +31,7 @@ class OverviewCalendar extends React.Component {
         };
 
         this.handleSelectSlot = this.handleSelectSlot.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     handleSelectSlot( selectedDates ) {
@@ -39,6 +40,10 @@ class OverviewCalendar extends React.Component {
         this.setState({ isModalOpen, selectedDates });
 
         return true;
+    }
+
+    closeModal() {
+        this.setState({ isModalOpen: false });
     }
 
     render() {
@@ -125,8 +130,8 @@ class OverviewCalendar extends React.Component {
                     End: {this.state.selectedDates.end.toLocaleString()}
 
                     <div className="tr">
-                        <BasicButton className="button--neutral mt3">Cancel</BasicButton>
-                        <BasicButton className="button--positive mt3 ml3">Create</BasicButton>
+                        <BasicButton className="button--neutral mt3" onClick={() => this.closeModal()}>Cancel</BasicButton>
+                        <BasicButton className="button--positive mt3 ml3" onClick={() => this.closeModal()}>Create</BasicButton>
                     </div>
                 </Modal>
             </div>
