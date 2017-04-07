@@ -15,11 +15,9 @@
 
  */
 
-@import 'vendor/_react-big-calendar.css';
-@import 'vendor/_reactable.css';
-@import 'vendor/_react-modal.css';
-@import 'vendor/_rc-time-picker.css';
-@import 'vendor/_react-dates.css';
+@import 'react-big-calendar';
+@import 'rc-time-picker/assets/index.css';
+@import 'react-dates/lib/css/_datepicker.css';
 
 /**
 
@@ -38,6 +36,12 @@
     Overrides to vendor styles, when necessary.
 
  */
+
+@import 'vendor/_react-big-calendar.css';
+@import 'vendor/_reactable.css';
+@import 'vendor/_react-modal.css';
+@import 'vendor/_rc-time-picker.css';
+@import 'vendor/_react-dates.css';
 
 .bg-blue-yonder {
     background-color: rgb(84, 119, 166);
