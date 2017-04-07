@@ -93,6 +93,7 @@ class OverviewCalendar extends React.Component {
                     contentLabel={"New event modal"}
                     overlayClassName="sh-modal-overlay"
                     className="sh-modal sh-shadow-2 app-sans"
+                    onRequestClose={this.closeModal}
                 >
                     <h2 className="mt0 mb2">New Event</h2>
 
