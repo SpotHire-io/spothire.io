@@ -31,6 +31,8 @@ class SingleDatePickerFocusContainer extends React.Component {
         return(
             <SingleDatePicker
                 {...this.props}
+                focused={this.state.isFocused}
+                onFocusChange={({ focused }) => this.setState({ isFocused: focused })}
             />
         )
     }
@@ -132,8 +134,6 @@ class OverviewCalendar extends React.Component {
 
                                             this.setState({ selectedDates });
                                         }}
-                                        focused={false}
-                                        onFocusChange={({ focused }) => console.log({ focused })}
                                     />
                                 </dd>
                             </dl>
