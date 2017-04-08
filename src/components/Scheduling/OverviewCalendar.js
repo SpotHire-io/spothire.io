@@ -129,8 +129,16 @@ class OverviewCalendar extends React.Component {
                                         date={moment(this.state.selectedDates[end.toLowerCase()])}
                                         onDateChange={newDate => {
                                             let selectedDates = {...this.state.selectedDates};
+                                            const oldTime     = moment(selectedDates[end.toLowerCase()]); // copy current time
 
-                                            selectedDates[end.toLowerCase()] = newDate;
+                                            selectedDates[end.toLowerCase()] = moment({
+                                                year: newDate.year(),
+                                                month: newDate.month(),
+                                                date: newDate.date(),
+                                                hour: oldTime.hour(),
+                                                minute: oldTime.minute(),
+                                                second: oldTime.second()
+                                            });
 
                                             this.setState({ selectedDates });
                                         }}
