@@ -120,6 +120,8 @@ class OverviewCalendar extends React.Component {
                                     <TimePicker
                                         defaultValue={moment(this.state.selectedDates[end.toLowerCase()])}
                                         showSecond={false}
+                                        allowEmpty={false}
+                                        use12Hours={true}
                                     />
                                 </dd>
                             </dl>

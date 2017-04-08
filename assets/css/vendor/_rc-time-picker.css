@@ -6,18 +6,30 @@
     @extend input-box;
 }
 
-/* Flyout */
+/*
+FLYOUT
+*/
 .rc-time-picker-panel-inner {
     @extend ff-app-sans;
     @extend input-box;
 
     padding: 0;
+
+    margin-top: 2px;
 }
 
-.rc-time-picker-panel-input {
-    @extend ff-app-sans;
+/* Time display */
+.rc-time-picker-panel-input-wrap {
+    padding: 0.5rem;
 }
 
+    .rc-time-picker-panel-input {
+        @extend ff-app-sans;
+
+        border-width: 0;
+    }
+
+/* Time selection */
 .rc-time-picker-panel-select {
     font-size: .875rem;
 }
