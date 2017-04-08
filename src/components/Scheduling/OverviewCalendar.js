@@ -18,6 +18,24 @@ BigCalendar.setLocalizer(
 
 const filteredUsers = [0];
 
+class SingleDatePickerFocusContainer extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            isFocused: false
+        };
+    }
+
+    render() {
+        return(
+            <SingleDatePicker
+                {...this.props}
+            />
+        )
+    }
+}
+
 class OverviewCalendar extends React.Component {
     constructor() {
         super();
@@ -105,7 +123,7 @@ class OverviewCalendar extends React.Component {
                             <dl className="fl mr4">
                                 <dt className="f6 ml0 mb2">{end} date</dt>
                                 <dd className="ml0">
-                                    <SingleDatePicker
+                                    <SingleDatePickerFocusContainer
                                         date={moment(this.state.selectedDates[end.toLowerCase()])}
                                         onDateChange={newDate => {
                                             let selectedDates = {...this.state.selectedDates};
@@ -115,7 +133,7 @@ class OverviewCalendar extends React.Component {
                                             this.setState({ selectedDates });
                                         }}
                                         focused={false}
-                                        onFocusChange={focusedInput => console.log({ focusedInput })}
+                                        onFocusChange={({ focused }) => console.log({ focused })}
                                     />
                                 </dd>
                             </dl>
