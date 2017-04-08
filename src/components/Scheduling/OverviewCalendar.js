@@ -167,11 +167,6 @@ class OverviewCalendar extends React.Component {
                         </div>
                     ))}
 
-
-
-                    Start: {this.state.selectedDates.start.toLocaleString()}
-                    End: {this.state.selectedDates.end.toLocaleString()}
-
                     <div className="tr">
                         <BasicButton className="button--neutral mt3" onClick={() => this.closeModal()}>Cancel</BasicButton>
                         <BasicButton className="button--positive mt3 ml3" onClick={() => this.closeModal()}>Create</BasicButton>
