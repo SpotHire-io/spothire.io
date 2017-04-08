@@ -1,6 +1,27 @@
+/* Input box */
 .rc-time-picker-input {
     height: auto;
 
     @extend ff-app-sans;
     @extend input-box;
 }
+
+/* Flyout */
+.rc-time-picker-panel-inner {
+    @extend ff-app-sans;
+    @extend input-box;
+
+    padding: 0;
+}
+
+.rc-time-picker-panel-input {
+    @extend ff-app-sans;
+}
+
+.rc-time-picker-panel-select {
+    font-size: .875rem;
+}
+
+    .rc-time-picker-panel-select li {
+        padding-left: 0.75rem;
+    }
