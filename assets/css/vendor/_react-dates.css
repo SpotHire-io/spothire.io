@@ -1,3 +1,11 @@
 .DateInput {
     @extend input-box;
 }
+
+.DateInput__display-text {
+    padding: 0;
+}
+
+.DateInput__display-text--has-input {
+    color: #333333;
+}

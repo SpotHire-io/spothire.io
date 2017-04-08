@@ -1,5 +1,9 @@
-.app-sans {
+@define-placeholder ff-app-sans {
     font-family: 'Source Sans Pro', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
+}
+
+.app-sans {
+    @extend ff-app-sans;
 }
 
 .app-serif {

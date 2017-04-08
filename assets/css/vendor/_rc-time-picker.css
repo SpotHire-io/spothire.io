@@ -1,5 +1,6 @@
 .rc-time-picker-input {
     height: auto;
 
+    @extend ff-app-sans;
     @extend input-box;
 }
