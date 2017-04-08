@@ -107,7 +107,13 @@ class OverviewCalendar extends React.Component {
                                 <dd className="ml0">
                                     <SingleDatePicker
                                         date={moment(this.state.selectedDates[end.toLowerCase()])}
-                                        onDateChange={( date ) => console.log({ date })}
+                                        onDateChange={newDate => {
+                                            let selectedDates = {...this.state.selectedDates};
+
+                                            selectedDates[end.toLowerCase()] = newDate;
+
+                                            this.setState({ selectedDates });
+                                        }}
                                         focused={false}
                                         onFocusChange={focusedInput => console.log({ focusedInput })}
                                     />
