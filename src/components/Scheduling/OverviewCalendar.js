@@ -118,10 +118,17 @@ class OverviewCalendar extends React.Component {
                                 <dt className="f6 ml0 mb2">{end} time</dt>
                                 <dd className="ml0">
                                     <TimePicker
-                                        defaultValue={moment(this.state.selectedDates[end.toLowerCase()])}
+                                        value={moment(this.state.selectedDates[end.toLowerCase()])}
                                         showSecond={false}
                                         allowEmpty={false}
                                         use12Hours={true}
+                                        onChange={newTime => {
+                                            let selectedDates = {...this.state.selectedDates};
+
+                                            selectedDates[end.toLowerCase()] = newTime;
+
+                                            this.setState({ selectedDates });
+                                        }}
                                     />
                                 </dd>
                             </dl>
