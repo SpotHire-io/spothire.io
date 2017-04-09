@@ -1,3 +1,8 @@
+/* Wrapper */
+.rc-time-picker {
+    width: 100%;
+}
+
 /* Input box */
 .rc-time-picker-input {
     height: auto;

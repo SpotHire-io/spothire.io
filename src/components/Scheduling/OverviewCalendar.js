@@ -121,8 +121,8 @@ class OverviewCalendar extends React.Component {
                         'Start',
                         'End'
                     ].map((end) => (
-                        <div className="cf" key={end}>
-                            <dl className="fl mr4">
+                        <div className="flex" key={end}>
+                            <dl className="w-50 mr4">
                                 <dt className="f6 ml0 mb2">{end} date</dt>
                                 <dd className="ml0">
                                     <SingleDatePickerFocusContainer
@@ -144,13 +144,13 @@ class OverviewCalendar extends React.Component {
                                         }}
                                         withPortal={true}
                                         isDayBlocked={day => {
-                                            
+
                                         }}
                                     />
                                 </dd>
                             </dl>
 
-                            <dl className="fl">
+                            <dl className="w-50">
                                 <dt className="f6 ml0 mb2">{end} time</dt>
                                 <dd className="ml0">
                                     <TimePicker

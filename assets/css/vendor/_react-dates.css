@@ -1,3 +1,7 @@
+.SingleDatePicker {
+    width: 100%;
+}
+
 .DayPicker {
     @extend ff-app-sans;
 }
