@@ -13,3 +13,7 @@
 .SingleDatePicker__picker--portal {
     z-index: 11; /* above react-modal */
 }
+
+.DayPicker__week-header {
+    margin-top: -0.8rem; /* fix overlap with calendar items */
+}
