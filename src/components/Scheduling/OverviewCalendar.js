@@ -142,6 +142,7 @@ class OverviewCalendar extends React.Component {
 
                                             this.setState({ selectedDates });
                                         }}
+                                        withPortal={true}
                                     />
                                 </dd>
                             </dl>

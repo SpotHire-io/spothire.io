@@ -9,3 +9,7 @@
 .DateInput__display-text--has-input {
     color: #333333;
 }
+
+.SingleDatePicker__picker--portal {
+    z-index: 11; /* above react-modal */
+}
