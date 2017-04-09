@@ -1,6 +1,9 @@
 const React      = require('react');
 const classNames = require('classnames');
 
+// storybook stuff
+const linkTo = require('@kadira/storybook').linkTo;
+
 class MainMenu extends React.Component {
     constructor() {
         super();
@@ -30,7 +33,7 @@ class MainMenu extends React.Component {
         });
 
         return (
-            <a key={linkText} className={aClasses} href="#">{linkText}</a>
+            <a key={linkText} className={aClasses} href="#" onClick={linkTo('Views', 'Views:' + linkText)}>{linkText}</a>
         )
     }
 
