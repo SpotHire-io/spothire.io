@@ -146,6 +146,7 @@ class OverviewCalendar extends React.Component {
                                         isDayBlocked={day => {
 
                                         }}
+                                        displayFormat="MMMM Do, YYYY"
                                     />
                                 </dd>
                             </dl>
