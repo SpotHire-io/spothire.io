@@ -1,3 +1,7 @@
+.DayPicker {
+    @extend ff-app-sans;
+}
+
 .DateInput {
     @extend input-box;
 }
@@ -15,5 +19,5 @@
 }
 
 .DayPicker__week-header {
-    margin-top: -0.8rem; /* fix overlap with calendar items */
+    margin-top: -0.85rem; /* fix overlap with calendar items */
 }
