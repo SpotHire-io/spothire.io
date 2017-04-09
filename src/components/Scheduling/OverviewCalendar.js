@@ -143,6 +143,9 @@ class OverviewCalendar extends React.Component {
                                             this.setState({ selectedDates });
                                         }}
                                         withPortal={true}
+                                        isDayBlocked={day => {
+                                            
+                                        }}
                                     />
                                 </dd>
                             </dl>
