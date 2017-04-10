@@ -2,6 +2,10 @@
     font-family: 'Source Sans Pro', 'Avenir Next', 'Avenir', -system-sans-serif, sans-serif;
 }
 
+body {
+    @extend ff-app-sans;
+}
+
 .app-sans {
     @extend ff-app-sans;
 }
