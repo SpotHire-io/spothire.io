@@ -488,18 +488,16 @@ storiesOf('Scheduling', module)
     ))
     .add('OverviewCalendar', () => (
         <WithNotes notes="">
-            <div className=" pa4">
-                <div className="bg-white ba b--black-20 sh-shadow-2">
-                    <h2 className="bg-blue-yonder washed-yellow bb bw1 b--white-40 ma0 pa3 f5">Calendar</h2>
+            <div className="ma4">
+                <Box title="Calendar">
                     <OverviewCalendar
-                        className="pa3"
                         events={sampleEvents}
                         filter={{
                             property: 'userId',
                             values: [0]
                         }}
                     />
-                </div>
+                </Box>
             </div>
         </WithNotes>
     ));
