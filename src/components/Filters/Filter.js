@@ -7,7 +7,7 @@ import 'react-select/dist/react-select.css';
 
 const Filter = ({ id, label, type, data, onChange, className }) => {
     let wrapperClasses = classNames({
-        'mt3 app-sans': true,
+        'mt3 ': true,
         [className]: true
     });
 
@@ -21,7 +21,7 @@ const Filter = ({ id, label, type, data, onChange, className }) => {
 
                     type="text"
 
-                    className="w-100 pa1 app-sans"
+                    className="w-100 pa1 "
 
                     value={data.value}
                     placeholder={data.placeholder}

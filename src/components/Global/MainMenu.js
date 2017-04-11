@@ -39,7 +39,7 @@ class MainMenu extends React.Component {
 
     renderUserMenu() {
         const userMenuClasses = classNames({
-            'app-sans absolute z-999 right-2 w4 bg-white shadow-4 bb bl br b--black-20 br--bottom br1': true,
+            ' absolute z-999 right-2 w4 bg-white shadow-4 bb bl br b--black-20 br--bottom br1': true,
             'dn': ! this.state.isUserMenuOpen,
             'db': this.state.isUserMenuOpen
         });
@@ -80,7 +80,7 @@ class MainMenu extends React.Component {
 
         return (
             <div className="relative">
-                <div className="flex app-sans shadow-4 bg-blue-yonder bb bt bw1 b--white-40" onClick={() => (this.state.isUserMenuOpen) ? this.toggleUserMenu() : null}>
+                <div className="flex  shadow-4 bg-blue-yonder bb bt bw1 b--white-40" onClick={() => (this.state.isUserMenuOpen) ? this.toggleUserMenu() : null}>
                     <div className={this.commonItemWrapperClasses}>
                         <p className="b ma0 lh-solid">SpotHire</p>
                     </div>

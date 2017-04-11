@@ -30,7 +30,7 @@ import '../../public/css/app.css';
 
 storiesOf('Overview', module)
     .add('Welcome', () => (
-        <div className="ma4 app-sans">
+        <div className="ma4 ">
             <h1>Welcome!</h1>
 
             <p className="measure-narrow f4">This is the pattern library for the SpotHire application. It contains the separate
@@ -150,7 +150,7 @@ storiesOf('Global', module)
 storiesOf('Content', module)
     .add('Paragraph', () => (
         <WithNotes>
-            <div className="ma4 app-sans">
+            <div className="ma4 ">
                 <p>Just a paragraph. Nothing special.</p>
                 <p>Put them one after the other, and they stack fine.</p>
                 <p className="measure">Add the <code className="bg-light-gray pa1 br1 f6">.measure</code> class to constrain it to a reasonable width (works for any element). Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores impedit ipsam laudantium modi mollitia placeat sunt vero voluptas. Ab, accusamus ad aliquam animi asperiores aspernatur consectetur, earum fuga ipsam iste laudantium, molestias nemo neque nisi nostrum nulla numquam provident quas reiciendis rem sint sit tenetur ut. Animi eius enim ipsa ipsam molestiae.</p>
@@ -168,7 +168,7 @@ storiesOf('Content', module)
     ))
     .add('Headings', () => (
         <WithNotes>
-            <div className="ma4 app-sans">
+            <div className="ma4 ">
                 <h1>Top-level heading</h1>
 
                 <p>Should only ever contain the title of the page.</p>
@@ -185,7 +185,7 @@ storiesOf('Content', module)
     ))
     .add('Lists', () => (
         <WithNotes>
-            <div className="ma4 app-sans">
+            <div className="ma4 ">
                 <p>Unordered:</p>
 
                 <ul>
@@ -446,7 +446,7 @@ const sampleEvents = require('../data/events.json');
 
 storiesOf('Scheduling', module)
     .add('DateRangePicker', () => (
-        <div className="app-sans pa4">
+        <div className=" pa4">
             <DateRangePicker
                 startDate={moment()}
                 endDate={moment().add(3, 'days')}
@@ -458,7 +458,7 @@ storiesOf('Scheduling', module)
     ))
     .add('DefaultCalendar', () => (
         <WithNotes notes="The default, full calendar.">
-            <div className="app-sans pa4" style={{height: '100vh'}}>
+            <div className=" pa4" style={{height: '100vh'}}>
                 <BigCalendar
                     events={sampleEvents}
                     startAccessor={(event) => new Date(event.start)}
@@ -469,7 +469,7 @@ storiesOf('Scheduling', module)
     ))
     .add('OverviewCalendar', () => (
         <WithNotes notes="">
-            <div className="app-sans pa4">
+            <div className=" pa4">
                 <div className="bg-white ba b--black-20 sh-shadow-2">
                     <h2 className="bg-blue-yonder washed-yellow bb bw1 b--white-40 ma0 pa3 f5">Calendar</h2>
                     <OverviewCalendar

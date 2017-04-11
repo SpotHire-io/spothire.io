@@ -25,7 +25,7 @@ class UserList extends React.Component {
     }
 
     renderNewUserRow() {
-        const inputClasses = 'w-100 pa1 app-sans';
+        const inputClasses = 'w-100 pa1 ';
 
         return (
             <Tr className="mt0">
@@ -109,7 +109,7 @@ class UserList extends React.Component {
 
     render() {
         const wrapperClasses = classNames({
-            'bg-white ba b--black-20 sh-shadow-2 app-sans': true,
+            'bg-white ba b--black-20 sh-shadow-2 ': true,
             [this.props.className]: true
         });
 

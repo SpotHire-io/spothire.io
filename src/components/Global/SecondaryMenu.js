@@ -32,7 +32,7 @@ class SecondaryMenu extends React.Component {
 
     render() {
         const wrapperClasses = classNames({
-            'bb bw1 b--blue-yonder app-sans': true,
+            'bb bw1 b--blue-yonder ': true,
             [this.props.className]: true
         });
 
