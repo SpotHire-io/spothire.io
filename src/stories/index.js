@@ -12,6 +12,7 @@ const START_DATE = require('react-dates/constants').START_DATE;
 
 const MainMenu = require('../components/Global/MainMenu');
 const SecondaryMenu = require('../components/Global/SecondaryMenu');
+const Box = require('../components/Global/Box');
 
 const BasicButton = require('../components/Buttons/BasicButton');
 
@@ -144,6 +145,24 @@ storiesOf('Global', module)
                     }
                 ]}
             />
+        </WithNotes>
+    ))
+    .add('Box without title', () => (
+        <WithNotes>
+            <div className="ma4">
+                <Box>
+                    <p>Some test content in the Box.</p>
+                </Box>
+            </div>
+        </WithNotes>
+    ))
+    .add('Box with title', () => (
+        <WithNotes>
+            <div className="ma4">
+                <Box title="Box title">
+                    <p>Some test content in the Box.</p>
+                </Box>
+            </div>
         </WithNotes>
     ));
 
