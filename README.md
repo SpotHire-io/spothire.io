@@ -6,6 +6,7 @@ To run:
 
 * `yarn install` (first run only)
 * `yarn start`
+* `yarn run build-css`
 * `yarn run storybook`
 
 Load <http://localhost:9009/> to see the storybook (pattern/component library),
