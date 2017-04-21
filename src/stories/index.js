@@ -379,6 +379,9 @@ const sampleFilterContainer = (className) => (
             label="Single select"
             type="select"
             data={{
+                inputProps: {
+                    id: 'select1'
+                },
                 options: [
                     {
                         value: '1',
@@ -396,6 +399,9 @@ const sampleFilterContainer = (className) => (
             label="Multi select"
             type="select"
             data={{
+                inputProps: {
+                    id: 'select2'
+                },
                 options: [
                     {
                         value: '1',
@@ -436,10 +442,12 @@ storiesOf('Filters', module)
     .add('Filter:Select', () => (
         <WithNotes notes="The `data` array should have a `value` set as the initial value. `onChange` should be a callback that alters the `data.value`.">
             <Filter
-                id="select2"
                 type="select"
                 data={{
                     currentlySelectedId: 1,
+                    inputProps: {
+                        id: 'select2'
+                    },
                     options: [
                         {
                             id: 1,
