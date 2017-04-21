@@ -8,6 +8,7 @@ class MainMenu extends React.Component {
     constructor() {
         super();
 
+        this.renderLogo = this.renderLogo.bind(this);
         this.renderNavLink = this.renderNavLink.bind(this);
         this.renderUserMenu = this.renderUserMenu.bind(this);
         this.toggleUserMenu = this.toggleUserMenu.bind(this);
@@ -23,6 +24,14 @@ class MainMenu extends React.Component {
         let isUserMenuOpen = (this.state.isUserMenuOpen) ? false : true;
 
         this.setState({ isUserMenuOpen });
+    }
+
+    renderLogo() {
+        return (
+            <div className={this.commonItemWrapperClasses}>
+                <img src="/img/logo-white.svg" alt="SpotHire logo" className="h1 v-mid"/>
+            </div>
+        );
     }
 
     renderNavLink(linkText, isSelected) {
@@ -81,9 +90,7 @@ class MainMenu extends React.Component {
         return (
             <div className="relative">
                 <div className="flex  shadow-4 bg-blue-yonder bb bt bw1 b--white-40" onClick={() => (this.state.isUserMenuOpen) ? this.toggleUserMenu() : null}>
-                    <div className={this.commonItemWrapperClasses}>
-                        <p className="b ma0 lh-solid">SpotHire</p>
-                    </div>
+                    {this.renderLogo()}
                     <nav className="flex-auto flex items-start">
                         {
                             menuItems.map((text) => this.renderNavLink(text, text === this.props.selectedItem))
