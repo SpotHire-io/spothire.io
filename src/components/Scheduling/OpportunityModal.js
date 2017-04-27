@@ -46,10 +46,17 @@ class OpportunityModal extends React.Component {
                 className="sh-modal sh-shadow-2 "
                 onRequestClose={this.props.closeModal}
             >
-                <h2 className="mt0 mb2">New Event</h2>
+                <h2 className="mt0 m4">New Event</h2>
 
-                <label className="f6 db mt1" htmlFor="opp_name">Name</label>
-                <input className="mt2 pv2 ph2 w-100" type="text" id="opp_name" name="opp_name"/>
+                <p className="mt3">
+                    <label className="f6 db" htmlFor="opp_name">Name</label>
+                    <input className="mt2 pv2 ph2 w-100" type="text" id="opp_name" name="opp_name"/>
+                </p>
+
+                <p className="mt3">
+                    <label className="f6 db" htmlFor="opp_location">Location</label>
+                    <input className="mt2 pv2 ph2 w-100" type="text" id="opp_location" name="opp_location"/>
+                </p>
 
                 {[
                     'Start',
@@ -57,7 +64,7 @@ class OpportunityModal extends React.Component {
                 ].map((end) => (
                     <div className="flex" key={end}>
                         <dl className="w-50 mr4 mb0 mt3">
-                            <dt className="f6 ml0 mb2 mt1">{end} date</dt>
+                            <dt className="f6 ml0 mb2">{end} date</dt>
                             <dd className="ml0">
                                 <SingleDatePickerFocusContainer
                                     date={moment(this.props.selectedDates[end.toLowerCase()])}
@@ -83,7 +90,7 @@ class OpportunityModal extends React.Component {
                         </dl>
 
                         <dl className="w-50 mb0 mt3">
-                            <dt className="f6 ml0 mb2 mt1">{end} time</dt>
+                            <dt className="f6 ml0 mb2">{end} time</dt>
                             <dd className="ml0">
                                 <TimePicker
                                     value={moment(this.props.selectedDates[end.toLowerCase()])}
