@@ -1,5 +1,4 @@
 const React      = require('react');
-const classNames = require('classnames');
 
 const moment      = require('moment');
 
@@ -34,30 +33,16 @@ class SingleDatePickerFocusContainer extends React.Component {
 class OpportunityModal extends React.Component {
     constructor() {
         super();
-
-        this.state = {
-            isModalOpen: false,
-            selectedDates: {
-                start: new Date(1970, 0, 0),
-                end: new Date(1970, 0, 0)
-            }
-        };
-
-        this.closeModal = this.closeModal.bind(this);
-    }
-
-    closeModal() {
-        this.setState({ isModalOpen: false });
     }
 
     render() {
         return (
             <Modal
-                isOpen={this.state.isModalOpen}
+                isOpen={this.props.isModalOpen}
                 contentLabel={"New event modal"}
                 overlayClassName="sh-modal-overlay"
                 className="sh-modal sh-shadow-2 "
-                onRequestClose={this.closeModal}
+                onRequestClose={this.props.closeModal}
             >
                 <h2 className="mt0 mb2">New Event</h2>
 
@@ -70,9 +55,9 @@ class OpportunityModal extends React.Component {
                             <dt className="f6 ml0 mb2">{end} date</dt>
                             <dd className="ml0">
                                 <SingleDatePickerFocusContainer
-                                    date={moment(this.state.selectedDates[end.toLowerCase()])}
+                                    date={moment(this.props.selectedDates[end.toLowerCase()])}
                                     onDateChange={newDate => {
-                                        let selectedDates = {...this.state.selectedDates};
+                                        let selectedDates = {...this.props.selectedDates};
                                         const oldTime     = moment(selectedDates[end.toLowerCase()]); // copy current time
 
                                         selectedDates[end.toLowerCase()] = moment({
@@ -84,7 +69,7 @@ class OpportunityModal extends React.Component {
                                             second: oldTime.second()
                                         });
 
-                                        this.setState({ selectedDates });
+                                        this.props.setSelectedDates(selectedDates);
                                     }}
                                     withPortal={true}
                                     displayFormat="MMMM Do, YYYY"
@@ -96,16 +81,16 @@ class OpportunityModal extends React.Component {
                             <dt className="f6 ml0 mb2">{end} time</dt>
                             <dd className="ml0">
                                 <TimePicker
-                                    value={moment(this.state.selectedDates[end.toLowerCase()])}
+                                    value={moment(this.props.selectedDates[end.toLowerCase()])}
                                     showSecond={false}
                                     allowEmpty={false}
                                     use12Hours={true}
                                     onChange={newTime => {
-                                        let selectedDates = {...this.state.selectedDates};
+                                        let selectedDates = {...this.props.selectedDates};
 
                                         selectedDates[end.toLowerCase()] = newTime;
 
-                                        this.setState({ selectedDates });
+                                        this.props.setSelectedDates(selectedDates);
                                     }}
                                 />
                             </dd>
@@ -114,20 +99,19 @@ class OpportunityModal extends React.Component {
                 ))}
 
                 <div className="tr">
-                    <BasicButton className="button--neutral mt3" onClick={() => this.closeModal()}>Cancel</BasicButton>
-                    <BasicButton className="button--positive mt3 ml3" onClick={() => this.closeModal()}>Create</BasicButton>
+                    <BasicButton className="button--neutral mt3" onClick={() => this.props.closeModal()}>Cancel</BasicButton>
+                    <BasicButton className="button--positive mt3 ml3" onClick={() => this.props.closeModal()}>Create</BasicButton>
                 </div>
             </Modal>
         )
     }
 }
 
-OpportunityModal.defaultProps = {
-    className: ''
-};
-
 OpportunityModal.propTypes = {
-
+    isModalOpen: React.PropTypes.bool.isRequired,
+    closeModal: React.PropTypes.func.isRequired,
+    setSelectedDates: React.PropTypes.func.isRequired,
+    selectedDates: React.PropTypes.object.isRequired
 };
 
 module.exports = OpportunityModal;
