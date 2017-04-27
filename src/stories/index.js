@@ -106,17 +106,15 @@ storiesOf('Views', module)
         <div>
             <MainMenu selectedItem="Schedule"/>
             <div className="pa4 bg-near-white">
-                <div className="bg-white ba b--black-20 sh-shadow-2">
-                    <h2 className="bg-blue-yonder washed-yellow bb bw1 b--white-40 ma0 pa3 f5">Calendar</h2>
+                <Box title="Calendar">
                     <OverviewCalendar
-                        className="pa3"
                         events={sampleEvents}
                         filter={{
                             property: 'userId',
                             values: [0]
                         }}
                     />
-                </div>
+                </Box>
             </div>
         </div>
     ));
