@@ -2,6 +2,10 @@
     width: 100%;
 }
 
+.SingleDatePickerInput {
+    border-color: #cccccc;
+}
+
 .DayPicker {
     @extend ff-app-sans;
 }

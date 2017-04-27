@@ -49,7 +49,7 @@ class OpportunityModal extends React.Component {
                 <h2 className="mt0 mb2">New Event</h2>
 
                 <label className="f6 db" htmlFor="opp_name">Name</label>
-                <input className="mt2 pv2 ph2 w-100" type="text" id="opp_name" name="opp_name"/>
+                <input className="mt2 pv2 ph2 w-100 mb2" type="text" id="opp_name" name="opp_name"/>
 
                 {[
                     'Start',
