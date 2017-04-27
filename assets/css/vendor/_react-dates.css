@@ -12,6 +12,7 @@
 
 .DateInput {
     @extend input-box;
+    border: 0;
 }
 
 .DateInput__display-text {

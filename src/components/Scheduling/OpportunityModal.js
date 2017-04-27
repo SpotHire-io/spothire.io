@@ -50,12 +50,17 @@ class OpportunityModal extends React.Component {
 
                 <p className="mt3">
                     <label className="f6 db" htmlFor="opp_name">Name</label>
-                    <input className="mt2 pv2 ph2 w-100" type="text" id="opp_name" name="opp_name"/>
+                    <input className="mt2 w-100" type="text" id="opp_name" name="opp_name"/>
                 </p>
 
                 <p className="mt3">
                     <label className="f6 db" htmlFor="opp_location">Location</label>
-                    <input className="mt2 pv2 ph2 w-100" type="text" id="opp_location" name="opp_location"/>
+                    <input className="mt2 w-100" type="text" id="opp_location" name="opp_location"/>
+                </p>
+
+                <p className="mt3">
+                    <label className="f6 db" htmlFor="opp_notes">Notes</label>
+                    <textarea className="mt2 w-100" name="opp_notes" id="opp_notes" cols="30" rows="5"/>
                 </p>
 
                 {[

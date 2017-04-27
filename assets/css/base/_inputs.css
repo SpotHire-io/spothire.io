@@ -7,9 +7,10 @@
     color: #333333;
 
     border-radius: 0;
-    border-color: #cccccc;
+    border: 1px solid #cccccc;
 }
 
-input {
+input, textarea {
     @extend ff-app-sans;
+    @extend input-box;
 }
