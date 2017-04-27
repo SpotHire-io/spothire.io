@@ -38,7 +38,7 @@ class OpportunityModal extends React.Component {
     render() {
         return (
             <Modal
-                isOpen={this.props.isModalOpen}
+                isOpen={this.props.isOpen}
                 contentLabel={"New event modal"}
                 overlayClassName="sh-modal-overlay"
                 className="sh-modal sh-shadow-2 "
@@ -108,7 +108,7 @@ class OpportunityModal extends React.Component {
 }
 
 OpportunityModal.propTypes = {
-    isModalOpen: React.PropTypes.bool.isRequired,
+    isOpen: React.PropTypes.bool.isRequired,
     closeModal: React.PropTypes.func.isRequired,
     setSelectedDates: React.PropTypes.func.isRequired,
     selectedDates: React.PropTypes.object.isRequired
