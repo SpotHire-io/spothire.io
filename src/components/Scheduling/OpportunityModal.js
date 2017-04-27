@@ -4,7 +4,7 @@ const moment      = require('moment');
 
 const Modal = require('react-modal');
 
-import { Input } from 'rebass';
+import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
 
 const BasicButton = require('../Buttons/BasicButton');
 
@@ -46,74 +46,90 @@ class OpportunityModal extends React.Component {
                 className="sh-modal sh-shadow-2 "
                 onRequestClose={this.props.closeModal}
             >
-                <h2 className="mt0 m4">New Event</h2>
+                <SectionSwitcher sections={[
+                    {
+                        key: 'basic',
+                        name: 'Basic Info',
+                        content: (
+                            <div>
+                                <p className="mt3">
+                                    <label className="f6 db" htmlFor="opp_name">Name</label>
+                                    <input className="mt2 w-100" type="text" id="opp_name" name="opp_name"/>
+                                </p>
 
-                <p className="mt3">
-                    <label className="f6 db" htmlFor="opp_name">Name</label>
-                    <input className="mt2 w-100" type="text" id="opp_name" name="opp_name"/>
-                </p>
+                                <p className="mt3">
+                                    <label className="f6 db" htmlFor="opp_location">Location</label>
+                                    <input className="mt2 w-100" type="text" id="opp_location" name="opp_location"/>
+                                </p>
 
-                <p className="mt3">
-                    <label className="f6 db" htmlFor="opp_location">Location</label>
-                    <input className="mt2 w-100" type="text" id="opp_location" name="opp_location"/>
-                </p>
+                                <p className="mt3">
+                                    <label className="f6 db" htmlFor="opp_notes">Notes</label>
+                                    <textarea className="mt2 w-100" name="opp_notes" id="opp_notes" cols="30" rows="5"/>
+                                </p>
 
-                <p className="mt3">
-                    <label className="f6 db" htmlFor="opp_notes">Notes</label>
-                    <textarea className="mt2 w-100" name="opp_notes" id="opp_notes" cols="30" rows="5"/>
-                </p>
+                                {[
+                                    'Start',
+                                    'End'
+                                ].map((end) => (
+                                    <div className="flex" key={end}>
+                                        <dl className="w-50 mr4 mb0 mt3">
+                                            <dt className="f6 ml0 mb2">{end} date</dt>
+                                            <dd className="ml0">
+                                                <SingleDatePickerFocusContainer
+                                                    date={moment(this.props.selectedDates[end.toLowerCase()])}
+                                                    onDateChange={newDate => {
+                                                        let selectedDates = {...this.props.selectedDates};
+                                                        const oldTime     = moment(selectedDates[end.toLowerCase()]); // copy current time
 
-                {[
-                    'Start',
-                    'End'
-                ].map((end) => (
-                    <div className="flex" key={end}>
-                        <dl className="w-50 mr4 mb0 mt3">
-                            <dt className="f6 ml0 mb2">{end} date</dt>
-                            <dd className="ml0">
-                                <SingleDatePickerFocusContainer
-                                    date={moment(this.props.selectedDates[end.toLowerCase()])}
-                                    onDateChange={newDate => {
-                                        let selectedDates = {...this.props.selectedDates};
-                                        const oldTime     = moment(selectedDates[end.toLowerCase()]); // copy current time
+                                                        selectedDates[end.toLowerCase()] = moment({
+                                                            year: newDate.year(),
+                                                            month: newDate.month(),
+                                                            date: newDate.date(),
+                                                            hour: oldTime.hour(),
+                                                            minute: oldTime.minute(),
+                                                            second: oldTime.second()
+                                                        });
 
-                                        selectedDates[end.toLowerCase()] = moment({
-                                            year: newDate.year(),
-                                            month: newDate.month(),
-                                            date: newDate.date(),
-                                            hour: oldTime.hour(),
-                                            minute: oldTime.minute(),
-                                            second: oldTime.second()
-                                        });
+                                                        this.props.setSelectedDates(selectedDates);
+                                                    }}
+                                                    withPortal={true}
+                                                    displayFormat="MMMM Do, YYYY"
+                                                />
+                                            </dd>
+                                        </dl>
 
-                                        this.props.setSelectedDates(selectedDates);
-                                    }}
-                                    withPortal={true}
-                                    displayFormat="MMMM Do, YYYY"
-                                />
-                            </dd>
-                        </dl>
+                                        <dl className="w-50 mb0 mt3">
+                                            <dt className="f6 ml0 mb2">{end} time</dt>
+                                            <dd className="ml0">
+                                                <TimePicker
+                                                    value={moment(this.props.selectedDates[end.toLowerCase()])}
+                                                    showSecond={false}
+                                                    allowEmpty={false}
+                                                    use12Hours={true}
+                                                    onChange={newTime => {
+                                                        let selectedDates = {...this.props.selectedDates};
 
-                        <dl className="w-50 mb0 mt3">
-                            <dt className="f6 ml0 mb2">{end} time</dt>
-                            <dd className="ml0">
-                                <TimePicker
-                                    value={moment(this.props.selectedDates[end.toLowerCase()])}
-                                    showSecond={false}
-                                    allowEmpty={false}
-                                    use12Hours={true}
-                                    onChange={newTime => {
-                                        let selectedDates = {...this.props.selectedDates};
+                                                        selectedDates[end.toLowerCase()] = newTime;
 
-                                        selectedDates[end.toLowerCase()] = newTime;
+                                                        this.props.setSelectedDates(selectedDates);
+                                                    }}
+                                                />
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                ))}
+                            </div>
+                        )
+                    },
+                    {
+                        key: 'invitees',
+                        name: 'Invitees',
+                        content: (
+                            <p>Some people</p>
+                        )
+                    }
+                ]}/>
 
-                                        this.props.setSelectedDates(selectedDates);
-                                    }}
-                                />
-                            </dd>
-                        </dl>
-                    </div>
-                ))}
 
                 <div className="tr">
                     <BasicButton className="button--neutral mt3" onClick={() => this.props.closeModal()}>Cancel</BasicButton>
