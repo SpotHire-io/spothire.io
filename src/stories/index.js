@@ -23,6 +23,7 @@ const FilterContainer = require('../components/Filters/FilterContainer');
 const Filter = require('../components/Filters/Filter');
 
 const OverviewCalendar = require('../components/Scheduling/OverviewCalendar');
+import OpportunityModal from '../components/Scheduling/OpportunityModal';
 
 const UserTable = require('../components/Miscellaneous/UserTable');
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
@@ -505,6 +506,19 @@ storiesOf('Scheduling', module)
                     />
                 </Box>
             </div>
+        </WithNotes>
+    ))
+    .add('OpportunityModal', () => (
+        <WithNotes notes="">
+            <OpportunityModal
+                setSelectedDates={(selectedDates) => console.log(selectedDates)}
+                closeModal={() => console.log('modal "closed"')}
+                isOpen={true}
+                selectedDates={{
+                    start: new Date(1970, 0, 0),
+                    end: new Date(1970, 0, 0)
+                }}
+            />
         </WithNotes>
     ));
 
