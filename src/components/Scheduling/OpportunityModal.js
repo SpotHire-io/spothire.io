@@ -4,6 +4,8 @@ const moment      = require('moment');
 
 const Modal = require('react-modal');
 
+import { Input } from 'rebass';
+
 const BasicButton = require('../Buttons/BasicButton');
 
 const SingleDatePicker = require('react-dates').SingleDatePicker;
@@ -45,6 +47,9 @@ class OpportunityModal extends React.Component {
                 onRequestClose={this.props.closeModal}
             >
                 <h2 className="mt0 mb2">New Event</h2>
+
+                <label className="f6 db" htmlFor="opp_name">Name</label>
+                <input className="mt2 pv2 ph2 w-100" type="text" id="opp_name" name="opp_name"/>
 
                 {[
                     'Start',
