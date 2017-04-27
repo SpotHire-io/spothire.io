@@ -24,7 +24,7 @@ class SectionSwitcher extends React.Component {
         return (
             <div>
                 <SecondaryMenu
-                    className="ph4"
+                    className={this.props.secondaryMenuClassName}
                     items={this.props.sections.map((section, index) => {
                         return {
                             key: section.key,
@@ -35,13 +35,15 @@ class SectionSwitcher extends React.Component {
                     })}
                     onClick={this.setActiveSection}
                 />
-                <div className="pa4 bg-near-white">
-                    {this.props.sections[this.state.activeSectionIndex].content}
-                </div>
+                {this.props.sections[this.state.activeSectionIndex].content}
             </div>
         );
     }
 }
+
+SectionSwitcher.defaultProps = {
+    secondaryMenuClassName: 'ph4'
+};
 
 SectionSwitcher.propTypes = {
     sections: React.PropTypes.array.isRequired
