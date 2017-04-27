@@ -64,11 +64,6 @@ class OpportunityModal extends React.Component {
                                         <input className="mt2 w-100" type="text" id="opp_location" name="opp_location"/>
                                     </p>
 
-                                    <p className="mt3">
-                                        <label className="f6 db" htmlFor="opp_notes">Notes</label>
-                                        <textarea className="mt2 w-100" name="opp_notes" id="opp_notes" cols="30" rows="5"/>
-                                    </p>
-
                                     {[
                                         'Start',
                                         'End'
@@ -120,6 +115,11 @@ class OpportunityModal extends React.Component {
                                             </dl>
                                         </div>
                                     ))}
+
+                                    <p className="mt3">
+                                        <label className="f6 db" htmlFor="opp_notes">Notes</label>
+                                        <textarea className="mt2 w-100" name="opp_notes" id="opp_notes" cols="30" rows="5"/>
+                                    </p>
                                 </div>
                             )
                         },
