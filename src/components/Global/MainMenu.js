@@ -13,7 +13,7 @@ class MainMenu extends React.Component {
         this.renderUserMenu = this.renderUserMenu.bind(this);
         this.toggleUserMenu = this.toggleUserMenu.bind(this);
 
-        this.commonItemWrapperClasses = 'washed-yellow pv3 ph4';
+        this.commonItemWrapperClasses = 'white pv3 ph4';
 
         this.state = {
             isUserMenuOpen: false
@@ -66,7 +66,7 @@ class MainMenu extends React.Component {
                             <li className="mt0" key={text}>
                                 <a
                                     href="#"
-                                    className="pa2 db no-underline near-black hover-bg-blue-yonder hover-washed-yellow"
+                                    className="pa2 db no-underline near-black hover-bg-blue-yonder hover-white"
                                 >
                                     {text}
                                 </a>

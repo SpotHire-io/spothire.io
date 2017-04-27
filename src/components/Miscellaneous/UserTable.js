@@ -93,7 +93,7 @@ class UserList extends React.Component {
 
     renderHeaderCell(column, value) {
         const cellClasses = classNames({
-            'tl bg-blue-yonder washed-yellow bb bw1 b--white-40': true,
+            'tl bg-blue-yonder white bb bw1 b--white-40': true,
             [this.commonCellClasses]: true
         });
 

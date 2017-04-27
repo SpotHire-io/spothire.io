@@ -61,7 +61,7 @@ button:active,
 .button--neutral {
     background: #777777;
 
-    color: #FFFDF0;
+    color: #ffffff;
 }
 
 .button--neutral:hover {
@@ -71,7 +71,7 @@ button:active,
 .button--standard {
     background: rgb(84, 119, 166);
 
-    color: #FFFDF0;
+    color: #ffffff;
 }
 
 .button--standard:hover {
@@ -81,7 +81,7 @@ button:active,
 .button--positive {
     background: rgb(19, 119, 82);
 
-    color: #FFFDF0;
+    color: #ffffff;
 }
 
 .button--positive:hover {
@@ -91,7 +91,7 @@ button:active,
 .button--negative {
     background: rgb(231, 4, 15);
 
-    color: #FFFDF0;
+    color: #ffffff;
 }
 
 .button--negative:hover {
