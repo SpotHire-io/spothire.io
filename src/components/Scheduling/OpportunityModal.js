@@ -127,7 +127,7 @@ class OpportunityModal extends React.Component {
                             key: 'invitees',
                             name: 'Invitees',
                             content: (
-                                <p>Some people</p>
+                                <p>Interface to add people...</p>
                             )
                         }
                     ]}
