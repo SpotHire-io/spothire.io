@@ -33,4 +33,6 @@
     overflow: auto;
 
     outline: none;
+
+    max-height: 75vh;
 }
