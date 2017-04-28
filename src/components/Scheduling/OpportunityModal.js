@@ -128,9 +128,9 @@ class OpportunityModal extends React.Component {
                                         </div>
                                     ))}
 
-                                    <div className="mt3" onClick={this.toggleAllDay}>
+                                    <div className="mt3" onClick={this.toggleAllDay} aria-labelledby="opp_allDay">
                                         <Switch checked={this.state.isAllDay}/>
-                                        <span className="pointer dib v-top mt2 ml2 f6">All day</span>
+                                        <span id="opp_allDay" className="pointer dib v-top mt2 ml2 f6">All day</span>
                                     </div>
 
                                     <p className="mt3">
