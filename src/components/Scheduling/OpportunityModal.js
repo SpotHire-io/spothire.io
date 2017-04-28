@@ -12,6 +12,8 @@ const SingleDatePicker = require('react-dates').SingleDatePicker;
 
 const TimePicker = require('rc-time-picker');
 
+import { Switch } from 'rebass';
+
 class SingleDatePickerFocusContainer extends React.Component {
     constructor() {
         super();
@@ -28,6 +30,31 @@ class SingleDatePickerFocusContainer extends React.Component {
                 focused={this.state.isFocused}
                 onFocusChange={({ focused }) => this.setState({ isFocused: focused })}
             />
+        )
+    }
+}
+
+class AllDaySwitch extends React.Component {
+    constructor() {
+        super();
+
+        this.toggle = this.toggle.bind(this);
+
+        this.state = {
+            isAllDay: false
+        };
+    }
+
+    toggle() {
+        this.setState({ isAllDay: ! this.state.isAllDay });
+    }
+
+    render() {
+        return (
+            <div className={this.props.className} onClick={this.toggle}>
+                <Switch checked={this.state.isAllDay}/>
+                <span className="pointer dib v-top mt2 ml2 f6">All day</span>
+            </div>
         )
     }
 }
@@ -115,6 +142,8 @@ class OpportunityModal extends React.Component {
                                             </dl>
                                         </div>
                                     ))}
+
+                                    <AllDaySwitch className="mt3"/>
 
                                     <p className="mt3">
                                         <label className="f6 db" htmlFor="opp_notes">Notes</label>

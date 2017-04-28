@@ -22,7 +22,7 @@ class SectionSwitcher extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={this.props.className}>
                 <SecondaryMenu
                     className={this.props.secondaryMenuClassName}
                     items={this.props.sections.map((section, index) => {
@@ -42,6 +42,7 @@ class SectionSwitcher extends React.Component {
 }
 
 SectionSwitcher.defaultProps = {
+    className: '',
     secondaryMenuClassName: 'ph4'
 };
 
