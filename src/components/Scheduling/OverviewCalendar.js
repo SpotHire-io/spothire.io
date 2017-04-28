@@ -18,9 +18,12 @@ class OverviewCalendar extends React.Component {
 
         this.state = {
             isModalOpen: false,
-            selectedDates: {
-                start: new Date(1970, 0, 0),
-                end: new Date(1970, 0, 0)
+            opportunity: {
+                isAllDay: false,
+                selectedDates: {
+                    start: new Date(1970, 0, 0),
+                    end: new Date(1970, 0, 0)
+                }
             }
         };
 
@@ -30,8 +33,12 @@ class OverviewCalendar extends React.Component {
 
     handleSelectSlot( selectedDates ) {
         const isModalOpen = true;
+        const opportunity = { ...this.state.opportunity }; // copy opportunity state
 
-        this.setState({ isModalOpen, selectedDates });
+        // Pass in new dates for opportunity
+        opportunity.selectedDates = selectedDates;
+
+        this.setState({ isModalOpen, opportunity });
 
         return true;
     }
