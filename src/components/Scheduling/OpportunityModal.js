@@ -39,14 +39,14 @@ class OpportunityModal extends React.Component {
         super();
 
         this.toggleAllDay = this.toggleAllDay.bind(this);
-
-        this.state = {
-            isAllDay: false
-        };
     }
 
     toggleAllDay() {
-        this.setState({ isAllDay: ! this.state.isAllDay });
+        const opportunity = { ...this.props.opportunity };
+
+        opportunity.isAllDay = ! this.props.opportunity.isAllDay;
+
+        this.props.updateOpportunity(opportunity);
     }
 
     render() {
@@ -85,12 +85,12 @@ class OpportunityModal extends React.Component {
                                                 <dt className="f6 ml0 mb2">{end} date</dt>
                                                 <dd className="ml0">
                                                     <SingleDatePickerFocusContainer
-                                                        date={moment(this.props.selectedDates[end.toLowerCase()])}
+                                                        date={moment(this.props.opportunity.selectedDates[end.toLowerCase()])}
                                                         onDateChange={newDate => {
-                                                            let selectedDates = {...this.props.selectedDates};
-                                                            const oldTime     = moment(selectedDates[end.toLowerCase()]); // copy current time
+                                                            const opportunity = {...this.props.opportunity};
+                                                            const oldTime     = moment(opportunity.selectedDates[end.toLowerCase()]); // copy current time
 
-                                                            selectedDates[end.toLowerCase()] = moment({
+                                                            opportunity.selectedDates[end.toLowerCase()] = moment({
                                                                 year: newDate.year(),
                                                                 month: newDate.month(),
                                                                 date: newDate.date(),
@@ -99,7 +99,7 @@ class OpportunityModal extends React.Component {
                                                                 second: oldTime.second()
                                                             });
 
-                                                            this.props.setSelectedDates(selectedDates);
+                                                            this.props.updateOpportunity(opportunity);
                                                         }}
                                                         withPortal={true}
                                                         displayFormat="MMMM Do, YYYY"
@@ -111,16 +111,16 @@ class OpportunityModal extends React.Component {
                                                 <dt className="f6 ml0 mb2">{end} time</dt>
                                                 <dd className="ml0">
                                                     <TimePicker
-                                                        value={moment(this.props.selectedDates[end.toLowerCase()])}
+                                                        value={moment(this.props.opportunity.selectedDates[end.toLowerCase()])}
                                                         showSecond={false}
                                                         allowEmpty={false}
                                                         use12Hours={true}
                                                         onChange={newTime => {
-                                                            let selectedDates = {...this.props.selectedDates};
+                                                            const opportunity = {...this.props.opportunity};
 
-                                                            selectedDates[end.toLowerCase()] = newTime;
+                                                            opportunity.selectedDates[end.toLowerCase()] = newTime;
 
-                                                            this.props.setSelectedDates(selectedDates);
+                                                            this.props.updateOpportunity(opportunity);
                                                         }}
                                                     />
                                                 </dd>
@@ -129,7 +129,7 @@ class OpportunityModal extends React.Component {
                                     ))}
 
                                     <div className="mt3" onClick={this.toggleAllDay} aria-labelledby="opp_allDay">
-                                        <Switch checked={this.state.isAllDay}/>
+                                        <Switch checked={this.props.opportunity.isAllDay}/>
                                         <span id="opp_allDay" className="pointer dib v-top mt2 ml2 f6">All day</span>
                                     </div>
 
@@ -163,8 +163,8 @@ class OpportunityModal extends React.Component {
 OpportunityModal.propTypes = {
     isOpen: React.PropTypes.bool.isRequired,
     closeModal: React.PropTypes.func.isRequired,
-    setSelectedDates: React.PropTypes.func.isRequired,
-    selectedDates: React.PropTypes.object.isRequired
+    updateOpportunity: React.PropTypes.func.isRequired,
+    opportunity: React.PropTypes.object.isRequired
 };
 
 module.exports = OpportunityModal;

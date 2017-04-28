@@ -47,8 +47,8 @@ class OverviewCalendar extends React.Component {
         this.setState({ isModalOpen: false });
     }
 
-    setSelectedDates(selectedDates) {
-        this.setState({ selectedDates });
+    updateOpportunity( opportunity ) {
+        this.setState({ opportunity });
     }
 
     render() {
@@ -96,8 +96,8 @@ class OverviewCalendar extends React.Component {
                 <OpportunityModal
                     isOpen={this.state.isModalOpen}
                     closeModal={this.closeModal}
-                    selectedDates={this.state.selectedDates}
-                    setSelectedDates={this.setSelectedDates}
+                    opportunity={this.state.opportunity}
+                    updateOpportunity={this.updateOpportunity}
                 />
             </div>
         )

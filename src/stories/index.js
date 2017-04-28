@@ -511,12 +511,15 @@ storiesOf('Scheduling', module)
     .add('OpportunityModal', () => (
         <WithNotes notes="">
             <OpportunityModal
-                setSelectedDates={(selectedDates) => console.log(selectedDates)}
+                updateOpportunity={(opportunity) => console.log(opportunity)}
                 closeModal={() => console.log('modal "closed"')}
                 isOpen={true}
-                selectedDates={{
-                    start: new Date(1970, 0, 0),
-                    end: new Date(1970, 0, 0)
+                opportunity={{
+                    isAllDay: false,
+                    selectedDates: {
+                        start: new Date(1970, 0, 0),
+                        end: new Date(1970, 0, 0)
+                    }
                 }}
             />
         </WithNotes>
