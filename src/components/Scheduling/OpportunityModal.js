@@ -34,34 +34,19 @@ class SingleDatePickerFocusContainer extends React.Component {
     }
 }
 
-class AllDaySwitch extends React.Component {
+class OpportunityModal extends React.Component {
     constructor() {
         super();
 
-        this.toggle = this.toggle.bind(this);
+        this.toggleAllDay = this.toggleAllDay.bind(this);
 
         this.state = {
             isAllDay: false
         };
     }
 
-    toggle() {
+    toggleAllDay() {
         this.setState({ isAllDay: ! this.state.isAllDay });
-    }
-
-    render() {
-        return (
-            <div className={this.props.className} onClick={this.toggle}>
-                <Switch checked={this.state.isAllDay}/>
-                <span className="pointer dib v-top mt2 ml2 f6">All day</span>
-            </div>
-        )
-    }
-}
-
-class OpportunityModal extends React.Component {
-    constructor() {
-        super();
     }
 
     render() {
@@ -143,7 +128,10 @@ class OpportunityModal extends React.Component {
                                         </div>
                                     ))}
 
-                                    <AllDaySwitch className="mt3"/>
+                                    <div className="mt3" onClick={this.toggleAllDay}>
+                                        <Switch checked={this.state.isAllDay}/>
+                                        <span className="pointer dib v-top mt2 ml2 f6">All day</span>
+                                    </div>
 
                                     <p className="mt3">
                                         <label className="f6 db" htmlFor="opp_notes">Notes</label>
