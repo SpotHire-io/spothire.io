@@ -29,6 +29,7 @@ class OverviewCalendar extends React.Component {
 
         this.handleSelectSlot = this.handleSelectSlot.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.updateOpportunity = this.updateOpportunity.bind(this);
     }
 
     handleSelectSlot( selectedDates ) {
