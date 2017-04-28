@@ -39,6 +39,7 @@ class OpportunityModal extends React.Component {
         super();
 
         this.toggleAllDay = this.toggleAllDay.bind(this);
+        this.renderDateTimePicker = this.renderDateTimePicker.bind(this);
     }
 
     toggleAllDay() {
@@ -47,6 +48,57 @@ class OpportunityModal extends React.Component {
         opportunity.isAllDay = ! this.props.opportunity.isAllDay;
 
         this.props.updateOpportunity(opportunity);
+    }
+
+    renderDateTimePicker(end) {
+        return (
+            <div className="flex" key={end}>
+                <dl className="w-50 mr4 mb0 mt3">
+                    <dt className="f6 ml0 mb2">{end} date</dt>
+                    <dd className="ml0">
+                        <SingleDatePickerFocusContainer
+                            date={moment(this.props.opportunity.selectedDates[end.toLowerCase()])}
+                            onDateChange={newDate => {
+                                const opportunity = {...this.props.opportunity};
+                                const oldTime     = moment(opportunity.selectedDates[end.toLowerCase()]); // copy current time
+
+                                opportunity.selectedDates[end.toLowerCase()] = moment({
+                                    year: newDate.year(),
+                                    month: newDate.month(),
+                                    date: newDate.date(),
+                                    hour: oldTime.hour(),
+                                    minute: oldTime.minute(),
+                                    second: oldTime.second()
+                                });
+
+                                this.props.updateOpportunity(opportunity);
+                            }}
+                            withPortal={true}
+                            displayFormat="MMMM Do, YYYY"
+                        />
+                    </dd>
+                </dl>
+
+                <dl className="w-50 mb0 mt3">
+                    <dt className="f6 ml0 mb2">{end} time</dt>
+                    <dd className="ml0">
+                        <TimePicker
+                            value={moment(this.props.opportunity.selectedDates[end.toLowerCase()])}
+                            showSecond={false}
+                            allowEmpty={false}
+                            use12Hours={true}
+                            onChange={newTime => {
+                                const opportunity = {...this.props.opportunity};
+
+                                opportunity.selectedDates[end.toLowerCase()] = newTime;
+
+                                this.props.updateOpportunity(opportunity);
+                            }}
+                        />
+                    </dd>
+                </dl>
+            </div>
+        );
     }
 
     render() {
@@ -79,54 +131,7 @@ class OpportunityModal extends React.Component {
                                     {[
                                         'Start',
                                         'End'
-                                    ].map((end) => (
-                                        <div className="flex" key={end}>
-                                            <dl className="w-50 mr4 mb0 mt3">
-                                                <dt className="f6 ml0 mb2">{end} date</dt>
-                                                <dd className="ml0">
-                                                    <SingleDatePickerFocusContainer
-                                                        date={moment(this.props.opportunity.selectedDates[end.toLowerCase()])}
-                                                        onDateChange={newDate => {
-                                                            const opportunity = {...this.props.opportunity};
-                                                            const oldTime     = moment(opportunity.selectedDates[end.toLowerCase()]); // copy current time
-
-                                                            opportunity.selectedDates[end.toLowerCase()] = moment({
-                                                                year: newDate.year(),
-                                                                month: newDate.month(),
-                                                                date: newDate.date(),
-                                                                hour: oldTime.hour(),
-                                                                minute: oldTime.minute(),
-                                                                second: oldTime.second()
-                                                            });
-
-                                                            this.props.updateOpportunity(opportunity);
-                                                        }}
-                                                        withPortal={true}
-                                                        displayFormat="MMMM Do, YYYY"
-                                                    />
-                                                </dd>
-                                            </dl>
-
-                                            <dl className="w-50 mb0 mt3">
-                                                <dt className="f6 ml0 mb2">{end} time</dt>
-                                                <dd className="ml0">
-                                                    <TimePicker
-                                                        value={moment(this.props.opportunity.selectedDates[end.toLowerCase()])}
-                                                        showSecond={false}
-                                                        allowEmpty={false}
-                                                        use12Hours={true}
-                                                        onChange={newTime => {
-                                                            const opportunity = {...this.props.opportunity};
-
-                                                            opportunity.selectedDates[end.toLowerCase()] = newTime;
-
-                                                            this.props.updateOpportunity(opportunity);
-                                                        }}
-                                                    />
-                                                </dd>
-                                            </dl>
-                                        </div>
-                                    ))}
+                                    ].map(this.renderDateTimePicker)}
 
                                     <div className="mt3" onClick={this.toggleAllDay} aria-labelledby="opp_allDay">
                                         <Switch checked={this.props.opportunity.isAllDay}/>
