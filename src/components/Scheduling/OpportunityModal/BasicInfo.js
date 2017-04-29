@@ -3,8 +3,6 @@ import classNames from 'classnames';
 
 const moment      = require('moment');
 
-const BasicButton = require('../../Buttons/BasicButton');
-
 const SingleDatePicker = require('react-dates').SingleDatePicker;
 
 const TimePicker = require('rc-time-picker');
