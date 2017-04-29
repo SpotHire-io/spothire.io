@@ -13,9 +13,20 @@ class OpportunityModalTalent extends React.Component {
         return (
             <div className="mt3">
                 <ButtonBar className="w-100">
-                    <RadioButton name="opp_talent_invited" id="opp_talent_invited_all" value="all" checked={this.props.opportunity.talent.invited === 'all'}>All</RadioButton>
-                    <RadioButton name="opp_talent_invited" id="opp_talent_invited_available" value="available" checked={this.props.opportunity.talent.invited === 'available'}>Available</RadioButton>
-                    <RadioButton name="opp_talent_invited" id="opp_talent_invited_selected" value="selected" checked={this.props.opportunity.talent.invited === 'selected'}>Selected</RadioButton>
+                    {[
+                        'All',
+                        'Available',
+                        'Selected'
+                    ].map((inviteType) =>
+                        <RadioButton
+                            name="opp_talent_invited"
+                            id={'opp_talent_invited_' + inviteType.toLowerCase()}
+                            value={inviteType.toLowerCase()}
+                            checked={this.props.opportunity.talent.invited === inviteType.toLowerCase()}
+                        >
+                            {inviteType}
+                        </RadioButton>
+                    )}
                 </ButtonBar>
             </div>
         )
