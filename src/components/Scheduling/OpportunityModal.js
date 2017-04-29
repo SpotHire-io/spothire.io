@@ -11,6 +11,7 @@ const BasicButton = require('../Buttons/BasicButton');
 
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
 import OpportunityModalShifts from './OpportunityModal/Shifts';
+import OpportunityModalTalent from './OpportunityModal/Talent';
 
 class OpportunityModal extends React.Component {
     constructor() {
@@ -40,9 +41,7 @@ class OpportunityModal extends React.Component {
                         {
                             key: 'talent',
                             name: 'Talent',
-                            content: (
-                                <p>Interface to add people...</p>
-                            )
+                            content: <OpportunityModalTalent {...this.props}/>
                         },
                         {
                             key: 'shifts',
