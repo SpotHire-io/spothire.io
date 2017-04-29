@@ -118,7 +118,8 @@ class OpportunityModal extends React.Component {
                 contentLabel={"New event modal"}
                 overlayClassName="sh-modal-overlay"
                 className="sh-modal sh-shadow-2 "
-                onRequestClose={ this.props.closeModal}
+                onRequestClose={this.props.closeModal}
+                closeTimeoutMS={100}
             >
                 <SectionSwitcher
                     secondaryMenuClassName=""
@@ -143,9 +144,9 @@ class OpportunityModal extends React.Component {
                                         'End'
                                     ].map(this.renderDateTimePicker)}
 
-                                    <div className="mt3" onClick={this.toggleAllDay} aria-labelledby="opp_allDay">
-                                        <Switch checked={this.props.opportunity.isAllDay}/>
-                                        <span id="opp_allDay" className="pointer dib v-top mt2 ml2 f6">All day</span>
+                                    <div className="mt3">
+                                        <Switch aria-labelledby="opp_allDay" onClick={this.toggleAllDay} checked={this.props.opportunity.isAllDay}/>
+                                        <span onClick={this.toggleAllDay} id="opp_allDay" className="pointer dib v-top mt2 ml2 f6">All day</span>
                                     </div>
 
                                     <p className="mt3">
