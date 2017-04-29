@@ -37,6 +37,8 @@ class OpportunityModalBasicInfo extends React.Component {
 
         this.toggleAllDay = this.toggleAllDay.bind(this);
         this.renderDateTimePicker = this.renderDateTimePicker.bind(this);
+        this.renderDatePicker = this.renderDatePicker.bind(this);
+        this.renderTimePicker = this.renderTimePicker.bind(this);
     }
 
     toggleAllDay() {
@@ -48,10 +50,17 @@ class OpportunityModalBasicInfo extends React.Component {
     }
 
     renderDateTimePicker(end) {
-        const commonPickerClassName = 'mb0 mt3';
+        return (
+            <div className="flex" key={end}>
+                {this.renderDatePicker(end)}
+                {this.props.opportunity.isAllDay ? null : this.renderTimePicker(end)}
+            </div>
+        );
+    }
 
-        const renderDatePicker = () => (
-            <dl className={classNames(commonPickerClassName, {'mr4 w-50': ! this.props.opportunity.isAllDay, 'w-100': this.props.opportunity.isAllDay})}>
+    renderDatePicker(end) {
+        return (
+            <dl className={classNames('mb0 mt3', {'mr4 w-50': ! this.props.opportunity.isAllDay, 'w-100': this.props.opportunity.isAllDay})}>
                 <dt className="f6 ml0 mb2">{end} date</dt>
                 <dd className="ml0">
                     <SingleDatePickerFocusContainer
@@ -77,9 +86,11 @@ class OpportunityModalBasicInfo extends React.Component {
                 </dd>
             </dl>
         );
+    }
 
-        const renderTimePicker = () => (
-            <dl className={classNames(commonPickerClassName, 'w-50')}>
+    renderTimePicker(end) {
+        return (
+            <dl className={classNames('mb0 mt3 w-50')}>
                 <dt className="f6 ml0 mb2">{end} time</dt>
                 <dd className="ml0">
                     <TimePicker
@@ -97,13 +108,6 @@ class OpportunityModalBasicInfo extends React.Component {
                     />
                 </dd>
             </dl>
-        );
-
-        return (
-            <div className="flex" key={end}>
-                {renderDatePicker()}
-                {this.props.opportunity.isAllDay ? null : renderTimePicker()}
-            </div>
         );
     }
 
