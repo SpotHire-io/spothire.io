@@ -27,7 +27,9 @@ class OpportunityModal extends React.Component {
                 onRequestClose={this.props.closeModal}
                 closeTimeoutMS={100}
             >
+                <h2 className="absolute top-0 right-0 left-0 bg-blue-yonder white bb bw1 b--white-40 ma0 pa3 f5">New Opportunity</h2>
                 <SectionSwitcher
+                    className="mt4 pt1"
                     secondaryMenuClassName=""
                     sections={[
                         {
