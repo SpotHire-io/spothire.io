@@ -7,6 +7,16 @@ import RadioButton from '../../Buttons/RadioButton';
 class OpportunityModalTalent extends React.Component {
     constructor() {
         super();
+
+        this.updateInviteType = this.updateInviteType.bind(this);
+    }
+
+    updateInviteType(inviteType) {
+        const opportunity = { ...this.props.opportunity };
+
+        opportunity.talent.invited = inviteType;
+
+        this.props.updateOpportunity(opportunity);
     }
 
     render() {
@@ -23,6 +33,7 @@ class OpportunityModalTalent extends React.Component {
                             id={'opp_talent_invited_' + inviteType.toLowerCase()}
                             value={inviteType.toLowerCase()}
                             checked={this.props.opportunity.talent.invited === inviteType.toLowerCase()}
+                            onClick={() => this.updateInviteType(inviteType.toLowerCase())}
                         >
                             {inviteType}
                         </RadioButton>
