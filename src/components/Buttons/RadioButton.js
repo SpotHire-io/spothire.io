@@ -5,9 +5,8 @@ import BasicButton from './BasicButton';
 
 const RadioButton = ({ checked, name, id, value, children, className, onClick }) => {
     const labelClassName = classNames({
-        'button': true,
-        'button--neutral': typeof checked == 'null' || ! checked,
-        'button--standard': checked === true,
+        'button button--standard': true,
+        'button--outline': typeof checked == 'null' || ! checked,
         [className]: true
     });
 
