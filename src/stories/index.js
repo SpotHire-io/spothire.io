@@ -14,7 +14,8 @@ const MainMenu = require('../components/Global/MainMenu');
 const SecondaryMenu = require('../components/Global/SecondaryMenu');
 const Box = require('../components/Global/Box');
 
-const BasicButton = require('../components/Buttons/BasicButton');
+import BasicButton from '../components/Buttons/BasicButton';
+import RadioButton from '../components/Buttons/RadioButton';
 
 const Post = require('../components/Newsfeed/Post');
 const PostList = require('../components/Newsfeed/PostList');
@@ -271,6 +272,20 @@ storiesOf('Buttons', module)
         <WithNotes>
             <div className="ma4">
                 <BasicButton className="button--negative button--with-icon button--icon-minus">Delete Opportunity</BasicButton>
+            </div>
+        </WithNotes>
+    ))
+    .add('RadioButton:Unselected', () => (
+        <WithNotes>
+            <div className="ma4">
+                <RadioButton>Unselected</RadioButton>
+            </div>
+        </WithNotes>
+    ))
+    .add('RadioButton:Selected', () => (
+        <WithNotes>
+            <div className="ma4">
+                <RadioButton checked>Unselected</RadioButton>
             </div>
         </WithNotes>
     ));
