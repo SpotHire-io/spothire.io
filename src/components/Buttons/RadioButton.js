@@ -12,7 +12,7 @@ const RadioButton = ({ checked, name, id, value, children, className, onClick })
 
     return (
         <label className={labelClassName} onClick={onClick} htmlFor={id}>
-            <input id={id} name={name} type="radio" className="clip" checked={checked}/>
+            <input id={id} name={name} type="radio" className="clip" checked={checked} value={value}/>
             {children}
         </label>
     );
@@ -22,4 +22,9 @@ RadioButton.defaultProps = {
     className: ''
 };
 
-module.exports = RadioButton;
+RadioButton.propTypes = {
+    name: React.PropTypes.string.required,
+    id: React.PropTypes.string.required
+};
+
+export default RadioButton;

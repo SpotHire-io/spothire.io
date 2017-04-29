@@ -1,7 +1,8 @@
 const React      = require('react');
 import classNames from 'classnames';
 
-import { Radio } from 'rebass';
+import ButtonBar from '../../Buttons/ButtonBar';
+import RadioButton from '../../Buttons/RadioButton';
 
 class OpportunityModalTalent extends React.Component {
     constructor() {
@@ -11,23 +12,11 @@ class OpportunityModalTalent extends React.Component {
     render() {
         return (
             <div className="mt3">
-                <div className="flex justify-between">
-                    <Radio
-                        label="all"
-                        name="opp_talent_invited"
-                        stacked
-                    />
-                    <Radio
-                        label="available"
-                        name="opp_talent_invited"
-                        stacked
-                    />
-                    <Radio
-                        label="selected"
-                        name="opp_talent_invited"
-                        stacked
-                    />
-                </div>
+                <ButtonBar className="w-100">
+                    <RadioButton name="opp_talent_invited" id="opp_talent_invited_all" value="all">All</RadioButton>
+                    <RadioButton name="opp_talent_invited" id="opp_talent_invited_available" value="available">Available</RadioButton>
+                    <RadioButton name="opp_talent_invited" id="opp_talent_invited_selected" value="selected">Selected</RadioButton>
+                </ButtonBar>
             </div>
         )
     }

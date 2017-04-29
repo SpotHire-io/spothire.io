@@ -23,7 +23,7 @@ const ButtonBar = ({ children, className }) => {
                 }
 
                 return React.cloneElement(child, {
-                    className: classNames(child.className, addedClassName)
+                    className: classNames('flex-auto tc', child.className, addedClassName)
                 });
             })}
         </div>
@@ -34,4 +34,4 @@ ButtonBar.defaultProps = {
     className: ''
 };
 
-module.exports = ButtonBar;
+export default ButtonBar;
