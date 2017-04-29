@@ -9,6 +9,7 @@ class OpportunityModalTalent extends React.Component {
         super();
 
         this.updateInviteType = this.updateInviteType.bind(this);
+        this.renderSelectionInterface = this.renderSelectionInterface.bind(this);
     }
 
     updateInviteType(inviteType) {
@@ -19,10 +20,37 @@ class OpportunityModalTalent extends React.Component {
         this.props.updateOpportunity(opportunity);
     }
 
+    renderSelectionInterface() {
+        let selectionInterface;
+
+        switch (this.props.opportunity.talent.invited) {
+            case 'all':
+                selectionInterface = (
+                    <p>All talent will be invited.</p>
+                );
+                break;
+            case 'available':
+                selectionInterface = (
+                    <p>Only talent available to work during the opportunity will be invited.</p>
+                );
+                break;
+            case 'selected':
+                selectionInterface = (
+                    <p>Selection interface...</p>
+                );
+                break;
+            default:
+                break;
+        }
+
+        return selectionInterface;
+    }
+
     render() {
         return (
             <div className="mt3">
-                <ButtonBar className="w-100">
+                <p className="f6">Invited talent</p>
+                <ButtonBar className="w-100 mt2">
                     {[
                         'All',
                         'Available',
@@ -39,6 +67,7 @@ class OpportunityModalTalent extends React.Component {
                         </RadioButton>
                     )}
                 </ButtonBar>
+                {this.renderSelectionInterface()}
             </div>
         )
     }
