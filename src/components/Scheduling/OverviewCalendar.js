@@ -23,6 +23,10 @@ class OverviewCalendar extends React.Component {
                 selectedDates: {
                     start: new Date(1970, 0, 0),
                     end: new Date(1970, 0, 0)
+                },
+                talent: {
+                    invited: 'all',
+                    confirmed: []
                 }
             }
         };

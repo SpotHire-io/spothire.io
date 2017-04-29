@@ -1,6 +1,8 @@
 const React      = require('react');
 import classNames from 'classnames';
 
+import { Radio } from 'rebass';
+
 class OpportunityModalTalent extends React.Component {
     constructor() {
         super();
@@ -9,7 +11,23 @@ class OpportunityModalTalent extends React.Component {
     render() {
         return (
             <div className="mt3">
-                <p>Hello</p>
+                <div className="flex justify-between">
+                    <Radio
+                        label="all"
+                        name="opp_talent_invited"
+                        stacked
+                    />
+                    <Radio
+                        label="available"
+                        name="opp_talent_invited"
+                        stacked
+                    />
+                    <Radio
+                        label="selected"
+                        name="opp_talent_invited"
+                        stacked
+                    />
+                </div>
             </div>
         )
     }
