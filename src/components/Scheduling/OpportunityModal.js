@@ -36,11 +36,16 @@ class OpportunityModal extends React.Component {
                             content: <OpportunityModalBasicInfo {...this.props}/>
                         },
                         {
-                            key: 'invitees',
-                            name: 'Invitees',
+                            key: 'talent',
+                            name: 'Talent',
                             content: (
                                 <p>Interface to add people...</p>
                             )
+                        },
+                        {
+                            key: 'shifts',
+                            name: 'Shifts',
+                            content: <OpportunityModalShifts {...this.props}/>
                         }
                     ]}
                 />

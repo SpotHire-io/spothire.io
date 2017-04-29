@@ -128,7 +128,7 @@ class OpportunityModalBasicInfo extends React.Component {
                 ].map(this.renderDateTimePicker)}
 
                 <div className="mt3">
-                    <Switch aria-labelledby="opp_allDay" onClick={this.toggleAllDay} checked={this.props.opportunity.isAllDay}/>
+                    <Switch aria-labelledby="opp_allDay" onClick={this.toggleAllDay} checked={this.props.opportunity.isAllDay} tabIndex="0"/>
                     <span onClick={this.toggleAllDay} id="opp_allDay" className="pointer dib v-top mt2 ml2 f6">All day</span>
                 </div>
 
