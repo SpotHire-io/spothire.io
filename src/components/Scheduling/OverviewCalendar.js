@@ -89,6 +89,7 @@ class OverviewCalendar extends React.Component {
 
                     }}
                     defaultView="week"
+                    scrollToTime={new Date(1970, 1, 1, 7)}
                     views={['week', 'day']}
                     startAccessor={(event) => new Date(event.start)}
                     endAccessor={(event) => new Date(event.end)}
