@@ -10,6 +10,7 @@ import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
 const BasicButton = require('../Buttons/BasicButton');
 
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
+import OpportunityModalShifts from './OpportunityModal/Shifts';
 
 class OpportunityModal extends React.Component {
     constructor() {

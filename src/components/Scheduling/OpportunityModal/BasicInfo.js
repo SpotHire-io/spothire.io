@@ -146,4 +146,4 @@ OpportunityModalBasicInfo.propTypes = {
     opportunity: React.PropTypes.object.isRequired
 };
 
-module.exports = OpportunityModalBasicInfo;
+export default OpportunityModalBasicInfo;
