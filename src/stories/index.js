@@ -16,6 +16,7 @@ const Box = require('../components/Global/Box');
 
 import BasicButton from '../components/Buttons/BasicButton';
 import RadioButton from '../components/Buttons/RadioButton';
+import ButtonBar from '../components/Buttons/ButtonBar';
 
 const Post = require('../components/Newsfeed/Post');
 const PostList = require('../components/Newsfeed/PostList');
@@ -285,8 +286,17 @@ storiesOf('Buttons', module)
     .add('RadioButton:Selected', () => (
         <WithNotes>
             <div className="ma4">
-                <RadioButton checked>Unselected</RadioButton>
+                <RadioButton checked>Selected</RadioButton>
             </div>
+        </WithNotes>
+    ))
+    .add('ButtonBar', () => (
+        <WithNotes>
+            <ButtonBar className="ma4">
+                <RadioButton>Unselected</RadioButton>
+                <RadioButton>Stuck in the middle</RadioButton>
+                <RadioButton checked>Selected</RadioButton>
+            </ButtonBar>
         </WithNotes>
     ));
 

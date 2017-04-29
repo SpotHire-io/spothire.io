@@ -97,3 +97,17 @@ button:active,
 .button--negative:hover {
     background: rgb(221, 0, 5);
 }
+
+.button--left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.button--middle {
+    border-radius: 0;
+}
+
+.button--right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
