@@ -80,6 +80,8 @@ storiesOf('Views', module)
         <div>
             <MainMenu selectedItem="People"/>
             <SectionSwitcher
+                className="ph4 bg-near-white"
+                secondaryMenuClassName="mb4 ph3"
                 sections={[
                     {
                         key: 'people',

@@ -43,7 +43,7 @@ class SectionSwitcher extends React.Component {
 
 SectionSwitcher.defaultProps = {
     className: '',
-    secondaryMenuClassName: 'ph4'
+    secondaryMenuClassName: ''
 };
 
 SectionSwitcher.propTypes = {
