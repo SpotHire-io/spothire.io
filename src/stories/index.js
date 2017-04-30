@@ -80,14 +80,14 @@ storiesOf('Views', module)
         <div>
             <MainMenu selectedItem="People"/>
             <SectionSwitcher
-                className="ph4 bg-near-white"
-                secondaryMenuClassName="mb4 ph3"
+                className="bg-near-white"
+                secondaryMenuClassName="ph4 bg-white"
                 sections={[
                     {
                         key: 'people',
                         name: 'People',
                         content: (
-                            <div className="flex">
+                            <div className="flex ma4">
                                 {sampleFilterContainer('mr3 w-third self-start')}
                                 <UserTable className="w-two-thirds"/>
                             </div>
@@ -97,7 +97,7 @@ storiesOf('Views', module)
                         key: 'groups',
                         name: 'Groups',
                         content: (
-                            <div className="flex">
+                            <div className="flex ma4">
                                 {sampleFilterContainer('mr3 w-third self-start')}
                                 List of groups...
                             </div>
