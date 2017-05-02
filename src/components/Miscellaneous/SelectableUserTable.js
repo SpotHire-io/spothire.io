@@ -20,8 +20,7 @@ class SelectableUserTable extends React.Component {
         this.renderUserRow = this.renderUserRow.bind(this);
         this.renderUserCell = this.renderUserCell.bind(this);
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
-        this.selectUser = this.selectUser.bind(this);
-        this.unselectUser = this.unselectUser.bind(this);
+        this.toggleUser = this.toggleUser.bind(this);
 
         this.commonCellClasses = 'pa3';
 
@@ -30,34 +29,30 @@ class SelectableUserTable extends React.Component {
         };
     }
 
-    selectUser(userId) {
+    toggleUser(userId) {
         const selectedUserIds = [...this.state.selectedUserIds];
 
-        selectedUserIds.push(userId);
-
-        this.setState({ selectedUserIds });
-    }
-
-    unselectUser(userId) {
-        const selectedUserIds = [...this.state.selectedUserIds];
-
-        selectedUserIds.splice(selectedUserIds.indexOf(userId), 1);
+        if (this.state.selectedUserIds.indexOf(userId) === -1) {
+            selectedUserIds.push(userId);
+        } else {
+            selectedUserIds.splice(selectedUserIds.indexOf(userId), 1);
+        }
 
         this.setState({ selectedUserIds });
     }
 
     renderUserRow(user) {
         const userClasses = classNames({
-            'ph3 pa2 mt0 hover-bg-black-10': true
+            'ph3 pa2 mt0 hover-bg-black-10 pointer': true
         });
 
         return (
-            <Tr key={user.id} className={userClasses}>
+            <Tr key={user.id} className={userClasses} onClick={() => this.toggleUser(user.id)}>
                 {this.renderUserCell('avatar', () => {
                     if (this.state.selectedUserIds.indexOf(user.id) === -1) {
-                        return (<img className="w1 h1 br-100 v-btm pointer" src="http://placehold.it/40x40" onClick={() => this.selectUser(user.id)}/>);
+                        return (<img className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40" />);
                     } else {
-                        return (<div className="sh-rebass-checkbox-mr0"><Checkbox style={{ display: 'inline' }} checked label="" name="" onClick={() => this.unselectUser(user.id)}/></div>);
+                        return (<div className="sh-rebass-checkbox-mr0"><Checkbox style={{ display: 'inline' }} checked label="" name=""/></div>);
                     }
                 }, 'pr0')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
