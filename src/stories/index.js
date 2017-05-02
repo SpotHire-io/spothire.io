@@ -28,6 +28,7 @@ const OverviewCalendar = require('../components/Scheduling/OverviewCalendar');
 import OpportunityModal from '../components/Scheduling/OpportunityModal';
 
 const UserTable = require('../components/Miscellaneous/UserTable');
+import SelectableUserTable from '../components/Miscellaneous/SelectableUserTable';
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
 
 import '../../public/css/app.css';
@@ -568,6 +569,13 @@ storiesOf('Miscellaneous', module)
         <WithNotes notes="An experimental interface to add new users inline with the table interface.">
             <div className="pa4 bg-near-white">
                 <UserTable inlineAddingRowIsOpen={true}/>
+            </div>
+        </WithNotes>
+    ))
+    .add('SelectableUserTable', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <SelectableUserTable/>
             </div>
         </WithNotes>
     ));
