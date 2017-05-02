@@ -29,11 +29,19 @@ class SelectableUserTable extends React.Component {
     }
 
     selectUser(userId) {
+        const selectedUserIds = [...this.state.selectedUserIds];
 
+        selectedUserIds.push(userId);
+
+        this.setState({ selectedUserIds });
     }
 
     unselectUser(userId) {
+        const selectedUserIds = [...this.state.selectedUserIds];
 
+        selectedUserIds.splice(selectedUserIds.indexOf(userId));
+
+        this.setState({ selectedUserIds });
     }
 
     renderUserRow(user) {
@@ -44,8 +52,8 @@ class SelectableUserTable extends React.Component {
         return (
             <Tr key={user.id} className={userClasses}>
                 {this.renderUserCell('avatar', () => {
-                    if (this.state.selectedUserIds.indexOf(user.id) !== -1) {
-                        return (<img className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40" onClick={() => this.selectUser(user.id)}/>);
+                    if (this.state.selectedUserIds.indexOf(user.id) === -1) {
+                        return (<img className="w1 h1 br-100 v-btm pointer" src="http://placehold.it/40x40" onClick={() => this.selectUser(user.id)}/>);
                     } else {
                         return (<span onClick={() => this.unselectUser(user.id)}>yep</span>);
                     }
