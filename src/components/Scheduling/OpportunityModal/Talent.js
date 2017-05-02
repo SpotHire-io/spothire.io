@@ -4,6 +4,8 @@ import classNames from 'classnames';
 import ButtonBar from '../../Buttons/ButtonBar';
 import RadioButton from '../../Buttons/RadioButton';
 
+import SelectableUserTable from '../../Miscellaneous/SelectableUserTable';
+
 class OpportunityModalTalent extends React.Component {
     constructor() {
         super();
@@ -36,7 +38,10 @@ class OpportunityModalTalent extends React.Component {
                 break;
             case 'selected':
                 selectionInterface = (
-                    <p>Selection interface...</p>
+                    <div className="mt3">
+                        <p>Talent selected from this list will be invited.</p>
+                        <SelectableUserTable className="mt3 h5 overflow-auto"/>
+                    </div>
                 );
                 break;
             default:
