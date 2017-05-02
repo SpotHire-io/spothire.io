@@ -52,7 +52,7 @@ class SelectableUserTable extends React.Component {
                     if (this.state.selectedUserIds.indexOf(user.id) === -1) {
                         return (<img className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40" />);
                     } else {
-                        return (<div className="sh-rebass-checkbox-mr0"><Checkbox style={{ display: 'inline' }} checked label="" name=""/></div>);
+                        return (<div className="sh-rebass-checkbox-mr0"><Checkbox theme="success" style={{ display: 'inline' }} checked label="" name=""/></div>);
                     }
                 }, 'pr0')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
