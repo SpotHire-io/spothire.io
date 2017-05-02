@@ -41,7 +41,7 @@ class SelectableUserTable extends React.Component {
     unselectUser(userId) {
         const selectedUserIds = [...this.state.selectedUserIds];
 
-        selectedUserIds.splice(selectedUserIds.indexOf(userId));
+        selectedUserIds.splice(selectedUserIds.indexOf(userId), 1);
 
         this.setState({ selectedUserIds });
     }
