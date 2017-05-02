@@ -42,6 +42,7 @@
 @import 'vendor/_react-modal.css';
 @import 'vendor/_rc-time-picker.css';
 @import 'vendor/_react-dates.css';
+@import 'vendor/_rebass.css';
 
 .bg-blue-yonder {
     background-color: rgb(84, 119, 166);

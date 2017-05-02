@@ -11,6 +11,8 @@ const Td    = require('reactable').Td;
 
 const BasicButton = require('../Buttons/BasicButton');
 
+import { Checkbox } from 'rebass';
+
 class SelectableUserTable extends React.Component {
     constructor() {
         super();
@@ -55,9 +57,9 @@ class SelectableUserTable extends React.Component {
                     if (this.state.selectedUserIds.indexOf(user.id) === -1) {
                         return (<img className="w1 h1 br-100 v-btm pointer" src="http://placehold.it/40x40" onClick={() => this.selectUser(user.id)}/>);
                     } else {
-                        return (<span onClick={() => this.unselectUser(user.id)}>yep</span>);
+                        return (<div className="sh-rebass-checkbox-mr0"><Checkbox style={{ display: 'inline' }} checked label="" name="" onClick={() => this.unselectUser(user.id)}/></div>);
                     }
-                }, 'tc pr0')}
+                }, 'pr0')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
             </Tr>
         );
@@ -80,10 +82,11 @@ class SelectableUserTable extends React.Component {
         );
     }
 
-    renderHeaderCell(column, value) {
+    renderHeaderCell(column, value, className) {
         const cellClasses = classNames({
             'tl bg-blue-yonder white bb bw1 b--white-40': true,
-            [this.commonCellClasses]: true
+            [this.commonCellClasses]: true,
+            [className]: true
         });
 
         return (
@@ -106,8 +109,8 @@ class SelectableUserTable extends React.Component {
             <div className={wrapperClasses}>
                 <Table className="w-100" cellSpacing="0" sortable={['name']}>
                     <Thead>
-                    {this.renderHeaderCell('avatar', '')}
-                    {this.renderHeaderCell('name', 'Name')}
+                    {this.renderHeaderCell('avatar', '', 'w1')}
+                    {this.renderHeaderCell('name', 'Name', '')}
                     </Thead>
                     {userData.map((user) => this.renderUserRow(user))}
                 </Table>
