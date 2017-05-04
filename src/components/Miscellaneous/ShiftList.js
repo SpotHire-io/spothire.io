@@ -74,7 +74,7 @@ class ShiftList extends React.Component {
 
     renderHeaderCell(column, value, className) {
         const cellClasses = classNames({
-            'f6 normal tl bb bw1 b--white-40': true,
+            'f6 normal tl bb bw1 b--black-20 no-select': true,
             [this.commonCellClasses]: true,
             [className]: true
         });
@@ -104,7 +104,7 @@ class ShiftList extends React.Component {
                     {this.renderHeaderCell('startTime', 'Start Time', '')}
                     {this.renderHeaderCell('endDate', 'End Date', '')}
                     {this.renderHeaderCell('endTime', 'End Time', '')}
-                    {this.renderHeaderCell('controls', 'Controls', 'clip')}
+                    {this.renderHeaderCell('controls', 'Controls', 'transparent')}
                     </Thead>
                     {this.state.shifts.map((shift, index) => this.renderShiftRow(shift, index))}
                 </Table>
