@@ -107,7 +107,7 @@ class ShiftList extends React.Component {
 
     render() {
         const wrapperClasses = classNames({
-            'bg-white ba b--black-20 sh-shadow-2 ': true,
+            'bg-white ba b--black-20 sh-shadow-2 table-layout-fixed': true,
             [this.props.className]: true
         });
 
@@ -115,7 +115,7 @@ class ShiftList extends React.Component {
             <div className={wrapperClasses}>
                 <Table className="w-100" cellSpacing="0">
                     <Thead>
-                    {this.renderHeaderCell('index', '#', '')}
+                    {this.renderHeaderCell('index', '#', 'w2')}
                     {this.renderHeaderCell('startDate', 'Start Date', '')}
                     {this.renderHeaderCell('startTime', 'Start Time', '')}
                     {this.renderHeaderCell('endDate', 'End Date', '')}
