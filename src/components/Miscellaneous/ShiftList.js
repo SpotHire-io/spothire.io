@@ -11,6 +11,10 @@ const Td    = require('reactable').Td;
 
 const BasicButton = require('../Buttons/BasicButton');
 
+import { ButtonCircle } from 'rebass';
+
+import Icon from 'react-geomicons';
+
 class ShiftList extends React.Component {
     constructor() {
         super();
@@ -68,7 +72,14 @@ class ShiftList extends React.Component {
 
     renderControls(shift) {
         return (
-            <p>Yo</p>
+            <div>
+                <ButtonCircle>
+                    <Icon name="compose"/>
+                </ButtonCircle>
+                <ButtonCircle ml={1}>
+                    <Icon name="close"/>
+                </ButtonCircle>
+            </div>
         );
     }
 
