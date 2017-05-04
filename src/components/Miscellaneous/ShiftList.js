@@ -116,13 +116,13 @@ class ShiftList extends React.Component {
 
     render() {
         const wrapperClasses = classNames({
-            'bg-white ba b--black-20 sh-shadow-2': true,
+            '': true,
             [this.props.className]: true
         });
 
         return (
             <div className={wrapperClasses}>
-                <Table className="w-100 table-layout-fixed" cellSpacing="0">
+                <Table className="bg-white ba b--black-20 sh-shadow-2 w-100 table-layout-fixed" cellSpacing="0">
                     <Thead>
                     {this.renderHeaderCell('index', '#', 'w2')}
                     {this.renderHeaderCell('startDate', 'Start Date', '')}
@@ -134,6 +134,9 @@ class ShiftList extends React.Component {
                     </Thead>
                     {this.state.shifts.map((shift, index) => this.renderShiftRow(shift, index))}
                 </Table>
+                <div className="tr mt3">
+                    <BasicButton className="button--positive">Add Shift</BasicButton>
+                </div>
             </div>
         )
     }
