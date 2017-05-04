@@ -78,12 +78,8 @@ class ShiftList extends React.Component {
     renderControls(shift) {
         return (
             <div>
-                <ButtonCircle mr={1}>
-                    <Icon name="compose"/>
-                </ButtonCircle>
-                <ButtonCircle>
-                    <Icon name="close"/>
-                </ButtonCircle>
+                <Icon name="compose"/>
+                <Icon name="close"/>
             </div>
         );
     }
