@@ -29,6 +29,7 @@ import OpportunityModal from '../components/Scheduling/OpportunityModal';
 
 const UserTable = require('../components/Miscellaneous/UserTable');
 import SelectableUserTable from '../components/Miscellaneous/SelectableUserTable';
+import ShiftList from '../components/Miscellaneous/ShiftList';
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
 
 import '../../public/css/app.css';
@@ -576,6 +577,13 @@ storiesOf('Miscellaneous', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <SelectableUserTable/>
+            </div>
+        </WithNotes>
+    ))
+    .add('ShiftList', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <ShiftList/>
             </div>
         </WithNotes>
     ));

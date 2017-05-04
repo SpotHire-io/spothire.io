@@ -1,6 +1,8 @@
 const React      = require('react');
 import classNames from 'classnames';
 
+import ShiftList from '../../Miscellaneous/ShiftList';
+
 class OpportunityModalShifts extends React.Component {
     constructor() {
         super();
@@ -9,7 +11,7 @@ class OpportunityModalShifts extends React.Component {
     render() {
         return (
             <div className="mt3">
-
+                <ShiftList/>
             </div>
         )
     }
