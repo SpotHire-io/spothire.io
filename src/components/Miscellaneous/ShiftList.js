@@ -19,6 +19,9 @@ class ShiftList extends React.Component {
     constructor() {
         super();
 
+        this.toggleShiftEditing = this.toggleShiftEditing.bind(this);
+        this.deleteShift = this.deleteShift.bind(this);
+
         this.renderShiftRow = this.renderShiftRow.bind(this);
         this.renderShiftCell = this.renderShiftCell.bind(this);
         this.renderControls = this.renderControls.bind(this);
@@ -29,15 +32,25 @@ class ShiftList extends React.Component {
         this.state = {
             shifts: [
                 {
+                    id: 0,
                     start: moment(new Date(2017, 4, 1, 8, 0)),
                     end: moment(new Date(2017, 4, 1, 16, 0)),
                 },
                 {
+                    id: 1,
                     start: moment(new Date(2017, 4, 1, 16, 0)),
                     end: moment(new Date(2017, 4, 2, 0, 0)),
                 }
             ]
         };
+    }
+
+    toggleShiftEditing(shiftId) {
+        console.log('toggling editing of shift', shiftId);
+    }
+
+    deleteShift(shiftId) {
+        console.log('deleting shift', shiftId);
     }
 
     renderShiftRow(shift, index) {
@@ -77,9 +90,9 @@ class ShiftList extends React.Component {
 
     renderControls(shift) {
         return (
-            <div>
-                <Icon color="#555555" name="compose" className="pointer mr2"/>
-                <Icon color="#555555" name="close" className="pointer"/>
+            <div className="tr">
+                <Icon color="#555555" name="compose" className="pointer" onClick={() => this.toggleShiftEditing(shift.id)}/>
+                <Icon color="#555555" name="close" className="pointer ml2" onClick={() => this.deleteShift(shift.id)}/>
             </div>
         );
     }
