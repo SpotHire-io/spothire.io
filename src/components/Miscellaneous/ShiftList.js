@@ -78,10 +78,10 @@ class ShiftList extends React.Component {
     renderControls(shift) {
         return (
             <div>
-                <ButtonCircle>
+                <ButtonCircle mr={1}>
                     <Icon name="compose"/>
                 </ButtonCircle>
-                <ButtonCircle ml={1}>
+                <ButtonCircle>
                     <Icon name="close"/>
                 </ButtonCircle>
             </div>
@@ -107,13 +107,13 @@ class ShiftList extends React.Component {
 
     render() {
         const wrapperClasses = classNames({
-            'bg-white ba b--black-20 sh-shadow-2 table-layout-fixed': true,
+            'bg-white ba b--black-20 sh-shadow-2': true,
             [this.props.className]: true
         });
 
         return (
             <div className={wrapperClasses}>
-                <Table className="w-100" cellSpacing="0">
+                <Table className="w-100 table-layout-fixed" cellSpacing="0">
                     <Thead>
                     {this.renderHeaderCell('index', '#', 'w2')}
                     {this.renderHeaderCell('startDate', 'Start Date', '')}
