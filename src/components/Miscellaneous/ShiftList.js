@@ -1,6 +1,8 @@
 const React      = require('react');
 const classNames = require('classnames');
 
+import moment from 'moment';
+
 const Table = require('reactable').Table;
 const Thead = require('reactable').Thead;
 const Th    = require('reactable').Th;
@@ -15,6 +17,7 @@ class ShiftList extends React.Component {
 
         this.renderShiftRow = this.renderShiftRow.bind(this);
         this.renderShiftCell = this.renderShiftCell.bind(this);
+        this.renderControls = this.renderControls.bind(this);
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
 
         this.commonCellClasses = 'pa3';
@@ -22,9 +25,8 @@ class ShiftList extends React.Component {
         this.state = {
             shifts: [
                 {
-                    start: new Date(),
-                    end: new Date(),
-
+                    start: new Date(2017, 4, 1, 8, 0),
+                    end: new Date(2017, 4, 1, 16, 0),
                 }
             ]
         };
@@ -38,6 +40,11 @@ class ShiftList extends React.Component {
         return (
             <Tr key={shift.id} className={shiftClasses}>
                 {this.renderShiftCell('index', `${index + 1}`)}
+                {this.renderShiftCell('startDate', moment(shift.start).format('MMMM Do, YYYY'))}
+                {this.renderShiftCell('startTime', moment(shift.start).format('h:mm a'))}
+                {this.renderShiftCell('endDate', moment(shift.end).format('MMMM Do, YYYY'))}
+                {this.renderShiftCell('endTime', moment(shift.end).format('h:mm a'))}
+                {this.renderShiftCell('controls', () => this.renderControls(shift))}
             </Tr>
         );
     }
@@ -56,6 +63,12 @@ class ShiftList extends React.Component {
             >
                 {(typeof value == 'string') ? value : value()}
             </Td>
+        );
+    }
+
+    renderControls(shift) {
+        return (
+            <p>Yo</p>
         );
     }
 
