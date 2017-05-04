@@ -29,8 +29,12 @@ class ShiftList extends React.Component {
         this.state = {
             shifts: [
                 {
-                    start: new Date(2017, 4, 1, 8, 0),
-                    end: new Date(2017, 4, 1, 16, 0),
+                    start: moment(new Date(2017, 4, 1, 8, 0)),
+                    end: moment(new Date(2017, 4, 1, 16, 0)),
+                },
+                {
+                    start: moment(new Date(2017, 4, 1, 16, 0)),
+                    end: moment(new Date(2017, 4, 2, 0, 0)),
                 }
             ]
         };
@@ -44,10 +48,11 @@ class ShiftList extends React.Component {
         return (
             <Tr key={shift.id} className={shiftClasses}>
                 {this.renderShiftCell('index', `${index + 1}`)}
-                {this.renderShiftCell('startDate', moment(shift.start).format('MMMM Do, YYYY'))}
-                {this.renderShiftCell('startTime', moment(shift.start).format('h:mm a'))}
-                {this.renderShiftCell('endDate', moment(shift.end).format('MMMM Do, YYYY'))}
-                {this.renderShiftCell('endTime', moment(shift.end).format('h:mm a'))}
+                {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
+                {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
+                {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'))}
+                {this.renderShiftCell('endTime', shift.end.format('h:mm a'))}
+                {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
                 {this.renderShiftCell('controls', () => this.renderControls(shift))}
             </Tr>
         );
@@ -115,6 +120,7 @@ class ShiftList extends React.Component {
                     {this.renderHeaderCell('startTime', 'Start Time', '')}
                     {this.renderHeaderCell('endDate', 'End Date', '')}
                     {this.renderHeaderCell('endTime', 'End Time', '')}
+                    {this.renderHeaderCell('length', 'Length', '')}
                     {this.renderHeaderCell('controls', 'Controls', 'transparent')}
                     </Thead>
                     {this.state.shifts.map((shift, index) => this.renderShiftRow(shift, index))}
