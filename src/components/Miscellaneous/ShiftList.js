@@ -78,8 +78,8 @@ class ShiftList extends React.Component {
     renderControls(shift) {
         return (
             <div>
-                <Icon name="compose"/>
-                <Icon name="close"/>
+                <Icon color="#555555" name="compose" className="pointer mr2"/>
+                <Icon color="#555555" name="close" className="pointer"/>
             </div>
         );
     }
@@ -117,7 +117,7 @@ class ShiftList extends React.Component {
                     {this.renderHeaderCell('endDate', 'End Date', '')}
                     {this.renderHeaderCell('endTime', 'End Time', '')}
                     {this.renderHeaderCell('length', 'Length', '')}
-                    {this.renderHeaderCell('controls', 'Controls', 'transparent')}
+                    {this.renderHeaderCell('controls', 'Controls', 'transparent w-10')}
                     </Thead>
                     {this.state.shifts.map((shift, index) => this.renderShiftRow(shift, index))}
                 </Table>
