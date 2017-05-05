@@ -30,6 +30,7 @@ class ShiftList extends React.Component {
         this.commonCellClasses = 'pa3';
 
         this.state = {
+            currentlyEditingShiftId: null,
             shifts: [
                 {
                     id: 0,
@@ -46,11 +47,25 @@ class ShiftList extends React.Component {
     }
 
     toggleShiftEditing(shiftId) {
-        console.log('toggling editing of shift', shiftId);
+        let currentlyEditingShiftId = parseInt(this.state.currentlyEditingShiftId);
+
+        // Unset the currently editing shift if we’re toggling that shift. Else, set to the new shift ID.
+        if (shiftId === currentlyEditingShiftId) {
+            currentlyEditingShiftId = null;
+        } else {
+            currentlyEditingShiftId = shiftId;
+        }
+
+        return this.setState({ currentlyEditingShiftId });
     }
 
     deleteShift(shiftId) {
-        console.log('deleting shift', shiftId);
+        let shifts = [...this.state.shifts];
+
+        // Drop the shift by finding its index
+        shifts.splice(shifts.findIndex((shift) => shift.id === shiftId), 1);
+
+        return this.setState({ shifts });
     }
 
     renderShiftRow(shift, index) {
