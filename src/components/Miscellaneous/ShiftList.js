@@ -11,6 +11,10 @@ const Td    = require('reactable').Td;
 
 const BasicButton = require('../Buttons/BasicButton');
 
+import SingleDatePickerFocusContainer from '../Miscellaneous/SingleDatePickerFocusContainer';
+
+import TimePicker from 'rc-time-picker';
+
 import Icon from 'react-geomicons';
 
 class ShiftList extends React.Component {
@@ -106,10 +110,48 @@ class ShiftList extends React.Component {
             return (
                 <Tr key={shift.id} className={shiftClasses}>
                     {this.renderShiftCell('index', `${index + 1}`)}
-                    {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
-                    {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
-                    {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'))}
-                    {this.renderShiftCell('endTime', shift.end.format('h:mm a'))}
+                    {this.renderShiftCell('startDate', () => (
+                        <SingleDatePickerFocusContainer
+                            date={shift.start}
+                            onDateChange={newDate => {
+                                console.log(`changing start date for Shift ${shift.id} to`, newDate);
+                            }}
+                            withPortal={true}
+                            displayFormat="MMMM Do, YYYY"
+                        />
+                    ))}
+                    {this.renderShiftCell('startTime', () => (
+                        <TimePicker
+                            value={shift.start}
+                            showSecond={false}
+                            allowEmpty={false}
+                            use12Hours={true}
+                            onChange={newTime => {
+                                console.log(`changing start time for Shift ${shift.id} to`, newTime);
+                            }}
+                        />
+                    ))}
+                    {this.renderShiftCell('endDate', () => (
+                        <SingleDatePickerFocusContainer
+                            date={moment(shift.end)}
+                            onDateChange={newDate => {
+                                console.log(`changing end date for Shift ${shift.id} to`, newDate);
+                            }}
+                            withPortal={true}
+                            displayFormat="MMMM Do, YYYY"
+                        />
+                    ))}
+                    {this.renderShiftCell('endTime', () => (
+                        <TimePicker
+                            value={shift.end}
+                            showSecond={false}
+                            allowEmpty={false}
+                            use12Hours={true}
+                            onChange={newTime => {
+                                console.log(`changing end time for Shift ${shift.id} to`, newTime);
+                            }}
+                        />
+                    ))}
                     {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
                     {this.renderShiftCell('controls', () => this.renderControls(shift))}
                 </Tr>
