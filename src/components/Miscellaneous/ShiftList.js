@@ -19,6 +19,7 @@ class ShiftList extends React.Component {
 
         this.toggleShiftEditing = this.toggleShiftEditing.bind(this);
         this.deleteShift = this.deleteShift.bind(this);
+        this.addShift = this.addShift.bind(this);
 
         this.renderShiftRow = this.renderShiftRow.bind(this);
         this.renderShiftCell = this.renderShiftCell.bind(this);
@@ -64,6 +65,23 @@ class ShiftList extends React.Component {
         shifts.splice(shifts.findIndex((shift) => shift.id === shiftId), 1);
 
         return this.setState({ shifts });
+    }
+
+    addShift() {
+        let shifts = [...this.state.shifts];
+
+        // extract the highest ID currently existing so we have something to mock
+        const highestId = shifts.reduce((currentHighestId, shift) => {
+            return Math.max(currentHighestId, shift.id);
+        }, -1);
+
+        shifts.push({
+            id: highestId + 1,
+            start: moment(new Date()),
+            end: moment(new Date())
+        });
+
+        return this.setState({ shifts, currentlyEditingShiftId: highestId + 1 });
     }
 
     renderShiftRow(shift, index) {
@@ -148,7 +166,7 @@ class ShiftList extends React.Component {
                     {this.state.shifts.map((shift, index) => this.renderShiftRow(shift, index))}
                 </Table>
                 <div className="tr mt3">
-                    <BasicButton className="button--positive">Add Shift</BasicButton>
+                    <BasicButton className="button--positive" onClick={this.addShift}>Add Shift</BasicButton>
                 </div>
             </div>
         )
