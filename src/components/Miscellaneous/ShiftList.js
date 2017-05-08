@@ -30,7 +30,7 @@ class ShiftList extends React.Component {
         this.renderControls = this.renderControls.bind(this);
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
 
-        this.commonCellClasses = 'pa3';
+        this.commonCellClasses = 'pv3 pl2 pr2';
 
         this.state = {
             currentlyEditingShiftId: null,
@@ -97,7 +97,7 @@ class ShiftList extends React.Component {
         if (shift.id !== this.state.currentlyEditingShiftId) {
             return (
                 <Tr key={shift.id} className={shiftClasses}>
-                    {this.renderShiftCell('index', `${index + 1}`)}
+                    {this.renderShiftCell('index', `${index + 1}`, 'pl3')}
                     {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
                     {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
                     {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'))}
@@ -109,7 +109,7 @@ class ShiftList extends React.Component {
         } else {
             return (
                 <Tr key={shift.id} className={shiftClasses}>
-                    {this.renderShiftCell('index', `${index + 1}`)}
+                    {this.renderShiftCell('index', `${index + 1}`, 'pl3')}
                     {this.renderShiftCell('startDate', () => (
                         <SingleDatePickerFocusContainer
                             date={shift.start}
@@ -212,7 +212,7 @@ class ShiftList extends React.Component {
             <div className={wrapperClasses}>
                 <Table className="bg-white ba b--black-20 sh-shadow-2 w-100 table-layout-fixed" cellSpacing="0">
                     <Thead>
-                    {this.renderHeaderCell('index', '#', 'w2')}
+                    {this.renderHeaderCell('index', '#', 'w2 pl3')}
                     {this.renderHeaderCell('startDate', 'Start Date', '')}
                     {this.renderHeaderCell('startTime', 'Start Time', '')}
                     {this.renderHeaderCell('endDate', 'End Date', '')}
