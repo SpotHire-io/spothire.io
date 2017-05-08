@@ -3,31 +3,11 @@ import classNames from 'classnames';
 
 const moment      = require('moment');
 
-const SingleDatePicker = require('react-dates').SingleDatePicker;
+import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
 
 const TimePicker = require('rc-time-picker');
 
 import { Switch } from 'rebass';
-
-class SingleDatePickerFocusContainer extends React.Component {
-    constructor() {
-        super();
-
-        this.state = {
-            isFocused: false
-        };
-    }
-
-    render() {
-        return(
-            <SingleDatePicker
-                {...this.props}
-                focused={this.state.isFocused}
-                onFocusChange={({ focused }) => this.setState({ isFocused: focused })}
-            />
-        )
-    }
-}
 
 class OpportunityModalBasicInfo extends React.Component {
     constructor() {

@@ -86,20 +86,35 @@ class ShiftList extends React.Component {
 
     renderShiftRow(shift, index) {
         const shiftClasses = classNames({
-            'ph3 pa2 mt0 hover-bg-black-10': true
+            'ph3 pa2 mt0': true,
+            'hover-bg-black-10': shift.id !== this.state.currentlyEditingShiftId
         });
 
-        return (
-            <Tr key={shift.id} className={shiftClasses}>
-                {this.renderShiftCell('index', `${index + 1}`)}
-                {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
-                {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
-                {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'))}
-                {this.renderShiftCell('endTime', shift.end.format('h:mm a'))}
-                {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
-                {this.renderShiftCell('controls', () => this.renderControls(shift))}
-            </Tr>
-        );
+        if (shift.id !== this.state.currentlyEditingShiftId) {
+            return (
+                <Tr key={shift.id} className={shiftClasses}>
+                    {this.renderShiftCell('index', `${index + 1}`)}
+                    {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
+                    {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
+                    {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'))}
+                    {this.renderShiftCell('endTime', shift.end.format('h:mm a'))}
+                    {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
+                    {this.renderShiftCell('controls', () => this.renderControls(shift))}
+                </Tr>
+            );
+        } else {
+            return (
+                <Tr key={shift.id} className={shiftClasses}>
+                    {this.renderShiftCell('index', `${index + 1}`)}
+                    {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
+                    {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
+                    {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'))}
+                    {this.renderShiftCell('endTime', shift.end.format('h:mm a'))}
+                    {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
+                    {this.renderShiftCell('controls', () => this.renderControls(shift))}
+                </Tr>
+            );
+        }
     }
 
     renderShiftCell(column, value, className) {
