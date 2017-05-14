@@ -18,7 +18,7 @@ class ShiftManager extends React.Component {
         this.setCurrentlyEditingShift = this.setCurrentlyEditingShift.bind(this);
 
         this.state = {
-            currentlyEditingShiftId: null,
+            currentlyEditingShiftId: 0,
             shifts: [
                 {
                     id: 0,
@@ -46,9 +46,31 @@ class ShiftManager extends React.Component {
             [this.props.className]: true
         });
 
+        const currentlyEditingShift = this.state.shifts.find((shift) => shift.id === this.state.currentlyEditingShiftId);
+
         return (
             <div className={wrapperClasses}>
+                <div className="flex">
+                    <ol className="list ma0 pl0 bb br b--black-10">
+                        {
+                            this.state.shifts.map((shift) => {
+                                const wrapperClasses = classNames({
+                                    'db pointer pa3 bg-light-gray underline-hover ma0 bt bl b--black-10': true,
+                                    'bg-white': shift.id === this.state.currentlyEditingShiftId
+                                });
 
+                                return (
+                                    <li className={wrapperClasses} key={shift.id}>
+                                        <strong>{shift.title}</strong>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ol>
+                    <div>
+                        <h2>{currentlyEditingShift.title}</h2>
+                    </div>
+                </div>
             </div>
         )
     }

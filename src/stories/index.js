@@ -560,7 +560,9 @@ storiesOf('Scheduling', module)
     ))
     .add('ShiftManager', () => (
         <WithNotes notes="">
-            <ShiftManager/>
+            <div className="pa4 min-vh-100 bg-near-white">
+                <ShiftManager/>
+            </div>
         </WithNotes>
     ));
 
