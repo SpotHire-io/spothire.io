@@ -26,6 +26,7 @@ const Filter = require('../components/Filters/Filter');
 
 const OverviewCalendar = require('../components/Scheduling/OverviewCalendar');
 import OpportunityModal from '../components/Scheduling/OpportunityModal';
+import ShiftManager from '../components/Scheduling/ShiftManager';
 
 const UserTable = require('../components/Miscellaneous/UserTable');
 import SelectableUserTable from '../components/Miscellaneous/SelectableUserTable';
@@ -555,6 +556,11 @@ storiesOf('Scheduling', module)
                     }
                 }}
             />
+        </WithNotes>
+    ))
+    .add('ShiftManager', () => (
+        <WithNotes notes="">
+            <ShiftManager/>
         </WithNotes>
     ));
 
