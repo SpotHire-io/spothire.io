@@ -98,6 +98,7 @@ class OverviewCalendar extends React.Component {
                     startAccessor={(event) => new Date(event.start)}
                     endAccessor={(event) => new Date(event.end)}
                     onSelectSlot={this.handleSelectSlot}
+                    onSelectEvent={(event) => console.log(event)}
                 />
                 <OpportunityModal
                     isOpen={this.state.isModalOpen}
