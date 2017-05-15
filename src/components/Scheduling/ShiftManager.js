@@ -66,10 +66,17 @@ class ShiftManager extends React.Component {
     deleteShift(shiftId) {
         let shifts = [...this.state.shifts];
 
-        // Drop the shift by finding its index
-        shifts.splice(shifts.findIndex((shift) => shift.id === shiftId), 1);
+        // find the shift's indexx
+        const shiftIndex = shifts.findIndex((shift) => shift.id === shiftId);
 
-        return this.setState({ shifts });
+        // drop the shift
+        shifts.splice(shiftIndex, 1);
+
+        // set the new shifts
+        this.setState({ shifts });
+
+        // move the current shfit to the one previous to the one just deleted (or the first shift, if the deleted one was first)
+        return this.setCurrentlyEditingShift(shifts[(shiftIndex > 0) ? shiftIndex - 1 : 0].id);
     }
 
     createShift() {
@@ -123,6 +130,8 @@ class ShiftManager extends React.Component {
                     </ol>
                     <Box className="flex-auto">
                         {currentlyEditingShift.title}
+
+                        <BasicButton className="button--negative" onClick={() => this.deleteShift(currentlyEditingShift.id)}>Delete Shift</BasicButton>
                     </Box>
                 </div>
             </div>
