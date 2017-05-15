@@ -591,8 +591,10 @@ storiesOf('Talent', module)
                 <SelectableUserTable/>
             </div>
         </WithNotes>
-    ))
-    .add('GroupCard', () => (
+    ));
+
+storiesOf('Talent:Groups', module)
+    .add('Card', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <GroupCard
@@ -602,6 +604,25 @@ storiesOf('Talent', module)
                         talent: users
                     }}
                 />
+            </div>
+        </WithNotes>
+    ))
+    .add('List', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <div className="flex flex-wrap justify-around">
+                    {[...Array(10).keys()].map((number) => (
+                        <div className="mt3 ph2 w-50">
+                            <GroupCard
+                                group={{
+                                    id: number,
+                                    name: 'Sample Group',
+                                    talent: users
+                                }}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </WithNotes>
     ));

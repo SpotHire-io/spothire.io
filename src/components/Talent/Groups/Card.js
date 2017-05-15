@@ -69,7 +69,7 @@ class GroupCard extends React.Component {
         });
 
         return (
-            <Box className={wrapperClasses}>
+            <Box className={wrapperClasses} contentWrapperClassName="pv4 ph3">
                 <h2 className="mt0">{this.props.group.name}</h2>
 
                 {this.renderAvatarPreview()}
