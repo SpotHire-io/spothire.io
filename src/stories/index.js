@@ -609,24 +609,7 @@ storiesOf('Talent:Groups', module)
     ))
     .add('CardList', () => (
         <WithNotes>
-            <div className="pa4 bg-near-white">
-                <div className="flex flex-wrap justify-around">
-                    {[...Array(10).keys()].map((number) => (
-                        <div className="mt3 ph2 w-50">
-                            <div className="pointer bt bw2 b--transparent hover-b--blue-yonder">
-                                <GroupCard
-                                    className="bg-animate hover-bg-white-70"
-                                    group={{
-                                        id: number,
-                                        name: 'Sample Group',
-                                        talent: users
-                                    }}
-                                />
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+
         </WithNotes>
     ));
 
