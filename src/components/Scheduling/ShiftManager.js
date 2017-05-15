@@ -22,6 +22,8 @@ class ShiftManager extends React.Component {
         this.createShift = this.createShift.bind(this);
         this.updateShift = this.updateShift.bind(this);
 
+        this.sectionSwitcherInstance = null; // becomes a ref, to allow us to reset the active pane on switching shift
+
         this.state = {
             currentlyEditingShiftId: 0,
             shifts: [
@@ -95,6 +97,8 @@ class ShiftManager extends React.Component {
     }
 
     setCurrentlyEditingShift(currentlyEditingShiftId) {
+        this.sectionSwitcherInstance.resetActiveSection(); // reset the open tab
+
         return this.setState({ currentlyEditingShiftId });
     }
 
@@ -185,6 +189,7 @@ class ShiftManager extends React.Component {
                         <SectionSwitcher
                             className="pt0"
                             secondaryMenuClassName="mb3"
+                            ref={(sectionSwitcherInstance) => this.sectionSwitcherInstance = sectionSwitcherInstance}
                             sections={[
                                 {
                                     key: 'basic',

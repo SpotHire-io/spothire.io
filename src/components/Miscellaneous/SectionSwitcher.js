@@ -8,6 +8,7 @@ class SectionSwitcher extends React.Component {
         super();
 
         this.setActiveSection = this.setActiveSection.bind(this);
+        this.resetActiveSection = this.resetActiveSection.bind(this);
 
         this.state = {
             activeSectionIndex: 0
@@ -18,6 +19,10 @@ class SectionSwitcher extends React.Component {
         const activeSectionIndex = this.props.sections.findIndex((section) => section.key === sectionKey);
 
         return this.setState({ activeSectionIndex });
+    }
+
+    resetActiveSection() {
+        return this.setState({ activeSectionIndex: 0 });
     }
 
     render() {
