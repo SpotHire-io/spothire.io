@@ -74,7 +74,7 @@ class GroupCard extends React.Component {
 
                 {this.renderAvatarPreview()}
 
-                <p className="gray mt3">{this.props.group.talent.length} talent</p>
+                <p className="gray mt3">{this.props.group.talent.length} {(this.props.group.talent.length > 1) ? 'talents' : 'talent'}</p>
             </Box>
         );
     }
