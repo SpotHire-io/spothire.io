@@ -1,13 +1,13 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import GroupSchema from '../../schemas/Group';
+import GroupSchema from '../../../schemas/Group';
 
 import classNames from 'classnames';
 
-import Box from '../Global/Box';
+import Box from '../../Global/Box';
 
-class Group extends React.Component {
+class GroupCard extends React.Component {
     constructor() {
         super();
 
@@ -80,13 +80,13 @@ class Group extends React.Component {
     }
 }
 
-Group.defaultProps = {
+GroupCard.defaultProps = {
     className: '',
 };
 
-Group.propTypes = {
+GroupCard.propTypes = {
     className: PropTypes.string,
     group: GroupSchema.isRequired,
 };
 
-export default Group;
+export default GroupCard;

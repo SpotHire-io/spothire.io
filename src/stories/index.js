@@ -30,7 +30,7 @@ import ShiftManager from '../components/Scheduling/ShiftManager';
 
 import UserTable from '../components/Talent/UserTable';
 import SelectableUserTable from '../components/Talent/SelectableUserTable';
-import Group from '../components/Talent/Group';
+import GroupCard from '../components/Talent/Groups/Card';
 
 import ShiftList from '../components/Miscellaneous/ShiftList';
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
@@ -592,10 +592,10 @@ storiesOf('Talent', module)
             </div>
         </WithNotes>
     ))
-    .add('Group', () => (
+    .add('GroupCard', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
-                <Group
+                <GroupCard
                     group={{
                         id: 0,
                         name: 'Sample Group',
