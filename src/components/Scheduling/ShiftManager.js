@@ -101,7 +101,7 @@ class ShiftManager extends React.Component {
         return (
             <div className={wrapperClasses}>
                 <div className="flex">
-                    <ol className="list ma0 pl0 br b--black-20">
+                    <ol className="list ma0 pl0">
                         {
                             this.state.shifts.map((shift, index) => {
                                 const wrapperClasses = classNames({
