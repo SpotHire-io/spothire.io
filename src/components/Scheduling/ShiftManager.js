@@ -7,11 +7,7 @@ import Box from '../Global/Box';
 
 import BasicButton from '../Buttons/BasicButton';
 
-import SingleDatePickerFocusContainer from '../Miscellaneous/SingleDatePickerFocusContainer';
-
-import TimePicker from 'rc-time-picker';
-
-import Icon from 'react-geomicons';
+import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
 
 class ShiftManager extends React.Component {
     constructor() {
@@ -28,32 +24,42 @@ class ShiftManager extends React.Component {
                 {
                     id: 0,
                     title: 'First shift',
-                    start: moment(new Date(2017, 4, 1, 8, 0)),
-                    end: moment(new Date(2017, 4, 1, 16, 0)),
+                    selectedDates: {
+                        start: moment(new Date(2017, 4, 1, 8, 0)),
+                        end: moment(new Date(2017, 4, 1, 16, 0))
+                    }
                 },
                 {
                     id: 1,
                     title: 'Second shift',
-                    start: moment(new Date(2017, 4, 1, 16, 0)),
-                    end: moment(new Date(2017, 4, 2, 0, 0)),
+                    selectedDates: {
+                        start: moment(new Date(2017, 4, 1, 16, 0,)),
+                        end: moment(new Date(2017, 4, 2, 0, 0))
+                    }
                 },
                 {
                     id: 2,
                     title: 'Third shift',
-                    start: moment(new Date(2017, 4, 1, 8, 0)),
-                    end: moment(new Date(2017, 4, 1, 16, 0)),
+                    selectedDates: {
+                        start: moment(new Date(2017, 4, 1, 8, 0)),
+                        end: moment(new Date(2017, 4, 1, 16, 0))
+                    }
                 },
                 {
                     id: 3,
                     title: 'Fourth shift',
-                    start: moment(new Date(2017, 4, 1, 16, 0)),
-                    end: moment(new Date(2017, 4, 2, 0, 0)),
+                    selectedDates: {
+                        start: moment(new Date(2017, 4, 1, 16, 0,)),
+                        end: moment(new Date(2017, 4, 2, 0, 0))
+                    }
                 },
                 {
                     id: 4,
                     title: 'Super extra long shift name that goes on forever',
-                    start: moment(new Date(2017, 4, 1, 16, 0)),
-                    end: moment(new Date(2017, 4, 2, 0, 0)),
+                    selectedDates: {
+                        start: moment(new Date(2017, 4, 1, 16, 0,)),
+                        end: moment(new Date(2017, 4, 2, 0, 0))
+                    }
                 }
             ]
         };
@@ -90,8 +96,10 @@ class ShiftManager extends React.Component {
         shifts.push({
             id: highestId + 1,
             title: 'New',
-            start: moment(new Date()),
-            end: moment(new Date())
+            selectedDates: {
+                start: moment(new Date()),
+                end: moment(new Date())
+            }
         });
 
         return this.setState({ shifts, currentlyEditingShiftId: highestId + 1 });
@@ -130,6 +138,11 @@ class ShiftManager extends React.Component {
                     </ol>
                     <Box className="flex-auto">
                         {currentlyEditingShift.title}
+
+                        <OpportunityModalBasicInfo
+                            opportunity={currentlyEditingShift}
+                            updateOpportunity={(info) => console.log(info)}
+                        />
 
                         <div className="mt3">
                             <BasicButton className="button--negative" onClick={() => this.deleteShift(currentlyEditingShift.id)}>
