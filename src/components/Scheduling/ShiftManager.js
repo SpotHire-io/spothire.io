@@ -71,11 +71,12 @@ class ShiftManager extends React.Component {
         return (
             <div className={wrapperClasses}>
                 <div className="flex">
-                    <ol className="list ma0 pl0 bb br b--black-20">
+                    <ol className="list ma0 pl0 br b--black-20">
                         {
-                            this.state.shifts.map((shift) => {
+                            this.state.shifts.map((shift, index) => {
                                 const wrapperClasses = classNames({
                                     'db pointer pa3 bg-light-gray underline-hover ma0 bt bl b--black-20 truncate w4': true,
+                                    'bb': this.state.shifts.length === index + 1,
                                     'bg-white': shift.id === this.state.currentlyEditingShiftId
                                 });
 
@@ -86,6 +87,10 @@ class ShiftManager extends React.Component {
                                 )
                             })
                         }
+                        <li className="pa3 underline hover-no-underline pointer">
+                            <span className="dib mr2 no-underline">+</span>
+                            Add new
+                        </li>
                     </ol>
                     <Box className="flex-auto">
                         {currentlyEditingShift.title}
