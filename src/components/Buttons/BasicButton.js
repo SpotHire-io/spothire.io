@@ -3,7 +3,7 @@ const classNames = require('classnames');
 
 const BasicButton = ({ children, className, onClick }) => {
     let buttonClasses = classNames({
-        'button input-reset f5': true,
+        'button input-reset f5 no-select': true,
         [className]: true
     });
 
