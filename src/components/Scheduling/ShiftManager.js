@@ -27,41 +27,66 @@ class ShiftManager extends React.Component {
                 {
                     id: 0,
                     title: 'First shift',
+                    isAllDay: false,
                     selectedDates: {
                         start: moment(new Date(2017, 4, 1, 8, 0)),
                         end: moment(new Date(2017, 4, 1, 16, 0))
+                    },
+                    talent: {
+                        invited: 'all',
+                        confirmed: []
                     }
                 },
                 {
                     id: 1,
                     title: 'Second shift',
+                    isAllDay: false,
                     selectedDates: {
                         start: moment(new Date(2017, 4, 1, 16, 0,)),
                         end: moment(new Date(2017, 4, 2, 0, 0))
+                    },
+                    talent: {
+                        invited: 'all',
+                        confirmed: []
                     }
                 },
                 {
                     id: 2,
                     title: 'Third shift',
+                    isAllDay: false,
                     selectedDates: {
                         start: moment(new Date(2017, 4, 1, 8, 0)),
                         end: moment(new Date(2017, 4, 1, 16, 0))
+                    },
+                    talent: {
+                        invited: 'all',
+                        confirmed: []
                     }
                 },
                 {
                     id: 3,
                     title: 'Fourth shift',
+                    isAllDay: false,
                     selectedDates: {
                         start: moment(new Date(2017, 4, 1, 16, 0,)),
                         end: moment(new Date(2017, 4, 2, 0, 0))
+                    },
+                    talent: {
+                        invited: 'all',
+                        confirmed: []
                     }
                 },
                 {
                     id: 4,
                     title: 'Super extra long shift name that goes on forever',
+                    isAllDay: false,
                     selectedDates: {
                         start: moment(new Date(2017, 4, 1, 16, 0,)),
                         end: moment(new Date(2017, 4, 2, 0, 0))
+                    },
+                    talent: {
+                        invited: 'all',
+                        confirmed: []
                     }
                 }
             ]
