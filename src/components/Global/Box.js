@@ -1,7 +1,7 @@
 const React      = require('react');
 const classNames = require('classnames');
 
-const Box = ({ children, className, headingSemanticLevel, title }) => {
+const Box = ({ children, className, contentWrapperClassName, headingSemanticLevel, title }) => {
     let wrapperClasses = classNames({
         'bg-white ba b--black-20 sh-shadow-2': true,
         [className]: true
@@ -20,7 +20,7 @@ const Box = ({ children, className, headingSemanticLevel, title }) => {
     return (
         <div className={wrapperClasses}>
             {renderTitle()}
-            <div className="pa3">
+            <div className={contentWrapperClassName}>
                 {children}
             </div>
         </div>
@@ -29,7 +29,8 @@ const Box = ({ children, className, headingSemanticLevel, title }) => {
 
 Box.defaultProps = {
     className: '',
-    headingSemanticLevel: 2
+    headingSemanticLevel: 2,
+    contentWrapperClassName: 'pa3'
 };
 
 module.exports = Box;

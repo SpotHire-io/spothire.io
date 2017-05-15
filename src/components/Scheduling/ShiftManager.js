@@ -7,7 +7,10 @@ import Box from '../Global/Box';
 
 import BasicButton from '../Buttons/BasicButton';
 
+import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
+
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
+import OpportunityModalTalent from './OpportunityModal/Talent';
 
 class ShiftManager extends React.Component {
     constructor() {
@@ -136,10 +139,28 @@ class ShiftManager extends React.Component {
                             <button className="input-reset pa3 bg-transparent f5 w-100 tl underline hover-no-underline" onClick={() => this.createShift()}>Add Shift</button>
                         </li>
                     </ol>
-                    <Box className="flex-auto">
-                        <OpportunityModalBasicInfo
-                            opportunity={currentlyEditingShift}
-                            updateOpportunity={(info) => console.log(info)}
+                    <Box className="flex-auto" contentWrapperClassName="ph3 pb3">
+                        <SectionSwitcher
+                            className="pt0"
+                            secondaryMenuClassName="mb3"
+                            sections={[
+                                {
+                                    key: 'basic',
+                                    name: 'Basic Info',
+                                    content: <OpportunityModalBasicInfo
+                                        opportunity={currentlyEditingShift}
+                                        updateOpportunity={(info) => console.log(info)}
+                                    />
+                                },
+                                {
+                                    key: 'talent',
+                                    name: 'Talent',
+                                    content: <OpportunityModalTalent
+                                        opportunity={currentlyEditingShift}
+                                        updateOpportunity={(info) => console.log(info)}
+                                    />
+                                }
+                            ]}
                         />
 
                         <div className="mt3">
