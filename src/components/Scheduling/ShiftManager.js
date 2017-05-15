@@ -111,27 +111,31 @@ class ShiftManager extends React.Component {
                     <ol className="list ma0 pl0">
                         {
                             this.state.shifts.map((shift, index) => {
-                                const wrapperClasses = classNames({
-                                    'db pointer pa3 bg-light-gray underline-hover ma0 bt bl b--black-20 truncate w4': true,
+                                const buttonClasses = classNames({
+                                    'db b br0 input-reset f5 tl pointer pa3 bg-light-gray underline-hover bt bl b--black-20 truncate w4': true,
                                     'bb': this.state.shifts.length === index + 1,
                                     'bg-white': shift.id === this.state.currentlyEditingShiftId
                                 });
 
                                 return (
-                                    <li className={wrapperClasses} key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
-                                        <strong>{shift.title}</strong>
+                                    <li className="ma0" key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
+                                        <button className={buttonClasses}>{shift.title}</button>
                                     </li>
                                 )
                             })
                         }
-                        <li>
+                        <li className="ma0">
                             <button className="input-reset pa3 bg-transparent f5 w-100 tl underline hover-no-underline" onClick={() => this.createShift()}>Add Shift</button>
                         </li>
                     </ol>
                     <Box className="flex-auto">
                         {currentlyEditingShift.title}
 
-                        <BasicButton className="button--negative" onClick={() => this.deleteShift(currentlyEditingShift.id)}>Delete Shift</BasicButton>
+                        <div className="mt3">
+                            <BasicButton className="button--negative" onClick={() => this.deleteShift(currentlyEditingShift.id)}>
+                                Delete Shift
+                            </BasicButton>
+                        </div>
                     </Box>
                 </div>
             </div>
