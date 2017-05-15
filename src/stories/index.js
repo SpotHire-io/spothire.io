@@ -107,7 +107,17 @@ storiesOf('Views', module)
                         content: (
                             <div className="flex ma4">
                                 {sampleFilterContainer('mr3 w-third self-start')}
-                                List of groups...
+                                <GroupCardList
+                                    className="nt3 w-two-thirds"
+                                    groups={[...Array(10).keys()].map((number) => {
+                                        return {
+                                            id: number,
+                                            name: `Sample Group ${number + 1}`,
+                                            talent: users
+                                        };
+                                    })}
+                                    onSelectGroup={(groupId) => console.log(`Group ID ${groupId} selected`)}
+                                />
                             </div>
                         )
                     }

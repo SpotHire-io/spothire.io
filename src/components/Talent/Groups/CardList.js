@@ -11,7 +11,7 @@ const GroupCardList = ({ className, groups, onSelectGroup }) => (
     <div className={classNames("flex flex-wrap justify-around", className)}>
         {groups.map((group) => (
             <div className="mt3 ph2 w-50">
-                <div className="pointer bt bw2 b--transparent hover-b--blue-yonder" onClick={() => onSelectGroup(group.id)}>
+                <div className="pointer bt bw2 b--transparent hover-b--blue-yonder" style={{ marginTop: '-4px' }} onClick={() => onSelectGroup(group.id)}>
                     <GroupCard
                         className="bg-animate hover-bg-white-70"
                         group={group}
