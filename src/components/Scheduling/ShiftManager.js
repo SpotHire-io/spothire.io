@@ -3,6 +3,8 @@ import React from 'react';
 import classNames from 'classnames';
 import moment from 'moment';
 
+import Box from '../Global/Box';
+
 import BasicButton from '../Buttons/BasicButton';
 
 import SingleDatePickerFocusContainer from '../Miscellaneous/SingleDatePickerFocusContainer';
@@ -31,6 +33,24 @@ class ShiftManager extends React.Component {
                     title: 'Second shift',
                     start: moment(new Date(2017, 4, 1, 16, 0)),
                     end: moment(new Date(2017, 4, 2, 0, 0)),
+                },
+                {
+                    id: 2,
+                    title: 'Third shift',
+                    start: moment(new Date(2017, 4, 1, 8, 0)),
+                    end: moment(new Date(2017, 4, 1, 16, 0)),
+                },
+                {
+                    id: 3,
+                    title: 'Fourth shift',
+                    start: moment(new Date(2017, 4, 1, 16, 0)),
+                    end: moment(new Date(2017, 4, 2, 0, 0)),
+                },
+                {
+                    id: 4,
+                    title: 'Super extra long shift name that goes on forever',
+                    start: moment(new Date(2017, 4, 1, 16, 0)),
+                    end: moment(new Date(2017, 4, 2, 0, 0)),
                 }
             ]
         };
@@ -51,25 +71,25 @@ class ShiftManager extends React.Component {
         return (
             <div className={wrapperClasses}>
                 <div className="flex">
-                    <ol className="list ma0 pl0 bb br b--black-10">
+                    <ol className="list ma0 pl0 bb br b--black-20">
                         {
                             this.state.shifts.map((shift) => {
                                 const wrapperClasses = classNames({
-                                    'db pointer pa3 bg-light-gray underline-hover ma0 bt bl b--black-10': true,
+                                    'db pointer pa3 bg-light-gray underline-hover ma0 bt bl b--black-20 truncate w4': true,
                                     'bg-white': shift.id === this.state.currentlyEditingShiftId
                                 });
 
                                 return (
-                                    <li className={wrapperClasses} key={shift.id}>
+                                    <li className={wrapperClasses} key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
                                         <strong>{shift.title}</strong>
                                     </li>
                                 )
                             })
                         }
                     </ol>
-                    <div>
-                        <h2>{currentlyEditingShift.title}</h2>
-                    </div>
+                    <Box className="flex-auto">
+                        {currentlyEditingShift.title}
+                    </Box>
                 </div>
             </div>
         )
