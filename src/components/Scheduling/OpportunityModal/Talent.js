@@ -6,7 +6,7 @@ import OpportunitySchema from '../../../schemas/Opportunity';
 import ButtonBar from '../../Buttons/ButtonBar';
 import RadioButton from '../../Buttons/RadioButton';
 
-import SelectableUserTable from '../../Miscellaneous/SelectableUserTable';
+import SelectableUserTable from '../../Talent/SelectableUserTable';
 
 class OpportunityModalTalent extends React.Component {
     constructor() {

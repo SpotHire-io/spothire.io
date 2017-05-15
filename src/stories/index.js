@@ -28,8 +28,9 @@ const OverviewCalendar = require('../components/Scheduling/OverviewCalendar');
 import OpportunityModal from '../components/Scheduling/OpportunityModal';
 import ShiftManager from '../components/Scheduling/ShiftManager';
 
-const UserTable = require('../components/Miscellaneous/UserTable');
-import SelectableUserTable from '../components/Miscellaneous/SelectableUserTable';
+import UserTable from '../components/Talent/UserTable';
+import SelectableUserTable from '../components/Talent/SelectableUserTable';
+
 import ShiftList from '../components/Miscellaneous/ShiftList';
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
 
@@ -566,7 +567,7 @@ storiesOf('Scheduling', module)
         </WithNotes>
     ));
 
-storiesOf('Miscellaneous', module)
+storiesOf('Talent', module)
     .add('UserTable', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
@@ -587,7 +588,10 @@ storiesOf('Miscellaneous', module)
                 <SelectableUserTable/>
             </div>
         </WithNotes>
-    ))
+    ));
+
+
+storiesOf('Miscellaneous', module)
     .add('ShiftList', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
