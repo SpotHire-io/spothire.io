@@ -21,29 +21,41 @@ class Group extends React.Component {
         const smallImageSize = 40;
         const insetMargin = 10;
 
+        const commonImageClasses = 'relative br-pill bw1 ba b--silver';
+
+        const sideImageCommonInlineStyles = {
+            height: `${smallImageSize}px`,
+            width: `${smallImageSize}px`,
+            bottom: `${(largeImageSize - smallImageSize) / 2}px`,
+        };
+
         return (
             <div className="relative">
                 <img
-                    className="relative br-pill bw1 ba b--blue-yonder"
+                    className={commonImageClasses}
                     style={{
-                        bottom: `${(largeImageSize - smallImageSize) / 2}px`,
+                        ...sideImageCommonInlineStyles,
                         left: `${insetMargin}px`
                     }}
-                    src={`http://placehold.it/${smallImageSize}x${smallImageSize}`}
+                    src='http://placehold.it/100x100'
                     alt={`Profile picture of ${groupTalent[0].firstName} ${groupTalent[0].lastName}`}
                 />
                 <img
-                    className="relative br-pill bw1 ba b--blue-yonder z-1"
-                    src={`http://placehold.it/${largeImageSize}x${largeImageSize}`}
+                    className={classNames(commonImageClasses, 'z-1')}
+                    style={{
+                        height: `${largeImageSize}px`,
+                        width: `${largeImageSize}px`,
+                    }}
+                    src='http://placehold.it/100x100'
                     alt={`Profile picture of ${groupTalent[1].firstName} ${groupTalent[1].lastName}`}
                 />
                 <img
-                    className="relative br-pill bw1 ba b--blue-yonder"
+                    className={commonImageClasses}
                     style={{
-                        bottom: `${(largeImageSize - smallImageSize) / 2}px`,
+                        ...sideImageCommonInlineStyles,
                         right: `${insetMargin}px`
                     }}
-                    src={`http://placehold.it/${smallImageSize}x${smallImageSize}`}
+                    src='http://placehold.it/100x100'
                     alt={`Profile picture of ${groupTalent[2].firstName} ${groupTalent[2].lastName}`}
                 />
             </div>
