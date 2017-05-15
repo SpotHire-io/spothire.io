@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+import GroupSchema from '../../schemas/Group';
 
 import classNames from 'classnames';
 
@@ -24,6 +25,7 @@ Group.defaultProps = {
 
 Group.propTypes = {
     className: PropTypes.string,
+    group: GroupSchema,
 };
 
 export default Group;
