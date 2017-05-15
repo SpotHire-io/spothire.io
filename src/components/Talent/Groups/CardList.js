@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import GroupCard from './Card';
 
-const GroupCardList = (className, groups, onSelectGroup) => (
+const GroupCardList = ({ className, groups, onSelectGroup }) => (
     <div className={classNames("flex flex-wrap justify-around", className)}>
         {groups.map((group) => (
             <div className="mt3 ph2 w-50">
