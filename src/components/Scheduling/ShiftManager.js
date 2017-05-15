@@ -19,6 +19,9 @@ class ShiftManager extends React.Component {
 
         this.setCurrentlyEditingShift = this.setCurrentlyEditingShift.bind(this);
 
+        this.deleteShift = this.deleteShift.bind(this);
+        this.createShift = this.createShift.bind(this);
+
         this.state = {
             currentlyEditingShiftId: 0,
             shifts: [
@@ -60,6 +63,33 @@ class ShiftManager extends React.Component {
         return this.setState({ currentlyEditingShiftId });
     }
 
+    deleteShift(shiftId) {
+        let shifts = [...this.state.shifts];
+
+        // Drop the shift by finding its index
+        shifts.splice(shifts.findIndex((shift) => shift.id === shiftId), 1);
+
+        return this.setState({ shifts });
+    }
+
+    createShift() {
+        let shifts = [...this.state.shifts];
+
+        // extract the highest ID currently existing so we have something to mock
+        const highestId = shifts.reduce((currentHighestId, shift) => {
+            return Math.max(currentHighestId, shift.id);
+        }, -1);
+
+        shifts.push({
+            id: highestId + 1,
+            title: 'New',
+            start: moment(new Date()),
+            end: moment(new Date())
+        });
+
+        return this.setState({ shifts, currentlyEditingShiftId: highestId + 1 });
+    }
+
     render() {
         const wrapperClasses = classNames({
             '': true,
@@ -87,9 +117,8 @@ class ShiftManager extends React.Component {
                                 )
                             })
                         }
-                        <li className="pa3 underline hover-no-underline pointer">
-                            <span className="dib mr2 no-underline">+</span>
-                            Add new
+                        <li>
+                            <button className="input-reset pa3 bg-transparent f5 w-100 tl underline hover-no-underline" onClick={() => this.createShift()}>Add Shift</button>
                         </li>
                     </ol>
                     <Box className="flex-auto">
