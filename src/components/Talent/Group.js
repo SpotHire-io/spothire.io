@@ -17,9 +17,9 @@ class Group extends React.Component {
     renderAvatarPreview() {
         const groupTalent = this.props.group.talent;
 
-        const largeImageSize = 60;
-        const smallImageSize = 40;
-        const insetMargin = 10;
+        const largeImageSize = 80;
+        const smallImageSize = 60;
+        const insetMargin = 15;
 
         const commonImageClasses = 'relative br-pill bw1 ba b--silver';
 
@@ -37,7 +37,7 @@ class Group extends React.Component {
                         ...sideImageCommonInlineStyles,
                         left: `${insetMargin}px`
                     }}
-                    src='http://placehold.it/100x100'
+                    src="https://randomuser.me/api/portraits/women/0.jpg"
                     alt={`Profile picture of ${groupTalent[0].firstName} ${groupTalent[0].lastName}`}
                 />
                 <img
@@ -46,7 +46,7 @@ class Group extends React.Component {
                         height: `${largeImageSize}px`,
                         width: `${largeImageSize}px`,
                     }}
-                    src='http://placehold.it/100x100'
+                    src="https://randomuser.me/api/portraits/women/2.jpg"
                     alt={`Profile picture of ${groupTalent[1].firstName} ${groupTalent[1].lastName}`}
                 />
                 <img
@@ -55,7 +55,7 @@ class Group extends React.Component {
                         ...sideImageCommonInlineStyles,
                         right: `${insetMargin}px`
                     }}
-                    src='http://placehold.it/100x100'
+                    src="https://randomuser.me/api/portraits/men/5.jpg"
                     alt={`Profile picture of ${groupTalent[2].firstName} ${groupTalent[2].lastName}`}
                 />
             </div>
