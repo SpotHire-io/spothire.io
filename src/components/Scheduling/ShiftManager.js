@@ -165,11 +165,11 @@ class ShiftManager extends React.Component {
         return (
             <div className={wrapperClasses}>
                 <div className="flex">
-                    <ol className="list ma0 pl0">
+                    <ol className="list ma0 pl0 w-30">
                         {
                             this.state.shifts.map((shift, index) => {
                                 const buttonClasses = classNames({
-                                    'db b br0 input-reset f5 tl pointer pa3 bg-light-gray underline-hover bt bl b--black-20 truncate w4': true,
+                                    'db b br0 input-reset f5 tl pointer pa3 bg-light-gray underline-hover bt bl b--black-20 truncate w-100': true,
                                     'bb': this.state.shifts.length === index + 1,
                                     'bg-white': shift.id === this.state.currentlyEditingShiftId
                                 });
@@ -185,7 +185,7 @@ class ShiftManager extends React.Component {
                             <button className="input-reset pa3 bg-transparent f5 w-100 tl underline hover-no-underline" onClick={() => this.createShift()}>Add Shift</button>
                         </li>
                     </ol>
-                    <Box className="flex-auto" contentWrapperClassName="ph3 pb3">
+                    <Box className="w-70" contentWrapperClassName="ph3 pb3">
                         <SectionSwitcher
                             className="pt0"
                             secondaryMenuClassName="mb3"
