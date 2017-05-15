@@ -4,69 +4,79 @@
     "firstName": "Annie",
     "lastName": "Campbell",
     "email": "acampbell0@cnbc.com",
-    "phone": "63-(954)154-1049"
+    "phone": "63-(954)154-1049",
+    "type": "admin"
   },
   {
     "id": 2,
     "firstName": "Jesse",
     "lastName": "Olson",
     "email": "jolson1@umich.edu",
-    "phone": "20-(397)570-4573"
+    "phone": "20-(397)570-4573",
+    "type": "talent"
   },
   {
     "id": 3,
     "firstName": "Christina",
     "lastName": "Hernandez",
     "email": "chernandez2@dot.gov",
-    "phone": "86-(782)312-6763"
+    "phone": "86-(782)312-6763",
+    "type": "talent"
   },
   {
     "id": 4,
     "firstName": "Heather",
     "lastName": "Payne",
     "email": "hpayne3@miitbeian.gov.cn",
-    "phone": "55-(454)387-0985"
+    "phone": "55-(454)387-0985",
+    "type": "talent"
   },
   {
     "id": 5,
     "firstName": "Rebecca",
     "lastName": "Hunter",
     "email": "rhunter4@vinaora.com",
-    "phone": "1-(816)681-7469"
+    "phone": "1-(816)681-7469",
+    "type": "talent"
   },
   {
     "id": 6,
     "firstName": "Matthew",
     "lastName": "Sullivan",
     "email": "msullivan5@amazon.com",
-    "phone": "46-(387)906-3742"
+    "phone": "46-(387)906-3742",
+    "type": "talent"
   },
   {
     "id": 7,
     "firstName": "Ann",
     "lastName": "Lawrence",
     "email": "alawrence6@dmoz.org",
-    "phone": "57-(734)309-4759"
+    "phone": "57-(734)309-4759",
+    "type": "talent"
   },
   {
     "id": 8,
     "firstName": "Lori",
     "lastName": "Morales",
     "email": "lmorales7@xing.com",
-    "phone": "66-(197)895-2507"
+    "phone": "66-(197)895-2507",
+    "type": "talent"
   },
   {
     "id": 9,
     "firstName": "Harry",
     "lastName": "Bishop",
     "email": "hbishop8@moonfruit.com",
-    "phone": "880-(541)270-1621"
+    "phone": "880-(541)270-1621",
+    "type": "talent"
   },
   {
     "id": 10,
     "firstName": "Joshua",
     "lastName": "Hansen",
     "email": "jhansen9@hatena.ne.jp",
-    "phone": "7-(959)110-4566"
+    "phone": "7-(959)110-4566",
+    "type": "talent"
   }
 ]
