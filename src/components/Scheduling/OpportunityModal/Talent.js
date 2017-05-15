@@ -64,6 +64,7 @@ class OpportunityModalTalent extends React.Component {
                         'Selected'
                     ].map((inviteType) =>
                         <RadioButton
+                            key={inviteType.toLowerCase()}
                             name="opp_talent_invited"
                             id={'opp_talent_invited_' + inviteType.toLowerCase()}
                             value={inviteType.toLowerCase()}
