@@ -20,6 +20,7 @@ class ShiftManager extends React.Component {
 
         this.deleteShift = this.deleteShift.bind(this);
         this.createShift = this.createShift.bind(this);
+        this.updateShift = this.updateShift.bind(this);
 
         this.state = {
             currentlyEditingShiftId: 0,
@@ -138,6 +139,15 @@ class ShiftManager extends React.Component {
         return this.setState({ shifts, currentlyEditingShiftId: highestId + 1 });
     }
 
+    updateShift( updatedShift ) {
+        const shifts = [...this.state.shifts];
+        const shiftIndex = shifts.findIndex((shift) => shift.id === updatedShift.id);
+
+        shifts[shiftIndex] = updatedShift;
+
+        this.setState({ shifts });
+    }
+
     render() {
         const wrapperClasses = classNames({
             '': true,
@@ -181,7 +191,7 @@ class ShiftManager extends React.Component {
                                     name: 'Basic Info',
                                     content: <OpportunityModalBasicInfo
                                         opportunity={currentlyEditingShift}
-                                        updateOpportunity={(info) => console.log(info)}
+                                        updateOpportunity={this.updateShift}
                                     />
                                 },
                                 {
@@ -189,7 +199,7 @@ class ShiftManager extends React.Component {
                                     name: 'Talent',
                                     content: <OpportunityModalTalent
                                         opportunity={currentlyEditingShift}
-                                        updateOpportunity={(info) => console.log(info)}
+                                        updateOpportunity={this.updateShift}
                                     />
                                 }
                             ]}
