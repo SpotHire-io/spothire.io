@@ -613,13 +613,16 @@ storiesOf('Talent:Groups', module)
                 <div className="flex flex-wrap justify-around">
                     {[...Array(10).keys()].map((number) => (
                         <div className="mt3 ph2 w-50">
-                            <GroupCard
-                                group={{
-                                    id: number,
-                                    name: 'Sample Group',
-                                    talent: users
-                                }}
-                            />
+                            <div className="pointer bt bw2 b--transparent hover-b--blue-yonder">
+                                <GroupCard
+                                    className="bg-animate hover-bg-white-70"
+                                    group={{
+                                        id: number,
+                                        name: 'Sample Group',
+                                        talent: users
+                                    }}
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>

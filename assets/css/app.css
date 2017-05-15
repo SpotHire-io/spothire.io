@@ -57,6 +57,11 @@
     border-color: rgb(84, 119, 166);
 }
 
+.hover-b--blue-yonder:hover,
+.hover-b--blue-yonder:focus {
+    border-color: rgb(84, 119, 166);
+}
+
 .hover-b--white-40:hover {
     border-color: rgba(255, 255, 255, 0.4);
 }
