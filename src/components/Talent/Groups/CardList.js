@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import GroupCard from './Card';
 
-const GroupList = (className, groups, onClick) => (
+const GroupCardList = (className, groups, onClick) => (
     <div className={classNames("flex flex-wrap justify-around", className)}>
         {groups.map((group) => (
             <div className="mt3 ph2 w-50">
@@ -22,14 +22,14 @@ const GroupList = (className, groups, onClick) => (
     </div>
 );
 
-GroupList.defaultProps = {
+GroupCardList.defaultProps = {
     className: '',
 };
 
-GroupList.propTypes = {
+GroupCardList.propTypes = {
     className: PropTypes.string,
     groups: PropTypes.arrayOf(GroupSchema).isRequired,
     onClick: PropTypes.func,
 };
 
-export default GroupList;
+export default GroupCardList;
