@@ -124,9 +124,14 @@ class ShiftManager extends React.Component {
         shifts.push({
             id: highestId + 1,
             title: 'New',
+            isAllDay: false,
             selectedDates: {
                 start: moment(new Date()),
                 end: moment(new Date())
+            },
+            talent: {
+                invited: 'all',
+                confirmed: []
             }
         });
 
