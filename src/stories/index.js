@@ -37,6 +37,8 @@ const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
 
 import '../../public/css/app.css';
 
+import users from '../data/users.json';
+
 storiesOf('Overview', module)
     .add('Welcome', () => (
         <div className="ma4 ">
@@ -594,7 +596,11 @@ storiesOf('Talent', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Group
-
+                    group={{
+                        id: 0,
+                        name: 'Sample Group',
+                        talent: users
+                    }}
                 />
             </div>
         </WithNotes>

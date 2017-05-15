@@ -25,7 +25,7 @@ Group.defaultProps = {
 
 Group.propTypes = {
     className: PropTypes.string,
-    group: GroupSchema,
+    group: GroupSchema.isRequired,
 };
 
 export default Group;
