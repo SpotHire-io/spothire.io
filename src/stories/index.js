@@ -31,6 +31,7 @@ import ShiftManager from '../components/Scheduling/ShiftManager';
 import UserTable from '../components/Talent/UserTable';
 import SelectableUserTable from '../components/Talent/SelectableUserTable';
 import GroupCard from '../components/Talent/Groups/Card';
+import GroupCardList from '../components/Talent/Groups/CardList';
 
 import ShiftList from '../components/Miscellaneous/ShiftList';
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
@@ -609,7 +610,17 @@ storiesOf('Talent:Groups', module)
     ))
     .add('CardList', () => (
         <WithNotes>
-
+            <div className="pa4 bg-near-white">
+                <GroupCardList
+                    groups={[...Array(10).keys()].map((number) => {
+                        return {
+                            id: number,
+                            name: `Sample Group ${number + 1}`,
+                            talent: users
+                        };
+                    })}
+                />
+            </div>
         </WithNotes>
     ));
 
