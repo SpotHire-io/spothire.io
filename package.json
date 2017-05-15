@@ -16,6 +16,7 @@
     "postcss-css-variables": "^0.7.0",
     "postcss-extend": "^1.0.5",
     "postcss-import": "^9.1.0",
+    "prop-types": "^15.5.10",
     "rc-time-picker": "^2.3.3",
     "react": "^15.4.2",
     "react-addons-shallow-compare": "^15.4.2",

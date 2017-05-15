@@ -116,6 +116,8 @@ class ShiftManager extends React.Component {
 
         const currentlyEditingShift = this.state.shifts.find((shift) => shift.id === this.state.currentlyEditingShiftId);
 
+        console.log(typeof currentlyEditingShift.selectedDates.start);
+
         return (
             <div className={wrapperClasses}>
                 <div className="flex">

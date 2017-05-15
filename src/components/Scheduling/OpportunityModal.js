@@ -9,6 +9,8 @@ import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
 
 const BasicButton = require('../Buttons/BasicButton');
 
+import OpportunitySchema from '../../schemas/Opportunity';
+
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
 import OpportunityModalShifts from './OpportunityModal/Shifts';
 import OpportunityModalTalent from './OpportunityModal/Talent';
@@ -64,7 +66,7 @@ OpportunityModal.propTypes = {
     isOpen: React.PropTypes.bool.isRequired,
     closeModal: React.PropTypes.func.isRequired,
     updateOpportunity: React.PropTypes.func.isRequired,
-    opportunity: React.PropTypes.object.isRequired
+    opportunity: OpportunitySchema
 };
 
 module.exports = OpportunityModal;
