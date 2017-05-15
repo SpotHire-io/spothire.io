@@ -30,6 +30,7 @@ import ShiftManager from '../components/Scheduling/ShiftManager';
 
 import UserTable from '../components/Talent/UserTable';
 import SelectableUserTable from '../components/Talent/SelectableUserTable';
+import Group from '../components/Talent/Group';
 
 import ShiftList from '../components/Miscellaneous/ShiftList';
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
@@ -586,6 +587,15 @@ storiesOf('Talent', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <SelectableUserTable/>
+            </div>
+        </WithNotes>
+    ))
+    .add('Group', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <Group
+
+                />
             </div>
         </WithNotes>
     ));
