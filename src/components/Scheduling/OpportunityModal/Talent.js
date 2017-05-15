@@ -1,6 +1,8 @@
 const React      = require('react');
 import classNames from 'classnames';
 
+import OpportunitySchema from '../../../schemas/Opportunity';
+
 import ButtonBar from '../../Buttons/ButtonBar';
 import RadioButton from '../../Buttons/RadioButton';
 
@@ -80,7 +82,7 @@ class OpportunityModalTalent extends React.Component {
 
 OpportunityModalTalent.propTypes = {
     updateOpportunity: React.PropTypes.func.isRequired,
-    opportunity: React.PropTypes.object.isRequired
+    opportunity: OpportunitySchema
 };
 
 export default OpportunityModalTalent;

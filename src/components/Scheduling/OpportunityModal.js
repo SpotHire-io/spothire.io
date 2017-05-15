@@ -1,6 +1,8 @@
 const React      = require('react');
 import classNames from 'classnames';
 
+import OpportunitySchema from '../../schemas/Opportunity';
+
 const moment      = require('moment');
 
 const Modal = require('react-modal');
@@ -8,8 +10,6 @@ const Modal = require('react-modal');
 import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
 
 const BasicButton = require('../Buttons/BasicButton');
-
-import OpportunitySchema from '../../schemas/Opportunity';
 
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
 import OpportunityModalShifts from './OpportunityModal/Shifts';
@@ -44,11 +44,6 @@ class OpportunityModal extends React.Component {
                             key: 'talent',
                             name: 'Talent',
                             content: <OpportunityModalTalent {...this.props}/>
-                        },
-                        {
-                            key: 'shifts',
-                            name: 'Shifts',
-                            content: <OpportunityModalShifts {...this.props}/>
                         }
                     ]}
                 />

@@ -1,6 +1,8 @@
 const React      = require('react');
 import classNames from 'classnames';
 
+import OpportunitySchema from '../../../schemas/Opportunity';
+
 const moment      = require('moment');
 
 import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
@@ -139,7 +141,7 @@ class OpportunityModalBasicInfo extends React.Component {
 
 OpportunityModalBasicInfo.propTypes = {
     updateOpportunity: React.PropTypes.func.isRequired,
-    opportunity: React.PropTypes.object.isRequired
+    opportunity: OpportunitySchema
 };
 
 export default OpportunityModalBasicInfo;
