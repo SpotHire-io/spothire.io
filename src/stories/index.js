@@ -607,7 +607,7 @@ storiesOf('Talent:Groups', module)
             </div>
         </WithNotes>
     ))
-    .add('List', () => (
+    .add('CardList', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <div className="flex flex-wrap justify-around">
