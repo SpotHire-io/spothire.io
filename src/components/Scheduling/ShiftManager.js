@@ -137,8 +137,6 @@ class ShiftManager extends React.Component {
                         </li>
                     </ol>
                     <Box className="flex-auto">
-                        {currentlyEditingShift.title}
-
                         <OpportunityModalBasicInfo
                             opportunity={currentlyEditingShift}
                             updateOpportunity={(info) => console.log(info)}

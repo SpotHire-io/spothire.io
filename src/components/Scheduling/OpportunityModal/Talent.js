@@ -53,7 +53,7 @@ class OpportunityModalTalent extends React.Component {
 
     render() {
         return (
-            <div className="mt3">
+            <div>
                 <p className="f6">Invited talent</p>
                 <ButtonBar className="w-100 mt2">
                     {[

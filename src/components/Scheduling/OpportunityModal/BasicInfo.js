@@ -91,10 +91,10 @@ class OpportunityModalBasicInfo extends React.Component {
 
     render() {
         return (
-            <div className="mt3">
-                <p className="mt3">
+            <div>
+                <p>
                     <label className="f6 db" htmlFor="opp_name">Name</label>
-                    <input className="mt2 w-100" type="text" id="opp_name" name="opp_name"/>
+                    <input className="mt2 w-100" type="text" id="opp_name" name="opp_name" defaultValue={this.props.opportunity.title}/>
                 </p>
 
                 <p className="mt3">

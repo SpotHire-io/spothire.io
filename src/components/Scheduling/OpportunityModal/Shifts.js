@@ -10,7 +10,7 @@ class OpportunityModalShifts extends React.Component {
 
     render() {
         return (
-            <div className="mt3">
+            <div>
                 <ShiftList/>
             </div>
         )
