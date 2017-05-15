@@ -32,6 +32,7 @@ import UserTable from '../components/Talent/UserTable';
 import SelectableUserTable from '../components/Talent/SelectableUserTable';
 import GroupCard from '../components/Talent/Groups/Card';
 import GroupCardList from '../components/Talent/Groups/CardList';
+import GroupSingle from '../components/Talent/Groups/Single';
 
 import ShiftList from '../components/Miscellaneous/ShiftList';
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
@@ -630,6 +631,19 @@ storiesOf('Talent:Groups', module)
                         };
                     })}
                     onSelectGroup={(groupId) => console.log(`Group ID ${groupId} selected`)}
+                />
+            </div>
+        </WithNotes>
+    ))
+    .add('Single', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <GroupSingle
+                    group={{
+                        id: 0,
+                        name: 'Sample Group',
+                        talent: users
+                    }}
                 />
             </div>
         </WithNotes>
