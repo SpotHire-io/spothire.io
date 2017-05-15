@@ -619,6 +619,7 @@ storiesOf('Talent:Groups', module)
                             talent: users
                         };
                     })}
+                    onSelectGroup={(groupId) => console.log(`Group ID ${groupId} selected`)}
                 />
             </div>
         </WithNotes>
