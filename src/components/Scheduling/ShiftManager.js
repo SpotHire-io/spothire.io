@@ -130,7 +130,7 @@ class ShiftManager extends React.Component {
 
         shifts.push({
             id: highestId + 1,
-            title: 'New',
+            title: '',
             isAllDay: false,
             selectedDates: {
                 start: moment(new Date()),
@@ -178,7 +178,7 @@ class ShiftManager extends React.Component {
 
                                 return (
                                     <li className="ma0 pl0" key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
-                                        <button className={buttonClasses}>{shift.title}</button>
+                                        <button className={buttonClasses}>{(shift.title.length > 0) ? shift.title : 'Untitled'}</button>
                                     </li>
                                 )
                             })
