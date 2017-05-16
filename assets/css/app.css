@@ -112,6 +112,6 @@
 .animation__shift-tab-enter-active,
 .animation__shift-tab-enter-active + li.shift-tab--new-shift {
     transform: translateX(0);
-    transition: transform 150ms ease-in;
+    transition: transform 100ms ease-in;
     z-index: 0;
 }

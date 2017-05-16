@@ -167,7 +167,7 @@ class ShiftManager extends React.Component {
         return (
             <div className={wrapperClasses}>
                 <div className="flex">
-                    <CSSTransitionGroup transitionName="animation__shift-tab" transitionEnterTimeout={150} transitionLeaveTimeout={1} component="ol" className="list ma0 pl0 w-30">
+                    <CSSTransitionGroup transitionName="animation__shift-tab" transitionEnterTimeout={100} transitionLeaveTimeout={1} component="ol" className="list ma0 pl0 w-30">
                         {
                             this.state.shifts.map((shift, index) => {
                                 const buttonClasses = classNames({
@@ -177,7 +177,7 @@ class ShiftManager extends React.Component {
                                 });
 
                                 return (
-                                    <li className="ma0 pl0" key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
+                                    <li className="ma0 pl0 relative z-1" key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
                                         <button className={buttonClasses}>{(shift.title.length > 0) ? shift.title : 'Untitled'}</button>
                                     </li>
                                 )
