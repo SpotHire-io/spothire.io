@@ -183,7 +183,7 @@ class ShiftManager extends React.Component {
                                 )
                             })
                         }
-                        <li className="ma0">
+                        <li className="ma0 shift-tab--new-shift">
                             <button className="input-reset pa3 bg-transparent f5 w-100 tl underline hover-no-underline" onClick={() => this.createShift()}>Add Shift</button>
                         </li>
                     </CSSTransitionGroup>

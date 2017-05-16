@@ -103,11 +103,15 @@
     text-decoration: none;
 }
 
-.animation__shift-tab-enter {
-    transform: translateX(100%);
+.animation__shift-tab-enter,
+.animation__shift-tab-enter + li.shift-tab--new-shift {
+    transform: translateY(-100%);
+    z-index: 0;
 }
 
-.animation__shift-tab-enter-active {
+.animation__shift-tab-enter-active,
+.animation__shift-tab-enter-active + li.shift-tab--new-shift {
     transform: translateX(0);
     transition: transform 150ms ease-in;
+    z-index: 0;
 }
