@@ -23,8 +23,8 @@ RadioButton.defaultProps = {
 };
 
 RadioButton.propTypes = {
-    name: React.PropTypes.string.required,
-    id: React.PropTypes.string.required
+    name: React.PropTypes.string.isRequired,
+    id: React.PropTypes.string.isRequired
 };
 
 export default RadioButton;
