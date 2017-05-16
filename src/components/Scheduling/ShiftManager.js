@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { CSSTransitionGroup } from 'react-transition-group';
+
 import classNames from 'classnames';
 import moment from 'moment';
 
@@ -165,7 +167,7 @@ class ShiftManager extends React.Component {
         return (
             <div className={wrapperClasses}>
                 <div className="flex">
-                    <ol className="list ma0 pl0 w-30">
+                    <CSSTransitionGroup transitionName="animation__shift-tab" transitionEnterTimeout={150} transitionLeaveTimeout={1} component="ol" className="list ma0 pl0 w-30">
                         {
                             this.state.shifts.map((shift, index) => {
                                 const buttonClasses = classNames({
@@ -175,7 +177,7 @@ class ShiftManager extends React.Component {
                                 });
 
                                 return (
-                                    <li className="ma0" key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
+                                    <li className="ma0 pl0" key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
                                         <button className={buttonClasses}>{shift.title}</button>
                                     </li>
                                 )
@@ -184,8 +186,8 @@ class ShiftManager extends React.Component {
                         <li className="ma0">
                             <button className="input-reset pa3 bg-transparent f5 w-100 tl underline hover-no-underline" onClick={() => this.createShift()}>Add Shift</button>
                         </li>
-                    </ol>
-                    <Box className="w-70" contentWrapperClassName="ph3 pb3">
+                    </CSSTransitionGroup>
+                    <Box className="w-70 relative z-1" contentWrapperClassName="ph3 pb3">
                         <SectionSwitcher
                             className="pt0"
                             secondaryMenuClassName="mb3"

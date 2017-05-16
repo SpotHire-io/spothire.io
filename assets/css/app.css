@@ -102,3 +102,12 @@
 .hover-no-underline:focus {
     text-decoration: none;
 }
+
+.animation__shift-tab-enter {
+    transform: translateX(100%);
+}
+
+.animation__shift-tab-enter-active {
+    transform: translateX(0);
+    transition: transform 150ms ease-in;
+}
