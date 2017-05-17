@@ -72,7 +72,7 @@ class SelectableUserTable extends React.Component {
                     let innerContent;
 
                     if (this.state.selectedUserIds.indexOf(user.id) === -1) {
-                        innerContent = (<img key={'image-' + user.id} className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40"/>);
+                        innerContent = (<img key={'image-' + user.id} className="db w1 h1 br-100 v-btm" src="http://placehold.it/40x40"/>);
                     } else {
                         innerContent = (<Checkbox key={'checkbox-' + user.id} theme="success" style={{ display: 'inline' }} checked label="" name=""/>);
                     }
@@ -80,9 +80,9 @@ class SelectableUserTable extends React.Component {
                     return (
                         <CSSTransitionGroup
                             transitionName="animation__image-checkbox"
-                            transitionEnterTimeout={1000}
-                            transitionLeaveTimeout={1000}
-                            className="sh-rebass-checkbox-mr0"
+                            transitionEnterTimeout={150}
+                            transitionLeaveTimeout={150}
+                            className="sh-rebass-checkbox-mr0 relative w1 h1"
                             component="div"
                         >
                             {innerContent}
