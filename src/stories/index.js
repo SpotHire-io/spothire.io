@@ -79,13 +79,25 @@ storiesOf('Overview', module)
 
 storiesOf('Views', module)
     .add('Newsfeed', () => (
-        <NewsfeedView/>
+        <NewsfeedView
+            posts={
+                [
+                    {...samplePost},
+                    {...samplePost, id: 2},
+                    {...samplePost, id: 3}
+                ]
+            }
+        />
     ))
     .add('People', () => (
-        <PeopleView/>
+        <PeopleView
+            users={users}
+        />
     ))
     .add('Schedule', () => (
-        <ScheduleView/>
+        <ScheduleView
+            events={sampleEvents}
+        />
     ));
 
 storiesOf('Global', module)

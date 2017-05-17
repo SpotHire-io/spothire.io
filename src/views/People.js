@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+import PersonSchema from '../schemas/Person';
 
 import MainMenu from '../components/Global/MainMenu';
 
@@ -11,8 +12,6 @@ import GroupCardList from '../components/Talent/Groups/CardList';
 
 import FilterContainer from '../components/Filters/FilterContainer';
 import Filter from '../components/Filters/Filter';
-
-import users from '../data/users.json';
 
 class PeopleView extends React.Component {
     constructor() {
@@ -169,7 +168,7 @@ class PeopleView extends React.Component {
                                             return {
                                                 id: number,
                                                 name: `Sample Group ${number + 1}`,
-                                                talent: users
+                                                talent: this.props.users
                                             };
                                         })}
                                         onSelectGroup={(groupId) => console.log(`Group ID ${groupId} selected`)}
@@ -189,7 +188,7 @@ PeopleView.defaultProps = {
 };
 
 PeopleView.propTypes = {
-
+    users: PropTypes.arrayOf(PersonSchema).isRequired
 };
 
 export default PeopleView;

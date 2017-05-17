@@ -9,21 +9,6 @@ import PostList from '../components/Newsfeed/PostList';
 import FilterContainer from '../components/Filters/FilterContainer';
 import Filter from '../components/Filters/Filter';
 
-const samplePost = {
-    id: 1,
-    title: "A very cool post",
-    content: (
-        <div>
-            <p className="mt0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ducimus fugiat fugit, minus modi qui quod ratione repellat ut vero?</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque enim, illo odio temporibus vitae voluptatem! Adipisci amet architecto at cum doloremque dolorum ducimus eveniet ex, facere iure libero molestiae non numquam quam rem sit ut vel? Animi aperiam assumenda consectetur dolore dolorem eaque ex exercitationem facilis labore natus obcaecati quisquam quos recusandae rem sint totam vero, voluptatum? Accusamus animi aperiam aspernatur at distinctio dolor ducimus eveniet facere, fugiat incidunt ipsa magnam maxime molestiae molestias, officiis pariatur perspiciatis praesentium, quisquam rem saepe sunt velit voluptas voluptatibus. Assumenda odio provident quidem recusandae repellat. Distinctio ducimus facere illum ipsam similique sit voluptatem.</p>
-        </div>
-    ),
-    date: "2017-03-13T12:00:00-04:00",
-    responseRequired: true,
-    isRespondedTo: (Math.random() > 0.5)
-};
-
 class NewsfeedView extends React.Component {
     constructor() {
         super();
@@ -98,13 +83,7 @@ class NewsfeedView extends React.Component {
                         </FilterContainer>
                         <PostList
                             className="w-two-thirds"
-                            posts={
-                                [
-                                    {...samplePost},
-                                    {...samplePost, id: 2},
-                                    {...samplePost, id: 3}
-                                ]
-                            }
+                            posts={this.props.posts}
                         />
                     </div>
                 </div>
@@ -118,7 +97,7 @@ NewsfeedView.defaultProps = {
 };
 
 NewsfeedView.propTypes = {
-
+    posts: PropTypes.array
 };
 
 export default NewsfeedView;
