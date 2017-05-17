@@ -10,6 +10,8 @@ const DateRangePicker  = require('react-dates').DateRangePicker;
 
 const START_DATE = require('react-dates/constants').START_DATE;
 
+import NewsfeedView from '../views/Newsfeed';
+
 const MainMenu = require('../components/Global/MainMenu');
 const SecondaryMenu = require('../components/Global/SecondaryMenu');
 const Box = require('../components/Global/Box');
@@ -74,16 +76,8 @@ storiesOf('Overview', module)
     ));
 
 storiesOf('Views', module)
-    .add('Views:Newsfeed', () => (
-        <div>
-            <MainMenu selectedItem="Newsfeed"/>
-            <div className="pa4 bg-near-white">
-                <div className="flex">
-                    {sampleFilterContainer('mr3 w-third self-start')}
-                    {samplePostList('w-two-thirds')}
-                </div>
-            </div>
-        </div>
+    .add('Newsfeed', () => (
+        <NewsfeedView/>
     ))
     .add('Views:People', () => (
         <div>
