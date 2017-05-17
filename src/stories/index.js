@@ -1,4 +1,7 @@
 const React = require('react');
+
+import PropTypes from 'prop-types';
+
 const storiesOf = require('@kadira/storybook').storiesOf;
 const action = require('@kadira/storybook').action;
 const WithNotes = require('@kadira/storybook-addon-notes').WithNotes;
@@ -78,17 +81,39 @@ storiesOf('Overview', module)
         </div>
     ));
 
+class MockApp extends React.Component {
+    render() {
+        return (
+            <div>
+                <MainMenu selectedItem={this.props.selectedMenuItem}/>
+                {this.props.viewComponent}
+            </div>
+        );
+    }
+}
+
+MockApp.propTypes = {
+    selectedMenuItem: PropTypes.string.isRequired,
+    viewComponent: PropTypes.element.isRequired,
+};
+
 storiesOf('Views', module)
     .add('Newsfeed', () => (
-        <NewsfeedView
-            posts={
-                [
-                    {...samplePost},
-                    {...samplePost, id: 2},
-                    {...samplePost, id: 3}
-                ]
+        <MockApp
+            selectedMenuItem="Newsfeed"
+            viewComponent={
+                <NewsfeedView
+                    posts={
+                        [
+                            {...samplePost},
+                            {...samplePost, id: 2},
+                            {...samplePost, id: 3}
+                        ]
+                    }
+                />
             }
         />
+
     ))
     .add('People', () => (
         <PeopleView

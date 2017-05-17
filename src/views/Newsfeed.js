@@ -17,7 +17,6 @@ class NewsfeedView extends React.Component {
     render() {
         return (
             <div>
-                <MainMenu selectedItem="Newsfeed"/>
                 <div className="pa4 bg-near-white">
                     <div className="flex">
                         <FilterContainer className="mr3 w-third self-start">
