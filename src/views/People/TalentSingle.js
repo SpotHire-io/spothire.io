@@ -7,6 +7,8 @@ import classNames from 'classnames';
 
 import Box from '../../components/Global/Box';
 
+import MetadataInterface from '../../components/Talent/MetadataInterface';
+
 class TalentSingleView extends React.Component {
     constructor() {
         super();
@@ -91,7 +93,7 @@ class TalentSingleView extends React.Component {
                             <small className="f6 black-60" id="talent_notes_desc">Only managers can read these notes.</small>
                         </p>
 
-                        <p><i>Metadata</i></p>
+                        <MetadataInterface talent={this.props.talent}/>
                     </Box>
                 </div>
             </div>
