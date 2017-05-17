@@ -5,11 +5,14 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const BoxConnector = ({ className, isActive }) => (
-    <div className={classNames('mh5 bl br b--black-20', className)}/>
+    <div className={classNames('mh5 animate-all bl br', className, {
+        'bw1 b--black-30': isActive,
+        'b--black-20': ! isActive,
+    })}/>
 );
 
 BoxConnector.defaultProps = {
-    className: 'h3',
+    className: 'h1',
 };
 
 BoxConnector.propTypes = {
