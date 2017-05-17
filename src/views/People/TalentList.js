@@ -15,6 +15,10 @@ import Filter from '../../components/Filters/Filter';
 class TalentListView extends React.Component {
     constructor() {
         super();
+
+        this.state = {
+            searchQuery: ''
+        };
     }
 
     render() {
@@ -89,11 +93,11 @@ class TalentListView extends React.Component {
                     <Box>
                         <p>
                             <label className="f6 db" htmlFor="talent_search">Search</label>
-                            <input className="mt2 w-100" type="text" id="talent_search" name="talent_search"/>
+                            <input className="mt2 w-100" type="text" id="talent_search" name="talent_search" value={this.state.searchQuery} onChange={(e) => this.setState({ searchQuery: e.target.value })}/>
                         </p>
                     </Box>
 
-                    <BoxConnector isActive={false}/>
+                    <BoxConnector isActive={this.state.searchQuery.length > 0}/>
 
                     <UserTable/>
                 </div>
