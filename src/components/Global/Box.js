@@ -1,5 +1,8 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
+
+import PropTypes from 'prop-types';
+
+import classNames from 'classnames';
 
 const Box = ({ children, className, contentWrapperClassName, headingSemanticLevel, title }) => {
     let wrapperClasses = classNames({
@@ -33,4 +36,12 @@ Box.defaultProps = {
     contentWrapperClassName: 'pa3'
 };
 
-module.exports = Box;
+Box.propTypes = {
+    className: PropTypes.string,
+    contentWrapperClassName: PropTypes.string,
+    headingSemanticLevel: PropTypes.number,
+    title: PropTypes.string,
+    children: PropTypes.node.isRequired
+};
+
+export default Box;
