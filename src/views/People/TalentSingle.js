@@ -62,39 +62,44 @@ class TalentSingleView extends React.Component {
                             ))}
                         </dl>
                     </Box>
-                    <Box className="w-two-thirds">
-                        <h2 className="f6 mt0 lh-title ttu">Talent Settings</h2>
+                    <div className="w-two-thirds">
+                        <Box>
+                            <h2 className="f6 mt0 lh-title ttu">Talent Settings</h2>
 
-                        <div className="flex mt3">
-                            <p className="w-50 mr4">
-                                <label className="f6 db" htmlFor="talent_standard_rate">Standard hourly rate</label>
-                                <div className="inline-flex w-100 mt2">
-                                    <div className="inline-flex self-stretch ph3 bg-near-white ba br-0 b--moon-gray">
-                                        <span className="self-center">$</span>
+                            <div className="flex mt3">
+                                <p className="w-50 mr4">
+                                    <label className="f6 db" htmlFor="talent_standard_rate">Standard hourly rate</label>
+                                    <div className="inline-flex w-100 mt2">
+                                        <div className="inline-flex self-stretch ph3 bg-near-white ba br-0 b--moon-gray">
+                                            <span className="self-center">$</span>
+                                        </div>
+                                        <input className="flex-auto" type="number" id="talent_standard_rate" name="talent_standard_rate"/>
                                     </div>
-                                    <input className="flex-auto" type="number" id="talent_standard_rate" name="talent_standard_rate"/>
-                                </div>
-                            </p>
+                                </p>
 
-                            <p className="w-50 mt0">
-                                <label className="f6 db" htmlFor="talent_overtime_rate">Overtime hourly rate</label>
-                                <div className="inline-flex w-100 mt2">
-                                    <div className="inline-flex self-stretch ph3 bg-near-white ba br-0 b--moon-gray">
-                                        <span className="self-center">$</span>
+                                <p className="w-50 mt0">
+                                    <label className="f6 db" htmlFor="talent_overtime_rate">Overtime hourly rate</label>
+                                    <div className="inline-flex w-100 mt2">
+                                        <div className="inline-flex self-stretch ph3 bg-near-white ba br-0 b--moon-gray">
+                                            <span className="self-center">$</span>
+                                        </div>
+                                        <input className="flex-auto" type="number" id="talent_overtime_rate" name="talent_overtime_rate"/>
                                     </div>
-                                    <input className="flex-auto" type="number" id="talent_overtime_rate" name="talent_overtime_rate"/>
-                                </div>
+                                </p>
+                            </div>
+
+                            <p className="mt3">
+                                <label className="f6 db" htmlFor="talent_notes">Notes</label>
+                                <textarea className="mt2 w-100" name="talent_notes" id="talent_notes" aria-describedby="talent_notes_desc" cols="30" rows="5"/>
+                                <small className="f6 black-60" id="talent_notes_desc">Only managers can read these notes.</small>
                             </p>
-                        </div>
+                        </Box>
+                        <Box className="mt3">
+                            <h2 className="f6 mt0 lh-title ttu">Talent Metadata</h2>
 
-                        <p className="mt3">
-                            <label className="f6 db" htmlFor="talent_notes">Notes</label>
-                            <textarea className="mt2 w-100" name="talent_notes" id="talent_notes" aria-describedby="talent_notes_desc" cols="30" rows="5"/>
-                            <small className="f6 black-60" id="talent_notes_desc">Only managers can read these notes.</small>
-                        </p>
-
-                        <MetadataInterface className="mt3" talent={this.props.talent}/>
-                    </Box>
+                            <MetadataInterface className="mt3" talent={this.props.talent}/>
+                        </Box>
+                    </div>
                 </div>
             </div>
         );
