@@ -8,6 +8,7 @@ const PersonSchema = PropTypes.shape({
     phone: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['talent', 'admin']).isRequired,
     imageSrc: PropTypes.string.isRequired,
+    emergencyContactInformation: PropTypes.oneOfType([ PropTypes.string, PropTypes.element ]).isRequired
 });
 
 export default PersonSchema;
