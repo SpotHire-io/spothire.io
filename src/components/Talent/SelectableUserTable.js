@@ -45,7 +45,7 @@ class SelectableUserTable extends React.Component {
     }
 
     selectAllUsers() {
-        const allUserIds = userData.map((user) => user.id);
+        const allUserIds = this.props.users.map((user) => user.id);
 
         return this.setState({ selectedUserIds: allUserIds });
     }
@@ -118,7 +118,7 @@ class SelectableUserTable extends React.Component {
                 <Table className="w-100" cellSpacing="0" sortable={['name']}>
                     <Thead>
                     {this.renderHeaderCell('avatar', () => {
-                        if (this.state.selectedUserIds.length === userData.length) {
+                        if (this.state.selectedUserIds.length === this.props.users.length) {
                             return (<div className="sh-rebass-checkbox-mr0"><Checkbox theme="white" style={{ display: 'inline' }} checked label="" name="" onClick={() => this.unselectAllUsers()}/></div>);
                         } else {
                             return (<div className="sh-rebass-checkbox-mr0"><Checkbox theme="white" style={{ display: 'inline' }} label="" name=""  onClick={() => this.selectAllUsers()}/></div>);
@@ -126,7 +126,7 @@ class SelectableUserTable extends React.Component {
                     }, 'w1')}
                     {this.renderHeaderCell('name', 'Name', '')}
                     </Thead>
-                    {userData.map((user) => this.renderUserRow(user))}
+                    {this.props.users.map((user) => this.renderUserRow(user))}
                 </Table>
             </div>
         )
@@ -134,7 +134,8 @@ class SelectableUserTable extends React.Component {
 }
 
 SelectableUserTable.defaultProps = {
-    className: ''
+    className: '',
+    users: userData
 };
 
 export default SelectableUserTable;
