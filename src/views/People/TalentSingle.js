@@ -65,22 +65,22 @@ class TalentSingleView extends React.Component {
 
                         <div className="flex mt3">
                             <p className="w-50 mr4">
-                                <label className="f6 db" htmlFor="opp_rate">Standard hourly rate</label>
+                                <label className="f6 db" htmlFor="talent_standard_rate">Standard hourly rate</label>
                                 <div className="inline-flex w-100 mt2">
                                     <div className="inline-flex self-stretch ph3 bg-near-white ba br-0 b--moon-gray">
                                         <span className="self-center">$</span>
                                     </div>
-                                    <input className="flex-auto" type="number" id="opp_rate" name="opp_rate"/>
+                                    <input className="flex-auto" type="number" id="talent_standard_rate" name="talent_standard_rate"/>
                                 </div>
                             </p>
 
                             <p className="w-50 mt0">
-                                <label className="f6 db" htmlFor="opp_rate">Overtime hourly rate</label>
+                                <label className="f6 db" htmlFor="talent_overtime_rate">Overtime hourly rate</label>
                                 <div className="inline-flex w-100 mt2">
                                     <div className="inline-flex self-stretch ph3 bg-near-white ba br-0 b--moon-gray">
                                         <span className="self-center">$</span>
                                     </div>
-                                    <input className="flex-auto" type="number" id="opp_rate" name="opp_rate"/>
+                                    <input className="flex-auto" type="number" id="talent_overtime_rate" name="talent_overtime_rate"/>
                                 </div>
                             </p>
                         </div>
