@@ -93,7 +93,7 @@ class TalentSingleView extends React.Component {
                             <small className="f6 black-60" id="talent_notes_desc">Only managers can read these notes.</small>
                         </p>
 
-                        <MetadataInterface talent={this.props.talent}/>
+                        <MetadataInterface className="mt3" talent={this.props.talent}/>
                     </Box>
                 </div>
             </div>

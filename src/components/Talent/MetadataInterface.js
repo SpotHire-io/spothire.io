@@ -11,12 +11,8 @@ class MetadataInterface extends React.Component {
     }
 
     render() {
-        const wrapperClasses = classNames({
-            [this.props.className]: true
-        });
-
         return (
-            <div>
+            <div className={classNames(this.props.className)}>
                 some cool metadata
             </div>
         );
