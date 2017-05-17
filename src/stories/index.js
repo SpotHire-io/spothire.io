@@ -11,6 +11,7 @@ const DateRangePicker  = require('react-dates').DateRangePicker;
 const START_DATE = require('react-dates/constants').START_DATE;
 
 import NewsfeedView from '../views/Newsfeed';
+import PeopleView from '../views/People';
 
 const MainMenu = require('../components/Global/MainMenu');
 const SecondaryMenu = require('../components/Global/SecondaryMenu');
@@ -79,46 +80,8 @@ storiesOf('Views', module)
     .add('Newsfeed', () => (
         <NewsfeedView/>
     ))
-    .add('Views:People', () => (
-        <div>
-            <MainMenu selectedItem="People"/>
-            <SectionSwitcher
-                className="pb4 bg-near-white"
-                secondaryMenuClassName="ph4 bg-white"
-                sections={[
-                    {
-                        key: 'people',
-                        name: 'People',
-                        content: (
-                            <div className="flex ma4">
-                                {sampleFilterContainer('mr3 w-third self-start')}
-                                <UserTable className="w-two-thirds"/>
-                            </div>
-                        )
-                    },
-                    {
-                        key: 'groups',
-                        name: 'Groups',
-                        content: (
-                            <div className="flex ma4">
-                                {sampleFilterContainer('mr3 w-third self-start')}
-                                <GroupCardList
-                                    className="nt3 w-two-thirds"
-                                    groups={[...Array(10).keys()].map((number) => {
-                                        return {
-                                            id: number,
-                                            name: `Sample Group ${number + 1}`,
-                                            talent: users
-                                        };
-                                    })}
-                                    onSelectGroup={(groupId) => console.log(`Group ID ${groupId} selected`)}
-                                />
-                            </div>
-                        )
-                    }
-                ]}
-            />
-        </div>
+    .add('People', () => (
+        <PeopleView/>
     ))
     .add('Views:Schedule', () => (
         <div>
