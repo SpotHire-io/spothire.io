@@ -12,6 +12,7 @@ const START_DATE = require('react-dates/constants').START_DATE;
 
 import NewsfeedView from '../views/Newsfeed';
 import PeopleView from '../views/People';
+import ScheduleView from '../views/Schedule';
 
 const MainMenu = require('../components/Global/MainMenu');
 const SecondaryMenu = require('../components/Global/SecondaryMenu');
@@ -83,21 +84,8 @@ storiesOf('Views', module)
     .add('People', () => (
         <PeopleView/>
     ))
-    .add('Views:Schedule', () => (
-        <div>
-            <MainMenu selectedItem="Schedule"/>
-            <div className="pa4 bg-near-white">
-                <Box title="Calendar">
-                    <OverviewCalendar
-                        events={sampleEvents}
-                        filter={{
-                            property: 'userId',
-                            values: [0]
-                        }}
-                    />
-                </Box>
-            </div>
-        </div>
+    .add('Schedule', () => (
+        <ScheduleView/>
     ));
 
 storiesOf('Global', module)
