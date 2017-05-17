@@ -131,7 +131,7 @@ storiesOf('Views', module)
             selectedMenuItem="People"
             viewComponent={
                 <TalentSingleView
-                    talent={users[0]}
+                    talent={users[1]}
                 />
             }
         />

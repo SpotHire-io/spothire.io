@@ -38,9 +38,27 @@ class TalentSingleView extends React.Component {
                             </ul>
                         </div>
 
-                        <p><i>Email</i></p>
-                        <p><i>Phone</i></p>
-                        <p><i>Emergency contact info</i></p>
+                        <dl className="mt3 mb0">
+                            {[
+                                {
+                                    label: 'Email',
+                                    content: <a href={`mailto:${this.props.talent.email}`}>{this.props.talent.email}</a>
+                                },
+                                {
+                                    label: 'Phone',
+                                    content: this.props.talent.phone
+                                },
+                                {
+                                    label: 'Emergency Contact Information',
+                                    content: <p>Call zzz-zzz-zzzz.</p>
+                                }
+                            ].map((dataPair) => (
+                                <div className="mt3" key={dataPair.label}>
+                                    <dt className="f6">{dataPair.label}</dt>
+                                    <dd className="mh0 mb0 mt2">{dataPair.content}</dd>
+                                </div>
+                            ))}
+                        </dl>
                     </Box>
                     <Box className="w-two-thirds">
                         <h2 className="f6 mt0 lh-title ttu">Talent Settings</h2>
