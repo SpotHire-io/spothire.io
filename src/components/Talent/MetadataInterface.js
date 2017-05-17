@@ -12,12 +12,14 @@ class MetadataInterface extends React.Component {
 
     render() {
         return (
-            <ul className={classNames('list ml0 pl0 bg-light-gray bb b--black-20', this.props.className)}>
+            <ul className={classNames('list ml0 pl0 bg-near-white bb b--black-20', this.props.className)}>
                 {this.props.talent.metadata.map((metaPair) => {
                     return (
-                        <li className="flex ph3 pv2 bt b--black-20">
-                            <p>{metaPair.key}</p>
-                            <p>{metaPair.value}</p>
+                        <li className="ph3 pv2 ma0 bt bl br b--black-20">
+                            <dl className="ma0 pa0 list flex">
+                                <dt className="w-third">{metaPair.key}</dt>
+                                <dd className="w-two-thirds pa0">{metaPair.value}</dd>
+                            </dl>
                         </li>
                     )
                 })}
