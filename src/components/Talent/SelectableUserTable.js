@@ -74,7 +74,7 @@ class SelectableUserTable extends React.Component {
                     if (this.state.selectedUserIds.indexOf(user.id) === -1) {
                         innerContent = (<img key={'image-' + user.id} className="db w1 h1 br-100 v-btm" src="http://placehold.it/40x40"/>);
                     } else {
-                        innerContent = (<Checkbox key={'checkbox-' + user.id} theme="success" style={{ display: 'inline' }} checked label="" name=""/>);
+                        innerContent = (<Checkbox key={'checkbox-' + user.id} theme="success" style={{ display: 'inline' }} checked label="" name="" onClick={(e) => e.stopPropagation()}/>);
                     }
 
                     return (
