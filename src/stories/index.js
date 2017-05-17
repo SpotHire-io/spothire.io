@@ -12,6 +12,7 @@ const START_DATE = require('react-dates/constants').START_DATE;
 
 import NewsfeedView from '../views/Newsfeed';
 import PeopleView from '../views/People';
+import GroupSingleView from '../views/People/GroupSingle';
 import ScheduleView from '../views/Schedule';
 
 const MainMenu = require('../components/Global/MainMenu');
@@ -92,6 +93,15 @@ storiesOf('Views', module)
     .add('People', () => (
         <PeopleView
             users={users}
+        />
+    ))
+    .add('GroupSingleView', () => (
+        <GroupSingleView
+            group={{
+                id: 0,
+                name: 'Sample Group',
+                talent: users
+            }}
         />
     ))
     .add('Schedule', () => (
