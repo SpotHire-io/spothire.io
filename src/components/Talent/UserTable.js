@@ -11,6 +11,9 @@ const Td    = require('reactable').Td;
 
 const BasicButton = require('../Buttons/BasicButton');
 
+// storybook stuff
+const linkTo = require('@kadira/storybook').linkTo;
+
 class UserList extends React.Component {
     constructor() {
         super();
@@ -58,11 +61,11 @@ class UserList extends React.Component {
 
     renderUserRow(user) {
         const userClasses = classNames({
-            'ph3 pa2 mt0 hover-bg-black-10': true
+            'pointer ph3 pa2 mt0 hover-bg-black-10': true
         });
 
         return (
-            <Tr key={user.id} className={userClasses}>
+            <Tr key={user.id} className={userClasses} onClick={linkTo('Views', 'People:TalentSingleView')}>
                 {this.renderUserCell('avatar', (
                     <img className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40"/>
                 ), 'tc pr0')}
