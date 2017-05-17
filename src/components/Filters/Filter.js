@@ -21,7 +21,7 @@ const Filter = ({ id, label, type, data, onChange, className }) => {
 
                     type="text"
 
-                    className="w-100 pa1 "
+                    className="w-100 pa1 mt0"
 
                     value={data.value}
                     placeholder={data.placeholder}
@@ -35,6 +35,8 @@ const Filter = ({ id, label, type, data, onChange, className }) => {
                 <Select
                     id={id}
 
+                    className="mt0"
+
                     options={data.options}
                     onChange={onChange}
                     {...data.selectConfig}
@@ -47,7 +49,7 @@ const Filter = ({ id, label, type, data, onChange, className }) => {
         <div className={wrapperClasses}>
             {
                 (typeof label != 'undefined' && label.length !== 0)
-                    ? <label className="db mb1 f6 b" htmlFor={id}>{label}</label>
+                    ? <label className="db mb2 f6" htmlFor={id}>{label}</label>
                     : null
             }
             {output}

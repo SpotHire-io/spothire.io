@@ -19,6 +19,8 @@ class GroupSingle extends React.Component {
 
         return (
             <Box className={wrapperClasses}>
+                <h2 className="f6 mt0 lh-title ttu">Group Details</h2>
+
                 <p>
                     <label className="f6 db" htmlFor="opp_name">Name</label>
                     <input className="mt2 w-100" type="text" id="opp_name" name="opp_name" value={this.props.group.name}/>
