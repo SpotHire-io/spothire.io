@@ -2,6 +2,8 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import { CSSTransitionGroup } from 'react-transition-group';
+
 const classNames = require('classnames');
 
 import PersonSchema from '../../schemas/Person';
@@ -67,11 +69,25 @@ class SelectableUserTable extends React.Component {
         return (
             <Tr key={user.id} className={userClasses} onClick={() => this.toggleUser(user.id)}>
                 {this.renderUserCell('avatar', () => {
+                    let innerContent;
+
                     if (this.state.selectedUserIds.indexOf(user.id) === -1) {
-                        return (<img className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40" />);
+                        innerContent = (<img key={'image-' + user.id} className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40"/>);
                     } else {
-                        return (<div className="sh-rebass-checkbox-mr0"><Checkbox theme="success" style={{ display: 'inline' }} checked label="" name=""/></div>);
+                        innerContent = (<Checkbox key={'checkbox-' + user.id} theme="success" style={{ display: 'inline' }} checked label="" name=""/>);
                     }
+
+                    return (
+                        <CSSTransitionGroup
+                            transitionName="animation__image-checkbox"
+                            transitionEnterTimeout={1000}
+                            transitionLeaveTimeout={1000}
+                            className="sh-rebass-checkbox-mr0"
+                            component="div"
+                        >
+                            {innerContent}
+                        </CSSTransitionGroup>
+                    );
                 }, 'pr0')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
             </Tr>

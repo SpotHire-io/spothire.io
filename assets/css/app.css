@@ -115,3 +115,21 @@
     transition: transform 100ms ease-in;
     z-index: 0;
 }
+
+.animation__image-checkbox-enter {
+    transform: scale(0);
+}
+
+.animation__image-checkbox-enter-active {
+    transform: scale(1);
+    transition: transform 1000ms ease-in;
+}
+
+.animation__image-checkbox-leave {
+    transform: scale(1);
+}
+
+.animation__image-checkbox-leave-active {
+    transform: scale(0);
+    transition: transform 1000ms ease-in;
+}
