@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
+import Box from '../../components/Global/Box';
+import BoxConnector from '../../components/Global/BoxConnector';
+
 import UserTable from '../../components/Talent/UserTable';
 
 import FilterContainer from '../../components/Filters/FilterContainer';
@@ -82,7 +85,18 @@ class TalentListView extends React.Component {
                         }}
                     />
                 </FilterContainer>
-                <UserTable className="w-two-thirds"/>
+                <div className="w-two-thirds">
+                    <Box>
+                        <p>
+                            <label className="f6 db" htmlFor="talent_search">Search</label>
+                            <input className="mt2 w-100" type="text" id="talent_search" name="talent_search"/>
+                        </p>
+                    </Box>
+
+                    <BoxConnector isActive={false}/>
+
+                    <UserTable/>
+                </div>
             </div>
         );
     }
