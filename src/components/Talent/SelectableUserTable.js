@@ -1,5 +1,10 @@
-const React      = require('react');
+import React from 'react';
+
+import PropTypes from 'prop-types';
+
 const classNames = require('classnames');
+
+import PersonSchema from '../../schemas/Person';
 
 const userData = require('../../data/users.json');
 
@@ -136,6 +141,11 @@ class SelectableUserTable extends React.Component {
 SelectableUserTable.defaultProps = {
     className: '',
     users: userData
+};
+
+SelectableUserTable.propTypes = {
+    className: PropTypes.string,
+    users: PropTypes.arrayOf(PersonSchema).isRequired
 };
 
 export default SelectableUserTable;
