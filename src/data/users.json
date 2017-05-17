@@ -6,7 +6,8 @@
     "email": "acampbell0@cnbc.com",
     "phone": "63-(954)154-1049",
     "type": "admin",
-    "imageSrc": "https://randomuser.me/api/portraits/women/1.jpg"
+    "imageSrc": "https://randomuser.me/api/portraits/women/1.jpg",
+    "emergencyContactInformation": "Call zzz-zzz-zzzz."
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "email": "jolson1@umich.edu",
     "phone": "20-(397)570-4573",
     "type": "talent",
-    "imageSrc": "https://randomuser.me/api/portraits/women/2.jpg"
+    "imageSrc": "https://randomuser.me/api/portraits/women/2.jpg",
+    "emergencyContactInformation": "Call zzz-zzz-zzzz."
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "email": "chernandez2@dot.gov",
     "phone": "86-(782)312-6763",
     "type": "talent",
-    "imageSrc": "https://randomuser.me/api/portraits/women/3.jpg"
+    "imageSrc": "https://randomuser.me/api/portraits/women/3.jpg",
+    "emergencyContactInformation": "Call zzz-zzz-zzzz."
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "email": "hpayne3@miitbeian.gov.cn",
     "phone": "55-(454)387-0985",
     "type": "talent",
-    "imageSrc": "https://randomuser.me/api/portraits/women/4.jpg"
+    "imageSrc": "https://randomuser.me/api/portraits/women/4.jpg",
+    "emergencyContactInformation": "Call zzz-zzz-zzzz."
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "email": "rhunter4@vinaora.com",
     "phone": "1-(816)681-7469",
     "type": "talent",
-    "imageSrc": "https://randomuser.me/api/portraits/women/5.jpg"
+    "imageSrc": "https://randomuser.me/api/portraits/women/5.jpg",
+    "emergencyContactInformation": "Call zzz-zzz-zzzz."
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "email": "msullivan5@amazon.com",
     "phone": "46-(387)906-3742",
     "type": "talent",
-    "imageSrc": "https://randomuser.me/api/portraits/women/6.jpg"
+    "imageSrc": "https://randomuser.me/api/portraits/women/6.jpg",
+    "emergencyContactInformation": "Call zzz-zzz-zzzz."
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "email": "alawrence6@dmoz.org",
     "phone": "57-(734)309-4759",
     "type": "talent",
-    "imageSrc": "https://randomuser.me/api/portraits/women/7.jpg"
+    "imageSrc": "https://randomuser.me/api/portraits/women/7.jpg",
+    "emergencyContactInformation": "Call zzz-zzz-zzzz."
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "email": "lmorales7@xing.com",
     "phone": "66-(197)895-2507",
     "type": "talent",
-    "imageSrc": "https://randomuser.me/api/portraits/women/8.jpg"
+    "imageSrc": "https://randomuser.me/api/portraits/women/8.jpg",
+    "emergencyContactInformation": "Call zzz-zzz-zzzz."
   },
   {
     "id": 9,
@@ -78,7 +86,8 @@
     "email": "hbishop8@moonfruit.com",
     "phone": "880-(541)270-1621",
     "type": "talent",
-    "imageSrc": "https://randomuser.me/api/portraits/women/9.jpg"
+    "imageSrc": "https://randomuser.me/api/portraits/women/9.jpg",
+    "emergencyContactInformation": "Call zzz-zzz-zzzz."
   },
   {
     "id": 10,
@@ -87,6 +96,7 @@
     "email": "jhansen9@hatena.ne.jp",
     "phone": "7-(959)110-4566",
     "type": "talent",
-    "imageSrc":  "https://randomuser.me/api/portraits/women/10.jpg"
+    "imageSrc":  "https://randomuser.me/api/portraits/women/10.jpg",
+    "emergencyContactInformation": "Call zzz-zzz-zzzz."
   }
 ]

@@ -50,7 +50,7 @@ class TalentSingleView extends React.Component {
                                 },
                                 {
                                     label: 'Emergency Contact Information',
-                                    content: <p>Call zzz-zzz-zzzz.</p>
+                                    content: this.props.talent.emergencyContactInformation
                                 }
                             ].map((dataPair) => (
                                 <div className="mt3" key={dataPair.label}>
