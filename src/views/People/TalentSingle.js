@@ -24,10 +24,10 @@ class TalentSingleView extends React.Component {
                         <h1 className="mb4 f3">{this.props.talent.firstName} {this.props.talent.lastName}</h1>
                         <img className="db w-100 ba bw1 b--silver border-box" src={this.props.talent.imageSrc} alt={`Profile photo of ${this.props.talent.firstName}`}/>
 
-                        <div>
-                            <h3 className="f6 normal mt4 mb2">Other photos</h3>
+                        <div className="mt3">
+                            <h3 className="f6 normal ma0">Other photos</h3>
 
-                            <ul className="mt0 flex flex-wrap pa0 list nr2">
+                            <ul className="mt2 flex flex-wrap pa0 list nr2">
                                 {[...Array(6).keys()].map((number) => (
                                     <li className="dib mt0 mb2 pa0 w-25 pr2">
                                         <img className="db w-100 ba bw1 b--silver border-box" src={this.props.talent.imageSrc} alt={`Profile photo of ${this.props.talent.firstName}`}/>
