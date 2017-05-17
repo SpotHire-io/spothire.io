@@ -32,7 +32,7 @@ import UserTable from '../components/Talent/UserTable';
 import SelectableUserTable from '../components/Talent/SelectableUserTable';
 import GroupCard from '../components/Talent/Groups/Card';
 import GroupCardList from '../components/Talent/Groups/CardList';
-import GroupSingle from '../components/Talent/Groups/Single';
+import GroupDetailsEditor from '../components/Talent/Groups/DetailsEditor';
 
 import ShiftList from '../components/Miscellaneous/ShiftList';
 const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
@@ -635,10 +635,10 @@ storiesOf('Talent:Groups', module)
             </div>
         </WithNotes>
     ))
-    .add('Single', () => (
+    .add('DetailsEditor', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
-                <GroupSingle
+                <GroupDetailsEditor
                     group={{
                         id: 0,
                         name: 'Sample Group',

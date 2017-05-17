@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import Box from '../../Global/Box';
 
-class GroupSingle extends React.Component {
+class GroupDetailsEditor extends React.Component {
     constructor() {
         super();
     }
@@ -35,13 +35,13 @@ class GroupSingle extends React.Component {
     }
 }
 
-GroupSingle.defaultProps = {
+GroupDetailsEditor.defaultProps = {
     className: '',
 };
 
-GroupSingle.propTypes = {
+GroupDetailsEditor.propTypes = {
     className: PropTypes.string,
     group: GroupSchema.isRequired,
 };
 
-export default GroupSingle;
+export default GroupDetailsEditor;
