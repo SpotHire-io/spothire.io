@@ -42,7 +42,7 @@ class MainMenu extends React.Component {
         });
 
         return (
-            <a key={linkText} className={aClasses} href="#" onClick={linkTo('Views', 'Views:' + linkText)}>{linkText}</a>
+            <a key={linkText} className={aClasses} href="#" onClick={linkTo('Views', linkText)}>{linkText}</a>
         )
     }
 
