@@ -88,7 +88,7 @@ class SelectableUserTable extends React.Component {
                             {innerContent}
                         </CSSTransitionGroup>
                     );
-                }, 'pr0')}
+                }, 'pr0 no-select')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
             </Tr>
         );
