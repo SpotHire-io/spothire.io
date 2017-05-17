@@ -15,6 +15,7 @@ const START_DATE = require('react-dates/constants').START_DATE;
 
 import NewsfeedView from '../views/Newsfeed';
 import PeopleView from '../views/People';
+import TalentSingleView from '../views/People/TalentSingle';
 import GroupSingleView from '../views/People/GroupSingle';
 import ScheduleView from '../views/Schedule';
 
@@ -121,6 +122,16 @@ storiesOf('Views', module)
             viewComponent={
                 <PeopleView
                     users={users}
+                />
+            }
+        />
+    ))
+    .add('People:TalentSingleView', () => (
+        <MockApp
+            selectedMenuItem="People"
+            viewComponent={
+                <TalentSingleView
+                    talent={users[0]}
                 />
             }
         />
