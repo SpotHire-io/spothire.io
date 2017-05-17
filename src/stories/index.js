@@ -116,22 +116,37 @@ storiesOf('Views', module)
 
     ))
     .add('People', () => (
-        <PeopleView
-            users={users}
+        <MockApp
+            selectedMenuItem="People"
+            viewComponent={
+                <PeopleView
+                    users={users}
+                />
+            }
         />
     ))
-    .add('GroupSingleView', () => (
-        <GroupSingleView
-            group={{
-                id: 0,
-                name: 'Sample Group',
-                talent: users
-            }}
+    .add('People:GroupSingleView', () => (
+        <MockApp
+            selectedMenuItem="People"
+            viewComponent={
+                <GroupSingleView
+                    group={{
+                        id: 0,
+                        name: 'Sample Group',
+                        talent: users
+                    }}
+                />
+            }
         />
     ))
     .add('Schedule', () => (
-        <ScheduleView
-            events={sampleEvents}
+        <MockApp
+            selectedMenuItem="Schedule"
+            viewComponent={
+                <ScheduleView
+                    events={sampleEvents}
+                />
+            }
         />
     ));
 

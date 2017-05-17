@@ -16,7 +16,6 @@ class ScheduleView extends React.Component {
     render() {
         return (
             <div>
-                <MainMenu selectedItem="Schedule"/>
                 <div className="pa4 bg-near-white">
                     <Box title="Calendar">
                         <OverviewCalendar

@@ -21,7 +21,6 @@ class PeopleView extends React.Component {
     render() {
         return (
             <div>
-                <MainMenu selectedItem="People"/>
                 <SectionSwitcher
                     className="pb4 bg-near-white"
                     secondaryMenuClassName="ph4 bg-white"
