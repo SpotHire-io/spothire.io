@@ -7,6 +7,7 @@ const PersonSchema = PropTypes.shape({
     email: PropTypes.string.isRequired,
     phone: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['talent', 'admin']).isRequired,
+    imageSrc: PropTypes.string.isRequired,
 });
 
 export default PersonSchema;
