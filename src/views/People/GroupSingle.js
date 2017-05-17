@@ -18,7 +18,9 @@ class GroupSingleView extends React.Component {
         });
 
         return (
-            <GroupDetailsEditor group={this.props.group}/>
+            <div className="pa4 bg-near-white">
+                <GroupDetailsEditor group={this.props.group}/>
+            </div>
         );
     }
 }
