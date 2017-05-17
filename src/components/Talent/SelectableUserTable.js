@@ -20,7 +20,10 @@ class SelectableUserTable extends React.Component {
         this.renderUserRow = this.renderUserRow.bind(this);
         this.renderUserCell = this.renderUserCell.bind(this);
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
+
         this.toggleUser = this.toggleUser.bind(this);
+        this.selectAllUsers = this.selectAllUsers.bind(this);
+        this.unselectAllUsers = this.unselectAllUsers.bind(this);
 
         this.commonCellClasses = 'pa3';
 
@@ -39,6 +42,16 @@ class SelectableUserTable extends React.Component {
         }
 
         this.setState({ selectedUserIds });
+    }
+
+    selectAllUsers() {
+        const allUserIds = userData.map((user) => user.id);
+
+        return this.setState({ selectedUserIds: allUserIds });
+    }
+
+    unselectAllUsers() {
+        return this.setState({ selectedUserIds: [] });
     }
 
     renderUserRow(user) {
@@ -89,7 +102,7 @@ class SelectableUserTable extends React.Component {
                 column={column}
                 className={cellClasses}
             >
-                {value}
+                {(typeof value == 'string') ? value : value()}
             </Th>
         );
     }
@@ -104,7 +117,13 @@ class SelectableUserTable extends React.Component {
             <div className={wrapperClasses}>
                 <Table className="w-100" cellSpacing="0" sortable={['name']}>
                     <Thead>
-                    {this.renderHeaderCell('avatar', '', 'w1')}
+                    {this.renderHeaderCell('avatar', () => {
+                        if (this.state.selectedUserIds.length === userData.length) {
+                            return (<div className="sh-rebass-checkbox-mr0"><Checkbox theme="white" style={{ display: 'inline' }} checked label="" name="" onClick={() => this.unselectAllUsers()}/></div>);
+                        } else {
+                            return (<div className="sh-rebass-checkbox-mr0"><Checkbox theme="white" style={{ display: 'inline' }} label="" name=""  onClick={() => this.selectAllUsers()}/></div>);
+                        }
+                    }, 'w1')}
                     {this.renderHeaderCell('name', 'Name', '')}
                     </Thead>
                     {userData.map((user) => this.renderUserRow(user))}
