@@ -8,6 +8,8 @@ import classNames from 'classnames';
 import ButtonBar from '../../Buttons/ButtonBar';
 import RadioButton from '../../Buttons/RadioButton';
 
+import UserTable from '../../Talent/UserTable';
+
 import GroupCardList from '../../Talent/Groups/CardList';
 
 // dummy data
@@ -29,7 +31,8 @@ class SelectTalent extends React.Component {
         this.renderCategorySelectionInterface = this.renderCategorySelectionInterface.bind(this);
 
         this.state = {
-            currentSelectionCategoryKey: props.selectionCategories[0].key
+            currentSelectionCategoryKey: props.selectionCategories[0].key,
+            talentsSearch: '',
         }
     }
 
@@ -48,9 +51,19 @@ class SelectTalent extends React.Component {
                     <div className={classNames('', commonWrapperClasses)}>
                         <p>
                             <label className="f6 db" htmlFor="talents_search">Search talents</label>
-                            <input className="mt2 w-100" type="text" id="talents_search" aria-describedby="talents_search_desc" name="talents_search"/>
+                            <input className="mt2 w-100" type="text" id="talents_search" aria-describedby="talents_search_desc" name="talents_search" value={this.state.talentsSearch} onChange={(e) => this.setState({ talentsSearch: e.target.value })}/>
                             <small className="dib f6 black-60 lh-title mt2" id="talents_search_desc">Narrow down the talents by searching their details.</small>
                         </p>
+
+                        <p className="f6 mt3 mb2">Talents</p>
+
+                        <UserTable
+                            tableProps={{
+                                filterable: ['name'],
+                                hideFilterInput: true,
+                                filterBy: this.state.talentsSearch,
+                            }}
+                        />
                     </div>
                 );
                 break;

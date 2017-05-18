@@ -127,7 +127,7 @@ class UserList extends React.Component {
 
         return (
             <div className={wrapperClasses}>
-                <Table className="w-100" cellSpacing="0" sortable={['name']}>
+                <Table {...this.props.tableProps} className="w-100" cellSpacing="0" sortable={['name']}>
                     <Thead>
                         {this.renderHeaderCell('avatar', '')}
                         {this.renderHeaderCell('name', 'Name')}
@@ -147,6 +147,7 @@ UserList.defaultProps = {
     className: '',
     users: userData,
     inlineAddingRowIsOpen: false,
+    tableProps: {},
 };
 
 UserList.propTypes = {
@@ -156,6 +157,7 @@ UserList.propTypes = {
     deleteUser: PropTypes.func,
     onClickUser: PropTypes.func,
     users: PropTypes.arrayOf(PersonSchema),
+    tableProps: PropTypes.object,
 };
 
 export default UserList;
