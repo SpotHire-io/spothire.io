@@ -6,9 +6,6 @@ import { Table, Thead, Th, Tr, Td } from 'reactable';
 
 import BasicButton from '../Buttons/BasicButton';
 
-// storybook stuff
-import { linkTo } from '@kadira/storybook';
-
 import userData from '../../data/users.json';
 
 class UserList extends React.Component {
@@ -62,7 +59,7 @@ class UserList extends React.Component {
         });
 
         return (
-            <Tr key={user.id} className={userClasses} onClick={linkTo('Views', 'People:TalentSingleView')}>
+            <Tr key={user.id} className={userClasses} onClick={() => this.props.onClick(user.id)}>
                 {this.renderUserCell('avatar', (
                     <img className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40"/>
                 ), 'tc pr0')}

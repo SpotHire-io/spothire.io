@@ -12,6 +12,9 @@ import UserTable from '../../components/Talent/UserTable';
 import FilterContainer from '../../components/Filters/FilterContainer';
 import Filter from '../../components/Filters/Filter';
 
+// storybook stuff
+import { linkTo } from '@kadira/storybook';
+
 class TalentListView extends React.Component {
     constructor() {
         super();
@@ -99,7 +102,7 @@ class TalentListView extends React.Component {
 
                     <BoxConnector isActive={this.state.searchQuery.length > 0}/>
 
-                    <UserTable/>
+                    <UserTable onClick={linkTo('Views', 'People:TalentSingleView')}/>
                 </div>
             </div>
         );
