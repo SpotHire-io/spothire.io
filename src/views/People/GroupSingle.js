@@ -85,7 +85,7 @@ class GroupSingleView extends React.Component {
                     isOpen={this.state.isAddTalentModalOpen}
                     contentLabel={"Add talent modal"}
                     overlayClassName="sh-modal-overlay"
-                    className="sh-modal sh-modal--wide sh-shadow-2 "
+                    className="sh-modal sh-modal--full sh-shadow-2 "
                     onRequestClose={this.closeAddTalentModal}
                     closeTimeoutMS={100}
                 >
