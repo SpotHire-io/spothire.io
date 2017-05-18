@@ -45,7 +45,13 @@ class SelectTalent extends React.Component {
         switch (category.key) {
             case 'talents':
                 selectionInterface = (
-                    <p>list of talent</p>
+                    <div className={classNames('', commonWrapperClasses)}>
+                        <p>
+                            <label className="f6 db" htmlFor="talents_search">Search talents</label>
+                            <input className="mt2 w-100" type="text" id="talents_search" aria-describedby="talents_search_desc" name="talents_search"/>
+                            <small className="dib f6 black-60 lh-title mt2" id="talents_search_desc">Narrow down the talents by searching their details.</small>
+                        </p>
+                    </div>
                 );
                 break;
             case 'groups':
@@ -65,6 +71,7 @@ class SelectTalent extends React.Component {
                             cardProps={{
                                 displayAvatarPreview: false,
                             }}
+                            onSelectGroup={() => alert('Selecting group')}
                         />
                     </div>
                 );
