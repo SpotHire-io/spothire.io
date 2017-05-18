@@ -3,7 +3,7 @@
     "id": 0,
     "start": "2017-05-04T00:00:00Z",
     "end": "2017-05-04T00:00:00Z",
-    "title": "All day event",
+    "title": "Sample Event (e.g. all day event)",
     "desc": "A testing description.",
     "userId": 0,
     "allDay": true
