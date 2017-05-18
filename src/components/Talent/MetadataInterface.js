@@ -63,7 +63,7 @@ class MetadataInterface extends React.Component {
 
     renderControls(metaPair) {
         return (
-            <div className="tr self-center">
+            <div className="tr self-center ml2">
                 <Icon color="#555555" name={(metaPair.key !== this.state.currentlyEditingMetaPairKey) ? 'compose' : 'check'} className="pointer mt1" onClick={() => this.toggleEditingMetaPair(metaPair.key)}/>
                 <Icon color="#555555" name="close" className="pointer mt1 ml2" onClick={() => this.deleteMetaPair(metaPair.key)}/>
             </div>
@@ -87,10 +87,10 @@ class MetadataInterface extends React.Component {
                             )
                         } else {
                             return (
-                                <li className="flex ph3 pv2 ma0 bt bl br b--black-20" key={metaPair.key}>
+                                <li className="flex ph3 pv1 ma0 bt bl br b--black-20" key={metaPair.key}>
                                     <dl className="ma0 pa0 list flex-auto flex">
-                                        <dt className="w-third"><input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.key}/></dt>
-                                        <dd className="w-two-thirds pa0"><input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.value}/></dd>
+                                        <dt className="w-third" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}><input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.key}/></dt>
+                                        <dd className="w-two-thirds pa0" style={{ marginLeft: '39px', marginTop: '-1px', paddingBottom: '2px' }}><input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.value}/></dd>
                                     </dl>
                                     {this.renderControls(metaPair)}
                                 </li>
