@@ -50,13 +50,23 @@ class SelectTalent extends React.Component {
                 break;
             case 'groups':
                 selectionInterface = (
-                    <GroupCardList
-                        groups={groups}
-                        className={classNames('', commonWrapperClasses)}
-                        cardProps={{
-                            displayAvatarPreview: false,
-                        }}
-                    />
+                    <div className={classNames('', commonWrapperClasses)}>
+                        <p>
+                            <label className="f6 db" htmlFor="group_search">Search groups</label>
+                            <input className="mt2 w-100" type="text" id="group_search" aria-describedby="group_search_desc" name="group_search"/>
+                            <small className="dib f6 black-60 lh-title mt2" id="group_search_desc">Narrow down the groups by searching their names and descriptions.</small>
+                        </p>
+
+                        <p className="f6 mt3 mb2">Groups</p>
+
+                        <GroupCardList
+                            groups={groups}
+                            className="nt3"
+                            cardProps={{
+                                displayAvatarPreview: false,
+                            }}
+                        />
+                    </div>
                 );
                 break;
             case 'custom':
