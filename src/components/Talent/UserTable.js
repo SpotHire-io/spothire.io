@@ -1,10 +1,15 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+import PersonSchema from '../../schemas/Person';
+
 import classNames from 'classnames';
 
 import { Table, Thead, Th, Tr, Td } from 'reactable';
 
 import BasicButton from '../Buttons/BasicButton';
+
+import Icon from 'react-geomicons';
 
 import userData from '../../data/users.json';
 
@@ -14,6 +19,7 @@ class UserList extends React.Component {
 
         this.renderUserRow = this.renderUserRow.bind(this);
         this.renderUserCell = this.renderUserCell.bind(this);
+        this.renderControls = this.renderControls.bind(this);
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
 
         this.commonCellClasses = 'pa3';
@@ -59,14 +65,14 @@ class UserList extends React.Component {
         });
 
         return (
-            <Tr key={user.id} className={userClasses} onClick={() => this.props.onClick(user.id)}>
-                {this.renderUserCell('avatar', (
+            <Tr key={user.id} className={userClasses} onClick={() => this.props.onClickUser(user.id)}>
+                {this.renderUserCell('avatar', () => (
                     <img className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40"/>
                 ), 'tc pr0')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
                 {this.renderUserCell('email', user.email)}
                 {this.renderUserCell('phone', user.phone)}
-                {this.renderUserCell('actions', '')}
+                {this.renderUserCell('actions', () => this.renderControls(user))}
             </Tr>
         );
     }
@@ -83,8 +89,17 @@ class UserList extends React.Component {
                 column={column}
                 className={cellClasses}
             >
-                {value}
+                {(typeof value == 'string') ? value : value()}
             </Td>
+        );
+    }
+
+    renderControls(user) {
+        return (
+            <div className="tr">
+                <Icon color="#555555" name="compose" className="pointer" onClick={() => this.props.editUser(user.id)}/>
+                <Icon color="#555555" name="close" className="pointer ml2" onClick={() => this.props.deleteUser(user.id)}/>
+            </div>
         );
     }
 
@@ -99,7 +114,7 @@ class UserList extends React.Component {
                 column={column}
                 className={cellClasses}
             >
-                {value}
+                {(typeof value == 'string') ? value : value()}
             </Th>
         );
     }
@@ -121,7 +136,7 @@ class UserList extends React.Component {
                         {this.renderHeaderCell('actions', '')}
                     </Thead>
                     {(this.props.inlineAddingRowIsOpen) ? this.renderNewUserRow() : null}
-                    {userData.map((user) => this.renderUserRow(user))}
+                    {this.props.users.map((user) => this.renderUserRow(user))}
                 </Table>
             </div>
         )
@@ -129,7 +144,18 @@ class UserList extends React.Component {
 }
 
 UserList.defaultProps = {
-    className: ''
+    className: '',
+    users: userData,
+    inlineAddingRowIsOpen: false,
 };
 
-module.exports = UserList;
+UserList.propTypes = {
+    className: PropTypes.string,
+    inlineAddingRowIsOpen: PropTypes.bool,
+    editUser: PropTypes.func,
+    deleteUser: PropTypes.func,
+    onClickUser: PropTypes.func,
+    users: PropTypes.arrayOf(PersonSchema),
+};
+
+export default UserList;
