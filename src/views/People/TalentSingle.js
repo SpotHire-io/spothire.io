@@ -7,7 +7,12 @@ import classNames from 'classnames';
 
 import Box from '../../components/Global/Box';
 
+import SecondaryMenu from '../../components/Global/SecondaryMenu';
+
 import MetadataInterface from '../../components/Talent/MetadataInterface';
+
+// storybook stuff
+import { linkTo } from '@kadira/storybook';
 
 class TalentSingleView extends React.Component {
     constructor() {
@@ -20,6 +25,25 @@ class TalentSingleView extends React.Component {
         });
 
         return (
+          <div>
+            <SecondaryMenu
+              className="ph4 bg-white"
+              items={[
+                {
+                  key: 'talent',
+                  text: 'Talent',
+                  href: '#talent',
+                  isActive: true
+                },
+                {
+                  key: 'groups',
+                  text: 'Groups',
+                  href: '#groups',
+                  isActive: false
+                }
+              ]}
+              onClick={linkTo('Views', 'People')}
+            />
             <div className="pv4 bg-near-white">
                 <div className="flex mh4">
                     <Box className="w-third mr3">
@@ -102,6 +126,7 @@ class TalentSingleView extends React.Component {
                     </div>
                 </div>
             </div>
+          </div>
         );
     }
 }
