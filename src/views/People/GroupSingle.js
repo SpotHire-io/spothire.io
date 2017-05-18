@@ -7,6 +7,9 @@ import classNames from 'classnames';
 
 import SecondaryMenu from '../../components/Global/SecondaryMenu';
 
+import BasicButton from '../../components/Buttons/BasicButton';
+
+import UserTable from '../../components/Talent/UserTable';
 import GroupDetailsEditor from '../../components/Talent/Groups/DetailsEditor';
 
 // storybook stuff
@@ -43,7 +46,17 @@ class GroupSingleView extends React.Component {
                     onClick={linkTo('Views', 'People')}
                 />
                 <div className="pa4 bg-near-white">
-                    <GroupDetailsEditor group={this.props.group}/>
+                    <div className="flex items-start">
+                        <GroupDetailsEditor group={this.props.group} className="w-one-third mr3"/>
+
+                        <div className="w-two-thirds">
+                            <UserTable/>
+
+                            <div className="tr mt3">
+                                <BasicButton className="button--positive">Add Talent to Group</BasicButton>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
