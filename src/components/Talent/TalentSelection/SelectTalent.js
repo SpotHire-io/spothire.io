@@ -63,6 +63,7 @@ class SelectTalent extends React.Component {
                                 hideFilterInput: true,
                                 filterBy: this.state.talentsSearch,
                             }}
+                            enabledColumns={['avatar', 'name']}
                         />
                     </div>
                 );
