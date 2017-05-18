@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import Box from '../../components/Global/Box';
 
 import OpportunityModalBasicInfo from '../../components/Scheduling/OpportunityModal/BasicInfo';
+import ShiftManager from '../../components/Scheduling/ShiftManager';
 
 class OpportunitySingleView extends React.Component {
     constructor() {
@@ -36,6 +37,8 @@ class OpportunitySingleView extends React.Component {
                             </Box>
                         </div>
                     </div>
+                    
+                    <ShiftManager className="mt4 mh4"/>
                 </div>
             </div>
         );
