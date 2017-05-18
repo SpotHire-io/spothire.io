@@ -1,7 +1,8 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
 
-const Post = require('./Post');
+import classNames from 'classnames';
+
+import Post from './Post';
 
 class PostList extends React.Component {
     constructor() {
@@ -63,4 +64,4 @@ PostList.defaultProps = {
     className: ''
 };
 
-module.exports = PostList;
+export default PostList;

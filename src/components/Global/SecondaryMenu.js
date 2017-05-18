@@ -1,5 +1,6 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
+
+import classNames from 'classnames';
 
 class SecondaryMenu extends React.Component {
     constructor() {

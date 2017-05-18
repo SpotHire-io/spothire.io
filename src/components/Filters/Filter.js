@@ -1,7 +1,8 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
 
-const Select = require('react-select');
+import classNames from 'classnames';
+
+import Select from 'react-select';
 
 import 'react-select/dist/react-select.css';
 

@@ -1,8 +1,9 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
 
-const BigCalendar = require('react-big-calendar');
-const moment      = require('moment');
+import classNames from 'classnames';
+
+import BigCalendar from 'react-big-calendar';
+import moment      from 'moment';
 
 import OpportunityModal from './OpportunityModal';
 

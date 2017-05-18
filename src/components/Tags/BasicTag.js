@@ -1,5 +1,6 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
+
+import classNames from 'classnames';
 
 const BasicTag = ({ type, children, className }) => {
     let tagClasses = classNames({

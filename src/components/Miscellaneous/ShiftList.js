@@ -1,21 +1,18 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
+
+import classNames from 'classnames';
 
 import moment from 'moment';
 
-const Table = require('reactable').Table;
-const Thead = require('reactable').Thead;
-const Th    = require('reactable').Th;
-const Tr    = require('reactable').Tr;
-const Td    = require('reactable').Td;
-
-const BasicButton = require('../Buttons/BasicButton');
+import { Table, Thead, Th, Tr, Td } from 'reactable';
 
 import SingleDatePickerFocusContainer from '../Miscellaneous/SingleDatePickerFocusContainer';
 
 import TimePicker from 'rc-time-picker';
 
 import Icon from 'react-geomicons';
+
+import BasicButton from '../Buttons/BasicButton';
 
 class ShiftList extends React.Component {
     constructor() {

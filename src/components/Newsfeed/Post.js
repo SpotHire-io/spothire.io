@@ -1,12 +1,14 @@
-const React      = require('react');
-const classNames = require('classnames');
-const moment     = require('moment');
+import React from 'react';
 
-const Arrow = require('react-svg-arrow');
+import classNames from 'classnames';
 
-const BasicButton = require('../Buttons/BasicButton');
+import moment from 'moment';
 
-const BasicTag = require('../Tags/BasicTag');
+import { Arrow } from 'rebass';
+
+import BasicButton from '../Buttons/BasicButton';
+
+import BasicTag from '../Tags/BasicTag';
 
 const Post = ({ post, className, isOpen, toggleOpenState }) => {
     let wrapperClasses = classNames({
@@ -33,8 +35,7 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
                     <Arrow
                         className="ml2"
                         color={(isOpen) ? "rgb(119, 119, 119)" : "rgb(111, 111, 111)"}
-                        size={6}
-                        direction={(isOpen) ? "bottom" : "top"}
+                        direction={(isOpen) ? "down" : "up"}
                     />
                 </div>
             </div>

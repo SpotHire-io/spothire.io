@@ -1,8 +1,9 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
+
+import classNames from 'classnames';
 
 // storybook stuff
-const linkTo = require('@kadira/storybook').linkTo;
+import { linkTo } from '@kadira/storybook';
 
 class MainMenu extends React.Component {
     constructor() {
