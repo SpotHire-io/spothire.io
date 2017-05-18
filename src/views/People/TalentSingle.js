@@ -44,7 +44,7 @@ class TalentSingleView extends React.Component {
                             {[
                                 {
                                     label: 'Email',
-                                    content: <a href={`mailto:${this.props.talent.email}`}>{this.props.talent.email}</a>
+                                    content: <a className="link blue underline-hover" href={`mailto:${this.props.talent.email}`}>{this.props.talent.email}</a>
                                 },
                                 {
                                     label: 'Phone',
