@@ -102,7 +102,14 @@ class TalentListView extends React.Component {
 
                     <BoxConnector isActive={this.state.searchQuery.length > 0}/>
 
-                    <UserTable onClickUser={linkTo('Views', 'People:TalentSingleView')}/>
+                    <UserTable
+                        tableProps={{
+                            filterable: ['name'],
+                            hideFilterInput: true,
+                            filterBy: this.state.searchQuery,
+                        }}
+                        onClickUser={linkTo('Views', 'People:TalentSingleView')}
+                    />
                 </div>
             </div>
         );
