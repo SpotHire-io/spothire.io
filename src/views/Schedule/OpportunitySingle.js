@@ -10,13 +10,31 @@ import Box from '../../components/Global/Box';
 import BasicButton from '../../components/Buttons/BasicButton';
 
 import UserTable from '../../components/Talent/UserTable';
+import TalentSelectionInterface from '../../components/Talent/TalentSelectionInterface';
 
 import OpportunityModalBasicInfo from '../../components/Scheduling/OpportunityModal/BasicInfo';
 import ShiftManager from '../../components/Scheduling/ShiftManager';
 
+import Modal from 'react-modal';
+
 class OpportunitySingleView extends React.Component {
     constructor() {
         super();
+
+        this.openAddTalentModal = this.openAddTalentModal.bind(this);
+        this.closeAddTalentModal = this.closeAddTalentModal.bind(this);
+
+        this.state = {
+            isAddTalentModalOpen: false,
+        };
+    }
+
+    openAddTalentModal() {
+        return this.setState({ isAddTalentModalOpen: true });
+    }
+
+    closeAddTalentModal() {
+        return this.setState({ isAddTalentModalOpen: false });
     }
 
     render() {
@@ -47,7 +65,7 @@ class OpportunitySingleView extends React.Component {
                                 <UserTable className="mt3" enabledColumns={['avatar', 'name']}/>
 
                                 <div className="tr mt3">
-                                    <BasicButton className="button--positive">Invite Talent to Opportunity</BasicButton>
+                                    <BasicButton className="button--positive" onClick={() => this.openAddTalentModal()}>Invite Talent to Opportunity</BasicButton>
                                 </div>
                             </Box>
                         </div>
@@ -55,6 +73,16 @@ class OpportunitySingleView extends React.Component {
 
                     <ShiftManager className="mt4 mh4"/>
                 </div>
+                <Modal
+                    isOpen={this.state.isAddTalentModalOpen}
+                    contentLabel={"Add talent modal"}
+                    overlayClassName="sh-modal-overlay"
+                    className="sh-modal sh-modal--full sh-shadow-2 "
+                    onRequestClose={this.closeAddTalentModal}
+                    closeTimeoutMS={100}
+                >
+                    <TalentSelectionInterface/>
+                </Modal>
             </div>
         );
     }
