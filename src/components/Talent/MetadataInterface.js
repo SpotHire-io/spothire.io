@@ -64,7 +64,7 @@ class MetadataInterface extends React.Component {
     renderControls(metaPair) {
         return (
             <div className="tr self-center">
-                <Icon color="#555555" name="compose" className="pointer mt1" onClick={() => this.toggleEditingMetaPair(metaPair.key)}/>
+                <Icon color="#555555" name={(metaPair.key !== this.state.currentlyEditingMetaPairKey) ? 'compose' : 'check'} className="pointer mt1" onClick={() => this.toggleEditingMetaPair(metaPair.key)}/>
                 <Icon color="#555555" name="close" className="pointer mt1 ml2" onClick={() => this.deleteMetaPair(metaPair.key)}/>
             </div>
         );
