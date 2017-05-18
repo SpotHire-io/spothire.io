@@ -11,6 +11,7 @@ import BasicButton from '../../components/Buttons/BasicButton';
 
 import UserTable from '../../components/Talent/UserTable';
 import GroupDetailsEditor from '../../components/Talent/Groups/DetailsEditor';
+import GroupCard from '../../components/Talent/Groups/Card';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
@@ -47,7 +48,10 @@ class GroupSingleView extends React.Component {
                 />
                 <div className="pa4 bg-near-white">
                     <div className="flex items-start">
-                        <GroupDetailsEditor group={this.props.group} className="w-one-third mr3"/>
+                        <div className="w-one-third mr3">
+                            <GroupCard group={this.props.group}/>
+                            <GroupDetailsEditor group={this.props.group} className="mt3"/>
+                        </div>
 
                         <div className="w-two-thirds">
                             <UserTable/>
