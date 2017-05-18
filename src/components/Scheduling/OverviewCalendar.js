@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames';
 
 import BigCalendar from 'react-big-calendar';
@@ -100,7 +102,7 @@ class OverviewCalendar extends React.Component {
                     endAccessor={(event) => new Date(event.selectedDates.end)}
                     allDayAccessor="isAllDay"
                     onSelectSlot={this.handleSelectSlot}
-                    onSelectEvent={(event) => console.log(event)}
+                    onSelectEvent={this.props.onSelectEvent}
                 />
                 <OpportunityModal
                     isOpen={this.state.isModalOpen}
@@ -115,11 +117,13 @@ class OverviewCalendar extends React.Component {
 
 OverviewCalendar.defaultProps = {
     className: '',
-    events: []
+    events: [],
+    onSelectEvent: (event) => console.log(event),
 };
 
 OverviewCalendar.propTypes = {
-    events: React.PropTypes.array.isRequired
+    events: PropTypes.array.isRequired,
+    onSelectEvent: PropTypes.func,
 };
 
-module.exports = OverviewCalendar;
+export default OverviewCalendar;
