@@ -8,6 +8,9 @@ import Box from '../components/Global/Box';
 
 import OverviewCalendar from '../components/Scheduling/OverviewCalendar';
 
+// storybook stuff
+import { linkTo } from '@kadira/storybook';
+
 class ScheduleView extends React.Component {
     constructor() {
         super();
@@ -24,6 +27,7 @@ class ScheduleView extends React.Component {
                                 property: 'userId',
                                 values: [0]
                             }}
+                            onSelectEvent={linkTo('Views', 'Schedule:OpportunitySingle')}
                         />
                     </Box>
                 </div>
