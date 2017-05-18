@@ -44,6 +44,8 @@ import ShiftManager from '../components/Scheduling/ShiftManager';
 
 import UserTable from '../components/Talent/UserTable';
 import SelectableUserTable from '../components/Talent/SelectableUserTable';
+import TalentSelectionInterface from '../components/Talent/TalentSelectionInterface';
+
 import GroupCard from '../components/Talent/Groups/Card';
 import GroupCardList from '../components/Talent/Groups/CardList';
 import GroupDetailsEditor from '../components/Talent/Groups/DetailsEditor';
@@ -617,6 +619,13 @@ storiesOf('Talent', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <SelectableUserTable/>
+            </div>
+        </WithNotes>
+    ))
+    .add('TalentSelectionInterface', () => (
+        <WithNotes>
+            <div className="pa4 bg-white">
+                <TalentSelectionInterface className="pa3 ba b--black-20" talents={users}/>
             </div>
         </WithNotes>
     ));
