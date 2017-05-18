@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import BasicButton from '../../components/Buttons/BasicButton';
 
-import Icon from 'react-geomicons';
+import ReviewSelectedTalent from './TalentSelection/ReviewSelectedTalent';
 
 // dummy data
 import users from '../../data/users.json';
@@ -24,8 +24,6 @@ class TalentSelectionInterface extends React.Component {
         super();
 
         this.unSelectById = this.unSelectById.bind(this);
-
-        this.renderSelectedTalents = this.renderSelectedTalents.bind(this);
 
         this.state = {
             selectedTalents: {
@@ -77,34 +75,7 @@ class TalentSelectionInterface extends React.Component {
     }
 
     unSelectById(categoryKey, selectionId) {
-
-    }
-
-    renderSelectedTalents() {
-        return (
-            <div>
-                {this.selectionCategories.map((category) => {
-                    return (
-                        <section className="mb3" key={category.key}>
-                            <h4 className="f6 normal mt0 mb2">{category.title}</h4>
-
-                            <ul className="list pa0 ma0">
-                                {category.selections.map((selection) => {
-                                    return (
-                                        <li key={selection.id} className="mt0 flex">
-                                            {category.renderMethod(selection, 'flex-auto')}
-                                            <div className="tr">
-                                                <Icon color="#555555" name="close" className="pointer" onClick={() => this.unSelectById(category.key, selection.id)}/>
-                                            </div>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </section>
-                    );
-                })}
-            </div>
-        );
+        alert('Unselecting...');
     }
 
     render() {
@@ -116,7 +87,7 @@ class TalentSelectionInterface extends React.Component {
                     </div>
                     <div className="w-50">
                         <h3 className="mt0 f6 lh-title ttu">Selected Talents</h3>
-                        {this.renderSelectedTalents()}
+                        <ReviewSelectedTalent selectedTalents={this.state.selectedTalents} unSelectById={this.unSelectById} selectionCategories={this.selectionCategories}/>
                     </div>
                 </div>
 
