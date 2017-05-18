@@ -32,8 +32,6 @@ class OpportunitySingleView extends React.Component {
                             <Box>
                                 <h2 className="f6 mt0 lh-title ttu">Opportunity Settings</h2>
 
-                                {console.log(this.props.opportunity)}
-
                                 <OpportunityModalBasicInfo opportunity={this.props.opportunity} updateOpportunity={() => console.log('updating opportunity!')}/>
                             </Box>
                         </div>
