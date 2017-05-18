@@ -64,6 +64,7 @@ class SelectTalent extends React.Component {
                                 filterBy: this.state.talentsSearch,
                             }}
                             enabledColumns={['avatar', 'name']}
+                            onClickUser={() => alert('Selecting user...')}
                         />
                     </div>
                 );
