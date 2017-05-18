@@ -66,13 +66,13 @@ class UserList extends React.Component {
 
         return (
             <Tr key={user.id} className={userClasses} onClick={() => this.props.onClickUser(user.id)}>
-                {(this.props.enabledColumns.includes('avatar')) ? this.renderUserCell('avatar', () => (
+                {this.renderUserCell('avatar', () => (
                     <img className="w1 h1 br-100 v-btm" src="http://placehold.it/40x40"/>
-                ), 'tc pr0') : null}
-                {(this.props.enabledColumns.includes('name')) ? this.renderUserCell('name', user.firstName + ' ' + user.lastName) : null}
-                {(this.props.enabledColumns.includes('email')) ? this.renderUserCell('email', user.email) : null}
-                {(this.props.enabledColumns.includes('phone')) ? this.renderUserCell('phone', user.phone) : null}
-                {(this.props.enabledColumns.includes('actions')) ? this.renderUserCell('actions', () => this.renderControls(user)) : null}
+                ), 'tc pr0')}
+                {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
+                {this.renderUserCell('email', user.email)}
+                {this.renderUserCell('phone', user.phone)}
+                {this.renderUserCell('actions', () => this.renderControls(user))}
             </Tr>
         );
     }
@@ -80,6 +80,7 @@ class UserList extends React.Component {
     renderUserCell(column, value, className) {
         const cellClasses = classNames({
             'bb b--black-20': true,
+            'dn': ! this.props.enabledColumns.includes(column),
             [this.commonCellClasses]: true,
             [className]: true
         });
@@ -106,6 +107,7 @@ class UserList extends React.Component {
     renderHeaderCell(column, value) {
         const cellClasses = classNames({
             'tl bg-blue-yonder white bb bw1 b--white-40': true,
+            'dn': ! this.props.enabledColumns.includes(column),
             [this.commonCellClasses]: true
         });
 
@@ -129,11 +131,11 @@ class UserList extends React.Component {
             <div className={wrapperClasses}>
                 <Table {...this.props.tableProps} className="w-100" cellSpacing="0" sortable={['name']}>
                     <Thead>
-                        {(this.props.enabledColumns.includes('avatar')) ? this.renderHeaderCell('avatar', '') : null}
-                        {(this.props.enabledColumns.includes('name')) ? this.renderHeaderCell('name', 'Name') : null}
-                        {(this.props.enabledColumns.includes('email')) ? this.renderHeaderCell('email', 'Email') : null}
-                        {(this.props.enabledColumns.includes('phone')) ? this.renderHeaderCell('phone', 'Phone') : null}
-                        {(this.props.enabledColumns.includes('actions')) ? this.renderHeaderCell('actions', '') : null}
+                        {this.renderHeaderCell('avatar', '')}
+                        {this.renderHeaderCell('name', 'Name')}
+                        {this.renderHeaderCell('email', 'Email')}
+                        {this.renderHeaderCell('phone', 'Phone')}
+                        {this.renderHeaderCell('actions', '')}
                     </Thead>
                     {(this.props.inlineAddingRowIsOpen) ? this.renderNewUserRow() : null}
                     {this.props.users.map((user) => this.renderUserRow(user))}

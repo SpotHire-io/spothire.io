@@ -133,7 +133,7 @@ SelectTalent.defaultProps = {
 
 SelectTalent.propTypes = {
     className: PropTypes.string,
-    selectionCategories: PropTypes.object.isRequired,
+    selectionCategories: PropTypes.array.isRequired,
 };
 
 export default SelectTalent;
