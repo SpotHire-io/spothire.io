@@ -10,6 +10,9 @@ import GroupCardList from '../../components/Talent/Groups/CardList';
 import FilterContainer from '../../components/Filters/FilterContainer';
 import Filter from '../../components/Filters/Filter';
 
+// storybook stuff
+import { linkTo } from '@kadira/storybook';
+
 class GroupListView extends React.Component {
     constructor() {
         super();
@@ -86,7 +89,7 @@ class GroupListView extends React.Component {
                 <GroupCardList
                     className="nt3 w-two-thirds"
                     groups={this.props.groups}
-                    onSelectGroup={(groupId) => console.log(`Group ID ${groupId} selected`)}
+                    onSelectGroup={linkTo('Views', 'People:GroupSingleView')}
                 />
             </div>
         );
