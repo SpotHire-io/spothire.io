@@ -1,4 +1,5 @@
-const React      = require('react');
+import React from 'react';
+
 import classNames from 'classnames';
 
 import ShiftList from '../../Miscellaneous/ShiftList';

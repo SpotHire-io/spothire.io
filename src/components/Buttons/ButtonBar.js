@@ -1,7 +1,6 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
 
-import BasicButton from './BasicButton';
+import classNames from 'classnames';
 
 const ButtonBar = ({ children, className }) => {
     const wrapperClassName = classNames({

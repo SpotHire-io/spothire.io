@@ -1,13 +1,14 @@
-const React      = require('react');
-import classNames from 'classnames';
+import React from 'react';
 
 import OpportunitySchema from '../../../schemas/Opportunity';
 
-const moment      = require('moment');
+import classNames from 'classnames';
+
+import moment from 'moment';
 
 import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
 
-const TimePicker = require('rc-time-picker');
+import TimePicker from 'rc-time-picker';
 
 import { Switch } from 'rebass';
 

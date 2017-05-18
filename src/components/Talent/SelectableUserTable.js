@@ -4,21 +4,15 @@ import PropTypes from 'prop-types';
 
 import { CSSTransitionGroup } from 'react-transition-group';
 
-const classNames = require('classnames');
+import classNames from 'classnames';
 
 import PersonSchema from '../../schemas/Person';
 
-const userData = require('../../data/users.json');
-
-const Table = require('reactable').Table;
-const Thead = require('reactable').Thead;
-const Th    = require('reactable').Th;
-const Tr    = require('reactable').Tr;
-const Td    = require('reactable').Td;
-
-const BasicButton = require('../Buttons/BasicButton');
+import { Table, Thead, Th, Tr, Td } from 'reactable';
 
 import { Checkbox } from 'rebass';
+
+import userData from '../../data/users.json';
 
 class SelectableUserTable extends React.Component {
     constructor() {

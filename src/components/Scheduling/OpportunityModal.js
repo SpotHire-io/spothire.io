@@ -1,18 +1,14 @@
-const React      = require('react');
-import classNames from 'classnames';
+import React from 'react';
 
 import OpportunitySchema from '../../schemas/Opportunity';
 
-const moment      = require('moment');
-
-const Modal = require('react-modal');
+import Modal from 'react-modal';
 
 import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
 
-const BasicButton = require('../Buttons/BasicButton');
+import BasicButton from '../Buttons/BasicButton';
 
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
-import OpportunityModalShifts from './OpportunityModal/Shifts';
 import OpportunityModalTalent from './OpportunityModal/Talent';
 
 class OpportunityModal extends React.Component {

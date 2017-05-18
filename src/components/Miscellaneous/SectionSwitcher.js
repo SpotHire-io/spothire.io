@@ -1,7 +1,6 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
 
-const SecondaryMenu = require('../Global/SecondaryMenu');
+import SecondaryMenu from '../Global/SecondaryMenu';
 
 class SectionSwitcher extends React.Component {
     constructor() {

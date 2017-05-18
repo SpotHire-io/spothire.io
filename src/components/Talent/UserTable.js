@@ -1,18 +1,15 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
 
-const userData = require('../../data/users.json');
+import classNames from 'classnames';
 
-const Table = require('reactable').Table;
-const Thead = require('reactable').Thead;
-const Th    = require('reactable').Th;
-const Tr    = require('reactable').Tr;
-const Td    = require('reactable').Td;
+import { Table, Thead, Th, Tr, Td } from 'reactable';
 
-const BasicButton = require('../Buttons/BasicButton');
+import BasicButton from '../Buttons/BasicButton';
 
 // storybook stuff
-const linkTo = require('@kadira/storybook').linkTo;
+import { linkTo } from '@kadira/storybook';
+
+import userData from '../../data/users.json';
 
 class UserList extends React.Component {
     constructor() {
