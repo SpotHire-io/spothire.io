@@ -103,6 +103,7 @@ class TalentSelectionInterface extends React.Component {
 
 TalentSelectionInterface.defaultProps = {
     className: '',
+    talents: users,
 };
 
 TalentSelectionInterface.propTypes = {

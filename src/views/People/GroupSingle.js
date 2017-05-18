@@ -10,8 +10,12 @@ import SecondaryMenu from '../../components/Global/SecondaryMenu';
 import BasicButton from '../../components/Buttons/BasicButton';
 
 import UserTable from '../../components/Talent/UserTable';
+import TalentSelectionInterface from '../../components/Talent/TalentSelectionInterface';
+
 import GroupDetailsEditor from '../../components/Talent/Groups/DetailsEditor';
 import GroupCard from '../../components/Talent/Groups/Card';
+
+import Modal from 'react-modal';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
@@ -19,6 +23,21 @@ import { linkTo } from '@kadira/storybook';
 class GroupSingleView extends React.Component {
     constructor() {
         super();
+
+        this.openAddTalentModal = this.openAddTalentModal.bind(this);
+        this.closeAddTalentModal = this.closeAddTalentModal.bind(this);
+
+        this.state = {
+            isAddTalentModalOpen: false,
+        }
+    }
+
+    openAddTalentModal() {
+        return this.setState({ isAddTalentModalOpen: true });
+    }
+
+    closeAddTalentModal() {
+        return this.setState({ isAddTalentModalOpen: false });
     }
 
     render() {
@@ -57,11 +76,21 @@ class GroupSingleView extends React.Component {
                             <UserTable deleteUser={() => alert('User deleted')}/>
 
                             <div className="tr mt3">
-                                <BasicButton className="button--positive">Add Talent to Group</BasicButton>
+                                <BasicButton className="button--positive" onClick={() => this.openAddTalentModal()}>Add Talent to Group</BasicButton>
                             </div>
                         </div>
                     </div>
                 </div>
+                <Modal
+                    isOpen={this.state.isAddTalentModalOpen}
+                    contentLabel={"Add talent modal"}
+                    overlayClassName="sh-modal-overlay"
+                    className="sh-modal sh-modal--wide sh-shadow-2 "
+                    onRequestClose={this.closeAddTalentModal}
+                    closeTimeoutMS={100}
+                >
+                    <TalentSelectionInterface/>
+                </Modal>
             </div>
         );
     }

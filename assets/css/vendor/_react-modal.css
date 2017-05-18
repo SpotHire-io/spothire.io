@@ -37,6 +37,11 @@
     max-height: 75vh;
 }
 
+    .sh-modal--wide {
+        left: 4rem;
+        right: 4rem;
+    }
+
 .ReactModalPortal > div {
     opacity: 0;
 }
