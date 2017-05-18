@@ -23,6 +23,8 @@ class TalentSelectionInterface extends React.Component {
     constructor() {
         super();
 
+        this.unSelectById = this.unSelectById.bind(this);
+
         this.renderSelectedTalents = this.renderSelectedTalents.bind(this);
 
         this.state = {
@@ -41,32 +43,39 @@ class TalentSelectionInterface extends React.Component {
         }
     }
 
+    unSelectById(categoryKey, selectionId) {
+
+    }
+
     renderSelectedTalents() {
         const selectionCategories = [
             {
+                key: 'talents',
                 title: 'Talents',
                 selections: this.state.selectedTalents.talents,
-                renderMethod: (talent) => {
+                renderMethod: (talent, className) => {
                     return (
-                        <p>{talent.firstName}</p>
+                        <p className={className}>{talent.firstName}</p>
                     );
                 },
             },
             {
+                key: 'groups',
                 title: 'Groups',
                 selections: this.state.selectedTalents.groups,
-                renderMethod: (group) => {
+                renderMethod: (group, className) => {
                     return (
-                        <p>{group.name}</p>
+                        <p className={className}>{group.name} <span className="ml2 f6">({group.talent.length} talents)</span></p>
                     );
                 },
             },
             {
+                key: 'custom',
                 title: 'Custom',
                 selections: this.state.selectedTalents.customSelections,
-                renderMethod: (customSelection) => {
+                renderMethod: (customSelection, className) => {
                     return (
-                        <p>¯\_(ツ)_/¯</p>
+                        <p className={className}>¯\_(ツ)_/¯</p>
                     );
                 },
             },
@@ -76,13 +85,18 @@ class TalentSelectionInterface extends React.Component {
             <div>
                 {selectionCategories.map((category) => {
                     return (
-                        <section className="mb3">
+                        <section className="mb3" key={category.key}>
                             <h4 className="f6 normal mt0 mb2">{category.title}</h4>
 
                             <ul className="list pa0 ma0">
                                 {category.selections.map((selection) => {
                                     return (
-                                        <li key={selection.id} className="mt0">{category.renderMethod(selection)}</li>
+                                        <li key={selection.id} className="mt0 flex">
+                                            {category.renderMethod(selection, 'flex-auto')}
+                                            <div className="tr">
+                                                <Icon color="#555555" name="close" className="pointer" onClick={() => this.unSelectById(category.key, selection.id)}/>
+                                            </div>
+                                        </li>
                                     );
                                 })}
                             </ul>
