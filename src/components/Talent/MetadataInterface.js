@@ -22,12 +22,16 @@ class MetadataInterface extends React.Component {
     }
 
     toggleEditingMetaPair(metaPairKey) {
-        let currentlyEditingMetaPairKey = parseInt(this.state.currentlyEditingMetaPairKey);
+        let currentlyEditingMetaPairKey = this.state.currentlyEditingMetaPairKey;
+
+        console.log('toggling', metaPairKey);
 
         // Unset the currently editing metaPair if we’re toggling that metaPair. Else, set to the new metaPair ID.
         if (metaPairKey === currentlyEditingMetaPairKey) {
+            console.log('1');
             currentlyEditingMetaPairKey = null;
         } else {
+            console.log('2');
             currentlyEditingMetaPairKey = metaPairKey;
         }
 
@@ -62,7 +66,7 @@ class MetadataInterface extends React.Component {
     renderControls(metaPair) {
         return (
             <div className="tr">
-                <Icon color="#555555" name="compose" className="pointer mt1" onClick={() => this.toggleMetaPairEditing(metaPair.key)}/>
+                <Icon color="#555555" name="compose" className="pointer mt1" onClick={() => this.toggleEditingMetaPair(metaPair.key)}/>
                 <Icon color="#555555" name="close" className="pointer mt1 ml2" onClick={() => this.deleteMetaPair(metaPair.key)}/>
             </div>
         );
@@ -72,15 +76,27 @@ class MetadataInterface extends React.Component {
         return (
             <ul className={classNames('list ma0 pa0 bg-near-white bb b--black-20', this.props.className)}>
                 {this.state.metaPairs.map((metaPair) => {
-                    return (
-                        <li className="flex ph3 pv2 ma0 bt bl br b--black-20">
-                            <dl className="ma0 pa0 list flex-auto flex">
-                                <dt className="w-third">{metaPair.key}</dt>
-                                <dd className="w-two-thirds pa0">{metaPair.value}</dd>
-                            </dl>
-                            {this.renderControls(metaPair.key)}
-                        </li>
-                    )
+                    if (metaPair.key !== this.state.currentlyEditingMetaPairKey) {
+                        return (
+                            <li className="flex ph3 pv2 ma0 bt bl br b--black-20" key={metaPair.key}>
+                                <dl className="ma0 pa0 list flex-auto flex">
+                                    <dt className="w-third">{metaPair.key}</dt>
+                                    <dd className="w-two-thirds pa0">{metaPair.value}</dd>
+                                </dl>
+                                {this.renderControls(metaPair)}
+                            </li>
+                        )
+                    } else {
+                        return (
+                            <li className="flex ph3 pv2 ma0 bt bl br b--black-20" key={metaPair.key}>
+                                <dl className="ma0 pa0 list flex-auto flex">
+                                    <dt className="w-third"><input type="text" value={metaPair.key}/></dt>
+                                    <dd className="w-two-thirds pa0"><input type="text" value={metaPair.value}/></dd>
+                                </dl>
+                                {this.renderControls(metaPair)}
+                            </li>
+                        )
+                    }
                 })}
             </ul>
         );
