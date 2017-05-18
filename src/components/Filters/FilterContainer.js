@@ -1,9 +1,10 @@
-const React      = require('react');
-const classNames = require('classnames');
+import React from 'react';
 
-const Box = require('../Global/Box');
+import classNames from 'classnames';
 
-const BasicButton = require('../Buttons/BasicButton');
+import Box from '../Global/Box';
+
+import BasicButton from '../Buttons/BasicButton';
 
 const FilterContainer = ({ children, className, headingSemanticLevel }) => {
     let wrapperClasses = classNames({

@@ -1,17 +1,22 @@
-const React = require('react');
+import React from 'react';
 
 import PropTypes from 'prop-types';
 
-const storiesOf = require('@kadira/storybook').storiesOf;
-const action = require('@kadira/storybook').action;
-const WithNotes = require('@kadira/storybook-addon-notes').WithNotes;
+import { storiesOf } from '@kadira/storybook';
+import { action } from '@kadira/storybook';
+import { WithNotes } from '@kadira/storybook-addon-notes';
 
-const moment = require('moment');
+import moment from 'moment';
 
-const SingleDatePicker = require('react-dates').SingleDatePicker;
-const DateRangePicker  = require('react-dates').DateRangePicker;
+import { SingleDatePicker, DateRangePicker } from 'react-dates';
 
-const START_DATE = require('react-dates/constants').START_DATE;
+import { START_DATE } from 'react-dates/constants';
+
+import BigCalendar from 'react-big-calendar';
+
+BigCalendar.setLocalizer(
+    BigCalendar.momentLocalizer(moment)
+);
 
 import NewsfeedView from '../views/Newsfeed';
 import PeopleView from '../views/People';
@@ -19,21 +24,21 @@ import TalentSingleView from '../views/People/TalentSingle';
 import GroupSingleView from '../views/People/GroupSingle';
 import ScheduleView from '../views/Schedule';
 
-const MainMenu = require('../components/Global/MainMenu');
-const SecondaryMenu = require('../components/Global/SecondaryMenu');
-const Box = require('../components/Global/Box');
+import MainMenu from '../components/Global/MainMenu';
+import SecondaryMenu from '../components/Global/SecondaryMenu';
+import Box from '../components/Global/Box';
 
 import BasicButton from '../components/Buttons/BasicButton';
 import RadioButton from '../components/Buttons/RadioButton';
 import ButtonBar from '../components/Buttons/ButtonBar';
 
-const Post = require('../components/Newsfeed/Post');
-const PostList = require('../components/Newsfeed/PostList');
+import Post from '../components/Newsfeed/Post';
+import PostList from '../components/Newsfeed/PostList';
 
-const FilterContainer = require('../components/Filters/FilterContainer');
-const Filter = require('../components/Filters/Filter');
+import FilterContainer from '../components/Filters/FilterContainer';
+import Filter from '../components/Filters/Filter';
 
-const OverviewCalendar = require('../components/Scheduling/OverviewCalendar');
+import OverviewCalendar from '../components/Scheduling/OverviewCalendar';
 import OpportunityModal from '../components/Scheduling/OpportunityModal';
 import ShiftManager from '../components/Scheduling/ShiftManager';
 
@@ -44,11 +49,12 @@ import GroupCardList from '../components/Talent/Groups/CardList';
 import GroupDetailsEditor from '../components/Talent/Groups/DetailsEditor';
 
 import ShiftList from '../components/Miscellaneous/ShiftList';
-const SectionSwitcher = require('../components/Miscellaneous/SectionSwitcher');
+import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
 
 import '../../public/css/app.css';
 
 import users from '../data/users.json';
+import sampleEvents from '../data/events.json';
 
 storiesOf('Overview', module)
     .add('Welcome', () => (
@@ -525,14 +531,6 @@ storiesOf('Filters', module)
             />
         </WithNotes>
     ));
-
-const BigCalendar = require('react-big-calendar');
-
-BigCalendar.setLocalizer(
-    BigCalendar.momentLocalizer(moment)
-);
-
-const sampleEvents = require('../data/events.json');
 
 storiesOf('Scheduling', module)
     .add('DateRangePicker', () => (
