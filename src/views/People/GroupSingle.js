@@ -67,7 +67,7 @@ class GroupSingleView extends React.Component {
                 />
                 <div className="pa4 bg-near-white">
                     <div className="flex items-start">
-                        <div className="w-one-third mr3">
+                        <div className="w-third mr3">
                             <GroupCard group={this.props.group}/>
                             <GroupDetailsEditor group={this.props.group} className="mt3"/>
                         </div>
