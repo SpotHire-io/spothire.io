@@ -48,7 +48,7 @@ class TalentSelectionInterface extends React.Component {
                 selections: this.state.selectedTalents.talents,
                 renderMethod: (talent, className) => {
                     return (
-                        <p className={className}>{talent.firstName}</p>
+                        <p className={className}>{talent.firstName} {talent.lastName}</p>
                     );
                 },
             },

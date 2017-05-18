@@ -129,7 +129,7 @@ class UserList extends React.Component {
 
         return (
             <div className={wrapperClasses}>
-                <Table {...this.props.tableProps} className="w-100" cellSpacing="0" sortable={['name']}>
+                <Table {...this.props.tableProps} style={{ width: 'calc(100% + 1px)' }} cellSpacing="0" sortable={['name']}>
                     <Thead>
                         {this.renderHeaderCell('avatar', '')}
                         {this.renderHeaderCell('name', 'Name')}
