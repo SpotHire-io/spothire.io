@@ -5,6 +5,8 @@ import PersonSchema from '../../schemas/Person';
 
 import classNames from 'classnames';
 
+import BasicButton from '../../components/Buttons/BasicButton';
+
 import Icon from 'react-geomicons';
 
 class MetadataInterface extends React.Component {
@@ -70,31 +72,36 @@ class MetadataInterface extends React.Component {
 
     render() {
         return (
-            <ul className={classNames('list ma0 pa0 bg-near-white bb b--black-20', this.props.className)}>
-                {this.state.metaPairs.map((metaPair) => {
-                    if (metaPair.key !== this.state.currentlyEditingMetaPairKey) {
-                        return (
-                            <li className="flex ph3 pv2 ma0 bt bl br b--black-20" key={metaPair.key}>
-                                <dl className="ma0 pa0 list flex-auto flex">
-                                    <dt className="w-third">{metaPair.key}</dt>
-                                    <dd className="w-two-thirds pa0">{metaPair.value}</dd>
-                                </dl>
-                                {this.renderControls(metaPair)}
-                            </li>
-                        )
-                    } else {
-                        return (
-                            <li className="flex ph3 pv2 ma0 bt bl br b--black-20" key={metaPair.key}>
-                                <dl className="ma0 pa0 list flex-auto flex">
-                                    <dt className="w-third"><input className="pa1 ma0 nl1 w-100" type="text" value={metaPair.key}/></dt>
-                                    <dd className="w-two-thirds pa0"><input className="pa1 ma0 nl1 w-100" type="text" value={metaPair.value}/></dd>
-                                </dl>
-                                {this.renderControls(metaPair)}
-                            </li>
-                        )
-                    }
-                })}
-            </ul>
+            <div className={classNames(this.props.className)}>
+                <ul className="list ma0 pa0 bg-near-white bb b--black-20">
+                    {this.state.metaPairs.map((metaPair) => {
+                        if (metaPair.key !== this.state.currentlyEditingMetaPairKey) {
+                            return (
+                                <li className="flex ph3 pv2 ma0 bt bl br b--black-20" key={metaPair.key}>
+                                    <dl className="ma0 pa0 list flex-auto flex">
+                                        <dt className="w-third">{metaPair.key}</dt>
+                                        <dd className="w-two-thirds pa0">{metaPair.value}</dd>
+                                    </dl>
+                                    {this.renderControls(metaPair)}
+                                </li>
+                            )
+                        } else {
+                            return (
+                                <li className="flex ph3 pv2 ma0 bt bl br b--black-20" key={metaPair.key}>
+                                    <dl className="ma0 pa0 list flex-auto flex">
+                                        <dt className="w-third"><input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.key}/></dt>
+                                        <dd className="w-two-thirds pa0"><input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.value}/></dd>
+                                    </dl>
+                                    {this.renderControls(metaPair)}
+                                </li>
+                            )
+                        }
+                    })}
+                </ul>
+                <div className="tr mt3">
+                    <BasicButton className="button--positive" onClick={this.createMetaPair}>Add Metadata</BasicButton>
+                </div>
+            </div>
         );
     }
 }
