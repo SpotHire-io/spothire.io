@@ -5,17 +5,41 @@ import PersonSchema from '../../../schemas/Person';
 
 import classNames from 'classnames';
 
-import Icon from 'react-geomicons';
+import ButtonBar from '../../Buttons/ButtonBar';
+import RadioButton from '../../Buttons/RadioButton';
 
 class SelectTalent extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
+
+        this.updateCurrentSelectionCategory = this.updateCurrentSelectionCategory.bind(this);
+
+        this.state = {
+            currentSelectionCategoryKey: props.selectionCategories[0].key
+        }
+    }
+
+    updateCurrentSelectionCategory(categoryKey) {
+        return this.setState({ currentSelectionCategoryKey: categoryKey });
     }
 
     render() {
         return (
             <div>
-                radio button selector with three categories and their interfaces...
+                <ButtonBar className="w-100">
+                    {this.props.selectionCategories.map((category) =>
+                        <RadioButton
+                            key={category.key}
+                            name="selected_talent_category"
+                            id={'selected_talent_category_' + category.key}
+                            value={category.key}
+                            checked={this.state.currentSelectionCategoryKey === category.key}
+                            onClick={() => this.updateCurrentSelectionCategory(category.key)}
+                        >
+                            {category.title}
+                        </RadioButton>
+                    )}
+                </ButtonBar>
             </div>
         );
     }
