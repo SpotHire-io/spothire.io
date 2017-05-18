@@ -54,7 +54,7 @@ class GroupSingleView extends React.Component {
                         </div>
 
                         <div className="w-two-thirds">
-                            <UserTable/>
+                            <UserTable deleteUser={() => alert('User deleted')}/>
 
                             <div className="tr mt3">
                                 <BasicButton className="button--positive">Add Talent to Group</BasicButton>
