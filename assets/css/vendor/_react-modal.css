@@ -40,6 +40,9 @@
     .sh-modal--wide {
         left: 4rem;
         right: 4rem;
+        bottom: 4rem;
+
+        max-height: 100%;
     }
 
 .ReactModalPortal > div {
