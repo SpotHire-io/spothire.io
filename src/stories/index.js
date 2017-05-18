@@ -562,8 +562,8 @@ storiesOf('Scheduling', module)
             <div className=" pa4" style={{height: '100vh'}}>
                 <BigCalendar
                     events={sampleEvents}
-                    startAccessor={(event) => new Date(event.start)}
-                    endAccessor={(event) => new Date(event.end)}
+                    startAccessor={(event) => new Date(event.selectedDates.start)}
+                    endAccessor={(event) => new Date(event.selectedDates.end)}
                 />
             </div>
         </WithNotes>
