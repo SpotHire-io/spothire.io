@@ -53,6 +53,9 @@ class SelectTalent extends React.Component {
                     <GroupCardList
                         groups={groups}
                         className={classNames('', commonWrapperClasses)}
+                        cardProps={{
+                            displayAvatarPreview: false,
+                        }}
                     />
                 );
                 break;

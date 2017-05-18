@@ -83,7 +83,7 @@ class TalentSelectionInterface extends React.Component {
         return (
             <div className={classNames(this.props.className)}>
                 <div className="flex">
-                    <div className="w-50 mr3">
+                    <div className="w-50 mr4">
                         <h3 className="mt0 f6 lh-title ttu">Select Talents</h3>
                         <SelectTalent selectionCategories={this.selectionCategories}/>
                     </div>

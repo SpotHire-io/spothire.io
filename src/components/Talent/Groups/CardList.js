@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import GroupCard from './Card';
 
-const GroupCardList = ({ className, groups, onSelectGroup }) => (
+const GroupCardList = ({ className, cardProps, groups, onSelectGroup }) => (
     <div className={classNames("flex flex-wrap justify-around nr3", className)}>
         {groups.map((group) => (
             <div className="mt3 pr3 w-50" key={group.id}>
@@ -15,6 +15,7 @@ const GroupCardList = ({ className, groups, onSelectGroup }) => (
                     <GroupCard
                         className="bg-animate hover-bg-white-70"
                         group={group}
+                        {...cardProps}
                     />
                 </div>
             </div>
@@ -30,6 +31,7 @@ GroupCardList.propTypes = {
     className: PropTypes.string,
     groups: PropTypes.arrayOf(GroupSchema).isRequired,
     onSelectGroup: PropTypes.func,
+    cardProps: PropTypes.object,
 };
 
 export default GroupCardList;

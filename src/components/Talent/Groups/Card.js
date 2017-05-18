@@ -72,7 +72,7 @@ class GroupCard extends React.Component {
             <Box className={wrapperClasses} contentWrapperClassName="pv4 ph3">
                 <h2 className="mt0">{this.props.group.name}</h2>
 
-                {this.renderAvatarPreview()}
+                {(this.props.displayAvatarPreview) ? this.renderAvatarPreview() : null}
 
                 <p className="gray mt3">{this.props.group.talent.length} {(this.props.group.talent.length > 1) ? 'talents' : 'talent'}</p>
             </Box>
@@ -82,11 +82,13 @@ class GroupCard extends React.Component {
 
 GroupCard.defaultProps = {
     className: '',
+    displayAvatarPreview: true,
 };
 
 GroupCard.propTypes = {
     className: PropTypes.string,
     group: GroupSchema.isRequired,
+    displayAvatarPreview: PropTypes.bool,
 };
 
 export default GroupCard;
