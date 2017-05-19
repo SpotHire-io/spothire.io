@@ -45,7 +45,7 @@ class OpportunityModalTalent extends React.Component {
                 selectionInterface = (
                     <div className="mt3">
                         <p>Talent selected from this list will be invited.</p>
-                        <SelectableUserTable className="mt3 h5 overflow-auto"/>
+                        <SelectableUserTable className="mt3 h5 overflow-auto" hasShadow={false}/>
                     </div>
                 );
                 break;

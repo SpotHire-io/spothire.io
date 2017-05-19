@@ -123,7 +123,8 @@ class UserList extends React.Component {
 
     render() {
         const wrapperClasses = classNames({
-            'bg-white ba b--black-20 sh-shadow-2 ': true,
+            'bg-white ba b--black-20': true,
+            'sh-shadow-2': this.props.hasShadow,
             [this.props.className]: true
         });
 
@@ -147,6 +148,7 @@ class UserList extends React.Component {
 
 UserList.defaultProps = {
     className: '',
+    hasShadow: true,
     users: userData,
     inlineAddingRowIsOpen: false,
     tableProps: {},
@@ -155,6 +157,7 @@ UserList.defaultProps = {
 
 UserList.propTypes = {
     className: PropTypes.string,
+    hasShadow: PropTypes.bool,
     inlineAddingRowIsOpen: PropTypes.bool,
     editUser: PropTypes.func,
     deleteUser: PropTypes.func,

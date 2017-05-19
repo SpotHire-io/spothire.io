@@ -124,7 +124,8 @@ class SelectableUserTable extends React.Component {
 
     render() {
         const wrapperClasses = classNames({
-            'bg-white ba b--black-20 sh-shadow-2 ': true,
+            'bg-white ba b--black-20': true,
+            'sh-shadow-2': this.props.hasShadow,
             [this.props.className]: true
         });
 
@@ -150,12 +151,14 @@ class SelectableUserTable extends React.Component {
 
 SelectableUserTable.defaultProps = {
     className: '',
-    users: userData
+    users: userData,
+    hasShadow: true,
 };
 
 SelectableUserTable.propTypes = {
     className: PropTypes.string,
-    users: PropTypes.arrayOf(PersonSchema).isRequired
+    users: PropTypes.arrayOf(PersonSchema).isRequired,
+    hasShadow: PropTypes.bool,
 };
 
 export default SelectableUserTable;

@@ -62,7 +62,7 @@ class OpportunitySingleView extends React.Component {
 
                                 <p>The following talent are invited or confirmed for the opportunity.</p>
 
-                                <UserTable className="mt3" enabledColumns={['avatar', 'name']}/>
+                                <UserTable className="mt3" enabledColumns={['avatar', 'name']} hasShadow={false}/>
 
                                 <div className="tr mt3">
                                     <BasicButton className="button--positive" onClick={() => this.openAddTalentModal()}>Invite Talent to Opportunity</BasicButton>
