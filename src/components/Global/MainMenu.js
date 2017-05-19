@@ -112,4 +112,4 @@ MainMenu.defaultProps = {
     selectedItem: 'Dashboard'
 };
 
-module.exports = MainMenu;
+export default MainMenu;

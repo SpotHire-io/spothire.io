@@ -60,4 +60,4 @@ OpportunityModal.propTypes = {
     opportunity: OpportunitySchema
 };
 
-module.exports = OpportunityModal;
+export default OpportunityModal;

@@ -18,4 +18,4 @@ BasicTag.defaultProps = {
     className: ''
 };
 
-module.exports = BasicTag;
+export default BasicTag;

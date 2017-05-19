@@ -51,4 +51,4 @@ SecondaryMenu.propTypes = {
     items: React.PropTypes.array.isRequired
 };
 
-module.exports = SecondaryMenu;
+export default SecondaryMenu;

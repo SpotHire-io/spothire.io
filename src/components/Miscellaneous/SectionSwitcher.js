@@ -54,4 +54,4 @@ SectionSwitcher.propTypes = {
     sections: React.PropTypes.array.isRequired
 };
 
-module.exports = SectionSwitcher;
+export default SectionSwitcher;

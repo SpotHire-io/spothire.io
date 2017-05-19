@@ -106,4 +106,4 @@ Post.defaultProps = {
     isOpen: true
 };
 
-module.exports = Post;
+export default Post;

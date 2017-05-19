@@ -15,4 +15,4 @@ BasicButton.defaultProps = {
     className: ''
 };
 
-module.exports = BasicButton;
+export default BasicButton;

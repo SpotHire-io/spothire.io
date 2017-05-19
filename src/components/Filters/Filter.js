@@ -66,4 +66,4 @@ Filter.propTypes = {
     id: React.PropTypes.string.isRequired
 };
 
-module.exports = Filter;
+export default Filter;

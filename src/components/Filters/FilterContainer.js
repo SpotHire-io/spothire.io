@@ -29,4 +29,4 @@ FilterContainer.defaultProps = {
     headingSemanticLevel: 2,
 };
 
-module.exports = FilterContainer;
+export default FilterContainer;
