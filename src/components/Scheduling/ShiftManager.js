@@ -4,6 +4,7 @@ import { CSSTransitionGroup } from 'react-transition-group';
 
 import classNames from 'classnames';
 import moment from 'moment';
+import 'moment/locale/en-ca';
 
 import Box from '../Global/Box';
 

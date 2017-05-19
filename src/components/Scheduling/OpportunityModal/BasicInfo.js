@@ -5,6 +5,7 @@ import OpportunitySchema from '../../../schemas/Opportunity';
 import classNames from 'classnames';
 
 import moment from 'moment';
+import 'moment/locale/en-ca';
 
 import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
 

@@ -6,6 +6,7 @@ import classNames from 'classnames';
 
 import BigCalendar from 'react-big-calendar';
 import moment      from 'moment';
+import 'moment/locale/en-ca';
 
 import OpportunityModal from './OpportunityModal';
 

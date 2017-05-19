@@ -3,6 +3,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import moment from 'moment';
+import 'moment/locale/en-ca';
 
 import { Table, Thead, Th, Tr, Td } from 'reactable';
 

@@ -7,6 +7,7 @@ import { action } from '@kadira/storybook';
 import { WithNotes } from '@kadira/storybook-addon-notes';
 
 import moment from 'moment';
+import 'moment/locale/en-ca';
 
 import { SingleDatePicker, DateRangePicker } from 'react-dates';
 
