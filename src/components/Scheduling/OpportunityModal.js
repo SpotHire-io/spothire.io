@@ -1,5 +1,6 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
 import OpportunitySchema from '../../schemas/Opportunity';
 
 import Modal from 'react-modal';
@@ -54,9 +55,9 @@ class OpportunityModal extends React.Component {
 }
 
 OpportunityModal.propTypes = {
-    isOpen: React.PropTypes.bool.isRequired,
-    closeModal: React.PropTypes.func.isRequired,
-    updateOpportunity: React.PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
+    closeModal: PropTypes.func.isRequired,
+    updateOpportunity: PropTypes.func.isRequired,
     opportunity: OpportunitySchema
 };
 

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames';
 
 import Select from 'react-select';
@@ -63,7 +65,7 @@ Filter.defaultProps = {
 };
 
 Filter.propTypes = {
-    id: React.PropTypes.string.isRequired
+    id: PropTypes.string.isRequired
 };
 
 export default Filter;

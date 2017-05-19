@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames';
 
 import OpportunitySchema from '../../../schemas/Opportunity';
@@ -83,7 +85,7 @@ class OpportunityModalTalent extends React.Component {
 }
 
 OpportunityModalTalent.propTypes = {
-    updateOpportunity: React.PropTypes.func.isRequired,
+    updateOpportunity: PropTypes.func.isRequired,
     opportunity: OpportunitySchema
 };
 

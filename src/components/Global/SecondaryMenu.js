@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames';
 
 class SecondaryMenu extends React.Component {
@@ -48,7 +50,7 @@ SecondaryMenu.defaultProps = {
 };
 
 SecondaryMenu.propTypes = {
-    items: React.PropTypes.array.isRequired
+    items: PropTypes.array.isRequired
 };
 
 export default SecondaryMenu;

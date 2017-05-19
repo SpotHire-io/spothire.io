@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import SecondaryMenu from '../Global/SecondaryMenu';
 
 class SectionSwitcher extends React.Component {
@@ -51,7 +53,7 @@ SectionSwitcher.defaultProps = {
 };
 
 SectionSwitcher.propTypes = {
-    sections: React.PropTypes.array.isRequired
+    sections: PropTypes.array.isRequired
 };
 
 export default SectionSwitcher;

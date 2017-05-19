@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames';
 
 const RadioButton = ({ checked, name, id, value, children, className, onClick }) => {
@@ -22,8 +24,8 @@ RadioButton.defaultProps = {
 };
 
 RadioButton.propTypes = {
-    name: React.PropTypes.string.isRequired,
-    id: React.PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired
 };
 
 export default RadioButton;
