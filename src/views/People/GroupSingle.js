@@ -10,7 +10,7 @@ import SecondaryMenu from '../../components/Global/SecondaryMenu';
 import BasicButton from '../../components/Buttons/BasicButton';
 
 import UserTable from '../../components/Talent/UserTable';
-import TalentSelectionInterface from '../../components/Talent/TalentSelectionInterface';
+import EmployeeSelectionInterface from '../../components/Talent/EmployeeSelectionInterface';
 
 import GroupDetailsEditor from '../../components/Talent/Groups/DetailsEditor';
 import GroupCard from '../../components/Talent/Groups/Card';
@@ -89,7 +89,7 @@ class GroupSingleView extends React.Component {
                     onRequestClose={this.closeAddEmployeesModal}
                     closeTimeoutMS={100}
                 >
-                    <TalentSelectionInterface/>
+                    <EmployeeSelectionInterface/>
                 </Modal>
             </div>
         );

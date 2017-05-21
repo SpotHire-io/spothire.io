@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 import Icon from 'react-geomicons';
 
-class ReviewSelectedTalent extends React.Component {
+class ReviewSelectedEmployees extends React.Component {
     constructor() {
         super();
     }
@@ -40,14 +40,14 @@ class ReviewSelectedTalent extends React.Component {
     }
 }
 
-ReviewSelectedTalent.defaultProps = {
+ReviewSelectedEmployees.defaultProps = {
     className: '',
 };
 
-ReviewSelectedTalent.propTypes = {
+ReviewSelectedEmployees.propTypes = {
     className: PropTypes.string,
     unSelectById: PropTypes.func.isRequired,
     selectionCategories: PropTypes.object.isRequired,
 };
 
-export default ReviewSelectedTalent;
+export default ReviewSelectedEmployees;

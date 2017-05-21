@@ -22,7 +22,7 @@ const groups = [...Array(10).keys()].map((number) => {
     };
 });
 
-class SelectTalent extends React.Component {
+class SelectEmployees extends React.Component {
     constructor(props) {
         super();
 
@@ -128,13 +128,13 @@ class SelectTalent extends React.Component {
     }
 }
 
-SelectTalent.defaultProps = {
+SelectEmployees.defaultProps = {
     className: '',
 };
 
-SelectTalent.propTypes = {
+SelectEmployees.propTypes = {
     className: PropTypes.string,
     selectionCategories: PropTypes.array.isRequired,
 };
 
-export default SelectTalent;
+export default SelectEmployees;

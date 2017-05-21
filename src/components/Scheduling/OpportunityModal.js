@@ -10,7 +10,7 @@ import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
 import BasicButton from '../Buttons/BasicButton';
 
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
-import OpportunityModalTalent from './OpportunityModal/Talent';
+import OpportunityModalEmployees from './OpportunityModal/Employees';
 
 class OpportunityModal extends React.Component {
     constructor() {
@@ -40,7 +40,7 @@ class OpportunityModal extends React.Component {
                         {
                             key: 'employees',
                             name: 'Employees',
-                            content: <OpportunityModalTalent {...this.props}/>
+                            content: <OpportunityModalEmployees {...this.props}/>
                         }
                     ]}
                 />

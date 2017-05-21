@@ -13,7 +13,7 @@ import BasicButton from '../Buttons/BasicButton';
 import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
 
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
-import OpportunityModalTalent from './OpportunityModal/Talent';
+import OpportunityModalEmployees from './OpportunityModal/Employees';
 
 class ShiftManager extends React.Component {
     constructor() {
@@ -205,7 +205,7 @@ class ShiftManager extends React.Component {
                                 {
                                     key: 'employees',
                                     name: 'Employees',
-                                    content: <OpportunityModalTalent
+                                    content: <OpportunityModalEmployees
                                         opportunity={currentlyEditingShift}
                                         updateOpportunity={this.updateShift}
                                     />

@@ -10,7 +10,7 @@ import Box from '../../components/Global/Box';
 import BasicButton from '../../components/Buttons/BasicButton';
 
 import UserTable from '../../components/Talent/UserTable';
-import TalentSelectionInterface from '../../components/Talent/TalentSelectionInterface';
+import EmployeeSelectionInterface from '../../components/Talent/EmployeeSelectionInterface';
 
 import OpportunityModalBasicInfo from '../../components/Scheduling/OpportunityModal/BasicInfo';
 import ShiftManager from '../../components/Scheduling/ShiftManager';
@@ -81,7 +81,7 @@ class OpportunitySingleView extends React.Component {
                     onRequestClose={this.closeAddEmployeesModal}
                     closeTimeoutMS={100}
                 >
-                    <TalentSelectionInterface/>
+                    <EmployeeSelectionInterface/>
                 </Modal>
             </div>
         );

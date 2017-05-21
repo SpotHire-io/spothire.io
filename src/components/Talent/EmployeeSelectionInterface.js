@@ -7,8 +7,8 @@ import classNames from 'classnames';
 
 import BasicButton from '../../components/Buttons/BasicButton';
 
-import SelectTalent from './TalentSelection/SelectTalent';
-import ReviewSelectedTalent from './TalentSelection/ReviewSelectedTalent';
+import SelectEmployees from './EmployeeSelection/SelectEmployees';
+import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees';
 
 // dummy data
 import users from '../../data/people.json';
@@ -20,7 +20,7 @@ const groups = [...Array(10).keys()].map((number) => {
     };
 });
 
-class TalentSelectionInterface extends React.Component {
+class EmployeeSelectionInterface extends React.Component {
     constructor() {
         super();
 
@@ -85,11 +85,11 @@ class TalentSelectionInterface extends React.Component {
                 <div className="flex">
                     <div className="w-50 mr4">
                         <h3 className="mt0 f6 lh-title ttu">Select Employees</h3>
-                        <SelectTalent selectionCategories={this.selectionCategories}/>
+                        <SelectEmployees selectionCategories={this.selectionCategories}/>
                     </div>
                     <div className="w-50">
                         <h3 className="mt0 f6 lh-title ttu">Selected Employees</h3>
-                        <ReviewSelectedTalent selectedEmployees={this.state.selectedEmployees} unSelectById={this.unSelectById} selectionCategories={this.selectionCategories}/>
+                        <ReviewSelectedEmployees selectedEmployees={this.state.selectedEmployees} unSelectById={this.unSelectById} selectionCategories={this.selectionCategories}/>
                     </div>
                 </div>
 
@@ -101,14 +101,14 @@ class TalentSelectionInterface extends React.Component {
     }
 }
 
-TalentSelectionInterface.defaultProps = {
+EmployeeSelectionInterface.defaultProps = {
     className: '',
     employees: users,
 };
 
-TalentSelectionInterface.propTypes = {
+EmployeeSelectionInterface.propTypes = {
     className: PropTypes.string,
     employees: PropTypes.arrayOf(PersonSchema).isRequired,
 };
 
-export default TalentSelectionInterface;
+export default EmployeeSelectionInterface;

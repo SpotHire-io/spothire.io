@@ -11,7 +11,7 @@ import RadioButton from '../../Buttons/RadioButton';
 
 import SelectableUserTable from '../../Talent/SelectableUserTable';
 
-class OpportunityModalTalent extends React.Component {
+class OpportunityModalEmployees extends React.Component {
     constructor() {
         super();
 
@@ -84,9 +84,9 @@ class OpportunityModalTalent extends React.Component {
     }
 }
 
-OpportunityModalTalent.propTypes = {
+OpportunityModalEmployees.propTypes = {
     updateOpportunity: PropTypes.func.isRequired,
     opportunity: OpportunitySchema
 };
 
-export default OpportunityModalTalent;
+export default OpportunityModalEmployees;
