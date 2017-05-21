@@ -57,7 +57,7 @@ import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
 
 import '../../public/css/app.css';
 
-import users from '../data/users.json';
+import users from '../data/people.json';
 import sampleEvents from '../data/events.json';
 
 storiesOf('Overview', module)

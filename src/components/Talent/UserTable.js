@@ -11,7 +11,7 @@ import BasicButton from '../Buttons/BasicButton';
 
 import Icon from 'react-geomicons';
 
-import userData from '../../data/users.json';
+import userData from '../../data/people.json';
 
 class UserList extends React.Component {
     constructor() {

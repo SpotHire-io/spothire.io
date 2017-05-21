@@ -12,7 +12,7 @@ import { Table, Thead, Th, Tr, Td } from 'reactable';
 
 import { Checkbox } from 'rebass';
 
-import userData from '../../data/users.json';
+import userData from '../../data/people.json';
 
 class SelectableUserTable extends React.Component {
     constructor() {

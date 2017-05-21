@@ -13,7 +13,7 @@ import UserTable from '../../Talent/UserTable';
 import GroupCardList from '../../Talent/Groups/CardList';
 
 // dummy data
-import users from '../../../data/users.json';
+import users from '../../../data/people.json';
 const groups = [...Array(10).keys()].map((number) => {
     return {
         id: number,

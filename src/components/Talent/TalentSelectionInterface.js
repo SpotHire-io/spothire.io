@@ -11,7 +11,7 @@ import SelectTalent from './TalentSelection/SelectTalent';
 import ReviewSelectedTalent from './TalentSelection/ReviewSelectedTalent';
 
 // dummy data
-import users from '../../data/users.json';
+import users from '../../data/people.json';
 const groups = [...Array(10).keys()].map((number) => {
     return {
         id: number,
