@@ -21,7 +21,7 @@ BigCalendar.setLocalizer(
 
 import NewsfeedView from '../views/Newsfeed';
 import PeopleView from '../views/People';
-import TalentSingleView from '../views/People/TalentSingle';
+import EmployeeSingleView from '../views/People/EmployeeSingle';
 import GroupSingleView from '../views/People/GroupSingle';
 import ScheduleView from '../views/Schedule';
 import OpportunitySingleView from '../views/Schedule/OpportunitySingle';
@@ -136,11 +136,11 @@ storiesOf('Views', module)
             }
         />
     ))
-    .add('People:TalentSingleView', () => (
+    .add('People:EmployeeSingleView', () => (
         <MockApp
             selectedMenuItem="People"
             viewComponent={
-                <TalentSingleView
+                <EmployeeSingleView
                     employee={users[1]}
                 />
             }

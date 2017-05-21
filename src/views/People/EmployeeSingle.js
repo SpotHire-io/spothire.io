@@ -14,7 +14,7 @@ import MetadataInterface from '../../components/Talent/MetadataInterface';
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
 
-class TalentSingleView extends React.Component {
+class EmployeeSingleView extends React.Component {
     constructor() {
         super();
     }
@@ -131,13 +131,13 @@ class TalentSingleView extends React.Component {
     }
 }
 
-TalentSingleView.defaultProps = {
+EmployeeSingleView.defaultProps = {
     className: '',
 };
 
-TalentSingleView.propTypes = {
+EmployeeSingleView.propTypes = {
     className: PropTypes.string,
     employee: PersonSchema.isRequired
 };
 
-export default TalentSingleView;
+export default EmployeeSingleView;

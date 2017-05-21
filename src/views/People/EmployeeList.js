@@ -15,7 +15,7 @@ import Filter from '../../components/Filters/Filter';
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
 
-class TalentListView extends React.Component {
+class EmployeeListView extends React.Component {
     constructor() {
         super();
 
@@ -108,7 +108,7 @@ class TalentListView extends React.Component {
                             hideFilterInput: true,
                             filterBy: this.state.searchQuery,
                         }}
-                        onClickUser={linkTo('Views', 'People:TalentSingleView')}
+                        onClickUser={linkTo('Views', 'People:EmployeeSingleView')}
                     />
                 </div>
             </div>
@@ -116,12 +116,12 @@ class TalentListView extends React.Component {
     }
 }
 
-TalentListView.defaultProps = {
+EmployeeListView.defaultProps = {
     className: '',
 };
 
-TalentListView.propTypes = {
+EmployeeListView.propTypes = {
     className: PropTypes.string,
 };
 
-export default TalentListView;
+export default EmployeeListView;

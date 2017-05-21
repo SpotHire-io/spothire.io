@@ -7,7 +7,7 @@ import MainMenu from '../components/Global/MainMenu';
 
 import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
 
-import TalentListView from './People/TalentList';
+import EmployeeListView from './People/EmployeeList';
 import GroupListView from './People/GroupList';
 
 class PeopleView extends React.Component {
@@ -26,7 +26,7 @@ class PeopleView extends React.Component {
                             key: 'employees',
                             name: 'Employees',
                             content: (
-                                <TalentListView/>
+                                <EmployeeListView/>
                             )
                         },
                         {
