@@ -21,10 +21,10 @@ class PostList extends React.Component {
         const postIndex = openPosts.indexOf(postId);
 
         if (postIndex === -1) {
-            // If course isn't in the list (i.e. it isn't interesting), let's add it to the list
+            // If post isn't in the list, add it
             openPosts.push(postId);
         } else {
-            // If the course is in the list, let's remove it
+            // If the post is in the list, let's remove it
             openPosts.splice(postIndex, 1);
         }
 
@@ -48,6 +48,7 @@ class PostList extends React.Component {
 
                     return (
                         <Post
+                            key={post.id}
                             className={postClasses}
                             post={post}
                             isOpen={this.state.openPosts.indexOf(post.id) !== -1}
