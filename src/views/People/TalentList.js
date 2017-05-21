@@ -95,8 +95,8 @@ class TalentListView extends React.Component {
                 <div className="w-two-thirds">
                     <Box>
                         <p>
-                            <label className="f6 db" htmlFor="talent_search">Search</label>
-                            <input className="mt2 w-100" type="text" id="talent_search" name="talent_search" value={this.state.searchQuery} onChange={(e) => this.setState({ searchQuery: e.target.value })}/>
+                            <label className="f6 db" htmlFor="employees_search">Search</label>
+                            <input className="mt2 w-100" type="text" id="employees_search" name="employees_search" value={this.state.searchQuery} onChange={(e) => this.setState({ searchQuery: e.target.value })}/>
                         </p>
                     </Box>
 

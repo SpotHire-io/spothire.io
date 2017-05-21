@@ -6,7 +6,7 @@ const GroupSchema = PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
-    talent: PropTypes.arrayOf(PersonSchema),
+    employees: PropTypes.arrayOf(PersonSchema),
 });
 
 export default GroupSchema;

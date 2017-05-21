@@ -16,7 +16,7 @@ const groups = [...Array(10).keys()].map((number) => {
     return {
         id: number,
         name: `Sample Group ${number + 1}`,
-        talent: users
+        employees: users
     };
 });
 
@@ -27,8 +27,8 @@ class TalentSelectionInterface extends React.Component {
         this.unSelectById = this.unSelectById.bind(this);
 
         this.state = {
-            selectedTalents: {
-                talents: [
+            selectedEmployees: {
+                employees: [
                     users[0],
                     users[1],
                     users[2],
@@ -43,29 +43,29 @@ class TalentSelectionInterface extends React.Component {
 
         this.selectionCategories = [
             {
-                key: 'talents',
-                title: 'Talents',
-                selections: this.state.selectedTalents.talents,
-                renderMethod: (talent, className) => {
+                key: 'employees',
+                title: 'Employees',
+                selections: this.state.selectedEmployees.employees,
+                renderMethod: (employee, className) => {
                     return (
-                        <p className={className}>{talent.firstName} {talent.lastName}</p>
+                        <p className={className}>{employee.firstName} {employee.lastName}</p>
                     );
                 },
             },
             {
                 key: 'groups',
                 title: 'Groups',
-                selections: this.state.selectedTalents.groups,
+                selections: this.state.selectedEmployees.groups,
                 renderMethod: (group, className) => {
                     return (
-                        <p className={className}>{group.name} <span className="ml2 f6">({group.talent.length} talents)</span></p>
+                        <p className={className}>{group.name} <span className="ml2 f6">({group.employees.length} employees)</span></p>
                     );
                 },
             },
             {
                 key: 'custom',
                 title: 'Custom',
-                selections: this.state.selectedTalents.customSelections,
+                selections: this.state.selectedEmployees.customSelections,
                 renderMethod: (customSelection, className) => {
                     return (
                         <p className={className}>¯\_(ツ)_/¯</p>
@@ -84,17 +84,17 @@ class TalentSelectionInterface extends React.Component {
             <div className={classNames(this.props.className)}>
                 <div className="flex">
                     <div className="w-50 mr4">
-                        <h3 className="mt0 f6 lh-title ttu">Select Talents</h3>
+                        <h3 className="mt0 f6 lh-title ttu">Select Employees</h3>
                         <SelectTalent selectionCategories={this.selectionCategories}/>
                     </div>
                     <div className="w-50">
-                        <h3 className="mt0 f6 lh-title ttu">Selected Talents</h3>
-                        <ReviewSelectedTalent selectedTalents={this.state.selectedTalents} unSelectById={this.unSelectById} selectionCategories={this.selectionCategories}/>
+                        <h3 className="mt0 f6 lh-title ttu">Selected Employees</h3>
+                        <ReviewSelectedTalent selectedEmployees={this.state.selectedEmployees} unSelectById={this.unSelectById} selectionCategories={this.selectionCategories}/>
                     </div>
                 </div>
 
                 <div className="tr">
-                    <BasicButton className="button--positive">Add Talents</BasicButton>
+                    <BasicButton className="button--positive">Add Employees</BasicButton>
                 </div>
             </div>
         );
@@ -103,12 +103,12 @@ class TalentSelectionInterface extends React.Component {
 
 TalentSelectionInterface.defaultProps = {
     className: '',
-    talents: users,
+    employees: users,
 };
 
 TalentSelectionInterface.propTypes = {
     className: PropTypes.string,
-    talents: PropTypes.arrayOf(PersonSchema).isRequired,
+    employees: PropTypes.arrayOf(PersonSchema).isRequired,
 };
 
 export default TalentSelectionInterface;

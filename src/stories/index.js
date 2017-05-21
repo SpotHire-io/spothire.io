@@ -82,7 +82,7 @@ storiesOf('Overview', module)
             you to consider as you look through:</p>
 
             <ul>
-                <li>Is the interface natural? Would an admin or talent be able to find their way around?</li>
+                <li>Is the interface natural? Would an admin or employee be able to find their way around?</li>
                 <li>Are any aspects of the interface confusing? How so?</li>
                 <li>What does a more polished version of this look like?</li>
                 <li>Does anything seem out of place or unnecessary?</li>
@@ -141,7 +141,7 @@ storiesOf('Views', module)
             selectedMenuItem="People"
             viewComponent={
                 <TalentSingleView
-                    talent={users[1]}
+                    employee={users[1]}
                 />
             }
         />
@@ -154,7 +154,7 @@ storiesOf('Views', module)
                     group={{
                         id: 0,
                         name: 'Sample Group',
-                        talent: users
+                        employees: users
                     }}
                 />
             }
@@ -296,28 +296,28 @@ storiesOf('Buttons', module)
     .add('BasicButton:Standard', () => (
         <WithNotes>
             <div className="ma4">
-                <BasicButton className="button--standard">Add Talent</BasicButton>
+                <BasicButton className="button--standard">Add Employees</BasicButton>
             </div>
         </WithNotes>
     ))
     .add('BasicButton:Neutral', () => (
         <WithNotes>
             <div className="ma4">
-                <BasicButton className="button--neutral">Add Talent</BasicButton>
+                <BasicButton className="button--neutral">Add Employees</BasicButton>
             </div>
         </WithNotes>
     ))
     .add('BasicButton:Positive', () => (
         <WithNotes>
             <div className="ma4">
-                <BasicButton className="button--positive">Add Talent</BasicButton>
+                <BasicButton className="button--positive">Add Employees</BasicButton>
             </div>
         </WithNotes>
     ))
     .add('BasicButton:Negative', () => (
         <WithNotes>
             <div className="ma4">
-                <BasicButton className="button--negative">Remove Talent</BasicButton>
+                <BasicButton className="button--negative">Remove Employees</BasicButton>
             </div>
         </WithNotes>
     ))
@@ -596,7 +596,7 @@ storiesOf('Scheduling', module)
                         start: new Date(1970, 0, 0),
                         end: new Date(1970, 0, 0)
                     },
-                    talent: {
+                    employees: {
                         invited: 'all',
                         confirmed: []
                     }
@@ -637,7 +637,7 @@ storiesOf('Talent', module)
     .add('TalentSelectionInterface', () => (
         <WithNotes>
             <div className="pa4 bg-white">
-                <TalentSelectionInterface className="pa3 ba b--black-20" talents={users}/>
+                <TalentSelectionInterface className="pa3 ba b--black-20" employees={users}/>
             </div>
         </WithNotes>
     ));
@@ -650,7 +650,7 @@ storiesOf('Talent:Groups', module)
                     group={{
                         id: 0,
                         name: 'Sample Group',
-                        talent: users
+                        employees: users
                     }}
                 />
             </div>
@@ -664,7 +664,7 @@ storiesOf('Talent:Groups', module)
                         return {
                             id: number,
                             name: `Sample Group ${number + 1}`,
-                            talent: users
+                            employees: users
                         };
                     })}
                     onSelectGroup={(groupId) => console.log(`Group ID ${groupId} selected`)}
@@ -679,7 +679,7 @@ storiesOf('Talent:Groups', module)
                     group={{
                         id: 0,
                         name: 'Sample Group',
-                        talent: users
+                        employees: users
                     }}
                 />
             </div>

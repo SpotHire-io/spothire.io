@@ -22,7 +22,7 @@ class OpportunityModalTalent extends React.Component {
     updateInviteType(inviteType) {
         const opportunity = { ...this.props.opportunity };
 
-        opportunity.talent.invited = inviteType;
+        opportunity.employees.invited = inviteType;
 
         this.props.updateOpportunity(opportunity);
     }
@@ -30,21 +30,21 @@ class OpportunityModalTalent extends React.Component {
     renderSelectionInterface() {
         let selectionInterface;
 
-        switch (this.props.opportunity.talent.invited) {
+        switch (this.props.opportunity.employees.invited) {
             case 'all':
                 selectionInterface = (
-                    <p>All talent will be invited.</p>
+                    <p>All employees will be invited.</p>
                 );
                 break;
             case 'available':
                 selectionInterface = (
-                    <p>Only talent available to work during the opportunity will be invited.</p>
+                    <p>Only employees available to work during the opportunity will be invited.</p>
                 );
                 break;
             case 'selected':
                 selectionInterface = (
                     <div className="mt3">
-                        <p>Talent selected from this list will be invited.</p>
+                        <p>Employees selected from this list will be invited.</p>
                         <SelectableUserTable className="mt3 h5 overflow-auto" hasShadow={false}/>
                     </div>
                 );
@@ -59,7 +59,7 @@ class OpportunityModalTalent extends React.Component {
     render() {
         return (
             <div>
-                <p className="f6">Invited talent</p>
+                <p className="f6">Invited employees</p>
                 <ButtonBar className="w-100 mt2">
                     {[
                         'All',
@@ -68,10 +68,10 @@ class OpportunityModalTalent extends React.Component {
                     ].map((inviteType) =>
                         <RadioButton
                             key={inviteType.toLowerCase()}
-                            name="opp_talent_invited"
-                            id={'opp_talent_invited_' + inviteType.toLowerCase()}
+                            name="opp_employees_invited"
+                            id={'opp_employees_invited_' + inviteType.toLowerCase()}
                             value={inviteType.toLowerCase()}
-                            checked={this.props.opportunity.talent.invited === inviteType.toLowerCase()}
+                            checked={this.props.opportunity.employees.invited === inviteType.toLowerCase()}
                             onClick={() => this.updateInviteType(inviteType.toLowerCase())}
                         >
                             {inviteType}

@@ -28,7 +28,7 @@ class OverviewCalendar extends React.Component {
                     start: new Date(1970, 0, 0),
                     end: new Date(1970, 0, 0)
                 },
-                talent: {
+                employees: {
                     invited: 'all',
                     confirmed: []
                 }

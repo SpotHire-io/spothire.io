@@ -38,7 +38,7 @@ class ShiftManager extends React.Component {
                         start: moment(new Date(2017, 4, 1, 8, 0)),
                         end: moment(new Date(2017, 4, 1, 16, 0))
                     },
-                    talent: {
+                    employees: {
                         invited: 'all',
                         confirmed: []
                     }
@@ -51,7 +51,7 @@ class ShiftManager extends React.Component {
                         start: moment(new Date(2017, 4, 1, 16, 0,)),
                         end: moment(new Date(2017, 4, 2, 0, 0))
                     },
-                    talent: {
+                    employees: {
                         invited: 'all',
                         confirmed: []
                     }
@@ -64,7 +64,7 @@ class ShiftManager extends React.Component {
                         start: moment(new Date(2017, 4, 1, 8, 0)),
                         end: moment(new Date(2017, 4, 1, 16, 0))
                     },
-                    talent: {
+                    employees: {
                         invited: 'all',
                         confirmed: []
                     }
@@ -77,7 +77,7 @@ class ShiftManager extends React.Component {
                         start: moment(new Date(2017, 4, 1, 16, 0,)),
                         end: moment(new Date(2017, 4, 2, 0, 0))
                     },
-                    talent: {
+                    employees: {
                         invited: 'all',
                         confirmed: []
                     }
@@ -90,7 +90,7 @@ class ShiftManager extends React.Component {
                         start: moment(new Date(2017, 4, 1, 16, 0,)),
                         end: moment(new Date(2017, 4, 2, 0, 0))
                     },
-                    talent: {
+                    employees: {
                         invited: 'all',
                         confirmed: []
                     }
@@ -137,7 +137,7 @@ class ShiftManager extends React.Component {
                 start: moment(new Date()),
                 end: moment(new Date())
             },
-            talent: {
+            employees: {
                 invited: 'all',
                 confirmed: []
             }
@@ -203,8 +203,8 @@ class ShiftManager extends React.Component {
                                     />
                                 },
                                 {
-                                    key: 'talent',
-                                    name: 'Talent',
+                                    key: 'employees',
+                                    name: 'Employees',
                                     content: <OpportunityModalTalent
                                         opportunity={currentlyEditingShift}
                                         updateOpportunity={this.updateShift}

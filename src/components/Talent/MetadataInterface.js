@@ -19,7 +19,7 @@ class MetadataInterface extends React.Component {
 
         this.state = {
             currentlyEditingMetaPairKey: null,
-            metaPairs: props.talent.metadata
+            metaPairs: props.employee.metadata
         };
     }
 
@@ -112,7 +112,7 @@ MetadataInterface.defaultProps = {
 
 MetadataInterface.propTypes = {
     className: PropTypes.string,
-    talent: PersonSchema.isRequired,
+    employee: PersonSchema.isRequired,
 };
 
 export default MetadataInterface;

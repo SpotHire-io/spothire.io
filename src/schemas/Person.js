@@ -6,7 +6,7 @@ const PersonSchema = PropTypes.shape({
     lastName: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
     phone: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['talent', 'admin']).isRequired,
+    type: PropTypes.oneOf(['employee', 'admin']).isRequired,
     imageSrc: PropTypes.string.isRequired,
     emergencyContactInformation: PropTypes.node.isRequired,
     metadata: PropTypes.arrayOf(PropTypes.shape({

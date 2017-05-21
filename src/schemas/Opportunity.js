@@ -8,7 +8,7 @@ const OpportunitySchema = PropTypes.shape({
         start: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]).isRequired,
         end: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]).isRequired
     }).isRequired,
-    talent: PropTypes.shape({
+    employees: PropTypes.shape({
         invited: PropTypes.oneOf(['all', 'available', 'selected']).isRequired,
         confirmed: PropTypes.array
     }).isRequired

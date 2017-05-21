@@ -18,7 +18,7 @@ const groups = [...Array(10).keys()].map((number) => {
     return {
         id: number,
         name: `Sample Group ${number + 1}`,
-        talent: users
+        employees: users
     };
 });
 
@@ -32,7 +32,7 @@ class SelectTalent extends React.Component {
 
         this.state = {
             currentSelectionCategoryKey: props.selectionCategories[0].key,
-            talentsSearch: '',
+            employeesSearch: '',
         }
     }
 
@@ -46,25 +46,25 @@ class SelectTalent extends React.Component {
         const commonWrapperClasses = 'mt3';
 
         switch (category.key) {
-            case 'talents':
+            case 'employees':
                 selectionInterface = (
                     <div className={classNames('', commonWrapperClasses)}>
                         <p>
-                            <label className="f6 db" htmlFor="talents_search">Search talents</label>
-                            <input className="mt2 w-100" type="text" id="talents_search" aria-describedby="talents_search_desc" name="talents_search" value={this.state.talentsSearch} onChange={(e) => this.setState({ talentsSearch: e.target.value })}/>
-                            <small className="dib f6 black-60 lh-title mt2" id="talents_search_desc">Narrow down the talents by searching their details.</small>
+                            <label className="f6 db" htmlFor="employees_search">Search employees</label>
+                            <input className="mt2 w-100" type="text" id="employees_search" aria-describedby="employees_search_desc" name="employees_search" value={this.state.employeesSearch} onChange={(e) => this.setState({ employeesSearch: e.target.value })}/>
+                            <small className="dib f6 black-60 lh-title mt2" id="employees_search_desc">Narrow down the employees by searching their details.</small>
                         </p>
 
-                        <p className="f6 mt3 mb2">Talents</p>
+                        <p className="f6 mt3 mb2">Employees</p>
 
                         <UserTable
                             tableProps={{
                                 filterable: ['name'],
                                 hideFilterInput: true,
-                                filterBy: this.state.talentsSearch,
+                                filterBy: this.state.employeesSearch,
                             }}
                             enabledColumns={['avatar', 'name']}
-                            onClickUser={() => alert('Selecting user...')}
+                            onClickUser={() => alert('Selecting employee...')}
                         />
                     </div>
                 );
@@ -112,8 +112,8 @@ class SelectTalent extends React.Component {
                     {this.props.selectionCategories.map((category) =>
                         <RadioButton
                             key={category.key}
-                            name="selected_talent_category"
-                            id={'selected_talent_category_' + category.key}
+                            name="selection_category"
+                            id={'selection_category_' + category.key}
                             value={category.key}
                             checked={this.state.currentSelectionCategoryKey === category.key}
                             onClick={() => this.updateCurrentSelectionCategory(category.key)}

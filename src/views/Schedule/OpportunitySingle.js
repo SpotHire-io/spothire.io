@@ -21,20 +21,20 @@ class OpportunitySingleView extends React.Component {
     constructor() {
         super();
 
-        this.openAddTalentModal = this.openAddTalentModal.bind(this);
-        this.closeAddTalentModal = this.closeAddTalentModal.bind(this);
+        this.openAddEmployeesModal = this.openAddEmployeesModal.bind(this);
+        this.closeAddEmployeesModal = this.closeAddEmployeesModal.bind(this);
 
         this.state = {
-            isAddTalentModalOpen: false,
+            isAddEmployeesModalOpen: false,
         };
     }
 
-    openAddTalentModal() {
-        return this.setState({ isAddTalentModalOpen: true });
+    openAddEmployeesModal() {
+        return this.setState({ isAddEmployeesModalOpen: true });
     }
 
-    closeAddTalentModal() {
-        return this.setState({ isAddTalentModalOpen: false });
+    closeAddEmployeesModal() {
+        return this.setState({ isAddEmployeesModalOpen: false });
     }
 
     render() {
@@ -58,14 +58,14 @@ class OpportunitySingleView extends React.Component {
                                 <OpportunityModalBasicInfo opportunity={this.props.opportunity} updateOpportunity={() => console.log('updating opportunity!')}/>
                             </Box>
                             <Box className="mt4">
-                                <h2 className="f6 mt0 lh-title ttu">Talent</h2>
+                                <h2 className="f6 mt0 lh-title ttu">Employees</h2>
 
-                                <p>The following talent are invited or confirmed for the opportunity.</p>
+                                <p>The following employees are invited or confirmed for the opportunity.</p>
 
                                 <UserTable className="mt3" enabledColumns={['avatar', 'name']} hasShadow={false}/>
 
                                 <div className="tr mt3">
-                                    <BasicButton className="button--positive" onClick={() => this.openAddTalentModal()}>Invite Talent to Opportunity</BasicButton>
+                                    <BasicButton className="button--positive" onClick={() => this.openAddEmployeesModal()}>Invite Employees to Opportunity</BasicButton>
                                 </div>
                             </Box>
                         </div>
@@ -74,11 +74,11 @@ class OpportunitySingleView extends React.Component {
                     <ShiftManager className="mt4 mh4"/>
                 </div>
                 <Modal
-                    isOpen={this.state.isAddTalentModalOpen}
-                    contentLabel={"Add talent modal"}
+                    isOpen={this.state.isAddEmployeesModalOpen}
+                    contentLabel={"Add employees modal"}
                     overlayClassName="sh-modal-overlay"
                     className="sh-modal sh-modal--full sh-shadow-2 "
-                    onRequestClose={this.closeAddTalentModal}
+                    onRequestClose={this.closeAddEmployeesModal}
                     closeTimeoutMS={100}
                 >
                     <TalentSelectionInterface/>

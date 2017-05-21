@@ -38,8 +38,8 @@ class OpportunityModal extends React.Component {
                             content: <OpportunityModalBasicInfo {...this.props}/>
                         },
                         {
-                            key: 'talent',
-                            name: 'Talent',
+                            key: 'employees',
+                            name: 'Employees',
                             content: <OpportunityModalTalent {...this.props}/>
                         }
                     ]}

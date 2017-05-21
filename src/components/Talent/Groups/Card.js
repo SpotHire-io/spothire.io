@@ -15,7 +15,7 @@ class GroupCard extends React.Component {
     }
 
     renderAvatarPreview() {
-        const groupTalent = this.props.group.talent;
+        const groupEmployees = this.props.group.employees;
 
         const largeImageSize = 80;
         const smallImageSize = 60;
@@ -38,7 +38,7 @@ class GroupCard extends React.Component {
                         left: `${insetMargin}px`
                     }}
                     src="https://randomuser.me/api/portraits/women/0.jpg"
-                    alt={`Profile picture of ${groupTalent[0].firstName} ${groupTalent[0].lastName}`}
+                    alt={`Profile picture of ${groupEmployees[0].firstName} ${groupEmployees[0].lastName}`}
                 />
                 <img
                     className={classNames(commonImageClasses, 'z-1')}
@@ -47,7 +47,7 @@ class GroupCard extends React.Component {
                         width: `${largeImageSize}px`,
                     }}
                     src="https://randomuser.me/api/portraits/women/2.jpg"
-                    alt={`Profile picture of ${groupTalent[1].firstName} ${groupTalent[1].lastName}`}
+                    alt={`Profile picture of ${groupEmployees[1].firstName} ${groupEmployees[1].lastName}`}
                 />
                 <img
                     className={commonImageClasses}
@@ -56,7 +56,7 @@ class GroupCard extends React.Component {
                         right: `${insetMargin}px`
                     }}
                     src="https://randomuser.me/api/portraits/men/5.jpg"
-                    alt={`Profile picture of ${groupTalent[2].firstName} ${groupTalent[2].lastName}`}
+                    alt={`Profile picture of ${groupEmployees[2].firstName} ${groupEmployees[2].lastName}`}
                 />
             </div>
         );
@@ -74,7 +74,7 @@ class GroupCard extends React.Component {
 
                 {(this.props.displayAvatarPreview) ? this.renderAvatarPreview() : null}
 
-                <p className="gray mt3">{this.props.group.talent.length} {(this.props.group.talent.length > 1) ? 'talents' : 'talent'}</p>
+                <p className="gray mt3">{this.props.group.employees.length} {(this.props.group.employees.length > 1) ? 'employees' : 'employee'}</p>
             </Box>
         );
     }

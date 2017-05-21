@@ -23,8 +23,8 @@ class PeopleView extends React.Component {
                     secondaryMenuClassName="ph4 bg-white"
                     sections={[
                         {
-                            key: 'talent',
-                            name: 'Talent',
+                            key: 'employees',
+                            name: 'Employees',
                             content: (
                                 <TalentListView/>
                             )
@@ -38,7 +38,7 @@ class PeopleView extends React.Component {
                                         return {
                                             id: number,
                                             name: `Sample Group ${number + 1}`,
-                                            talent: this.props.users
+                                            employees: this.props.users
                                         };
                                     })}
                                 />

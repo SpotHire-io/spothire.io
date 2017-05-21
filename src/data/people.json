@@ -25,7 +25,7 @@
     "lastName": "Olson",
     "email": "jolson1@umich.edu",
     "phone": "20-(397)570-4573",
-    "type": "talent",
+    "type": "employee",
     "imageSrc": "https://randomuser.me/api/portraits/women/2.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
@@ -45,7 +45,7 @@
     "lastName": "Hernandez",
     "email": "chernandez2@dot.gov",
     "phone": "86-(782)312-6763",
-    "type": "talent",
+    "type": "employee",
     "imageSrc": "https://randomuser.me/api/portraits/women/3.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
@@ -65,7 +65,7 @@
     "lastName": "Payne",
     "email": "hpayne3@miitbeian.gov.cn",
     "phone": "55-(454)387-0985",
-    "type": "talent",
+    "type": "employee",
     "imageSrc": "https://randomuser.me/api/portraits/women/4.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
@@ -85,7 +85,7 @@
     "lastName": "Hunter",
     "email": "rhunter4@vinaora.com",
     "phone": "1-(816)681-7469",
-    "type": "talent",
+    "type": "employee",
     "imageSrc": "https://randomuser.me/api/portraits/women/5.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
@@ -105,7 +105,7 @@
     "lastName": "Sullivan",
     "email": "msullivan5@amazon.com",
     "phone": "46-(387)906-3742",
-    "type": "talent",
+    "type": "employee",
     "imageSrc": "https://randomuser.me/api/portraits/women/6.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
@@ -125,7 +125,7 @@
     "lastName": "Lawrence",
     "email": "alawrence6@dmoz.org",
     "phone": "57-(734)309-4759",
-    "type": "talent",
+    "type": "employee",
     "imageSrc": "https://randomuser.me/api/portraits/women/7.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
@@ -145,7 +145,7 @@
     "lastName": "Morales",
     "email": "lmorales7@xing.com",
     "phone": "66-(197)895-2507",
-    "type": "talent",
+    "type": "employee",
     "imageSrc": "https://randomuser.me/api/portraits/women/8.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
@@ -165,7 +165,7 @@
     "lastName": "Bishop",
     "email": "hbishop8@moonfruit.com",
     "phone": "880-(541)270-1621",
-    "type": "talent",
+    "type": "employee",
     "imageSrc": "https://randomuser.me/api/portraits/women/9.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
@@ -185,7 +185,7 @@
     "lastName": "Hansen",
     "email": "jhansen9@hatena.ne.jp",
     "phone": "7-(959)110-4566",
-    "type": "talent",
+    "type": "employee",
     "imageSrc":  "https://randomuser.me/api/portraits/women/10.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
