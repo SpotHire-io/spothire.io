@@ -9,7 +9,7 @@ import OpportunitySchema from '../../../schemas/Opportunity';
 import ButtonBar from '../../Buttons/ButtonBar';
 import RadioButton from '../../Buttons/RadioButton';
 
-import SelectableUserTable from '../../Talent/SelectableUserTable';
+import SelectableUserTable from '../../Employees/SelectableUserTable';
 
 class OpportunityModalEmployees extends React.Component {
     constructor() {

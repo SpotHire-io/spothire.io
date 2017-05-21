@@ -8,9 +8,9 @@ import classNames from 'classnames';
 import ButtonBar from '../../Buttons/ButtonBar';
 import RadioButton from '../../Buttons/RadioButton';
 
-import UserTable from '../../Talent/UserTable';
+import UserTable from '..//UserTable';
 
-import GroupCardList from '../../Talent/Groups/CardList';
+import GroupCardList from '..//Groups/CardList';
 
 // dummy data
 import users from '../../../data/people.json';

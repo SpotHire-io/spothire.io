@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import Box from '../../components/Global/Box';
 import BoxConnector from '../../components/Global/BoxConnector';
 
-import UserTable from '../../components/Talent/UserTable';
+import UserTable from '../../components/Employees/UserTable';
 
 import FilterContainer from '../../components/Filters/FilterContainer';
 import Filter from '../../components/Filters/Filter';

@@ -9,8 +9,8 @@ import Box from '../../components/Global/Box';
 
 import BasicButton from '../../components/Buttons/BasicButton';
 
-import UserTable from '../../components/Talent/UserTable';
-import EmployeeSelectionInterface from '../../components/Talent/EmployeeSelectionInterface';
+import UserTable from '../../components/Employees/UserTable';
+import EmployeeSelectionInterface from '../../components/Employees/EmployeeSelectionInterface';
 
 import OpportunityModalBasicInfo from '../../components/Scheduling/OpportunityModal/BasicInfo';
 import ShiftManager from '../../components/Scheduling/ShiftManager';

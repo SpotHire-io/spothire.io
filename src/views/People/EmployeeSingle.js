@@ -9,7 +9,7 @@ import Box from '../../components/Global/Box';
 
 import SecondaryMenu from '../../components/Global/SecondaryMenu';
 
-import MetadataInterface from '../../components/Talent/MetadataInterface';
+import MetadataInterface from '../../components/Employees/MetadataInterface';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';

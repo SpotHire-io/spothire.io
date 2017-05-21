@@ -44,13 +44,13 @@ import OverviewCalendar from '../components/Scheduling/OverviewCalendar';
 import OpportunityModal from '../components/Scheduling/OpportunityModal';
 import ShiftManager from '../components/Scheduling/ShiftManager';
 
-import UserTable from '../components/Talent/UserTable';
-import SelectableUserTable from '../components/Talent/SelectableUserTable';
-import EmployeeSelectionInterface from '../components/Talent/EmployeeSelectionInterface';
+import UserTable from '../components/Employees/UserTable';
+import SelectableUserTable from '../components/Employees/SelectableUserTable';
+import EmployeeSelectionInterface from '../components/Employees/EmployeeSelectionInterface';
 
-import GroupCard from '../components/Talent/Groups/Card';
-import GroupCardList from '../components/Talent/Groups/CardList';
-import GroupDetailsEditor from '../components/Talent/Groups/DetailsEditor';
+import GroupCard from '../components/Employees/Groups/Card';
+import GroupCardList from '../components/Employees/Groups/CardList';
+import GroupDetailsEditor from '../components/Employees/Groups/DetailsEditor';
 
 import ShiftList from '../components/Miscellaneous/ShiftList';
 import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
@@ -612,7 +612,7 @@ storiesOf('Scheduling', module)
         </WithNotes>
     ));
 
-storiesOf('Talent', module)
+storiesOf('Employees', module)
     .add('UserTable', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
@@ -642,7 +642,7 @@ storiesOf('Talent', module)
         </WithNotes>
     ));
 
-storiesOf('Talent:Groups', module)
+storiesOf('Employees:Groups', module)
     .add('Card', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">

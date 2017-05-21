@@ -9,11 +9,11 @@ import SecondaryMenu from '../../components/Global/SecondaryMenu';
 
 import BasicButton from '../../components/Buttons/BasicButton';
 
-import UserTable from '../../components/Talent/UserTable';
-import EmployeeSelectionInterface from '../../components/Talent/EmployeeSelectionInterface';
+import UserTable from '../../components/Employees/UserTable';
+import EmployeeSelectionInterface from '../../components/Employees/EmployeeSelectionInterface';
 
-import GroupDetailsEditor from '../../components/Talent/Groups/DetailsEditor';
-import GroupCard from '../../components/Talent/Groups/Card';
+import GroupDetailsEditor from '../../components/Employees/Groups/DetailsEditor';
+import GroupCard from '../../components/Employees/Groups/Card';
 
 import Modal from 'react-modal';
 

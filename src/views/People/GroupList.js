@@ -5,7 +5,7 @@ import GroupSchema from '../../schemas/Group';
 
 import classNames from 'classnames';
 
-import GroupCardList from '../../components/Talent/Groups/CardList';
+import GroupCardList from '../../components/Employees/Groups/CardList';
 
 import FilterContainer from '../../components/Filters/FilterContainer';
 import Filter from '../../components/Filters/Filter';
