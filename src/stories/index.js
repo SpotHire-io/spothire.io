@@ -46,7 +46,7 @@ import ShiftManager from '../components/Scheduling/ShiftManager';
 
 import UserTable from '../components/Talent/UserTable';
 import SelectableUserTable from '../components/Talent/SelectableUserTable';
-import TalentSelectionInterface from '../components/Talent/EmployeeSelectionInterface';
+import EmployeeSelectionInterface from '../components/Talent/EmployeeSelectionInterface';
 
 import GroupCard from '../components/Talent/Groups/Card';
 import GroupCardList from '../components/Talent/Groups/CardList';
