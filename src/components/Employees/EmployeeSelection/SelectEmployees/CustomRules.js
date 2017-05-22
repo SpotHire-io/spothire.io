@@ -12,9 +12,29 @@ class SelectCustomRules extends React.Component {
     constructor() {
         super();
 
+        this.renderValueInputs = this.renderValueInputs.bind(this);
+
         this.state = {
             selectedKey: null,
         };
+    }
+
+    renderValueInputs() {
+        let selectionInterface;
+
+        if (this.state.selectedKey === null) {
+            selectionInterface = null;
+        } else if (this.state.selectedKey.indexOf('profile-') === 0) {
+            selectionInterface = (
+                <p>a profile field!</p>
+            );
+        } else if (this.state.selectedKey.indexOf('metadata-') === 0) {
+            selectionInterface = (
+                <p>a metadata field!</p>
+            );
+        }
+
+        return selectionInterface;
     }
 
     render() {
@@ -56,6 +76,8 @@ class SelectCustomRules extends React.Component {
                         metadata key, set by a manager.
                     </small>
                 </div>
+
+                {this.renderValueInputs()}
             </div>
         );
     }
