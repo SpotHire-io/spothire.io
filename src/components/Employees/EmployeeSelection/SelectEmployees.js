@@ -8,19 +8,9 @@ import classNames from 'classnames';
 import ButtonBar from '../../Buttons/ButtonBar';
 import RadioButton from '../../Buttons/RadioButton';
 
-import UserTable from '../UserTable';
-
-import GroupCardList from '../Groups/CardList';
-
-// dummy data
-import users from '../../../data/people.json';
-const groups = [...Array(10).keys()].map((number) => {
-    return {
-        id: number,
-        name: `Sample Group ${number + 1}`,
-        employees: users
-    };
-});
+import SelectIndividuals from './SelectEmployees/Individuals';
+import SelectGroups from './SelectEmployees/Groups';
+import SelectCustomRules from './SelectEmployees/CustomRules';
 
 class SelectEmployees extends React.Component {
     constructor(props) {
@@ -32,7 +22,6 @@ class SelectEmployees extends React.Component {
 
         this.state = {
             currentSelectionCategoryKey: props.selectionCategories[0].key,
-            employeesSearch: '',
         }
     }
 
@@ -48,58 +37,17 @@ class SelectEmployees extends React.Component {
         switch (category.key) {
             case 'employees':
                 selectionInterface = (
-                    <div className={classNames('', commonWrapperClasses)}>
-                        <p>Select individual employees to add.</p>
-
-                        <p>
-                            <label className="f6 db" htmlFor="employees_search">Search employees</label>
-                            <input className="mt2 w-100" type="text" id="employees_search" aria-describedby="employees_search_desc" name="employees_search" value={this.state.employeesSearch} onChange={(e) => this.setState({ employeesSearch: e.target.value })}/>
-                            <small className="dib f6 black-60 lh-title mt2" id="employees_search_desc">Narrow down the employees by searching their details.</small>
-                        </p>
-
-                        <p className="f6 mt3 mb2">Employees</p>
-
-                        <UserTable
-                            tableProps={{
-                                filterable: ['name'],
-                                hideFilterInput: true,
-                                filterBy: this.state.employeesSearch,
-                            }}
-                            enabledColumns={['avatar', 'name']}
-                            onClickUser={() => alert('Selecting employee...')}
-                        />
-                    </div>
+                    <SelectIndividuals className={commonWrapperClasses}/>
                 );
                 break;
             case 'groups':
                 selectionInterface = (
-                    <div className={classNames('', commonWrapperClasses)}>
-                        <p>Select groups to add all of their employees.</p>
-
-                        <p>
-                            <label className="f6 db" htmlFor="group_search">Search groups</label>
-                            <input className="mt2 w-100" type="text" id="group_search" aria-describedby="group_search_desc" name="group_search"/>
-                            <small className="dib f6 black-60 lh-title mt2" id="group_search_desc">Narrow down the groups by searching their names and descriptions.</small>
-                        </p>
-
-                        <p className="f6 mt3 mb2">Groups</p>
-
-                        <GroupCardList
-                            groups={groups}
-                            className="nt3"
-                            cardProps={{
-                                displayAvatarPreview: false,
-                            }}
-                            onSelectGroup={() => alert('Selecting group')}
-                        />
-                    </div>
+                    <SelectGroups className={commonWrapperClasses}/>
                 );
                 break;
             case 'custom':
                 selectionInterface = (
-                    <div className={classNames('', commonWrapperClasses)}>
-                        <p>Create custom rules to add all employees that match.</p>
-                    </div>
+                    <SelectCustomRules className={commonWrapperClasses}/>
                 );
                 break;
             default:
