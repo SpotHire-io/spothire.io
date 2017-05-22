@@ -13,6 +13,7 @@ class SelectCustomRules extends React.Component {
         super();
 
         this.renderValueInputs = this.renderValueInputs.bind(this);
+        this.renderPlainLanguageDescription = this.renderPlainLanguageDescription.bind(this);
 
         this.state = {
             selectedKey: 'metadata-Reliable',
@@ -65,6 +66,14 @@ class SelectCustomRules extends React.Component {
         return selectionInterface;
     }
 
+    renderPlainLanguageDescription() {
+        return (
+            <div className="bt bb-0 br-0 bl-0 b--dotted mt3 pt3">
+                <p>This rule will find all employees with custom metadata that contains “value”.</p>
+            </div>
+        );
+    }
+
     render() {
         return (
             <div className={classNames('', this.props.className)}>
@@ -106,6 +115,7 @@ class SelectCustomRules extends React.Component {
                 </div>
 
                 {this.renderValueInputs()}
+                {this.renderPlainLanguageDescription()}
             </div>
         );
     }
