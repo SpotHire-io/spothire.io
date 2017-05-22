@@ -28,4 +28,4 @@ SelectCustomRules.propTypes = {
     className: PropTypes.string,
 };
 
-export default SelectCustomRules
+export default SelectCustomRules;
