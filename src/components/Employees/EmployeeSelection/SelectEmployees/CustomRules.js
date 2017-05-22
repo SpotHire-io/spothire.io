@@ -53,7 +53,7 @@ class SelectCustomRules extends React.Component {
                     />
                     <small className="dib f6 black-60 lh-title mt2">
                         The key you want to filter on. This can be a profile field, filled out by the employee, or a custom
-                        metadata key set by a manager.
+                        metadata key, set by a manager.
                     </small>
                 </div>
             </div>
