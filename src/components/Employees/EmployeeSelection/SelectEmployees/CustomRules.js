@@ -26,7 +26,9 @@ class SelectCustomRules extends React.Component {
                     <label className="db mb2 f6" htmlFor="custom_key">Key</label>
                     <Select
                         id="custom_key"
+                        name="custom_key"
                         className="mt0"
+                        value={this.state.selectedKey}
                         options={[
                             {
                                 label: 'Profile fields',
