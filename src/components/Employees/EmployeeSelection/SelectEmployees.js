@@ -49,6 +49,8 @@ class SelectEmployees extends React.Component {
             case 'employees':
                 selectionInterface = (
                     <div className={classNames('', commonWrapperClasses)}>
+                        <p>Select individual employees to add.</p>
+
                         <p>
                             <label className="f6 db" htmlFor="employees_search">Search employees</label>
                             <input className="mt2 w-100" type="text" id="employees_search" aria-describedby="employees_search_desc" name="employees_search" value={this.state.employeesSearch} onChange={(e) => this.setState({ employeesSearch: e.target.value })}/>
@@ -72,6 +74,8 @@ class SelectEmployees extends React.Component {
             case 'groups':
                 selectionInterface = (
                     <div className={classNames('', commonWrapperClasses)}>
+                        <p>Select groups to add all of their employees.</p>
+
                         <p>
                             <label className="f6 db" htmlFor="group_search">Search groups</label>
                             <input className="mt2 w-100" type="text" id="group_search" aria-describedby="group_search_desc" name="group_search"/>
@@ -93,7 +97,9 @@ class SelectEmployees extends React.Component {
                 break;
             case 'custom':
                 selectionInterface = (
-                    <p>custom...</p>
+                    <div className={classNames('', commonWrapperClasses)}>
+                        <p>Create custom rules to add all employees that match.</p>
+                    </div>
                 );
                 break;
             default:
