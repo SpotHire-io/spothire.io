@@ -29,8 +29,22 @@ class SelectCustomRules extends React.Component {
                         className="mt0"
                         options={[
                             {
-                                label: 'Test',
-                                value: 'test'
+                                label: 'Profile fields',
+                                value: 'optgroup-profile-fields',
+                                disabled: true
+                            },
+                            {
+                                label: 'Height (profile field)',
+                                value: 'profile-test'
+                            },
+                            {
+                                label: 'Private metadata',
+                                value: 'optgroup-private-metadata',
+                                disabled: true
+                            },
+                            {
+                                label: 'Reliable',
+                                value: 'metadata-Reliable'
                             }
                         ]}
                         onChange={(newKey) => this.setState({ selectedKey: newKey.value })}
