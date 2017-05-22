@@ -36,7 +36,7 @@ class SelectCustomRules extends React.Component {
                                 disabled: true
                             },
                             {
-                                label: 'Height (profile field)',
+                                label: 'Height',
                                 value: 'profile-test'
                             },
                             {
@@ -49,7 +49,7 @@ class SelectCustomRules extends React.Component {
                                 value: 'metadata-Reliable'
                             }
                         ]}
-                        onChange={(newKey) => this.setState({ selectedKey: newKey.value })}
+                        onChange={(newKey) => (newKey !== null) ? this.setState({ selectedKey: newKey.value }) : this.setState({ selectedKey: null })}
                     />
                     <small className="dib f6 black-60 lh-title mt2">
                         The key you want to filter on. This can be a profile field, filled out by the employee, or a custom
