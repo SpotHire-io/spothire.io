@@ -15,7 +15,7 @@ class SelectCustomRules extends React.Component {
         this.renderValueInputs = this.renderValueInputs.bind(this);
 
         this.state = {
-            selectedKey: null,
+            selectedKey: 'metadata-Reliable',
         };
     }
 
@@ -30,7 +30,35 @@ class SelectCustomRules extends React.Component {
             );
         } else if (this.state.selectedKey.indexOf('metadata-') === 0) {
             selectionInterface = (
-                <p>a metadata field!</p>
+                <div className="mt3">
+                    <div>
+                        <label htmlFor="custom_filter_type" className="db mb2 f6">Filter type</label>
+                        <Select
+                            id="custom_filter_type"
+                            name="custom_filter_type"
+                            options={[
+                                {
+                                    label: 'is equal to',
+                                    value: 'equals'
+                                },
+                                {
+                                    label: 'contains',
+                                    value: 'contains'
+                                }
+                            ]}
+                        />
+                        <small className="dib f6 black-60 lh-title mt2">
+                            The type of filtering you want to do.
+                        </small>
+                    </div>
+                    <div className="mt3">
+                        <label htmlFor="custom_value" className="db mb2 f6">Value</label>
+                        <input className="w-100 db" type="text" id="custom_value" name="custom_value"/>
+                        <small className="dib f6 black-60 lh-title mt2">
+                            The value you want to match against.
+                        </small>
+                    </div>
+                </div>
             );
         }
 
