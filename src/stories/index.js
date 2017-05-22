@@ -47,6 +47,9 @@ import ShiftManager from '../components/Scheduling/ShiftManager';
 import UserTable from '../components/Employees/UserTable';
 import SelectableUserTable from '../components/Employees/SelectableUserTable';
 import EmployeeSelectionInterface from '../components/Employees/EmployeeSelectionInterface';
+import SelectIndividuals from '../components/Employees/EmployeeSelection/SelectEmployees/Individuals';
+import SelectGroups from '../components/Employees/EmployeeSelection/SelectEmployees/Groups';
+import SelectCustomRules from '../components/Employees/EmployeeSelection/SelectEmployees/CustomRules';
 
 import GroupCard from '../components/Employees/Groups/Card';
 import GroupCardList from '../components/Employees/Groups/CardList';
@@ -638,6 +641,33 @@ storiesOf('Employees', module)
         <WithNotes>
             <div className="pa4 bg-white">
                 <EmployeeSelectionInterface className="pa3 ba b--black-20" employees={users}/>
+            </div>
+        </WithNotes>
+    ))
+    .add('EmployeeSelectionInterface:SelectEmployees:Individuals', () => (
+        <WithNotes>
+            <div className="pa4 bg-white">
+                <div className="w-50 pa3">
+                    <SelectIndividuals/>
+                </div>
+            </div>
+        </WithNotes>
+    ))
+    .add('EmployeeSelectionInterface:SelectEmployees:Groups', () => (
+        <WithNotes>
+            <div className="pa4 bg-white">
+                <div className="w-50 pa3">
+                    <SelectGroups/>
+                </div>
+            </div>
+        </WithNotes>
+    ))
+    .add('EmployeeSelectionInterface:SelectEmployees:CustomRules', () => (
+        <WithNotes>
+            <div className="pa4 bg-white">
+                <div className="w-50 pa3">
+                    <SelectCustomRules/>
+                </div>
             </div>
         </WithNotes>
     ));
