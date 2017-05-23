@@ -16,7 +16,7 @@ class SelectCustomRules extends React.Component {
         this.renderPlainLanguageDescription = this.renderPlainLanguageDescription.bind(this);
 
         this.state = {
-            selectedKey: 'metadata-Reliable',
+            selectedKey: null,
         };
     }
 
@@ -67,11 +67,13 @@ class SelectCustomRules extends React.Component {
     }
 
     renderPlainLanguageDescription() {
-        return (
-            <div className="bt bb-0 br-0 bl-0 b--dotted mt3 pt3">
-                <p>This rule will find all employees with custom metadata that contains “value”.</p>
-            </div>
-        );
+        if (this.state.selectedKey !== null) {
+            return (
+                <div className="bt bb-0 br-0 bl-0 b--dotted mt3 pt3">
+                    <p>This rule will find all employees with custom metadata that contains “value”.</p>
+                </div>
+            );
+        }
     }
 
     render() {
