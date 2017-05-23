@@ -86,6 +86,24 @@ class OverviewCalendar extends React.Component {
             );
         };
 
+        const AgendaEvent = ({ event }) => {
+            return (
+                <div className="flex">
+                    <div className="flex flex-wrap justify-between content-start w-10 pr2">
+                        {[...Array(3).keys()].map((number) => <img key={number} className="w1 h1 br-100 mr1 mb1" src="http://placehold.it/40x40"/>)}
+                    </div>
+                    <div className="w-90">
+                        <h3 className="ma0 pa0 lh-solid">
+                            {event.title}
+                        </h3>
+                        <p className="mt2 pa0">
+                            {event.desc}
+                        </p>
+                    </div>
+                </div>
+            );
+        };
+
         return (
             <div className={wrapperClasses} style={{height: '75vh'}}>
                 <BigCalendar
@@ -94,6 +112,9 @@ class OverviewCalendar extends React.Component {
                     components={{
                         event: ImageEvent,
                         eventWrapper: EventWrapper,
+                        agenda: {
+                            event: AgendaEvent,
+                        },
                     }}
                     defaultView="week"
                     scrollToTime={new Date(1970, 1, 1, 7)}
