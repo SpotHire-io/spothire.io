@@ -94,11 +94,10 @@ class OverviewCalendar extends React.Component {
                     components={{
                         event: ImageEvent,
                         eventWrapper: EventWrapper,
-
                     }}
                     defaultView="week"
                     scrollToTime={new Date(1970, 1, 1, 7)}
-                    views={['week', 'day']}
+                    views={['week', 'day', 'agenda']}
                     startAccessor={(event) => new Date(event.selectedDates.start)}
                     endAccessor={(event) => new Date(event.selectedDates.end)}
                     allDayAccessor="isAllDay"

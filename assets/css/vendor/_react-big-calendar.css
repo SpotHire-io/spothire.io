@@ -10,3 +10,7 @@
     z-index: 1;
     background-color: #777777;
 }
+
+.rbc-agenda-content > table {
+    border-collapse: collapse;
+}
