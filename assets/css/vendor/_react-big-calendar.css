@@ -11,6 +11,27 @@
     background-color: #777777;
 }
 
+
+
+/*
+    AGENDA VIEW
+ */
+.rbc-agenda-view {
+    overflow: hidden;
+}
+
+.rbc-agenda-content {
+    overflow: auto;
+}
+
+.rbc-agenda-view > table,
 .rbc-agenda-content > table {
     border-collapse: collapse;
+}
+
+.rbc-agenda-view .rbc-agenda-date-cell,
+.rbc-agenda-view .rbc-agenda-time-cell,
+.rbc-agenda-view .rbc-agenda-event-cell,
+.rbc-agenda-view .rbc-header {
+    padding: 0.5rem 1rem;
 }
