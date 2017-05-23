@@ -13,12 +13,15 @@ import Filter from '../components/Filters/Filter';
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
 
+// dummy data
+import users from '../data/people.json';
+
 class ScheduleView extends React.Component {
     constructor() {
         super();
 
         this.state = {
-            filteredUserIds: []
+            filteredUserIds: ''
         };
     }
 
@@ -36,23 +39,26 @@ class ScheduleView extends React.Component {
                                     inputProps: {
                                         id: 'schedule_userId_filter'
                                     },
-                                    options: [
-                                        {
-                                            value: '1',
-                                            label: 'Option 1'
-                                        },
-                                        {
-                                            value: '2',
-                                            label: 'Option 2'
-                                        }
-                                    ],
+                                    options: users
+                                        .filter((user) => user.type === 'admin' || user.type === 'manager')
+                                        .map((user) => {
+                                            return {
+                                                label: `${user.firstName} ${user.lastName}`,
+                                                value: user.id,
+                                            };
+                                        }),
                                     selectConfig: {
-                                        multi: true
+                                        multi: true,
+                                        joinValues: true,
+                                        simpleValue: true,
+                                        value: this.state.filteredUserIds,
+                                        onChange: (selectedIds) => this.setState({ filteredUserIds: selectedIds }),
                                     }
                                 }}
                             />
                         </FilterContainer>
                         <Box className="flex-auto" title="Calendar">
+                            {this.state.filteredUserIds}
                             <OverviewCalendar
                                 events={this.props.events}
                                 filter={{
