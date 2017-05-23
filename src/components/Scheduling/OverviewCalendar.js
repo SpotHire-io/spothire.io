@@ -93,7 +93,7 @@ class OverviewCalendar extends React.Component {
                         {[...Array(3).keys()].map((number) => <img key={number} className="w1 h1 br-100 mr1 mb1" src="http://placehold.it/40x40"/>)}
                     </div>
                     <div className="w-90">
-                        <h3 className="ma0 pa0 lh-solid">
+                        <h3 className="f5 b ma0 pa0 lh-solid">
                             {event.title}
                         </h3>
                         <p className="mt2 pa0">

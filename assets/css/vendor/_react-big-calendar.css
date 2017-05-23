@@ -35,3 +35,8 @@
 .rbc-agenda-view .rbc-header {
     padding: 0.5rem 1rem;
 }
+
+.rbc-agenda-view .rbc-agenda-event-cell {
+    border-left-style: dotted;
+    border-left-color: rgba(0, 0, 0, 0.05);
+}
