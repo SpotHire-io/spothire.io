@@ -7,6 +7,8 @@ import classNames from 'classnames';
 
 import Box from '../components/Global/Box';
 
+import BasicButton from '../components/Buttons/BasicButton';
+
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
 
@@ -43,7 +45,7 @@ class EmployeeProfileView extends React.Component {
                     </Box>
                     <div className="w-two-thirds">
                         <Box>
-                            <h2 className="f6 mt0 lh-title ttu">Your Settings</h2>
+                            <h2 className="f6 mt0 lh-title ttu">Essential Information</h2>
 
                             <div className="flex mt3">
                                 <div className="w-50 mr4">
@@ -58,11 +60,6 @@ class EmployeeProfileView extends React.Component {
                             </div>
 
                             <div className="mt3">
-                                <label className="f6 db mb2" htmlFor="employee_location">Location</label>
-                                <input className="w-100" type="text" id="employee_location" name="employee_location"/>
-                            </div>
-
-                            <div className="mt3">
                                 <label className="f6 db mb2" htmlFor="employee_emergencyContactInformation">Emergency contact information</label>
                                 <input className="w-100" type="text" id="employee_emergencyContactInformation" name="employee_emergencyContactInformation" defaultValue={this.props.employee.emergencyContactInformation}/>
                                 <small className="f6 black-60 db mt2" id="employee_emergencyContactInformation_desc">Who should a manager contact if something goes wrong? How can a manager contact them?</small>
@@ -73,6 +70,11 @@ class EmployeeProfileView extends React.Component {
                             <h2 className="f6 mt0 lh-title ttu">Further Information</h2>
 
                             <p>Managers who know more about you can schedule you for more opportunities. Answering these questions helps managers find you good opportunities.</p>
+
+                            <div className="mt3">
+                                <label className="f6 db mb2" htmlFor="employee_location">Location</label>
+                                <input className="w-100" type="text" id="employee_location" name="employee_location"/>
+                            </div>
 
                             <div className="flex mt3">
                                 <div className="w-50 mr4">
@@ -86,6 +88,26 @@ class EmployeeProfileView extends React.Component {
                                 </div>
                             </div>
                         </Box>
+
+                        <Box className="mt3">
+                            <h2 className="f6 mt0 lh-title ttu">Account Settings</h2>
+
+                            <div className="flex mt3">
+                                <div className="w-50 mr4">
+                                    <label className="f6 db mb2" htmlFor="employee_password">New password</label>
+                                    <input className="w-100" type="password" id="employee_password" name="employee_password"/>
+                                </div>
+
+                                <div className="w-50 mt0">
+                                    <label className="f6 db mb2" htmlFor="employee_passwordConfirmation">Confirm password</label>
+                                    <input className="w-100" type="password" id="employee_passwordConfirmation" name="employee_passwordConfirmation"/>
+                                </div>
+                            </div>
+                        </Box>
+
+                        <div className="mt3 tr">
+                            <BasicButton className="button--positive" onClick={() => alert('Profile changes saved!')}>Save Profile</BasicButton>
+                        </div>
                     </div>
                 </div>
             </div>
