@@ -193,9 +193,16 @@ class ShiftManager extends React.Component {
                                         'bg-white': shift.id === this.state.currentlyEditingShiftId
                                     });
 
+                                    const xClasses = classNames({
+                                        'br0 bg-light-gray hover-bg-light-red bt b--black-20': true,
+                                        'bb': this.state.shifts.length === index + 1,
+                                        'bg-white': shift.id === this.state.currentlyEditingShiftId
+                                    });
+
                                     return (
-                                        <li className="ma0 pl0 relative z-1" key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
+                                        <li className="ma0 pl0 relative z-1 flex" key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
                                             <button className={buttonClasses}>{(shift.title.length > 0) ? shift.title : 'Untitled'}</button>
+                                            <button className={xClasses} onClick={() => this.deleteShift(currentlyEditingShift.id)}>×</button>
                                         </li>
                                     )
                                 })
@@ -229,12 +236,6 @@ class ShiftManager extends React.Component {
                                 }
                             ]}
                         />
-
-                        <div className="mt3">
-                            <BasicButton className="button--negative" onClick={() => this.deleteShift(currentlyEditingShift.id)}>
-                                Delete Shift
-                            </BasicButton>
-                        </div>
                     </Box>
                 </div>
             </div>
