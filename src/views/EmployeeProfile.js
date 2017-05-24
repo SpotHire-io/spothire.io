@@ -21,7 +21,7 @@ class EmployeeProfileView extends React.Component {
         });
 
         return (
-            <div>
+            <div className="pa4 bg-near-white">
                 {this.props.employee.firstName}
             </div>
         );

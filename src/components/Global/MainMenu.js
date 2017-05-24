@@ -55,21 +55,28 @@ class MainMenu extends React.Component {
         });
 
         const userMenuItems = [
-            'Profile',
-            'Log out',
+            {
+                text: 'Profile',
+                onClick: linkTo('Views', 'EmployeeProfileView'),
+            },
+            {
+                text: 'Log out',
+                onClick: () => console.log('Log out clicked!'),
+            },
         ];
 
         return (
             <div className={userMenuClasses}>
                 <ul className="list ph0 pv1 ma0">
                     {
-                        userMenuItems.map((text) => (
-                            <li className="mt0" key={text}>
+                        userMenuItems.map((menuItem) => (
+                            <li className="mt0" key={menuItem.text}>
                                 <a
                                     href="#"
                                     className="pa2 db no-underline near-black hover-bg-blue-yonder hover-white"
+                                    onClick={menuItem.onClick}
                                 >
-                                    {text}
+                                    {menuItem.text}
                                 </a>
                             </li>
                         ))
