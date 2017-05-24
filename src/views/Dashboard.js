@@ -22,6 +22,10 @@ class DashboardView extends React.Component {
                         className="h5"
                         events={this.props.events}
                         onSelectEvent={linkTo('Views', 'Schedule:OpportunitySingle')}
+                        calendarProps={{
+                            views: ['month', 'week', 'day'],
+                            defaultView: 'week',
+                        }}
                     />
                 </Box>
             </div>

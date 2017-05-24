@@ -23,6 +23,7 @@ class OverviewCalendar extends React.Component {
         this.state = {
             isModalOpen: false,
             opportunity: {
+                id: -1,
                 isAllDay: false,
                 selectedDates: {
                     start: new Date(1970, 0, 0),
@@ -118,14 +119,13 @@ class OverviewCalendar extends React.Component {
                             event: AgendaEvent,
                         },
                     }}
-                    defaultView="week"
                     scrollToTime={new Date(1970, 1, 1, 7)}
-                    views={['week', 'day', 'agenda']}
                     startAccessor={(event) => new Date(event.selectedDates.start)}
                     endAccessor={(event) => new Date(event.selectedDates.end)}
                     allDayAccessor="isAllDay"
                     onSelectSlot={this.handleSelectSlot}
                     onSelectEvent={this.props.onSelectEvent}
+                    {...this.props.calendarProps}
                 />
                 <OpportunityModal
                     isOpen={this.state.isModalOpen}
@@ -143,6 +143,10 @@ OverviewCalendar.defaultProps = {
     style: {},
     events: [],
     onSelectEvent: (event) => console.log(event),
+    calendarProps: {
+        views: ['week', 'day', 'agenda'],
+        defaultView: 'week'
+    },
 };
 
 OverviewCalendar.propTypes = {
@@ -150,6 +154,7 @@ OverviewCalendar.propTypes = {
     style: PropTypes.object,
     events: PropTypes.array.isRequired,
     onSelectEvent: PropTypes.func,
+    calendarProps: PropTypes.object,
 };
 
 export default OverviewCalendar;
