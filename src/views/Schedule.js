@@ -32,7 +32,7 @@ class ScheduleView extends React.Component {
             <div>
                 <div className="pa4 bg-near-white">
                     <div className="flex">
-                        <FilterContainer className="mr3 w-third self-start">
+                        <FilterContainer className="mr3 w-third self-start" onResetFilters={() => this.setState({ filteredUserIds: [] })}>
                             <Select
                                 multi
                                 options={users

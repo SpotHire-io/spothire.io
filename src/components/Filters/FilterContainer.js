@@ -19,8 +19,8 @@ const FilterContainer = ({ children, className, headingSemanticLevel, onResetFil
             {React.createElement('h' + headingSemanticLevel, { className: 'f6 mt0 lh-title ttu' }, 'Filters')}
             {children}
             <div className="tr">
-                <BasicButton className="button--neutral mt3" onClick={() => onResetFilters}>Reset Filters</BasicButton>
-                <BasicButton className="button--standard mt3 ml2" onClick={() => onApplyFilters}>Apply Filters</BasicButton>
+                <BasicButton className="button--neutral mt3" onClick={onResetFilters}>Reset Filters</BasicButton>
+                <BasicButton className="button--standard mt3 ml2" onClick={onApplyFilters}>Apply Filters</BasicButton>
             </div>
         </Box>
     );
