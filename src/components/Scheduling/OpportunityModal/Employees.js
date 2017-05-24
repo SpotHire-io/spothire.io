@@ -36,12 +36,12 @@ class OpportunityModalEmployees extends React.Component {
     render() {
         return (
             <div>
-                <p>The following employees are invited or confirmed for the opportunity.</p>
+                <p>The following employees are invited or confirmed for the {(this.props.opportunity.isShift) ? 'shift' : 'opportunity'}.</p>
 
                 <UserTable className="mt3" enabledColumns={['avatar', 'name']} hasShadow={false}/>
 
                 <div className="tr mt3">
-                    <BasicButton className="button--positive" onClick={() => this.openAddEmployeesModal()}>Invite Employees to Opportunity</BasicButton>
+                    <BasicButton className="button--positive" onClick={() => this.openAddEmployeesModal()}>Invite Employees to {(this.props.opportunity.isShift) ? 'Shift' : 'Opportunity'}</BasicButton>
                 </div>
 
                 <Modal

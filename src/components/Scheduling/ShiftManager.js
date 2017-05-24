@@ -34,6 +34,7 @@ class ShiftManager extends React.Component {
             shifts: [
                 {
                     id: 0,
+                    isShift: true,
                     title: 'First shift',
                     isAllDay: false,
                     selectedDates: {
@@ -47,6 +48,7 @@ class ShiftManager extends React.Component {
                 },
                 {
                     id: 1,
+                    isShift: true,
                     title: 'Second shift',
                     isAllDay: false,
                     selectedDates: {
@@ -60,6 +62,7 @@ class ShiftManager extends React.Component {
                 },
                 {
                     id: 2,
+                    isShift: true,
                     title: 'Third shift',
                     isAllDay: false,
                     selectedDates: {
@@ -73,6 +76,7 @@ class ShiftManager extends React.Component {
                 },
                 {
                     id: 3,
+                    isShift: true,
                     title: 'Fourth shift',
                     isAllDay: false,
                     selectedDates: {
@@ -86,6 +90,7 @@ class ShiftManager extends React.Component {
                 },
                 {
                     id: 4,
+                    isShift: true,
                     title: 'Super extra long shift name that goes on forever',
                     isAllDay: false,
                     selectedDates: {
@@ -134,6 +139,7 @@ class ShiftManager extends React.Component {
         shifts.push({
             id: highestId + 1,
             title: '',
+            isShift: true,
             isAllDay: false,
             selectedDates: {
                 start: moment(new Date()),
