@@ -100,7 +100,20 @@ class OpportunitySingleView extends React.Component {
                             key: 'shifts',
                             name: 'Shifts',
                             content: (
-                                <ShiftManager className="mt4 mh4"/>
+                                <ShiftManager
+                                    className="mt4 mh4"
+                                    instructionsContent={(
+                                        <div>
+                                            <h2 className="f6 mt0 lh-title ttu">Opportunity Shifts</h2>
+
+                                            <p>
+                                                Shifts have all the features of a normal opportunity, but are linked to their opportunity.
+                                                Use them to organise different teams for large events, or to manage different shifts during
+                                                a long opportunity. Employees can be invited to specific shifts instead of the overall opportunity.
+                                            </p>
+                                        </div>
+                                    )}
+                                />
                             )
                         }
                     ]}
