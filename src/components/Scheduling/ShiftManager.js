@@ -200,9 +200,9 @@ class ShiftManager extends React.Component {
                                     });
 
                                     return (
-                                        <li className="ma0 pl0 relative z-1 flex" key={shift.id} onClick={() => this.setCurrentlyEditingShift(shift.id)}>
-                                            <button className={buttonClasses}>{(shift.title.length > 0) ? shift.title : 'Untitled'}</button>
-                                            <button className={xClasses} onClick={() => this.deleteShift(currentlyEditingShift.id)}>×</button>
+                                        <li className="ma0 pl0 relative z-1 flex" key={shift.id}>
+                                            <button className={buttonClasses} onClick={() => this.setCurrentlyEditingShift(shift.id)}>{(shift.title.length > 0) ? shift.title : 'Untitled'}</button>
+                                            <button className={xClasses} onClick={() => this.deleteShift(shift.id)}>×</button>
                                         </li>
                                     )
                                 })
