@@ -117,7 +117,9 @@ storiesOf('Views', module)
         <MockApp
             selectedMenuItem="Dashboard"
             viewComponent={
-                <DashboardView/>
+                <DashboardView
+                    events={sampleEvents.filter((event) => event.userId === 0)}
+                />
             }
         />
     ))

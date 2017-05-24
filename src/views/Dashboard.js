@@ -2,6 +2,13 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import Box from '../components/Global/Box';
+
+import OverviewCalendar from '../components/Scheduling/OverviewCalendar';
+
+// storybook stuff
+import { linkTo } from '@kadira/storybook';
+
 class DashboardView extends React.Component {
     constructor() {
         super();
@@ -10,7 +17,13 @@ class DashboardView extends React.Component {
     render() {
         return (
             <div className="pa4 bg-near-white">
-                <p>dashboardin</p>
+                <Box className="flex-auto" title="Calendar">
+                    <OverviewCalendar
+                        className="h5"
+                        events={this.props.events}
+                        onSelectEvent={linkTo('Views', 'Schedule:OpportunitySingle')}
+                    />
+                </Box>
             </div>
         );
     }

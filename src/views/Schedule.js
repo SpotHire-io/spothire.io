@@ -49,6 +49,7 @@ class ScheduleView extends React.Component {
                         </FilterContainer>
                         <Box className="flex-auto" title="Calendar">
                             <OverviewCalendar
+                                style={{height: '75vh'}}
                                 events={this.props.events}
                                 filter={{
                                     property: 'userId',

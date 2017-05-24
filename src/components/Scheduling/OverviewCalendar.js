@@ -67,9 +67,11 @@ class OverviewCalendar extends React.Component {
         });
 
         const EventWrapper = (props) => {
-            return (this.props.filter.values.indexOf( props.event[ this.props.filter.property ] ) !== -1) ?
-                props.children :
-                <div className="rbc-alt-bg">{props.children}</div>;
+            if (typeof this.props.filter != 'undefined' && this.props.filter.values.indexOf( props.event[ this.props.filter.property ] ) !== -1) {
+                return <div className="rbc-alt-bg">{props.children}</div>;
+            } else {
+                return props.children;
+            }
         };
 
         const ImageEvent = ({ event }) => {
@@ -105,7 +107,7 @@ class OverviewCalendar extends React.Component {
         };
 
         return (
-            <div className={wrapperClasses} style={{height: '75vh'}}>
+            <div className={wrapperClasses} style={this.props.style}>
                 <BigCalendar
                     selectable
                     events={this.props.events}
@@ -138,11 +140,14 @@ class OverviewCalendar extends React.Component {
 
 OverviewCalendar.defaultProps = {
     className: '',
+    style: {},
     events: [],
     onSelectEvent: (event) => console.log(event),
 };
 
 OverviewCalendar.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
     events: PropTypes.array.isRequired,
     onSelectEvent: PropTypes.func,
 };
