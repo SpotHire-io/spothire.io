@@ -26,6 +26,7 @@ import EmployeeSingleView from '../views/People/EmployeeSingle';
 import GroupSingleView from '../views/People/GroupSingle';
 import ScheduleView from '../views/Schedule';
 import OpportunitySingleView from '../views/Schedule/OpportunitySingle';
+import EmployeeProfileView from '../views/EmployeeProfile';
 
 import MainMenu from '../components/Global/MainMenu';
 import SecondaryMenu from '../components/Global/SecondaryMenu';
@@ -189,6 +190,16 @@ storiesOf('Views', module)
             viewComponent={
                 <OpportunitySingleView
                     opportunity={sampleEvents[0]}
+                />
+            }
+        />
+    ))
+    .add('EmployeeProfileView', () => (
+        <MockApp
+            selectedMenuItem=""
+            viewComponent={
+                <EmployeeProfileView
+                    employee={users[1]}
                 />
             }
         />
