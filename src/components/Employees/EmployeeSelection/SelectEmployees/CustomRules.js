@@ -21,49 +21,56 @@ class SelectCustomRules extends React.Component {
     }
 
     renderValueInputs() {
-        let selectionInterface;
-
         if (this.state.selectedKey === null) {
-            selectionInterface = null;
-        } else if (this.state.selectedKey.indexOf('profile-') === 0) {
-            selectionInterface = (
-                <p>a profile field!</p>
-            );
-        } else if (this.state.selectedKey.indexOf('metadata-') === 0) {
-            selectionInterface = (
-                <div className="mt3">
-                    <div>
-                        <label htmlFor="custom_filter_type" className="db mb2 f6">Filter type</label>
-                        <Select
-                            id="custom_filter_type"
-                            name="custom_filter_type"
-                            options={[
-                                {
-                                    label: 'is equal to',
-                                    value: 'equals'
-                                },
-                                {
-                                    label: 'contains',
-                                    value: 'contains'
-                                }
-                            ]}
-                        />
-                        <small className="dib f6 black-60 lh-title mt2">
-                            The type of filtering you want to do.
-                        </small>
-                    </div>
-                    <div className="mt3">
-                        <label htmlFor="custom_value" className="db mb2 f6">Value</label>
-                        <input className="w-100 db" type="text" id="custom_value" name="custom_value"/>
-                        <small className="dib f6 black-60 lh-title mt2">
-                            The value you want to match against.
-                        </small>
-                    </div>
-                </div>
-            );
+            return null;
         }
 
-        return selectionInterface;
+        const categoryFilters = {
+            text: ['equals', 'contains'],
+            number: ['greater', 'equals', 'less'],
+        };
+
+        const currentCategory = this.state.selectedKey.split('-')[1];
+
+        return (
+            <div className="mt3">
+                <div>
+                    <label htmlFor="custom_filter_type" className="db mb2 f6">Filter type</label>
+                    <Select
+                        id="custom_filter_type"
+                        name="custom_filter_type"
+                        options={[
+                            {
+                                label: 'is equal to',
+                                value: 'equals'
+                            },
+                            {
+                                label: 'contains',
+                                value: 'contains'
+                            },
+                            {
+                                label: 'is greater than',
+                                value: 'greater'
+                            },
+                            {
+                                label: 'is less than',
+                                value: 'less'
+                            },
+                        ].filter((filterType) => categoryFilters[currentCategory].includes(filterType.value))}
+                    />
+                    <small className="dib f6 black-60 lh-title mt2">
+                        The type of filtering you want to do.
+                    </small>
+                </div>
+                <div className="mt3">
+                    <label htmlFor="custom_value" className="db mb2 f6">Value</label>
+                    <input className="w-100 db" type="text" id="custom_value" name="custom_value"/>
+                    <small className="dib f6 black-60 lh-title mt2">
+                        The value you want to match against.
+                    </small>
+                </div>
+            </div>
+        );
     }
 
     renderPlainLanguageDescription() {
@@ -96,7 +103,7 @@ class SelectCustomRules extends React.Component {
                             },
                             {
                                 label: 'Height',
-                                value: 'profile-test'
+                                value: 'profile-number-height'
                             },
                             {
                                 label: 'Private metadata',
@@ -105,7 +112,7 @@ class SelectCustomRules extends React.Component {
                             },
                             {
                                 label: 'Reliable',
-                                value: 'metadata-Reliable'
+                                value: 'metadata-text-Reliable'
                             }
                         ]}
                         onChange={(newKey) => (newKey !== null) ? this.setState({ selectedKey: newKey.value }) : this.setState({ selectedKey: null })}
