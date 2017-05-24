@@ -2,6 +2,9 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import moment from 'moment';
+import 'moment/locale/en-ca';
+
 import Box from '../components/Global/Box';
 
 import OverviewCalendar from '../components/Scheduling/OverviewCalendar';
@@ -29,16 +32,23 @@ class DashboardView extends React.Component {
                     />
                 </Box>
 
-                <Box className="mt3 w-third" title="Agenda">
-                    <OverviewCalendar
-                        className="h5"
-                        events={this.props.events}
-                        onSelectEvent={linkTo('Views', 'Schedule:OpportunitySingle')}
-                        calendarProps={{
-                            views: ['agenda'],
-                            defaultView: 'agenda',
-                        }}
-                    />
+                <Box className="mt3 w-third" title="Agenda" contentWrapperClassName="pa3 max-h5 overflow-auto">
+                    <ol className="list pa0 ma0 nt3">
+                        {
+                            this.props.events
+                                .sort((eventA, eventB) => moment(eventA.selectedDates.start) - moment(eventB.selectedDates.start))
+                                .map((event) => {
+                                    return (
+                                        <li className="mt3" key={event.id}>
+                                            <h3 className="mv0 f5">
+                                                <a className="link blue underline-hover" href="#" onClick={linkTo('Views', 'Schedule:OpportunitySingle')}>{event.title}</a>
+                                            </h3>
+                                            <p className="mt1">{moment(event.selectedDates.start).format('MMMM Do, YYYY')}</p>
+                                        </li>
+                                    );
+                                })
+                        }
+                    </ol>
                 </Box>
             </div>
         );
