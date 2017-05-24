@@ -6,79 +6,54 @@ import classNames from 'classnames';
 
 import OpportunitySchema from '../../../schemas/Opportunity';
 
-import ButtonBar from '../../Buttons/ButtonBar';
-import RadioButton from '../../Buttons/RadioButton';
+import BasicButton from '../../../components/Buttons/BasicButton';
 
-import SelectableUserTable from '../../Employees/SelectableUserTable';
+import UserTable from '../../../components/Employees/UserTable';
+import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
+
+import Modal from 'react-modal';
 
 class OpportunityModalEmployees extends React.Component {
     constructor() {
         super();
 
-        this.updateInviteType = this.updateInviteType.bind(this);
-        this.renderSelectionInterface = this.renderSelectionInterface.bind(this);
+        this.openAddEmployeesModal = this.openAddEmployeesModal.bind(this);
+        this.closeAddEmployeesModal = this.closeAddEmployeesModal.bind(this);
+
+        this.state = {
+            isAddEmployeesModalOpen: false,
+        };
     }
 
-    updateInviteType(inviteType) {
-        const opportunity = { ...this.props.opportunity };
-
-        opportunity.employees.invited = inviteType;
-
-        this.props.updateOpportunity(opportunity);
+    openAddEmployeesModal() {
+        return this.setState({ isAddEmployeesModalOpen: true });
     }
 
-    renderSelectionInterface() {
-        let selectionInterface;
-
-        switch (this.props.opportunity.employees.invited) {
-            case 'all':
-                selectionInterface = (
-                    <p>All employees will be invited.</p>
-                );
-                break;
-            case 'available':
-                selectionInterface = (
-                    <p>Only employees available to work during the opportunity will be invited.</p>
-                );
-                break;
-            case 'selected':
-                selectionInterface = (
-                    <div className="mt3">
-                        <p>Employees selected from this list will be invited.</p>
-                        <SelectableUserTable className="mt3 h5 overflow-auto" hasShadow={false}/>
-                    </div>
-                );
-                break;
-            default:
-                break;
-        }
-
-        return selectionInterface;
+    closeAddEmployeesModal() {
+        return this.setState({ isAddEmployeesModalOpen: false });
     }
 
     render() {
         return (
             <div>
-                <p className="f6">Invited employees</p>
-                <ButtonBar className="w-100 mt2">
-                    {[
-                        'All',
-                        'Available',
-                        'Selected'
-                    ].map((inviteType) =>
-                        <RadioButton
-                            key={inviteType.toLowerCase()}
-                            name="opp_employees_invited"
-                            id={'opp_employees_invited_' + inviteType.toLowerCase()}
-                            value={inviteType.toLowerCase()}
-                            checked={this.props.opportunity.employees.invited === inviteType.toLowerCase()}
-                            onClick={() => this.updateInviteType(inviteType.toLowerCase())}
-                        >
-                            {inviteType}
-                        </RadioButton>
-                    )}
-                </ButtonBar>
-                {this.renderSelectionInterface()}
+                <p>The following employees are invited or confirmed for the opportunity.</p>
+
+                <UserTable className="mt3" enabledColumns={['avatar', 'name']} hasShadow={false}/>
+
+                <div className="tr mt3">
+                    <BasicButton className="button--positive" onClick={() => this.openAddEmployeesModal()}>Invite Employees to Opportunity</BasicButton>
+                </div>
+
+                <Modal
+                    isOpen={this.state.isAddEmployeesModalOpen}
+                    contentLabel={"Add employees modal"}
+                    overlayClassName="sh-modal-overlay"
+                    className="sh-modal sh-modal--full sh-shadow-2 "
+                    onRequestClose={this.closeAddEmployeesModal}
+                    closeTimeoutMS={100}
+                >
+                    <EmployeeSelectionInterface/>
+                </Modal>
             </div>
         )
     }
