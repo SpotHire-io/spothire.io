@@ -17,7 +17,7 @@ class DashboardView extends React.Component {
     render() {
         return (
             <div className="pa4 bg-near-white">
-                <Box className="flex-auto" title="Calendar">
+                <Box className="w-100" title="Calendar">
                     <OverviewCalendar
                         className="h5"
                         events={this.props.events}
@@ -25,6 +25,18 @@ class DashboardView extends React.Component {
                         calendarProps={{
                             views: ['month', 'week', 'day'],
                             defaultView: 'week',
+                        }}
+                    />
+                </Box>
+
+                <Box className="mt3 w-third" title="Agenda">
+                    <OverviewCalendar
+                        className="h5"
+                        events={this.props.events}
+                        onSelectEvent={linkTo('Views', 'Schedule:OpportunitySingle')}
+                        calendarProps={{
+                            views: ['agenda'],
+                            defaultView: 'agenda',
                         }}
                     />
                 </Box>
