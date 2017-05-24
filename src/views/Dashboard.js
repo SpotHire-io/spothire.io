@@ -2,6 +2,8 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import classNames from 'classnames';
+
 import moment from 'moment';
 import 'moment/locale/en-ca';
 
@@ -15,6 +17,10 @@ import { linkTo } from '@kadira/storybook';
 class DashboardView extends React.Component {
     constructor() {
         super();
+
+        this.state = {
+            visibleCalendarView: 'week',
+        }
     }
 
     render() {
@@ -22,12 +28,17 @@ class DashboardView extends React.Component {
             <div className="pa4 bg-near-white">
                 <Box className="w-100" title="Calendar">
                     <OverviewCalendar
-                        className="h5"
+                        className={classNames({
+                            'animate-all': true,
+                            'h5': this.state.visibleCalendarView !== 'month',
+                            'h6': this.state.visibleCalendarView === 'month'
+                        })}
                         events={this.props.events}
                         onSelectEvent={linkTo('Views', 'Schedule:OpportunitySingle')}
                         calendarProps={{
                             views: ['month', 'week', 'day'],
                             defaultView: 'week',
+                            onView: (visibleCalendarView) => this.setState({ visibleCalendarView }),
                         }}
                     />
                 </Box>
