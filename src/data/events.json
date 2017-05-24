@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-18T00:00:00Z",
         "end": "2017-05-18T00:00:00Z"
@@ -12,6 +13,7 @@
   },
   {
     "id": 1,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-29T10:08:44Z",
         "end": "2017-05-29T12:08:44Z"
@@ -22,6 +24,7 @@
   },
   {
     "id": 2,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-23T01:19:33Z",
         "end": "2017-05-23T03:19:33Z"
@@ -32,6 +35,7 @@
   },
   {
     "id": 3,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-05T22:43:40Z",
         "end": "2017-05-06T00:43:40Z"
@@ -42,6 +46,7 @@
   },
   {
     "id": 4,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-06T12:33:00Z",
         "end": "2017-05-06T14:33:00Z"
@@ -52,6 +57,7 @@
   },
   {
     "id": 5,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-12T05:24:34Z",
         "end": "2017-05-12T07:24:34Z"
@@ -62,6 +68,7 @@
   },
   {
     "id": 6,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-10T05:18:34Z",
         "end": "2017-05-10T07:18:34Z"
@@ -72,6 +79,7 @@
   },
   {
     "id": 7,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-07T09:19:29Z",
         "end": "2017-05-07T11:19:29Z"
@@ -82,6 +90,7 @@
   },
   {
     "id": 8,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-12T09:18:21Z",
         "end": "2017-05-12T11:18:21Z"
@@ -92,6 +101,7 @@
   },
   {
     "id": 9,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-12T08:43:22Z",
         "end": "2017-05-12T10:43:22Z"
@@ -102,6 +112,7 @@
   },
   {
     "id": 10,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-27T06:43:37Z",
         "end": "2017-05-27T08:43:37Z"
@@ -112,6 +123,7 @@
   },
   {
     "id": 11,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-17T23:14:20Z",
         "end": "2017-05-18T01:14:20Z"
@@ -122,6 +134,7 @@
   },
   {
     "id": 12,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-14T12:43:55Z",
         "end": "2017-05-14T14:43:55Z"
@@ -132,6 +145,7 @@
   },
   {
     "id": 13,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-11T00:25:08Z",
         "end": "2017-05-11T02:25:08Z"
@@ -142,6 +156,7 @@
   },
   {
     "id": 14,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-15T16:01:08Z",
         "end": "2017-05-15T18:01:08Z"
@@ -152,6 +167,7 @@
   },
   {
     "id": 15,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-22T14:44:02Z",
         "end": "2017-05-22T16:44:02Z"
@@ -162,6 +178,7 @@
   },
   {
     "id": 16,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-13T18:34:09Z",
         "end": "2017-05-13T20:34:09Z"
@@ -172,6 +189,7 @@
   },
   {
     "id": 17,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-11T23:35:14Z",
         "end": "2017-05-12T01:35:14Z"
@@ -182,6 +200,7 @@
   },
   {
     "id": 18,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-24T08:26:03Z",
         "end": "2017-05-24T10:26:03Z"
@@ -192,6 +211,7 @@
   },
   {
     "id": 19,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-10T12:19:12Z",
         "end": "2017-05-10T14:19:12Z"
@@ -202,6 +222,7 @@
   },
   {
     "id": 20,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-11T13:17:51Z",
         "end": "2017-05-11T15:17:51Z"
@@ -212,6 +233,7 @@
   },
   {
     "id": 21,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-14T13:35:31Z",
         "end": "2017-05-14T15:35:31Z"
@@ -222,6 +244,7 @@
   },
   {
     "id": 22,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-07T06:57:05Z",
         "end": "2017-05-07T08:57:05Z"
@@ -232,6 +255,7 @@
   },
   {
     "id": 23,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-22T10:37:55Z",
         "end": "2017-05-22T12:37:55Z"
@@ -242,6 +266,7 @@
   },
   {
     "id": 24,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-27T22:20:21Z",
         "end": "2017-05-28T00:20:21Z"
@@ -252,6 +277,7 @@
   },
   {
     "id": 25,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-13T04:24:07Z",
         "end": "2017-05-13T06:24:07Z"
@@ -262,6 +288,7 @@
   },
   {
     "id": 26,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-27T17:55:28Z",
         "end": "2017-05-27T19:55:28Z"
@@ -272,6 +299,7 @@
   },
   {
     "id": 27,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-29T23:23:29Z",
         "end": "2017-05-30T01:23:29Z"
@@ -282,6 +310,7 @@
   },
   {
     "id": 28,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-10T19:17:11Z",
         "end": "2017-05-10T21:17:11Z"
@@ -292,6 +321,7 @@
   },
   {
     "id": 29,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-16T10:53:07Z",
         "end": "2017-05-16T12:53:07Z"
@@ -302,6 +332,7 @@
   },
   {
     "id": 30,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-11T03:34:58Z",
         "end": "2017-05-11T05:34:58Z"
@@ -312,6 +343,7 @@
   },
   {
     "id": 31,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-11T09:36:47Z",
         "end": "2017-05-11T11:36:47Z"
@@ -322,6 +354,7 @@
   },
   {
     "id": 32,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-24T03:31:41Z",
         "end": "2017-05-24T05:31:41Z"
@@ -332,6 +365,7 @@
   },
   {
     "id": 33,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-22T22:22:04Z",
         "end": "2017-05-23T00:22:04Z"
@@ -342,6 +376,7 @@
   },
   {
     "id": 34,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-09T20:42:23Z",
         "end": "2017-05-09T22:42:23Z"
@@ -352,6 +387,7 @@
   },
   {
     "id": 35,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-07T00:20:26Z",
         "end": "2017-05-07T02:20:26Z"
@@ -362,6 +398,7 @@
   },
   {
     "id": 36,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-19T12:49:50Z",
         "end": "2017-05-19T14:49:50Z"
@@ -372,6 +409,7 @@
   },
   {
     "id": 37,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-15T00:16:34Z",
         "end": "2017-05-15T02:16:34Z"
@@ -382,6 +420,7 @@
   },
   {
     "id": 38,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-10T09:34:31Z",
         "end": "2017-05-10T11:34:31Z"
@@ -392,6 +431,7 @@
   },
   {
     "id": 39,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-04T23:36:24Z",
         "end": "2017-05-05T01:36:24Z"
@@ -402,6 +442,7 @@
   },
   {
     "id": 40,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-11T22:51:37Z",
         "end": "2017-05-12T00:51:37Z"
@@ -412,6 +453,7 @@
   },
   {
     "id": 41,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-17T10:19:27Z",
         "end": "2017-05-17T12:19:27Z"
@@ -422,6 +464,7 @@
   },
   {
     "id": 42,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-19T17:23:26Z",
         "end": "2017-05-19T19:23:26Z"
@@ -432,6 +475,7 @@
   },
   {
     "id": 43,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-14T03:23:07Z",
         "end": "2017-05-14T05:23:07Z"
@@ -442,6 +486,7 @@
   },
   {
     "id": 44,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-15T06:10:41Z",
         "end": "2017-05-15T08:10:41Z"
@@ -452,6 +497,7 @@
   },
   {
     "id": 45,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-05T02:24:29Z",
         "end": "2017-05-05T04:24:29Z"
@@ -462,6 +508,7 @@
   },
   {
     "id": 46,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-10T12:34:16Z",
         "end": "2017-05-10T14:34:16Z"
@@ -472,6 +519,7 @@
   },
   {
     "id": 47,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-03T07:35:05Z",
         "end": "2017-05-03T09:35:05Z"
@@ -482,6 +530,7 @@
   },
   {
     "id": 48,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-07T11:51:39Z",
         "end": "2017-05-07T13:51:39Z"
@@ -492,6 +541,7 @@
   },
   {
     "id": 49,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-13T07:08:10Z",
         "end": "2017-05-13T09:08:10Z"
@@ -502,6 +552,7 @@
   },
   {
     "id": 50,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-02T11:35:41Z",
         "end": "2017-05-02T13:35:41Z"
@@ -512,6 +563,7 @@
   },
   {
     "id": 51,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-17T00:53:32Z",
         "end": "2017-05-17T02:53:32Z"
@@ -522,6 +574,7 @@
   },
   {
     "id": 52,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-15T20:05:52Z",
         "end": "2017-05-15T22:05:52Z"
@@ -532,6 +585,7 @@
   },
   {
     "id": 53,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-03T10:02:40Z",
         "end": "2017-05-03T12:02:40Z"
@@ -542,6 +596,7 @@
   },
   {
     "id": 54,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-23T21:52:41Z",
         "end": "2017-05-23T23:52:41Z"
@@ -552,6 +607,7 @@
   },
   {
     "id": 55,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-10T07:13:59Z",
         "end": "2017-05-10T09:13:59Z"
@@ -562,6 +618,7 @@
   },
   {
     "id": 56,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-15T13:13:16Z",
         "end": "2017-05-15T15:13:16Z"
@@ -572,6 +629,7 @@
   },
   {
     "id": 57,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-08T08:59:19Z",
         "end": "2017-05-08T10:59:19Z"
@@ -582,6 +640,7 @@
   },
   {
     "id": 58,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-24T17:48:29Z",
         "end": "2017-05-24T19:48:29Z"
@@ -592,6 +651,7 @@
   },
   {
     "id": 59,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-05T01:40:26Z",
         "end": "2017-05-05T03:40:26Z"
@@ -602,6 +662,7 @@
   },
   {
     "id": 60,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-02T12:48:08Z",
         "end": "2017-05-02T14:48:08Z"
@@ -612,6 +673,7 @@
   },
   {
     "id": 61,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-04T04:23:28Z",
         "end": "2017-05-04T06:23:28Z"
@@ -622,6 +684,7 @@
   },
   {
     "id": 62,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-09T08:28:32Z",
         "end": "2017-05-09T10:28:32Z"
@@ -632,6 +695,7 @@
   },
   {
     "id": 63,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-21T04:55:51Z",
         "end": "2017-05-21T06:55:51Z"
@@ -642,6 +706,7 @@
   },
   {
     "id": 64,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-04T11:20:20Z",
         "end": "2017-05-04T13:20:20Z"
@@ -652,6 +717,7 @@
   },
   {
     "id": 65,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-24T10:25:36Z",
         "end": "2017-05-24T12:25:36Z"
@@ -662,6 +728,7 @@
   },
   {
     "id": 66,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-23T11:20:24Z",
         "end": "2017-05-23T13:20:24Z"
@@ -672,6 +739,7 @@
   },
   {
     "id": 67,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-15T16:14:20Z",
         "end": "2017-05-15T18:14:20Z"
@@ -682,6 +750,7 @@
   },
   {
     "id": 68,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-07T06:03:59Z",
         "end": "2017-05-07T08:03:59Z"
@@ -692,6 +761,7 @@
   },
   {
     "id": 69,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-29T01:54:50Z",
         "end": "2017-05-29T03:54:50Z"
@@ -702,6 +772,7 @@
   },
   {
     "id": 70,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-17T22:54:51Z",
         "end": "2017-05-18T00:54:51Z"
@@ -712,6 +783,7 @@
   },
   {
     "id": 71,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-20T12:33:11Z",
         "end": "2017-05-20T14:33:11Z"
@@ -722,6 +794,7 @@
   },
   {
     "id": 72,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-25T04:08:39Z",
         "end": "2017-05-25T06:08:39Z"
@@ -732,6 +805,7 @@
   },
   {
     "id": 73,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-06T05:43:19Z",
         "end": "2017-05-06T07:43:19Z"
@@ -742,6 +816,7 @@
   },
   {
     "id": 74,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-06T06:17:37Z",
         "end": "2017-05-06T08:17:37Z"
@@ -752,6 +827,7 @@
   },
   {
     "id": 75,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-29T23:46:09Z",
         "end": "2017-05-30T01:46:09Z"
@@ -762,6 +838,7 @@
   },
   {
     "id": 76,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-27T10:07:22Z",
         "end": "2017-05-27T12:07:22Z"
@@ -772,6 +849,7 @@
   },
   {
     "id": 77,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-26T02:36:05Z",
         "end": "2017-05-26T04:36:05Z"
@@ -782,6 +860,7 @@
   },
   {
     "id": 78,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-04T00:38:00Z",
         "end": "2017-05-04T02:38:00Z"
@@ -792,6 +871,7 @@
   },
   {
     "id": 79,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-10T09:21:34Z",
         "end": "2017-05-10T11:21:34Z"
@@ -802,6 +882,7 @@
   },
   {
     "id": 80,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-23T13:13:24Z",
         "end": "2017-05-23T15:13:24Z"
@@ -812,6 +893,7 @@
   },
   {
     "id": 81,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-10T15:53:52Z",
         "end": "2017-05-10T17:53:52Z"
@@ -822,6 +904,7 @@
   },
   {
     "id": 82,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-18T09:31:39Z",
         "end": "2017-05-18T11:31:39Z"
@@ -832,6 +915,7 @@
   },
   {
     "id": 83,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-15T17:23:57Z",
         "end": "2017-05-15T19:23:57Z"
@@ -842,6 +926,7 @@
   },
   {
     "id": 84,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-27T12:22:13Z",
         "end": "2017-05-27T14:22:13Z"
@@ -852,6 +937,7 @@
   },
   {
     "id": 85,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-13T07:35:54Z",
         "end": "2017-05-13T09:35:54Z"
@@ -862,6 +948,7 @@
   },
   {
     "id": 86,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-07T23:08:51Z",
         "end": "2017-05-08T01:08:51Z"
@@ -872,6 +959,7 @@
   },
   {
     "id": 87,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-06T18:38:27Z",
         "end": "2017-05-06T20:38:27Z"
@@ -882,6 +970,7 @@
   },
   {
     "id": 88,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-20T16:58:15Z",
         "end": "2017-05-20T18:58:15Z"
@@ -892,6 +981,7 @@
   },
   {
     "id": 89,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-08T17:26:32Z",
         "end": "2017-05-08T19:26:32Z"
@@ -902,6 +992,7 @@
   },
   {
     "id": 90,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-13T20:44:29Z",
         "end": "2017-05-13T22:44:29Z"
@@ -912,6 +1003,7 @@
   },
   {
     "id": 91,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-05T18:08:33Z",
         "end": "2017-05-05T20:08:33Z"
@@ -922,6 +1014,7 @@
   },
   {
     "id": 92,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-13T15:13:25Z",
         "end": "2017-05-13T17:13:25Z"
@@ -932,6 +1025,7 @@
   },
   {
     "id": 93,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-03T07:02:41Z",
         "end": "2017-05-03T09:02:41Z"
@@ -942,6 +1036,7 @@
   },
   {
     "id": 94,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-20T12:05:19Z",
         "end": "2017-05-20T14:05:19Z"
@@ -952,6 +1047,7 @@
   },
   {
     "id": 95,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-04T13:16:40Z",
         "end": "2017-05-04T15:16:40Z"
@@ -962,6 +1058,7 @@
   },
   {
     "id": 96,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-13T14:40:50Z",
         "end": "2017-05-13T16:40:50Z"
@@ -972,6 +1069,7 @@
   },
   {
     "id": 97,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-15T12:18:02Z",
         "end": "2017-05-15T14:18:02Z"
@@ -982,6 +1080,7 @@
   },
   {
     "id": 98,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-13T05:09:17Z",
         "end": "2017-05-13T07:09:17Z"
@@ -992,6 +1091,7 @@
   },
   {
     "id": 99,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-22T04:13:58Z",
         "end": "2017-05-22T06:13:58Z"
@@ -1002,6 +1102,7 @@
   },
   {
     "id": 100,
+    "isShift": false,
     "selectedDates": {
         "start": "2017-05-08T11:30:34Z",
         "end": "2017-05-08T13:30:34Z"
