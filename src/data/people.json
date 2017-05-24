@@ -26,7 +26,7 @@
     "email": "jolson1@umich.edu",
     "phone": "20-(397)570-4573",
     "type": "manager",
-    "imageSrc": "https://randomuser.me/api/portraits/women/2.jpg",
+    "imageSrc": "https://randomuser.me/api/portraits/men/2.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
       {
@@ -106,7 +106,7 @@
     "email": "msullivan5@amazon.com",
     "phone": "46-(387)906-3742",
     "type": "employee",
-    "imageSrc": "https://randomuser.me/api/portraits/women/6.jpg",
+    "imageSrc": "https://randomuser.me/api/portraits/men/6.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
       {
@@ -166,7 +166,7 @@
     "email": "hbishop8@moonfruit.com",
     "phone": "880-(541)270-1621",
     "type": "employee",
-    "imageSrc": "https://randomuser.me/api/portraits/women/9.jpg",
+    "imageSrc": "https://randomuser.me/api/portraits/men/9.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
       {
@@ -186,7 +186,7 @@
     "email": "jhansen9@hatena.ne.jp",
     "phone": "7-(959)110-4566",
     "type": "employee",
-    "imageSrc":  "https://randomuser.me/api/portraits/women/10.jpg",
+    "imageSrc":  "https://randomuser.me/api/portraits/men/10.jpg",
     "emergencyContactInformation": "Call zzz-zzz-zzzz.",
     "metadata": [
       {
