@@ -23,7 +23,12 @@ class ScheduleView extends React.Component {
         super();
 
         this.state = {
-            filteredUserIds: []
+            filteredUserIds: [
+                {
+                    label: `${users[0].firstName} ${users[0].lastName}`,
+                    value: users[0].id,
+                }
+            ]
         };
     }
 
@@ -33,7 +38,9 @@ class ScheduleView extends React.Component {
                 <div className="pa4 bg-near-white">
                     <div className="flex">
                         <FilterContainer className="mr3 w-third self-start" onResetFilters={() => this.setState({ filteredUserIds: [] })}>
+                            <label htmlFor="schedule_userId_filter" className="db mb2 f6">Managers</label>
                             <Select
+                                id="schedule_userId_filter"
                                 multi
                                 options={users
                                     .filter((user) => user.type === 'admin' || user.type === 'manager')
@@ -46,15 +53,12 @@ class ScheduleView extends React.Component {
                                 value={this.state.filteredUserIds}
                                 onChange={(selectedUsers) => this.setState({ filteredUserIds: selectedUsers })}
                             />
+                            <small className="dib f6 black-60 lh-title mt2">Filter whose opportunities appear.</small>
                         </FilterContainer>
                         <Box className="flex-auto" title="Calendar">
                             <OverviewCalendar
                                 style={{height: '75vh'}}
-                                events={this.props.events}
-                                filter={{
-                                    property: 'userId',
-                                    values: this.state.filteredUserIds.map((user) => user.value)
-                                }}
+                                events={this.props.events.filter((event) => this.state.filteredUserIds.map((user) => user.value).includes(event.userId))}
                                 onSelectEvent={linkTo('Views', 'Schedule:OpportunitySingle')}
                             />
                         </Box>
