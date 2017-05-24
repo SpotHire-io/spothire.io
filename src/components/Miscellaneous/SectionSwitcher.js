@@ -53,7 +53,13 @@ SectionSwitcher.defaultProps = {
 };
 
 SectionSwitcher.propTypes = {
-    sections: PropTypes.array.isRequired
+    sections: PropTypes.arrayOf(PropTypes.shape({
+        key: PropTypes.any,
+        name: PropTypes.string,
+        content: PropTypes.node,
+    })).isRequired,
+    className: PropTypes.string,
+    secondaryMenuClassName: PropTypes.string,
 };
 
 export default SectionSwitcher;

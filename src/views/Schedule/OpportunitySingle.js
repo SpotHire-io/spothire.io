@@ -9,6 +9,8 @@ import Box from '../../components/Global/Box';
 
 import BasicButton from '../../components/Buttons/BasicButton';
 
+import SectionSwitcher from '../../components/Miscellaneous/SectionSwitcher';
+
 import UserTable from '../../components/Employees/UserTable';
 import EmployeeSelectionInterface from '../../components/Employees/EmployeeSelectionInterface';
 
@@ -44,35 +46,65 @@ class OpportunitySingleView extends React.Component {
 
         return (
             <div>
-                <div className="pv4 bg-near-white">
-                    <div className="flex mh4 items-start">
-                        <Box className="w-third mr3">
-                            <h2 className="f6 mt0 lh-title ttu">Opportunity Details</h2>
+                <SectionSwitcher
+                    className="pb4 bg-near-white"
+                    secondaryMenuClassName="ph4 mb4 bg-white"
+                    sections={[
+                        {
+                            key: 'overview',
+                            name: 'Overview',
+                            content: (
+                                <div className="flex mh4 items-start">
+                                    <Box className="w-third mr3">
+                                        <h2 className="f6 mt0 lh-title ttu">Opportunity Details</h2>
 
-                            <h1 className="mb4 f3">{this.props.opportunity.title}</h1>
-                        </Box>
-                        <div className="w-two-thirds">
-                            <Box>
-                                <h2 className="f6 mt0 lh-title ttu">Opportunity Settings</h2>
+                                        <h1 className="mb4 f3">{this.props.opportunity.title}</h1>
+                                    </Box>
+                                    <div className="w-two-thirds">
+                                        <Box>
+                                            <h2 className="f6 mt0 lh-title ttu">Opportunity Settings</h2>
 
-                                <OpportunityModalBasicInfo opportunity={this.props.opportunity} updateOpportunity={() => console.log('updating opportunity!')}/>
-                            </Box>
-                            <Box className="mt4">
-                                <h2 className="f6 mt0 lh-title ttu">Employees</h2>
-
-                                <p>The following employees are invited or confirmed for the opportunity.</p>
-
-                                <UserTable className="mt3" enabledColumns={['avatar', 'name']} hasShadow={false}/>
-
-                                <div className="tr mt3">
-                                    <BasicButton className="button--positive" onClick={() => this.openAddEmployeesModal()}>Invite Employees to Opportunity</BasicButton>
+                                            <OpportunityModalBasicInfo opportunity={this.props.opportunity} updateOpportunity={() => console.log('updating opportunity!')}/>
+                                        </Box>
+                                    </div>
                                 </div>
-                            </Box>
-                        </div>
-                    </div>
+                            ),
+                        },
+                        {
+                            key: 'employees',
+                            name: 'Employees',
+                            content: (
+                                <div className="flex mh4 items-start">
+                                    <Box className="w-third mr3">
+                                        <h2 className="f6 mt0 lh-title ttu">Opportunity Details</h2>
 
-                    <ShiftManager className="mt4 mh4"/>
-                </div>
+                                        <h1 className="mb4 f3">{this.props.opportunity.title}</h1>
+                                    </Box>
+                                    <div className="w-two-thirds">
+                                        <Box>
+                                            <h2 className="f6 mt0 lh-title ttu">Employees</h2>
+
+                                            <p>The following employees are invited or confirmed for the opportunity.</p>
+
+                                            <UserTable className="mt3" enabledColumns={['avatar', 'name']} hasShadow={false}/>
+
+                                            <div className="tr mt3">
+                                                <BasicButton className="button--positive" onClick={() => this.openAddEmployeesModal()}>Invite Employees to Opportunity</BasicButton>
+                                            </div>
+                                        </Box>
+                                    </div>
+                                </div>
+                            ),
+                        },
+                        {
+                            key: 'shifts',
+                            name: 'Shifts',
+                            content: (
+                                <ShiftManager className="mt4 mh4"/>
+                            )
+                        }
+                    ]}
+                />
                 <Modal
                     isOpen={this.state.isAddEmployeesModalOpen}
                     contentLabel={"Add employees modal"}
