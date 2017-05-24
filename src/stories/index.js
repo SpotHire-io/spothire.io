@@ -120,7 +120,6 @@ storiesOf('Views', module)
                 <DashboardView/>
             }
         />
-
     ))
     .add('Newsfeed', () => (
         <MockApp
@@ -137,7 +136,6 @@ storiesOf('Views', module)
                 />
             }
         />
-
     ))
     .add('People', () => (
         <MockApp
