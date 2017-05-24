@@ -19,6 +19,7 @@ BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
 
+import DashboardView from '../views/Dashboard';
 import NewsfeedView from '../views/Newsfeed';
 import PeopleView from '../views/People';
 import EmployeeSingleView from '../views/People/EmployeeSingle';
@@ -112,6 +113,15 @@ MockApp.propTypes = {
 };
 
 storiesOf('Views', module)
+    .add('Dashboard', () => (
+        <MockApp
+            selectedMenuItem="Dashboard"
+            viewComponent={
+                <DashboardView/>
+            }
+        />
+
+    ))
     .add('Newsfeed', () => (
         <MockApp
             selectedMenuItem="Newsfeed"
