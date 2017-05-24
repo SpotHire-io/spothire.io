@@ -23,7 +23,7 @@ class EmployeeProfileView extends React.Component {
         return (
             <div className="pa4 bg-near-white">
                 <div className="flex">
-                    <Box className="w-third mr3">
+                    <Box className="w-third mr3 self-start">
                         <h2 className="f6 mt0 lh-title ttu">Your Profile</h2>
 
                         <h1 className="mb4 f3">{this.props.employee.firstName} {this.props.employee.lastName}</h1>
@@ -58,9 +58,32 @@ class EmployeeProfileView extends React.Component {
                             </div>
 
                             <div className="mt3">
+                                <label className="f6 db mb2" htmlFor="employee_location">Location</label>
+                                <input className="w-100" type="text" id="employee_location" name="employee_location"/>
+                            </div>
+
+                            <div className="mt3">
                                 <label className="f6 db mb2" htmlFor="employee_emergencyContactInformation">Emergency contact information</label>
                                 <input className="w-100" type="text" id="employee_emergencyContactInformation" name="employee_emergencyContactInformation" defaultValue={this.props.employee.emergencyContactInformation}/>
-                                <small className="f6 black-60 db mt2" id="employee_notes_desc">Who should a manager contact if something goes wrong? How can a manager contact them?</small>
+                                <small className="f6 black-60 db mt2" id="employee_emergencyContactInformation_desc">Who should a manager contact if something goes wrong? How can a manager contact them?</small>
+                            </div>
+                        </Box>
+
+                        <Box className="mt3">
+                            <h2 className="f6 mt0 lh-title ttu">Further Information</h2>
+
+                            <p>Managers who know more about you can schedule you for more opportunities. Answering these questions helps managers find you good opportunities.</p>
+
+                            <div className="flex mt3">
+                                <div className="w-50 mr4">
+                                    <label className="f6 db mb2" htmlFor="employee_height">Height</label>
+                                    <input className="w-100" type="number" id="employee_height" name="employee_height"/>
+                                </div>
+
+                                <div className="w-50 mt0">
+                                    <label className="f6 db mb2" htmlFor="employee_hair">Hair colour</label>
+                                    <input className="w-100" type="text" id="employee_hair" name="employee_hair"/>
+                                </div>
                             </div>
                         </Box>
                     </div>
