@@ -8,8 +8,6 @@ import classNames from 'classnames';
 import moment from 'moment';
 import 'moment/locale/en-ca';
 
-import Box from '../../components/Global/Box';
-
 import BasicButton from '../../components/Buttons/BasicButton';
 
 import { Checkbox, Close } from 'rebass';
@@ -109,7 +107,7 @@ class AvailabilityEditor extends React.Component {
 
     render() {
         return (
-            <Box className={classNames(this.props.className)} title="Availability">
+            <div className={classNames(this.props.className)}>
                 <ol className="list ma0 pa0">
                     {
                         Object.keys(this.state.availability).map((day, index) => {
@@ -157,7 +155,7 @@ class AvailabilityEditor extends React.Component {
                 <div className="tr mt3">
                     <BasicButton className="button--positive" onClick={this.props.onSubmitAvailability}>Save Availability</BasicButton>
                 </div>
-            </Box>
+            </div>
         );
     }
 }
