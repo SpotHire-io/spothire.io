@@ -743,7 +743,7 @@ storiesOf('Profile', module)
     .add('AvailabilityEditor', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
-                <AvailabilityEditor employee={users[0]} onSubmitAvailability={(availability) => console.log(availability)}/>
+                <AvailabilityEditor className="w-third" employee={users[0]} onSubmitAvailability={(availability) => console.log(availability)}/>
             </div>
         </WithNotes>
     ));
