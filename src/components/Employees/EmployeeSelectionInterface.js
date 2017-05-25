@@ -80,7 +80,7 @@ class EmployeeSelectionInterface extends React.Component {
                     const filterType = this.filterTypes.find((filterType) => filterType.value === rule.type);
 
                     return (
-                        <p className={className}>{filterKey.label} that {filterType.label} {rule.value}<span className="ml2 f6">(15 employees)</span></p>
+                        <p className={className}>{filterKey.label} that {filterType.label} “{rule.value}”<span className="ml2 f6">(15 employees)</span></p>
                     );
                 },
             },
