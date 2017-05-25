@@ -30,7 +30,7 @@ class TimesheetView extends React.Component {
         ];
 
         this.state = {
-            searchQuery: '',
+            nameSearch: '',
             selectedUserIds: [],
             employeeCategory: null, // oneOf[null, 'overSubmitted', 'underSubmitted']
         };
@@ -41,7 +41,7 @@ class TimesheetView extends React.Component {
             [this.props.className]: true
         });
 
-        let filteredUsers = this.props.users.filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.searchQuery) > -1);
+        let filteredUsers = this.props.users.filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.nameSearch) > -1);
 
         if (this.state.employeeCategory === 'underSubmitted') {
             filteredUsers = filteredUsers.filter((user) => user.hours.worked > user.hours.submitted)
@@ -65,7 +65,7 @@ class TimesheetView extends React.Component {
                     <TimetableSummary className="mt3" users={summarizedUsers}/>
                 </Box>
 
-                <BoxConnector isActive={this.state.searchQuery.length > 0}/>
+                <BoxConnector isActive={this.state.nameSearch.length > 0}/>
 
                 <Box>
                     <h2 className="f6 mt0 lh-title ttu">Filters</h2>
@@ -81,12 +81,12 @@ class TimesheetView extends React.Component {
                     />
 
                     <p className="mt3">
-                        <label className="f6 db" htmlFor="employees_search">Search</label>
-                        <input className="mt2 w-100" type="text" id="employees_search" name="employees_search" value={this.state.searchQuery} onChange={(e) => this.setState({ searchQuery: e.target.value })}/>
+                        <label className="f6 db" htmlFor="employees_name">Name</label>
+                        <input className="mt2 w-100" type="text" id="employees_name" name="employees_name" value={this.state.nameSearch} onChange={(e) => this.setState({ nameSearch: e.target.value })}/>
                     </p>
                 </Box>
 
-                <BoxConnector isActive={this.state.searchQuery.length > 0}/>
+                <BoxConnector isActive={this.state.nameSearch.length > 0}/>
 
                 <SelectableTimesheetTable
                     users={filteredUsers}
