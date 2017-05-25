@@ -37,7 +37,7 @@ class EmployeeSelectionInterface extends React.Component {
                     groups[0],
                     groups[1],
                 ],
-                customSelections: [],
+                customRules: [],
             }
         };
 
@@ -64,9 +64,9 @@ class EmployeeSelectionInterface extends React.Component {
             },
             {
                 key: 'custom',
-                title: 'Custom',
-                selections: this.state.selectedEmployees.customSelections,
-                renderMethod: (customSelection, className) => {
+                title: 'Custom Rules',
+                selections: this.state.selectedEmployees.customRules,
+                renderMethod: (customRule, className) => {
                     return (
                         <p className={className}>¯\_(ツ)_/¯</p>
                     );
