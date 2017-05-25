@@ -22,6 +22,8 @@ class ScheduleView extends React.Component {
     constructor() {
         super();
 
+        this.resetFilters = this.resetFilters.bind(this);
+
         this.state = {
             filteredUserIds: [
                 {
@@ -32,12 +34,23 @@ class ScheduleView extends React.Component {
         };
     }
 
+    resetFilters() {
+        this.setState({
+            filteredUserIds: [
+                {
+                    label: `${users[0].firstName} ${users[0].lastName}`,
+                    value: users[0].id,
+                }
+            ]
+        });
+    }
+
     render() {
         return (
             <div>
                 <div className="pa4 bg-near-white">
                     <div className="flex">
-                        <FilterContainer className="mr3 w-third self-start" onResetFilters={() => this.setState({ filteredUserIds: [] })}>
+                        <FilterContainer className="mr3 w-third self-start" onResetFilters={this.resetFilters}>
                             <label htmlFor="schedule_userId_filter" className="db mb2 f6">Managers</label>
                             <Select
                                 id="schedule_userId_filter"
