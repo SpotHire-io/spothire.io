@@ -32,8 +32,7 @@ class TimesheetView extends React.Component {
             [this.props.className]: true
         });
 
-        const filteredUsers = this.props.users
-            .filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.searchQuery) > -1);
+        const filteredUsers = this.props.users.filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.searchQuery) > -1);
 
         let summarizedUsers = filteredUsers;
 
