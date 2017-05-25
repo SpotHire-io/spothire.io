@@ -99,8 +99,12 @@ class AvailabilityEditor extends React.Component {
         let availability = {...this.state.availability};
 
         // find index of slot within day, then remove it from the day array
-
         availability[day].splice(availability[day].findIndex((slot) => slot.id === slotId), 1);
+
+        // if there's no more slots in the day, automatically set it to unavailable
+        if (availability[day].length === 0) {
+            availability[day] = false;
+        }
 
         this.setState({ availability });
     }
