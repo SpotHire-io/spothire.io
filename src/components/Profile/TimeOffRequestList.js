@@ -29,7 +29,7 @@ class TimeOffRequestList extends React.Component {
     render() {
         return (
             <div className={classNames(this.props.className)}>
-                <ol className="list ma0 pa0 nt2">
+                <ol className="list ma0 pa0 nt3">
                     {
                         this.state.requests.map((request, index) => {
                             let tagType = 'neutral';
@@ -41,9 +41,12 @@ class TimeOffRequestList extends React.Component {
                             }
 
                             return (
-                                <li key={request.id} className="ma0 ph0 pv2 flex justify-between items-baseline">
-                                    <p className="mt0 mb2">{request.reason}</p>
-                                    <BasicTag type={tagType} isNarrow>{request.approvalState}</BasicTag>
+                                <li key={request.id} className="ma0 pa0 mt3">
+                                    <div className="flex justify-between items-baseline mb1">
+                                        <p className="mt0">{moment(request.dates.start).format('MMMM Do, YYYY')}</p>
+                                        <BasicTag type={tagType} isNarrow>{request.approvalState}</BasicTag>
+                                    </div>
+                                    <p className="mt0">{request.reason}</p>
                                 </li>
                             );
                         })
