@@ -37,7 +37,7 @@ class AvailabilityEditor extends React.Component {
                 Monday: false,
                 Tuesday: [
                     {
-                        id: 10,
+                        id: 100,
                         start: moment('08:00', 'kk:mm'),
                         end: moment('12:00', 'kk:mm'),
                     },
@@ -46,12 +46,12 @@ class AvailabilityEditor extends React.Component {
                 Thursday: false,
                 Friday: [
                     {
-                        id: 40,
+                        id: 400,
                         start: moment('08:00', 'kk:mm'),
                         end: moment('12:00', 'kk:mm'),
                     },
                     {
-                        id: 41,
+                        id: 401,
                         start: moment('16:00', 'kk:mm'),
                         end: moment('22:00', 'kk:mm'),
                     },
@@ -59,7 +59,7 @@ class AvailabilityEditor extends React.Component {
                 Saturday: false,
                 Sunday: [
                     {
-                        id: 60,
+                        id: 600,
                         start: moment('08:00', 'kk:mm'),
                         end: moment('12:00', 'kk:mm'),
                     },
@@ -86,7 +86,7 @@ class AvailabilityEditor extends React.Component {
         let availability = {...this.state.availability};
         let timeSlot = {...this.defaultTimeSlot};
 
-        timeSlot.id = (dayIndex * 10) + availability[day].length; // ID: index of the day of the week in first column; slot # in second column
+        timeSlot.id = (dayIndex * 100) + availability[day].length; // ID: index of the day of the week in first column; slot # in second, third column
 
         availability[day].push(timeSlot);
 
@@ -97,6 +97,7 @@ class AvailabilityEditor extends React.Component {
         let availability = {...this.state.availability};
 
         // find index of slot within day, then remove it from the day array
+
         availability[day].splice(availability[day].findIndex((slot) => slot.id === slotId), 1);
 
         this.setState({ availability });
