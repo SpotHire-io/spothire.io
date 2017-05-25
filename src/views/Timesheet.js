@@ -36,7 +36,7 @@ class TimesheetView extends React.Component {
 
         let summarizedUsers = filteredUsers;
 
-        if (this.state.selectedUserIds.length !== 0) {
+        if (this.state.selectedUserIds.length > 0) {
             summarizedUsers = filteredUsers.filter((user) => this.state.selectedUserIds.includes(user.id));
         }
 
@@ -44,7 +44,10 @@ class TimesheetView extends React.Component {
             <div className="bg-near-white pa4">
                 <Box>
                     <h2 className="f6 mt0 lh-title ttu">Summary</h2>
-                    <TimetableSummary users={summarizedUsers}/>
+
+                    <p className="measure">Hour summary for {summarizedUsers.length} {(this.state.selectedUserIds.length > 0) ? 'selected' : 'displayed'} {(summarizedUsers.length === 1) ? 'employee' : 'employees'}.</p>
+
+                    <TimetableSummary className="mt3" users={summarizedUsers}/>
                 </Box>
 
                 <BoxConnector isActive={this.state.searchQuery.length > 0}/>

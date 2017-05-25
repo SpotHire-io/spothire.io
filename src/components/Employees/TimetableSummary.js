@@ -24,10 +24,10 @@ class TimetableSummary extends React.Component {
         ];
 
         return (
-            <dl className={classNames('cf ma0 nt3', this.props.className)}>
+            <dl className={classNames('cf ma0 nb3', this.props.className)}>
                 {
                     summaryData.map((summaryDatum) => (
-                        <div className="fl mw5 mt3 mr3">
+                        <div className="fl mw5 mb3 mr3">
                             <dt className="f6">{summaryDatum.label}</dt>
                             <dd className="ml0 mt1">{summaryDatum.value}</dd>
                         </div>
