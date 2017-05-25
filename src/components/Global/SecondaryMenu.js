@@ -14,7 +14,7 @@ class SecondaryMenu extends React.Component {
     renderNavItem(item) {
         const aClasses = classNames({
             'b near-black hover-gray dib pv3 mr4 no-underline animate-all bb bw1 hover-b--white-40': true,
-            'b--blue-yonder': ! item.isActive,
+            'b--teal': ! item.isActive,
             'b--white-40': item.isActive
         });
 
@@ -33,7 +33,7 @@ class SecondaryMenu extends React.Component {
 
     render() {
         const wrapperClasses = classNames({
-            'bb bw1 b--blue-yonder ': true,
+            'bb bw1 b--teal': true,
             [this.props.className]: true
         });
 

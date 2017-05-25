@@ -73,7 +73,7 @@ class MainMenu extends React.Component {
                             <li className="mt0" key={menuItem.text}>
                                 <a
                                     href="#"
-                                    className="pa2 db no-underline near-black hover-bg-blue-yonder hover-white"
+                                    className="pa2 db no-underline near-black hover-bg-teal hover-white"
                                     onClick={menuItem.onClick}
                                 >
                                     {menuItem.text}
@@ -97,7 +97,7 @@ class MainMenu extends React.Component {
 
         return (
             <div className="relative no-select">
-                <div className="flex  shadow-4 bg-blue-yonder bb bt bw1 b--white-40" onClick={() => (this.state.isUserMenuOpen) ? this.toggleUserMenu() : null}>
+                <div className="flex  shadow-4 bg-teal bb bt bw1 b--white-40" onClick={() => (this.state.isUserMenuOpen) ? this.toggleUserMenu() : null}>
                     {this.renderLogo()}
                     <nav className="flex-auto flex items-start">
                         {

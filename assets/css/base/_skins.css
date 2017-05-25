@@ -1,0 +1,15 @@
+/*
+    Teal
+ */
+.teal { color: #5ab6b2; }
+.bg-teal { background-color: #5ab6b2; }
+.b--teal { border-color: #5ab6b2; }
+
+.hover-teal:hover,
+.hover-teal:focus { color: #5ab6b2; }
+
+.hover-bg-teal:hover,
+.hover-bg-teal:focus { background-color: #5ab6b2; }
+
+.hover-b--teal:hover,
+.hover-b--teal:focus { border-color: #5ab6b2; }

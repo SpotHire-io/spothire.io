@@ -107,7 +107,7 @@ class SelectableUserTable extends React.Component {
 
     renderHeaderCell(column, value, className) {
         const cellClasses = classNames({
-            'tl bg-blue-yonder white bb bw1 b--white-40': true,
+            'tl bg-teal white bb bw1 b--white-40': true,
             [this.commonCellClasses]: true,
             [className]: true
         });

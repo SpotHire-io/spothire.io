@@ -14,7 +14,7 @@ const Box = ({ children, className, contentWrapperClassName, headingSemanticLeve
         if (typeof title != 'undefined' && title.length > 0) {
             return React.createElement(
                 'h' + headingSemanticLevel,
-                { className: 'bg-blue-yonder white bb bw1 b--white-40 ma0 pa3 f5' },
+                { className: 'bg-teal white bb bw1 b--white-40 ma0 pa3 f5' },
                 title
             );
         }

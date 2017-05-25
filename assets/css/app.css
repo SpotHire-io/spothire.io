@@ -26,6 +26,7 @@
  */
 
 @import 'base/_utilities.css';
+@import 'base/_skins.css';
 @import 'base/_buttons.css';
 @import 'base/_inputs.css';
 @import 'base/_heights.css';
@@ -47,29 +48,10 @@
 @import 'vendor/_react-dates.css';
 @import 'vendor/_rebass.css';
 
-.bg-blue-yonder {
-    background-color: rgb(84, 119, 166);
-}
 
-.b--deep-koamaru {
-    border-color: #31486E;
-}
-
-.b--blue-yonder {
-    border-color: rgb(84, 119, 166);
-}
-
-.hover-b--blue-yonder:hover,
-.hover-b--blue-yonder:focus {
-    border-color: rgb(84, 119, 166);
-}
 
 .hover-b--white-40:hover {
     border-color: rgba(255, 255, 255, 0.4);
-}
-
-.hover-bg-blue-yonder:hover {
-    background-color: rgb(84, 119, 166);
 }
 
 .hover-bl:hover {
