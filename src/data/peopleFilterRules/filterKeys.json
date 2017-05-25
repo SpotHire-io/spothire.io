@@ -1,0 +1,20 @@
+[
+    {
+        "label": "Profile fields",
+        "value": "optgroup-profile-fields",
+        "disabled": "true"
+    },
+    {
+        "label": "Height",
+        "value": "profile-number-height"
+    },
+    {
+        "label": "Private metadata",
+        "value": "optgroup-private-metadata",
+        "disabled": "true"
+    },
+    {
+        "label": "Reliable",
+        "value": "metadata-text-Reliable"
+    }
+]

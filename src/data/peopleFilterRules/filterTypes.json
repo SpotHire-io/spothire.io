@@ -1,0 +1,18 @@
+[
+    {
+        "label": "is equal to",
+        "value": "equals"
+    },
+    {
+        "label": "contains",
+        "value": "contains"
+    },
+    {
+        "label": "is greater than",
+        "value": "greater"
+    },
+    {
+        "label": "is less than",
+        "value": "less"
+    }
+]

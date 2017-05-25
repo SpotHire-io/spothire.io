@@ -10,6 +10,10 @@ import Select from 'react-select';
 
 import 'react-select/dist/react-select.css';
 
+// Rule data
+import filterKeys from '../../../../data/peopleFilterRules/filterKeys.json';
+import filterTypes from '../../../../data/peopleFilterRules/filterTypes.json';
+
 class SelectCustomRules extends React.Component {
     constructor() {
         super();
@@ -21,45 +25,8 @@ class SelectCustomRules extends React.Component {
         this.renderPlainLanguageDescription = this.renderPlainLanguageDescription.bind(this);
         this.renderControls = this.renderControls.bind(this);
 
-        this.filterKeys = [
-            {
-                label: 'Profile fields',
-                value: 'optgroup-profile-fields',
-                disabled: true
-            },
-            {
-                label: 'Height',
-                value: 'profile-number-height'
-            },
-            {
-                label: 'Private metadata',
-                value: 'optgroup-private-metadata',
-                disabled: true
-            },
-            {
-                label: 'Reliable',
-                value: 'metadata-text-Reliable'
-            }
-        ];
-
-        this.filterTypes = [
-            {
-                label: 'is equal to',
-                value: 'equals'
-            },
-            {
-                label: 'contains',
-                value: 'contains'
-            },
-            {
-                label: 'is greater than',
-                value: 'greater'
-            },
-            {
-                label: 'is less than',
-                value: 'less'
-            },
-        ];
+        this.filterKeys = filterKeys;
+        this.filterTypes = filterTypes;
 
         this.state = {
             selectedKey: null,
