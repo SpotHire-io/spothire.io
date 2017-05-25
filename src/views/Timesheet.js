@@ -20,23 +20,19 @@ class TimesheetView extends React.Component {
 
         this.employeeCategories = [
             {
-                value: 'all',
-                label: 'All employees',
-            },
-            {
                 value: 'underSubmitted',
-                label: 'Employees with more hours submitted than worked',
+                label: 'Employees with more hours worked than submitted',
             },
             {
                 value: 'overSubmitted',
-                label: 'Employees with more hours worked than submitted',
+                label: 'Employees with more hours submitted than worked',
             },
         ];
 
         this.state = {
             searchQuery: '',
             selectedUserIds: [],
-            employeeCategory: 'all', // oneOf['all', 'overSubmitted', 'underSubmitted']
+            employeeCategory: null, // oneOf[null, 'overSubmitted', 'underSubmitted']
         };
     }
 
@@ -45,7 +41,13 @@ class TimesheetView extends React.Component {
             [this.props.className]: true
         });
 
-        const filteredUsers = this.props.users.filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.searchQuery) > -1);
+        let filteredUsers = this.props.users.filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.searchQuery) > -1);
+
+        if (this.state.employeeCategory === 'underSubmitted') {
+            filteredUsers = filteredUsers.filter((user) => user.hours.worked > user.hours.submitted)
+        } else if (this.state.employeeCategory === 'overSubmitted') {
+            filteredUsers = filteredUsers.filter((user) => user.hours.submitted > user.hours.worked)
+        }
 
         let summarizedUsers = filteredUsers;
 
