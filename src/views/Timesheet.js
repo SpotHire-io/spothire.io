@@ -45,7 +45,7 @@ class TimesheetView extends React.Component {
                 <Box>
                     <h2 className="f6 mt0 lh-title ttu">Summary</h2>
 
-                    <p className="measure">Hour summary for {summarizedUsers.length} {(this.state.selectedUserIds.length > 0) ? 'selected' : 'displayed'} {(summarizedUsers.length === 1) ? 'employee' : 'employees'}.</p>
+                    <p className="mt0 measure">Hour summary for {summarizedUsers.length} {(this.state.selectedUserIds.length > 0) ? 'selected' : 'displayed'} {(summarizedUsers.length === 1) ? 'employee' : 'employees'}.</p>
 
                     <TimetableSummary className="mt3" users={summarizedUsers}/>
                 </Box>
@@ -53,7 +53,9 @@ class TimesheetView extends React.Component {
                 <BoxConnector isActive={this.state.searchQuery.length > 0}/>
 
                 <Box>
-                    <p>
+                    <h2 className="f6 mt0 lh-title ttu">Filters</h2>
+
+                    <p className="mt0">
                         <label className="f6 db" htmlFor="employees_search">Search</label>
                         <input className="mt2 w-100" type="text" id="employees_search" name="employees_search" value={this.state.searchQuery} onChange={(e) => this.setState({ searchQuery: e.target.value })}/>
                     </p>
