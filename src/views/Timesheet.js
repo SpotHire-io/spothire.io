@@ -11,12 +11,6 @@ import BoxConnector from '../components/Global/BoxConnector';
 import SelectableTimesheetTable from '../components/Employees/SelectableTimesheetTable';
 import TimetableSummary from '../components/Employees/TimetableSummary';
 
-import FilterContainer from '../components/Filters/FilterContainer';
-import Filter from '../components/Filters/Filter';
-
-// storybook stuff
-import { linkTo } from '@kadira/storybook';
-
 class TimesheetView extends React.Component {
     constructor() {
         super();
