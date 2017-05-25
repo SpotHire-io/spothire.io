@@ -68,12 +68,16 @@ class AvailabilityEditor extends React.Component {
         };
     }
 
-    toggleDayAvailability(day) {
+    toggleDayAvailability(day, dayIndex) {
         let availability = {...this.state.availability};
+        let initialTimeSlot = {...this.state.defaultTimeSlot};
 
         if (availability[day] === false) {
+            // set initial slot ID to base ID for day, according to the day's index
+            initialTimeSlot.id = dayIndex * 100;
+
             // set day up with default time slot
-            availability[day] = [{ ...this.defaultTimeSlot }];
+            availability[day] = [initialTimeSlot];
         } else {
             // reset day's availability
             availability[day] = false;
@@ -114,7 +118,7 @@ class AvailabilityEditor extends React.Component {
                             return (
                                 <li key={day} className="ma0 ph0 pv2">
                                     <p className="b mt0 mb2">{day}</p>
-                                    <Checkbox label="Available" name={'available_' + day} checked={currentDay !== false} onClick={() => this.toggleDayAvailability(day)}/>
+                                    <Checkbox label="Available" name={'available_' + day} checked={currentDay !== false} onClick={() => this.toggleDayAvailability(day, index)}/>
 
                                     {
                                         (currentDay !== false)
