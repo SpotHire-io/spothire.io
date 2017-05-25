@@ -8,7 +8,7 @@ import Box from '../Global/Box';
 
 import BasicButton from '../Buttons/BasicButton';
 
-const FilterContainer = ({ children, className, headingSemanticLevel, onResetFilters, onApplyFilters }) => {
+const FilterContainer = ({ children, className, headingSemanticLevel, onResetFilters }) => {
     let wrapperClasses = classNames({
         '': true,
         [className]: true
@@ -20,7 +20,6 @@ const FilterContainer = ({ children, className, headingSemanticLevel, onResetFil
             {children}
             <div className="tr">
                 <BasicButton className="button--neutral mt3" onClick={onResetFilters}>Reset Filters</BasicButton>
-                <BasicButton className="button--standard mt3 ml2" onClick={onApplyFilters}>Apply Filters</BasicButton>
             </div>
         </Box>
     );
@@ -36,7 +35,6 @@ FilterContainer.propTypes = {
     headingSemanticLevel: PropTypes.number,
     children: PropTypes.node.isRequired,
     onResetFilters: PropTypes.func.isRequired,
-    onApplyFilters: PropTypes.func.isRequired,
 };
 
 export default FilterContainer;
