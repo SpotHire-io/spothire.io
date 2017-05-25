@@ -47,16 +47,19 @@ class SelectableTimesheetTable extends React.Component {
         }
 
         this.setState({ selectedUserIds });
+        this.props.onUpdateSelectedUsers(selectedUserIds);
     }
 
     selectAllUsers() {
         const allUserIds = this.props.users.map((user) => user.id);
 
-        return this.setState({ selectedUserIds: allUserIds });
+        this.setState({ selectedUserIds: allUserIds });
+        this.props.onUpdateSelectedUsers(allUserIds);
     }
 
     unselectAllUsers() {
-        return this.setState({ selectedUserIds: [] });
+        this.setState({ selectedUserIds: [] });
+        this.props.onUpdateSelectedUsers([]);
     }
 
     renderUserRow(user) {
@@ -163,6 +166,7 @@ SelectableTimesheetTable.defaultProps = {
     className: '',
     hasShadow: true,
     tableProps: {},
+    onUpdateSelectedUsers: (selectedUserIds) => console.log(selectedUserIds)
 };
 
 SelectableTimesheetTable.propTypes = {
@@ -170,6 +174,7 @@ SelectableTimesheetTable.propTypes = {
     users: PropTypes.arrayOf(PersonSchema).isRequired,
     hasShadow: PropTypes.bool,
     tableProps: PropTypes.object,
+    onUpdateSelectedUsers: PropTypes.func,
 };
 
 export default SelectableTimesheetTable;

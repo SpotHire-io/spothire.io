@@ -22,7 +22,8 @@ class TimesheetView extends React.Component {
         super();
 
         this.state = {
-            searchQuery: ''
+            searchQuery: '',
+            selectedUserIds: []
         };
     }
 
