@@ -1,0 +1,35 @@
+[
+    {
+        "id": 0,
+        "employeeId": 4,
+        "reason": "Vacation.",
+        "isAllDay": true,
+        "dates": {
+            "start": "2017-05-26T00:00:00Z",
+            "end": "2017-05-29T00:00:00Z"
+        },
+        "isApproved": "pending"
+    },
+    {
+        "id": 1,
+        "employeeId": 4,
+        "reason": "Doctor's appointment.",
+        "isAllDay": false,
+        "dates": {
+            "start": "2017-05-25T16:00:00Z",
+            "end": "2017-05-25T17:30:00Z"
+        },
+        "isApproved": "approved"
+    },
+    {
+        "id": 2,
+        "employeeId": 4,
+        "reason": "Just kinda bored.",
+        "isAllDay": false,
+        "dates": {
+            "start": "2017-05-25T17:30:00Z",
+            "end": "2017-05-25T19:00:00Z"
+        },
+        "isApproved": "rejected"
+    }
+]
