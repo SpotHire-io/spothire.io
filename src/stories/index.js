@@ -67,6 +67,8 @@ import '../../public/css/app.css';
 
 import users from '../data/people.json';
 import sampleEvents from '../data/events.json';
+import timeOffRequests from '../data/timeOffRequests.json';
+import TimeOffRequestList from "../components/Profile/TimeOffRequestList";
 
 storiesOf('Overview', module)
     .add('Welcome', () => (
@@ -757,6 +759,15 @@ storiesOf('Profile', module)
             <div className="pa4 bg-near-white">
                 <Box className="w-third" title="Availability">
                     <AvailabilityEditor employee={users[0]} onSubmitAvailability={(availability) => console.log(availability)}/>
+                </Box>
+            </div>
+        </WithNotes>
+    ))
+    .add('TimeOffRequestList', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <Box className="w-third" title="Time Off Requests">
+                    <TimeOffRequestList timeOffRequests={timeOffRequests} employee={users[3]}/>
                 </Box>
             </div>
         </WithNotes>
