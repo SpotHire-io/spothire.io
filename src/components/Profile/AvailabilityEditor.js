@@ -112,7 +112,7 @@ class AvailabilityEditor extends React.Component {
     render() {
         return (
             <div className={classNames(this.props.className)}>
-                <ol className="list ma0 pa0">
+                <ol className="list ma0 pa0 nt2">
                     {
                         Object.keys(this.state.availability).map((day, index) => {
                             const currentDay = this.state.availability[day];
