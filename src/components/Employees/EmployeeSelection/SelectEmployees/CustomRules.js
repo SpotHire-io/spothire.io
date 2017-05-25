@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
+import BasicButton from '../../../Buttons/BasicButton';
+
 import Select from 'react-select';
 
 import 'react-select/dist/react-select.css';
@@ -14,6 +16,7 @@ class SelectCustomRules extends React.Component {
 
         this.renderValueInputs = this.renderValueInputs.bind(this);
         this.renderPlainLanguageDescription = this.renderPlainLanguageDescription.bind(this);
+        this.renderControls = this.renderControls.bind(this);
 
         this.filterKeys = [
             {
@@ -120,6 +123,22 @@ class SelectCustomRules extends React.Component {
         }
     }
 
+    renderControls() {
+        return (
+            <div className="tr">
+                {(this.state.selectedKey !== null || this.state.filterType !== null || this.state.filterValue.length > 0)
+                    ? <BasicButton className="mt3 button--negative" onClick={() => this.clearRule()}>Clear Rule</BasicButton>
+                    : null
+                }
+
+                {(this.state.selectedKey !== null && this.state.filterType !== null && this.state.filterValue.length > 0)
+                    ? <BasicButton className="ml2 mt3 button--positive" onClick={() => this.submitRule()}>Add Rule</BasicButton>
+                    : null
+                }
+            </div>
+        );
+    }
+
     render() {
         return (
             <div className={classNames('', this.props.className)}>
@@ -143,6 +162,7 @@ class SelectCustomRules extends React.Component {
 
                 {this.renderValueInputs()}
                 {this.renderPlainLanguageDescription()}
+                {this.renderControls()}
             </div>
         );
     }
