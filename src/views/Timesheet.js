@@ -18,7 +18,7 @@ class TimesheetView extends React.Component {
     constructor() {
         super();
 
-        this.employeeCategories = [
+        this.discrepancyTypes = [
             {
                 value: 'underSubmitted',
                 label: 'Employees with more hours worked than submitted',
@@ -32,7 +32,7 @@ class TimesheetView extends React.Component {
         this.state = {
             nameSearch: '',
             selectedUserIds: [],
-            employeeCategory: null, // oneOf[null, 'overSubmitted', 'underSubmitted']
+            discrepancyType: null, // oneOf[null, 'overSubmitted', 'underSubmitted']
         };
     }
 
@@ -43,9 +43,9 @@ class TimesheetView extends React.Component {
 
         let filteredUsers = this.props.users.filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.nameSearch) > -1);
 
-        if (this.state.employeeCategory === 'underSubmitted') {
+        if (this.state.discrepancyType === 'underSubmitted') {
             filteredUsers = filteredUsers.filter((user) => user.hours.worked > user.hours.submitted)
-        } else if (this.state.employeeCategory === 'overSubmitted') {
+        } else if (this.state.discrepancyType === 'overSubmitted') {
             filteredUsers = filteredUsers.filter((user) => user.hours.submitted > user.hours.worked)
         }
 
@@ -75,9 +75,9 @@ class TimesheetView extends React.Component {
                         id="employees_category"
                         name="employees_category"
                         className="mt0"
-                        options={this.employeeCategories}
-                        value={this.state.employeeCategory}
-                        onChange={(employeeCategory) => (employeeCategory !== null) ? this.setState({ employeeCategory: employeeCategory.value }) : this.setState({ employeeCategory: null })}
+                        options={this.discrepancyTypes}
+                        value={this.state.discrepancyType}
+                        onChange={(discrepancyType) => (discrepancyType !== null) ? this.setState({ discrepancyType: discrepancyType.value }) : this.setState({ discrepancyType: null })}
                     />
 
                     <p className="mt3">
