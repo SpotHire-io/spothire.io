@@ -45,7 +45,7 @@ class TimesheetView extends React.Component {
                 <Box>
                     <h2 className="f6 mt0 lh-title ttu">Summary</h2>
 
-                    <p className="mt0 measure">Hour summary for {summarizedUsers.length} {(this.state.selectedUserIds.length > 0) ? 'selected' : 'displayed'} {(summarizedUsers.length === 1) ? 'employee' : 'employees'}.</p>
+                    <p className="mt0 measure">Timesheet summary for {summarizedUsers.length} {(this.state.selectedUserIds.length > 0) ? 'selected' : 'displayed'} {(summarizedUsers.length === 1) ? 'employee' : 'employees'}.</p>
 
                     <TimetableSummary className="mt3" users={summarizedUsers}/>
                 </Box>
