@@ -79,10 +79,12 @@ class SelectCustomRules extends React.Component {
     }
 
     renderPlainLanguageDescription() {
-        if (this.state.selectedKey !== null) {
+        if (this.state.selectedKey !== null && this.state.filterType !== null) {
+            const currentFilterType = this.filterTypes.find((filterType) => filterType.value === this.state.filterType.value);
+
             return (
                 <div className="bt bb-0 br-0 bl-0 b--dotted mt3 pt3">
-                    <p>This rule will find all employees with custom metadata that contains “value”.</p>
+                    <p>This rule will find all employees with custom metadata that {currentFilterType.label} “value”.</p>
                 </div>
             );
         }
