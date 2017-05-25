@@ -6,6 +6,10 @@ import { CSSTransitionGroup } from 'react-transition-group';
 
 import classNames from 'classnames';
 
+import moment from 'moment';
+import 'moment/locale/en-ca';
+import 'moment-duration-format';
+
 import PersonSchema from '../../schemas/Person';
 
 import { Table, Thead, Th, Tr, Td } from 'reactable';
@@ -84,6 +88,8 @@ class SelectableTimesheetTable extends React.Component {
                     );
                 }, 'pr0 no-select')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
+                {this.renderUserCell('hours_worked', moment.duration(user.hours.worked, 'hours').format('h:mm'))}
+                {this.renderUserCell('hours_submitted', moment.duration(user.hours.submitted, 'hours').format('h:mm'))}
             </Tr>
         );
     }
@@ -141,6 +147,8 @@ class SelectableTimesheetTable extends React.Component {
                         }
                     }, 'w1')}
                     {this.renderHeaderCell('name', 'Name', '')}
+                    {this.renderHeaderCell('hours_worked', 'Hours Worked', '')}
+                    {this.renderHeaderCell('hours_submitted', 'Hours Submitted', '')}
                     </Thead>
                     {this.props.users.map((user) => this.renderUserRow(user))}
                 </Table>
