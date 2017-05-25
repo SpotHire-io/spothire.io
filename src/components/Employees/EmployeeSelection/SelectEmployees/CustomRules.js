@@ -14,6 +14,9 @@ class SelectCustomRules extends React.Component {
     constructor() {
         super();
 
+        this.clearRule = this.clearRule.bind(this);
+        this.addRule = this.addRule.bind(this);
+
         this.renderValueInputs = this.renderValueInputs.bind(this);
         this.renderPlainLanguageDescription = this.renderPlainLanguageDescription.bind(this);
         this.renderControls = this.renderControls.bind(this);
@@ -63,6 +66,23 @@ class SelectCustomRules extends React.Component {
             filterType: null,
             filterValue: '',
         };
+    }
+
+    clearRule() {
+        // reset state to initial values
+        this.setState({
+            selectedKey: null,
+            filterType: null,
+            filterValue: '',
+        });
+    }
+
+    addRule() {
+        this.props.onAddRule({
+            key: this.state.selectedKey,
+            type: this.state.filterType.value,
+            value: this.state.filterValue,
+        });
     }
 
     renderValueInputs() {
@@ -132,7 +152,7 @@ class SelectCustomRules extends React.Component {
                 }
 
                 {(this.state.selectedKey !== null && this.state.filterType !== null && this.state.filterValue.length > 0)
-                    ? <BasicButton className="ml2 mt3 button--positive" onClick={() => this.submitRule()}>Add Rule</BasicButton>
+                    ? <BasicButton className="ml2 mt3 button--positive" onClick={() => this.addRule()}>Add Rule</BasicButton>
                     : null
                 }
             </div>
@@ -170,10 +190,12 @@ class SelectCustomRules extends React.Component {
 
 SelectCustomRules.defaultProps = {
     className: '',
+    onAddRule: (rule) => console.log(rule)
 };
 
 SelectCustomRules.propTypes = {
     className: PropTypes.string,
+    onAddRule: PropTypes.func,
 };
 
 export default SelectCustomRules;
