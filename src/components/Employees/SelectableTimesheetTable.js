@@ -61,7 +61,9 @@ class SelectableTimesheetTable extends React.Component {
 
     renderUserRow(user) {
         const userClasses = classNames({
-            'ph3 pa2 mt0 hover-bg-black-10 pointer': true
+            'ph3 pa2 mt0 hover-bg-black-10 pointer': true,
+            'bg-washed-red': user.hours.submitted > user.hours.worked,
+            'bg-washed-yellow': user.hours.submitted < user.hours.worked,
         });
 
         return (
