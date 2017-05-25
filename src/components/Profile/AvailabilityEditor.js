@@ -22,12 +22,20 @@ class AvailabilityEditor extends React.Component {
     constructor(props) {
         super();
 
+        this.addSlotToDay = this.addSlotToDay.bind(this);
+
+        this.defaultTimeSlot = {
+            id: null,
+            start: moment('08:00', 'kk:mm'),
+            end: moment('12:00', 'kk:mm'),
+        };
+
         this.state = {
             availability: {
                 Monday: false,
                 Tuesday: [
                     {
-                        id: 1000,
+                        id: 10,
                         start: moment('08:00', 'kk:mm'),
                         end: moment('12:00', 'kk:mm'),
                     },
@@ -36,12 +44,12 @@ class AvailabilityEditor extends React.Component {
                 Thursday: false,
                 Friday: [
                     {
-                        id: 2000,
+                        id: 40,
                         start: moment('08:00', 'kk:mm'),
                         end: moment('12:00', 'kk:mm'),
                     },
                     {
-                        id: 3000,
+                        id: 41,
                         start: moment('16:00', 'kk:mm'),
                         end: moment('22:00', 'kk:mm'),
                     },
@@ -49,13 +57,24 @@ class AvailabilityEditor extends React.Component {
                 Saturday: false,
                 Sunday: [
                     {
-                        id: 4000,
+                        id: 60,
                         start: moment('08:00', 'kk:mm'),
                         end: moment('12:00', 'kk:mm'),
                     },
                 ],
             }
         };
+    }
+
+    addSlotToDay(day, dayIndex) {
+        let availability = {...this.state.availability};
+        let timeSlot = {...this.defaultTimeSlot};
+
+        timeSlot.id = (dayIndex * 10) + availability[day].length; // ID: index of the day of the week in first column; slot # in second column
+
+        availability[day].push(timeSlot);
+
+        this.setState({ availability });
     }
 
     render() {
@@ -95,7 +114,7 @@ class AvailabilityEditor extends React.Component {
                                                             <button className="ml2 input-reset bg-transparent hover-bg-red hover-white ba-0"><Close/></button>
                                                         </li>
                                                     ))}
-                                                    <li className="tr mt2"><BasicButton className="button--positive">Add Slot</BasicButton></li>
+                                                    <li className="tr mt2"><BasicButton className="button--positive" onClick={() => this.addSlotToDay(day, index)}>Add Slot</BasicButton></li>
                                                 </ol>
                                             ) : null
                                     }
