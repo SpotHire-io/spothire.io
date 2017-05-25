@@ -7,7 +7,7 @@ import classNames from 'classnames';
 import Box from '../components/Global/Box';
 import BoxConnector from '../components/Global/BoxConnector';
 
-import UserTable from '../components/Employees/UserTable';
+import SelectableTimesheetTable from '../components/Employees/SelectableTimesheetTable';
 
 import FilterContainer from '../components/Filters/FilterContainer';
 import Filter from '../components/Filters/Filter';
@@ -102,7 +102,7 @@ class TimesheetView extends React.Component {
 
                     <BoxConnector isActive={this.state.searchQuery.length > 0}/>
 
-                    <UserTable
+                    <SelectableTimesheetTable
                         tableProps={{
                             filterable: ['name'],
                             hideFilterInput: true,
