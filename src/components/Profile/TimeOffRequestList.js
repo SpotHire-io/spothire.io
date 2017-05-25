@@ -43,10 +43,13 @@ class TimeOffRequestList extends React.Component {
                             return (
                                 <li key={request.id} className="ma0 pa0 mt3">
                                     <div className="flex justify-between items-baseline mb1">
-                                        <p className="mt0">{moment(request.dates.start).format('MMMM Do, YYYY')} <small className="ml2">({moment(request.dates.start).format('h:mm a')})</small></p>
+                                        <p className="mt0">
+                                            {moment(request.dates.start).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.start).format('h:mm a')})</small> : null} to<br/>
+                                            {moment(request.dates.end).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.end).format('h:mm a')})</small> : null}
+                                        </p>
                                         <BasicTag type={tagType} isNarrow>{request.approvalState}</BasicTag>
                                     </div>
-                                    <p className="mt0">{request.reason}</p>
+                                    <p className="mt0 f6">{request.reason}</p>
                                 </li>
                             );
                         })
