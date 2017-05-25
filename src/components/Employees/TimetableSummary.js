@@ -22,8 +22,12 @@ class TimetableSummary extends React.Component {
                 value: moment.duration(this.props.users.reduce((hours, user) => hours += user.hours.submitted, 0), 'hours').format('h:mm'),
             },
             {
-                label: 'Submitted hours in excess of worked',
+                label: 'Submitted hours greater than worked',
                 value: `${this.props.users.reduce((overSubmittedUsers, user) => (user.hours.submitted > user.hours.worked) ? overSubmittedUsers + 1 : overSubmittedUsers, 0)} employees`,
+            },
+            {
+                label: 'Submitted hours less than worked',
+                value: `${this.props.users.reduce((underSubmittedUsers, user) => (user.hours.submitted < user.hours.worked) ? underSubmittedUsers + 1 : underSubmittedUsers, 0)} employees`,
             },
         ];
 
