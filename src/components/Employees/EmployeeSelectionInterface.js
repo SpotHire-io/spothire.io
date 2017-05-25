@@ -10,6 +10,10 @@ import BasicButton from '../../components/Buttons/BasicButton';
 import SelectEmployees from './EmployeeSelection/SelectEmployees';
 import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees';
 
+// Rule data
+import filterKeys from '../../data/peopleFilterRules/filterKeys.json';
+import filterTypes from '../../data/peopleFilterRules/filterTypes.json';
+
 // dummy data
 import users from '../../data/people.json';
 const groups = [...Array(10).keys()].map((number) => {
@@ -43,6 +47,9 @@ class EmployeeSelectionInterface extends React.Component {
             }
         };
 
+        this.filterKeys = filterKeys;
+        this.filterTypes = filterTypes;
+
         this.selectionCategories = [
             {
                 key: 'employees',
@@ -68,9 +75,12 @@ class EmployeeSelectionInterface extends React.Component {
                 key: 'custom',
                 title: 'Custom Rules',
                 selections: this.state.selectedEmployees.customRules,
-                renderMethod: (customRule, className) => {
+                renderMethod: (rule, className) => {
+                    const filterKey = this.filterKeys.find((filterKey) => filterKey.value === rule.key);
+                    const filterType = this.filterTypes.find((filterType) => filterType.value === rule.type);
+
                     return (
-                        <p className={className}>¯\_(ツ)_/¯</p>
+                        <p className={className}>{filterKey.label} that {filterType.label} {rule.value}<span className="ml2 f6">(15 employees)</span></p>
                     );
                 },
             },
