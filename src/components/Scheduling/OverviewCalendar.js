@@ -14,7 +14,8 @@ BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
 
-const filteredUsers = [0];
+// storybook stuff
+import { linkTo } from '@kadira/storybook';
 
 class OverviewCalendar extends React.Component {
     constructor() {
@@ -132,6 +133,7 @@ class OverviewCalendar extends React.Component {
                     closeModal={this.closeModal}
                     opportunity={this.state.opportunity}
                     updateOpportunity={this.updateOpportunity}
+                    addOpportunity={linkTo('Views', 'Schedule:OpportunitySingle')}
                 />
             </div>
         )
