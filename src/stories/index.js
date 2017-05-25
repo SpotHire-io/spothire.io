@@ -121,6 +121,7 @@ storiesOf('Views', module)
             selectedMenuItem="Dashboard"
             viewComponent={
                 <DashboardView
+                    employee={users[0]}
                     events={sampleEvents.filter((event) => event.userId === 0)}
                 />
             }

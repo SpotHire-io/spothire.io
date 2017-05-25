@@ -1,6 +1,8 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+import PersonSchema from '../schemas/Person';
+import OpportunitySchema from '../schemas/Opportunity';
 
 import classNames from 'classnames';
 
@@ -10,6 +12,8 @@ import 'moment/locale/en-ca';
 import Box from '../components/Global/Box';
 
 import OverviewCalendar from '../components/Scheduling/OverviewCalendar';
+
+import AvailabilityEditor from '../components/Profile/AvailabilityEditor';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
@@ -25,7 +29,7 @@ class DashboardView extends React.Component {
 
     render() {
         return (
-            <div className="pa4 bg-near-white">
+            <div className="pa4 bg-near-white flex flex-wrap">
                 <Box className="w-100" title="Calendar">
                     <OverviewCalendar
                         className={classNames({
@@ -43,7 +47,7 @@ class DashboardView extends React.Component {
                     />
                 </Box>
 
-                <Box className="mt3 w-third" title="Agenda" contentWrapperClassName="pa3 max-h5 overflow-auto">
+                <Box className="mt3 w-third mr3" title="Agenda" contentWrapperClassName="pa3 max-h5 overflow-auto">
                     <ol className="list pa0 ma0 nt3">
                         {
                             this.props.events
@@ -61,6 +65,10 @@ class DashboardView extends React.Component {
                         }
                     </ol>
                 </Box>
+
+                <Box className="mt3 w-third" title="Availability" contentWrapperClassName="pa3 max-h5 overflow-auto">
+                    <AvailabilityEditor employee={this.props.employee} onSubmitAvailability={(availability) => console.log(availability)}/>
+                </Box>
             </div>
         );
     }
@@ -71,7 +79,8 @@ DashboardView.defaultProps = {
 };
 
 DashboardView.propTypes = {
-
+    events: PropTypes.arrayOf(OpportunitySchema).isRequired,
+    employee: PersonSchema.isRequired,
 };
 
 export default DashboardView;
