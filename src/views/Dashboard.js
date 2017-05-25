@@ -52,7 +52,7 @@ class DashboardView extends React.Component {
                                     return (
                                         <li className="mt3" key={event.id}>
                                             <h3 className="mv0 f5">
-                                                <a className="link blue underline-hover" href="#" onClick={linkTo('Views', 'Schedule:OpportunitySingle')}>{event.title}</a>
+                                                <a className="link dark-blue underline-hover" href="#" onClick={linkTo('Views', 'Schedule:OpportunitySingle')}>{event.title}</a>
                                             </h3>
                                             <p className="mt1">{moment(event.selectedDates.start).format('MMMM Do, YYYY')}</p>
                                         </li>

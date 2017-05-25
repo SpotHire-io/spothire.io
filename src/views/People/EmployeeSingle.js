@@ -68,7 +68,7 @@ class EmployeeSingleView extends React.Component {
                                 {[
                                     {
                                         label: 'Email',
-                                        content: <a className="link blue underline-hover" href={`mailto:${this.props.employee.email}`}>{this.props.employee.email}</a>
+                                        content: <a className="link dark-blue underline-hover" href={`mailto:${this.props.employee.email}`}>{this.props.employee.email}</a>
                                     },
                                     {
                                         label: 'Phone',
