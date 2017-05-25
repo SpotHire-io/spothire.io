@@ -41,13 +41,16 @@ class TimeOffRequestList extends React.Component {
                             }
 
                             return (
-                                <li key={request.id} className="ma0 pa0 mt3">
+                                <li key={request.id} className="ma0 pa0 mt3 hide-child">
                                     <div className="flex justify-between items-baseline mb1">
                                         <p className="mt0">
                                             {moment(request.dates.start).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.start).format('h:mm a')})</small> : null} to<br/>
                                             {moment(request.dates.end).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.end).format('h:mm a')})</small> : null}
                                         </p>
-                                        <BasicTag className="ml2" type={tagType} isNarrow>{request.approvalState}</BasicTag>
+                                        <div className="tr">
+                                            <BasicTag className="ml2" type={tagType} isNarrow>{request.approvalState}</BasicTag>
+                                            <a className="child db f6 red hover-no-underline relative" style={{ top: '0.25rem' }} href="#">delete</a>
+                                        </div>
                                     </div>
                                     <p className="mt0 f6">{request.reason}</p>
                                 </li>
