@@ -8,6 +8,9 @@ import classNames from 'classnames';
 import Box from '../components/Global/Box';
 import BoxConnector from '../components/Global/BoxConnector';
 
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
+
 import SelectableTimesheetTable from '../components/Employees/SelectableTimesheetTable';
 import TimetableSummary from '../components/Employees/TimetableSummary';
 
@@ -15,9 +18,25 @@ class TimesheetView extends React.Component {
     constructor() {
         super();
 
+        this.employeeCategories = [
+            {
+                value: 'all',
+                label: 'All employees',
+            },
+            {
+                value: 'underSubmitted',
+                label: 'Employees with more hours submitted than worked',
+            },
+            {
+                value: 'overSubmitted',
+                label: 'Employees with more hours worked than submitted',
+            },
+        ];
+
         this.state = {
             searchQuery: '',
-            selectedUserIds: []
+            selectedUserIds: [],
+            employeeCategory: 'all', // oneOf['all', 'overSubmitted', 'underSubmitted']
         };
     }
 
@@ -49,7 +68,17 @@ class TimesheetView extends React.Component {
                 <Box>
                     <h2 className="f6 mt0 lh-title ttu">Filters</h2>
 
-                    <p className="mt0">
+                    <label className="db mb2 f6" htmlFor="employees_category">Discrepancy type</label>
+                    <Select
+                        id="employees_category"
+                        name="employees_category"
+                        className="mt0"
+                        options={this.employeeCategories}
+                        value={this.state.employeeCategory}
+                        onChange={(employeeCategory) => (employeeCategory !== null) ? this.setState({ employeeCategory: employeeCategory.value }) : this.setState({ employeeCategory: null })}
+                    />
+
+                    <p className="mt3">
                         <label className="f6 db" htmlFor="employees_search">Search</label>
                         <input className="mt2 w-100" type="text" id="employees_search" name="employees_search" value={this.state.searchQuery} onChange={(e) => this.setState({ searchQuery: e.target.value })}/>
                     </p>
