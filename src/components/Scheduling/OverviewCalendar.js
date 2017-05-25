@@ -92,7 +92,7 @@ class OverviewCalendar extends React.Component {
 
         const AgendaEvent = ({ event }) => {
             return (
-                <div className="flex">
+                <div className="flex pointer hover-bg-near-white" onClick={this.props.onSelectEvent}>
                     <div className="flex flex-wrap justify-between content-start w-10 pr2">
                         {[...Array(3).keys()].map((number) => <img key={number} className="w1 h1 br-100 mr1 mb1" src="http://placehold.it/40x40"/>)}
                     </div>
