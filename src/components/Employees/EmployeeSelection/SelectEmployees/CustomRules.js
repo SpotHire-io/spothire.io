@@ -15,6 +15,27 @@ class SelectCustomRules extends React.Component {
         this.renderValueInputs = this.renderValueInputs.bind(this);
         this.renderPlainLanguageDescription = this.renderPlainLanguageDescription.bind(this);
 
+        this.filterKeys = [
+            {
+                label: 'Profile fields',
+                value: 'optgroup-profile-fields',
+                disabled: true
+            },
+            {
+                label: 'Height',
+                value: 'profile-number-height'
+            },
+            {
+                label: 'Private metadata',
+                value: 'optgroup-private-metadata',
+                disabled: true
+            },
+            {
+                label: 'Reliable',
+                value: 'metadata-text-Reliable'
+            }
+        ];
+
         this.filterTypes = [
             {
                 label: 'is equal to',
@@ -37,6 +58,7 @@ class SelectCustomRules extends React.Component {
         this.state = {
             selectedKey: null,
             filterType: null,
+            filterValue: '',
         };
     }
 
@@ -48,6 +70,11 @@ class SelectCustomRules extends React.Component {
         const categoryFilters = {
             text: ['equals', 'contains'],
             number: ['greater', 'equals', 'less'],
+        };
+
+        const categoryValueTypes = {
+            text: 'text',
+            number: 'number',
         };
 
         const currentCategory = this.state.selectedKey.split('-')[1];
@@ -69,7 +96,7 @@ class SelectCustomRules extends React.Component {
                 </div>
                 <div className="mt3">
                     <label htmlFor="custom_value" className="db mb2 f6">Value</label>
-                    <input className="w-100 db" type="text" id="custom_value" name="custom_value"/>
+                    <input className="w-100 db" type={categoryValueTypes[currentCategory]} id="custom_value" name="custom_value" value={this.state.filterValue} onChange={(e) => this.setState({ filterValue: e.target.value })}/>
                     <small className="dib f6 black-60 lh-title mt2">
                         The value you want to match against.
                     </small>
@@ -81,10 +108,11 @@ class SelectCustomRules extends React.Component {
     renderPlainLanguageDescription() {
         if (this.state.selectedKey !== null && this.state.filterType !== null) {
             const currentFilterType = this.filterTypes.find((filterType) => filterType.value === this.state.filterType.value);
+            const currentFilterKey = this.filterKeys.find((filterKey) => filterKey.value === this.state.selectedKey);
 
             return (
                 <div className="bt bb-0 br-0 bl-0 b--dotted mt3 pt3">
-                    <p>This rule will find all employees with custom metadata that {currentFilterType.label} “value”.</p>
+                    <p>This rule will find all employees with <em>{currentFilterKey.label}</em> that <em>{currentFilterType.label}</em> “{this.state.filterValue}”.</p>
                 </div>
             );
         }
@@ -102,26 +130,7 @@ class SelectCustomRules extends React.Component {
                         name="custom_key"
                         className="mt0"
                         value={this.state.selectedKey}
-                        options={[
-                            {
-                                label: 'Profile fields',
-                                value: 'optgroup-profile-fields',
-                                disabled: true
-                            },
-                            {
-                                label: 'Height',
-                                value: 'profile-number-height'
-                            },
-                            {
-                                label: 'Private metadata',
-                                value: 'optgroup-private-metadata',
-                                disabled: true
-                            },
-                            {
-                                label: 'Reliable',
-                                value: 'metadata-text-Reliable'
-                            }
-                        ]}
+                        options={this.filterKeys}
                         onChange={(newKey) => (newKey !== null) ? this.setState({ selectedKey: newKey.value, filterType: null }) : this.setState({ selectedKey: null, filterType: null })}
                     />
                     <small className="dib f6 black-60 lh-title mt2">
