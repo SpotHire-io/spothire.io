@@ -11,6 +11,8 @@ import 'moment/locale/en-ca';
 
 import BasicButton from '../../components/Buttons/BasicButton';
 
+import BasicTag from '../../components/Tags/BasicTag';
+
 import { Checkbox, Close } from 'rebass';
 
 import TimePicker from 'rc-time-picker';
@@ -30,9 +32,18 @@ class TimeOffRequestList extends React.Component {
                 <ol className="list ma0 pa0 nt2">
                     {
                         this.state.requests.map((request, index) => {
+                            let tagType = 'neutral';
+
+                            if (request.approvalState === 'approved') {
+                                tagType = 'positive';
+                            } else if (request.approvalState === 'rejected') {
+                                tagType = 'negative';
+                            }
+
                             return (
-                                <li key={request.id} className="ma0 ph0 pv2">
-                                    <p className="mt0 mb2">{request.reason} <small>({request.approvalState})</small></p>
+                                <li key={request.id} className="ma0 ph0 pv2 flex justify-between items-baseline">
+                                    <p className="mt0 mb2">{request.reason}</p>
+                                    <BasicTag type={tagType} isNarrow>{request.approvalState}</BasicTag>
                                 </li>
                             );
                         })

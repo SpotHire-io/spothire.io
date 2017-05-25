@@ -1,13 +1,17 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames';
 
-const BasicTag = ({ type, children, className }) => {
+const BasicTag = ({ type, children, className, isNarrow }) => {
     let tagClasses = classNames({
-        'dib f6 pv2 ph3 ba b--dashed br4': true,
+        'dib f6 ba b--dashed br4': true,
         'gray': type === 'neutral',
         'dark-green': type === 'positive',
         'dark-red': type === 'negative',
+        'pv2 ph3': ! isNarrow,
+        'pv1 ph2': isNarrow,
         [className]: true
     });
 
@@ -15,7 +19,16 @@ const BasicTag = ({ type, children, className }) => {
 };
 
 BasicTag.defaultProps = {
-    className: ''
+    className: '',
+    isNarrow: false,
+    type: 'neutral',
+};
+
+BasicTag.propTypes = {
+    className: PropTypes.string,
+    isNarrow: PropTypes.bool,
+    children: PropTypes.node,
+    type: PropTypes.oneOf(['neutral', 'positive', 'negative']),
 };
 
 export default BasicTag;
