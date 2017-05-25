@@ -138,6 +138,7 @@ class SelectCustomRules extends React.Component {
                     <p>
                         This rule will find all employees with <em>{currentFilterKey.label}</em> that <em>{currentFilterType.label}</em> {(this.state.filterValue.length > 0) ? `“${this.state.filterValue}”.` : '…'}
                     </p>
+                    <p className="f6">This is approximately <em>{[10, 20, 30][Math.floor(Math.random()*3)]}</em> employees.</p>
                 </div>
             );
         }
