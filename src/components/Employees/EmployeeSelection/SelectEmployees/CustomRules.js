@@ -112,7 +112,9 @@ class SelectCustomRules extends React.Component {
 
             return (
                 <div className="bt bb-0 br-0 bl-0 b--dotted mt3 pt3">
-                    <p>This rule will find all employees with <em>{currentFilterKey.label}</em> that <em>{currentFilterType.label}</em> “{this.state.filterValue}”.</p>
+                    <p>
+                        This rule will find all employees with <em>{currentFilterKey.label}</em> that <em>{currentFilterType.label}</em> {(this.state.filterValue.length > 0) ? `“${this.state.filterValue}”.` : '…'}
+                    </p>
                 </div>
             );
         }
