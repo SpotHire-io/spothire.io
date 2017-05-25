@@ -43,7 +43,7 @@ class TimeOffRequestList extends React.Component {
                             return (
                                 <li key={request.id} className="ma0 pa0 mt3">
                                     <div className="flex justify-between items-baseline mb1">
-                                        <p className="mt0">{moment(request.dates.start).format('MMMM Do, YYYY')}</p>
+                                        <p className="mt0">{moment(request.dates.start).format('MMMM Do, YYYY')} <small className="ml2">({moment(request.dates.start).format('h:mm a')})</small></p>
                                         <BasicTag type={tagType} isNarrow>{request.approvalState}</BasicTag>
                                     </div>
                                     <p className="mt0">{request.reason}</p>
