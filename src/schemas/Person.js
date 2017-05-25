@@ -13,6 +13,10 @@ const PersonSchema = PropTypes.shape({
         key: PropTypes.string.isRequired,
         value: PropTypes.string,
     })),
+    hours: PropTypes.shape({
+        worked: PropTypes.number,
+        submitted: PropTypes.number,
+    }).isRequired,
 });
 
 export default PersonSchema;
