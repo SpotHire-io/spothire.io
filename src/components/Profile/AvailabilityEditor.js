@@ -68,9 +68,9 @@ class AvailabilityEditor extends React.Component {
                                     {
                                         (currentDay !== false)
                                             ? (
-                                                <ol>
+                                                <ol className="list pa0">
                                                     {currentDay.map((timeSlot) => (
-                                                        <li key={timeSlot.id}>
+                                                        <li key={timeSlot.id} className="flex pa0">
                                                             <TimePicker
                                                                 value={moment(timeSlot.start)}
                                                                 showSecond={false}
@@ -78,7 +78,7 @@ class AvailabilityEditor extends React.Component {
                                                                 use12Hours={true}
                                                                 onChange={newTime => console.log(newTime)}
                                                             />
-                                                            <span>to</span>
+                                                            <span className="self-center mh2">to</span>
                                                             <TimePicker
                                                                 value={moment(timeSlot.end)}
                                                                 showSecond={false}
