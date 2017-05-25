@@ -12,7 +12,7 @@ import Box from '../../components/Global/Box';
 
 import BasicButton from '../../components/Buttons/BasicButton';
 
-import { Checkbox } from 'rebass';
+import { Checkbox, Close } from 'rebass';
 
 import Icon from 'react-geomicons';
 
@@ -86,6 +86,7 @@ class AvailabilityEditor extends React.Component {
                                                                 use12Hours={true}
                                                                 onChange={newTime => console.log(newTime)}
                                                             />
+                                                            <button className="ml2 input-reset bg-transparent hover-bg-red hover-white ba-0"><Close/></button>
                                                         </li>
                                                     ))}
                                                 </ol>
