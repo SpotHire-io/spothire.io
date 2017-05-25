@@ -57,6 +57,8 @@ import GroupCard from '../components/Employees/Groups/Card';
 import GroupCardList from '../components/Employees/Groups/CardList';
 import GroupDetailsEditor from '../components/Employees/Groups/DetailsEditor';
 
+import AvailabilityEditor from '../components/Profile/AvailabilityEditor';
+
 import ShiftList from '../components/Miscellaneous/ShiftList';
 import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
 
@@ -733,6 +735,15 @@ storiesOf('Employees:Groups', module)
                         employees: users
                     }}
                 />
+            </div>
+        </WithNotes>
+    ));
+
+storiesOf('Profile', module)
+    .add('AvailabilityEditor', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <AvailabilityEditor employee={users[0]} onSubmitAvailability={(availability) => console.log(availability)}/>
             </div>
         </WithNotes>
     ));
