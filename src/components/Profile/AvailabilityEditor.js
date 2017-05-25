@@ -24,6 +24,7 @@ class AvailabilityEditor extends React.Component {
 
         this.toggleDayAvailability = this.toggleDayAvailability.bind(this);
         this.addSlotToDay = this.addSlotToDay.bind(this);
+        this.deleteSlotFromDay = this.deleteSlotFromDay.bind(this);
 
         this.defaultTimeSlot = {
             id: null,
@@ -92,6 +93,15 @@ class AvailabilityEditor extends React.Component {
         this.setState({ availability });
     }
 
+    deleteSlotFromDay(day, slotId) {
+        let availability = {...this.state.availability};
+
+        // find index of slot within day, then remove it from the day array
+        availability[day].splice(availability[day].findIndex((slot) => slot.id === slotId), 1);
+
+        this.setState({ availability });
+    }
+
     render() {
         return (
             <Box className={classNames(this.props.className)} title="Availability">
@@ -126,7 +136,7 @@ class AvailabilityEditor extends React.Component {
                                                                 use12Hours={true}
                                                                 onChange={newTime => console.log(newTime)}
                                                             />
-                                                            <button className="ml2 input-reset bg-transparent hover-bg-red hover-white ba-0"><Close/></button>
+                                                            <button className="ml2 input-reset bg-transparent hover-bg-red hover-white ba-0" onClick={() => this.deleteSlotFromDay(day, timeSlot.id)}><Close/></button>
                                                         </li>
                                                     ))}
                                                     <li className="tr mt2"><BasicButton className="button--positive" onClick={() => this.addSlotToDay(day, index)}>Add Slot</BasicButton></li>
