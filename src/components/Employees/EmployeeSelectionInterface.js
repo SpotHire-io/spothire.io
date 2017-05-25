@@ -26,6 +26,8 @@ class EmployeeSelectionInterface extends React.Component {
 
         this.unSelectById = this.unSelectById.bind(this);
 
+        this.addCustomRule = this.addCustomRule.bind(this);
+
         this.state = {
             selectedEmployees: {
                 employees: [
@@ -75,6 +77,14 @@ class EmployeeSelectionInterface extends React.Component {
         ];
     }
 
+    addCustomRule(rule) {
+        let selectedEmployees = {...this.state.selectedEmployees};
+
+        selectedEmployees.customRules.push(rule);
+
+        this.setState({ selectedEmployees });
+    }
+
     unSelectById(categoryKey, selectionId) {
         alert('Unselecting...');
     }
@@ -85,7 +95,7 @@ class EmployeeSelectionInterface extends React.Component {
                 <div className="flex">
                     <div className="w-50 mr4">
                         <h3 className="mt0 f6 lh-title ttu">Select Employees</h3>
-                        <SelectEmployees selectionCategories={this.selectionCategories}/>
+                        <SelectEmployees selectionCategories={this.selectionCategories} onAddCustomRule={this.addCustomRule}/>
                     </div>
                     <div className="w-50">
                         <h3 className="mt0 f6 lh-title ttu">Selected Employees</h3>

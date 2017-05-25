@@ -47,7 +47,7 @@ class SelectEmployees extends React.Component {
                 break;
             case 'custom':
                 selectionInterface = (
-                    <SelectCustomRules className={commonWrapperClasses}/>
+                    <SelectCustomRules className={commonWrapperClasses} onAddRule={this.props.onAddCustomRule}/>
                 );
                 break;
             default:
@@ -89,6 +89,7 @@ SelectEmployees.defaultProps = {
 SelectEmployees.propTypes = {
     className: PropTypes.string,
     selectionCategories: PropTypes.array.isRequired,
+    onAddCustomRule: PropTypes.func.isRequired,
 };
 
 export default SelectEmployees;
