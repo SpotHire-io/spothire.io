@@ -30,7 +30,7 @@ class TimesheetView extends React.Component {
         });
 
         return (
-            <div className="flex ma4">
+            <div className="flex bg-near-white pa4">
                 <FilterContainer className="mr3 w-third self-start">
                     <Filter
                         id="text1"
