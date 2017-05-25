@@ -47,7 +47,13 @@ class AvailabilityEditor extends React.Component {
                     },
                 ],
                 Saturday: false,
-                Sunday: false,
+                Sunday: [
+                    {
+                        id: 4000,
+                        start: moment('08:00', 'kk:mm'),
+                        end: moment('12:00', 'kk:mm'),
+                    },
+                ],
             }
         };
     }
@@ -62,7 +68,7 @@ class AvailabilityEditor extends React.Component {
 
                             return (
                                 <li key={day} className="ma0 ph0 pv2">
-                                    <p className="b ma0">{day}</p>
+                                    <p className="b mt0 mb2">{day}</p>
                                     <Checkbox label="Available" name={'available_' + day} checked={currentDay !== false}/>
 
                                     {
@@ -89,6 +95,7 @@ class AvailabilityEditor extends React.Component {
                                                             <button className="ml2 input-reset bg-transparent hover-bg-red hover-white ba-0"><Close/></button>
                                                         </li>
                                                     ))}
+                                                    <li className="tr mt2"><BasicButton className="button--positive">Add Slot</BasicButton></li>
                                                 </ol>
                                             ) : null
                                     }
