@@ -161,7 +161,6 @@ class SelectableTimesheetTable extends React.Component {
 
 SelectableTimesheetTable.defaultProps = {
     className: '',
-    users: userData,
     hasShadow: true,
     tableProps: {},
 };
