@@ -47,7 +47,7 @@ class TimeOffRequestList extends React.Component {
                                             {moment(request.dates.start).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.start).format('h:mm a')})</small> : null} to<br/>
                                             {moment(request.dates.end).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.end).format('h:mm a')})</small> : null}
                                         </p>
-                                        <BasicTag type={tagType} isNarrow>{request.approvalState}</BasicTag>
+                                        <BasicTag className="ml2" type={tagType} isNarrow>{request.approvalState}</BasicTag>
                                     </div>
                                     <p className="mt0 f6">{request.reason}</p>
                                 </li>
