@@ -27,20 +27,23 @@ class AvailabilityEditor extends React.Component {
                 Monday: false,
                 Tuesday: [
                     {
-                        start: moment('08:00'),
-                        end: moment('12:00'),
+                        id: 1000,
+                        start: moment('08:00', 'kk:mm'),
+                        end: moment('12:00', 'kk:mm'),
                     },
                 ],
                 Wednesday: false,
                 Thursday: false,
                 Friday: [
                     {
-                        start: moment('08:00'),
-                        end: moment('12:00'),
+                        id: 2000,
+                        start: moment('08:00', 'kk:mm'),
+                        end: moment('12:00', 'kk:mm'),
                     },
                     {
-                        start: moment('16:00'),
-                        end: moment('22:00'),
+                        id: 3000,
+                        start: moment('16:00', 'kk:mm'),
+                        end: moment('22:00', 'kk:mm'),
                     },
                 ],
                 Saturday: false,
@@ -61,6 +64,33 @@ class AvailabilityEditor extends React.Component {
                                 <li key={day} className="ma0 ph0 pv2">
                                     <p className="b ma0">{day}</p>
                                     <Checkbox label="Available" name={'available_' + day} checked={currentDay !== false}/>
+
+                                    {
+                                        (currentDay !== false)
+                                            ? (
+                                                <ol>
+                                                    {currentDay.map((timeSlot) => (
+                                                        <li key={timeSlot.id}>
+                                                            <TimePicker
+                                                                value={moment(timeSlot.start)}
+                                                                showSecond={false}
+                                                                allowEmpty={false}
+                                                                use12Hours={true}
+                                                                onChange={newTime => console.log(newTime)}
+                                                            />
+                                                            <span>to</span>
+                                                            <TimePicker
+                                                                value={moment(timeSlot.end)}
+                                                                showSecond={false}
+                                                                allowEmpty={false}
+                                                                use12Hours={true}
+                                                                onChange={newTime => console.log(newTime)}
+                                                            />
+                                                        </li>
+                                                    ))}
+                                                </ol>
+                                            ) : null
+                                    }
                                 </li>
                             );
                         })
