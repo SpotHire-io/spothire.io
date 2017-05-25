@@ -32,6 +32,15 @@ class TimesheetView extends React.Component {
             [this.props.className]: true
         });
 
+        const filteredUsers = this.props.users
+            .filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.searchQuery) > -1);
+
+        let summarizedUsers = filteredUsers;
+
+        if (this.state.selectedUserIds.length !== 0) {
+            summarizedUsers = filteredUsers.filter((user) => this.state.selectedUserIds.includes(user.id));
+        }
+
         return (
             <div className="flex bg-near-white pa4">
                 <FilterContainer className="mr3 w-third self-start">
@@ -97,6 +106,13 @@ class TimesheetView extends React.Component {
                 </FilterContainer>
                 <div className="w-two-thirds">
                     <Box>
+                        <h2 className="f6 mt0 lh-title ttu">Summary</h2>
+                        <TimetableSummary users={summarizedUsers}/>
+                    </Box>
+
+                    <BoxConnector isActive={this.state.searchQuery.length > 0}/>
+
+                    <Box>
                         <p>
                             <label className="f6 db" htmlFor="employees_search">Search</label>
                             <input className="mt2 w-100" type="text" id="employees_search" name="employees_search" value={this.state.searchQuery} onChange={(e) => this.setState({ searchQuery: e.target.value })}/>
@@ -106,21 +122,9 @@ class TimesheetView extends React.Component {
                     <BoxConnector isActive={this.state.searchQuery.length > 0}/>
 
                     <SelectableTimesheetTable
-                        users={this.props.users}
-                        tableProps={{
-                            filterable: ['name'],
-                            hideFilterInput: true,
-                            filterBy: this.state.searchQuery,
-                        }}
-                        onClickUser={linkTo('Views', 'People:EmployeeSingleView')}
+                        users={filteredUsers}
+                        onUpdateSelectedUsers={(selectedUserIds) => this.setState({ selectedUserIds })}
                     />
-
-                    <BoxConnector isActive={false}/>
-
-                    <Box>
-                        <h2 className="f6 mt0 lh-title ttu">Summary</h2>
-                        <TimetableSummary users={this.props.users}/>
-                    </Box>
                 </div>
             </div>
         );
