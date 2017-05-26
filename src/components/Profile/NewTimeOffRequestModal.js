@@ -129,7 +129,20 @@ class NewTimeOffRequestModal extends React.Component {
                 <div className="mt4 pt3">
                     <p>
                         <label className="f6 db" htmlFor="request_reason">Reason</label>
-                        <input className="mt2 w-100" type="text" id="request_reason" name="request_reason" value={this.state.request.reason}/>
+                        <input
+                            className="mt2 w-100"
+                            type="text"
+                            id="request_reason"
+                            name="request_reason"
+                            value={this.state.request.reason}
+                            onChange={(e) => {
+                                let request = [...this.state.request];
+
+                                request.reason = e.target.value;
+
+                                this.setState({ request });
+                            }}
+                        />
                     </p>
 
                     {[
