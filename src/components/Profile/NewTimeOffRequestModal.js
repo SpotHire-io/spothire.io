@@ -41,7 +41,7 @@ class NewTimeOffRequestModal extends React.Component {
     }
 
     submitRequest() {
-        this.props.onSubmitRequest();
+        this.props.onSubmitRequest(this.state.request);
     }
 
     toggleAllDay() {
@@ -136,7 +136,7 @@ class NewTimeOffRequestModal extends React.Component {
                             name="request_reason"
                             value={this.state.request.reason}
                             onChange={(e) => {
-                                let request = [...this.state.request];
+                                let request = {...this.state.request};
 
                                 request.reason = e.target.value;
 
