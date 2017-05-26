@@ -14,9 +14,13 @@ import Box from '../components/Global/Box';
 import OverviewCalendar from '../components/Scheduling/OverviewCalendar';
 
 import AvailabilityEditor from '../components/Profile/AvailabilityEditor';
+import TimeOffRequestList from '../components/Profile/TimeOffRequestList';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
+
+// mock data
+import timeOffRequests from '../data/timeOffRequests.json';
 
 class DashboardView extends React.Component {
     constructor() {
@@ -29,7 +33,7 @@ class DashboardView extends React.Component {
 
     render() {
         return (
-            <div className="pa4 bg-near-white flex flex-wrap">
+            <div className="pa4 bg-near-white">
                 <Box className="w-100" title="Calendar">
                     <OverviewCalendar
                         className={classNames({
@@ -47,28 +51,34 @@ class DashboardView extends React.Component {
                     />
                 </Box>
 
-                <Box className="mt3 w-third mr3" title="Agenda" contentWrapperClassName="pa3 max-h5 overflow-auto">
-                    <ol className="list pa0 ma0 nt3">
-                        {
-                            this.props.events
-                                .sort((eventA, eventB) => moment(eventA.selectedDates.start) - moment(eventB.selectedDates.start))
-                                .map((event) => {
-                                    return (
-                                        <li className="mt3 pa0" key={event.id}>
-                                            <a className="db link hover-bg-near-white black" href="#" onClick={linkTo('Views', 'Schedule:OpportunitySingle')}>
-                                                <h3 className="mv0 f5">{event.title}</h3>
-                                                <p className="mt1">{moment(event.selectedDates.start).format('MMMM Do, YYYY')}</p>
-                                            </a>
-                                        </li>
-                                    );
-                                })
-                        }
-                    </ol>
-                </Box>
+                <div className="flex items-start nr3">
+                    <Box className="w-33 mt3 mr3" title="Agenda" contentWrapperClassName="pa3 max-h5 overflow-auto">
+                        <ol className="list pa0 ma0 nt3">
+                            {
+                                this.props.events
+                                    .sort((eventA, eventB) => moment(eventA.selectedDates.start) - moment(eventB.selectedDates.start))
+                                    .map((event) => {
+                                        return (
+                                            <li className="mt3 pa0" key={event.id}>
+                                                <a className="db link hover-bg-near-white black" href="#" onClick={linkTo('Views', 'Schedule:OpportunitySingle')}>
+                                                    <h3 className="mv0 f5">{event.title}</h3>
+                                                    <p className="mt1">{moment(event.selectedDates.start).format('MMMM Do, YYYY')}</p>
+                                                </a>
+                                            </li>
+                                        );
+                                    })
+                            }
+                        </ol>
+                    </Box>
 
-                <Box className="mt3 w-third" title="Availability" contentWrapperClassName="pa3 max-h5 overflow-auto">
-                    <AvailabilityEditor employee={this.props.employee} onSubmitAvailability={(availability) => console.log(availability)}/>
-                </Box>
+                    <Box className="w-33 mt3 mr3" title="Availability" contentWrapperClassName="pa3 max-h5 overflow-auto">
+                        <AvailabilityEditor employee={this.props.employee} onSubmitAvailability={(availability) => console.log(availability)}/>
+                    </Box>
+
+                    <Box className="w-33 mt3 mr3" title="Time Off Requests" contentWrapperClassName="pa3 max-h5 overflow-auto">
+                        <TimeOffRequestList timeOffRequests={timeOffRequests} employee={this.props.employee}/>
+                    </Box>
+                </div>
             </div>
         );
     }
