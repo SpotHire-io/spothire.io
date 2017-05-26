@@ -13,19 +13,44 @@ import BasicButton from '../../components/Buttons/BasicButton';
 
 import BasicTag from '../../components/Tags/BasicTag';
 
-import { Checkbox, Close } from 'rebass';
-
-import TimePicker from 'rc-time-picker';
+import NewTimeOffRequestModal from './NewTimeOffRequestModal';
 
 class TimeOffRequestList extends React.Component {
     constructor(props) {
         super();
 
+        this.openNewTimeOffRequestModal = this.openNewTimeOffRequestModal.bind(this);
+        this.closeNewTimeOffRequestModal = this.closeNewTimeOffRequestModal.bind(this);
+
+        this.addRequest = this.addRequest.bind(this);
         this.deleteRequest = this.deleteRequest.bind(this);
 
         this.state = {
             requests: props.timeOffRequests,
+            isNewTimeOffRequestModalOpen: false,
         };
+    }
+
+    openNewTimeOffRequestModal() {
+        this.setState({ isNewTimeOffRequestModalOpen: true });
+    }
+
+    closeNewTimeOffRequestModal() {
+        this.setState({ isNewTimeOffRequestModalOpen: false });
+    }
+
+    addRequest(request) {
+        let requests = [...this.state.requests];
+        let newRequest = {...request};
+
+        newRequest.id = this.props.timeOffRequests.reduce((currentHighestId, request) => {
+            return Math.max(currentHighestId, request.id);
+        }, -1) + 1;
+        newRequest.employeeId = this.props.employee.id;
+
+        requests.push(newRequest);
+
+        this.setState({ requests });
     }
 
     deleteRequest(requestId) {
@@ -74,7 +99,14 @@ class TimeOffRequestList extends React.Component {
                         )
                         : <p className="i">No requests found.</p>
                 }
-
+                <div className="tr mt3">
+                    <BasicButton className="button--positive" onClick={() => this.openNewTimeOffRequestModal()}>New Request</BasicButton>
+                </div>
+                <NewTimeOffRequestModal
+                    isOpen={this.state.isNewTimeOffRequestModalOpen}
+                    closeModal={this.closeNewTimeOffRequestModal}
+                    onSubmitRequest={this.addRequest}
+                />
             </div>
         );
     }
