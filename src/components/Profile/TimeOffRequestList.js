@@ -21,9 +21,19 @@ class TimeOffRequestList extends React.Component {
     constructor(props) {
         super();
 
+        this.deleteRequest = this.deleteRequest.bind(this);
+
         this.state = {
             requests: props.timeOffRequests,
         };
+    }
+
+    deleteRequest(requestId) {
+        let requests = [...this.state.requests];
+
+        requests.splice(requests.findIndex((request) => request.id === requestId), 1);
+
+        this.setState({ requests });
     }
 
     render() {
@@ -49,7 +59,7 @@ class TimeOffRequestList extends React.Component {
                                         </p>
                                         <div className="tr">
                                             <BasicTag className="ml2" type={tagType} isNarrow>{request.approvalState}</BasicTag>
-                                            <a className="child db f6 red hover-no-underline relative" style={{ top: '0.25rem' }} href="#">delete</a>
+                                            <a className="child db f6 red hover-no-underline relative" onClick={() => this.deleteRequest(request.id)} style={{ top: '0.25rem' }} href="#">delete</a>
                                         </div>
                                     </div>
                                     <p className="mt0 f6">{request.reason}</p>
