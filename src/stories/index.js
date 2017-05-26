@@ -59,6 +59,8 @@ import GroupCardList from '../components/Employees/Groups/CardList';
 import GroupDetailsEditor from '../components/Employees/Groups/DetailsEditor';
 
 import AvailabilityEditor from '../components/Profile/AvailabilityEditor';
+import TimeOffRequestList from '../components/Profile/TimeOffRequestList';
+import NewTimeOffRequestModal from '../components/Profile/NewTimeOffRequestModal';
 
 import ShiftList from '../components/Miscellaneous/ShiftList';
 import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
@@ -68,7 +70,6 @@ import '../../public/css/app.css';
 import users from '../data/people.json';
 import sampleEvents from '../data/events.json';
 import timeOffRequests from '../data/timeOffRequests.json';
-import TimeOffRequestList from "../components/Profile/TimeOffRequestList";
 
 storiesOf('Overview', module)
     .add('Welcome', () => (
@@ -770,6 +771,15 @@ storiesOf('Profile', module)
                     <TimeOffRequestList timeOffRequests={timeOffRequests} employee={users[3]}/>
                 </Box>
             </div>
+        </WithNotes>
+    ))
+    .add('NewTimeOffRequestModal', () => (
+        <WithNotes>
+            <NewTimeOffRequestModal
+                closeModal={() => console.log('modal "closed"')}
+                isOpen={true}
+                onSubmitRequest={(request) => console.log(request)}
+            />
         </WithNotes>
     ));
 
