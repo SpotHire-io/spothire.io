@@ -20,15 +20,22 @@ import ShiftManager from '../../components/Scheduling/ShiftManager';
 import Modal from 'react-modal';
 
 class OpportunitySingleView extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
+
+        this.updateOpportunity = this.updateOpportunity.bind(this);
 
         this.openAddEmployeesModal = this.openAddEmployeesModal.bind(this);
         this.closeAddEmployeesModal = this.closeAddEmployeesModal.bind(this);
 
         this.state = {
             isAddEmployeesModalOpen: false,
+            opportunity: props.opportunity,
         };
+    }
+
+    updateOpportunity(opportunity) {
+        this.setState({ opportunity });
     }
 
     openAddEmployeesModal() {
@@ -58,13 +65,13 @@ class OpportunitySingleView extends React.Component {
                                     <Box className="w-third mr3">
                                         <h2 className="f6 mt0 lh-title ttu">Opportunity Details</h2>
 
-                                        <h1 className="mb4 f3">{this.props.opportunity.title}</h1>
+                                        <h1 className="mb4 f3">{this.state.opportunity.title}</h1>
                                     </Box>
                                     <div className="w-two-thirds">
                                         <Box>
                                             <h2 className="f6 mt0 lh-title ttu">Opportunity Settings</h2>
 
-                                            <OpportunityModalBasicInfo opportunity={this.props.opportunity} updateOpportunity={() => console.log('updating opportunity!')}/>
+                                            <OpportunityModalBasicInfo opportunity={this.state.opportunity} updateOpportunity={this.updateOpportunity}/>
                                         </Box>
                                     </div>
                                 </div>
@@ -78,7 +85,7 @@ class OpportunitySingleView extends React.Component {
                                     <Box className="w-third mr3">
                                         <h2 className="f6 mt0 lh-title ttu">Opportunity Details</h2>
 
-                                        <h1 className="mb4 f3">{this.props.opportunity.title}</h1>
+                                        <h1 className="mb4 f3">{this.state.opportunity.title}</h1>
                                     </Box>
                                     <div className="w-two-thirds">
                                         <Box>

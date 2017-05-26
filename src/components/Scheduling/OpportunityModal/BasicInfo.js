@@ -19,6 +19,8 @@ class OpportunityModalBasicInfo extends React.Component {
         super();
 
         this.toggleAllDay = this.toggleAllDay.bind(this);
+        this.updateOpportunityField = this.updateOpportunityField.bind(this);
+
         this.renderDateTimePicker = this.renderDateTimePicker.bind(this);
         this.renderDatePicker = this.renderDatePicker.bind(this);
         this.renderTimePicker = this.renderTimePicker.bind(this);
@@ -28,6 +30,14 @@ class OpportunityModalBasicInfo extends React.Component {
         const opportunity = { ...this.props.opportunity };
 
         opportunity.isAllDay = ! this.props.opportunity.isAllDay;
+
+        this.props.updateOpportunity(opportunity);
+    }
+
+    updateOpportunityField(field, value) {
+        const opportunity = { ...this.props.opportunity };
+
+        opportunity[field] = value;
 
         this.props.updateOpportunity(opportunity);
     }
@@ -98,8 +108,8 @@ class OpportunityModalBasicInfo extends React.Component {
         return (
             <div>
                 <p>
-                    <label className="f6 db" htmlFor="opp_name">Name</label>
-                    <input className="mt2 w-100" type="text" id="opp_name" name="opp_name" value={this.props.opportunity.title}/>
+                    <label className="f6 db" htmlFor="opp_title">Name</label>
+                    <input className="mt2 w-100" type="text" id="opp_title" name="opp_title" value={this.props.opportunity.title} onChange={(e) => this.updateOpportunityField('title', e.target.value)}/>
                 </p>
 
                 <p className="mt3">
