@@ -39,35 +39,42 @@ class TimeOffRequestList extends React.Component {
     render() {
         return (
             <div className={classNames(this.props.className)}>
-                <ol className="list ma0 pa0 nt3">
-                    {
-                        this.state.requests.map((request, index) => {
-                            let tagType = 'neutral';
+                {
+                    (this.state.requests.length > 0)
+                        ? (
+                            <ol className="list ma0 pa0 nt3">
+                                {
+                                    this.state.requests.map((request, index) => {
+                                        let tagType = 'neutral';
 
-                            if (request.approvalState === 'approved') {
-                                tagType = 'positive';
-                            } else if (request.approvalState === 'rejected') {
-                                tagType = 'negative';
-                            }
+                                        if (request.approvalState === 'approved') {
+                                            tagType = 'positive';
+                                        } else if (request.approvalState === 'rejected') {
+                                            tagType = 'negative';
+                                        }
 
-                            return (
-                                <li key={request.id} className="ma0 pa0 mt3 hide-child">
-                                    <div className="flex justify-between items-baseline mb1">
-                                        <p className="mt0">
-                                            {moment(request.dates.start).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.start).format('h:mm a')})</small> : null} to<br/>
-                                            {moment(request.dates.end).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.end).format('h:mm a')})</small> : null}
-                                        </p>
-                                        <div className="tr">
-                                            <BasicTag className="ml2" type={tagType} isNarrow>{request.approvalState}</BasicTag>
-                                            <a className="child db f6 red hover-no-underline relative" onClick={() => this.deleteRequest(request.id)} style={{ top: '0.25rem' }} href="#">delete</a>
-                                        </div>
-                                    </div>
-                                    <p className="mt0 f6">{request.reason}</p>
-                                </li>
-                            );
-                        })
-                    }
-                </ol>
+                                        return (
+                                            <li key={request.id} className="ma0 pa0 mt3 hide-child">
+                                                <div className="flex justify-between items-baseline mb1">
+                                                    <p className="mt0">
+                                                        {moment(request.dates.start).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.start).format('h:mm a')})</small> : null} to<br/>
+                                                        {moment(request.dates.end).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.end).format('h:mm a')})</small> : null}
+                                                    </p>
+                                                    <div className="tr">
+                                                        <BasicTag className="ml2" type={tagType} isNarrow>{request.approvalState}</BasicTag>
+                                                        <a className="child db f6 red hover-no-underline relative" onClick={() => this.deleteRequest(request.id)} style={{ top: '0.25rem' }} href="#">delete</a>
+                                                    </div>
+                                                </div>
+                                                <p className="mt0 f6">{request.reason}</p>
+                                            </li>
+                                        );
+                                    })
+                                }
+                            </ol>
+                        )
+                        : <p className="i">No requests found.</p>
+                }
+
             </div>
         );
     }
