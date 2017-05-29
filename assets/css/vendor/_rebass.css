@@ -1,3 +1,21 @@
 .sh-rebass-checkbox-mr0 .Checkbox_box {
     margin-right: 0 !important;
 }
+
+.sh-rebass-switch-small {
+    --small-switch-size: 16px;
+}
+
+.sh-rebass-switch-small .Switch {
+    height: var(--small-switch-size) !important;
+    width: calc(var(--small-switch-size) * 1.5) !important;
+}
+
+.sh-rebass-switch-small .Switch > div {
+    height: var(--small-switch-size) !important;
+    width: var(--small-switch-size) !important;
+}
+
+.sh-rebass-switch-small.sh-rebass-switch-small--checked .Switch > div {
+    transform: translateX(8px) !important;
+}
