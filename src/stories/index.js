@@ -19,15 +19,15 @@ BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
 
-import DashboardView from '../views/Dashboard';
-import NewsfeedView from '../views/Newsfeed';
+import DashboardView from '../views/Employee/Dashboard';
+import NewsfeedView from '../views/Employee/Newsfeed';
 import PeopleView from '../views/Manager/People';
 import EmployeeSingleView from '../views/Manager/People/EmployeeSingle';
 import GroupSingleView from '../views/Manager/People/GroupSingle';
 import ScheduleView from '../views/Manager/Schedule';
 import OpportunitySingleView from '../views/Manager/Schedule/OpportunitySingle';
 import TimesheetView from '../views/Manager/Timesheet';
-import EmployeeProfileView from '../views/EmployeeProfile';
+import EmployeeProfileView from '../views/Employee/EmployeeProfile';
 
 import MainMenu from '../components/Global/MainMenu';
 import SecondaryMenu from '../components/Global/SecondaryMenu';

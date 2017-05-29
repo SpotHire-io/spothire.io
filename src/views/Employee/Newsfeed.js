@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
-import PostList from '../components/Newsfeed/PostList';
+import PostList from '../../components/Newsfeed/PostList';
 
-import FilterContainer from '../components/Filters/FilterContainer';
+import FilterContainer from '../../components/Filters/FilterContainer';
 
 import { Switch } from 'rebass';
 

@@ -1,26 +1,26 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import PersonSchema from '../schemas/Person';
-import OpportunitySchema from '../schemas/Opportunity';
+import PersonSchema from '../../schemas/Person';
+import OpportunitySchema from '../../schemas/Opportunity';
 
 import classNames from 'classnames';
 
 import moment from 'moment';
 import 'moment/locale/en-ca';
 
-import Box from '../components/Global/Box';
+import Box from '../../components/Global/Box';
 
-import OverviewCalendar from '../components/Scheduling/OverviewCalendar';
+import OverviewCalendar from '../../components/Scheduling/OverviewCalendar';
 
-import AvailabilityEditor from '../components/Profile/AvailabilityEditor';
-import TimeOffRequestList from '../components/Profile/TimeOffRequestList';
+import AvailabilityEditor from '../../components/Profile/AvailabilityEditor';
+import TimeOffRequestList from '../../components/Profile/TimeOffRequestList';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
 
 // mock data
-import timeOffRequests from '../data/timeOffRequests.json';
+import timeOffRequests from '../../data/timeOffRequests.json';
 
 class DashboardView extends React.Component {
     constructor() {

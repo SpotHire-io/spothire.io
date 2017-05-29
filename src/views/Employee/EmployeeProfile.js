@@ -1,13 +1,13 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import PersonSchema from '../schemas/Person';
+import PersonSchema from '../../schemas/Person';
 
 import classNames from 'classnames';
 
-import Box from '../components/Global/Box';
+import Box from '../../components/Global/Box';
 
-import BasicButton from '../components/Buttons/BasicButton';
+import BasicButton from '../../components/Buttons/BasicButton';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
