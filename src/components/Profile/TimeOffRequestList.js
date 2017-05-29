@@ -51,6 +51,7 @@ class TimeOffRequestList extends React.Component {
         requests.push(newRequest);
 
         this.setState({ requests });
+        this.closeNewTimeOffRequestModal();
     }
 
     deleteRequest(requestId) {

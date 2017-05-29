@@ -26,22 +26,25 @@ class NewTimeOffRequestModal extends React.Component {
         this.renderDatePicker = this.renderDatePicker.bind(this);
         this.renderTimePicker = this.renderTimePicker.bind(this);
 
+        this.defaultRequest = {
+            reason: '',
+            isAllDay: false,
+            dates: {
+                start: moment(),
+                end: moment(),
+            },
+        };
+
         this.submitRequest = this.submitRequest.bind(this);
 
         this.state = {
-            request: {
-                reason: '',
-                isAllDay: false,
-                dates: {
-                    start: moment(),
-                    end: moment(),
-                },
-            },
+            request: this.defaultRequest,
         }
     }
 
     submitRequest() {
-        this.props.onSubmitRequest(this.state.request);
+        this.props.onSubmitRequest({...this.state.request}); // send a copy because we're resetting the state
+        this.setState({ request: this.defaultRequest });
     }
 
     toggleAllDay() {
