@@ -47,6 +47,7 @@ class TimeOffRequestList extends React.Component {
             return Math.max(currentHighestId, request.id);
         }, -1) + 1;
         newRequest.employeeId = this.props.employee.id;
+        newRequest.approvalState = 'pending';
 
         requests.push(newRequest);
 
