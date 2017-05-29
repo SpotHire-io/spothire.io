@@ -1,19 +1,19 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import GroupSchema from '../../schemas/Group';
+import GroupSchema from '../../../schemas/Group';
 
 import classNames from 'classnames';
 
-import SecondaryMenu from '../../components/Global/SecondaryMenu';
+import SecondaryMenu from '../../../components/Global/SecondaryMenu';
 
-import BasicButton from '../../components/Buttons/BasicButton';
+import BasicButton from '../../../components/Buttons/BasicButton';
 
-import UserTable from '../../components/Employees/UserTable';
-import EmployeeSelectionInterface from '../../components/Employees/EmployeeSelectionInterface';
+import UserTable from '../../../components/Employees/UserTable';
+import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
 
-import GroupDetailsEditor from '../../components/Employees/Groups/DetailsEditor';
-import GroupCard from '../../components/Employees/Groups/Card';
+import GroupDetailsEditor from '../../../components/Employees/Groups/DetailsEditor';
+import GroupCard from '../../../components/Employees/Groups/Card';
 
 import Modal from 'react-modal';
 

@@ -1,18 +1,18 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import PersonSchema from '../schemas/Person';
+import PersonSchema from '../../schemas/Person';
 
 import classNames from 'classnames';
 
-import Box from '../components/Global/Box';
-import BoxConnector from '../components/Global/BoxConnector';
+import Box from '../../components/Global/Box';
+import BoxConnector from '../../components/Global/BoxConnector';
 
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
-import SelectableTimesheetTable from '../components/Employees/SelectableTimesheetTable';
-import TimetableSummary from '../components/Employees/TimetableSummary';
+import SelectableTimesheetTable from '../../components/Employees/SelectableTimesheetTable';
+import TimetableSummary from '../../components/Employees/TimetableSummary';
 
 class TimesheetView extends React.Component {
     constructor() {

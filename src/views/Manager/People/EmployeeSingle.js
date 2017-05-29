@@ -1,15 +1,15 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import PersonSchema from '../../schemas/Person';
+import PersonSchema from '../../../schemas/Person';
 
 import classNames from 'classnames';
 
-import Box from '../../components/Global/Box';
+import Box from '../../../components/Global/Box';
 
-import SecondaryMenu from '../../components/Global/SecondaryMenu';
+import SecondaryMenu from '../../../components/Global/SecondaryMenu';
 
-import MetadataInterface from '../../components/Employees/MetadataInterface';
+import MetadataInterface from '../../../components/Employees/MetadataInterface';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';

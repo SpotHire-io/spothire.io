@@ -1,14 +1,14 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import GroupSchema from '../../schemas/Group';
+import GroupSchema from '../../../schemas/Group';
 
 import classNames from 'classnames';
 
-import GroupCardList from '../../components/Employees/Groups/CardList';
+import GroupCardList from '../../../components/Employees/Groups/CardList';
 
-import FilterContainer from '../../components/Filters/FilterContainer';
-import Filter from '../../components/Filters/Filter';
+import FilterContainer from '../../../components/Filters/FilterContainer';
+import Filter from '../../../components/Filters/Filter';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';

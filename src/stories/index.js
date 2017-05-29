@@ -21,12 +21,12 @@ BigCalendar.setLocalizer(
 
 import DashboardView from '../views/Dashboard';
 import NewsfeedView from '../views/Newsfeed';
-import PeopleView from '../views/People';
-import EmployeeSingleView from '../views/People/EmployeeSingle';
-import GroupSingleView from '../views/People/GroupSingle';
-import ScheduleView from '../views/Schedule';
-import OpportunitySingleView from '../views/Schedule/OpportunitySingle';
-import TimesheetView from '../views/Timesheet';
+import PeopleView from '../views/Manager/People';
+import EmployeeSingleView from '../views/Manager/People/EmployeeSingle';
+import GroupSingleView from '../views/Manager/People/GroupSingle';
+import ScheduleView from '../views/Manager/Schedule';
+import OpportunitySingleView from '../views/Manager/Schedule/OpportunitySingle';
+import TimesheetView from '../views/Manager/Timesheet';
 import EmployeeProfileView from '../views/EmployeeProfile';
 
 import MainMenu from '../components/Global/MainMenu';

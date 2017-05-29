@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
-import Box from '../../components/Global/Box';
-import BoxConnector from '../../components/Global/BoxConnector';
+import Box from '../../../components/Global/Box';
+import BoxConnector from '../../../components/Global/BoxConnector';
 
-import UserTable from '../../components/Employees/UserTable';
+import UserTable from '../../../components/Employees/UserTable';
 
-import FilterContainer from '../../components/Filters/FilterContainer';
-import Filter from '../../components/Filters/Filter';
+import FilterContainer from '../../../components/Filters/FilterContainer';
+import Filter from '../../../components/Filters/Filter';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
