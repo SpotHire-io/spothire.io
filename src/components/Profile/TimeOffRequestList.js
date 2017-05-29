@@ -88,7 +88,7 @@ class TimeOffRequestList extends React.Component {
                                                     </p>
                                                     <div className="tr">
                                                         <BasicTag className="ml2" type={tagType} isNarrow>{request.approvalState}</BasicTag>
-                                                        <a className="child db f6 red hover-no-underline relative" onClick={() => this.deleteRequest(request.id)} style={{ top: '0.25rem' }} href="#">delete</a>
+                                                        <a className="child db f6 red hover-no-underline relative" onClick={(e) => e.preventDefault() || this.deleteRequest(request.id)} style={{ top: '0.25rem' }} href="#">delete</a>
                                                     </div>
                                                 </div>
                                                 <p className="mt0 f6">{request.reason}</p>
