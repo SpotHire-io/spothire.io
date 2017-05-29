@@ -2,8 +2,6 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import MainMenu from '../components/Global/MainMenu';
-
 import PostList from '../components/Newsfeed/PostList';
 
 import FilterContainer from '../components/Filters/FilterContainer';
@@ -12,6 +10,10 @@ import Filter from '../components/Filters/Filter';
 class NewsfeedView extends React.Component {
     constructor() {
         super();
+
+        this.state = {
+
+        }
     }
 
     render() {

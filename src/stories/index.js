@@ -139,7 +139,7 @@ storiesOf('Views', module)
                     posts={
                         [
                             {...samplePost},
-                            {...samplePost, id: 2},
+                            {...samplePost, id: 2, isRespondedTo: false},
                             {...samplePost, id: 3}
                         ]
                     }
@@ -412,7 +412,7 @@ const samplePost = {
     ),
     date: "2017-03-13T12:00:00-04:00",
     responseRequired: true,
-    isRespondedTo: (Math.random() > 0.5)
+    isRespondedTo: true,
 };
 
 const samplePostList = (className) => (
@@ -421,7 +421,7 @@ const samplePostList = (className) => (
         posts={
             [
                 {...samplePost},
-                {...samplePost, id: 2},
+                {...samplePost, id: 2, isRespondedTo: false},
                 {...samplePost, id: 3}
             ]
         }
