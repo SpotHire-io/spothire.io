@@ -23,6 +23,7 @@ class AvailabilityEditor extends React.Component {
         this.toggleDayAvailability = this.toggleDayAvailability.bind(this);
         this.addSlotToDay = this.addSlotToDay.bind(this);
         this.deleteSlotFromDay = this.deleteSlotFromDay.bind(this);
+        this.setSlotTime = this.setSlotTime.bind(this);
 
         this.defaultTimeSlot = {
             id: null,
@@ -109,6 +110,14 @@ class AvailabilityEditor extends React.Component {
         this.setState({ availability });
     }
 
+    setSlotTime(day, slotIndex, endToModify, newTime) {
+        const availability = {...this.state.availability};
+
+        availability[day][slotIndex][endToModify] = newTime;
+
+        this.setState({ availability });
+    }
+
     render() {
         return (
             <div className={classNames(this.props.className)}>
@@ -126,14 +135,14 @@ class AvailabilityEditor extends React.Component {
                                         (currentDay !== false)
                                             ? (
                                                 <ol className="list pa0">
-                                                    {currentDay.map((timeSlot) => (
+                                                    {currentDay.map((timeSlot, timeSlotIndex) => (
                                                         <li key={timeSlot.id} className="flex pa0">
                                                             <TimePicker
                                                                 value={moment(timeSlot.start)}
                                                                 showSecond={false}
                                                                 allowEmpty={false}
                                                                 use12Hours={true}
-                                                                onChange={newTime => console.log(newTime)}
+                                                                onChange={newTime => this.setSlotTime(day, timeSlotIndex, 'start', newTime)}
                                                             />
                                                             <span className="self-center mh2">to</span>
                                                             <TimePicker
@@ -141,7 +150,7 @@ class AvailabilityEditor extends React.Component {
                                                                 showSecond={false}
                                                                 allowEmpty={false}
                                                                 use12Hours={true}
-                                                                onChange={newTime => console.log(newTime)}
+                                                                onChange={newTime => this.setSlotTime(day, timeSlotIndex, 'end', newTime)}
                                                             />
                                                             <button className="ml2 input-reset bg-transparent hover-bg-red hover-white ba-0" onClick={() => this.deleteSlotFromDay(day, timeSlot.id)}><Close/></button>
                                                         </li>
