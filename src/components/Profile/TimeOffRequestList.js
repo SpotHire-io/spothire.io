@@ -80,7 +80,9 @@ class TimeOffRequestList extends React.Component {
                                             tagType = 'negative';
                                         }
 
-                                        const renderDateTime = (end) => <span>{moment(request.dates[end]).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates[end]).format('h:mm a')})</small> : null}</span>;
+                                        const renderDate = (end) => moment(request.dates[end]).format('MMMM Do, YYYY');
+                                        const renderTime = (end) => (! request.isAllDay) ? <small className="mh1">({moment(request.dates[end]).format('h:mm a')})</small> : null;
+                                        const renderDateTime = (end) => <span>{renderDate(end)} {renderTime(end)}</span>;
 
                                         return (
                                             <li key={request.id} className="ma0 pa0 mt3 hide-child">
