@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import classNames from 'classnames';
 
 // storybook stuff
@@ -15,6 +17,20 @@ class MainMenu extends React.Component {
         this.toggleUserMenu = this.toggleUserMenu.bind(this);
 
         this.commonItemWrapperClasses = 'white pv3 ph4';
+
+        this.menuItems = {
+            employee: [
+                'Dashboard',
+                'Schedule',
+            ],
+            manager: [
+                'Dashboard',
+                'Newsfeed',
+                'People',
+                'Schedule',
+                'Timesheet',
+            ],
+        };
 
         this.state = {
             isUserMenuOpen: false
@@ -87,21 +103,13 @@ class MainMenu extends React.Component {
     }
 
     render() {
-        const menuItems = [
-            'Dashboard',
-            'Newsfeed',
-            'People',
-            'Schedule',
-            'Timesheet',
-        ];
-
         return (
             <div className="relative no-select">
                 <div className="flex  shadow-4 bg-teal bb bt bw1 b--white-40" onClick={() => (this.state.isUserMenuOpen) ? this.toggleUserMenu() : null}>
                     {this.renderLogo()}
                     <nav className="flex-auto flex items-start">
                         {
-                            menuItems.map((text) => this.renderNavLink(text, text === this.props.selectedItem))
+                            this.menuItems[this.props.userType].map((text) => this.renderNavLink(text, text === this.props.selectedItem))
                         }
                     </nav>
                     <div className="flex items-center ph4">
@@ -116,7 +124,14 @@ class MainMenu extends React.Component {
 
 MainMenu.defaultProps = {
     className: '',
-    selectedItem: 'Dashboard'
+    selectedItem: 'Dashboard',
+    userType: 'manager',
+};
+
+MainMenu.propTypes = {
+    className: PropTypes.string,
+    selectedItem: PropTypes.string,
+    userType: PropTypes.oneOf(['manager', 'employee'])
 };
 
 export default MainMenu;
