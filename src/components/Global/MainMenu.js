@@ -24,7 +24,6 @@ class MainMenu extends React.Component {
                 'Schedule',
             ],
             manager: [
-                'Dashboard',
                 'Newsfeed',
                 'People',
                 'Schedule',
