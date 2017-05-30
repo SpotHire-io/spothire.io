@@ -24,7 +24,7 @@ class EmployeeOpportunitySingleView extends React.Component {
 
                     <h1 className="mb0 f3">{this.props.opportunity.title}</h1>
 
-                    <dl className="mt3 flex flex-wrap nr3">
+                    <dl className="ma0 flex flex-wrap nr3">
                         {[
                             {
                                 id: 'startDate',
