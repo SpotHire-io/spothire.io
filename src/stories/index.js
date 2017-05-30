@@ -19,15 +19,19 @@ BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
 
-import DashboardView from '../views/Employee/Dashboard';
-import NewsfeedView from '../views/Employee/Newsfeed';
 import PeopleView from '../views/Manager/People';
 import EmployeeSingleView from '../views/Manager/People/EmployeeSingle';
 import GroupSingleView from '../views/Manager/People/GroupSingle';
 import ScheduleView from '../views/Manager/Schedule';
 import OpportunitySingleView from '../views/Manager/Schedule/OpportunitySingle';
 import TimesheetView from '../views/Manager/Timesheet';
+
+import DashboardView from '../views/Employee/Dashboard';
+import NewsfeedView from '../views/Employee/Newsfeed';
+import EmployeeOpportunitySingleView from '../views/Employee/Schedule/OpportunitySingle';
 import EmployeeProfileView from '../views/Employee/EmployeeProfile';
+
+
 
 import MainMenu from '../components/Global/MainMenu';
 import SecondaryMenu from '../components/Global/SecondaryMenu';
@@ -266,7 +270,7 @@ storiesOf('Views (employee)', module)
             selectedMenuItem="Schedule"
             userType="employee"
             viewComponent={
-                <OpportunitySingleView
+                <EmployeeOpportunitySingleView
                     opportunity={sampleEvents[0]}
                 />
             }
