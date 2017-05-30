@@ -41,7 +41,7 @@ class EmployeeOpportunitySingleView extends React.Component {
                         ].map((section) => (
                             <div
                                 className={classNames({
-                                    'pr3': true,
+                                    'pr3 mt3': true,
                                     'w-50': section.isFullWidth !== true,
                                     'w-100': section.isFullWidth
                                 })}
