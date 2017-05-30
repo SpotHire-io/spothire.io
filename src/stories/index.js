@@ -107,7 +107,7 @@ class MockApp extends React.Component {
     render() {
         return (
             <div>
-                <MainMenu selectedItem={this.props.selectedMenuItem}/>
+                <MainMenu selectedItem={this.props.selectedMenuItem} userType={this.props.userType}/>
                 {this.props.viewComponent}
             </div>
         );
@@ -117,12 +117,14 @@ class MockApp extends React.Component {
 MockApp.propTypes = {
     selectedMenuItem: PropTypes.string.isRequired,
     viewComponent: PropTypes.element.isRequired,
+    userType: PropTypes.oneOf(['manager', 'employee']).isRequired,
 };
 
 storiesOf('Views', module)
     .add('Dashboard', () => (
         <MockApp
             selectedMenuItem="Dashboard"
+            userType="manager"
             viewComponent={
                 <DashboardView
                     employee={users[0]}
@@ -134,6 +136,7 @@ storiesOf('Views', module)
     .add('Newsfeed', () => (
         <MockApp
             selectedMenuItem="Newsfeed"
+            userType="manager"
             viewComponent={
                 <NewsfeedView
                     posts={
@@ -150,6 +153,7 @@ storiesOf('Views', module)
     .add('People', () => (
         <MockApp
             selectedMenuItem="People"
+            userType="manager"
             viewComponent={
                 <PeopleView
                     users={users}
@@ -160,6 +164,7 @@ storiesOf('Views', module)
     .add('People:EmployeeSingleView', () => (
         <MockApp
             selectedMenuItem="People"
+            userType="manager"
             viewComponent={
                 <EmployeeSingleView
                     employee={users[1]}
@@ -170,6 +175,7 @@ storiesOf('Views', module)
     .add('People:GroupSingleView', () => (
         <MockApp
             selectedMenuItem="People"
+            userType="manager"
             viewComponent={
                 <GroupSingleView
                     group={{
@@ -184,6 +190,7 @@ storiesOf('Views', module)
     .add('Schedule', () => (
         <MockApp
             selectedMenuItem="Schedule"
+            userType="manager"
             viewComponent={
                 <ScheduleView
                     events={sampleEvents}
@@ -194,6 +201,7 @@ storiesOf('Views', module)
     .add('Schedule:OpportunitySingle', () => (
         <MockApp
             selectedMenuItem="Schedule"
+            userType="manager"
             viewComponent={
                 <OpportunitySingleView
                     opportunity={sampleEvents[0]}
@@ -204,6 +212,7 @@ storiesOf('Views', module)
     .add('Timesheet', () => (
         <MockApp
             selectedMenuItem="Timesheet"
+            userType="manager"
             viewComponent={
                 <TimesheetView
                     users={users}
@@ -214,6 +223,7 @@ storiesOf('Views', module)
     .add('EmployeeProfileView', () => (
         <MockApp
             selectedMenuItem=""
+            userType="manager"
             viewComponent={
                 <EmployeeProfileView
                     employee={users[1]}
