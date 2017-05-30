@@ -18,7 +18,7 @@ class EmployeeOpportunitySingleView extends React.Component {
 
     render() {
         return (
-            <div className={classNames('pa4 bg-near-white', this.props.className)}>
+            <div className={classNames('pa4 bg-near-white flex', this.props.className)}>
                 <Box className="w-third mr3">
                     <h2 className="f6 mt0 lh-title ttu">Opportunity Details</h2>
 
@@ -57,6 +57,19 @@ class EmployeeOpportunitySingleView extends React.Component {
                         ))}
                     </dl>
                 </Box>
+                <div className="w-two-thirds">
+                    <Box>
+                        <h2 className="f6 mt0 lh-title ttu">Posts</h2>
+
+                        <p>Posts attached to opportunity...</p>
+                    </Box>
+
+                    <Box className="mt3">
+                        <h2 className="f6 mt0 lh-title ttu">Shifts</h2>
+
+                        <p>Shifts attached to opportunity...</p>
+                    </Box>
+                </div>
             </div>
         );
     }
