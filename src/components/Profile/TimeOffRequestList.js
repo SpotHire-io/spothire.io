@@ -80,12 +80,13 @@ class TimeOffRequestList extends React.Component {
                                             tagType = 'negative';
                                         }
 
+                                        const renderDateTime = (end) => <span>{moment(request.dates[end]).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates[end]).format('h:mm a')})</small> : null}</span>;
+
                                         return (
                                             <li key={request.id} className="ma0 pa0 mt3 hide-child">
                                                 <div className="flex justify-between items-baseline mb1">
                                                     <p className="mt0">
-                                                        {moment(request.dates.start).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.start).format('h:mm a')})</small> : null} to<br/>
-                                                        {moment(request.dates.end).format('MMMM Do, YYYY')} {(! request.isAllDay) ? <small className="mh1">({moment(request.dates.end).format('h:mm a')})</small> : null}
+                                                        {renderDateTime('start')} to {renderDateTime('end')}
                                                     </p>
                                                     <div className="tr">
                                                         <BasicTag className="ml2" type={tagType} isNarrow>{request.approvalState}</BasicTag>
