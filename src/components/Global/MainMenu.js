@@ -21,6 +21,7 @@ class MainMenu extends React.Component {
         this.menuItems = {
             employee: [
                 'Dashboard',
+                'Newsfeed',
                 'Schedule',
             ],
             manager: [
@@ -58,7 +59,7 @@ class MainMenu extends React.Component {
         });
 
         return (
-            <a key={linkText} className={aClasses} href="#" onClick={linkTo('Views', linkText)}>{linkText}</a>
+            <a key={linkText} className={aClasses} href="#" onClick={linkTo(`Views (${this.props.userType})`, linkText)}>{linkText}</a>
         )
     }
 
@@ -72,7 +73,7 @@ class MainMenu extends React.Component {
         const userMenuItems = [
             {
                 text: 'Profile',
-                onClick: linkTo('Views', 'EmployeeProfileView'),
+                onClick: linkTo(`Views (${this.props.userType})`, 'EmployeeProfileView'),
             },
             {
                 text: 'Log out',

@@ -120,19 +120,7 @@ MockApp.propTypes = {
     userType: PropTypes.oneOf(['manager', 'employee']).isRequired,
 };
 
-storiesOf('Views', module)
-    .add('Dashboard', () => (
-        <MockApp
-            selectedMenuItem="Dashboard"
-            userType="manager"
-            viewComponent={
-                <DashboardView
-                    employee={users[0]}
-                    events={sampleEvents.filter((event) => event.userId === 0)}
-                />
-            }
-        />
-    ))
+storiesOf('Views (manager)', module)
     .add('Newsfeed', () => (
         <MockApp
             selectedMenuItem="Newsfeed"
@@ -224,6 +212,70 @@ storiesOf('Views', module)
         <MockApp
             selectedMenuItem=""
             userType="manager"
+            viewComponent={
+                <EmployeeProfileView
+                    employee={users[1]}
+                />
+            }
+        />
+    ));
+
+storiesOf('Views (employee)', module)
+    .add('Dashboard', () => (
+        <MockApp
+            selectedMenuItem="Dashboard"
+            userType="employee"
+            viewComponent={
+                <DashboardView
+                    employee={users[0]}
+                    events={sampleEvents.filter((event) => event.userId === 0)}
+                />
+            }
+        />
+    ))
+    .add('Newsfeed', () => (
+        <MockApp
+            selectedMenuItem="Newsfeed"
+            userType="employee"
+            viewComponent={
+                <NewsfeedView
+                    posts={
+                        [
+                            {...samplePost},
+                            {...samplePost, id: 2, isRespondedTo: false},
+                            {...samplePost, id: 3}
+                        ]
+                    }
+                />
+            }
+        />
+    ))
+    .add('Schedule', () => (
+        <MockApp
+            selectedMenuItem="Schedule"
+            userType="employee"
+            viewComponent={
+                <ScheduleView
+                    events={sampleEvents}
+                />
+            }
+        />
+    ))
+    .add('Schedule:OpportunitySingle', () => (
+        <MockApp
+            selectedMenuItem="Schedule"
+            userType="employee"
+            viewComponent={
+                <OpportunitySingleView
+                    opportunity={sampleEvents[0]}
+                />
+            }
+        />
+    ))
+    .add('EmployeeProfileView', () => (
+        <MockApp
+            selectedMenuItem=""
+            userType="employee"
             viewComponent={
                 <EmployeeProfileView
                     employee={users[1]}
