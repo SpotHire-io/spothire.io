@@ -30,13 +30,17 @@ class EmployeeOpportunitySingleView extends React.Component {
                                 id: 'startDate',
                                 label: 'From',
                                 content: this.props.opportunity.selectedDates.start,
-                                isFullWidth: false,
                             },
                             {
                                 id: 'endDate',
                                 label: 'To',
                                 content: this.props.opportunity.selectedDates.end,
-                                isFullWidth: false,
+                            },
+                            {
+                                id: 'location',
+                                label: 'Location',
+                                content: '100 Street St., Toronto',
+                                isFullWidth: true,
                             }
                         ].map((section) => (
                             <div
