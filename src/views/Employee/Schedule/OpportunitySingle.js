@@ -41,7 +41,13 @@ class EmployeeOpportunitySingleView extends React.Component {
                                 label: 'Location',
                                 content: '100 Street St., Toronto',
                                 isFullWidth: true,
-                            }
+                            },
+                            {
+                                id: 'notes',
+                                label: 'Notes',
+                                content: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
+                                isFullWidth: true,
+                            },
                         ].map((section) => (
                             <div
                                 className={classNames({
