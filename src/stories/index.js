@@ -72,6 +72,7 @@ import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
 import '../../public/css/app.css';
 
 import users from '../data/people.json';
+import posts from '../data/posts.json';
 import sampleEvents from '../data/events.json';
 import timeOffRequests from '../data/timeOffRequests.json';
 
@@ -131,13 +132,7 @@ storiesOf('Views (manager)', module)
             userType="manager"
             viewComponent={
                 <NewsfeedView
-                    posts={
-                        [
-                            {...samplePost},
-                            {...samplePost, id: 2, isRespondedTo: false},
-                            {...samplePost, id: 3}
-                        ]
-                    }
+                    posts={posts}
                 />
             }
         />
@@ -243,13 +238,7 @@ storiesOf('Views (employee)', module)
             userType="employee"
             viewComponent={
                 <NewsfeedView
-                    posts={
-                        [
-                            {...samplePost},
-                            {...samplePost, id: 2, isRespondedTo: false},
-                            {...samplePost, id: 3}
-                        ]
-                    }
+                    posts={posts}
                 />
             }
         />
@@ -477,40 +466,12 @@ storiesOf('Buttons', module)
         </WithNotes>
     ));
 
-const samplePost = {
-    id: 1,
-    title: "A very cool post",
-    content: (
-        <div>
-            <p className="mt0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ducimus fugiat fugit, minus modi qui quod ratione repellat ut vero?</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cumque enim, illo odio temporibus vitae voluptatem! Adipisci amet architecto at cum doloremque dolorum ducimus eveniet ex, facere iure libero molestiae non numquam quam rem sit ut vel? Animi aperiam assumenda consectetur dolore dolorem eaque ex exercitationem facilis labore natus obcaecati quisquam quos recusandae rem sint totam vero, voluptatum? Accusamus animi aperiam aspernatur at distinctio dolor ducimus eveniet facere, fugiat incidunt ipsa magnam maxime molestiae molestias, officiis pariatur perspiciatis praesentium, quisquam rem saepe sunt velit voluptas voluptatibus. Assumenda odio provident quidem recusandae repellat. Distinctio ducimus facere illum ipsam similique sit voluptatem.</p>
-        </div>
-    ),
-    date: "2017-03-13T12:00:00-04:00",
-    responseRequired: true,
-    isRespondedTo: true,
-};
-
-const samplePostList = (className) => (
-    <PostList
-        className={className}
-        posts={
-            [
-                {...samplePost},
-                {...samplePost, id: 2, isRespondedTo: false},
-                {...samplePost, id: 3}
-            ]
-        }
-    />
-);
-
 storiesOf('Newsfeed', module)
     .add('Open Post', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Post
-                    post={samplePost}
+                    post={posts[0]}
                     isOpen={true}
                 />
             </div>
@@ -520,7 +481,7 @@ storiesOf('Newsfeed', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Post
-                    post={samplePost}
+                    post={posts[0]}
                     isOpen={false}
                 />
             </div>
@@ -531,7 +492,7 @@ storiesOf('Newsfeed', module)
             <div className="pa4 bg-near-white">
                 <Post
                     post={{
-                        ...samplePost,
+                        ...posts[0],
                         excerpt: (<p className="mt0">Custom short excerpt.</p>)
                     }}
                     isOpen={false}
@@ -542,7 +503,9 @@ storiesOf('Newsfeed', module)
     .add('PostList', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
-                {samplePostList()}
+                <PostList
+                    posts={posts}
+                />
             </div>
         </WithNotes>
     ))
@@ -551,7 +514,10 @@ storiesOf('Newsfeed', module)
             <div className="pa4 bg-near-white">
                 <div className="flex">
                     {sampleFilterContainer('mr3 w-third self-start')}
-                    {samplePostList('w-two-thirds')}
+                    <PostList
+                        className="w-two-thirds"
+                        posts={posts}
+                    />
                 </div>
             </div>
         </WithNotes>
