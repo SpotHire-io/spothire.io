@@ -19,6 +19,8 @@ class EmployeeOpportunitySingleView extends React.Component {
     }
 
     render() {
+        const rsvpState = (Math.random() > 0.5) ? 'invited' : 'confirmed';
+
         return (
             <div className={classNames('pa4 bg-near-white flex', this.props.className)}>
                 <div className="w-third mr3">
@@ -69,9 +71,17 @@ class EmployeeOpportunitySingleView extends React.Component {
                     <Box className="mt3">
                         <h2 className="f6 mt0 lh-title ttu">RSVP</h2>
 
-                        <p className="mt0">You are <strong>confirmed</strong> for this opportunity.</p>
+                        <p className="mt0">You are <strong>{rsvpState}</strong> {(rsvpState === 'confirmed' ? 'for' : 'to')} this opportunity.</p>
 
-                        <BasicButton className="button--negative mt3 w-100">Cancel Confirmation</BasicButton>
+                        <BasicButton
+                            className={classNames({
+                                'mt3 w-100': true,
+                                'button--negative': rsvpState === 'confirmed',
+                                'button--positive': rsvpState === 'invited',
+                            })}
+                        >
+                            {(rsvpState === 'confirmed') ? 'Cancel Confirmation' : 'Accept Invitation'}
+                        </BasicButton>
                     </Box>
                 </div>
                 <div className="w-two-thirds">
