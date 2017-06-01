@@ -5,6 +5,8 @@ import OpportunitySchema from '../../../schemas/Opportunity';
 
 import classNames from 'classnames';
 
+import moment from 'moment';
+
 import Box from '../../../components/Global/Box';
 
 import BasicButton from '../../../components/Buttons/BasicButton';
@@ -29,12 +31,12 @@ class EmployeeOpportunitySingleView extends React.Component {
                             {
                                 id: 'startDate',
                                 label: 'From',
-                                content: this.props.opportunity.selectedDates.start,
+                                content: moment(this.props.opportunity.selectedDates.start).format((this.props.opportunity.isAllDay) ? 'MMMM Do, YYYY [(all day)]' : 'MMMM, Do, YYYY h:mm a'),
                             },
                             {
                                 id: 'endDate',
                                 label: 'To',
-                                content: this.props.opportunity.selectedDates.end,
+                                content: moment(this.props.opportunity.selectedDates.end).format((this.props.opportunity.isAllDay) ? 'MMMM Do, YYYY [(all day)]' : 'MMMM, Do, YYYY h:mm a'),
                             },
                             {
                                 id: 'location',

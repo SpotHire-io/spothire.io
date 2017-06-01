@@ -276,6 +276,17 @@ storiesOf('Views (employee)', module)
             }
         />
     ))
+    .add('Schedule:OpportunitySingle (not all day)', () => (
+        <MockApp
+            selectedMenuItem="Schedule"
+            userType="employee"
+            viewComponent={
+                <EmployeeOpportunitySingleView
+                    opportunity={sampleEvents[1]}
+                />
+            }
+        />
+    ))
     .add('EmployeeProfileView', () => (
         <MockApp
             selectedMenuItem=""
