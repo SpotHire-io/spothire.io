@@ -33,7 +33,7 @@ class NewsfeedView extends React.Component {
         let filteredPosts = this.props.posts;
 
         if (this.state.showOnlyPostsNotRespondedTo) {
-            filteredPosts = filteredPosts.filter((post) => post.isRespondedTo === false)
+            filteredPosts = filteredPosts.filter((post) => post.responseRequired === true && post.isRespondedTo === false)
         }
 
         return (
