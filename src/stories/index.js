@@ -492,8 +492,7 @@ storiesOf('Newsfeed', module)
             <div className="pa4 bg-near-white">
                 <Post
                     post={{
-                        ...posts[0],
-                        excerpt: (<p className="mt0">Custom short excerpt.</p>)
+                        ...posts[1]
                     }}
                     isOpen={false}
                 />

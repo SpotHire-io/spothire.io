@@ -79,7 +79,7 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
         if (typeof post.excerpt != 'undefined') {
             excerptContent = post.excerpt;
         } else {
-            excerptContent = React.Children.toArray(post.content.props.children)[0];
+            excerptContent = post.content;
         }
 
         return excerptContent;
@@ -89,9 +89,7 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
         <article className={wrapperClasses} onClick={(isOpen) ? null : toggleOpenState}>
             {renderHeader()}
             <div className="bg-white ba b--black-20 ph3 pv4">
-                <div className="app-serif f4 measure">
-                    {(isOpen) ? post.content : renderExcerpt()}
-                </div>
+                <div className="app-serif f4 measure" dangerouslySetInnerHTML={{ __html: (isOpen) ? post.content : renderExcerpt() }}/>
             </div>
             {(isOpen) ? renderInteractionInterface() : null}
             <div className="bg-white-10 ba bt-0 b--black-10 ph3 pv2 f6">
