@@ -89,7 +89,7 @@ class GroupListView extends React.Component {
                 <GroupCardList
                     className="nt3 w-two-thirds"
                     groups={this.props.groups}
-                    onSelectGroup={linkTo('Views', 'People:GroupSingleView')}
+                    onSelectGroup={linkTo('Views (manager)', 'People:GroupSingleView')}
                 />
             </div>
         );

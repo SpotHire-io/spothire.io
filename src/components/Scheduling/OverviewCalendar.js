@@ -133,7 +133,7 @@ class OverviewCalendar extends React.Component {
                     closeModal={this.closeModal}
                     opportunity={this.state.opportunity}
                     updateOpportunity={this.updateOpportunity}
-                    addOpportunity={linkTo('Views', 'Schedule:OpportunitySingle')}
+                    addOpportunity={linkTo('Views (manager)', 'Schedule:OpportunitySingle')}
                 />
             </div>
         )

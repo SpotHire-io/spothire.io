@@ -72,7 +72,7 @@ class ScheduleView extends React.Component {
                             <OverviewCalendar
                                 style={{height: '75vh'}}
                                 events={this.props.events.filter((event) => this.state.filteredUserIds.map((user) => user.value).includes(event.userId))}
-                                onSelectEvent={linkTo('Views', 'Schedule:OpportunitySingle')}
+                                onSelectEvent={linkTo('Views (manager)', 'Schedule:OpportunitySingle')}
                             />
                         </Box>
                     </div>

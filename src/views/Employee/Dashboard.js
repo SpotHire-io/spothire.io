@@ -42,7 +42,7 @@ class DashboardView extends React.Component {
                             'h6': this.state.visibleCalendarView === 'month'
                         })}
                         events={this.props.events}
-                        onSelectEvent={linkTo('Views', 'Schedule:OpportunitySingle')}
+                        onSelectEvent={linkTo('Views (employee)', 'Schedule:OpportunitySingle')}
                         calendarProps={{
                             views: ['month', 'week', 'day'],
                             defaultView: 'week',
@@ -60,7 +60,7 @@ class DashboardView extends React.Component {
                                     .map((event) => {
                                         return (
                                             <li className="mt3 pa0" key={event.id}>
-                                                <a className="db link hover-bg-near-white black" href="#" onClick={linkTo('Views', 'Schedule:OpportunitySingle')}>
+                                                <a className="db link hover-bg-near-white black" href="#" onClick={linkTo('Views (employee)', 'Schedule:OpportunitySingle')}>
                                                     <h3 className="mv0 f5">{event.title}</h3>
                                                     <p className="mt1">{moment(event.selectedDates.start).format('MMMM Do, YYYY')}</p>
                                                 </a>

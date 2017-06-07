@@ -108,7 +108,7 @@ class EmployeeListView extends React.Component {
                             hideFilterInput: true,
                             filterBy: this.state.searchQuery,
                         }}
-                        onClickUser={linkTo('Views', 'People:EmployeeSingleView')}
+                        onClickUser={linkTo('Views (manager)', 'People:EmployeeSingleView')}
                     />
                 </div>
             </div>

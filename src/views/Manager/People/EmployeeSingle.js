@@ -42,7 +42,7 @@ class EmployeeSingleView extends React.Component {
                             isActive: false
                         }
                     ]}
-                    onClick={linkTo('Views', 'People')}
+                    onClick={linkTo('Views (manager)', 'People')}
                 />
                 <div className="pv4 bg-near-white">
                     <div className="flex mh4">

@@ -63,7 +63,7 @@ class GroupSingleView extends React.Component {
                             isActive: true
                         }
                     ]}
-                    onClick={linkTo('Views', 'People')}
+                    onClick={linkTo('Views (manager)', 'People')}
                 />
                 <div className="pa4 bg-near-white">
                     <div className="flex items-start">
