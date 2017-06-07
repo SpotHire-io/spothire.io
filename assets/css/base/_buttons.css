@@ -118,6 +118,20 @@ button:active,
     color: #ffffff;
 }
 
+.button--outline.button--neutral {
+    border-color: #777777;
+
+    background: transparent;
+
+    color: #333333;
+}
+
+.button--outline.button--neutral:hover {
+    background: #777777;
+
+    color: #ffffff;
+}
+
 .button--left {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;

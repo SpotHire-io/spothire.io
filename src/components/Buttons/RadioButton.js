@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 const RadioButton = ({ checked, name, id, value, children, className, onClick }) => {
     const labelClassName = classNames({
-        'button button--standard': true,
+        'button button--neutral': true,
         'button--outline': typeof checked == 'undefined' || ! checked,
         [className]: true
     });
