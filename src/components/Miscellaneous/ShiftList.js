@@ -16,6 +16,8 @@ class ShiftList extends React.Component {
         this.toggleShiftEditing = this.toggleShiftEditing.bind(this);
 
         this.renderShiftRow = this.renderShiftRow.bind(this);
+        this.renderShiftHeader = this.renderShiftHeader.bind(this);
+        this.renderShiftDetails = this.renderShiftDetails.bind(this);
         this.renderShiftCell = this.renderShiftCell.bind(this);
         this.renderControls = this.renderControls.bind(this);
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
@@ -54,35 +56,38 @@ class ShiftList extends React.Component {
 
     renderShiftRow(shift, index) {
         const shiftClasses = classNames({
-            'pa2 mt0 flex bb b--black-20': true,
+            'pa2 mt0 bb b--black-20': true,
             'hover-bg-black-10': shift.id !== this.state.currentlyEditingShiftId
         });
 
-        if (shift.id !== this.state.currentlyEditingShiftId) {
-            return (
-                <div key={shift.id} className={shiftClasses}>
-                    {this.renderShiftCell('index', `${index + 1}`, 'pl3')}
-                    {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
-                    {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
-                    {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'))}
-                    {this.renderShiftCell('endTime', shift.end.format('h:mm a'))}
-                    {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
-                    {this.renderShiftCell('controls', () => this.renderControls(shift))}
-                </div>
-            );
-        } else {
-            return (
-                <div key={shift.id} className={shiftClasses}>
-                    {this.renderShiftCell('index', `${index + 1}`, 'pl3')}
-                    {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
-                    {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
-                    {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'))}
-                    {this.renderShiftCell('endTime', shift.end.format('h:mm a'))}
-                    {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
-                    {this.renderShiftCell('controls', () => this.renderControls(shift))}
-                </div>
-            );
-        }
+        return (
+            <div key={shift.id} className={shiftClasses}>
+                {this.renderShiftHeader(shift, index)}
+                {(shift.id === this.state.currentlyEditingShiftId) ? this.renderShiftDetails(shift, index) : null}
+            </div>
+        );
+    }
+
+    renderShiftHeader(shift, index) {
+        return (
+            <div className="flex">
+                {this.renderShiftCell('index', `${index + 1}`, 'pl3')}
+                {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
+                {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
+                {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'))}
+                {this.renderShiftCell('endTime', shift.end.format('h:mm a'))}
+                {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
+                {this.renderShiftCell('controls', () => this.renderControls(shift))}
+            </div>
+        )
+    }
+
+    renderShiftDetails(shift, index) {
+        return (
+            <div>
+                <p>shift open</p>
+            </div>
+        )
     }
 
     renderShiftCell(column, value, className) {
