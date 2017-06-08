@@ -31,11 +31,22 @@ class ShiftList extends React.Component {
                     id: 0,
                     start: moment(new Date(2017, 4, 1, 8, 0)),
                     end: moment(new Date(2017, 4, 1, 16, 0)),
+                    isInvited: true,
+                    isConfirmed: false,
                 },
                 {
                     id: 1,
                     start: moment(new Date(2017, 4, 1, 16, 0)),
                     end: moment(new Date(2017, 4, 2, 0, 0)),
+                    isInvited: true,
+                    isConfirmed: true,
+                },
+                {
+                    id: 2,
+                    start: moment(new Date(2017, 4, 1, 16, 0)),
+                    end: moment(new Date(2017, 4, 2, 0, 0)),
+                    isInvited: false,
+                    isConfirmed: false,
                 }
             ]
         };
@@ -107,9 +118,15 @@ class ShiftList extends React.Component {
     }
 
     renderControls(shift) {
+        const renderTag = () => {
+            if (! shift.isInvited) return;
+
+            return <BasicTag type={(shift.isConfirmed) ? 'positive' : 'neutral'} isNarrow>{(shift.isConfirmed) ? 'confirmed' : 'invited'}</BasicTag>;
+        };
+
         return (
             <div className="tr">
-                <BasicTag isNarrow>invited</BasicTag>
+                {renderTag()}
                 <Icon color="#555555" name="compose" className="pointer relative ml2" style={{ top: '3px' }} onClick={() => this.toggleShiftEditing(shift.id)}/>
             </div>
         );
