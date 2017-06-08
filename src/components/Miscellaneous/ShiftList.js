@@ -95,9 +95,30 @@ class ShiftList extends React.Component {
     }
 
     renderShiftDetails(shift, index) {
+        const renderRsvp = () => {
+            if (! shift.isInvited) return;
+
+            return (
+                <div>
+                    <p className="f6 mb2 mt0">RSVP</p>
+                    <p className="mt0">You are <strong>{(shift.isConfirmed) ? 'confirmed' : 'invited'}</strong> {(shift.isConfirmed) ? 'for' : 'to'} this shift.</p>
+
+                    <BasicButton
+                        className={classNames({
+                            'mt3 w-100': true,
+                            'button--negative': shift.isConfirmed,
+                            'button--positive': ! shift.isConfirmed,
+                        })}
+                    >
+                        {(shift.isConfirmed) ? 'Cancel Confirmation' : 'Accept Invitation'}
+                    </BasicButton>
+                </div>
+            );
+        };
+
         return (
             <div className="pa2">
-                <div className="flex">
+                <div className="flex mb2">
                     <div className="w-20">
                         <p className="f6 mb2 mt0">Length</p>
                         <p className="mt0">{shift.end.diff(shift.start, 'hours')} hrs</p>
@@ -111,6 +132,7 @@ class ShiftList extends React.Component {
                         <p className="mt0">{shift.notes}</p>
                     </div>
                 </div>
+                {renderRsvp()}
             </div>
         )
     }
