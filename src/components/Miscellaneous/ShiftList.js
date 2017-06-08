@@ -20,8 +20,6 @@ class ShiftList extends React.Component {
         super();
 
         this.toggleShiftEditing = this.toggleShiftEditing.bind(this);
-        this.deleteShift = this.deleteShift.bind(this);
-        this.createShift = this.createShift.bind(this);
 
         this.renderShiftRow = this.renderShiftRow.bind(this);
         this.renderShiftCell = this.renderShiftCell.bind(this);
@@ -60,32 +58,6 @@ class ShiftList extends React.Component {
         return this.setState({ currentlyEditingShiftId });
     }
 
-    deleteShift(shiftId) {
-        let shifts = [...this.state.shifts];
-
-        // Drop the shift by finding its index
-        shifts.splice(shifts.findIndex((shift) => shift.id === shiftId), 1);
-
-        return this.setState({ shifts });
-    }
-
-    createShift() {
-        let shifts = [...this.state.shifts];
-
-        // extract the highest ID currently existing so we have something to mock
-        const highestId = shifts.reduce((currentHighestId, shift) => {
-            return Math.max(currentHighestId, shift.id);
-        }, -1);
-
-        shifts.push({
-            id: highestId + 1,
-            start: moment(new Date()),
-            end: moment(new Date())
-        });
-
-        return this.setState({ shifts, currentlyEditingShiftId: highestId + 1 });
-    }
-
     renderShiftRow(shift, index) {
         const shiftClasses = classNames({
             'ph3 pa2 mt0': true,
@@ -94,7 +66,7 @@ class ShiftList extends React.Component {
 
         if (shift.id !== this.state.currentlyEditingShiftId) {
             return (
-                <Tr key={shift.id} className={shiftClasses}>
+                <div key={shift.id} className={shiftClasses}>
                     {this.renderShiftCell('index', `${index + 1}`, 'pl3')}
                     {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
                     {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
@@ -102,11 +74,11 @@ class ShiftList extends React.Component {
                     {this.renderShiftCell('endTime', shift.end.format('h:mm a'))}
                     {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
                     {this.renderShiftCell('controls', () => this.renderControls(shift))}
-                </Tr>
+                </div>
             );
         } else {
             return (
-                <Tr key={shift.id} className={shiftClasses}>
+                <div key={shift.id} className={shiftClasses}>
                     {this.renderShiftCell('index', `${index + 1}`, 'pl3')}
                     {this.renderShiftCell('startDate', () => (
                         <SingleDatePickerFocusContainer
@@ -152,7 +124,7 @@ class ShiftList extends React.Component {
                     ))}
                     {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
                     {this.renderShiftCell('controls', () => this.renderControls(shift))}
-                </Tr>
+                </div>
             );
         }
     }
@@ -165,12 +137,12 @@ class ShiftList extends React.Component {
         });
 
         return (
-            <Td
+            <div
                 column={column}
                 className={cellClasses}
             >
                 {(typeof value == 'string') ? value : value()}
-            </Td>
+            </div>
         );
     }
 
@@ -178,7 +150,6 @@ class ShiftList extends React.Component {
         return (
             <div className="tr">
                 <Icon color="#555555" name="compose" className="pointer" onClick={() => this.toggleShiftEditing(shift.id)}/>
-                <Icon color="#555555" name="close" className="pointer ml2" onClick={() => this.deleteShift(shift.id)}/>
             </div>
         );
     }
@@ -191,25 +162,24 @@ class ShiftList extends React.Component {
         });
 
         return (
-            <Th
+            <div
                 column={column}
                 className={cellClasses}
             >
                 {value}
-            </Th>
+            </div>
         );
     }
 
     render() {
         const wrapperClasses = classNames({
-            '': true,
+            'bg-white ba b--black-20 w-100': true,
             [this.props.className]: true
         });
 
         return (
             <div className={wrapperClasses}>
-                <Table className="bg-white ba b--black-20 sh-shadow-2 w-100 table-layout-fixed" cellSpacing="0">
-                    <Thead>
+                <div>
                     {this.renderHeaderCell('index', '#', 'w2 pl3')}
                     {this.renderHeaderCell('startDate', 'Start Date', '')}
                     {this.renderHeaderCell('startTime', 'Start Time', '')}
@@ -217,12 +187,8 @@ class ShiftList extends React.Component {
                     {this.renderHeaderCell('endTime', 'End Time', '')}
                     {this.renderHeaderCell('length', 'Length', '')}
                     {this.renderHeaderCell('controls', 'Controls', 'transparent w-10')}
-                    </Thead>
-                    {this.state.shifts.map((shift, index) => this.renderShiftRow(shift, index))}
-                </Table>
-                <div className="tr mt3">
-                    <BasicButton className="button--positive" onClick={this.createShift}>Add Shift</BasicButton>
                 </div>
+                {this.state.shifts.map((shift, index) => this.renderShiftRow(shift, index))}
             </div>
         )
     }
