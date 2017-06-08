@@ -71,13 +71,13 @@ class ShiftList extends React.Component {
     renderShiftHeader(shift, index) {
         return (
             <div className="flex">
-                {this.renderShiftCell('index', `${index + 1}`, 'pl3')}
-                {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'))}
-                {this.renderShiftCell('startTime', shift.start.format('h:mm a'))}
-                {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'))}
-                {this.renderShiftCell('endTime', shift.end.format('h:mm a'))}
-                {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`)}
-                {this.renderShiftCell('controls', () => this.renderControls(shift))}
+                {this.renderShiftCell('index', `${index + 1}`, 'w2 pl3')}
+                {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'), 'w-20')}
+                {this.renderShiftCell('startTime', shift.start.format('h:mm a'), 'w-20')}
+                {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'), 'w-20')}
+                {this.renderShiftCell('endTime', shift.end.format('h:mm a'), 'w-20')}
+                {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`, 'w-20')}
+                {this.renderShiftCell('controls', () => this.renderControls(shift), 'w-10')}
             </div>
         )
     }
@@ -142,11 +142,11 @@ class ShiftList extends React.Component {
             <div className={wrapperClasses}>
                 <div className="flex bb bw1 b--black-20 ph2">
                     {this.renderHeaderCell('index', '#', 'w2 pl3')}
-                    {this.renderHeaderCell('startDate', 'Start Date', '')}
-                    {this.renderHeaderCell('startTime', 'Start Time', '')}
-                    {this.renderHeaderCell('endDate', 'End Date', '')}
-                    {this.renderHeaderCell('endTime', 'End Time', '')}
-                    {this.renderHeaderCell('length', 'Length', '')}
+                    {this.renderHeaderCell('startDate', 'Start Date', 'w-20')}
+                    {this.renderHeaderCell('startTime', 'Start Time', 'w-20')}
+                    {this.renderHeaderCell('endDate', 'End Date', 'w-20')}
+                    {this.renderHeaderCell('endTime', 'End Time', 'w-20')}
+                    {this.renderHeaderCell('length', 'Length', 'w-20')}
                     {this.renderHeaderCell('controls', 'Controls', 'transparent w-10')}
                 </div>
                 {this.state.shifts.map((shift, index) => this.renderShiftRow(shift, index))}
