@@ -123,6 +123,7 @@ class ShiftList extends React.Component {
 
         return (
             <div
+                aria-labelledby={`columnHeader_${column}`}
                 className={cellClasses}
             >
                 {(typeof value == 'string') ? value : value()}
@@ -152,6 +153,7 @@ class ShiftList extends React.Component {
 
         return (
             <div
+                id={`columnHeader_${column}`}
                 className={cellClasses}
             >
                 {value}
