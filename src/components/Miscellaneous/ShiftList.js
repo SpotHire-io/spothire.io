@@ -81,8 +81,7 @@ class ShiftList extends React.Component {
 
     renderShiftHeader(shift, index) {
         return (
-            <div className="flex items-baseline">
-                {this.renderShiftCell('index', `${index + 1}`, 'w2 pl3')}
+            <div className="flex items-baseline pointer" onClick={() => this.toggleShiftEditing(shift.id)}>
                 {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'), 'w-20')}
                 {this.renderShiftCell('startTime', shift.start.format('h:mm a'), 'w-20')}
                 {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'), 'w-20')}
@@ -109,7 +108,6 @@ class ShiftList extends React.Component {
 
         return (
             <div
-                column={column}
                 className={cellClasses}
             >
                 {(typeof value == 'string') ? value : value()}
@@ -127,7 +125,6 @@ class ShiftList extends React.Component {
         return (
             <div className="tr">
                 {renderTag()}
-                <Icon color="#555555" name="compose" className="pointer relative ml2" style={{ top: '3px' }} onClick={() => this.toggleShiftEditing(shift.id)}/>
             </div>
         );
     }
@@ -140,7 +137,6 @@ class ShiftList extends React.Component {
 
         return (
             <div
-                column={column}
                 className={cellClasses}
             >
                 {value}
@@ -157,7 +153,6 @@ class ShiftList extends React.Component {
         return (
             <div className={wrapperClasses}>
                 <div className="flex bb bw1 b--black-20 ph2 pv1">
-                    {this.renderHeaderCell('index', '#', 'w2 pl3')}
                     {this.renderHeaderCell('startDate', 'Start Date', 'w-20')}
                     {this.renderHeaderCell('startTime', 'Start Time', 'w-20')}
                     {this.renderHeaderCell('endDate', 'End Date', 'w-20')}
