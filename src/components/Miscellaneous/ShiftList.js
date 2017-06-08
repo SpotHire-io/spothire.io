@@ -86,8 +86,7 @@ class ShiftList extends React.Component {
                 {this.renderShiftCell('startTime', shift.start.format('h:mm a'), 'w-20')}
                 {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'), 'w-20')}
                 {this.renderShiftCell('endTime', shift.end.format('h:mm a'), 'w-20')}
-                {this.renderShiftCell('length', `${shift.end.diff(shift.start, 'hours')} hrs`, 'w-15')}
-                {this.renderShiftCell('controls', () => this.renderControls(shift), 'w-15')}
+                {this.renderShiftCell('controls', () => this.renderControls(shift), 'w-20')}
             </div>
         )
     }
@@ -96,6 +95,7 @@ class ShiftList extends React.Component {
         return (
             <div>
                 <p>shift open</p>
+                <p>Length: {shift.end.diff(shift.start, 'hours')} hrs</p>
             </div>
         )
     }
@@ -157,8 +157,7 @@ class ShiftList extends React.Component {
                     {this.renderHeaderCell('startTime', 'Start Time', 'w-20')}
                     {this.renderHeaderCell('endDate', 'End Date', 'w-20')}
                     {this.renderHeaderCell('endTime', 'End Time', 'w-20')}
-                    {this.renderHeaderCell('length', 'Length', 'w-15')}
-                    {this.renderHeaderCell('controls', 'Controls', 'transparent w-15')}
+                    {this.renderHeaderCell('controls', 'Controls', 'transparent w-20')}
                 </div>
                 {this.state.shifts.map((shift, index) => this.renderShiftRow(shift, index))}
             </div>
