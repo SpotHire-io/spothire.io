@@ -25,12 +25,13 @@ class ShiftList extends React.Component {
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
 
         this.state = {
-            currentlyEditingShiftId: null,
+            currentlyEditingShiftId: 0,
             shifts: [
                 {
                     id: 0,
                     start: moment(new Date(2017, 4, 1, 8, 0)),
                     end: moment(new Date(2017, 4, 1, 16, 0)),
+                    notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
                     isInvited: true,
                     isConfirmed: false,
                 },
@@ -38,6 +39,7 @@ class ShiftList extends React.Component {
                     id: 1,
                     start: moment(new Date(2017, 4, 1, 16, 0)),
                     end: moment(new Date(2017, 4, 2, 0, 0)),
+                    notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
                     isInvited: true,
                     isConfirmed: true,
                 },
@@ -45,6 +47,7 @@ class ShiftList extends React.Component {
                     id: 2,
                     start: moment(new Date(2017, 4, 1, 16, 0)),
                     end: moment(new Date(2017, 4, 2, 0, 0)),
+                    notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
                     isInvited: false,
                     isConfirmed: false,
                 }
@@ -93,9 +96,17 @@ class ShiftList extends React.Component {
 
     renderShiftDetails(shift, index) {
         return (
-            <div>
-                <p>shift open</p>
-                <p>Length: {shift.end.diff(shift.start, 'hours')} hrs</p>
+            <div className="pa2">
+                <div className="flex">
+                    <div className="w-20">
+                        <p className="f6 mb2 mt0">Length</p>
+                        <p className="mt0">{shift.end.diff(shift.start, 'hours')} hrs</p>
+                    </div>
+                    <div className="w-80 ml1">
+                        <p className="f6 mb2 mt0">Notes</p>
+                        <p className="mt0">{shift.notes}</p>
+                    </div>
+                </div>
             </div>
         )
     }
