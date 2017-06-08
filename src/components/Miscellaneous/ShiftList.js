@@ -102,7 +102,11 @@ class ShiftList extends React.Component {
                         <p className="f6 mb2 mt0">Length</p>
                         <p className="mt0">{shift.end.diff(shift.start, 'hours')} hrs</p>
                     </div>
-                    <div className="w-80 ml1">
+                    <div className="w-40 ml1">
+                        <p className="f6 mb2 mt0">Location</p>
+                        <p className="mt0">Front door</p>
+                    </div>
+                    <div className="w-40 pl2">
                         <p className="f6 mb2 mt0">Notes</p>
                         <p className="mt0">{shift.notes}</p>
                     </div>
