@@ -54,7 +54,7 @@ class ShiftList extends React.Component {
 
     renderShiftRow(shift, index) {
         const shiftClasses = classNames({
-            'ph3 pa2 mt0': true,
+            'pa2 mt0 flex bb b--black-20': true,
             'hover-bg-black-10': shift.id !== this.state.currentlyEditingShiftId
         });
 
@@ -87,7 +87,7 @@ class ShiftList extends React.Component {
 
     renderShiftCell(column, value, className) {
         const cellClasses = classNames({
-            'bb b--black-20': true,
+            '': true,
             [this.commonCellClasses]: true,
             [className]: true
         });
@@ -112,7 +112,7 @@ class ShiftList extends React.Component {
 
     renderHeaderCell(column, value, className) {
         const cellClasses = classNames({
-            'f6 normal tl bb bw1 b--black-20 no-select': true,
+            'f6 normal tl no-select': true,
             [this.commonCellClasses]: true,
             [className]: true
         });
@@ -135,7 +135,7 @@ class ShiftList extends React.Component {
 
         return (
             <div className={wrapperClasses}>
-                <div>
+                <div className="flex bb bw1 b--black-20 ph2">
                     {this.renderHeaderCell('index', '#', 'w2 pl3')}
                     {this.renderHeaderCell('startDate', 'Start Date', '')}
                     {this.renderHeaderCell('startTime', 'Start Time', '')}
