@@ -9,6 +9,8 @@ import Icon from 'react-geomicons';
 
 import BasicButton from '../Buttons/BasicButton';
 
+import BasicTag from '../Tags/BasicTag';
+
 class ShiftList extends React.Component {
     constructor() {
         super();
@@ -21,8 +23,6 @@ class ShiftList extends React.Component {
         this.renderShiftCell = this.renderShiftCell.bind(this);
         this.renderControls = this.renderControls.bind(this);
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
-
-        this.commonCellClasses = 'pv3 pl2 pr2';
 
         this.state = {
             currentlyEditingShiftId: null,
@@ -70,7 +70,7 @@ class ShiftList extends React.Component {
 
     renderShiftHeader(shift, index) {
         return (
-            <div className="flex">
+            <div className="flex items-baseline">
                 {this.renderShiftCell('index', `${index + 1}`, 'w2 pl3')}
                 {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'), 'w-20')}
                 {this.renderShiftCell('startTime', shift.start.format('h:mm a'), 'w-20')}
@@ -92,8 +92,7 @@ class ShiftList extends React.Component {
 
     renderShiftCell(column, value, className) {
         const cellClasses = classNames({
-            '': true,
-            [this.commonCellClasses]: true,
+            'pa2': true,
             [className]: true
         });
 
@@ -110,15 +109,15 @@ class ShiftList extends React.Component {
     renderControls(shift) {
         return (
             <div className="tr">
-                <Icon color="#555555" name="compose" className="pointer" onClick={() => this.toggleShiftEditing(shift.id)}/>
+                <BasicTag isNarrow>invited</BasicTag>
+                <Icon color="#555555" name="compose" className="pointer relative ml2" style={{ top: '3px' }} onClick={() => this.toggleShiftEditing(shift.id)}/>
             </div>
         );
     }
 
     renderHeaderCell(column, value, className) {
         const cellClasses = classNames({
-            'f6 normal tl no-select': true,
-            [this.commonCellClasses]: true,
+            'pa2 f6 normal tl no-select': true,
             [className]: true
         });
 
@@ -140,7 +139,7 @@ class ShiftList extends React.Component {
 
         return (
             <div className={wrapperClasses}>
-                <div className="flex bb bw1 b--black-20 ph2">
+                <div className="flex bb bw1 b--black-20 ph2 pv1">
                     {this.renderHeaderCell('index', '#', 'w2 pl3')}
                     {this.renderHeaderCell('startDate', 'Start Date', 'w-20')}
                     {this.renderHeaderCell('startTime', 'Start Time', 'w-20')}
