@@ -11,6 +11,8 @@ import Box from '../../../components/Global/Box';
 
 import BasicButton from '../../../components/Buttons/BasicButton';
 
+import ShiftList from '../../../components/Miscellaneous/ShiftList';
+
 class EmployeeOpportunitySingleView extends React.Component {
     constructor() {
         super();
@@ -94,7 +96,7 @@ class EmployeeOpportunitySingleView extends React.Component {
                     <Box className="mt3">
                         <h2 className="f6 mt0 lh-title ttu">Shifts</h2>
 
-                        <p>Shifts attached to opportunity...</p>
+                        <ShiftList/>
                     </Box>
                 </div>
             </div>
