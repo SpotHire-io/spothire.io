@@ -25,7 +25,7 @@ class ShiftList extends React.Component {
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
 
         this.state = {
-            currentlyEditingShiftId: 0,
+            currentlyEditingShiftId: null,
             shifts: [
                 {
                     id: 0,
