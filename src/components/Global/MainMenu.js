@@ -46,7 +46,7 @@ class MainMenu extends React.Component {
     renderLogo() {
         return (
             <div className={this.commonItemWrapperClasses}>
-                <img src="/img/logo-white.svg" alt="SpotHire logo" className="h1 v-mid"/>
+                <img src="/img/logo-white.svg" alt="SpotHire logo" className="h1 v-mid pointer" onClick={linkTo('Overview', 'Welcome')}/>
             </div>
         );
     }
