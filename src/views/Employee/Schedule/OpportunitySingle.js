@@ -11,7 +11,11 @@ import Box from '../../../components/Global/Box';
 
 import BasicButton from '../../../components/Buttons/BasicButton';
 
+import PostList from '../../../components/Newsfeed/PostList';
+
 import ShiftList from '../../../components/Miscellaneous/ShiftList';
+
+import posts from '../../../data/posts.json';
 
 class EmployeeOpportunitySingleView extends React.Component {
     constructor() {
@@ -90,7 +94,10 @@ class EmployeeOpportunitySingleView extends React.Component {
                     <Box>
                         <h2 className="f6 mt0 lh-title ttu">Posts</h2>
 
-                        <p>Posts attached to opportunity...</p>
+                        <PostList
+                            isInline={true}
+                            posts={posts}
+                        />
                     </Box>
 
                     <Box className="mt3">

@@ -54,6 +54,7 @@ class PostList extends React.Component {
                             key={post.id}
                             className={postClasses}
                             post={post}
+                            isInline={this.props.isInline}
                             isOpen={this.state.openPosts.indexOf(post.id) !== -1}
                             toggleOpenState={boundTogglePost}
                         />
@@ -65,12 +66,14 @@ class PostList extends React.Component {
 }
 
 PostList.defaultProps = {
-    className: ''
+    className: '',
+    isInline: false,
 };
 
 PostList.propTypes = {
     className: PropTypes.string,
     posts: PropTypes.arrayOf(PostSchema),
+    isInline: PropTypes.bool,
 };
 
 export default PostList;
