@@ -1,5 +1,8 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+import PostSchema from '../../schemas/Post';
+
 import classNames from 'classnames';
 
 import Post from './Post';
@@ -63,6 +66,11 @@ class PostList extends React.Component {
 
 PostList.defaultProps = {
     className: ''
+};
+
+PostList.propTypes = {
+    className: PropTypes.string,
+    posts: PropTypes.arrayOf(PostSchema),
 };
 
 export default PostList;
