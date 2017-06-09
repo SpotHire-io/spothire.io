@@ -13,8 +13,9 @@ import BasicTag from '../Tags/BasicTag';
 
 const Post = ({ post, className, isOpen, toggleOpenState, isInline }) => {
     let wrapperClasses = classNames({
-        'sh-shadow-2': isOpen,
-        'o-70 glow pointer sh-shadow-1': ! isOpen,
+        'sh-shadow-2': ! isInline && isOpen,
+        'sh-shadow-1': ! isInline && ! isOpen,
+        'o-70 glow pointer': ! isOpen,
         ' animate-shadow': true,
         [className]: true
     });
