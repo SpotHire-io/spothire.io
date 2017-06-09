@@ -18,7 +18,7 @@ class ShiftList extends React.Component {
         this.toggleShiftEditing = this.toggleShiftEditing.bind(this);
 
         this.renderShiftRow = this.renderShiftRow.bind(this);
-        this.renderShiftHeader = this.renderShiftHeader.bind(this);
+        this.renderShiftSummary = this.renderShiftSummary.bind(this);
         this.renderShiftDetails = this.renderShiftDetails.bind(this);
         this.renderShiftCell = this.renderShiftCell.bind(this);
         this.renderControls = this.renderControls.bind(this);
@@ -76,13 +76,13 @@ class ShiftList extends React.Component {
 
         return (
             <div key={shift.id} className={shiftClasses}>
-                {this.renderShiftHeader(shift, index)}
+                {this.renderShiftSummary(shift, index)}
                 {(shift.id === this.state.currentlyEditingShiftId) ? this.renderShiftDetails(shift, index) : null}
             </div>
         );
     }
 
-    renderShiftHeader(shift, index) {
+    renderShiftSummary(shift, index) {
         return (
             <div className="flex items-baseline pointer" onClick={() => this.toggleShiftEditing(shift.id)}>
                 {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'), 'w-20')}
