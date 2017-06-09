@@ -93,8 +93,8 @@ const Post = ({ post, className, isOpen, toggleOpenState, isInline }) => {
     return (
         <article className={wrapperClasses} onClick={(isOpen) ? null : toggleOpenState}>
             {renderHeader()}
-            <div className="bg-white ba b--black-20 ph3 pv4">
-                <div className="app-serif f4 measure" dangerouslySetInnerHTML={{ __html: (isOpen) ? post.content : renderExcerpt() }}/>
+            <div className={classNames('bg-white ba b--black-20 ph3', { 'pv3': isInline, 'pv4': ! isInline })}>
+                <div className={classNames('app-serif measure', { 'f5': isInline, 'f4': ! isInline })} dangerouslySetInnerHTML={{ __html: (isOpen) ? post.content : renderExcerpt() }}/>
             </div>
             {(isOpen) ? renderInteractionInterface() : null}
             <div className="bg-white-10 ba bt-0 b--black-10 ph3 pv2 f6">
