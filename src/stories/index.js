@@ -2,8 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { storiesOf } from '@kadira/storybook';
-import { action } from '@kadira/storybook';
+import { storiesOf, linkTo } from '@kadira/storybook';
 import { WithNotes } from '@kadira/storybook-addon-notes';
 
 import moment from 'moment';
@@ -90,8 +89,8 @@ storiesOf('Overview', module)
             <p className="measure">Unless you really want to dig into the nitty-gritty of each part of the app, the most
             interesting place to look will be the <code className="bg-light-gray pa1 br1 f6">Views</code> category, the
             second item in the menu on the left. There I’ve put together previews of how the components will sit together
-            to build certain pages from our Information Architecture. You’ll have to navigate with the links on the left,
-            because the main menu functionality isn’t set up yet.</p>
+            to build certain pages from our Information Architecture. To go for full immersion, press <code className="bg-light-gray pa1 br1 f6">Ctrl-Shift-F</code>,
+            then enter as a <a className="red hover-no-underline" onClick={linkTo('Views (manager)', 'Newsfeed')} href="#">manager</a> or <a className="red hover-no-underline" onClick={linkTo('Views (employee)', 'Dashboard')} href="#">employee</a>.</p>
 
             <p className="measure">When looking through, keep in mind that things are still early stage. Quite a bit has
             yet to be completed, and what is posted here is still in progress. That said, there are a few questions for
