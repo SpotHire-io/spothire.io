@@ -71,11 +71,11 @@ class ShiftList extends React.Component {
     renderShiftRow(shift, index) {
         const shiftClasses = classNames({
             'pa2 mt0 bb b--black-20': true,
-            'hover-bg-black-10': shift.id !== this.state.currentlyEditingShiftId
+            'pointer hover-bg-black-10': shift.id !== this.state.currentlyEditingShiftId
         });
 
         return (
-            <div key={shift.id} className={shiftClasses}>
+            <div key={shift.id} className={shiftClasses} onClick={() => (shift.id !== this.state.currentlyEditingShiftId) ? this.toggleShiftEditing(shift.id) : null}>
                 {this.renderShiftSummary(shift, index)}
                 {(shift.id === this.state.currentlyEditingShiftId) ? this.renderShiftDetails(shift, index) : null}
             </div>
@@ -83,8 +83,13 @@ class ShiftList extends React.Component {
     }
 
     renderShiftSummary(shift, index) {
+        const summaryWrapperClasses = classNames({
+            'flex items-baseline': true,
+            'pointer hover-bg-black-10': shift.id === this.state.currentlyEditingShiftId,
+        });
+
         return (
-            <div className="flex items-baseline pointer" onClick={() => this.toggleShiftEditing(shift.id)}>
+            <div className={summaryWrapperClasses} onClick={() => (shift.id === this.state.currentlyEditingShiftId) ? this.toggleShiftEditing(shift.id) : null}>
                 {this.renderShiftCell('startDate', shift.start.format('MMMM Do, YYYY'), 'w-20')}
                 {this.renderShiftCell('startTime', shift.start.format('h:mm a'), 'w-20')}
                 {this.renderShiftCell('endDate', shift.end.format('MMMM Do, YYYY'), 'w-20')}
