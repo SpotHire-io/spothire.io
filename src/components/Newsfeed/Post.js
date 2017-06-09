@@ -11,7 +11,7 @@ import BasicButton from '../Buttons/BasicButton';
 
 import BasicTag from '../Tags/BasicTag';
 
-const Post = ({ post, className, isOpen, toggleOpenState }) => {
+const Post = ({ post, className, isOpen, toggleOpenState, isInline }) => {
     let wrapperClasses = classNames({
         'sh-shadow-2': isOpen,
         'o-70 glow pointer sh-shadow-1': ! isOpen,
@@ -28,7 +28,7 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
 
         return (
             <div className={headerClasses} onClick={(isOpen) ? toggleOpenState : null}>
-                <h2 className="mv0 lh-title">{post.title}</h2>
+                <h2 className={classNames('mv0 lh-title', { 'f5': isInline, 'f4': ! isInline })}>{post.title}</h2>
 
                 <div>
                     {renderStatusTag()}
@@ -44,15 +44,20 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
     };
 
     const renderStatusTag = function () {
+        let tagType = 'positive';
+        let tagText = 'You’ve responded';
+
         if (! post.responseRequired) {
-            return <BasicTag type="neutral">Response not required</BasicTag>;
+            tagType = 'neutral';
+            tagText = 'Response not required';
         }
 
         if (! post.isRespondedTo) {
-            return <BasicTag type="negative">You need to respond</BasicTag>;
+            tagType = 'negative';
+            tagText = 'You need to respond';
         }
 
-        return <BasicTag type="positive">You’ve responded</BasicTag>;
+        return <BasicTag isNarrow={isInline} type={tagType}>{tagText}</BasicTag>;
     };
 
     const renderInteractionInterface = function () {
@@ -101,7 +106,8 @@ const Post = ({ post, className, isOpen, toggleOpenState }) => {
 
 Post.defaultProps = {
     className: '',
-    isOpen: true
+    isOpen: true,
+    isInline: false,
 };
 
 export default Post;
