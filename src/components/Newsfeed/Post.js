@@ -29,7 +29,9 @@ const Post = ({ post, className, isOpen, toggleOpenState, isInline }) => {
 
         return (
             <div className={headerClasses} onClick={(isOpen) ? toggleOpenState : null}>
-                <h2 className={classNames('mv0 lh-title', { 'f5': isInline, 'f4': ! isInline })}>{post.title}</h2>
+                <h2 className={classNames('mv0 lh-title', { 'f5': isInline, 'f4': ! isInline })}>
+                    {post.title} {(isInline) ? <span className="f6 ml1 normal">({moment(post.date).format("MMMM Do, h:mm a")})</span> : null}
+                </h2>
 
                 <div>
                     {renderStatusTag()}
@@ -98,9 +100,11 @@ const Post = ({ post, className, isOpen, toggleOpenState, isInline }) => {
                 <div className={classNames('app-serif measure', { 'f5': isInline, 'f4': ! isInline })} dangerouslySetInnerHTML={{ __html: (isOpen) ? post.content : renderExcerpt() }}/>
             </div>
             {(isOpen) ? renderInteractionInterface() : null}
-            <div className="bg-white-10 ba bt-0 b--black-10 ph3 pv2 f6">
-                {moment(post.date).format("MMMM Do, h:mm a")}
-            </div>
+            {(! isInline) ? (
+                <div className="bg-white-10 ba bt-0 b--black-10 ph3 pv2 f6">
+                    {moment(post.date).format("MMMM Do, h:mm a")}
+                </div>
+            ) : null}
         </article>
     );
 };
