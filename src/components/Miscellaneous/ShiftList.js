@@ -94,6 +94,36 @@ class ShiftList extends React.Component {
         )
     }
 
+    renderShiftCell(column, value, className) {
+        const cellClasses = classNames({
+            'pa2': true,
+            [className]: true
+        });
+
+        return (
+            <div
+                aria-labelledby={`columnHeader_${column}`}
+                className={cellClasses}
+            >
+                {(typeof value == 'string') ? value : value()}
+            </div>
+        );
+    }
+
+    renderControls(shift) {
+        const renderTag = () => {
+            if (! shift.isInvited) return;
+
+            return <BasicTag type={(shift.isConfirmed) ? 'positive' : 'neutral'} isNarrow>{(shift.isConfirmed) ? 'confirmed' : 'invited'}</BasicTag>;
+        };
+
+        return (
+            <div className="tr">
+                {renderTag()}
+            </div>
+        );
+    }
+
     renderShiftDetails(shift, index) {
         const renderRsvp = () => {
             if (! shift.isInvited) return;
@@ -135,36 +165,6 @@ class ShiftList extends React.Component {
                 {renderRsvp()}
             </div>
         )
-    }
-
-    renderShiftCell(column, value, className) {
-        const cellClasses = classNames({
-            'pa2': true,
-            [className]: true
-        });
-
-        return (
-            <div
-                aria-labelledby={`columnHeader_${column}`}
-                className={cellClasses}
-            >
-                {(typeof value == 'string') ? value : value()}
-            </div>
-        );
-    }
-
-    renderControls(shift) {
-        const renderTag = () => {
-            if (! shift.isInvited) return;
-
-            return <BasicTag type={(shift.isConfirmed) ? 'positive' : 'neutral'} isNarrow>{(shift.isConfirmed) ? 'confirmed' : 'invited'}</BasicTag>;
-        };
-
-        return (
-            <div className="tr">
-                {renderTag()}
-            </div>
-        );
     }
 
     renderHeaderCell(column, value, className) {
