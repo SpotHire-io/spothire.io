@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-addon-notes": "^1.0.1",
     "react-scripts": "^1.0.7"
   },
