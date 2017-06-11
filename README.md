@@ -8,8 +8,8 @@ To run:
 
 ```bash
 $ yarn
-$ yarn build
 $ yarn build-css
+$ yarn build-storybook
 $ yarn storybook
 ```
 
