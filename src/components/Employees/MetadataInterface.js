@@ -11,8 +11,10 @@ class MetadataInterface extends React.Component {
         super();
 
         this.toggleEditingMetaPair = this.toggleEditingMetaPair.bind(this);
+
         this.deleteMetaPair = this.deleteMetaPair.bind(this);
         this.createMetaPair = this.createMetaPair.bind(this);
+        this.updateMetaPairFieldByIndex = this.updateMetaPairFieldByIndex.bind(this);
 
         this.metaTypes = [
             {
@@ -76,6 +78,14 @@ class MetadataInterface extends React.Component {
         return this.setState({ metaPairs, currentlyEditingMetaPairKey: '' });
     }
 
+    updateMetaPairFieldByIndex(metaPairIndex, field, value) {
+        let metaPairs = [...this.state.metaPairs];
+
+        metaPairs[metaPairIndex][field] = value;
+
+        return this.setState({ metaPairs });
+    }
+
     renderControls(metaPair) {
         return (
             <div className="tr self-center ml2">
@@ -89,7 +99,7 @@ class MetadataInterface extends React.Component {
         return (
             <div className={classNames(this.props.className)}>
                 <ul className="list ma0 pa0 bg-near-white bb b--black-20">
-                    {this.state.metaPairs.map((metaPair) => {
+                    {this.state.metaPairs.map((metaPair, index) => {
                         if (metaPair.key !== this.state.currentlyEditingMetaPairKey) {
                             return (
                                 <li className="flex ph3 pv2 ma0 bt bl br b--black-20" key={metaPair.key}>
@@ -105,7 +115,7 @@ class MetadataInterface extends React.Component {
                                 <li className="flex ph3 pv1 ma0 bt bl br b--black-20" key={metaPair.key}>
                                     <dl className="ma0 pa0 list flex-auto flex">
                                         <dt className="w-third mr2" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}>
-                                            <input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.key} placeholder="key"/>
+                                            <input className="pa1 ma0 nl1 w-100" type="text" value={metaPair.key} onChange={(e) => this.updateMetaPairFieldByIndex(index, 'key', e.target.value)} placeholder="key"/>
                                         </dt>
                                         <dt className="w-third mr2" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}>
                                             <Select
@@ -120,7 +130,7 @@ class MetadataInterface extends React.Component {
                                             />
                                         </dt>
                                         <dd className="w-third pa0 ml0" style={{ marginTop: '-1px', paddingBottom: '2px' }}>
-                                            <input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.value} placeholder="value"/>
+                                            <input className="pa1 ma0 nl1 w-100" type="text" value={metaPair.value} onChange={(e) => this.updateMetaPairFieldByIndex(index, 'value', e.target.value)} placeholder="value"/>
                                         </dd>
                                     </dl>
                                     {this.renderControls(metaPair)}
