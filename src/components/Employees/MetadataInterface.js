@@ -91,7 +91,7 @@ class MetadataInterface extends React.Component {
                                         </dt>
                                         <dt className="w-third mr2" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}>
                                             <Select
-                                                value={'string'}
+                                                value={metaPair.type}
                                                 onChange={(newType) => console.log(newType)}
                                                 options={[
                                                     {

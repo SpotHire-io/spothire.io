@@ -11,6 +11,7 @@ const PersonSchema = PropTypes.shape({
     emergencyContactInformation: PropTypes.node.isRequired,
     metadata: PropTypes.arrayOf(PropTypes.shape({
         key: PropTypes.string.isRequired,
+        type: PropTypes.oneOf(['string', 'number', 'boolean']).isRequired,
         value: PropTypes.string,
     })),
     hours: PropTypes.shape({
