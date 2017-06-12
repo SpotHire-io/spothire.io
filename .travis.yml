@@ -18,4 +18,4 @@ deploy:
 notifications:
   email:
     - carriere.denis@gmail.com
-    - lucas@lucascherkewski.com
+    - lucas+spothirebuilds@ecustom.ca
