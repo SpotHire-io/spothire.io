@@ -120,7 +120,7 @@ class MetadataInterface extends React.Component {
                                         <dt className="w-third mr2" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}>
                                             <Select
                                                 value={metaPair.type}
-                                                onChange={(newType) => console.log(newType)}
+                                                onChange={(newType) => this.updateMetaPairFieldByIndex(index, 'type', newType.value)}
                                                 options={this.metaTypes.map((type) => {
                                                     return {
                                                         value: type.type,
