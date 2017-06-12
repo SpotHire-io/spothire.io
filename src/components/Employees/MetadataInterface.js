@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import PersonSchema from '../../schemas/Person';
 import BasicButton from '../../components/Buttons/BasicButton';
+import Select from 'react-select';
 
 class MetadataInterface extends React.Component {
     constructor(props) {
@@ -89,7 +90,24 @@ class MetadataInterface extends React.Component {
                                             <input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.key} placeholder="key"/>
                                         </dt>
                                         <dt className="w-third mr2" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}>
-                                            <input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.key}/>
+                                            <Select
+                                                value={'string'}
+                                                onChange={(newType) => console.log(newType)}
+                                                options={[
+                                                    {
+                                                        label: 'String',
+                                                        value: 'string',
+                                                    },
+                                                    {
+                                                        label: 'Number',
+                                                        value: 'number',
+                                                    },
+                                                    {
+                                                        label: 'Yes/No',
+                                                        value: 'boolean',
+                                                    },
+                                                ]}
+                                            />
                                         </dt>
                                         <dd className="w-third pa0 ml0" style={{ marginTop: '-1px', paddingBottom: '2px' }}>
                                             <input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.value} placeholder="value"/>
