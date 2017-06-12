@@ -9,10 +9,9 @@ script:
 deploy:
   provider: s3
   access_key_id: AKIAJI5JIE7VOK4DJS2A
-  secret_access_key:
-    secure: QbIQ0qpc8o389aG/k7DsIDf0EFXjFQo0Yiry4U3PetX5F9TTdGpuwZ6W/DgjFzsbWi2d/rTwF+chpXxh553YGBvQLXpYnSCR7Z7SSuebir736bP83z1GIU0UEYtqdQRNFjxeSH42o2pcSV29aqVvG5kgbMsKKBWF6Gd8okX7kHoh5auAh4+dGIKh1i8IAPpTT5AZsifhouIVWROOZtRiin73s+Bj7fUXhYItCaReOOqt42jIKIZ7mmC2PZmsjZxh7CmSamHOQ0ykRt1/bbZ3rY5Kx1h+G1/ZT0izNOa7vP/CqkBS73a2PYiphyCGhLC5lklz6VXS/iXYbwZx+g5s5x0QJK4F2PrF9lC2bZG7fGGZhakKk3ZqWI+9TMduKLtOyZLrMQguQqXxneHzYPICXPRcK7boh8h5jRka/MRQdrukisR0rihZ2VxzedgtORiEpWIaVQrCcE008fD91BHaaBtjl0N+xCqM1cLSGMOQ2eLNnCTCaRtmvZEhAEWPlHJepRlabaOI2qVIgg7ZDUv3PxmRQsh1hYvxnNgQ44dSGOE4Fh+FyW3fdaJIDHEZxX9KgFX7Lp/wt4zrUDm/UjT21Zeq+htooC0qeDRrSChJ826Fk6hXh0YsHiqEBPfr/QaltZnsLGbuDspliwM1UMTDhBGz7gurQKRuZ5GphiccWt4=
+  secret_access_key: q+rCf4BFGqTpELCrwbNIsh9uD8lZhkiGDqfaWZWx
   bucket: spothire.io
-  local-dir: storybook-static
+  region: us-east-1
   acl: public_read
-  on:
-    repo: SpotHire-io/spothire.io
+  skip_cleanup: true
+  local-dir: storybook-static
