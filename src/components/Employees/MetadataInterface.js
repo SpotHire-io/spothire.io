@@ -16,11 +16,13 @@ class MetadataInterface extends React.Component {
         this.createMetaPair = this.createMetaPair.bind(this);
         this.updateMetaPairFieldByIndex = this.updateMetaPairFieldByIndex.bind(this);
 
+        this.renderMetaPairValueEditor = this.renderMetaPairValueEditor.bind(this);
+
         this.metaTypes = [
             {
                 type: 'string',
                 label: 'String',
-                input: 'string',
+                input: 'text',
             },
             {
                 type: 'number',
@@ -97,6 +99,24 @@ class MetadataInterface extends React.Component {
         );
     }
 
+    renderMetaPairValueEditor(metaPair, metaPairIndex) {
+        let metaPairValueEditor;
+        let metaTypeConfig = this.metaTypes.find((metaType) => metaType.type === metaPair.type);
+
+        switch (metaPair.type) {
+            case 'string':
+            case 'number':
+                metaPairValueEditor = <input className="pa1 ma0 nl1 w-100" type={metaTypeConfig.type} value={metaPair.value} onChange={(e) => this.updateMetaPairFieldByIndex(metaPairIndex, 'value', e.target.value)} placeholder="value"/>;
+                break;
+            case 'boolean':
+                metaPairValueEditor = <input className="pa1 ma0 nl1 w-100" type="checkbox" checked={metaPair.value} onChange={(e) => this.updateMetaPairFieldByIndex(metaPairIndex, 'value', e.target.checked)}/>;
+                break;
+            default: break;
+        }
+
+        return metaPairValueEditor;
+    }
+
     render() {
         return (
             <div className={classNames(this.props.className)}>
@@ -133,7 +153,7 @@ class MetadataInterface extends React.Component {
                                             />
                                         </dt>
                                         <dd className="w-third pa0 ml0" style={{ marginTop: '-1px', paddingBottom: '2px' }}>
-                                            <input className="pa1 ma0 nl1 w-100" type="text" value={metaPair.value} onChange={(e) => this.updateMetaPairFieldByIndex(index, 'value', e.target.value)} placeholder="value"/>
+                                            {this.renderMetaPairValueEditor(metaPair, index)}
                                         </dd>
                                     </dl>
                                     {this.renderControls(metaPair)}
