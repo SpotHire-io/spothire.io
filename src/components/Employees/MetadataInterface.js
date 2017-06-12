@@ -85,8 +85,15 @@ class MetadataInterface extends React.Component {
                             return (
                                 <li className="flex ph3 pv1 ma0 bt bl br b--black-20" key={metaPair.key}>
                                     <dl className="ma0 pa0 list flex-auto flex">
-                                        <dt className="w-third" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}><input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.key}/></dt>
-                                        <dd className="w-two-thirds pa0" style={{ marginLeft: '39px', marginTop: '-1px', paddingBottom: '2px' }}><input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.value}/></dd>
+                                        <dt className="w-third mr2" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}>
+                                            <input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.key} placeholder="key"/>
+                                        </dt>
+                                        <dt className="w-third mr2" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}>
+                                            <input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.key}/>
+                                        </dt>
+                                        <dd className="w-third pa0 ml0" style={{ marginTop: '-1px', paddingBottom: '2px' }}>
+                                            <input className="pa1 ma0 nl1 w-100" type="text" defaultValue={metaPair.value} placeholder="value"/>
+                                        </dd>
                                     </dl>
                                     {this.renderControls(metaPair)}
                                 </li>
