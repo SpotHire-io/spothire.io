@@ -14,6 +14,24 @@ class MetadataInterface extends React.Component {
         this.deleteMetaPair = this.deleteMetaPair.bind(this);
         this.createMetaPair = this.createMetaPair.bind(this);
 
+        this.metaTypes = [
+            {
+                type: 'string',
+                label: 'String',
+                input: 'string',
+            },
+            {
+                type: 'number',
+                label: 'Number',
+                input: 'number',
+            },
+            {
+                type: 'boolean',
+                label: 'Yes/No',
+                input: 'checkbox',
+            },
+        ];
+
         this.state = {
             currentlyEditingMetaPairKey: null,
             metaPairs: props.employee.metadata
@@ -93,20 +111,12 @@ class MetadataInterface extends React.Component {
                                             <Select
                                                 value={metaPair.type}
                                                 onChange={(newType) => console.log(newType)}
-                                                options={[
-                                                    {
-                                                        label: 'String',
-                                                        value: 'string',
-                                                    },
-                                                    {
-                                                        label: 'Number',
-                                                        value: 'number',
-                                                    },
-                                                    {
-                                                        label: 'Yes/No',
-                                                        value: 'boolean',
-                                                    },
-                                                ]}
+                                                options={this.metaTypes.map((type) => {
+                                                    return {
+                                                        value: type.type,
+                                                        label: type.label,
+                                                    };
+                                                })}
                                             />
                                         </dt>
                                         <dd className="w-third pa0 ml0" style={{ marginTop: '-1px', paddingBottom: '2px' }}>
