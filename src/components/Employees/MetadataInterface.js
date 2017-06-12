@@ -35,22 +35,22 @@ class MetadataInterface extends React.Component {
         ];
 
         this.state = {
-            currentlyEditingMetaPairKey: null,
+            currentlyEditingMetaPairId: null,
             metaPairs: props.employee.metadata
         };
     }
 
-    toggleEditingMetaPair(metaPairKey) {
-        let currentlyEditingMetaPairKey = this.state.currentlyEditingMetaPairKey;
+    toggleEditingMetaPair(metaPairId) {
+        let currentlyEditingMetaPairId = this.state.currentlyEditingMetaPairId;
 
         // Unset the currently editing metaPair if we’re toggling that metaPair. Else, set to the new metaPair ID.
-        if (metaPairKey === currentlyEditingMetaPairKey) {
-            currentlyEditingMetaPairKey = null;
+        if (metaPairId === currentlyEditingMetaPairId) {
+            currentlyEditingMetaPairId = null;
         } else {
-            currentlyEditingMetaPairKey = metaPairKey;
+            currentlyEditingMetaPairId = metaPairId;
         }
 
-        return this.setState({ currentlyEditingMetaPairKey });
+        return this.setState({ currentlyEditingMetaPairId });
     }
 
     deleteMetaPair(metaPairKey) {
@@ -66,16 +66,18 @@ class MetadataInterface extends React.Component {
         let metaPairs = [...this.state.metaPairs];
 
         // extract the highest ID currently existing so we have something to mock
-        // const highestId = metaPairs.reduce((currentHighestId, metaPair) => {
-        //     return Math.max(currentHighestId, metaPair.key);
-        // }, -1);
+        const highestId = metaPairs.reduce((currentHighestId, metaPair) => {
+            return Math.max(currentHighestId, metaPair.id);
+        }, -1);
 
         metaPairs.push({
+            id: highestId + 1,
             key: '',
+            type: 'string',
             value: ''
         });
 
-        return this.setState({ metaPairs, currentlyEditingMetaPairKey: '' });
+        return this.setState({ metaPairs, currentlyEditingMetaPairId: highestId + 1 });
     }
 
     updateMetaPairFieldByIndex(metaPairIndex, field, value) {
@@ -89,7 +91,7 @@ class MetadataInterface extends React.Component {
     renderControls(metaPair) {
         return (
             <div className="tr self-center ml2">
-                <Icon color="#555555" name={(metaPair.key !== this.state.currentlyEditingMetaPairKey) ? 'compose' : 'check'} className="pointer mt1" onClick={() => this.toggleEditingMetaPair(metaPair.key)}/>
+                <Icon color="#555555" name={(metaPair.id !== this.state.currentlyEditingMetaPairId) ? 'compose' : 'check'} className="pointer mt1" onClick={() => this.toggleEditingMetaPair(metaPair.id)}/>
                 <Icon color="#555555" name="close" className="pointer mt1 ml2" onClick={() => this.deleteMetaPair(metaPair.key)}/>
             </div>
         );
@@ -100,9 +102,9 @@ class MetadataInterface extends React.Component {
             <div className={classNames(this.props.className)}>
                 <ul className="list ma0 pa0 bg-near-white bb b--black-20">
                     {this.state.metaPairs.map((metaPair, index) => {
-                        if (metaPair.key !== this.state.currentlyEditingMetaPairKey) {
+                        if (metaPair.id !== this.state.currentlyEditingMetaPairId) {
                             return (
-                                <li className="flex ph3 pv2 ma0 bt bl br b--black-20" key={metaPair.key}>
+                                <li className="flex ph3 pv2 ma0 bt bl br b--black-20" key={metaPair.id}>
                                     <dl className="ma0 pa0 list flex-auto flex">
                                         <dt className="w-third">{metaPair.key}</dt>
                                         <dd className="w-two-thirds pa0">{metaPair.value}</dd>
@@ -112,7 +114,7 @@ class MetadataInterface extends React.Component {
                             )
                         } else {
                             return (
-                                <li className="flex ph3 pv1 ma0 bt bl br b--black-20" key={metaPair.key}>
+                                <li className="flex ph3 pv1 ma0 bt bl br b--black-20" key={metaPair.id}>
                                     <dl className="ma0 pa0 list flex-auto flex">
                                         <dt className="w-third mr2" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}>
                                             <input className="pa1 ma0 nl1 w-100" type="text" value={metaPair.key} onChange={(e) => this.updateMetaPairFieldByIndex(index, 'key', e.target.value)} placeholder="key"/>

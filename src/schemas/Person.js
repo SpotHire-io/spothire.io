@@ -10,6 +10,7 @@ const PersonSchema = PropTypes.shape({
     imageSrc: PropTypes.string.isRequired,
     emergencyContactInformation: PropTypes.node.isRequired,
     metadata: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
         key: PropTypes.string.isRequired,
         type: PropTypes.oneOf(['string', 'number', 'boolean']).isRequired,
         value: PropTypes.string,
