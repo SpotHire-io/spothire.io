@@ -1,9 +1,6 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
-
 import UserTable from '../../UserTable';
 
 class SelectIndividuals extends React.Component {

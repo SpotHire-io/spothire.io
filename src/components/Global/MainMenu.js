@@ -1,7 +1,5 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
 
 // storybook stuff
@@ -59,7 +57,7 @@ class MainMenu extends React.Component {
         });
 
         return (
-            <a key={linkText} className={aClasses} href="#" onClick={linkTo(`Views (${this.props.userType})`, linkText)}>{linkText}</a>
+            <a key={linkText} className={aClasses} href="#views" onClick={linkTo(`Views (${this.props.userType})`, linkText)}>{linkText}</a>
         )
     }
 
@@ -88,7 +86,7 @@ class MainMenu extends React.Component {
                         userMenuItems.map((menuItem) => (
                             <li className="mt0" key={menuItem.text}>
                                 <a
-                                    href="#"
+                                    href="#main"
                                     className="pa2 db no-underline near-black hover-bg-teal hover-white"
                                     onClick={menuItem.onClick}
                                 >

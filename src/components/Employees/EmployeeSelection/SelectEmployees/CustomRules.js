@@ -1,14 +1,9 @@
-import React from 'react';
-
-import PropTypes from 'prop-types';
-
-import classNames from 'classnames';
-
-import BasicButton from '../../../Buttons/BasicButton';
-
-import Select from 'react-select';
-
 import 'react-select/dist/react-select.css';
+import React from 'react';
+import Select from 'react-select';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import BasicButton from '../../../Buttons/BasicButton';
 
 // Rule data
 import filterKeys from '../../../../data/peopleFilterRules/filterKeys.json';

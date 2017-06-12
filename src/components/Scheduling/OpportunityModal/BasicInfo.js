@@ -1,17 +1,11 @@
-import React from 'react';
-
-import PropTypes from 'prop-types';
-import OpportunitySchema from '../../../schemas/Opportunity';
-
-import classNames from 'classnames';
-
-import moment from 'moment';
 import 'moment/locale/en-ca';
-
-import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
-
+import React from 'react';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import TimePicker from 'rc-time-picker';
-
+import OpportunitySchema from '../../../schemas/Opportunity';
+import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
 import { Switch } from 'rebass';
 
 class OpportunityModalBasicInfo extends React.Component {

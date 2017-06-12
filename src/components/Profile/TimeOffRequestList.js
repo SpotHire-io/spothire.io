@@ -1,18 +1,12 @@
+import 'moment/locale/en-ca';
+import moment from 'moment';
 import React from 'react';
-
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import BasicTag from '../../components/Tags/BasicTag';
+import BasicButton from '../../components/Buttons/BasicButton';
 import PersonSchema from '../../schemas/Person';
 import TimeOffRequestSchema from '../../schemas/TimeOffRequest';
-
-import classNames from 'classnames';
-
-import moment from 'moment';
-import 'moment/locale/en-ca';
-
-import BasicButton from '../../components/Buttons/BasicButton';
-
-import BasicTag from '../../components/Tags/BasicTag';
-
 import NewTimeOffRequestModal from './NewTimeOffRequestModal';
 
 class TimeOffRequestList extends React.Component {
@@ -92,7 +86,7 @@ class TimeOffRequestList extends React.Component {
                                                     </p>
                                                     <div className="tr">
                                                         <BasicTag className="ml2" type={tagType} isNarrow>{request.approvalState}</BasicTag>
-                                                        <a className="child db f6 red hover-no-underline relative" onClick={(e) => e.preventDefault() || this.deleteRequest(request.id)} style={{ top: '0.25rem' }} href="#">delete</a>
+                                                        <a className="child db f6 red hover-no-underline relative" onClick={(e) => e.preventDefault() || this.deleteRequest(request.id)} style={{ top: '0.25rem' }} href="#delete">delete</a>
                                                     </div>
                                                 </div>
                                                 <p className="mt0 f6">{request.reason}</p>

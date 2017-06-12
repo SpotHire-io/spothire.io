@@ -1,21 +1,17 @@
-import React from 'react';
-
-import PropTypes from 'prop-types';
-
-import classNames from 'classnames';
-
-import BigCalendar from 'react-big-calendar';
-import moment      from 'moment';
 import 'moment/locale/en-ca';
-
+import React from 'react';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import BigCalendar from 'react-big-calendar';
 import OpportunityModal from './OpportunityModal';
+
+// storybook stuff
+import { linkTo } from '@kadira/storybook';
 
 BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
-
-// storybook stuff
-import { linkTo } from '@kadira/storybook';
 
 class OverviewCalendar extends React.Component {
     constructor() {
@@ -69,7 +65,7 @@ class OverviewCalendar extends React.Component {
         });
 
         const EventWrapper = (props) => {
-            if (typeof this.props.filter != 'undefined' && this.props.filter.values.indexOf( props.event[ this.props.filter.property ] ) !== -1) {
+            if (this.props.filter !== undefined && this.props.filter.values.indexOf( props.event[ this.props.filter.property ] ) !== -1) {
                 return <div className="rbc-alt-bg">{props.children}</div>;
             } else {
                 return props.children;
@@ -80,8 +76,8 @@ class OverviewCalendar extends React.Component {
             return (
                 <div className="mt1">
                     <div>
-                        <img className="w1 h1 br-100 mr1" src="http://placehold.it/40x40"/>
-                        <img className="w1 h1 br-100 mr1" src="http://placehold.it/40x40"/>
+                        <img className="w1 h1 br-100 mr1" src="http://placehold.it/40x40" alt="placeholder"/>
+                        <img className="w1 h1 br-100 mr1" src="http://placehold.it/40x40" alt="placeholder"/>
                     </div>
                     <p className="ma0 pa0 lh-solid">
                         {event.title}
@@ -94,7 +90,7 @@ class OverviewCalendar extends React.Component {
             return (
                 <div className="flex pointer hover-bg-near-white" onClick={this.props.onSelectEvent}>
                     <div className="flex flex-wrap justify-between content-start w-10 pr2">
-                        {[...Array(3).keys()].map((number) => <img key={number} className="w1 h1 br-100 mr1 mb1" src="http://placehold.it/40x40"/>)}
+                        {[...Array(3).keys()].map((number) => <img key={number} className="w1 h1 br-100 mr1 mb1" src="http://placehold.it/40x40" alt="placehold"/>)}
                     </div>
                     <div className="w-90">
                         <h3 className="f5 b ma0 pa0 lh-solid">

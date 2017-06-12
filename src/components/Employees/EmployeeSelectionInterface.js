@@ -1,12 +1,8 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-import PersonSchema from '../../schemas/Person';
-
 import classNames from 'classnames';
-
+import PersonSchema from '../../schemas/Person';
 import BasicButton from '../../components/Buttons/BasicButton';
-
 import SelectEmployees from './EmployeeSelection/SelectEmployees';
 import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees';
 
@@ -16,6 +12,7 @@ import filterTypes from '../../data/peopleFilterRules/filterTypes.json';
 
 // dummy data
 import users from '../../data/people.json';
+
 const groups = [...Array(10).keys()].map((number) => {
     return {
         id: number,

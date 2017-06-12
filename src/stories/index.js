@@ -1,22 +1,13 @@
+import 'moment/locale/en-ca';
+import '../../public/css/app.css';
 import React from 'react';
-
+import moment from 'moment';
 import PropTypes from 'prop-types';
-
+import BigCalendar from 'react-big-calendar';
 import { storiesOf, linkTo } from '@kadira/storybook';
 import { WithNotes } from '@kadira/storybook-addon-notes';
-
-import moment from 'moment';
-import 'moment/locale/en-ca';
-
-import { SingleDatePicker, DateRangePicker } from 'react-dates';
-
+import { DateRangePicker } from 'react-dates';
 import { START_DATE } from 'react-dates/constants';
-
-import BigCalendar from 'react-big-calendar';
-
-BigCalendar.setLocalizer(
-    BigCalendar.momentLocalizer(moment)
-);
 
 import PeopleView from '../views/Manager/People';
 import EmployeeSingleView from '../views/Manager/People/EmployeeSingle';
@@ -29,8 +20,6 @@ import DashboardView from '../views/Employee/Dashboard';
 import NewsfeedView from '../views/Employee/Newsfeed';
 import EmployeeOpportunitySingleView from '../views/Employee/Schedule/OpportunitySingle';
 import EmployeeProfileView from '../views/Employee/EmployeeProfile';
-
-
 
 import MainMenu from '../components/Global/MainMenu';
 import SecondaryMenu from '../components/Global/SecondaryMenu';
@@ -66,14 +55,16 @@ import TimeOffRequestList from '../components/Profile/TimeOffRequestList';
 import NewTimeOffRequestModal from '../components/Profile/NewTimeOffRequestModal';
 
 import ShiftList from '../components/Miscellaneous/ShiftList';
-import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
-
-import '../../public/css/app.css';
+// import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
 
 import users from '../data/people.json';
 import posts from '../data/posts.json';
 import sampleEvents from '../data/events.json';
 import timeOffRequests from '../data/timeOffRequests.json';
+
+BigCalendar.setLocalizer(
+    BigCalendar.momentLocalizer(moment)
+);
 
 storiesOf('Overview', module)
     .add('Welcome', () => (
@@ -90,7 +81,7 @@ storiesOf('Overview', module)
             interesting place to look will be the <code className="bg-light-gray pa1 br1 f6">Views</code> category, the
             second item in the menu on the left. There I’ve put together previews of how the components will sit together
             to build certain pages from our Information Architecture. To go for full immersion, press <code className="bg-light-gray pa1 br1 f6">Ctrl-Shift-F</code>,
-            then enter as a <a className="red hover-no-underline" onClick={linkTo('Views (manager)', 'Newsfeed')} href="#">manager</a> or <a className="red hover-no-underline" onClick={linkTo('Views (employee)', 'Dashboard')} href="#">employee</a>.</p>
+            then enter as a <a className="red hover-no-underline" onClick={linkTo('Views (manager)', 'Newsfeed')} href="#manager">manager</a> or <a className="red hover-no-underline" onClick={linkTo('Views (employee)', 'Dashboard')} href="#employee">employee</a>.</p>
 
             <p className="measure">When looking through, keep in mind that things are still early stage. Quite a bit has
             yet to be completed, and what is posted here is still in progress. That said, there are a few questions for

@@ -1,28 +1,15 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-import GroupSchema from '../../../schemas/Group';
-
-import classNames from 'classnames';
-
-import GroupCardList from '../../../components/Employees/Groups/CardList';
-
-import FilterContainer from '../../../components/Filters/FilterContainer';
 import Filter from '../../../components/Filters/Filter';
+import GroupSchema from '../../../schemas/Group';
+import GroupCardList from '../../../components/Employees/Groups/CardList';
+import FilterContainer from '../../../components/Filters/FilterContainer';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
 
 class GroupListView extends React.Component {
-    constructor() {
-        super();
-    }
-
     render() {
-        const wrapperClasses = classNames({
-            [this.props.className]: true
-        });
-
         return (
             <div className="flex ma4">
                 <FilterContainer className="mr3 w-third self-start">

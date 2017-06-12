@@ -1,11 +1,6 @@
-import React from 'react';
-
-import PropTypes from 'prop-types';
-import PersonSchema from '../../../schemas/Person';
-
-import classNames from 'classnames';
-
 import Icon from 'react-geomicons';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class ReviewSelectedEmployees extends React.Component {
     constructor() {

@@ -1,11 +1,8 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-import GroupSchema from '../../../schemas/Group';
-
 import classNames from 'classnames';
-
 import Box from '../../Global/Box';
+import GroupSchema from '../../../schemas/Group';
 
 class GroupCard extends React.Component {
     constructor() {
@@ -38,7 +35,7 @@ class GroupCard extends React.Component {
                         left: `${insetMargin}px`
                     }}
                     src="https://randomuser.me/api/portraits/women/0.jpg"
-                    alt={`Profile picture of ${groupEmployees[0].firstName} ${groupEmployees[0].lastName}`}
+                    alt={`Profile of ${groupEmployees[0].firstName} ${groupEmployees[0].lastName}`}
                 />
                 <img
                     className={classNames(commonImageClasses, 'z-1')}
@@ -47,7 +44,7 @@ class GroupCard extends React.Component {
                         width: `${largeImageSize}px`,
                     }}
                     src="https://randomuser.me/api/portraits/women/2.jpg"
-                    alt={`Profile picture of ${groupEmployees[1].firstName} ${groupEmployees[1].lastName}`}
+                    alt={`Profile of ${groupEmployees[1].firstName} ${groupEmployees[1].lastName}`}
                 />
                 <img
                     className={commonImageClasses}
@@ -56,7 +53,7 @@ class GroupCard extends React.Component {
                         right: `${insetMargin}px`
                     }}
                     src="https://randomuser.me/api/portraits/men/5.jpg"
-                    alt={`Profile picture of ${groupEmployees[2].firstName} ${groupEmployees[2].lastName}`}
+                    alt={`Profile of ${groupEmployees[2].firstName} ${groupEmployees[2].lastName}`}
                 />
             </div>
         );

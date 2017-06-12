@@ -1,19 +1,11 @@
 import React from 'react';
-
-import PropTypes from 'prop-types';
-import OpportunitySchema from '../../schemas/Opportunity';
-
 import Modal from 'react-modal';
-
+import PropTypes from 'prop-types';
 import BasicButton from '../Buttons/BasicButton';
-
+import OpportunitySchema from '../../schemas/Opportunity';
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
 
 class OpportunityModal extends React.Component {
-    constructor() {
-        super();
-    }
-
     render() {
         return (
             <Modal

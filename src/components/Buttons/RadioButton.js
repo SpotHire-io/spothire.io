@@ -1,13 +1,11 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
 
 const RadioButton = ({ checked, name, id, value, children, className, onClick }) => {
     const labelClassName = classNames({
         'button button--neutral': true,
-        'button--outline': typeof checked == 'undefined' || ! checked,
+        'button--outline': checked === undefined || ! checked,
         [className]: true
     });
 

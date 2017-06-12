@@ -1,11 +1,8 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-import PostSchema from '../../schemas/Post';
-
 import classNames from 'classnames';
-
 import Post from './Post';
+import PostSchema from '../../schemas/Post';
 
 class PostList extends React.Component {
     constructor() {

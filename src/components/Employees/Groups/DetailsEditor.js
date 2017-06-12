@@ -1,19 +1,11 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-import GroupSchema from '../../../schemas/Group';
-
 import classNames from 'classnames';
-
 import Box from '../../Global/Box';
-
+import GroupSchema from '../../../schemas/Group';
 import BasicButton from '../../Buttons/BasicButton';
 
 class GroupDetailsEditor extends React.Component {
-    constructor() {
-        super();
-    }
-
     render() {
         const wrapperClasses = classNames({
             [this.props.className]: true

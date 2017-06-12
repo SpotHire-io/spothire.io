@@ -1,16 +1,10 @@
 import React from 'react';
-
-import PropTypes from 'prop-types';
-import OpportunitySchema from '../../schemas/Opportunity';
-
-import Box from '../../components/Global/Box';
-
-import OverviewCalendar from '../../components/Scheduling/OverviewCalendar';
-
-import FilterContainer from '../../components/Filters/FilterContainer';
-import Filter from '../../components/Filters/Filter';
-
 import Select from 'react-select';
+import PropTypes from 'prop-types';
+import Box from '../../components/Global/Box';
+import FilterContainer from '../../components/Filters/FilterContainer';
+import OverviewCalendar from '../../components/Scheduling/OverviewCalendar';
+import OpportunitySchema from '../../schemas/Opportunity';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';

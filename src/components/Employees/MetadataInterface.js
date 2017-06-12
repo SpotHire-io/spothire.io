@@ -1,13 +1,9 @@
-import React from 'react';
-
-import PropTypes from 'prop-types';
-import PersonSchema from '../../schemas/Person';
-
-import classNames from 'classnames';
-
-import BasicButton from '../../components/Buttons/BasicButton';
-
 import Icon from 'react-geomicons';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import PersonSchema from '../../schemas/Person';
+import BasicButton from '../../components/Buttons/BasicButton';
 
 class MetadataInterface extends React.Component {
     constructor(props) {
@@ -49,9 +45,9 @@ class MetadataInterface extends React.Component {
         let metaPairs = [...this.state.metaPairs];
 
         // extract the highest ID currently existing so we have something to mock
-        const highestId = metaPairs.reduce((currentHighestId, metaPair) => {
-            return Math.max(currentHighestId, metaPair.key);
-        }, -1);
+        // const highestId = metaPairs.reduce((currentHighestId, metaPair) => {
+        //     return Math.max(currentHighestId, metaPair.key);
+        // }, -1);
 
         metaPairs.push({
             key: '',

@@ -1,7 +1,5 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import SecondaryMenu from '../Global/SecondaryMenu';
 
 class SectionSwitcher extends React.Component {

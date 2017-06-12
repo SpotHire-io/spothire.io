@@ -1,15 +1,10 @@
-import React from 'react';
-
-import classNames from 'classnames';
-
-import moment from 'moment';
 import 'moment/locale/en-ca';
-
+import React from 'react';
+import moment from 'moment';
 import { Arrow } from 'rebass';
-
-import BasicButton from '../Buttons/BasicButton';
-
+import classNames from 'classnames';
 import BasicTag from '../Tags/BasicTag';
+import BasicButton from '../Buttons/BasicButton';
 
 const Post = ({ post, className, isOpen, toggleOpenState, isInline }) => {
     let wrapperClasses = classNames({
@@ -84,7 +79,7 @@ const Post = ({ post, className, isOpen, toggleOpenState, isInline }) => {
     const renderExcerpt = function () {
         let excerptContent;
 
-        if (typeof post.excerpt != 'undefined') {
+        if (typeof post.excerpt !== 'undefined') {
             excerptContent = post.excerpt;
         } else {
             excerptContent = post.content;

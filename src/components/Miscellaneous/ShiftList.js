@@ -1,15 +1,9 @@
-import React from 'react';
-
-import classNames from 'classnames';
-
-import moment from 'moment';
 import 'moment/locale/en-ca';
-
-import Icon from 'react-geomicons';
-
-import BasicButton from '../Buttons/BasicButton';
-
+import React from 'react';
+import moment from 'moment';
+import classNames from 'classnames';
 import BasicTag from '../Tags/BasicTag';
+import BasicButton from '../Buttons/BasicButton';
 
 class ShiftList extends React.Component {
     constructor() {
@@ -56,7 +50,7 @@ class ShiftList extends React.Component {
     }
 
     toggleShiftEditing(shiftId) {
-        let currentlyEditingShiftId = parseInt(this.state.currentlyEditingShiftId);
+        let currentlyEditingShiftId = parseInt(this.state.currentlyEditingShiftId, 10);
 
         // Unset the currently editing shift if we’re toggling that shift. Else, set to the new shift ID.
         if (shiftId === currentlyEditingShiftId) {
@@ -110,7 +104,7 @@ class ShiftList extends React.Component {
                 aria-labelledby={`columnHeader_${column}`}
                 className={cellClasses}
             >
-                {(typeof value == 'string') ? value : value()}
+                {(typeof value === 'string') ? value : value()}
             </div>
         );
     }

@@ -1,20 +1,11 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
 import PersonSchema from '../../schemas/Person';
-
-import MainMenu from '../../components/Global/MainMenu';
-
-import SectionSwitcher from '../../components/Miscellaneous/SectionSwitcher';
-
-import EmployeeListView from './People/EmployeeList';
 import GroupListView from './People/GroupList';
+import SectionSwitcher from '../../components/Miscellaneous/SectionSwitcher';
+import EmployeeListView from './People/EmployeeList';
 
 class PeopleView extends React.Component {
-    constructor() {
-        super();
-    }
-
     render() {
         return (
             <div>

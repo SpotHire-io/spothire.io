@@ -1,17 +1,11 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-import PersonSchema from '../../schemas/Person';
-
 import classNames from 'classnames';
-
-import { Table, Thead, Th, Tr, Td } from 'reactable';
-
-import BasicButton from '../Buttons/BasicButton';
-
 import Icon from 'react-geomicons';
-
+import { Table, Thead, Th, Tr, Td } from 'reactable';
 import userData from '../../data/people.json';
+import BasicButton from '../Buttons/BasicButton';
+import PersonSchema from '../../schemas/Person';
 
 class UserList extends React.Component {
     constructor() {
@@ -67,7 +61,7 @@ class UserList extends React.Component {
         return (
             <Tr key={user.id} className={userClasses} onClick={() => this.props.onClickUser(user.id)}>
                 {this.renderUserCell('avatar', () => (
-                    <img className="w1 h1 br-100 v-btm" src={user.imageSrc}/>
+                    <img className="w1 h1 br-100 v-btm" src={user.imageSrc} alt="avatar"/>
                 ), 'tc pr0')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
                 {this.renderUserCell('email', user.email)}
@@ -90,7 +84,7 @@ class UserList extends React.Component {
                 column={column}
                 className={cellClasses}
             >
-                {(typeof value == 'string') ? value : value()}
+                {(typeof value === 'string') ? value : value()}
             </Td>
         );
     }
@@ -116,7 +110,7 @@ class UserList extends React.Component {
                 column={column}
                 className={cellClasses}
             >
-                {(typeof value == 'string') ? value : value()}
+                {(typeof value === 'string') ? value : value()}
             </Th>
         );
     }

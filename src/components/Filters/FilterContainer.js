@@ -1,11 +1,7 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
-
 import Box from '../Global/Box';
-
 import BasicButton from '../Buttons/BasicButton';
 
 const FilterContainer = ({ children, className, headingSemanticLevel, onResetFilters }) => {

@@ -1,17 +1,10 @@
 import React from 'react';
-
-import PropTypes from 'prop-types';
-
-import classNames from 'classnames';
-
-import OpportunitySchema from '../../../schemas/Opportunity';
-
-import BasicButton from '../../../components/Buttons/BasicButton';
-
-import UserTable from '../../../components/Employees/UserTable';
-import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
-
 import Modal from 'react-modal';
+import PropTypes from 'prop-types';
+import UserTable from '../../../components/Employees/UserTable';
+import BasicButton from '../../../components/Buttons/BasicButton';
+import OpportunitySchema from '../../../schemas/Opportunity';
+import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
 
 class OpportunityModalEmployees extends React.Component {
     constructor() {

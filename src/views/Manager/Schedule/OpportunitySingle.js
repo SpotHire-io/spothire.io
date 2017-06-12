@@ -1,23 +1,14 @@
 import React from 'react';
-
-import PropTypes from 'prop-types';
-import OpportunitySchema from '../../../schemas/Opportunity';
-
-import classNames from 'classnames';
-
-import Box from '../../../components/Global/Box';
-
-import BasicButton from '../../../components/Buttons/BasicButton';
-
-import SectionSwitcher from '../../../components/Miscellaneous/SectionSwitcher';
-
-import UserTable from '../../../components/Employees/UserTable';
-import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
-
-import OpportunityModalBasicInfo from '../../../components/Scheduling/OpportunityModal/BasicInfo';
-import ShiftManager from '../../../components/Scheduling/ShiftManager';
-
 import Modal from 'react-modal';
+import PropTypes from 'prop-types';
+import Box from '../../../components/Global/Box';
+import BasicButton from '../../../components/Buttons/BasicButton';
+import UserTable from '../../../components/Employees/UserTable';
+import ShiftManager from '../../../components/Scheduling/ShiftManager';
+import SectionSwitcher from '../../../components/Miscellaneous/SectionSwitcher';
+import OpportunitySchema from '../../../schemas/Opportunity';
+import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
+import OpportunityModalBasicInfo from '../../../components/Scheduling/OpportunityModal/BasicInfo';
 
 class OpportunitySingleView extends React.Component {
     constructor(props) {
@@ -47,10 +38,6 @@ class OpportunitySingleView extends React.Component {
     }
 
     render() {
-        const wrapperClasses = classNames({
-            [this.props.className]: true
-        });
-
         return (
             <div>
                 <SectionSwitcher

@@ -1,18 +1,12 @@
+import 'react-select/dist/react-select.css';
 import React from 'react';
-
+import Select from 'react-select';
 import PropTypes from 'prop-types';
-import PersonSchema from '../../schemas/Person';
-
-import classNames from 'classnames';
-
 import Box from '../../components/Global/Box';
 import BoxConnector from '../../components/Global/BoxConnector';
-
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
-
-import SelectableTimesheetTable from '../../components/Employees/SelectableTimesheetTable';
+import PersonSchema from '../../schemas/Person';
 import TimetableSummary from '../../components/Employees/TimetableSummary';
+import SelectableTimesheetTable from '../../components/Employees/SelectableTimesheetTable';
 
 class TimesheetView extends React.Component {
     constructor() {
@@ -37,10 +31,6 @@ class TimesheetView extends React.Component {
     }
 
     render() {
-        const wrapperClasses = classNames({
-            [this.props.className]: true
-        });
-
         let filteredUsers = this.props.users.filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.nameSearch) > -1);
 
         if (this.state.discrepancyType === 'underSubmitted') {

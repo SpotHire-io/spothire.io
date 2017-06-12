@@ -1,7 +1,5 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
 
 const Box = ({ children, className, contentWrapperClassName, headingSemanticLevel, title }) => {
@@ -11,7 +9,7 @@ const Box = ({ children, className, contentWrapperClassName, headingSemanticLeve
     });
 
     const renderTitle = () => {
-        if (typeof title != 'undefined' && title.length > 0) {
+        if (title !== undefined && title.length > 0) {
             return React.createElement(
                 'h' + headingSemanticLevel,
                 { className: 'bg-teal white bb bw1 b--white-40 ma0 pa3 f5' },

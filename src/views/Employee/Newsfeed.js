@@ -1,14 +1,9 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
-
-import PostList from '../../components/Newsfeed/PostList';
-
-import FilterContainer from '../../components/Filters/FilterContainer';
-
 import { Switch } from 'rebass';
+import PostList from '../../components/Newsfeed/PostList';
+import FilterContainer from '../../components/Filters/FilterContainer';
 
 class NewsfeedView extends React.Component {
     constructor() {

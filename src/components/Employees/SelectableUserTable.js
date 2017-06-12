@@ -1,17 +1,10 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
-import { CSSTransitionGroup } from 'react-transition-group';
-
 import classNames from 'classnames';
-
-import PersonSchema from '../../schemas/Person';
-
-import { Table, Thead, Th, Tr, Td } from 'reactable';
-
 import { Checkbox } from 'rebass';
-
+import { Table, Thead, Th, Tr, Td } from 'reactable';
+import { CSSTransitionGroup } from 'react-transition-group';
+import PersonSchema from '../../schemas/Person';
 import userData from '../../data/people.json';
 
 class SelectableUserTable extends React.Component {
@@ -66,7 +59,7 @@ class SelectableUserTable extends React.Component {
                     let innerContent;
 
                     if (this.state.selectedUserIds.indexOf(user.id) === -1) {
-                        innerContent = (<img key={'image-' + user.id} className="db w1 h1 br-100 v-btm" src={user.imageSrc}/>);
+                        innerContent = (<img key={'image-' + user.id} className="db w1 h1 br-100 v-btm" src={user.imageSrc} alt="inner content"/>);
                     } else {
                         innerContent = (<Checkbox key={'checkbox-' + user.id} theme="success" style={{ display: 'inline' }} checked label="" name="" onClick={(e) => e.stopPropagation()}/>);
                     }
@@ -100,7 +93,7 @@ class SelectableUserTable extends React.Component {
                 column={column}
                 className={cellClasses}
             >
-                {(typeof value == 'string') ? value : value()}
+                {(typeof value === 'string') ? value : value()}
             </Td>
         );
     }
@@ -117,7 +110,7 @@ class SelectableUserTable extends React.Component {
                 column={column}
                 className={cellClasses}
             >
-                {(typeof value == 'string') ? value : value()}
+                {(typeof value === 'string') ? value : value()}
             </Th>
         );
     }

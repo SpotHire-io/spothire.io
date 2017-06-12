@@ -1,13 +1,11 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
-
 import GroupCardList from '../../Groups/CardList';
 
 // dummy data
 import users from '../../../../data/people.json';
+
 const groups = [...Array(10).keys()].map((number) => {
     return {
         id: number,

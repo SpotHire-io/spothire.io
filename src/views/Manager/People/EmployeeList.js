@@ -1,16 +1,10 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
-import classNames from 'classnames';
-
 import Box from '../../../components/Global/Box';
-import BoxConnector from '../../../components/Global/BoxConnector';
-
-import UserTable from '../../../components/Employees/UserTable';
-
-import FilterContainer from '../../../components/Filters/FilterContainer';
 import Filter from '../../../components/Filters/Filter';
+import UserTable from '../../../components/Employees/UserTable';
+import BoxConnector from '../../../components/Global/BoxConnector';
+import FilterContainer from '../../../components/Filters/FilterContainer';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
@@ -25,10 +19,6 @@ class EmployeeListView extends React.Component {
     }
 
     render() {
-        const wrapperClasses = classNames({
-            [this.props.className]: true
-        });
-
         return (
             <div className="flex ma4">
                 <FilterContainer className="mr3 w-third self-start">

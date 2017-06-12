@@ -1,19 +1,11 @@
-import React from 'react';
-
-import PropTypes from 'prop-types';
-
-import { CSSTransitionGroup } from 'react-transition-group';
-
-import classNames from 'classnames';
-import moment from 'moment';
 import 'moment/locale/en-ca';
-
+import React from 'react';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { CSSTransitionGroup } from 'react-transition-group';
 import Box from '../Global/Box';
-
-import BasicButton from '../Buttons/BasicButton';
-
 import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
-
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
 import OpportunityModalEmployees from './OpportunityModal/Employees';
 
@@ -177,7 +169,7 @@ class ShiftManager extends React.Component {
             <div className={wrapperClasses}>
                 <div className="flex">
                     <div style={{ width: 'calc(33.33333% + 0.7rem)' }}>
-                        {(typeof this.props.instructionsContent != 'undefined')
+                        {(this.props.instructionsContent !== undefined)
                             ? (
                                 <Box className="br-0 bb-0">
                                     {this.props.instructionsContent}

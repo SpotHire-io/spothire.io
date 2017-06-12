@@ -1,13 +1,7 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-import PersonSchema from '../../../schemas/Person';
-
-import classNames from 'classnames';
-
 import ButtonBar from '../../Buttons/ButtonBar';
 import RadioButton from '../../Buttons/RadioButton';
-
 import SelectIndividuals from './SelectEmployees/Individuals';
 import SelectGroups from './SelectEmployees/Groups';
 import SelectCustomRules from './SelectEmployees/CustomRules';

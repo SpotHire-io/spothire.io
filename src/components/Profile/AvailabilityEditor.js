@@ -1,20 +1,12 @@
-import React from 'react';
-
-import PropTypes from 'prop-types';
-import PersonSchema from '../../schemas/Person';
-
-import classNames from 'classnames';
-
-import moment from 'moment';
 import 'moment/locale/en-ca';
-
-import BasicButton from '../../components/Buttons/BasicButton';
-
+import React from 'react';
+import moment from 'moment';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import { Checkbox, Close } from 'rebass';
-
-import Icon from 'react-geomicons';
-
 import TimePicker from 'rc-time-picker';
+import BasicButton from '../../components/Buttons/BasicButton';
+import PersonSchema from '../../schemas/Person';
 
 class AvailabilityEditor extends React.Component {
     constructor(props) {

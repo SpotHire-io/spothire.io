@@ -1,27 +1,11 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-import PersonSchema from '../../schemas/Person';
-
-import classNames from 'classnames';
-
 import Box from '../../components/Global/Box';
-
+import PersonSchema from '../../schemas/Person';
 import BasicButton from '../../components/Buttons/BasicButton';
 
-// storybook stuff
-import { linkTo } from '@kadira/storybook';
-
 class EmployeeProfileView extends React.Component {
-    constructor() {
-        super();
-    }
-
     render() {
-        const wrapperClasses = classNames({
-            [this.props.className]: true
-        });
-
         return (
             <div className="pa4 bg-near-white">
                 <div className="flex">
@@ -29,7 +13,7 @@ class EmployeeProfileView extends React.Component {
                         <h2 className="f6 mt0 lh-title ttu">Your Profile</h2>
 
                         <h1 className="mb4 f3">{this.props.employee.firstName} {this.props.employee.lastName}</h1>
-                        <img className="db w-100 ba bw1 b--silver border-box pointer" onClick={() => alert('upload main profile photo interface')} src={this.props.employee.imageSrc} alt={`Profile photo of ${this.props.employee.firstName}`}/>
+                        <img className="db w-100 ba bw1 b--silver border-box pointer" onClick={() => alert('upload main profile photo interface')} src={this.props.employee.imageSrc} alt={`Profile of ${this.props.employee.firstName}`}/>
 
                         <div className="mt3">
                             <h3 className="f6 normal ma0">Other photos <small>(<span onClick={() => alert('upload secondary profile photo interface')} className="pointer underline hover-no-underline">add more</span>)</small></h3>
@@ -37,7 +21,7 @@ class EmployeeProfileView extends React.Component {
                             <ul className="mt2 nb2 flex flex-wrap pa0 list nr2">
                                 {[...Array(6).keys()].map((number) => (
                                     <li className="dib mt0 mb2 pa0 w-25 pr2">
-                                        <img className="db w-100 ba bw1 b--silver border-box" src={this.props.employee.imageSrc} alt={`Profile photo of ${this.props.employee.firstName}`}/>
+                                        <img className="db w-100 ba bw1 b--silver border-box" src={this.props.employee.imageSrc} alt={`Profile of ${this.props.employee.firstName}`}/>
                                     </li>
                                 ))}
                             </ul>
