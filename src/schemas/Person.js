@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 
+import AvailabilitySchema from './Availability';
+
 const PersonSchema = PropTypes.shape({
     id: PropTypes.number.isRequired,
     firstName: PropTypes.string.isRequired,
@@ -15,6 +17,7 @@ const PersonSchema = PropTypes.shape({
         type: PropTypes.oneOf(['string', 'number', 'boolean']).isRequired,
         value: PropTypes.string,
     })),
+    availability: AvailabilitySchema.isRequired,
     hours: PropTypes.shape({
         worked: PropTypes.number,
         submitted: PropTypes.number,

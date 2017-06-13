@@ -9,13 +9,13 @@ const TimeSlotSchema = PropTypes.shape({
 const DayAvailabilitySchema = PropTypes.oneOf([ PropTypes.bool, PropTypes.arrayOf(TimeSlotSchema) ]);
 
 const AvailabilitySchema = PropTypes.shape({
-    Monday: DayAvailabilitySchema.isRequired,
-    Tuesday: DayAvailabilitySchema.isRequired,
-    Wednesday: DayAvailabilitySchema.isRequired,
-    Thursday: DayAvailabilitySchema.isRequired,
-    Friday: DayAvailabilitySchema.isRequired,
-    Saturday: DayAvailabilitySchema.isRequired,
-    Sunday: DayAvailabilitySchema.isRequired,
+    monday: DayAvailabilitySchema.isRequired,
+    tuesday: DayAvailabilitySchema.isRequired,
+    wednesday: DayAvailabilitySchema.isRequired,
+    thursday: DayAvailabilitySchema.isRequired,
+    friday: DayAvailabilitySchema.isRequired,
+    saturday: DayAvailabilitySchema.isRequired,
+    sunday: DayAvailabilitySchema.isRequired,
 });
 
 export default AvailabilitySchema;
