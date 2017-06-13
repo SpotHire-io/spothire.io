@@ -40,7 +40,7 @@ const mockAvailability = {
 
 const AvailabilityViewer = ({ className, employee }) => {
     return (
-        <div className={classNames(this.props.className)}/>
+        <div className={classNames(className)}/>
     );
 };
 

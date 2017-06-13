@@ -51,6 +51,7 @@ import GroupCardList from '../components/Employees/Groups/CardList';
 import GroupDetailsEditor from '../components/Employees/Groups/DetailsEditor';
 
 import AvailabilityEditor from '../components/Profile/AvailabilityEditor';
+import AvailabilityViewer from '../components/Profile/AvailabilityViewer';
 import TimeOffRequestList from '../components/Profile/TimeOffRequestList';
 import NewTimeOffRequestModal from '../components/Profile/NewTimeOffRequestModal';
 
@@ -792,6 +793,15 @@ storiesOf('Profile', module)
             <div className="pa4 bg-near-white">
                 <Box className="w-third" title="Availability">
                     <AvailabilityEditor employee={users[0]} onSubmitAvailability={(availability) => console.log(availability)}/>
+                </Box>
+            </div>
+        </WithNotes>
+    ))
+    .add('AvailabilityViewer', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <Box className="w-third" title="Availability">
+                    <AvailabilityViewer employee={users[0]}/>
                 </Box>
             </div>
         </WithNotes>
