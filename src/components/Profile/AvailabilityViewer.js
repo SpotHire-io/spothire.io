@@ -5,46 +5,13 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import PersonSchema from '../../schemas/Person';
 
-const mockAvailability = {
-    monday: false,
-    tuesday: [
-        {
-            id: 100,
-            start: moment('08:00', 'kk:mm'),
-            end: moment('12:00', 'kk:mm'),
-        },
-    ],
-    wednesday: false,
-    thursday: false,
-    friday: [
-        {
-            id: 400,
-            start: moment('08:00', 'kk:mm'),
-            end: moment('12:00', 'kk:mm'),
-        },
-        {
-            id: 401,
-            start: moment('16:00', 'kk:mm'),
-            end: moment('22:00', 'kk:mm'),
-        },
-    ],
-    saturday: false,
-    sunday: [
-        {
-            id: 600,
-            start: moment('08:00', 'kk:mm'),
-            end: moment('12:00', 'kk:mm'),
-        },
-    ],
-};
-
 const AvailabilityViewer = ({ className, employee }) => {
     return (
         <div className={classNames(className)}>
             <ol className="list ma0 pa0 nt2">
                 {
-                    Object.keys(mockAvailability).map((day, index) => {
-                        const currentDay = mockAvailability[day];
+                    Object.keys(employee.availability).map((day, index) => {
+                        const currentDay = employee.availability[day];
 
                         return (
                             <li key={day} className="ma0 ph0 pv2">
