@@ -159,7 +159,8 @@ storiesOf('Views (manager)', module)
                     group={{
                         id: 0,
                         name: 'Sample Group',
-                        employees: users
+                        employees: users,
+                        type: 'static'
                     }}
                 />
             }
@@ -751,7 +752,8 @@ storiesOf('Employees:Groups', module)
                     group={{
                         id: 0,
                         name: 'Sample Group',
-                        employees: users
+                        employees: users,
+                        type: 'static'
                     }}
                 />
             </div>
@@ -765,7 +767,8 @@ storiesOf('Employees:Groups', module)
                         return {
                             id: number,
                             name: `Sample Group ${number + 1}`,
-                            employees: users
+                            employees: users,
+                            type: 'static'
                         };
                     })}
                     onSelectGroup={(groupId) => console.log(`Group ID ${groupId} selected`)}
@@ -780,7 +783,8 @@ storiesOf('Employees:Groups', module)
                     group={{
                         id: 0,
                         name: 'Sample Group',
-                        employees: users
+                        employees: users,
+                        type: 'static'
                     }}
                 />
             </div>
