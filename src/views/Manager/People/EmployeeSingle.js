@@ -4,6 +4,7 @@ import Box from '../../../components/Global/Box';
 import PersonSchema from '../../../schemas/Person';
 import SecondaryMenu from '../../../components/Global/SecondaryMenu';
 import MetadataInterface from '../../../components/Employees/MetadataInterface';
+import AvailabilityViewer from '../../../components/Profile/AvailabilityViewer';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
@@ -32,46 +33,51 @@ class EmployeeSingleView extends React.Component {
                 />
                 <div className="pv4 bg-near-white">
                     <div className="flex mh4">
-                        <Box className="w-third mr3">
-                            <h2 className="f6 mt0 lh-title ttu">Employee Details</h2>
+                        <div className="w-third mr3">
+                            <Box>
+                                <h2 className="f6 mt0 lh-title ttu">Employee Details</h2>
 
-                            <h1 className="mb4 f3">{this.props.employee.firstName} {this.props.employee.lastName}</h1>
-                            <img className="db w-100 ba bw1 b--silver border-box" src={this.props.employee.imageSrc} alt={`Profile of ${this.props.employee.firstName}`}/>
+                                <h1 className="mb4 f3">{this.props.employee.firstName} {this.props.employee.lastName}</h1>
+                                <img className="db w-100 ba bw1 b--silver border-box" src={this.props.employee.imageSrc} alt={`Profile of ${this.props.employee.firstName}`}/>
 
-                            <div className="mt3">
-                                <h3 className="f6 normal ma0">Other photos</h3>
+                                <div className="mt3">
+                                    <h3 className="f6 normal ma0">Other photos</h3>
 
-                                <ul className="mt2 nb2 flex flex-wrap pa0 list nr2">
-                                    {[...Array(6).keys()].map((number) => (
-                                        <li className="dib mt0 mb2 pa0 w-25 pr2">
-                                            <img className="db w-100 ba bw1 b--silver border-box" src={this.props.employee.imageSrc} alt={`Profile of ${this.props.employee.firstName}`}/>
-                                        </li>
+                                    <ul className="mt2 nb2 flex flex-wrap pa0 list nr2">
+                                        {[...Array(6).keys()].map((number) => (
+                                            <li className="dib mt0 mb2 pa0 w-25 pr2">
+                                                <img className="db w-100 ba bw1 b--silver border-box" src={this.props.employee.imageSrc} alt={`Profile of ${this.props.employee.firstName}`}/>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+
+                                <dl className="mt3 mb0">
+                                    {[
+                                        {
+                                            label: 'Email',
+                                            content: <a className="link dark-blue underline-hover" href={`mailto:${this.props.employee.email}`}>{this.props.employee.email}</a>
+                                        },
+                                        {
+                                            label: 'Phone',
+                                            content: this.props.employee.phone
+                                        },
+                                        {
+                                            label: 'Emergency Contact Information',
+                                            content: this.props.employee.emergencyContactInformation
+                                        }
+                                    ].map((dataPair) => (
+                                        <div className="mt3" key={dataPair.label}>
+                                            <dt className="f6">{dataPair.label}</dt>
+                                            <dd className="mh0 mb0 mt2">{dataPair.content}</dd>
+                                        </div>
                                     ))}
-                                </ul>
-                            </div>
-
-                            <dl className="mt3 mb0">
-                                {[
-                                    {
-                                        label: 'Email',
-                                        content: <a className="link dark-blue underline-hover" href={`mailto:${this.props.employee.email}`}>{this.props.employee.email}</a>
-                                    },
-                                    {
-                                        label: 'Phone',
-                                        content: this.props.employee.phone
-                                    },
-                                    {
-                                        label: 'Emergency Contact Information',
-                                        content: this.props.employee.emergencyContactInformation
-                                    }
-                                ].map((dataPair) => (
-                                    <div className="mt3" key={dataPair.label}>
-                                        <dt className="f6">{dataPair.label}</dt>
-                                        <dd className="mh0 mb0 mt2">{dataPair.content}</dd>
-                                    </div>
-                                ))}
-                            </dl>
-                        </Box>
+                                </dl>
+                            </Box>
+                            <Box className="mt3" contentWrapperClassName="pa3 max-h5 overflow-auto" title="Availability">
+                                <AvailabilityViewer employee={this.props.employee}/>
+                            </Box>
+                        </div>
                         <div className="w-two-thirds">
                             <Box>
                                 <h2 className="f6 mt0 lh-title ttu">Employee Settings</h2>
