@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Box from '../../Global/Box';
-import GroupSchema from '../../../schemas/Groups/Static';
+import GroupSchema from '../../../schemas/Group';
 
 class GroupCard extends React.Component {
     constructor() {

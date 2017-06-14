@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import GroupCard from './Card';
-import GroupSchema from '../../../schemas/Groups/Static';
+import GroupSchema from '../../../schemas/Group';
 
 const GroupCardList = ({ className, cardProps, groups, onSelectGroup }) => (
     <div className={classNames("flex flex-wrap justify-around nr3", className)}>

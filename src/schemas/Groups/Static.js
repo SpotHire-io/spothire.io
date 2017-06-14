@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import PersonSchema from '../Person';
+import PersonSchema from './Person';
 
 const StaticGroupSchema = PropTypes.shape({
     id: PropTypes.number.isRequired,
