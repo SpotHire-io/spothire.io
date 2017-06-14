@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import UserTable from '../../../components/Employees/UserTable';
 import GroupCard from '../../../components/Employees/Groups/Card';
-import GroupSchema from '../../../schemas/Group';
+import GroupSchema from '../../../schemas/Groups/Static';
 import BasicButton from '../../../components/Buttons/BasicButton';
 import SecondaryMenu from '../../../components/Global/SecondaryMenu';
 import GroupDetailsEditor from '../../../components/Employees/Groups/DetailsEditor';

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Box from '../../Global/Box';
-import GroupSchema from '../../../schemas/Group';
+import GroupSchema from '../../../schemas/Groups/Static';
 import BasicButton from '../../Buttons/BasicButton';
 
 class GroupDetailsEditor extends React.Component {

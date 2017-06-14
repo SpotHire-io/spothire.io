@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import PersonSchema from './Person';
+import PersonSchema from '../Person';
 
 const VirtualGroupSchema = PropTypes.shape({
     id: PropTypes.number.isRequired,

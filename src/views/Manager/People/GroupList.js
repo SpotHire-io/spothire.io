@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Filter from '../../../components/Filters/Filter';
-import GroupSchema from '../../../schemas/Group';
+import GroupSchema from '../../../schemas/Groups/Static';
 import GroupCardList from '../../../components/Employees/Groups/CardList';
 import FilterContainer from '../../../components/Filters/FilterContainer';
 
