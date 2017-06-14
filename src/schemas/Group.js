@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 
 import PersonSchema from './Person';
 
-const StaticGroupSchema = PropTypes.shape({
+const GroupSchema = PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
     employees: PropTypes.arrayOf(PersonSchema),
 });
 
-export default StaticGroupSchema;
+export default GroupSchema;
