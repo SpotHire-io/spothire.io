@@ -111,22 +111,6 @@ class OpportunityModalBasicInfo extends React.Component {
                     <input className="mt2 w-100" type="text" id="opp_location" name="opp_location"/>
                 </p>
 
-                <div className="flex mt3">
-                    <p className="w-50 mr4">
-                        <label className="f6 db" htmlFor="opp_hours">Number of hours</label>
-                        <input className="mt2 w-100" type="number" id="opp_hours" name="opp_hours"/>
-                    </p>
-                    <p className="w-50 mt0">
-                        <label className="f6 db" htmlFor="opp_rate">Pay rate</label>
-                        <div className="inline-flex w-100 mt2">
-                            <div className="inline-flex self-stretch ph3 bg-near-white ba br-0 b--moon-gray">
-                                <span className="self-center">$</span>
-                            </div>
-                            <input className="flex-auto" type="number" id="opp_rate" name="opp_rate"/>
-                        </div>
-                    </p>
-                </div>
-
                 {[
                     'Start',
                     'End'
