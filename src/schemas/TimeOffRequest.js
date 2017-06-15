@@ -6,8 +6,8 @@ const TimeOffRequestSchema = PropTypes.shape({
     reason: PropTypes.string.isRequired,
     isAllDay: PropTypes.bool.isRequired,
     dates: PropTypes.shape({
-        start: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]).isRequired,
-        end: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]).isRequired
+        start: PropTypes.string.isRequired,
+        end: PropTypes.string.isRequired
     }).isRequired,
     approvalState: PropTypes.oneOf(['pending', 'approved', 'rejected']).isRequired,
 });

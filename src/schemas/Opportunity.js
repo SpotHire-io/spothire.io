@@ -6,8 +6,8 @@ const OpportunitySchema = PropTypes.shape({
     title: PropTypes.string.isRequired,
     isAllDay: PropTypes.bool.isRequired,
     selectedDates: PropTypes.shape({
-        start: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]).isRequired,
-        end: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]).isRequired
+        start: PropTypes.string.isRequired,
+        end: PropTypes.string.isRequired
     }).isRequired,
     employees: PropTypes.shape({
         invited: PropTypes.oneOf(['all', 'available', 'selected']).isRequired,
