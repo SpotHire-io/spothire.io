@@ -29,7 +29,7 @@ class ShiftManager extends React.Component {
                     isShift: true,
                     title: 'First shift',
                     isAllDay: false,
-                    selectedDates: {
+                    dates: {
                         start: moment(new Date(2017, 4, 1, 8, 0)),
                         end: moment(new Date(2017, 4, 1, 16, 0))
                     },
@@ -43,7 +43,7 @@ class ShiftManager extends React.Component {
                     isShift: true,
                     title: 'Second shift',
                     isAllDay: false,
-                    selectedDates: {
+                    dates: {
                         start: moment(new Date(2017, 4, 1, 16, 0,)),
                         end: moment(new Date(2017, 4, 2, 0, 0))
                     },
@@ -57,7 +57,7 @@ class ShiftManager extends React.Component {
                     isShift: true,
                     title: 'Third shift',
                     isAllDay: false,
-                    selectedDates: {
+                    dates: {
                         start: moment(new Date(2017, 4, 1, 8, 0)),
                         end: moment(new Date(2017, 4, 1, 16, 0))
                     },
@@ -71,7 +71,7 @@ class ShiftManager extends React.Component {
                     isShift: true,
                     title: 'Fourth shift',
                     isAllDay: false,
-                    selectedDates: {
+                    dates: {
                         start: moment(new Date(2017, 4, 1, 16, 0,)),
                         end: moment(new Date(2017, 4, 2, 0, 0))
                     },
@@ -85,7 +85,7 @@ class ShiftManager extends React.Component {
                     isShift: true,
                     title: 'Super extra long shift name that goes on forever',
                     isAllDay: false,
-                    selectedDates: {
+                    dates: {
                         start: moment(new Date(2017, 4, 1, 16, 0,)),
                         end: moment(new Date(2017, 4, 2, 0, 0))
                     },
@@ -133,7 +133,7 @@ class ShiftManager extends React.Component {
             title: '',
             isShift: true,
             isAllDay: false,
-            selectedDates: {
+            dates: {
                 start: moment(new Date()),
                 end: moment(new Date())
             },

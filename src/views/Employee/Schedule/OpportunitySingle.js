@@ -40,12 +40,12 @@ class EmployeeOpportunitySingleView extends React.Component {
                                 {
                                     id: 'startDate',
                                     label: 'From',
-                                    content: moment(this.props.opportunity.selectedDates.start).format((this.props.opportunity.isAllDay) ? 'MMMM Do, YYYY [(all day)]' : 'MMMM, Do, YYYY h:mm a'),
+                                    content: moment(this.props.opportunity.dates.start).format((this.props.opportunity.isAllDay) ? 'MMMM Do, YYYY [(all day)]' : 'MMMM, Do, YYYY h:mm a'),
                                 },
                                 {
                                     id: 'endDate',
                                     label: 'To',
-                                    content: moment(this.props.opportunity.selectedDates.end).format((this.props.opportunity.isAllDay) ? 'MMMM Do, YYYY [(all day)]' : 'MMMM, Do, YYYY h:mm a'),
+                                    content: moment(this.props.opportunity.dates.end).format((this.props.opportunity.isAllDay) ? 'MMMM Do, YYYY [(all day)]' : 'MMMM, Do, YYYY h:mm a'),
                                 },
                                 {
                                     id: 'location',

@@ -56,13 +56,13 @@ class DashboardView extends React.Component {
                         <ol className="list pa0 ma0 nt3">
                             {
                                 this.props.events
-                                    .sort((eventA, eventB) => moment(eventA.selectedDates.start) - moment(eventB.selectedDates.start))
+                                    .sort((eventA, eventB) => moment(eventA.dates.start) - moment(eventB.dates.start))
                                     .map((event) => {
                                         return (
                                             <li className="mt3 pa0" key={event.id}>
                                                 <a className="db link hover-bg-near-white black" href="#employee" onClick={linkTo('Views (employee)', 'Schedule:OpportunitySingle')}>
                                                     <h3 className="mv0 f5">{event.title}</h3>
-                                                    <p className="mt1">{moment(event.selectedDates.start).format('MMMM Do, YYYY')}</p>
+                                                    <p className="mt1">{moment(event.dates.start).format('MMMM Do, YYYY')}</p>
                                                 </a>
                                             </li>
                                         );

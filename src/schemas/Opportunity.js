@@ -5,7 +5,7 @@ const OpportunitySchema = PropTypes.shape({
     isShift: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired,
     isAllDay: PropTypes.bool.isRequired,
-    selectedDates: PropTypes.shape({
+    dates: PropTypes.shape({
         start: PropTypes.string.isRequired,
         end: PropTypes.string.isRequired
     }).isRequired,

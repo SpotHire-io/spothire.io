@@ -22,7 +22,7 @@ class OverviewCalendar extends React.Component {
             opportunity: {
                 id: -1,
                 isAllDay: false,
-                selectedDates: {
+                dates: {
                     start: new Date(1970, 0, 0),
                     end: new Date(1970, 0, 0)
                 },
@@ -43,7 +43,7 @@ class OverviewCalendar extends React.Component {
         const opportunity = { ...this.state.opportunity }; // copy opportunity state
 
         // Pass in new dates for opportunity
-        opportunity.selectedDates = selectedDates;
+        opportunity.dates = selectedDates;
 
         this.setState({ isModalOpen, opportunity });
 
@@ -117,8 +117,8 @@ class OverviewCalendar extends React.Component {
                         },
                     }}
                     scrollToTime={new Date(1970, 1, 1, 7)}
-                    startAccessor={(event) => new Date(event.selectedDates.start)}
-                    endAccessor={(event) => new Date(event.selectedDates.end)}
+                    startAccessor={(event) => new Date(event.dates.start)}
+                    endAccessor={(event) => new Date(event.dates.end)}
                     allDayAccessor="isAllDay"
                     onSelectSlot={this.handleSelectSlot}
                     onSelectEvent={this.props.onSelectEvent}

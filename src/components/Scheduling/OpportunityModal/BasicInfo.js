@@ -51,12 +51,12 @@ class OpportunityModalBasicInfo extends React.Component {
                 <dt className="f6 ml0 mb2">{end} date</dt>
                 <dd className="ml0">
                     <SingleDatePickerFocusContainer
-                        date={moment(this.props.opportunity.selectedDates[end.toLowerCase()])}
+                        date={moment(this.props.opportunity.dates[end.toLowerCase()])}
                         onDateChange={newDate => {
                             const opportunity = {...this.props.opportunity};
-                            const oldTime     = moment(opportunity.selectedDates[end.toLowerCase()]); // copy current time
+                            const oldTime     = moment(opportunity.dates[end.toLowerCase()]); // copy current time
 
-                            opportunity.selectedDates[end.toLowerCase()] = moment({
+                            opportunity.dates[end.toLowerCase()] = moment({
                                 year: newDate.year(),
                                 month: newDate.month(),
                                 date: newDate.date(),
@@ -81,14 +81,14 @@ class OpportunityModalBasicInfo extends React.Component {
                 <dt className="f6 ml0 mb2">{end} time</dt>
                 <dd className="ml0">
                     <TimePicker
-                        value={moment(this.props.opportunity.selectedDates[end.toLowerCase()])}
+                        value={moment(this.props.opportunity.dates[end.toLowerCase()])}
                         showSecond={false}
                         allowEmpty={false}
                         use12Hours={true}
                         onChange={newTime => {
                             const opportunity = {...this.props.opportunity};
 
-                            opportunity.selectedDates[end.toLowerCase()] = newTime;
+                            opportunity.dates[end.toLowerCase()] = newTime;
 
                             this.props.updateOpportunity(opportunity);
                         }}

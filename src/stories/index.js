@@ -638,8 +638,8 @@ storiesOf('Scheduling', module)
             <div className=" pa4" style={{height: '100vh'}}>
                 <BigCalendar
                     events={sampleEvents}
-                    startAccessor={(event) => new Date(event.selectedDates.start)}
-                    endAccessor={(event) => new Date(event.selectedDates.end)}
+                    startAccessor={(event) => new Date(event.dates.start)}
+                    endAccessor={(event) => new Date(event.dates.end)}
                 />
             </div>
         </WithNotes>
@@ -667,7 +667,7 @@ storiesOf('Scheduling', module)
                 isOpen={true}
                 opportunity={{
                     isAllDay: false,
-                    selectedDates: {
+                    dates: {
                         start: new Date(1970, 0, 0),
                         end: new Date(1970, 0, 0)
                     },
