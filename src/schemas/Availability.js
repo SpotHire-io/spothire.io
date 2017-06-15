@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 
 const TimeSlotSchema = PropTypes.shape({
     id: PropTypes.bool.isRequired,
-    start: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]).isRequired,
-    end: PropTypes.oneOfType([ PropTypes.string, PropTypes.object ]).isRequired,
-})
+    start: PropTypes.string.isRequired,
+    end: PropTypes.string.isRequired,
+});
 
-const DayAvailabilitySchema = PropTypes.oneOf([ PropTypes.bool, PropTypes.arrayOf(TimeSlotSchema) ]);
+const DayAvailabilitySchema = PropTypes.oneOf([ false, PropTypes.arrayOf(TimeSlotSchema) ]);
 
 const AvailabilitySchema = PropTypes.shape({
     monday: DayAvailabilitySchema.isRequired,
