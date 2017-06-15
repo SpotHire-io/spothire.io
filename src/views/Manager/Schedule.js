@@ -62,7 +62,7 @@ class ScheduleView extends React.Component {
                             />
                             <small className="dib f6 black-60 lh-title mt2">Filter whose opportunities appear.</small>
                         </FilterContainer>
-                        <Box className="flex-auto" title="Calendar">
+                        <Box className="w-two-thirds" title="Calendar">
                             <OverviewCalendar
                                 style={{height: '75vh'}}
                                 events={this.props.events.filter((event) => this.state.filteredUserIds.map((user) => user.value).includes(event.userId))}
