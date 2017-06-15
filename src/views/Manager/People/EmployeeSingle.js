@@ -82,28 +82,6 @@ class EmployeeSingleView extends React.Component {
                             <Box>
                                 <h2 className="f6 mt0 lh-title ttu">Employee Settings</h2>
 
-                                <div className="flex mt3">
-                                    <p className="w-50 mr4">
-                                        <label className="f6 db" htmlFor="employee_standard_rate">Standard hourly rate</label>
-                                        <div className="inline-flex w-100 mt2">
-                                            <div className="inline-flex self-stretch ph3 bg-near-white ba br-0 b--moon-gray">
-                                                <span className="self-center">$</span>
-                                            </div>
-                                            <input className="flex-auto" type="number" id="employee_standard_rate" name="employee_standard_rate"/>
-                                        </div>
-                                    </p>
-
-                                    <p className="w-50 mt0">
-                                        <label className="f6 db" htmlFor="employee_overtime_rate">Overtime hourly rate</label>
-                                        <div className="inline-flex w-100 mt2">
-                                            <div className="inline-flex self-stretch ph3 bg-near-white ba br-0 b--moon-gray">
-                                                <span className="self-center">$</span>
-                                            </div>
-                                            <input className="flex-auto" type="number" id="employee_overtime_rate" name="employee_overtime_rate"/>
-                                        </div>
-                                    </p>
-                                </div>
-
                                 <p className="mt3">
                                     <label className="f6 db" htmlFor="employee_notes">Notes</label>
                                     <textarea className="mt2 w-100" name="employee_notes" id="employee_notes" aria-describedby="employee_notes_desc" cols="30" rows="5"/>
