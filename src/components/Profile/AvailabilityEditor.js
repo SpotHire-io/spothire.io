@@ -26,38 +26,7 @@ class AvailabilityEditor extends React.Component {
         };
 
         this.state = {
-            availability: {
-                Monday: false,
-                Tuesday: [
-                    {
-                        id: 100,
-                        start: moment('08:00', 'kk:mm'),
-                        end: moment('12:00', 'kk:mm'),
-                    },
-                ],
-                Wednesday: false,
-                Thursday: false,
-                Friday: [
-                    {
-                        id: 400,
-                        start: moment('08:00', 'kk:mm'),
-                        end: moment('12:00', 'kk:mm'),
-                    },
-                    {
-                        id: 401,
-                        start: moment('16:00', 'kk:mm'),
-                        end: moment('22:00', 'kk:mm'),
-                    },
-                ],
-                Saturday: false,
-                Sunday: [
-                    {
-                        id: 600,
-                        start: moment('08:00', 'kk:mm'),
-                        end: moment('12:00', 'kk:mm'),
-                    },
-                ],
-            }
+            availability: props.employee.availability,
         };
     }
 
