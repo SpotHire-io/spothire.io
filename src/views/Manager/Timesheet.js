@@ -31,7 +31,7 @@ class TimesheetView extends React.Component {
     }
 
     render() {
-        let filteredUsers = this.props.users.filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.nameSearch) > -1);
+        let filteredUsers = this.props.employees.filter((user) => `${user.firstName} ${user.lastName}`.indexOf(this.state.nameSearch) > -1);
 
         if (this.state.discrepancyType === 'underSubmitted') {
             filteredUsers = filteredUsers.filter((user) => user.hours.worked > user.hours.submitted)
@@ -93,7 +93,7 @@ TimesheetView.defaultProps = {
 
 TimesheetView.propTypes = {
     className: PropTypes.string,
-    users: PropTypes.arrayOf(PersonSchema).isRequired,
+    employees: PropTypes.arrayOf(PersonSchema).isRequired,
 };
 
 export default TimesheetView;

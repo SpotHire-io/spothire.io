@@ -29,7 +29,7 @@ class PeopleView extends React.Component {
                                         return {
                                             id: number,
                                             name: `Sample Group ${number + 1}`,
-                                            employees: this.props.users
+                                            employees: this.props.employees
                                         };
                                     })}
                                 />
@@ -47,7 +47,7 @@ PeopleView.defaultProps = {
 };
 
 PeopleView.propTypes = {
-    users: PropTypes.arrayOf(PersonSchema).isRequired
+    employees: PropTypes.arrayOf(PersonSchema).isRequired
 };
 
 export default PeopleView;
