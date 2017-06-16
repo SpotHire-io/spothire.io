@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import PersonSchema from '../../schemas/Person';
+import GroupSchema from '../../schemas/Group';
 import BasicButton from '../../components/Buttons/BasicButton';
 import SelectEmployees from './EmployeeSelection/SelectEmployees';
 import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees';
@@ -9,17 +10,6 @@ import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees
 // Rule data
 import filterKeys from '../../data/peopleFilterRules/filterKeys.json';
 import filterTypes from '../../data/peopleFilterRules/filterTypes.json';
-
-// dummy data
-import users from '../../data/people.json';
-
-const groups = [...Array(10).keys()].map((number) => {
-    return {
-        id: number,
-        name: `Sample Group ${number + 1}`,
-        employees: users
-    };
-});
 
 class EmployeeSelectionInterface extends React.Component {
     constructor() {
@@ -32,13 +22,13 @@ class EmployeeSelectionInterface extends React.Component {
         this.state = {
             selectedEmployees: {
                 employees: [
-                    users[0],
-                    users[1],
-                    users[2],
+                    this.props.employees[0],
+                    this.props.employees[1],
+                    this.props.employees[2],
                 ],
                 groups: [
-                    groups[0],
-                    groups[1],
+                    this.props.groups[0],
+                    this.props.groups[1],
                 ],
                 customRules: [],
             }
@@ -120,12 +110,12 @@ class EmployeeSelectionInterface extends React.Component {
 
 EmployeeSelectionInterface.defaultProps = {
     className: '',
-    employees: users,
 };
 
 EmployeeSelectionInterface.propTypes = {
     className: PropTypes.string,
     employees: PropTypes.arrayOf(PersonSchema).isRequired,
+    groups: PropTypes.arrayOf(GroupSchema).isRequired,
 };
 
 export default EmployeeSelectionInterface;
