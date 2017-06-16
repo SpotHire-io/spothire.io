@@ -1,12 +1,14 @@
 import 'moment/locale/en-ca';
 import React from 'react';
+import PropTypes from 'prop-types';
+import OpportunitySchema from '../../schemas/Opportunity';
 import moment from 'moment';
 import classNames from 'classnames';
 import BasicTag from '../Tags/BasicTag';
 import BasicButton from '../Buttons/BasicButton';
 
 class ShiftList extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
 
         this.toggleShiftEditing = this.toggleShiftEditing.bind(this);
@@ -20,32 +22,7 @@ class ShiftList extends React.Component {
 
         this.state = {
             currentlyEditingShiftId: null,
-            shifts: [
-                {
-                    id: 0,
-                    start: moment(new Date(2017, 4, 1, 8, 0)),
-                    end: moment(new Date(2017, 4, 1, 16, 0)),
-                    notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
-                    isInvited: true,
-                    isConfirmed: false,
-                },
-                {
-                    id: 1,
-                    start: moment(new Date(2017, 4, 1, 16, 0)),
-                    end: moment(new Date(2017, 4, 2, 0, 0)),
-                    notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
-                    isInvited: true,
-                    isConfirmed: true,
-                },
-                {
-                    id: 2,
-                    start: moment(new Date(2017, 4, 1, 16, 0)),
-                    end: moment(new Date(2017, 4, 2, 0, 0)),
-                    notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
-                    isInvited: false,
-                    isConfirmed: false,
-                }
-            ]
+            shifts: props.shifts
         };
     }
 
@@ -204,7 +181,38 @@ class ShiftList extends React.Component {
 }
 
 ShiftList.defaultProps = {
-    className: ''
+    className: '',
+    shifts: [
+        {
+            id: 0,
+            start: moment(new Date(2017, 4, 1, 8, 0)),
+            end: moment(new Date(2017, 4, 1, 16, 0)),
+            notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
+            isInvited: true,
+            isConfirmed: false,
+        },
+        {
+            id: 1,
+            start: moment(new Date(2017, 4, 1, 16, 0)),
+            end: moment(new Date(2017, 4, 2, 0, 0)),
+            notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
+            isInvited: true,
+            isConfirmed: true,
+        },
+        {
+            id: 2,
+            start: moment(new Date(2017, 4, 1, 16, 0)),
+            end: moment(new Date(2017, 4, 2, 0, 0)),
+            notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
+            isInvited: false,
+            isConfirmed: false,
+        }
+    ],
+};
+
+ShiftList.propTypes = {
+    className: PropTypes.string,
+    shifts: PropTypes.arrayOf(OpportunitySchema).isRequired,
 };
 
 export default ShiftList;
