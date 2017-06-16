@@ -1,5 +1,7 @@
 import 'moment/locale/en-ca';
 import React from 'react';
+import PropTypes from 'prop-types';
+import PostSchema from '../../schemas/Post';
 import moment from 'moment';
 import { Arrow } from 'rebass';
 import classNames from 'classnames';
@@ -108,6 +110,14 @@ Post.defaultProps = {
     className: '',
     isOpen: true,
     isInline: false,
+};
+
+Post.propTypes = {
+    className: PropTypes.string,
+    post: PostSchema.isRequired,
+    isOpen: PropTypes.bool,
+    isInline: PropTypes.bool,
+    toggleOpenState: PropTypes.func,
 };
 
 export default Post;
