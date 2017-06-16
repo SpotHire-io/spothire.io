@@ -153,12 +153,12 @@ class SelectCustomRules extends React.Component {
 
 SelectCustomRules.defaultProps = {
     className: '',
-    onAddRule: (rule) => console.log(rule)
+    onAddRule: (rule) => alert(rule),
 };
 
 SelectCustomRules.propTypes = {
     className: PropTypes.string,
-    onAddRule: PropTypes.func,
+    onAddRule: PropTypes.func.isRequired,
 };
 
 export default SelectCustomRules;

@@ -40,7 +40,7 @@ class SelectGroups extends React.Component {
                     cardProps={{
                         displayAvatarPreview: false,
                     }}
-                    onSelectGroup={() => alert('Selecting group')}
+                    onSelectGroup={this.props.onAddGroup}
                 />
             </div>
         );
@@ -49,10 +49,12 @@ class SelectGroups extends React.Component {
 
 SelectGroups.defaultProps = {
     className: '',
+    onAddGroup: (groupId) => alert(`Group #${groupId} added!`),
 };
 
 SelectGroups.propTypes = {
     className: PropTypes.string,
+    onAddGroup: PropTypes.func.isRequired,
 };
 
 export default SelectGroups;

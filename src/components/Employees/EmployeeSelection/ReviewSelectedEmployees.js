@@ -35,7 +35,7 @@ class ReviewSelectedEmployees extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={this.props.className}>
                 {this.props.selectionCategories.map((category) => {
                     return (
                         <section className="mb3" key={category.key}>

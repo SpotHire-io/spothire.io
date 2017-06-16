@@ -32,7 +32,7 @@ class SelectIndividuals extends React.Component {
                         filterBy: this.state.employeesSearch,
                     }}
                     enabledColumns={['avatar', 'name']}
-                    onClickUser={() => alert('Selecting employee...')}
+                    onClickUser={this.props.onAddUser}
                 />
             </div>
         );
@@ -41,10 +41,12 @@ class SelectIndividuals extends React.Component {
 
 SelectIndividuals.defaultProps = {
     className: '',
+    onAddUser: (userId) => alert(`Adding employee #${userId}`),
 };
 
 SelectIndividuals.propTypes = {
     className: PropTypes.string,
+    onAddUser: PropTypes.func.isRequired,
 };
 
 export default SelectIndividuals;
