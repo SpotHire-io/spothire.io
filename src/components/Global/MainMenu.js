@@ -102,7 +102,7 @@ class MainMenu extends React.Component {
 
     render() {
         return (
-            <div className="relative no-select">
+            <div className={classNames('relative no-select', this.props.className)}>
                 <div className="flex  shadow-4 bg-teal bb bt bw1 b--white-40" onClick={() => (this.state.isUserMenuOpen) ? this.toggleUserMenu() : null}>
                     {this.renderLogo()}
                     <nav className="flex-auto flex items-start">

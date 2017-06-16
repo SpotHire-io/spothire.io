@@ -48,7 +48,14 @@ SecondaryMenu.defaultProps = {
 };
 
 SecondaryMenu.propTypes = {
-    items: PropTypes.array.isRequired
+    className: PropTypes.string,
+    items: PropTypes.arrayOf(PropTypes.shape({
+        key: PropTypes.any,
+        href: PropTypes.string,
+        text: PropTypes.node,
+        isActive: PropTypes.bool,
+    })).isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 export default SecondaryMenu;
