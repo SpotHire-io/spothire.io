@@ -62,7 +62,12 @@ Filter.defaultProps = {
 };
 
 Filter.propTypes = {
-    id: PropTypes.string.isRequired
+    className: PropTypes.string,
+    id: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['text', 'select']).isRequired,
+    label: PropTypes.string,
+    data: PropTypes.object,
+    onChange: PropTypes.func.isRequired,
 };
 
 export default Filter;
