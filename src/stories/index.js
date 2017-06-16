@@ -650,7 +650,7 @@ storiesOf('Scheduling', module)
                 <Box title="Calendar">
                     <OverviewCalendar
                         events={sampleEvents}
-                        filter={{
+                        highlightFilter={{
                             property: 'userId',
                             values: [0]
                         }}

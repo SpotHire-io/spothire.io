@@ -65,7 +65,7 @@ class OverviewCalendar extends React.Component {
         });
 
         const EventWrapper = (props) => {
-            if (this.props.filter !== undefined && this.props.filter.values.indexOf( props.event[ this.props.filter.property ] ) !== -1) {
+            if (this.props.highlightFilter !== undefined && this.props.highlightFilter.values.indexOf( props.event[ this.props.highlightFilter.property ] ) !== -1) {
                 return <div className="rbc-alt-bg">{props.children}</div>;
             } else {
                 return props.children;
@@ -153,6 +153,10 @@ OverviewCalendar.propTypes = {
     events: PropTypes.array.isRequired,
     onSelectEvent: PropTypes.func,
     calendarProps: PropTypes.object,
+    highlightFilter: PropTypes.shape({
+        property: PropTypes.string,
+        values: PropTypes.array,
+    }),
 };
 
 export default OverviewCalendar;

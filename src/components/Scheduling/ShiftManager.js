@@ -2,6 +2,7 @@ import 'moment/locale/en-ca';
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
+import OpportunitySchema from '../../schema/Opportunity';
 import classNames from 'classnames';
 import { CSSTransitionGroup } from 'react-transition-group';
 import Box from '../Global/Box';
@@ -10,7 +11,7 @@ import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
 import OpportunityModalEmployees from './OpportunityModal/Employees';
 
 class ShiftManager extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
 
         this.setCurrentlyEditingShift = this.setCurrentlyEditingShift.bind(this);
@@ -23,78 +24,7 @@ class ShiftManager extends React.Component {
 
         this.state = {
             currentlyEditingShiftId: 0,
-            shifts: [
-                {
-                    id: 0,
-                    isShift: true,
-                    title: 'First shift',
-                    isAllDay: false,
-                    dates: {
-                        start: moment(new Date(2017, 4, 1, 8, 0)),
-                        end: moment(new Date(2017, 4, 1, 16, 0))
-                    },
-                    employees: {
-                        invited: 'all',
-                        confirmed: []
-                    }
-                },
-                {
-                    id: 1,
-                    isShift: true,
-                    title: 'Second shift',
-                    isAllDay: false,
-                    dates: {
-                        start: moment(new Date(2017, 4, 1, 16, 0,)),
-                        end: moment(new Date(2017, 4, 2, 0, 0))
-                    },
-                    employees: {
-                        invited: 'all',
-                        confirmed: []
-                    }
-                },
-                {
-                    id: 2,
-                    isShift: true,
-                    title: 'Third shift',
-                    isAllDay: false,
-                    dates: {
-                        start: moment(new Date(2017, 4, 1, 8, 0)),
-                        end: moment(new Date(2017, 4, 1, 16, 0))
-                    },
-                    employees: {
-                        invited: 'all',
-                        confirmed: []
-                    }
-                },
-                {
-                    id: 3,
-                    isShift: true,
-                    title: 'Fourth shift',
-                    isAllDay: false,
-                    dates: {
-                        start: moment(new Date(2017, 4, 1, 16, 0,)),
-                        end: moment(new Date(2017, 4, 2, 0, 0))
-                    },
-                    employees: {
-                        invited: 'all',
-                        confirmed: []
-                    }
-                },
-                {
-                    id: 4,
-                    isShift: true,
-                    title: 'Super extra long shift name that goes on forever',
-                    isAllDay: false,
-                    dates: {
-                        start: moment(new Date(2017, 4, 1, 16, 0,)),
-                        end: moment(new Date(2017, 4, 2, 0, 0))
-                    },
-                    employees: {
-                        invited: 'all',
-                        confirmed: []
-                    }
-                }
-            ]
+            shifts: props.shifts,
         };
     }
 
@@ -234,11 +164,85 @@ class ShiftManager extends React.Component {
 }
 
 ShiftManager.defaultProps = {
-    className: ''
+    className: '',
+    shifts: [
+        {
+            id: 0,
+            isShift: true,
+            title: 'First shift',
+            isAllDay: false,
+            dates: {
+                start: moment(new Date(2017, 4, 1, 8, 0)),
+                end: moment(new Date(2017, 4, 1, 16, 0))
+            },
+            employees: {
+                invited: 'all',
+                confirmed: []
+            }
+        },
+        {
+            id: 1,
+            isShift: true,
+            title: 'Second shift',
+            isAllDay: false,
+            dates: {
+                start: moment(new Date(2017, 4, 1, 16, 0,)),
+                end: moment(new Date(2017, 4, 2, 0, 0))
+            },
+            employees: {
+                invited: 'all',
+                confirmed: []
+            }
+        },
+        {
+            id: 2,
+            isShift: true,
+            title: 'Third shift',
+            isAllDay: false,
+            dates: {
+                start: moment(new Date(2017, 4, 1, 8, 0)),
+                end: moment(new Date(2017, 4, 1, 16, 0))
+            },
+            employees: {
+                invited: 'all',
+                confirmed: []
+            }
+        },
+        {
+            id: 3,
+            isShift: true,
+            title: 'Fourth shift',
+            isAllDay: false,
+            dates: {
+                start: moment(new Date(2017, 4, 1, 16, 0,)),
+                end: moment(new Date(2017, 4, 2, 0, 0))
+            },
+            employees: {
+                invited: 'all',
+                confirmed: []
+            }
+        },
+        {
+            id: 4,
+            isShift: true,
+            title: 'Super extra long shift name that goes on forever',
+            isAllDay: false,
+            dates: {
+                start: moment(new Date(2017, 4, 1, 16, 0,)),
+                end: moment(new Date(2017, 4, 2, 0, 0))
+            },
+            employees: {
+                invited: 'all',
+                confirmed: []
+            }
+        }
+    ],
 };
 
 ShiftManager.propTypes = {
-    instructionsContent: PropTypes.node
+    className: PropTypes.string,
+    shifts: PropTypes.arrayOf(OpportunitySchema).isRequired,
+    instructionsContent: PropTypes.node,
 };
 
 export default ShiftManager;
