@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const ButtonBar = ({ children, className }) => {
@@ -30,6 +31,11 @@ const ButtonBar = ({ children, className }) => {
 
 ButtonBar.defaultProps = {
     className: ''
+};
+
+ButtonBar.propTypes = {
+    className: PropTypes.string,
+    children: PropTypes.node.isRequired,
 };
 
 export default ButtonBar;

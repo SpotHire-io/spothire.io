@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const BasicButton = ({ children, className, onClick }) => {
@@ -12,6 +13,12 @@ const BasicButton = ({ children, className, onClick }) => {
 
 BasicButton.defaultProps = {
     className: ''
+};
+
+BasicButton.propTypes = {
+    className: PropTypes.string,
+    children: PropTypes.node.isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 export default BasicButton;

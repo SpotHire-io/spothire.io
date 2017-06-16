@@ -22,8 +22,13 @@ RadioButton.defaultProps = {
 };
 
 RadioButton.propTypes = {
-    name: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired
+    className: PropTypes.string,
+    children: PropTypes.node,
+    value: PropTypes.any.isRequired,
+    name: PropTypes.any.isRequired,
+    id: PropTypes.any.isRequired,
+    checked: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired,
 };
 
 export default RadioButton;
