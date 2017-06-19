@@ -5,9 +5,13 @@ import PersonSchema from '../../../schemas/Person';
 import SecondaryMenu from '../../../components/Global/SecondaryMenu';
 import MetadataInterface from '../../../components/Employees/MetadataInterface';
 import AvailabilityViewer from '../../../components/Profile/AvailabilityViewer';
+import TimeOffRequestReviewer from '../../../components/Profile/TimeOffRequests/Reviewer';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
+
+// demo data
+import timeOffRequests from '../../../data/timeOffRequests.json';
 
 class EmployeeSingleView extends React.Component {
     render() {
@@ -90,12 +94,16 @@ class EmployeeSingleView extends React.Component {
 
                                 <MetadataInterface className="mt3" employee={this.props.employee}/>
                             </Box>
-                            <div className="mt3 flex">
-                                <Box className="w-50 mr3" contentWrapperClassName="pa3 max-h5 overflow-auto" title="Availability">
+                            <div className="mt3 flex items-start">
+                                <Box className="w-50 mr3" contentWrapperClassName="pa3 max-h5 overflow-auto">
+                                    <h2 className="f6 mt0 lh-title ttu">Weekly Availability</h2>
+
                                     <AvailabilityViewer employee={this.props.employee}/>
                                 </Box>
-                                <Box className="w-50" contentWrapperClassName="pa3 max-h5 overflow-auto" title="Availability">
-                                    <AvailabilityViewer employee={this.props.employee}/>
+                                <Box className="w-50" contentWrapperClassName="pa3 max-h5 overflow-auto">
+                                    <h2 className="f6 mt0 lh-title ttu">Requests for Time Off</h2>
+
+                                    <TimeOffRequestReviewer className="pt1" timeOffRequests={timeOffRequests}/>
                                 </Box>
                             </div>
                         </div>
