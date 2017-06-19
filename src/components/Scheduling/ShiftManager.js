@@ -2,7 +2,7 @@ import 'moment/locale/en-ca';
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import OpportunitySchema from '../../schema/Opportunity';
+import OpportunitySchema from '../../schemas/Opportunity';
 import classNames from 'classnames';
 import { CSSTransitionGroup } from 'react-transition-group';
 import Box from '../Global/Box';
