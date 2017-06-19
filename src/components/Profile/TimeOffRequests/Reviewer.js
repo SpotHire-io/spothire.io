@@ -18,11 +18,19 @@ class TimeOffRequestReviewer extends React.Component {
     }
 
     approveRequest(requestId) {
-        
+        let requests = [...this.state.requests];
+
+        requests[requests.findIndex((request) => request.id === requestId)].approvalState = 'approved';
+
+        this.setState({ requests });
     }
 
     rejectRequest(requestId) {
-        
+        let requests = [...this.state.requests];
+
+        requests[requests.findIndex((request) => request.id === requestId)].approvalState = 'rejected';
+
+        this.setState({ requests });
     }
 
     render() {
