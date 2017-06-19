@@ -11,6 +11,7 @@ class TimeOffRequestReviewer extends React.Component {
 
         this.approveRequest = this.approveRequest.bind(this);
         this.rejectRequest = this.rejectRequest.bind(this);
+        this.updateRequestField = this.updateRequestField.bind(this);
 
         this.state = {
             requests: props.timeOffRequests,
@@ -18,17 +19,17 @@ class TimeOffRequestReviewer extends React.Component {
     }
 
     approveRequest(requestId) {
-        let requests = [...this.state.requests];
-
-        requests[requests.findIndex((request) => request.id === requestId)].approvalState = 'approved';
-
-        this.setState({ requests });
+        this.updateRequestField(requestId, 'approvalState', 'approved');
     }
 
     rejectRequest(requestId) {
+        this.updateRequestField(requestId, 'approvalState', 'rejected');
+    }
+
+    updateRequestField(requestId, field, value) {
         let requests = [...this.state.requests];
 
-        requests[requests.findIndex((request) => request.id === requestId)].approvalState = 'rejected';
+        requests[requests.findIndex((request) => request.id === requestId)][field] = value;
 
         this.setState({ requests });
     }
