@@ -37,6 +37,7 @@ class NewTimeOffRequestModal extends React.Component {
     submitRequest() {
         this.props.onSubmitRequest({...this.state.request}); // send a copy because we're resetting the state
         this.setState({ request: this.defaultRequest });
+        this.props.closeModal();
     }
 
     toggleAllDay() {

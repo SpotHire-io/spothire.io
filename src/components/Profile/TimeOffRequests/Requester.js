@@ -2,34 +2,21 @@ import 'moment/locale/en-ca';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import BasicButton from '../../../components/Buttons/BasicButton';
 import PersonSchema from '../../../schemas/Person';
 import TimeOffRequestSchema from '../../../schemas/TimeOffRequest';
 import TimeOffRequestList from './List';
-import NewTimeOffRequestModal from './Modal';
+import TimeOffRequestNew from './New';
 
 class TimeOffRequestRequester extends React.Component {
     constructor(props) {
         super();
-
-        this.openNewTimeOffRequestModal = this.openNewTimeOffRequestModal.bind(this);
-        this.closeNewTimeOffRequestModal = this.closeNewTimeOffRequestModal.bind(this);
 
         this.addRequest = this.addRequest.bind(this);
         this.deleteRequest = this.deleteRequest.bind(this);
 
         this.state = {
             requests: props.timeOffRequests,
-            isNewTimeOffRequestModalOpen: false,
         };
-    }
-
-    openNewTimeOffRequestModal() {
-        this.setState({ isNewTimeOffRequestModalOpen: true });
-    }
-
-    closeNewTimeOffRequestModal() {
-        this.setState({ isNewTimeOffRequestModalOpen: false });
     }
 
     addRequest(request) {
@@ -45,7 +32,6 @@ class TimeOffRequestRequester extends React.Component {
         requests.push(newRequest);
 
         this.setState({ requests });
-        this.closeNewTimeOffRequestModal();
     }
 
     deleteRequest(requestId) {
@@ -60,14 +46,7 @@ class TimeOffRequestRequester extends React.Component {
         return (
             <div className={classNames(this.props.className)}>
                 <TimeOffRequestList timeOffRequests={this.state.requests} deleteRequest={this.deleteRequest}/>
-                <div className="tr mt3">
-                    <BasicButton className="button--positive" onClick={() => this.openNewTimeOffRequestModal()}>New Request</BasicButton>
-                </div>
-                <NewTimeOffRequestModal
-                    isOpen={this.state.isNewTimeOffRequestModalOpen}
-                    closeModal={this.closeNewTimeOffRequestModal}
-                    onSubmitRequest={this.addRequest}
-                />
+                <TimeOffRequestNew addRequest={this.addRequest}/>
             </div>
         );
     }
