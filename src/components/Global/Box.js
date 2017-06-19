@@ -8,21 +8,14 @@ const Box = ({ children, className, contentWrapperClassName, headingSemanticLeve
         [className]: true
     });
 
-    const renderBlockTitle = () => {
+    const renderTitle = () => {
         if (title !== undefined && title.length > 0) {
             return React.createElement(
                 'h' + headingSemanticLevel,
-                { className: 'bg-teal white bb bw1 b--white-40 ma0 pa3 f5' },
-                title
-            );
-        }
-    };
-
-    const renderInlineTitle = () => {
-        if (title !== undefined && title.length > 0) {
-            return React.createElement(
-                'h' + headingSemanticLevel,
-                { className: 'f6 mt0 lh-title ttu' },
+                { className: classNames({
+                    'bg-teal white bb bw1 b--white-40 ma0 pa3 f5': headingType === 'block',
+                    'f6 mt0 lh-title ttu': headingType === 'inline',
+                }) },
                 title
             );
         }
@@ -30,9 +23,9 @@ const Box = ({ children, className, contentWrapperClassName, headingSemanticLeve
 
     return (
         <div className={wrapperClasses}>
-            {(headingType === 'block') ? renderBlockTitle() : null}
+            {(headingType === 'block') ? renderTitle() : null}
             <div className={contentWrapperClassName}>
-                {(headingType === 'inline') ? renderInlineTitle() : null}
+                {(headingType === 'inline') ? renderTitle() : null}
                 {children}
             </div>
         </div>
