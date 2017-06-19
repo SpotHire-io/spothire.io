@@ -18,7 +18,7 @@ class ScheduleView extends React.Component {
 
         this.resetFilters = this.resetFilters.bind(this);
 
-        this.state = {
+        this.defaultFilters = {
             filteredUserIds: [
                 {
                     label: `${users[0].firstName} ${users[0].lastName}`,
@@ -26,16 +26,15 @@ class ScheduleView extends React.Component {
                 }
             ]
         };
+
+        this.state = {
+            ...this.defaultFilters,
+        };
     }
 
     resetFilters() {
         this.setState({
-            filteredUserIds: [
-                {
-                    label: `${users[0].firstName} ${users[0].lastName}`,
-                    value: users[0].id,
-                }
-            ]
+            ...this.defaultFilters,
         });
     }
 
