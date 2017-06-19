@@ -103,7 +103,7 @@ class AvailabilityEditor extends React.Component {
 
                             return (
                                 <li key={day} className="ma0 ph0 pv2">
-                                    <p className="b mt0 mb2">{day}</p>
+                                    <p className="b mt0 mb2">{day.charAt(0).toUpperCase() + day.slice(1)}</p>
                                     <Checkbox label="Available" name={'available_' + day} checked={currentDay !== false} onClick={() => this.toggleDayAvailability(day, index)}/>
 
                                     {
