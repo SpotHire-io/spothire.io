@@ -316,10 +316,19 @@ storiesOf('Global', module)
             </div>
         </WithNotes>
     ))
-    .add('Box with title', () => (
+    .add('Box with block title', () => (
         <WithNotes>
             <div className="ma4">
                 <Box title="Box title">
+                    <p>Some test content in the Box.</p>
+                </Box>
+            </div>
+        </WithNotes>
+    ))
+    .add('Box with inline title', () => (
+        <WithNotes>
+            <div className="ma4">
+                <Box title="Box title" headingType="inline">
                     <p>Some test content in the Box.</p>
                 </Box>
             </div>

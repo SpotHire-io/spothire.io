@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Box = ({ children, className, contentWrapperClassName, headingSemanticLevel, title }) => {
+const Box = ({ children, className, contentWrapperClassName, headingSemanticLevel, headingType, title }) => {
     let wrapperClasses = classNames({
         'bg-white ba b--black-20 sh-shadow-2': true,
         [className]: true
     });
 
-    const renderTitle = () => {
+    const renderBlockTitle = () => {
         if (title !== undefined && title.length > 0) {
             return React.createElement(
                 'h' + headingSemanticLevel,
@@ -18,10 +18,21 @@ const Box = ({ children, className, contentWrapperClassName, headingSemanticLeve
         }
     };
 
+    const renderInlineTitle = () => {
+        if (title !== undefined && title.length > 0) {
+            return React.createElement(
+                'h' + headingSemanticLevel,
+                { className: 'f6 mt0 lh-title ttu' },
+                title
+            );
+        }
+    };
+
     return (
         <div className={wrapperClasses}>
-            {renderTitle()}
+            {(headingType === 'block') ? renderBlockTitle() : null}
             <div className={contentWrapperClassName}>
+                {(headingType === 'inline') ? renderInlineTitle() : null}
                 {children}
             </div>
         </div>
@@ -31,6 +42,7 @@ const Box = ({ children, className, contentWrapperClassName, headingSemanticLeve
 Box.defaultProps = {
     className: '',
     headingSemanticLevel: 2,
+    headingType: 'block',
     contentWrapperClassName: 'pa3'
 };
 
@@ -38,6 +50,7 @@ Box.propTypes = {
     className: PropTypes.string,
     contentWrapperClassName: PropTypes.string,
     headingSemanticLevel: PropTypes.number,
+    headingType: PropTypes.oneOf(['block', 'inline']),
     title: PropTypes.string,
     children: PropTypes.node.isRequired
 };
