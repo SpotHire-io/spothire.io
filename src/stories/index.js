@@ -60,7 +60,7 @@ import ShiftList from '../components/Miscellaneous/ShiftList';
 
 import users from '../data/people.json';
 import posts from '../data/posts.json';
-import sampleEvents from '../data/events.json';
+import sampleEvents from '../data/opportunities.json';
 import timeOffRequests from '../data/timeOffRequests.json';
 
 BigCalendar.setLocalizer(
