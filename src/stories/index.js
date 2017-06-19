@@ -195,7 +195,7 @@ storiesOf('Views (manager)', module)
             userType="manager"
             viewComponent={
                 <TimesheetView
-                    users={users}
+                    employees={users}
                 />
             }
         />
