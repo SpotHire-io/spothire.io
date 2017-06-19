@@ -38,9 +38,7 @@ class EmployeeSingleView extends React.Component {
                 <div className="pv4 bg-near-white">
                     <div className="flex mh4">
                         <div className="w-third mr3">
-                            <Box>
-                                <h2 className="f6 mt0 lh-title ttu">Employee Details</h2>
-
+                            <Box title="Employee Details" headingType="inline">
                                 <h1 className="mb4 f3">{this.props.employee.firstName} {this.props.employee.lastName}</h1>
                                 <img className="db w-100 ba bw1 b--silver border-box" src={this.props.employee.imageSrc} alt={`Profile of ${this.props.employee.firstName}`}/>
 
@@ -80,29 +78,21 @@ class EmployeeSingleView extends React.Component {
                             </Box>
                         </div>
                         <div className="w-two-thirds">
-                            <Box>
-                                <h2 className="f6 mt0 lh-title ttu">Employee Settings</h2>
-
+                            <Box title="Employee Settings" headingType="inline">
                                 <p className="mt3">
                                     <label className="f6 db" htmlFor="employee_notes">Notes</label>
                                     <textarea className="mt2 w-100" name="employee_notes" id="employee_notes" aria-describedby="employee_notes_desc" cols="30" rows="5"/>
                                     <small className="f6 black-60" id="employee_notes_desc">Only managers can read these notes.</small>
                                 </p>
                             </Box>
-                            <Box className="mt3">
-                                <h2 className="f6 mt0 lh-title ttu">Employee Metadata</h2>
-
+                            <Box className="mt3" title="Employee Metadata" headingType="inline">
                                 <MetadataInterface className="mt3" employee={this.props.employee}/>
                             </Box>
                             <div className="mt3 flex items-start">
-                                <Box className="w-50 mr3" contentWrapperClassName="pa3 max-h5 overflow-auto">
-                                    <h2 className="f6 mt0 lh-title ttu">Weekly Availability</h2>
-
+                                <Box className="w-50 mr3" contentWrapperClassName="pa3 max-h5 overflow-auto" title="Weekly Availability" headingType="inline">
                                     <AvailabilityViewer employee={this.props.employee}/>
                                 </Box>
-                                <Box className="w-50" contentWrapperClassName="pa3 max-h5 overflow-auto">
-                                    <h2 className="f6 mt0 lh-title ttu">Requests for Time Off</h2>
-
+                                <Box className="w-50" contentWrapperClassName="pa3 max-h5 overflow-auto" title="Requests for Time Off" headingType="inline">
                                     <TimeOffRequestReviewer className="pt1" timeOffRequests={timeOffRequests}/>
                                 </Box>
                             </div>

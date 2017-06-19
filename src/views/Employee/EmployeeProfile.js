@@ -9,9 +9,7 @@ class EmployeeProfileView extends React.Component {
         return (
             <div className="pa4 bg-near-white">
                 <div className="flex">
-                    <Box className="w-third mr3 self-start">
-                        <h2 className="f6 mt0 lh-title ttu">Your Profile</h2>
-
+                    <Box className="w-third mr3 self-start" title="Your Profile" headingType="inline">
                         <h1 className="mb4 f3">{this.props.employee.firstName} {this.props.employee.lastName}</h1>
                         <img className="db w-100 ba bw1 b--silver border-box pointer" onClick={() => alert('upload main profile photo interface')} src={this.props.employee.imageSrc} alt={`Profile of ${this.props.employee.firstName}`}/>
 
@@ -28,9 +26,7 @@ class EmployeeProfileView extends React.Component {
                         </div>
                     </Box>
                     <div className="w-two-thirds">
-                        <Box>
-                            <h2 className="f6 mt0 lh-title ttu">Essential Information</h2>
-
+                        <Box title="Essential Information" headingType="inline">
                             <div className="flex mt3">
                                 <div className="w-50 mr4">
                                     <label className="f6 db mb2" htmlFor="employee_email">Email address</label>
@@ -50,9 +46,7 @@ class EmployeeProfileView extends React.Component {
                             </div>
                         </Box>
 
-                        <Box className="mt3">
-                            <h2 className="f6 mt0 lh-title ttu">Further Information</h2>
-
+                        <Box className="mt3" title="Further Information" headingType="inline">
                             <p>Managers who know more about you can schedule you for more opportunities. Answering these questions helps managers find you good opportunities.</p>
 
                             <div className="mt3">
@@ -73,9 +67,7 @@ class EmployeeProfileView extends React.Component {
                             </div>
                         </Box>
 
-                        <Box className="mt3">
-                            <h2 className="f6 mt0 lh-title ttu">Account Settings</h2>
-
+                        <Box className="mt3" title="Account Settings" headingType="inline">
                             <div className="flex mt3">
                                 <div className="w-50 mr4">
                                     <label className="f6 db mb2" htmlFor="employee_password">New password</label>

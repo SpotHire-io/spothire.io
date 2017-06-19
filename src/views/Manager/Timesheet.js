@@ -47,9 +47,7 @@ class TimesheetView extends React.Component {
 
         return (
             <div className="bg-near-white pa4">
-                <Box>
-                    <h2 className="f6 mt0 lh-title ttu">Summary</h2>
-
+                <Box title="Summary" headingType="inline">
                     <p className="mt0 measure">Timesheet summary for {summarizedUsers.length} {(this.state.selectedUserIds.length > 0) ? 'selected' : 'displayed'} {(summarizedUsers.length === 1) ? 'employee' : 'employees'}.</p>
 
                     <TimetableSummary className="mt3" users={summarizedUsers}/>
@@ -57,9 +55,7 @@ class TimesheetView extends React.Component {
 
                 <BoxConnector isActive={this.state.nameSearch.length > 0}/>
 
-                <Box>
-                    <h2 className="f6 mt0 lh-title ttu">Filters</h2>
-
+                <Box title="Filters" headingType="inline">
                     <label className="db mb2 f6" htmlFor="employees_category">Discrepancy type</label>
                     <Select
                         id="employees_category"

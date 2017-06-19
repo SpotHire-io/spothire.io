@@ -49,15 +49,11 @@ class OpportunitySingleView extends React.Component {
                             name: 'Overview',
                             content: (
                                 <div className="flex mh4 items-start">
-                                    <Box className="w-third mr3">
-                                        <h2 className="f6 mt0 lh-title ttu">Opportunity Details</h2>
-
+                                    <Box className="w-third mr3" title="Opportunity Details" headingType="inline">
                                         <h1 className="mb4 f3">{this.state.opportunity.title}</h1>
                                     </Box>
                                     <div className="w-two-thirds">
-                                        <Box>
-                                            <h2 className="f6 mt0 lh-title ttu">Opportunity Settings</h2>
-
+                                        <Box title="Opportunity Settings" headingType="inline">
                                             <OpportunityModalBasicInfo opportunity={this.state.opportunity} updateOpportunity={this.updateOpportunity}/>
                                         </Box>
                                     </div>
@@ -69,15 +65,11 @@ class OpportunitySingleView extends React.Component {
                             name: 'Employees',
                             content: (
                                 <div className="flex mh4 items-start">
-                                    <Box className="w-third mr3">
-                                        <h2 className="f6 mt0 lh-title ttu">Opportunity Details</h2>
-
+                                    <Box className="w-third mr3" title="Opportunity Details" headingType="inline">
                                         <h1 className="mb4 f3">{this.state.opportunity.title}</h1>
                                     </Box>
                                     <div className="w-two-thirds">
-                                        <Box>
-                                            <h2 className="f6 mt0 lh-title ttu">Employees</h2>
-
+                                        <Box title="Employees" headingType="inline">
                                             <p>The following employees are invited or confirmed for the opportunity.</p>
 
                                             <UserTable className="mt3" enabledColumns={['avatar', 'name']} hasShadow={false}/>

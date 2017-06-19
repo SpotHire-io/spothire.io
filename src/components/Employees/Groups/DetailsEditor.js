@@ -12,9 +12,7 @@ class GroupDetailsEditor extends React.Component {
         });
 
         return (
-            <Box className={wrapperClasses}>
-                <h2 className="f6 mt0 lh-title ttu">Group Details</h2>
-
+            <Box className={wrapperClasses} title="Group Details" headingType="inline">
                 <p>
                     <label className="f6 db" htmlFor="group_name">Name</label>
                     <input className="mt2 w-100" type="text" id="group_name" name="group_name" value={this.props.group.name}/>

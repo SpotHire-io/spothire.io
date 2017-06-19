@@ -30,9 +30,7 @@ class EmployeeOpportunitySingleView extends React.Component {
         return (
             <div className={classNames('pa4 bg-near-white flex', this.props.className)}>
                 <div className="w-third mr3">
-                    <Box>
-                        <h2 className="f6 mt0 lh-title ttu">Opportunity Details</h2>
-
+                    <Box title="Opportunity Details" headingType="inline">
                         <h1 className="mb0 f3">{this.props.opportunity.title}</h1>
 
                         <dl className="ma0 flex flex-wrap nr3">
@@ -74,9 +72,7 @@ class EmployeeOpportunitySingleView extends React.Component {
                             ))}
                         </dl>
                     </Box>
-                    <Box className="mt3">
-                        <h2 className="f6 mt0 lh-title ttu">RSVP</h2>
-
+                    <Box className="mt3" title="RSVP" headingType="inline">
                         <p className="mt0">You are <strong>{rsvpState}</strong> {(rsvpState === 'confirmed' ? 'for' : 'to')} this opportunity.</p>
 
                         <BasicButton
@@ -91,18 +87,14 @@ class EmployeeOpportunitySingleView extends React.Component {
                     </Box>
                 </div>
                 <div className="w-two-thirds">
-                    <Box>
-                        <h2 className="f6 mt0 lh-title ttu">Posts</h2>
-
+                    <Box title="Posts" headingType="inline">
                         <PostList
                             isInline={true}
                             posts={posts}
                         />
                     </Box>
 
-                    <Box className="mt3">
-                        <h2 className="f6 mt0 lh-title ttu">Shifts</h2>
-
+                    <Box className="mt3" title="Shifts" headingType="inline">
                         <ShiftList/>
                     </Box>
                 </div>
