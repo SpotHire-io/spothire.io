@@ -11,8 +11,19 @@ import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees
 import filterKeys from '../../data/peopleFilterRules/filterKeys.json';
 import filterTypes from '../../data/peopleFilterRules/filterTypes.json';
 
+// demo data
+import employees from '../../data/people.json';
+const groups = [...Array(10).keys()].map((number) => {
+    return {
+            id: number,
+            name: `Sample Group ${number + 1}`,
+            employees: employees,
+            type: 'static'
+        };
+    });
+
 class EmployeeSelectionInterface extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
 
         this.unSelectById = this.unSelectById.bind(this);
@@ -22,13 +33,13 @@ class EmployeeSelectionInterface extends React.Component {
         this.state = {
             selectedEmployees: {
                 employees: [
-                    this.props.employees[0],
-                    this.props.employees[1],
-                    this.props.employees[2],
+                    props.employees[0],
+                    props.employees[1],
+                    props.employees[2],
                 ],
                 groups: [
-                    this.props.groups[0],
-                    this.props.groups[1],
+                    props.groups[0],
+                    props.groups[1],
                 ],
                 customRules: [],
             }
@@ -110,6 +121,8 @@ class EmployeeSelectionInterface extends React.Component {
 
 EmployeeSelectionInterface.defaultProps = {
     className: '',
+    employees: employees,
+    groups: groups,
 };
 
 EmployeeSelectionInterface.propTypes = {
