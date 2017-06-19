@@ -6,8 +6,8 @@ import { Switch } from 'rebass';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import TimePicker from 'rc-time-picker';
-import BasicButton from '../Buttons/BasicButton';
-import SingleDatePickerFocusContainer from '../Miscellaneous/SingleDatePickerFocusContainer';
+import BasicButton from '../../Buttons/BasicButton';
+import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
 
 class NewTimeOffRequestModal extends React.Component {
     constructor() {

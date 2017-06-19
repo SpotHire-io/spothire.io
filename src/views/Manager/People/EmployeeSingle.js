@@ -74,9 +74,6 @@ class EmployeeSingleView extends React.Component {
                                     ))}
                                 </dl>
                             </Box>
-                            <Box className="mt3" contentWrapperClassName="pa3 max-h5 overflow-auto" title="Availability">
-                                <AvailabilityViewer employee={this.props.employee}/>
-                            </Box>
                         </div>
                         <div className="w-two-thirds">
                             <Box>
@@ -93,6 +90,14 @@ class EmployeeSingleView extends React.Component {
 
                                 <MetadataInterface className="mt3" employee={this.props.employee}/>
                             </Box>
+                            <div className="mt3 flex">
+                                <Box className="w-50 mr3" contentWrapperClassName="pa3 max-h5 overflow-auto" title="Availability">
+                                    <AvailabilityViewer employee={this.props.employee}/>
+                                </Box>
+                                <Box className="w-50" contentWrapperClassName="pa3 max-h5 overflow-auto" title="Availability">
+                                    <AvailabilityViewer employee={this.props.employee}/>
+                                </Box>
+                            </div>
                         </div>
                     </div>
                 </div>

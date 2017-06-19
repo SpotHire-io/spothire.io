@@ -14,7 +14,7 @@ import Box from '../../components/Global/Box';
 import OverviewCalendar from '../../components/Scheduling/OverviewCalendar';
 
 import AvailabilityEditor from '../../components/Profile/AvailabilityEditor';
-import TimeOffRequestList from '../../components/Profile/TimeOffRequestList';
+import TimeOffRequestRequester from '../../components/Profile/TimeOffRequests/Requester';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
@@ -76,7 +76,7 @@ class DashboardView extends React.Component {
                     </Box>
 
                     <Box className="w-33 mt3 mr3" title="Time Off Requests" contentWrapperClassName="pa3 max-h5 overflow-auto">
-                        <TimeOffRequestList timeOffRequests={timeOffRequests} employee={this.props.employee}/>
+                        <TimeOffRequestRequester timeOffRequests={timeOffRequests} employee={this.props.employee}/>
                     </Box>
                 </div>
             </div>

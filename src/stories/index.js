@@ -52,8 +52,8 @@ import GroupDetailsEditor from '../components/Employees/Groups/DetailsEditor';
 
 import AvailabilityEditor from '../components/Profile/AvailabilityEditor';
 import AvailabilityViewer from '../components/Profile/AvailabilityViewer';
-import TimeOffRequestList from '../components/Profile/TimeOffRequestList';
-import NewTimeOffRequestModal from '../components/Profile/NewTimeOffRequestModal';
+import TimeOffRequestRequester from '../components/Profile/TimeOffRequests/Requester';
+import NewTimeOffRequestModal from '../components/Profile/TimeOffRequests/Modal';
 
 import ShiftList from '../components/Miscellaneous/ShiftList';
 // import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
@@ -810,11 +810,11 @@ storiesOf('Profile', module)
             </div>
         </WithNotes>
     ))
-    .add('TimeOffRequestList', () => (
+    .add('TimeOffRequestRequester', () => (
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Box className="w-third" title="Time Off Requests">
-                    <TimeOffRequestList timeOffRequests={timeOffRequests} employee={users[3]}/>
+                    <TimeOffRequestRequester timeOffRequests={timeOffRequests} employee={users[3]}/>
                 </Box>
             </div>
         </WithNotes>
