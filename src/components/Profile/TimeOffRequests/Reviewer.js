@@ -28,7 +28,7 @@ class TimeOffRequestReviewer extends React.Component {
     render() {
         return (
             <div className={classNames(this.props.className)}>
-                <TimeOffRequestList timeOffRequests={this.state.requests} deleteRequest={this.deleteRequest}/>
+                <TimeOffRequestList timeOffRequests={this.state.requests} interfaceType="reviewer" approveRequest={this.approveRequest} rejectRequest={this.rejectRequest}/>
             </div>
         );
     }
