@@ -11,11 +11,11 @@ const TimeOffRequestList = (props) => {
         return <p className="i">No requests found.</p>;
     }
 
-    const renderControls = (requestId) => {
+    const renderControls = (request) => {
         const renderLink = (action) => (
             <a
                 className="child db f6 red hover-no-underline relative"
-                onClick={(e) => e.preventDefault() || props[`${action}Request`](requestId)}
+                onClick={(e) => e.preventDefault() || props[`${action}Request`](request.id)}
                 style={{ top: '0.25rem' }}
                 href={`#${action}`}
             >
@@ -28,8 +28,8 @@ const TimeOffRequestList = (props) => {
         } else if (props.interfaceType === 'reviewer') {
             return (
                 <div>
-                    {renderLink('approve')}
-                    {renderLink('reject')}
+                    {(request.approvalState !== 'approved') ? renderLink('approve') : null}
+                    {(request.approvalState !== 'rejected') ? renderLink('reject') : null}
                 </div>
             )
         }
@@ -62,7 +62,7 @@ const TimeOffRequestList = (props) => {
                                 </div>
                                 <div className="tr">
                                     <BasicTag className="ml2" type={tagType} isNarrow>{request.approvalState}</BasicTag>
-                                    {renderControls(request.id)}
+                                    {renderControls(request)}
                                 </div>
                             </div>
                         </li>
