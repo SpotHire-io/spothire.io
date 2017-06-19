@@ -21,10 +21,12 @@ class OverviewCalendar extends React.Component {
             isModalOpen: false,
             opportunity: {
                 id: -1,
+                title: '',
                 isAllDay: false,
+                isShift: false,
                 dates: {
-                    start: new Date(1970, 0, 0),
-                    end: new Date(1970, 0, 0)
+                    start: '1970-01-01T00:00:00.000',
+                    end: '1970-01-01T00:00:00.000'
                 },
                 employees: {
                     invited: 'all',
