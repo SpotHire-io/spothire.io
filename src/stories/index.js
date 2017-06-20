@@ -59,10 +59,10 @@ import NewTimeOffRequestModal from '../components/Profile/TimeOffRequests/Modal'
 import ShiftList from '../components/Miscellaneous/ShiftList';
 // import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
 
-import users from '../data/people.json';
-import posts from '../data/posts.json';
+import samplePeople from '../data/people.json';
+import samplePosts from '../data/posts.json';
 import sampleEvents from '../data/opportunities.json';
-import timeOffRequests from '../data/timeOffRequests.json';
+import sampleTimeOffRequests from '../data/timeOffRequests.json';
 
 BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
@@ -124,7 +124,7 @@ storiesOf('Views (manager)', module)
             userType="manager"
             viewComponent={
                 <NewsfeedView
-                    posts={posts}
+                    posts={samplePosts}
                 />
             }
         />
@@ -135,7 +135,7 @@ storiesOf('Views (manager)', module)
             userType="manager"
             viewComponent={
                 <PeopleView
-                    users={users}
+                    employees={samplePeople}
                 />
             }
         />
@@ -146,7 +146,7 @@ storiesOf('Views (manager)', module)
             userType="manager"
             viewComponent={
                 <EmployeeSingleView
-                    employee={users[1]}
+                    employee={samplePeople[1]}
                 />
             }
         />
@@ -160,7 +160,7 @@ storiesOf('Views (manager)', module)
                     group={{
                         id: 0,
                         name: 'Sample Group',
-                        employees: users,
+                        employees: samplePeople,
                         type: 'static'
                     }}
                 />
@@ -195,7 +195,7 @@ storiesOf('Views (manager)', module)
             userType="manager"
             viewComponent={
                 <TimesheetView
-                    employees={users}
+                    employees={samplePeople}
                 />
             }
         />
@@ -206,7 +206,7 @@ storiesOf('Views (manager)', module)
             userType="manager"
             viewComponent={
                 <EmployeeProfileView
-                    employee={users[1]}
+                    employee={samplePeople[1]}
                 />
             }
         />
@@ -219,7 +219,7 @@ storiesOf('Views (employee)', module)
             userType="employee"
             viewComponent={
                 <DashboardView
-                    employee={users[0]}
+                    employee={samplePeople[0]}
                     events={sampleEvents.filter((event) => event.userId === 0)}
                 />
             }
@@ -231,7 +231,7 @@ storiesOf('Views (employee)', module)
             userType="employee"
             viewComponent={
                 <NewsfeedView
-                    posts={posts}
+                    posts={samplePosts}
                 />
             }
         />
@@ -275,7 +275,7 @@ storiesOf('Views (employee)', module)
             userType="employee"
             viewComponent={
                 <EmployeeProfileView
-                    employee={users[1]}
+                    employee={samplePeople[1]}
                 />
             }
         />
@@ -473,7 +473,7 @@ storiesOf('Newsfeed', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Post
-                    post={posts[0]}
+                    post={samplePosts[0]}
                     isOpen={true}
                 />
             </div>
@@ -483,7 +483,7 @@ storiesOf('Newsfeed', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Post
-                    post={posts[0]}
+                    post={samplePosts[0]}
                     isOpen={false}
                 />
             </div>
@@ -494,7 +494,7 @@ storiesOf('Newsfeed', module)
             <div className="pa4 bg-near-white">
                 <Post
                     post={{
-                        ...posts[1]
+                        ...samplePosts[1]
                     }}
                     isOpen={false}
                 />
@@ -505,7 +505,7 @@ storiesOf('Newsfeed', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <PostList
-                    posts={posts}
+                    posts={samplePosts}
                 />
             </div>
         </WithNotes>
@@ -517,7 +517,7 @@ storiesOf('Newsfeed', module)
                     {sampleFilterContainer('mr3 w-third self-start')}
                     <PostList
                         className="w-two-thirds"
-                        posts={posts}
+                        posts={samplePosts}
                     />
                 </div>
             </div>
@@ -722,7 +722,7 @@ storiesOf('Employees', module)
     .add('EmployeeSelectionInterface', () => (
         <WithNotes>
             <div className="pa4 bg-white">
-                <EmployeeSelectionInterface className="pa3 ba b--black-20" employees={users}/>
+                <EmployeeSelectionInterface className="pa3 ba b--black-20" employees={samplePeople}/>
             </div>
         </WithNotes>
     ))
@@ -762,7 +762,7 @@ storiesOf('Employees:Groups', module)
                     group={{
                         id: 0,
                         name: 'Sample Group',
-                        employees: users,
+                        employees: samplePeople,
                         type: 'static'
                     }}
                 />
@@ -777,7 +777,7 @@ storiesOf('Employees:Groups', module)
                         return {
                             id: number,
                             name: `Sample Group ${number + 1}`,
-                            employees: users,
+                            employees: samplePeople,
                             type: 'static'
                         };
                     })}
@@ -793,7 +793,7 @@ storiesOf('Employees:Groups', module)
                     group={{
                         id: 0,
                         name: 'Sample Group',
-                        employees: users,
+                        employees: samplePeople,
                         type: 'static'
                     }}
                 />
@@ -806,7 +806,7 @@ storiesOf('Profile', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Box className="w-third" title="Availability">
-                    <AvailabilityEditor employee={users[0]} onSubmitAvailability={(availability) => console.log(availability)}/>
+                    <AvailabilityEditor employee={samplePeople[0]} onSubmitAvailability={(availability) => console.log(availability)}/>
                 </Box>
             </div>
         </WithNotes>
@@ -815,7 +815,7 @@ storiesOf('Profile', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Box className="w-third" title="Availability">
-                    <AvailabilityViewer employee={users[0]}/>
+                    <AvailabilityViewer employee={samplePeople[0]}/>
                 </Box>
             </div>
         </WithNotes>
@@ -824,7 +824,7 @@ storiesOf('Profile', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Box className="w-third" title="Time Off Requests">
-                    <TimeOffRequestRequester timeOffRequests={timeOffRequests} employee={users[3]}/>
+                    <TimeOffRequestRequester timeOffRequests={sampleTimeOffRequests} employee={samplePeople[3]}/>
                 </Box>
             </div>
         </WithNotes>
@@ -833,7 +833,7 @@ storiesOf('Profile', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <Box className="w-third" title="Time Off Requests">
-                    <TimeOffRequestReviewer timeOffRequests={timeOffRequests}/>
+                    <TimeOffRequestReviewer timeOffRequests={sampleTimeOffRequests}/>
                 </Box>
             </div>
         </WithNotes>
