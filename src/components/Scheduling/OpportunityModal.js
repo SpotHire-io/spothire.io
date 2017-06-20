@@ -1,6 +1,6 @@
 import React from 'react';
-import Modal from 'react-modal';
 import PropTypes from 'prop-types';
+import Modal from '../Global/Modal';
 import BasicButton from '../Buttons/BasicButton';
 import OpportunitySchema from '../../schemas/Opportunity';
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
@@ -10,11 +10,8 @@ class OpportunityModal extends React.Component {
         return (
             <Modal
                 isOpen={this.props.isOpen}
-                contentLabel={"New event modal"}
-                overlayClassName="sh-modal-overlay"
-                className="sh-modal sh-shadow-2 "
-                onRequestClose={this.props.closeModal}
-                closeTimeoutMS={100}
+                contentLabel="New event modal"
+                onClose={this.props.closeModal}
             >
                 <h2 className="absolute top-0 right-0 left-0 bg-teal white bb bw1 b--white-40 ma0 pa3 f5">New Opportunity</h2>
 

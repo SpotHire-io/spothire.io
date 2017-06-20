@@ -1,6 +1,6 @@
 import React from 'react';
-import Modal from 'react-modal';
 import PropTypes from 'prop-types';
+import Modal from '../../../components/Global/Modal';
 import Box from '../../../components/Global/Box';
 import BasicButton from '../../../components/Buttons/BasicButton';
 import UserTable from '../../../components/Employees/UserTable';
@@ -106,11 +106,9 @@ class OpportunitySingleView extends React.Component {
                 />
                 <Modal
                     isOpen={this.state.isAddEmployeesModalOpen}
-                    contentLabel={"Add employees modal"}
-                    overlayClassName="sh-modal-overlay"
-                    className="sh-modal sh-modal--full sh-shadow-2 "
-                    onRequestClose={this.closeAddEmployeesModal}
-                    closeTimeoutMS={100}
+                    onClose={this.closeAddEmployeesModal}
+                    contentLabel="Add employees modal"
+                    fullWidth={true}
                 >
                     <EmployeeSelectionInterface/>
                 </Modal>

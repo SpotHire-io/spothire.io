@@ -1,11 +1,11 @@
 import 'moment/locale/en-ca';
 import React from 'react';
-import Modal from 'react-modal';
 import moment from 'moment';
 import { Switch } from 'rebass';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import TimePicker from 'rc-time-picker';
+import Modal from '../../Global/Modal';
 import BasicButton from '../../Buttons/BasicButton';
 import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
 
@@ -114,11 +114,8 @@ class NewTimeOffRequestModal extends React.Component {
         return (
             <Modal
                 isOpen={this.props.isOpen}
-                contentLabel={"New time off request modal"}
-                overlayClassName="sh-modal-overlay"
-                className="sh-modal sh-shadow-2 "
-                onRequestClose={this.props.closeModal}
-                closeTimeoutMS={100}
+                contentLabel="New time off request modal"
+                onClose={this.props.closeModal}
             >
                 <h2 className="absolute top-0 right-0 left-0 bg-teal white bb bw1 b--white-40 ma0 pa3 f5">Submit Time Off Request</h2>
 
