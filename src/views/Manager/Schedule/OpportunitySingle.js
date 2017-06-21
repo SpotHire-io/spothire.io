@@ -19,6 +19,8 @@ class OpportunitySingleView extends React.Component {
         this.openAddEmployeesModal = this.openAddEmployeesModal.bind(this);
         this.closeAddEmployeesModal = this.closeAddEmployeesModal.bind(this);
 
+        this.renderDetailsBox = this.renderDetailsBox.bind(this);
+
         this.state = {
             isAddEmployeesModalOpen: false,
             opportunity: props.opportunity,
@@ -37,6 +39,18 @@ class OpportunitySingleView extends React.Component {
         return this.setState({ isAddEmployeesModalOpen: false });
     }
 
+    renderDetailsBox() {
+        return (
+            <Box className="w-third mr3" title="Opportunity Details" headingType="inline">
+                <h1 className="ma0 f3">{this.state.opportunity.title}</h1>
+
+                <div className="tr">
+                    <BasicButton className="mt3 f6 button--neutral">Export</BasicButton>
+                </div>
+            </Box>
+        );
+    }
+
     render() {
         return (
             <div>
@@ -49,9 +63,7 @@ class OpportunitySingleView extends React.Component {
                             name: 'Overview',
                             content: (
                                 <div className="flex mh4 items-start">
-                                    <Box className="w-third mr3" title="Opportunity Details" headingType="inline">
-                                        <h1 className="mb4 f3">{this.state.opportunity.title}</h1>
-                                    </Box>
+                                    {this.renderDetailsBox()}
                                     <div className="w-two-thirds">
                                         <Box title="Opportunity Settings" headingType="inline">
                                             <OpportunityModalBasicInfo opportunity={this.state.opportunity} updateOpportunity={this.updateOpportunity}/>
@@ -65,9 +77,7 @@ class OpportunitySingleView extends React.Component {
                             name: 'Employees',
                             content: (
                                 <div className="flex mh4 items-start">
-                                    <Box className="w-third mr3" title="Opportunity Details" headingType="inline">
-                                        <h1 className="mb4 f3">{this.state.opportunity.title}</h1>
-                                    </Box>
+                                    {this.renderDetailsBox()}
                                     <div className="w-two-thirds">
                                         <Box title="Employees" headingType="inline">
                                             <p>The following employees are invited or confirmed for the opportunity.</p>

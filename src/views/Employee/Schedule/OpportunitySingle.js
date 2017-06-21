@@ -71,6 +71,10 @@ class EmployeeOpportunitySingleView extends React.Component {
                                 </div>
                             ))}
                         </dl>
+
+                        <div className="tr">
+                            <BasicButton className="mt3 f6 button--neutral">Export</BasicButton>
+                        </div>
                     </Box>
                     <Box className="mt3" title="RSVP" headingType="inline">
                         <p className="mt0">You are <strong>{rsvpState}</strong> {(rsvpState === 'confirmed' ? 'for' : 'to')} this opportunity.</p>
