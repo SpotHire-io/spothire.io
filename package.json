@@ -73,12 +73,12 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "tsc && node scripts/build.js",
     "lint": "eslint src",
     "test": "node scripts/test.js --env=jsdom",
     "upload": "aws s3 cp --recursive storybook-static/ s3://spothire.io --acl public-read",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
+    "build-storybook": "tsc && build-storybook -s public",
     "watch-css": "postcss -w --config postcss.config.js --output public/css/app.css assets/css/app.css",
     "build-css": "postcss --config postcss.config.js --output public/css/app.css assets/css/app.css"
   },
