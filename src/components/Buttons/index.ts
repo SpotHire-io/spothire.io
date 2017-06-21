@@ -3,7 +3,7 @@ import ButtonBar from './ButtonBar'
 import RadioButton from './RadioButton'
 
 export {
-  BasicButton,
-  ButtonBar,
-  RadioButton
+    BasicButton,
+    ButtonBar,
+    RadioButton
 }

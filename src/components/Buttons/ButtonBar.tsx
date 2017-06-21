@@ -1,8 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import * as classNames from 'classnames';
 
-const ButtonBar = ({ children, className }) => {
+type Child = React.ReactElement<{className: string}>
+
+interface Props {
+    className?: string
+    children: Child[]
+}
+
+const ButtonBar = ({ children, className }: Props) => {
     const wrapperClassName = classNames({
         'flex': true,
         [className]: true
@@ -10,9 +17,8 @@ const ButtonBar = ({ children, className }) => {
 
     return (
         <div className={wrapperClassName}>
-            {React.Children.map(children, (child, index) => {
+            {React.Children.map(children, (child: Child, index) => {
                 let addedClassName;
-
                 if (index === 0) {
                     addedClassName = 'button--left';
                 } else if (index === children.length - 1) {
@@ -22,20 +28,11 @@ const ButtonBar = ({ children, className }) => {
                 }
 
                 return React.cloneElement(child, {
-                    className: classNames('flex-auto tc', child.className, addedClassName)
+                    className: classNames('flex-auto tc', child.props.className, addedClassName)
                 });
             })}
         </div>
     );
-};
-
-ButtonBar.defaultProps = {
-    className: ''
-};
-
-ButtonBar.propTypes = {
-    className: PropTypes.string,
-    children: PropTypes.node.isRequired,
 };
 
 export default ButtonBar;
