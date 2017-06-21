@@ -7,6 +7,9 @@ import userData from '../../data/people.json';
 import BasicButton from '../Buttons/BasicButton';
 import PersonSchema from '../../schemas/Person';
 
+// storybook stuff
+import { linkTo } from '@kadira/storybook';
+
 class UserList extends React.Component {
     constructor() {
         super();
@@ -48,7 +51,7 @@ class UserList extends React.Component {
                         placeholder="Phone"
                     />
                 ), 'pv2')}
-                {this.renderUserCell('actions', () => <BasicButton className="button--positive">Create</BasicButton>, 'pv1')}
+                {this.renderUserCell('actions', () => <BasicButton className="button--positive" onClick={linkTo('Views (manager)', 'People:EmployeeSingleView')}>Create</BasicButton>, 'pv1')}
             </Tr>
         )
     }

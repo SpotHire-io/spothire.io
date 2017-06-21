@@ -17,7 +17,7 @@ class GroupListView extends React.Component {
                         <p>Your organisation has {this.props.groups.length} groups.</p>
 
                         <div className="tr">
-                            <BasicButton className="mt3 button--positive">Add New</BasicButton>
+                            <BasicButton className="mt3 button--positive" onClick={linkTo('Views (manager)', 'People:GroupSingleView')}>Add New</BasicButton>
                         </div>
                     </Box>
                 </div>
