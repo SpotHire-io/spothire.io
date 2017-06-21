@@ -5,6 +5,7 @@ import UserTable from '../../../components/Employees/UserTable';
 import GroupCard from '../../../components/Employees/Groups/Card';
 import GroupSchema from '../../../schemas/Group';
 import BasicButton from '../../../components/Buttons/BasicButton';
+import Box from '../../../components/Global/Box';
 import SecondaryMenu from '../../../components/Global/SecondaryMenu';
 import GroupDetailsEditor from '../../../components/Employees/Groups/DetailsEditor';
 import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
@@ -61,7 +62,11 @@ class GroupSingleView extends React.Component {
                         </div>
 
                         <div className="w-two-thirds">
-                            <UserTable deleteUser={() => alert('User deleted')}/>
+                            <Box>
+                                <EmployeeSelectionInterface enabledSelectionCategories={['custom']}/>
+                            </Box>
+
+                            <UserTable className="mt3" deleteUser={() => alert('User deleted')}/>
 
                             <div className="tr mt3">
                                 <BasicButton className="button--positive" onClick={() => this.openAddEmployeesModal()}>Add Employees to Group</BasicButton>
