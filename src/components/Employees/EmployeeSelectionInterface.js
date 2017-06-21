@@ -98,16 +98,18 @@ class EmployeeSelectionInterface extends React.Component {
     }
 
     render() {
+        const filteredSelectionCategories = this.selectionCategories.filter((category) => this.props.enabledSelectionCategories.includes(category.key));
+
         return (
             <div className={classNames(this.props.className)}>
                 <div className="flex">
                     <div className="w-50 mr4">
                         <h3 className="mt0 f6 lh-title ttu">Select Employees</h3>
-                        <SelectEmployees selectionCategories={this.selectionCategories} onAddCustomRule={this.addCustomRule}/>
+                        <SelectEmployees selectionCategories={filteredSelectionCategories} onAddCustomRule={this.addCustomRule}/>
                     </div>
                     <div className="w-50">
                         <h3 className="mt0 f6 lh-title ttu">Selected Employees</h3>
-                        <ReviewSelectedEmployees selectedEmployees={this.state.selectedEmployees} unSelectById={this.unSelectById} selectionCategories={this.selectionCategories}/>
+                        <ReviewSelectedEmployees selectedEmployees={this.state.selectedEmployees} unSelectById={this.unSelectById} selectionCategories={filteredSelectionCategories}/>
                     </div>
                 </div>
 
@@ -123,12 +125,14 @@ EmployeeSelectionInterface.defaultProps = {
     className: '',
     employees: employees,
     groups: groups,
+    enabledSelectionCategories: ['employees', 'groups', 'custom'],
 };
 
 EmployeeSelectionInterface.propTypes = {
     className: PropTypes.string,
     employees: PropTypes.arrayOf(PersonSchema).isRequired,
     groups: PropTypes.arrayOf(GroupSchema).isRequired,
+    enabledSelectionCategories: PropTypes.array,
 };
 
 export default EmployeeSelectionInterface;
