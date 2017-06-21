@@ -14,6 +14,9 @@ class UserList extends React.Component {
     constructor() {
         super();
 
+        this.renderNewUserRow = this.renderNewUserRow.bind(this);
+        this.renderNoUsersRow = this.renderNoUsersRow.bind(this);
+
         this.renderUserRow = this.renderUserRow.bind(this);
         this.renderUserCell = this.renderUserCell.bind(this);
         this.renderControls = this.renderControls.bind(this);
@@ -54,6 +57,18 @@ class UserList extends React.Component {
                 {this.renderUserCell('actions', () => <BasicButton className="button--positive" onClick={linkTo('Views (manager)', 'People:EmployeeSingleView')}>Create</BasicButton>, 'pv1')}
             </Tr>
         )
+    }
+
+    renderNoUsersRow() {
+        return (
+            <Tr className="mt0">
+                {this.renderUserCell('avatar', '', 'pv1')}
+                {this.renderUserCell('name', 'No users to list.', 'pv3 i')}
+                {this.renderUserCell('email', '', 'pv2')}
+                {this.renderUserCell('phone', '', 'pv2')}
+                {this.renderUserCell('actions', '', 'pv1')}
+            </Tr>
+        );
     }
 
     renderUserRow(user) {
@@ -136,7 +151,7 @@ class UserList extends React.Component {
                         {this.renderHeaderCell('actions', '')}
                     </Thead>
                     {(this.props.inlineAddingRowIsOpen) ? this.renderNewUserRow() : null}
-                    {this.props.users.map((user) => this.renderUserRow(user))}
+                    {(this.props.users.length > 0) ? this.props.users.map((user) => this.renderUserRow(user)) : this.renderNoUsersRow()}
                 </Table>
             </div>
         )
