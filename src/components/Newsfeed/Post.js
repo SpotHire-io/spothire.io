@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import BasicTag from '../Tags/BasicTag';
 import BasicButton from '../Buttons/BasicButton';
 
-const Post = ({ post, className, isOpen, toggleOpenState, isInline }) => {
+const Post = ({ post, className, isOpen, toggleOpenState, isInline, showOpportunityName }) => {
     let wrapperClasses = classNames({
         'sh-shadow-2': ! isInline && isOpen,
         'sh-shadow-1': ! isInline && ! isOpen,
@@ -99,7 +99,7 @@ const Post = ({ post, className, isOpen, toggleOpenState, isInline }) => {
             {(isOpen) ? renderInteractionInterface() : null}
             {(! isInline) ? (
                 <div className="bg-white-10 ba bt-0 b--black-10 ph3 pv2 f6">
-                    {moment(post.date).format("MMMM Do, h:mm a")}
+                    {moment(post.date).format("MMMM Do, h:mm a")}{(showOpportunityName) ? <span> in <em>Opportunity Name</em></span> : null}
                 </div>
             ) : null}
         </article>
@@ -110,6 +110,7 @@ Post.defaultProps = {
     className: '',
     isOpen: true,
     isInline: false,
+    showOpportunityName: false,
 };
 
 Post.propTypes = {
@@ -118,6 +119,7 @@ Post.propTypes = {
     isOpen: PropTypes.bool,
     isInline: PropTypes.bool,
     toggleOpenState: PropTypes.func,
+    showOpportunityName: PropTypes.bool,
 };
 
 export default Post;

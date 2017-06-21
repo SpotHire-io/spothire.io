@@ -89,7 +89,9 @@ class EmployeeOpportunitySingleView extends React.Component {
                 <div className="w-two-thirds">
                     <Box title="Posts" headingType="inline">
                         <PostList
-                            isInline={true}
+                            postProps={{
+                                isInline: true
+                            }}
                             posts={posts}
                         />
                     </Box>

@@ -46,6 +46,9 @@ class NewsfeedView extends React.Component {
                         <PostList
                             className="w-two-thirds"
                             posts={filteredPosts}
+                            postProps={{
+                                showOpportunityName: true,
+                            }}
                         />
                     </div>
                 </div>
