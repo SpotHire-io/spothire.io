@@ -56,7 +56,7 @@ class SelectEmployees extends React.Component {
 
         return (
             <div>
-                <ButtonBar className="w-100">
+                {(this.props.selectionCategories.length > 1) ? <ButtonBar className="w-100">
                     {this.props.selectionCategories.map((category) =>
                         <RadioButton
                             key={category.key}
@@ -69,7 +69,7 @@ class SelectEmployees extends React.Component {
                             {category.title}
                         </RadioButton>
                     )}
-                </ButtonBar>
+                </ButtonBar> : null}
                 {this.renderCategorySelectionInterface(currentlySelectedCategory)}
             </div>
         );
