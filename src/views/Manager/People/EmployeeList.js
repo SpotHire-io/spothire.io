@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PersonSchema from '../../../schemas/Person';
 import Box from '../../../components/Global/Box';
-import Filter from '../../../components/Filters/Filter';
-import UserTable from '../../../components/Employees/UserTable';
 import BoxConnector from '../../../components/Global/BoxConnector';
-import FilterContainer from '../../../components/Filters/FilterContainer';
+import BasicButton from '../../../components/Buttons/BasicButton';
+import UserTable from '../../../components/Employees/UserTable';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
@@ -14,74 +14,23 @@ class EmployeeListView extends React.Component {
         super();
 
         this.state = {
-            searchQuery: ''
+            searchQuery: '',
+            isAddingUser: false,
         };
     }
 
     render() {
         return (
             <div className="flex ma4">
-                <FilterContainer className="mr3 w-third self-start">
-                    <Filter
-                        id="text1"
-                        label="Other text filter"
-                        type="text"
-                        data={{
-                            placeholder: 'A text filter'
-                        }}
-                    />
-                    <Filter
-                        id="text2"
-                        label="Text filter"
-                        type="text"
-                        data={{
-                            placeholder: 'Another text filter'
-                        }}
-                    />
-                    <Filter
-                        id="select1"
-                        label="Single select"
-                        type="select"
-                        data={{
-                            inputProps: {
-                                id: 'select1'
-                            },
-                            options: [
-                                {
-                                    value: '1',
-                                    label: 'Option 1'
-                                },
-                                {
-                                    value: '2',
-                                    label: 'Option 2'
-                                }
-                            ]
-                        }}
-                    />
-                    <Filter
-                        id="select2"
-                        label="Multi select"
-                        type="select"
-                        data={{
-                            inputProps: {
-                                id: 'select2'
-                            },
-                            options: [
-                                {
-                                    value: '1',
-                                    label: 'Option 1'
-                                },
-                                {
-                                    value: '2',
-                                    label: 'Option 2'
-                                }
-                            ],
-                            selectConfig: {
-                                multi: true
-                            }
-                        }}
-                    />
-                </FilterContainer>
+                <div className="w-third mr3">
+                    <Box title="Employees" headingType="inline">
+                        <p>Your organisation has {this.props.employees.length} employees.</p>
+
+                        <div className="tr">
+                            <BasicButton className="mt3 button--positive" onClick={() => this.setState({ isAddingUser: ! this.state.isAddingUser })}>Add New</BasicButton>
+                        </div>
+                    </Box>
+                </div>
                 <div className="w-two-thirds">
                     <Box>
                         <p>
@@ -98,6 +47,7 @@ class EmployeeListView extends React.Component {
                             hideFilterInput: true,
                             filterBy: this.state.searchQuery,
                         }}
+                        inlineAddingRowIsOpen={this.state.isAddingUser}
                         onClickUser={linkTo('Views (manager)', 'People:EmployeeSingleView')}
                     />
                 </div>
@@ -112,6 +62,7 @@ EmployeeListView.defaultProps = {
 
 EmployeeListView.propTypes = {
     className: PropTypes.string,
+    employees: PropTypes.arrayOf(PersonSchema).isRequired,
 };
 
 export default EmployeeListView;

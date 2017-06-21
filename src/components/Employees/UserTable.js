@@ -27,28 +27,28 @@ class UserList extends React.Component {
         return (
             <Tr className="mt0">
                 {this.renderUserCell('avatar', '', 'pv1')}
-                {this.renderUserCell('name', (
+                {this.renderUserCell('name', () => (
                     <input
                         className={inputClasses}
                         type="text"
                         placeholder="Name"
                     />
                 ), 'pv2')}
-                {this.renderUserCell('email', (
+                {this.renderUserCell('email', () => (
                     <input
                         className={inputClasses}
                         type="email"
                         placeholder="Email"
                     />
                 ), 'pv2')}
-                {this.renderUserCell('phone', (
+                {this.renderUserCell('phone', () => (
                     <input
                         className={inputClasses}
                         type="tel"
                         placeholder="Phone"
                     />
                 ), 'pv2')}
-                {this.renderUserCell('actions', <BasicButton className="button--positive">Create</BasicButton>, 'pv1')}
+                {this.renderUserCell('actions', () => <BasicButton className="button--positive">Create</BasicButton>, 'pv1')}
             </Tr>
         )
     }

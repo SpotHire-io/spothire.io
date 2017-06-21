@@ -17,7 +17,7 @@ class PeopleView extends React.Component {
                             key: 'employees',
                             name: 'Employees',
                             content: (
-                                <EmployeeListView/>
+                                <EmployeeListView employees={this.props.employees}/>
                             )
                         },
                         {
