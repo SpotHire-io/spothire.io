@@ -116,11 +116,21 @@
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.0.tgz#f2312039e780bdf89d7d4102a26ec11de5ec58aa"
 
+"@types/node@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.1.tgz#89c271e0c3b9ebb6a3756dd601336970b6228b77"
+
 "@types/prop-types@^15.5.1":
   version "15.5.1"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.1.tgz#1ecf52621299e65b855374337fb11fd2d1066fc1"
 
-"@types/react@^15.0.30":
+"@types/react-select@^1.0.47":
+  version "1.0.47"
+  resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-1.0.47.tgz#95fad6b502e2f0a839ea0d320ca6cbb809e73ab4"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react@*", "@types/react@^15.0.30":
   version "15.0.30"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.30.tgz#a4e153e1e83fbef341fc9aad1a7d62bf8c1f52a3"
 

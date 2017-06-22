@@ -9,7 +9,7 @@ interface Props {
     children: Child[]
 }
 
-const ButtonBar = ({ children, className }: Props) => {
+const ButtonBar: React.StatelessComponent<Props> = ({ children, className }) => {
     const wrapperClassName = classNames({
         'flex': true,
         [className]: true

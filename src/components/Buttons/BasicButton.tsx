@@ -8,7 +8,7 @@ interface Props {
     className?: string
 }
 
-const BasicButton = ({ children, className='', onClick }: Props) => {
+const BasicButton: React.StatelessComponent<Props> = ({ children, className='', onClick }) => {
     let buttonClasses = classNames({
         'button input-reset f5 no-select': true,
         [className]: true

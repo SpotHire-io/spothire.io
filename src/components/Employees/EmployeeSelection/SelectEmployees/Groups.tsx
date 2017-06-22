@@ -1,10 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import GroupCardList from '../../Groups/CardList';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import * as classNames from 'classnames';
+const GroupCardList = require('../../Groups/CardList');
 
 // dummy data
 import users from '../../../../data/people.json';
+
+interface Props {
+    className?: string
+    onAddGroup?: Function
+}
+
+interface State {
+
+}
 
 const groups = [...Array(10).keys()].map((number) => {
     return {
@@ -14,12 +23,11 @@ const groups = [...Array(10).keys()].map((number) => {
     };
 });
 
-class SelectGroups extends React.Component {
-    constructor() {
-        super();
-
-        this.state = {};
-    }
+export default class SelectGroups extends React.Component<Props, State> {
+    public static defaultProps: Props = {
+        className: '',
+        onAddGroup: (groupId: string) => alert(`Group #${groupId} added!`),
+    };
 
     render() {
         return (
@@ -46,15 +54,3 @@ class SelectGroups extends React.Component {
         );
     }
 }
-
-SelectGroups.defaultProps = {
-    className: '',
-    onAddGroup: (groupId) => alert(`Group #${groupId} added!`),
-};
-
-SelectGroups.propTypes = {
-    className: PropTypes.string,
-    onAddGroup: PropTypes.func.isRequired,
-};
-
-export default SelectGroups;

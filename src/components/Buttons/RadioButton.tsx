@@ -12,7 +12,7 @@ interface Props {
     checked: boolean
 }
 
-const RadioButton = ({ checked, name, id, value, children, className='', onClick }: Props) => {
+const RadioButton: React.StatelessComponent<Props> = ({ checked, name, id, value, children, className='', onClick }: Props) => {
     const labelClassName = classNames({
         'button button--neutral': true,
         'button--outline': checked === undefined || ! checked,

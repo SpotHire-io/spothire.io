@@ -1,8 +1,29 @@
-import Icon from 'react-geomicons';
-import React from 'react';
-import PropTypes from 'prop-types';
+const Icon = require('react-geomicons');
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
 
-class ReviewSelectedEmployees extends React.Component {
+interface Selection {
+    id: string
+}
+
+interface Category {
+    title: string
+    key: string
+    selections: Selection[]
+    renderMethod(selection: Selection, className: string): any
+}
+
+interface Props {
+    className?: string
+    selectionCategories: any
+    unSelectById(key: string, id: string): any
+}
+
+interface State {
+
+}
+
+export default class ReviewSelectedEmployees extends React.Component<Props, State> {
     constructor() {
         super();
 
@@ -10,7 +31,7 @@ class ReviewSelectedEmployees extends React.Component {
         this.renderEmptySelectionsMessage = this.renderEmptySelectionsMessage.bind(this);
     }
 
-    renderSelections(category) {
+    renderSelections(category: Category) {
         return (
             <ul className="list pa0 ma0">
                 {category.selections.map((selection) => {
@@ -27,7 +48,7 @@ class ReviewSelectedEmployees extends React.Component {
         )
     }
 
-    renderEmptySelectionsMessage(category) {
+    renderEmptySelectionsMessage(category: Category) {
         return (
             <p className="mt0 i">No {category.title.toLowerCase()} provided.</p>
         )
@@ -36,7 +57,7 @@ class ReviewSelectedEmployees extends React.Component {
     render() {
         return (
             <div className={this.props.className}>
-                {this.props.selectionCategories.map((category) => {
+                {this.props.selectionCategories.map((category: Category) => {
                     return (
                         <section className="mb3" key={category.key}>
                             <h4 className="f6 normal mt0 mb2">{category.title}</h4>
@@ -49,15 +70,3 @@ class ReviewSelectedEmployees extends React.Component {
         );
     }
 }
-
-ReviewSelectedEmployees.defaultProps = {
-    className: '',
-};
-
-ReviewSelectedEmployees.propTypes = {
-    className: PropTypes.string,
-    unSelectById: PropTypes.func.isRequired,
-    selectionCategories: PropTypes.object.isRequired,
-};
-
-export default ReviewSelectedEmployees;

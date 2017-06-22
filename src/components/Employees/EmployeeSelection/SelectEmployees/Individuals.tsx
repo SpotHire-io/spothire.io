@@ -1,9 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import UserTable from '../../UserTable';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import * as classNames from 'classnames';
+const UserTable = require('../../UserTable');
 
-class SelectIndividuals extends React.Component {
+interface Props {
+    className?: string
+    onAddUser?: Function
+}
+
+interface State {
+    employeesSearch?: string
+}
+
+export default class SelectIndividuals extends React.Component<Props, State> {
+    public static defaultProps: Props = {
+        className: '',
+        onAddUser: (userId: string) => alert(`Adding employee #${userId}`),
+    };
     constructor() {
         super();
 
@@ -38,15 +51,3 @@ class SelectIndividuals extends React.Component {
         );
     }
 }
-
-SelectIndividuals.defaultProps = {
-    className: '',
-    onAddUser: (userId) => alert(`Adding employee #${userId}`),
-};
-
-SelectIndividuals.propTypes = {
-    className: PropTypes.string,
-    onAddUser: PropTypes.func.isRequired,
-};
-
-export default SelectIndividuals;

@@ -1,13 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ButtonBar from '../../Buttons/ButtonBar';
-import RadioButton from '../../Buttons/RadioButton';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import {ButtonBar, RadioButton} from '../../Buttons';
 import SelectIndividuals from './SelectEmployees/Individuals';
 import SelectGroups from './SelectEmployees/Groups';
 import SelectCustomRules from './SelectEmployees/CustomRules';
 
-class SelectEmployees extends React.Component {
-    constructor(props) {
+interface Props {
+    className?: string
+    selectionCategories: any[]
+    onAddCustomRule: Function
+}
+
+interface State {
+    currentSelectionCategoryKey: string
+}
+
+class SelectEmployees extends React.Component<Props, State> {
+    constructor(props: Props) {
         super();
 
         this.updateCurrentSelectionCategory = this.updateCurrentSelectionCategory.bind(this);
@@ -19,11 +28,11 @@ class SelectEmployees extends React.Component {
         }
     }
 
-    updateCurrentSelectionCategory(categoryKey) {
+    updateCurrentSelectionCategory(categoryKey: string) {
         return this.setState({ currentSelectionCategoryKey: categoryKey });
     }
 
-    renderCategorySelectionInterface(category) {
+    renderCategorySelectionInterface(category: {key: string}) {
         let selectionInterface;
 
         const commonWrapperClasses = 'mt3';
@@ -75,15 +84,5 @@ class SelectEmployees extends React.Component {
         );
     }
 }
-
-SelectEmployees.defaultProps = {
-    className: '',
-};
-
-SelectEmployees.propTypes = {
-    className: PropTypes.string,
-    selectionCategories: PropTypes.array.isRequired,
-    onAddCustomRule: PropTypes.func.isRequired,
-};
 
 export default SelectEmployees;
