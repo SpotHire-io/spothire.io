@@ -46,8 +46,8 @@ class OpportunityModalBasicInfo extends React.Component<Props, State> {
     renderDateTimePicker(end: string) {
         return (
             <div className="flex" key={end}>
-                {this.renderDatePicker(end)}
-                {this.props.opportunity.isAllDay ? null : this.renderTimePicker(end)}
+                {() => this.renderDatePicker(end)}
+                {this.props.opportunity.isAllDay ? null : () => this.renderTimePicker(end)}
             </div>
         );
     }

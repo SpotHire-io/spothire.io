@@ -1,11 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as classNames from 'classnames';
 import Box from '../../Global/Box';
-import GroupSchema from '../../../schemas/Group';
+import {Group} from '../../../schemas';
 import BasicButton from '../../Buttons/BasicButton';
 
-class GroupDetailsEditor extends React.Component {
+interface Props {
+    className?: string
+    group: Group
+}
+
+interface State {
+
+}
+
+export default class GroupDetailsEditor extends React.Component<Props, State> {
     render() {
         const wrapperClasses = classNames({
             [this.props.className]: true
@@ -20,24 +28,13 @@ class GroupDetailsEditor extends React.Component {
 
                 <p className="mt3">
                     <label className="f6 db" htmlFor="group_description">Description</label>
-                    <textarea className="mt2 w-100" name="group_description" id="group_description" cols="30" rows="5"/>
+                    <textarea className="mt2 w-100" name="group_description" id="group_description" cols={30} rows={5}/>
                 </p>
 
                 <div className="tr mt3">
-                    <BasicButton className="button--negative">Delete Group</BasicButton>
+                    <BasicButton className="button--negative" onClick={() => console.log('Delete Group')}>Delete Group</BasicButton>
                 </div>
             </Box>
         );
     }
 }
-
-GroupDetailsEditor.defaultProps = {
-    className: '',
-};
-
-GroupDetailsEditor.propTypes = {
-    className: PropTypes.string,
-    group: GroupSchema.isRequired,
-};
-
-export default GroupDetailsEditor;

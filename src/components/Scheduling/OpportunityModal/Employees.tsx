@@ -1,12 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import Modal from '../../../components/Global/Modal';
 import UserTable from '../../../components/Employees/UserTable';
 import BasicButton from '../../../components/Buttons/BasicButton';
-import OpportunitySchema from '../../../schemas/Opportunity';
+import Opportunity from '../../../schemas/Opportunity';
 import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
 
-class OpportunityModalEmployees extends React.Component {
+interface Props {
+    updateOpportunity: Function
+    opportunity?: Opportunity
+}
+
+interface State {
+    isAddEmployeesModalOpen: boolean
+}
+
+export default class OpportunityModalEmployees extends React.Component<Props, State> {
     constructor() {
         super();
 
@@ -50,9 +58,3 @@ class OpportunityModalEmployees extends React.Component {
     }
 }
 
-OpportunityModalEmployees.propTypes = {
-    updateOpportunity: PropTypes.func.isRequired,
-    opportunity: OpportunitySchema
-};
-
-export default OpportunityModalEmployees;

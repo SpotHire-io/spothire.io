@@ -1,10 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as classNames from 'classnames';
 import GroupCard from './Card';
-import GroupSchema from '../../../schemas/Group';
+import {Group} from '../../../schemas';
 
-const GroupCardList = ({ className, cardProps, groups, onSelectGroup }) => (
+interface Props {
+    className?: string
+    groups: Group[]
+    onSelectGroup?: Function
+    cardProps?: any
+}
+
+const GroupCardList: React.StatelessComponent<Props> = ({ className, cardProps, groups, onSelectGroup }) => (
     <div className={classNames("flex flex-wrap justify-around nr3", className)}>
         {groups.map((group) => (
             <div className="mt3 pr3 w-50" key={group.id}>
@@ -23,12 +29,4 @@ const GroupCardList = ({ className, cardProps, groups, onSelectGroup }) => (
 GroupCardList.defaultProps = {
     className: '',
 };
-
-GroupCardList.propTypes = {
-    className: PropTypes.string,
-    groups: PropTypes.arrayOf(GroupSchema).isRequired,
-    onSelectGroup: PropTypes.func,
-    cardProps: PropTypes.object,
-};
-
 export default GroupCardList;
