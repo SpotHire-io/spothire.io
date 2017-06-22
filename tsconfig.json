@@ -2,7 +2,8 @@
     "compileOnSave": true,
     "compilerOptions": {
         "module": "commonjs",
-        "target": "ES6",
+        "lib": ["es2015", "es2016", "dom"],
+        "target": "es5",
         "removeComments": false,
         "preserveConstEnums": true,
         "sourceMap": false,
