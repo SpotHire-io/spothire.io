@@ -31,7 +31,6 @@ interface State {
     selectedKey: string
     filterType: FilterType
     filterValue: string
-    currentSelectionCategoryKey: string
 }
 
 export default class SelectCustomRules extends React.Component<Props, State> {
@@ -55,11 +54,11 @@ export default class SelectCustomRules extends React.Component<Props, State> {
         this.filterKeys = filterKeys;
         this.filterTypes = filterTypes;
 
-        this.setState({
+        this.state = {
             selectedKey: null,
             filterType: null,
             filterValue: '',
-        });
+        };
     }
 
     clearRule() {
