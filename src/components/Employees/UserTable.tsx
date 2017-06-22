@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import Icon from 'react-geomicons';
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import * as classNames from 'classnames';
+import * as Icon from 'react-geomicons';
 import { Table, Thead, Th, Tr, Td } from 'reactable';
 import userData from '../../data/people.json';
 import BasicButton from '../Buttons/BasicButton';
@@ -10,7 +10,31 @@ import PersonSchema from '../../schemas/Person';
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
 
-class UserList extends React.Component {
+interface Props {
+    className?: string,
+    hasShadow?: boolean,
+    inlineAddingRowIsOpen?: boolean,
+    editUser?: Function,
+    deleteUser?: Function,
+    onClickUser?: Function,
+    users: PersonSchema[],
+    tableProps?: object,
+    enabledColumns?: string[]
+}
+
+interface State {
+}
+
+export default class UserList extends React.Component<Props, State> {
+    public static defaultProps: Props = {
+        className: '',
+        hasShadow: true,
+        users: userData,
+        inlineAddingRowIsOpen: false,
+        tableProps: {},
+        enabledColumns: ['avatar', 'name', 'email', 'phone', 'actions'],
+    };
+
     constructor() {
         super();
 
@@ -21,8 +45,6 @@ class UserList extends React.Component {
         this.renderUserCell = this.renderUserCell.bind(this);
         this.renderControls = this.renderControls.bind(this);
         this.renderHeaderCell = this.renderHeaderCell.bind(this);
-
-        this.commonCellClasses = 'pa3';
 
         this.state = {};
     }
@@ -89,11 +111,10 @@ class UserList extends React.Component {
         );
     }
 
-    renderUserCell(column, value, className) {
+    renderUserCell(column: string, value: string | Function, className?: string) {
         const cellClasses = classNames({
-            'bb b--black-20': true,
+            'pa3 bb b--black-20': true,
             'dn': ! this.props.enabledColumns.includes(column),
-            [this.commonCellClasses]: true,
             [className]: true
         });
 
@@ -118,9 +139,8 @@ class UserList extends React.Component {
 
     renderHeaderCell(column, value) {
         const cellClasses = classNames({
-            'tl bg-teal white bb bw1 b--white-40': true,
+            'pa3 tl bg-teal white bb bw1 b--white-40': true,
             'dn': ! this.props.enabledColumns.includes(column),
-            [this.commonCellClasses]: true
         });
 
         return (
@@ -178,5 +198,3 @@ UserList.defaultProps = {
 //     tableProps: PropTypes.object,
 //     enabledColumns: PropTypes.array,
 // };
-
-export default UserList;
