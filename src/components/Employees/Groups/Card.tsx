@@ -1,10 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as classNames from 'classnames';
 import Box from '../../Global/Box';
 import GroupSchema from '../../../schemas/Group';
 
-class GroupCard extends React.Component {
+interface Props {
+    className?: string
+    group: GroupSchema
+    displayAvatarPreview?: boolean
+}
+
+interface State {
+
+}
+
+export default class GroupCard extends React.Component<Props, State> {
+    public static defaultProps = {
+        className: '',
+        displayAvatarPreview: true,
+    };
+
     constructor() {
         super();
 
@@ -76,16 +90,3 @@ class GroupCard extends React.Component {
         );
     }
 }
-
-GroupCard.defaultProps = {
-    className: '',
-    displayAvatarPreview: true,
-};
-
-GroupCard.propTypes = {
-    className: PropTypes.string,
-    group: GroupSchema.isRequired,
-    displayAvatarPreview: PropTypes.bool,
-};
-
-export default GroupCard;
