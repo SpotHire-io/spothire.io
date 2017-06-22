@@ -51,9 +51,9 @@ TimetableSummary.defaultProps = {
     hasShadow: true,
 };
 
-TimetableSummary.propTypes = {
-    className: PropTypes.string,
-    users: PropTypes.arrayOf(PersonSchema).isRequired,
-};
+// TimetableSummary.propTypes = {
+//     className: PropTypes.string,
+//     users: PropTypes.arrayOf(PersonSchema).isRequired,
+// };
 
 export default TimetableSummary;

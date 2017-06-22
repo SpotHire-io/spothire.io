@@ -60,9 +60,9 @@ EmployeeListView.defaultProps = {
     className: '',
 };
 
-EmployeeListView.propTypes = {
-    className: PropTypes.string,
-    employees: PropTypes.arrayOf(PersonSchema).isRequired,
-};
+// EmployeeListView.propTypes = {
+//     className: PropTypes.string,
+//     employees: PropTypes.arrayOf(PersonSchema).isRequired,
+// };
 
 export default EmployeeListView;

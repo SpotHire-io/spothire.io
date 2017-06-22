@@ -167,16 +167,16 @@ UserList.defaultProps = {
     enabledColumns: ['avatar', 'name', 'email', 'phone', 'actions'],
 };
 
-UserList.propTypes = {
-    className: PropTypes.string,
-    hasShadow: PropTypes.bool,
-    inlineAddingRowIsOpen: PropTypes.bool,
-    editUser: PropTypes.func,
-    deleteUser: PropTypes.func,
-    onClickUser: PropTypes.func,
-    users: PropTypes.arrayOf(PersonSchema),
-    tableProps: PropTypes.object,
-    enabledColumns: PropTypes.array,
-};
+// UserList.propTypes = {
+//     className: PropTypes.string,
+//     hasShadow: PropTypes.bool,
+//     inlineAddingRowIsOpen: PropTypes.bool,
+//     editUser: PropTypes.func,
+//     deleteUser: PropTypes.func,
+//     onClickUser: PropTypes.func,
+//     users: PropTypes.arrayOf(PersonSchema),
+//     tableProps: PropTypes.object,
+//     enabledColumns: PropTypes.array,
+// };
 
 export default UserList;

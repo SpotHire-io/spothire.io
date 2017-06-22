@@ -174,9 +174,9 @@ MetadataInterface.defaultProps = {
     className: '',
 };
 
-MetadataInterface.propTypes = {
-    className: PropTypes.string,
-    employee: PersonSchema.isRequired,
-};
+// MetadataInterface.propTypes = {
+//     className: PropTypes.string,
+//     employee: PersonSchema.isRequired,
+// };
 
 export default MetadataInterface;

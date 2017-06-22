@@ -95,9 +95,9 @@ EmployeeProfileView.defaultProps = {
     className: '',
 };
 
-EmployeeProfileView.propTypes = {
-    className: PropTypes.string,
-    employee: PersonSchema.isRequired,
-};
+// EmployeeProfileView.propTypes = {
+//     className: PropTypes.string,
+//     employee: PersonSchema.isRequired,
+// };
 
 export default EmployeeProfileView;

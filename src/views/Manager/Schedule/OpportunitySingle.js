@@ -131,9 +131,9 @@ OpportunitySingleView.defaultProps = {
     className: '',
 };
 
-OpportunitySingleView.propTypes = {
-    className: PropTypes.string,
-    opportunity: OpportunitySchema.isRequired
-};
+// OpportunitySingleView.propTypes = {
+//     className: PropTypes.string,
+//     opportunity: OpportunitySchema.isRequired
+// };
 
 export default OpportunitySingleView;

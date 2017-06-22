@@ -162,12 +162,12 @@ SelectableTimesheetTable.defaultProps = {
     onUpdateSelectedUsers: (selectedUserIds) => console.log(selectedUserIds)
 };
 
-SelectableTimesheetTable.propTypes = {
-    className: PropTypes.string,
-    users: PropTypes.arrayOf(PersonSchema).isRequired,
-    hasShadow: PropTypes.bool,
-    tableProps: PropTypes.object,
-    onUpdateSelectedUsers: PropTypes.func,
-};
+// SelectableTimesheetTable.propTypes = {
+//     className: PropTypes.string,
+//     users: PropTypes.arrayOf(PersonSchema).isRequired,
+//     hasShadow: PropTypes.bool,
+//     tableProps: PropTypes.object,
+//     onUpdateSelectedUsers: PropTypes.func,
+// };
 
 export default SelectableTimesheetTable;

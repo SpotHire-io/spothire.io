@@ -6,6 +6,7 @@ interface TimeOffRequest {
     dates: {
         start: string
         end: string
+        [key: string]: any
     }
     approvalState: 'pending' | 'approved' | 'rejected'
 }

@@ -35,9 +35,9 @@ GroupListView.defaultProps = {
     className: '',
 };
 
-GroupListView.propTypes = {
-    className: PropTypes.string,
-    groups: PropTypes.arrayOf(GroupSchema).isRequired,
-};
+// GroupListView.propTypes = {
+//     className: PropTypes.string,
+//     groups: PropTypes.arrayOf(GroupSchema).isRequired,
+// };
 
 export default GroupListView;

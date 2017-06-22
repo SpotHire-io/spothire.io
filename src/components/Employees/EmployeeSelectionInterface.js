@@ -128,11 +128,11 @@ EmployeeSelectionInterface.defaultProps = {
     enabledSelectionCategories: ['employees', 'groups', 'custom'],
 };
 
-EmployeeSelectionInterface.propTypes = {
-    className: PropTypes.string,
-    employees: PropTypes.arrayOf(PersonSchema).isRequired,
-    groups: PropTypes.arrayOf(GroupSchema).isRequired,
-    enabledSelectionCategories: PropTypes.array,
-};
+// EmployeeSelectionInterface.propTypes = {
+//     className: PropTypes.string,
+//     employees: PropTypes.arrayOf(PersonSchema).isRequired,
+//     groups: PropTypes.arrayOf(GroupSchema).isRequired,
+//     enabledSelectionCategories: PropTypes.array,
+// };
 
 export default EmployeeSelectionInterface;

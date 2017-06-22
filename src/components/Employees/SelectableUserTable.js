@@ -148,10 +148,10 @@ SelectableUserTable.defaultProps = {
     hasShadow: true,
 };
 
-SelectableUserTable.propTypes = {
-    className: PropTypes.string,
-    users: PropTypes.arrayOf(PersonSchema).isRequired,
-    hasShadow: PropTypes.bool,
-};
+// SelectableUserTable.propTypes = {
+//     className: PropTypes.string,
+//     users: PropTypes.arrayOf(PersonSchema).isRequired,
+//     hasShadow: PropTypes.bool,
+// };
 
 export default SelectableUserTable;

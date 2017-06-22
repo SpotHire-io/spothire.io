@@ -42,9 +42,9 @@ TimeOffRequestNew.defaultProps = {
     className: 'tr mt3',
 };
 
-TimeOffRequestNew.propTypes = {
-    className: PropTypes.string,
-    addRequest: PropTypes.func.isRequired,
-};
+// TimeOffRequestNew.propTypes = {
+//     className: PropTypes.string,
+//     addRequest: PropTypes.func.isRequired,
+// };
 
 export default TimeOffRequestNew;

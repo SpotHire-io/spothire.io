@@ -46,8 +46,8 @@ PeopleView.defaultProps = {
 
 };
 
-PeopleView.propTypes = {
-    employees: PropTypes.arrayOf(PersonSchema).isRequired
-};
+// PeopleView.propTypes = {
+//     employees: PropTypes.arrayOf(PersonSchema).isRequired
+// };
 
 export default PeopleView;

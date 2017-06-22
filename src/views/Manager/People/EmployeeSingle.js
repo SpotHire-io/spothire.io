@@ -108,9 +108,9 @@ EmployeeSingleView.defaultProps = {
     className: '',
 };
 
-EmployeeSingleView.propTypes = {
-    className: PropTypes.string,
-    employee: PersonSchema.isRequired
-};
+// EmployeeSingleView.propTypes = {
+//     className: PropTypes.string,
+//     employee: PersonSchema.isRequired
+// };
 
 export default EmployeeSingleView;
