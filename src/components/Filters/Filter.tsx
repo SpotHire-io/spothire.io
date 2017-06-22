@@ -1,10 +1,19 @@
 import 'react-select/dist/react-select.css';
-import React from 'react';
-import Select from 'react-select';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as Select from 'react-select';
+import * as PropTypes from 'prop-types';
+import * as classNames from 'classnames';
 
-const Filter = ({ id, label, type, data, onChange, className }) => {
+interface Props {
+    className?: string
+    id: string
+    type: 'text' | 'select'
+    label?: string
+    data?: any
+    onChange: React.EventHandler<any>
+}
+
+const Filter: React.StatelessComponent<Props> = ({ id, label, type, data, onChange, className }) => {
     let wrapperClasses = classNames({
         'mt3 ': true,
         [className]: true
@@ -17,11 +26,8 @@ const Filter = ({ id, label, type, data, onChange, className }) => {
         output = (
             <input
                 id={id}
-
                 type="text"
-
                 className="w-100 pa1 mt0"
-
                 value={data.value}
                 placeholder={data.placeholder}
                 onChange={onChange}
@@ -56,18 +62,3 @@ const Filter = ({ id, label, type, data, onChange, className }) => {
         </div>
     );
 };
-
-Filter.defaultProps = {
-    className: ''
-};
-
-Filter.propTypes = {
-    className: PropTypes.string,
-    id: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['text', 'select']).isRequired,
-    label: PropTypes.string,
-    data: PropTypes.object,
-    onChange: PropTypes.func.isRequired,
-};
-
-export default Filter;

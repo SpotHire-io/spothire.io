@@ -1,8 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as classNames from 'classnames';
 
-const Box = ({ children, className, contentWrapperClassName, headingSemanticLevel, headingType, title }) => {
+interface Props {
+    className?: string
+    contentWrapperClassName?: string
+    headingSemanticLevel?: number
+    headingType?: 'block' | 'inline'
+    title?: string
+    children: React.ReactNode
+};
+
+const Box: React.StatelessComponent<Props> = ({ children, className, contentWrapperClassName, headingSemanticLevel, headingType, title }) => {
     let wrapperClasses = classNames({
         'bg-white ba b--black-20 sh-shadow-2': true,
         [className]: true
@@ -37,15 +45,6 @@ Box.defaultProps = {
     headingSemanticLevel: 2,
     headingType: 'block',
     contentWrapperClassName: 'pa3'
-};
-
-Box.propTypes = {
-    className: PropTypes.string,
-    contentWrapperClassName: PropTypes.string,
-    headingSemanticLevel: PropTypes.number,
-    headingType: PropTypes.oneOf(['block', 'inline']),
-    title: PropTypes.string,
-    children: PropTypes.node.isRequired
 };
 
 export default Box;

@@ -1,10 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as classNames from 'classnames';
 import Box from '../Global/Box';
 import BasicButton from '../Buttons/BasicButton';
 
-const FilterContainer = ({ children, className, headingSemanticLevel, onResetFilters }) => {
+interface Props {
+    className?: string
+    headingSemanticLevel?: number
+    children?: React.ReactChildren
+    onResetFilters?: React.EventHandler<any>
+}
+
+const FilterContainer: React.StatelessComponent<Props>  = ({ children, className, headingSemanticLevel, onResetFilters }) => {
     let wrapperClasses = classNames({
         '': true,
         [className]: true
@@ -22,14 +28,7 @@ const FilterContainer = ({ children, className, headingSemanticLevel, onResetFil
 
 FilterContainer.defaultProps = {
     className: '',
-    headingSemanticLevel: 2,
-};
-
-FilterContainer.propTypes = {
-    className: PropTypes.string,
-    headingSemanticLevel: PropTypes.number,
-    children: PropTypes.node.isRequired,
-    onResetFilters: PropTypes.func.isRequired,
-};
+    headingSemanticLevel: 2
+}
 
 export default FilterContainer;
