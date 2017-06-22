@@ -84,7 +84,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "tsc && build-storybook -s public",
     "watch-css": "postcss -w --config postcss.config.js --output public/css/app.css assets/css/app.css",
-    "build-css": "postcss --config postcss.config.js --output public/css/app.css assets/css/app.css"
+    "build-css": "postcss --config postcss.config.js --output public/css/app.css assets/css/app.css",
+    "watch-ts": "tsc -w"
   },
   "jest": {
     "collectCoverageFrom": [
