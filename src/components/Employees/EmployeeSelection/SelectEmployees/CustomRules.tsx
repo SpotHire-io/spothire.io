@@ -94,7 +94,7 @@ export default class SelectCustomRules extends React.Component<Props, State> {
             number: 'number',
         };
 
-        const currentCategory = this.state.selectedKey.split('-')[1];
+        const currentCategory = this.state.selectedKey && this.state.selectedKey.split('-')[1];
 
         return (
             <div className="mt3">

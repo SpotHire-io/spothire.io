@@ -113,13 +113,13 @@ Post.defaultProps = {
     showOpportunityName: false,
 };
 
-// Post.propTypes = {
-//     className: PropTypes.string,
-//     post: PostSchema.isRequired,
-//     isOpen: PropTypes.bool,
-//     isInline: PropTypes.bool,
-//     toggleOpenState: PropTypes.func,
-//     showOpportunityName: PropTypes.bool,
-// };
+Post.propTypes = {
+    className: PropTypes.string,
+    // post: PostSchema.isRequired,
+    isOpen: PropTypes.bool,
+    isInline: PropTypes.bool,
+    toggleOpenState: PropTypes.func,
+    showOpportunityName: PropTypes.bool,
+};
 
 export default Post;

@@ -1,7 +1,6 @@
 import 'react-select/dist/react-select.css';
 import * as React from 'react';
 import * as Select from 'react-select';
-import * as PropTypes from 'prop-types';
 import * as classNames from 'classnames';
 
 interface Props {

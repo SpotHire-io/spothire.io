@@ -67,10 +67,10 @@ PostList.defaultProps = {
     postProps: {}
 };
 
-// PostList.propTypes = {
-//     className: PropTypes.string,
-//     posts: PropTypes.arrayOf(PostSchema),
-//     postProps: PropTypes.object,
-// };
+PostList.propTypes = {
+    className: PropTypes.string,
+    // posts: PropTypes.arrayOf(PostSchema),
+    postProps: PropTypes.object,
+};
 
 export default PostList;
