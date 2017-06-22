@@ -1,15 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as classNames from 'classnames';
 
-class SecondaryMenu extends React.Component {
+interface Item {
+    key?: any
+    href?: string
+    text?: React.ReactNode
+    isActive?: boolean
+}
+
+interface Props {
+    className?: string
+    items: Item[]
+    onClick: React.EventHandler<React.MouseEvent<{}>>
+}
+interface State {
+
+}
+
+class SecondaryMenu extends React.Component<Props, State> {
     constructor() {
         super();
 
         this.renderNavItem = this.renderNavItem.bind(this);
     }
 
-    renderNavItem(item) {
+    renderNavItem(item: Item) {
         const aClasses = classNames({
             'b near-black hover-gray dib pv3 mr4 no-underline animate-all bb bw1 hover-b--white-40': true,
             'b--teal': ! item.isActive,
@@ -37,25 +52,8 @@ class SecondaryMenu extends React.Component {
 
         return (
             <nav className={wrapperClasses}>
-                {this.props.items.map((item) => this.renderNavItem(item))}
+                {this.props.items.map((item: Item) => this.renderNavItem(item))}
             </nav>
         );
     }
 }
-
-SecondaryMenu.defaultProps = {
-    className: ''
-};
-
-SecondaryMenu.propTypes = {
-    className: PropTypes.string,
-    items: PropTypes.arrayOf(PropTypes.shape({
-        key: PropTypes.any,
-        href: PropTypes.string,
-        text: PropTypes.node,
-        isActive: PropTypes.bool,
-    })).isRequired,
-    onClick: PropTypes.func.isRequired,
-};
-
-export default SecondaryMenu;

@@ -124,6 +124,12 @@
   version "15.5.1"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.1.tgz#1ecf52621299e65b855374337fb11fd2d1066fc1"
 
+"@types/react-modal@^1.6.6":
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/@types/react-modal/-/react-modal-1.6.6.tgz#9e77be4f0dea4d95ffb9ebec05047ff42e0381d9"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-select@^1.0.47":
   version "1.0.47"
   resolved "https://registry.yarnpkg.com/@types/react-select/-/react-select-1.0.47.tgz#95fad6b502e2f0a839ea0d320ca6cbb809e73ab4"

@@ -1,11 +1,40 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as classNames from 'classnames';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
 
-class MainMenu extends React.Component {
+interface Props {
+    className?: string
+    selectedItem?: string
+    userType?: 'manager' | 'employee'
+}
+interface State {
+    isUserMenuOpen: boolean
+}
+
+const commonItemWrapperClasses = 'white pv3 ph4';
+
+const menuItems = {
+    employee: [
+        'Dashboard',
+        'Newsfeed',
+        'Schedule',
+    ],
+    manager: [
+        'Newsfeed',
+        'People',
+        'Schedule',
+        'Timesheet',
+    ],
+};
+
+export default class MainMenu extends React.Component<Props, State> {
+    public static defaultProps = {
+        className: '',
+        selectedItem: 'Dashboard',
+        userType: 'manager',
+    };
     constructor() {
         super();
 
@@ -13,22 +42,6 @@ class MainMenu extends React.Component {
         this.renderNavLink = this.renderNavLink.bind(this);
         this.renderUserMenu = this.renderUserMenu.bind(this);
         this.toggleUserMenu = this.toggleUserMenu.bind(this);
-
-        this.commonItemWrapperClasses = 'white pv3 ph4';
-
-        this.menuItems = {
-            employee: [
-                'Dashboard',
-                'Newsfeed',
-                'Schedule',
-            ],
-            manager: [
-                'Newsfeed',
-                'People',
-                'Schedule',
-                'Timesheet',
-            ],
-        };
 
         this.state = {
             isUserMenuOpen: false
@@ -43,21 +56,21 @@ class MainMenu extends React.Component {
 
     renderLogo() {
         return (
-            <div className={this.commonItemWrapperClasses}>
-                <img src="/img/logo-white.svg" alt="SpotHire logo" className="h1 v-mid pointer" onClick={linkTo('Overview', 'Welcome')}/>
+            <div className={commonItemWrapperClasses}>
+                <img src="/img/logo-white.svg" alt="SpotHire logo" className="h1 v-mid pointer" onClick={() => linkTo('Overview', 'Welcome')}/>
             </div>
         );
     }
 
-    renderNavLink(linkText, isSelected) {
+    renderNavLink(linkText: string, isSelected: boolean) {
         const aClasses = classNames({
-            [this.commonItemWrapperClasses]: true,
+            [commonItemWrapperClasses]: true,
             'w-20 tc link dim pointer': true,
             'i sh-inset-shadow-1': isSelected,
         });
 
         return (
-            <a key={linkText} className={aClasses} href="#views" onClick={linkTo(`Views (${this.props.userType})`, linkText)}>{linkText}</a>
+            <a key={linkText} className={aClasses} href="#views" onClick={() => linkTo(`Views (${this.props.userType})`, linkText)}>{linkText}</a>
         )
     }
 
@@ -88,7 +101,7 @@ class MainMenu extends React.Component {
                                 <a
                                     href="#main"
                                     className="pa2 db no-underline near-black hover-bg-teal hover-white"
-                                    onClick={menuItem.onClick}
+                                    onClick={() => menuItem.onClick}
                                 >
                                     {menuItem.text}
                                 </a>
@@ -107,7 +120,7 @@ class MainMenu extends React.Component {
                     {this.renderLogo()}
                     <nav className="flex-auto flex items-start">
                         {
-                            this.menuItems[this.props.userType].map((text) => this.renderNavLink(text, text === this.props.selectedItem))
+                            menuItems[this.props.userType].map((text) => this.renderNavLink(text, text === this.props.selectedItem))
                         }
                     </nav>
                     <div className="flex items-center ph4">
@@ -119,17 +132,3 @@ class MainMenu extends React.Component {
         )
     }
 }
-
-MainMenu.defaultProps = {
-    className: '',
-    selectedItem: 'Dashboard',
-    userType: 'manager',
-};
-
-MainMenu.propTypes = {
-    className: PropTypes.string,
-    selectedItem: PropTypes.string,
-    userType: PropTypes.oneOf(['manager', 'employee'])
-};
-
-export default MainMenu;

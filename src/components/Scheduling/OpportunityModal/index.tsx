@@ -1,11 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Modal from '../Global/Modal';
-import BasicButton from '../Buttons/BasicButton';
-import OpportunitySchema from '../../schemas/Opportunity';
-import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
+import * as React from 'react';
+import Modal from '../../Global/Modal';
+import BasicButton from '../../Buttons/BasicButton';
+import {Opportunity} from '../../../schemas';
+import OpportunityModalBasicInfo from './BasicInfo';
 
-class OpportunityModal extends React.Component {
+interface Props {
+    isOpen: boolean
+    closeModal: Function
+    updateOpportunity: Function
+    opportunity: Opportunity
+    addOpportunity: React.EventHandler<React.MouseEvent<{}>>
+}
+interface State {
+
+}
+
+class OpportunityModal extends React.Component<Props, State> {
     render() {
         return (
             <Modal
@@ -27,13 +37,5 @@ class OpportunityModal extends React.Component {
         )
     }
 }
-
-OpportunityModal.propTypes = {
-    isOpen: PropTypes.bool.isRequired,
-    closeModal: PropTypes.func.isRequired,
-    updateOpportunity: PropTypes.func.isRequired,
-    opportunity: OpportunitySchema,
-    addOpportunity: PropTypes.func.isRequired,
-};
 
 export default OpportunityModal;
