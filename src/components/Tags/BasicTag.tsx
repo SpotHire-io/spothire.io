@@ -1,8 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as classNames from 'classnames';
 
-const BasicTag = ({ type, children, className, isNarrow }) => {
+interface Props {
+    className?: string
+    isNarrow?: boolean
+    children?: React.ReactNode
+    type?: 'neutral' | 'positive' | 'negative'
+}
+
+const BasicTag: React.StatelessComponent<Props> = ({ type, children, className, isNarrow }) => {
     let tagClasses = classNames({
         'dib f6 ba b--dashed br4': true,
         'gray': type === 'neutral',
@@ -20,13 +26,6 @@ BasicTag.defaultProps = {
     className: '',
     isNarrow: false,
     type: 'neutral',
-};
-
-BasicTag.propTypes = {
-    className: PropTypes.string,
-    isNarrow: PropTypes.bool,
-    children: PropTypes.node,
-    type: PropTypes.oneOf(['neutral', 'positive', 'negative']),
 };
 
 export default BasicTag;

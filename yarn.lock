@@ -134,6 +134,12 @@
   version "15.0.30"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.30.tgz#a4e153e1e83fbef341fc9aad1a7d62bf8c1f52a3"
 
+"@types/rebass@^0.2.17":
+  version "0.2.17"
+  resolved "https://registry.yarnpkg.com/@types/rebass/-/rebass-0.2.17.tgz#38766440890fbb6f860c87de350ae77dc19f0c82"
+  dependencies:
+    "@types/react" "*"
+
 abab@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.3.tgz#b81de5f7274ec4e756d797cd834f303642724e5d"

@@ -1,14 +1,21 @@
 import 'moment/locale/en-ca';
-import React from 'react';
-import moment from 'moment';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import TimePicker from 'rc-time-picker';
-import OpportunitySchema from '../../../schemas/Opportunity';
+import * as React from 'react';
+import * as moment from 'moment';
+import * as classNames from 'classnames';
+const TimePicker = require('rc-time-picker');
+import Opportunity from '../../../schemas/Opportunity';
 import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
 import { Switch } from 'rebass';
 
-class OpportunityModalBasicInfo extends React.Component {
+interface Props {
+    opportunity: Opportunity
+    updateOpportunity: Function
+}
+interface State {
+
+}
+
+class OpportunityModalBasicInfo extends React.Component<Props, State> {
     constructor() {
         super();
 
@@ -28,15 +35,15 @@ class OpportunityModalBasicInfo extends React.Component {
         this.props.updateOpportunity(opportunity);
     }
 
-    updateOpportunityField(field, value) {
-        const opportunity = { ...this.props.opportunity };
+    updateOpportunityField(field: string, value: string) {
+        const opportunity: any = { ...this.props.opportunity };
 
         opportunity[field] = value;
 
         this.props.updateOpportunity(opportunity);
     }
 
-    renderDateTimePicker(end) {
+    renderDateTimePicker(end: string) {
         return (
             <div className="flex" key={end}>
                 {this.renderDatePicker(end)}
@@ -45,7 +52,7 @@ class OpportunityModalBasicInfo extends React.Component {
         );
     }
 
-    renderDatePicker(end) {
+    renderDatePicker(end: string) {
         return (
             <dl className={classNames('mb0 mt3', {'mr4 w-50': ! this.props.opportunity.isAllDay, 'w-100': this.props.opportunity.isAllDay})}>
                 <dt className="f6 ml0 mb2">{end} date</dt>
@@ -85,7 +92,7 @@ class OpportunityModalBasicInfo extends React.Component {
                         showSecond={false}
                         allowEmpty={false}
                         use12Hours={true}
-                        onChange={newTime => {
+                        onChange={(newTime: string) => {
                             const opportunity = {...this.props.opportunity};
 
                             opportunity.dates[end.toLowerCase()] = newTime;
@@ -123,16 +130,11 @@ class OpportunityModalBasicInfo extends React.Component {
 
                 <p className="mt3">
                     <label className="f6 db" htmlFor="opp_notes">Notes</label>
-                    <textarea className="mt2 w-100" name="opp_notes" id="opp_notes" cols="30" rows="5"/>
+                    <textarea className="mt2 w-100" name="opp_notes" id="opp_notes" cols={30} rows={5}/>
                 </p>
             </div>
         )
     }
 }
-
-OpportunityModalBasicInfo.propTypes = {
-    updateOpportunity: PropTypes.func.isRequired,
-    opportunity: OpportunitySchema
-};
 
 export default OpportunityModalBasicInfo;
