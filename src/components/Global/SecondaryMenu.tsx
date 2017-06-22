@@ -17,7 +17,7 @@ interface State {
 
 }
 
-class SecondaryMenu extends React.Component<Props, State> {
+export default class SecondaryMenu extends React.Component<Props, State> {
     constructor() {
         super();
 

@@ -2,14 +2,14 @@ import * as React from 'react';
 import Modal from '../../Global/Modal';
 import BasicButton from '../../Buttons/BasicButton';
 import {Opportunity} from '../../../schemas';
-import OpportunityModalBasicInfo from './BasicInfo';
+const OpportunityModalBasicInfo = require('./BasicInfo');
 
 interface Props {
     isOpen: boolean
-    closeModal: Function
+    closeModal: React.EventHandler<any>
     updateOpportunity: Function
     opportunity: Opportunity
-    addOpportunity: React.EventHandler<React.MouseEvent<{}>>
+    addOpportunity: React.EventHandler<any>
 }
 interface State {
 
@@ -30,7 +30,7 @@ class OpportunityModal extends React.Component<Props, State> {
                 </div>
 
                 <div className="tr">
-                    <BasicButton className="button--neutral mt3" onClick={() => this.props.closeModal()}>Cancel</BasicButton>
+                    <BasicButton className="button--neutral mt3" onClick={this.props.closeModal}>Cancel</BasicButton>
                     <BasicButton className="button--positive mt3 ml3" onClick={this.props.addOpportunity}>Create</BasicButton>
                 </div>
             </Modal>

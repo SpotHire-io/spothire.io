@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Modal from '../../../components/Global/Modal';
-import UserTable from '../../../components/Employees/UserTable';
+const UserTable = require('../../../components/Employees/UserTable');
 import BasicButton from '../../../components/Buttons/BasicButton';
 import Opportunity from '../../../schemas/Opportunity';
-import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
+const EmployeeSelectionInterface = require('../../../components/Employees/EmployeeSelectionInterface');
 
 interface Props {
     updateOpportunity: Function

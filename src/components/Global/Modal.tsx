@@ -7,7 +7,7 @@ interface Props {
     fullWidth?: boolean
     isOpen: boolean
     contentLabel: string
-    onClose: (event: (MouseEvent | KeyboardEvent)) => void
+    onClose: React.EventHandler<any>
     children: React.ReactNode
 }
 
