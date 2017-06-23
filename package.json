@@ -9,6 +9,7 @@
     "@types/node": "^8.0.1",
     "@types/prop-types": "^15.5.1",
     "@types/react": "^15.0.30",
+    "@types/lodash": "^4.14.66",
     "@types/react-modal": "^1.6.6",
     "@types/react-select": "^1.0.47",
     "@types/rebass": "^0.2.17",
@@ -51,7 +52,6 @@
     "whatwg-fetch": "2.0.3"
   },
   "dependencies": {
-    "@types/lodash": "^4.14.66",
     "autoprefixer": "^6.7.7",
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",

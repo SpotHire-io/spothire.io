@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import * as classNames from 'classnames';
-import * as Icon from 'react-geomicons';
-import { Table, Thead, Th, Tr, Td } from 'reactable';
+const Icon = require('react-geomicons');
+const { Table, Thead, Th, Tr, Td } = require('reactable');
 import userData from '../../data/people.json';
 import BasicButton from '../Buttons/BasicButton';
-import PersonSchema from '../../schemas/Person';
+import {Person} from '../../schemas';
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
@@ -17,7 +17,7 @@ interface Props {
     editUser?: Function,
     deleteUser?: Function,
     onClickUser?: Function,
-    users: PersonSchema[],
+    users: Person[],
     tableProps?: object,
     enabledColumns?: string[]
 }
@@ -76,7 +76,12 @@ export default class UserList extends React.Component<Props, State> {
                         placeholder="Phone"
                     />
                 ), 'pv2')}
-                {this.renderUserCell('actions', () => <BasicButton className="button--positive" onClick={linkTo('Views (manager)', 'People:EmployeeSingleView')}>Create</BasicButton>, 'pv1')}
+                {this.renderUserCell('actions', () =>
+                    <BasicButton
+                        className="button--positive"
+                        onClick={() => linkTo('Views (manager)', 'People:EmployeeSingleView')}>
+                        Create
+                    </BasicButton>, 'pv1')}
             </Tr>
         )
     }
@@ -93,7 +98,7 @@ export default class UserList extends React.Component<Props, State> {
         );
     }
 
-    renderUserRow(user) {
+    renderUserRow(user: Person) {
         const userClasses = classNames({
             'pointer ph3 pa2 mt0 hover-bg-black-10': true
         });
@@ -128,7 +133,7 @@ export default class UserList extends React.Component<Props, State> {
         );
     }
 
-    renderControls(user) {
+    renderControls(user: Person) {
         return (
             <div className="tr">
                 <Icon color="#555555" name="compose" className="pointer" onClick={() => this.props.editUser(user.id)}/>
@@ -137,7 +142,7 @@ export default class UserList extends React.Component<Props, State> {
         );
     }
 
-    renderHeaderCell(column, value) {
+    renderHeaderCell(column: string, value: string) {
         const cellClasses = classNames({
             'pa3 tl bg-teal white bb bw1 b--white-40': true,
             'dn': ! this.props.enabledColumns.includes(column),
@@ -194,7 +199,7 @@ UserList.defaultProps = {
 //     editUser: PropTypes.func,
 //     deleteUser: PropTypes.func,
 //     onClickUser: PropTypes.func,
-//     users: PropTypes.arrayOf(PersonSchema),
+//     users: PropTypes.arrayOf(Person),
 //     tableProps: PropTypes.object,
 //     enabledColumns: PropTypes.array,
 // };
