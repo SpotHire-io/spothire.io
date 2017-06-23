@@ -116,6 +116,10 @@
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.0.tgz#f2312039e780bdf89d7d4102a26ec11de5ec58aa"
 
+"@types/lodash@^4.14.66":
+  version "4.14.66"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.66.tgz#3dbb83477becf130611f8fac82a8fdb199805981"
+
 "@types/node@^8.0.1":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.1.tgz#89c271e0c3b9ebb6a3756dd601336970b6228b77"

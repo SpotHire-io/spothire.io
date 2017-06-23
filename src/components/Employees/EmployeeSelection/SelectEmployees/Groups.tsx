@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import * as classNames from 'classnames';
+import {range} from 'lodash';
 const GroupCardList = require('../../Groups/CardList');
 
 // dummy data
@@ -15,7 +16,9 @@ interface State {
 
 }
 
-const groups = [...Array(10).keys()].map((number) => {
+const n = Array(10).keys()
+
+const groups = range(10).map((number) => {
     return {
         id: number,
         name: `Sample Group ${number + 1}`,
