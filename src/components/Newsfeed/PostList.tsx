@@ -14,13 +14,12 @@ interface State {
 }
 
 export default class PostList extends React.Component<Props, State> {
-    private static defaultProps: Props = {
-        className: '',
-        postProps: {}
-    }
-
-    constructor() {
+    constructor(props: Props) {
         super();
+        props = {
+            className: '',
+            postProps: {}
+        }
 
         this.togglePost = this.togglePost.bind(this);
 

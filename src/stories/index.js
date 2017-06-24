@@ -514,7 +514,7 @@ storiesOf('Newsfeed', module)
         <WithNotes>
             <div className="pa4 bg-near-white">
                 <div className="flex">
-                    {sampleFilterContainer('mr3 w-third self-start')}
+                    {/*{sampleFilterContainer('mr3 w-third self-start')}*/}
                     <PostList
                         className="w-two-thirds"
                         posts={samplePosts}

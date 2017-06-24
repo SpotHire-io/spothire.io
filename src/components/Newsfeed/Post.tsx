@@ -1,6 +1,6 @@
 import 'moment/locale/en-ca';
 import * as React from 'react';
-import {Post} from '../../schemas';
+import * as Schemas from '../../schemas';
 import * as moment from 'moment';
 import { Arrow } from 'rebass';
 import * as classNames from 'classnames';
@@ -9,7 +9,7 @@ import BasicButton from '../Buttons/BasicButton';
 
 interface Props {
     className?: string
-    post: Post
+    post: Schemas.Post
     isOpen?: boolean
     isInline?: boolean
     toggleOpenState?: Function
