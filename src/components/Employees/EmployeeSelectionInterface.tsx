@@ -1,29 +1,76 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import PersonSchema from '../../schemas/Person';
-import GroupSchema from '../../schemas/Group';
-import BasicButton from '../../components/Buttons/BasicButton';
-import SelectEmployees from './EmployeeSelection/SelectEmployees';
-import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees';
+import * as React from 'react'
+import * as classNames from 'classnames'
+import {range} from 'lodash'
+import PersonSchema from '../../schemas/Person'
+import * as Schemas from '../../schemas'
+import BasicButton from '../../components/Buttons/BasicButton'
+import SelectEmployees from './EmployeeSelection/SelectEmployees'
+import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees'
 
 // Rule data
-import filterKeys from '../../data/peopleFilterRules/filterKeys.json';
-import filterTypes from '../../data/peopleFilterRules/filterTypes.json';
+import filterKeys from '../../data/peopleFilterRules/filterKeys.json'
+import filterTypes from '../../data/peopleFilterRules/filterTypes.json'
+
+interface FilterKey {
+    label: string
+    value: string
+    disabled?: boolean
+}
+
+interface FilterType {
+    label: string
+    value: string
+    disabled?: boolean
+}
+
+interface Rule {
+    key: string
+    type: string
+    value: string
+}
+
+interface Category {
+    key: string
+}
 
 // demo data
-import employees from '../../data/people.json';
-const groups = [...Array(10).keys()].map((number) => {
+const employees = require('../../data/people.json')
+const groups = range(10).map((number) => {
     return {
             id: number,
             name: `Sample Group ${number + 1}`,
             employees: employees,
             type: 'static'
-        };
-    });
+        }
+    })
 
-class EmployeeSelectionInterface extends React.Component {
-    constructor(props) {
+interface Props {
+    className?: string
+    employees: Schemas.Employee[]
+    groups: Schemas.Group[]
+    enabledSelectionCategories: any[]
+}
+
+interface State {
+    selectedEmployees: {
+        employees: Schemas.Employee[]
+        groups: Schemas.Group[]
+        customRules: any[]
+    }
+}
+
+export default class EmployeeSelectionInterface extends React.Component<Props, State> {
+    public filterKeys: FilterKey[]
+    public filterTypes: FilterType[]
+    public selectionCategories: any
+
+    public static defaultProps = {
+        className: '',
+        employees: employees,
+        groups: groups,
+        enabledSelectionCategories: ['employees', 'groups', 'custom'],
+    }
+    constructor(props: Props) {
         super();
 
         this.unSelectById = this.unSelectById.bind(this);
@@ -53,7 +100,7 @@ class EmployeeSelectionInterface extends React.Component {
                 key: 'employees',
                 title: 'Employees',
                 selections: this.state.selectedEmployees.employees,
-                renderMethod: (employee, className) => {
+                renderMethod: (employee: Schemas.Employee, className: string) => {
                     return (
                         <p className={className}>{employee.firstName} {employee.lastName}</p>
                     );
@@ -63,7 +110,7 @@ class EmployeeSelectionInterface extends React.Component {
                 key: 'groups',
                 title: 'Groups',
                 selections: this.state.selectedEmployees.groups,
-                renderMethod: (group, className) => {
+                renderMethod: (group: Schemas.Group, className: string) => {
                     return (
                         <p className={className}>{group.name} <span className="ml2 f6">({group.employees.length} employees)</span></p>
                     );
@@ -73,9 +120,9 @@ class EmployeeSelectionInterface extends React.Component {
                 key: 'custom',
                 title: 'Custom Rules',
                 selections: this.state.selectedEmployees.customRules,
-                renderMethod: (rule, className) => {
-                    const filterKey = this.filterKeys.find((filterKey) => filterKey.value === rule.key);
-                    const filterType = this.filterTypes.find((filterType) => filterType.value === rule.type);
+                renderMethod: (rule: Rule, className: string) => {
+                    const filterKey = this.filterKeys.find((filterKey: FilterKey) => filterKey.value === rule.key);
+                    const filterType = this.filterTypes.find((filterType: FilterType) => filterType.value === rule.type);
 
                     return (
                         <p className={className}>{filterKey.label} that {filterType.label} “{rule.value}”<span className="ml2 f6">(15 employees)</span></p>
@@ -85,7 +132,7 @@ class EmployeeSelectionInterface extends React.Component {
         ];
     }
 
-    addCustomRule(rule) {
+    addCustomRule(rule: Rule) {
         let selectedEmployees = {...this.state.selectedEmployees};
 
         selectedEmployees.customRules.push(rule);
@@ -93,12 +140,12 @@ class EmployeeSelectionInterface extends React.Component {
         this.setState({ selectedEmployees });
     }
 
-    unSelectById(categoryKey, selectionId) {
+    unSelectById(categoryKey: string, selectionId: string) {
         alert('Unselecting...');
     }
 
     render() {
-        const filteredSelectionCategories = this.selectionCategories.filter((category) => this.props.enabledSelectionCategories.includes(category.key));
+        const filteredSelectionCategories = this.selectionCategories.filter((category: Category) => this.props.enabledSelectionCategories.includes(category.key));
 
         return (
             <div className={classNames(this.props.className)}>
@@ -120,19 +167,3 @@ class EmployeeSelectionInterface extends React.Component {
         );
     }
 }
-
-EmployeeSelectionInterface.defaultProps = {
-    className: '',
-    employees: employees,
-    groups: groups,
-    enabledSelectionCategories: ['employees', 'groups', 'custom'],
-};
-
-// EmployeeSelectionInterface.propTypes = {
-//     className: PropTypes.string,
-//     employees: PropTypes.arrayOf(PersonSchema).isRequired,
-//     groups: PropTypes.arrayOf(GroupSchema).isRequired,
-//     enabledSelectionCategories: PropTypes.array,
-// };
-
-export default EmployeeSelectionInterface;
