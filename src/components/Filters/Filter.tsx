@@ -1,7 +1,7 @@
-import 'react-select/dist/react-select.css';
-import * as React from 'react';
-import * as Select from 'react-select';
-import * as classNames from 'classnames';
+import 'react-select/dist/react-select.css'
+import * as React from 'react'
+import * as Select from 'react-select'
+import * as classNames from 'classnames'
 
 interface Props {
     className?: string
@@ -16,9 +16,9 @@ const Filter: React.StatelessComponent<Props> = ({ id, label, type, data, onChan
     let wrapperClasses = classNames({
         'mt3 ': true,
         [className]: true
-    });
+    })
 
-    let output;
+    let output
 
     switch (type) {
     case 'text':
@@ -31,8 +31,8 @@ const Filter: React.StatelessComponent<Props> = ({ id, label, type, data, onChan
                 placeholder={data.placeholder}
                 onChange={onChange}
             />
-        );
-        break;
+        )
+        break
 
     case 'select':
         output = (
@@ -45,8 +45,8 @@ const Filter: React.StatelessComponent<Props> = ({ id, label, type, data, onChan
                 onChange={onChange}
                 {...data.selectConfig}
             />
-        );
-        break;
+        )
+        break
     default:
     }
 
@@ -59,5 +59,7 @@ const Filter: React.StatelessComponent<Props> = ({ id, label, type, data, onChan
             }
             {output}
         </div>
-    );
-};
+    )
+}
+
+export default Filter

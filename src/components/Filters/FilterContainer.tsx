@@ -1,7 +1,7 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
-import Box from '../Global/Box';
-import BasicButton from '../Buttons/BasicButton';
+import * as React from 'react'
+import * as classNames from 'classnames'
+import Box from '../Global/Box'
+import BasicButton from '../Buttons/BasicButton'
 
 interface Props {
     className?: string
@@ -14,7 +14,7 @@ const FilterContainer: React.StatelessComponent<Props>  = ({ children, className
     let wrapperClasses = classNames({
         '': true,
         [className]: true
-    });
+    })
 
     return (
         <Box className={wrapperClasses} headingSemanticLevel={headingSemanticLevel} title="Filters" headingType="inline">
@@ -23,12 +23,12 @@ const FilterContainer: React.StatelessComponent<Props>  = ({ children, className
                 <BasicButton className="button--neutral mt3" onClick={onResetFilters}>Reset Filters</BasicButton>
             </div>
         </Box>
-    );
-};
+    )
+}
 
 FilterContainer.defaultProps = {
     className: '',
     headingSemanticLevel: 2
 }
 
-export default FilterContainer;
+export default FilterContainer
