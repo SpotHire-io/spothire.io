@@ -1,14 +1,9 @@
 import React from 'react';
-
-import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
-
 import moment from 'moment';
 import 'moment/locale/en-ca';
 import 'moment-duration-format';
-
-import PersonSchema from '../../schemas/Person';
+// import * as Schemas from '../../schemas';
 
 class TimetableSummary extends React.Component {
     render() {
@@ -51,9 +46,9 @@ TimetableSummary.defaultProps = {
     hasShadow: true,
 };
 
-TimetableSummary.propTypes = {
-    className: PropTypes.string,
-    users: PropTypes.arrayOf(PersonSchema).isRequired,
-};
+// TimetableSummary.propTypes = {
+//     className: PropTypes.string,
+//     users: PropTypes.arrayOf(PersonSchema).isRequired,
+// };
 
 export default TimetableSummary;

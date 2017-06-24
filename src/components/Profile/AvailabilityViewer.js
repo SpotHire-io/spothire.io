@@ -41,9 +41,9 @@ AvailabilityViewer.defaultProps = {
     className: '',
 };
 
-AvailabilityViewer.propTypes = {
-    className: PropTypes.string,
-    employee: PersonSchema.isRequired,
-};
+// AvailabilityViewer.propTypes = {
+//     className: PropTypes.string,
+//     employee: PersonSchema.isRequired,
+// };
 
 export default AvailabilityViewer;

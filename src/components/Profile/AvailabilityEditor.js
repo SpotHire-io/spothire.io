@@ -140,10 +140,10 @@ AvailabilityEditor.defaultProps = {
     className: '',
 };
 
-AvailabilityEditor.propTypes = {
-    className: PropTypes.string,
-    employee: PersonSchema.isRequired,
-    onSubmitAvailability: PropTypes.func.isRequired,
-};
+// AvailabilityEditor.propTypes = {
+//     className: PropTypes.string,
+//     employee: PersonSchema.isRequired,
+//     onSubmitAvailability: PropTypes.func.isRequired,
+// };
 
 export default AvailabilityEditor;

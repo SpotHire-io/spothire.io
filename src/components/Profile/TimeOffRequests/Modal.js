@@ -158,10 +158,10 @@ class NewTimeOffRequestModal extends React.Component {
     }
 }
 
-NewTimeOffRequestModal.propTypes = {
-    isOpen: PropTypes.bool.isRequired,
-    closeModal: PropTypes.func.isRequired,
-    onSubmitRequest: PropTypes.func.isRequired,
-};
+// NewTimeOffRequestModal.propTypes = {
+//     isOpen: PropTypes.bool.isRequired,
+//     closeModal: PropTypes.func.isRequired,
+//     onSubmitRequest: PropTypes.func.isRequired,
+// };
 
 export default NewTimeOffRequestModal;

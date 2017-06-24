@@ -210,9 +210,9 @@ ShiftList.defaultProps = {
     ],
 };
 
-ShiftList.propTypes = {
-    className: PropTypes.string,
-    shifts: PropTypes.arrayOf(OpportunitySchema).isRequired,
-};
+// ShiftList.propTypes = {
+//     className: PropTypes.string,
+//     shifts: PropTypes.arrayOf(OpportunitySchema).isRequired,
+// };
 
 export default ShiftList;

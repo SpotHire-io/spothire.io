@@ -88,9 +88,9 @@ DashboardView.defaultProps = {
 
 };
 
-DashboardView.propTypes = {
-    events: PropTypes.arrayOf(OpportunitySchema).isRequired,
-    employee: PersonSchema.isRequired,
-};
+// DashboardView.propTypes = {
+//     events: PropTypes.arrayOf(OpportunitySchema).isRequired,
+//     employee: PersonSchema.isRequired,
+// };
 
 export default DashboardView;

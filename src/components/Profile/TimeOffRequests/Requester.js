@@ -56,10 +56,10 @@ TimeOffRequestRequester.defaultProps = {
     className: '',
 };
 
-TimeOffRequestRequester.propTypes = {
-    className: PropTypes.string,
-    employee: PersonSchema.isRequired,
-    timeOffRequests: PropTypes.arrayOf(TimeOffRequestSchema).isRequired,
-};
+// TimeOffRequestRequester.propTypes = {
+//     className: PropTypes.string,
+//     employee: PersonSchema.isRequired,
+//     timeOffRequests: PropTypes.arrayOf(TimeOffRequestSchema).isRequired,
+// };
 
 export default TimeOffRequestRequester;

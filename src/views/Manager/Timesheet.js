@@ -87,9 +87,9 @@ TimesheetView.defaultProps = {
     className: '',
 };
 
-TimesheetView.propTypes = {
-    className: PropTypes.string,
-    employees: PropTypes.arrayOf(PersonSchema).isRequired,
-};
+// TimesheetView.propTypes = {
+//     className: PropTypes.string,
+//     employees: PropTypes.arrayOf(PersonSchema).isRequired,
+// };
 
 export default TimesheetView;

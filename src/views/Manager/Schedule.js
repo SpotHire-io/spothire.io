@@ -79,8 +79,8 @@ ScheduleView.defaultProps = {
 
 };
 
-ScheduleView.propTypes = {
-    events: PropTypes.arrayOf(OpportunitySchema)
-};
+// ScheduleView.propTypes = {
+//     events: PropTypes.arrayOf(OpportunitySchema)
+// };
 
 export default ScheduleView;

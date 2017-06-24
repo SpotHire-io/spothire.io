@@ -47,9 +47,9 @@ TimeOffRequestReviewer.defaultProps = {
     className: '',
 };
 
-TimeOffRequestReviewer.propTypes = {
-    className: PropTypes.string,
-    timeOffRequests: PropTypes.arrayOf(TimeOffRequestSchema).isRequired,
-};
+// TimeOffRequestReviewer.propTypes = {
+//     className: PropTypes.string,
+//     timeOffRequests: PropTypes.arrayOf(TimeOffRequestSchema).isRequired,
+// };
 
 export default TimeOffRequestReviewer;

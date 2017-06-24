@@ -91,9 +91,9 @@ GroupSingleView.defaultProps = {
     className: '',
 };
 
-GroupSingleView.propTypes = {
-    className: PropTypes.string,
-    group: GroupSchema.isRequired,
-};
+// GroupSingleView.propTypes = {
+//     className: PropTypes.string,
+//     group: GroupSchema.isRequired,
+// };
 
 export default GroupSingleView;

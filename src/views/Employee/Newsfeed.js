@@ -61,8 +61,8 @@ NewsfeedView.defaultProps = {
 
 };
 
-NewsfeedView.propTypes = {
-    posts: PropTypes.array
-};
+// NewsfeedView.propTypes = {
+//     posts: PropTypes.array
+// };
 
 export default NewsfeedView;

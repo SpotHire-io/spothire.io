@@ -113,9 +113,9 @@ EmployeeOpportunitySingleView.defaultProps = {
     className: '',
 };
 
-EmployeeOpportunitySingleView.propTypes = {
-    className: PropTypes.string,
-    opportunity: OpportunitySchema.isRequired
-};
+// EmployeeOpportunitySingleView.propTypes = {
+//     className: PropTypes.string,
+//     opportunity: OpportunitySchema.isRequired
+// };
 
 export default EmployeeOpportunitySingleView;

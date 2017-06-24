@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Checkbox } from 'rebass';
 import { Table, Thead, Th, Tr, Td } from 'reactable';
 import { CSSTransitionGroup } from 'react-transition-group';
-import PersonSchema from '../../schemas/Person';
+// import * as Schemas from '../../schemas';
 import userData from '../../data/people.json';
 
 class SelectableUserTable extends React.Component {
@@ -148,10 +147,10 @@ SelectableUserTable.defaultProps = {
     hasShadow: true,
 };
 
-SelectableUserTable.propTypes = {
-    className: PropTypes.string,
-    users: PropTypes.arrayOf(PersonSchema).isRequired,
-    hasShadow: PropTypes.bool,
-};
+// SelectableUserTable.propTypes = {
+//     className: PropTypes.string,
+//     users: PropTypes.arrayOf(PersonSchema).isRequired,
+//     hasShadow: PropTypes.bool,
+// };
 
 export default SelectableUserTable;

@@ -2,12 +2,11 @@ import 'moment/locale/en-ca';
 import 'moment-duration-format';
 import React from 'react';
 import moment from 'moment';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Checkbox } from 'rebass';
 import { Table, Thead, Th, Tr, Td } from 'reactable';
 import { CSSTransitionGroup } from 'react-transition-group';
-import PersonSchema from '../../schemas/Person';
+// import * as Schemas from '../../schemas'
 
 // import userData from '../../data/people.json';
 
@@ -162,12 +161,12 @@ SelectableTimesheetTable.defaultProps = {
     onUpdateSelectedUsers: (selectedUserIds) => console.log(selectedUserIds)
 };
 
-SelectableTimesheetTable.propTypes = {
-    className: PropTypes.string,
-    users: PropTypes.arrayOf(PersonSchema).isRequired,
-    hasShadow: PropTypes.bool,
-    tableProps: PropTypes.object,
-    onUpdateSelectedUsers: PropTypes.func,
-};
+// SelectableTimesheetTable.propTypes = {
+//     className: PropTypes.string,
+//     users: PropTypes.arrayOf(PersonSchema).isRequired,
+//     hasShadow: PropTypes.bool,
+//     tableProps: PropTypes.object,
+//     onUpdateSelectedUsers: PropTypes.func,
+// };
 
 export default SelectableTimesheetTable;
