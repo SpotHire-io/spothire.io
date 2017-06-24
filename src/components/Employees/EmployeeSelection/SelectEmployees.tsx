@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import {ButtonBar, RadioButton} from '../../Buttons';
 import SelectIndividuals from './SelectEmployees/Individuals';
 import SelectGroups from './SelectEmployees/Groups';

@@ -1,4 +1,4 @@
-import Icon from 'react-geomicons';
+import Icons from '../Icons';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -93,8 +93,8 @@ class MetadataInterface extends React.Component {
     renderControls(metaPair) {
         return (
             <div className="tr self-center ml2">
-                <Icon color="#555555" name={(metaPair.id !== this.state.currentlyEditingMetaPairId) ? 'compose' : 'check'} className="pointer mt1" onClick={() => this.toggleEditingMetaPair(metaPair.id)}/>
-                <Icon color="#555555" name="close" className="pointer mt1 ml2" onClick={() => this.deleteMetaPair(metaPair.key)}/>
+                <Icons color="#555555" name={(metaPair.id !== this.state.currentlyEditingMetaPairId) ? 'compose' : 'check'} className="pointer mt1" onClick={() => this.toggleEditingMetaPair(metaPair.id)}/>
+                <Icons color="#555555" name="close" className="pointer mt1 ml2" onClick={() => this.deleteMetaPair(metaPair.key)}/>
             </div>
         );
     }

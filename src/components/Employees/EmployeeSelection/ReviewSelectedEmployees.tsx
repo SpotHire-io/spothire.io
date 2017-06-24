@@ -1,6 +1,5 @@
-const Icon = require('react-geomicons');
+import Icons from '../../Icons'
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 
 interface Selection {
     id: string
@@ -39,7 +38,7 @@ export default class ReviewSelectedEmployees extends React.Component<Props, Stat
                         <li key={selection.id} className="mt0 flex">
                             {category.renderMethod(selection, 'flex-auto')}
                             <div className="tr">
-                                <Icon color="#555555" name="close" className="pointer" onClick={() => this.props.unSelectById(category.key, selection.id)}/>
+                                <Icons color="#555555" name="close" className="pointer" onClick={() => this.props.unSelectById(category.key, selection.id)}/>
                             </div>
                         </li>
                     );

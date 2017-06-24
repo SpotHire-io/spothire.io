@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import Post from './Post';
 import * as Schemas from '../../schemas';
+import Post from './Post';
 
 interface Props {
     className?: string
