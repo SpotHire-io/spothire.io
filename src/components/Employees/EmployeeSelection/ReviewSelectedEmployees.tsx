@@ -1,4 +1,5 @@
 import Icons from '../../Icons'
+import * as Schemas from '../../../schemas'
 import * as React from 'react';
 
 interface Selection {
@@ -16,6 +17,11 @@ interface Props {
     className?: string
     selectionCategories: any
     unSelectById(key: string, id: string): any
+    selectedEmployees: {
+        employees: Schemas.Employee[]
+        groups: Schemas.Group[]
+        customRules: any[]
+    }
 }
 
 interface State {

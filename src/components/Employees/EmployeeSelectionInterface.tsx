@@ -30,7 +30,8 @@ interface Rule {
 }
 
 interface Category {
-    key: string
+    key: 'employees' | 'custom' | 'groups'
+    title: string
 }
 
 // demo data
