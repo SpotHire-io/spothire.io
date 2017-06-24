@@ -1,10 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import * as React from 'react';
+import * as classNames from 'classnames';
 import Post from './Post';
-import PostSchema from '../../schemas/Post';
+import * as Schemas from '../../schemas';
 
-class PostList extends React.Component {
+interface Props {
+    className?: string
+    posts?: Schemas.Post[]
+    postProps?: any
+}
+
+interface State {
+    openPosts: number[]
+}
+
+export default class PostList extends React.Component<Props, State> {
+    private static defaultProps: Props = {
+        className: '',
+        postProps: {}
+    }
+
     constructor() {
         super();
 
@@ -15,7 +29,7 @@ class PostList extends React.Component {
         };
     }
 
-    togglePost(postId) {
+    togglePost(postId: number) {
         // Grab a copy of the openPosts state
         let openPosts = [...this.state.openPosts];
         const postIndex = openPosts.indexOf(postId);
@@ -39,7 +53,7 @@ class PostList extends React.Component {
 
         return (
             <div className={wrapperClasses}>
-                {this.props.posts.map((post, index) => {
+                {this.props.posts.map((post: Schemas.Post, index) => {
                     const postClasses = classNames({
                         'mb3': this.props.posts.length !== index + 1
                     });
@@ -61,16 +75,3 @@ class PostList extends React.Component {
         )
     }
 }
-
-PostList.defaultProps = {
-    className: '',
-    postProps: {}
-};
-
-PostList.propTypes = {
-    className: PropTypes.string,
-    // posts: PropTypes.arrayOf(PostSchema),
-    postProps: PropTypes.object,
-};
-
-export default PostList;

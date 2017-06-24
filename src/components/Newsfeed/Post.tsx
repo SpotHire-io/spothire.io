@@ -1,14 +1,22 @@
 import 'moment/locale/en-ca';
-import React from 'react';
-import PropTypes from 'prop-types';
-import PostSchema from '../../schemas/Post';
-import moment from 'moment';
+import * as React from 'react';
+import {Post} from '../../schemas';
+import * as moment from 'moment';
 import { Arrow } from 'rebass';
-import classNames from 'classnames';
+import * as classNames from 'classnames';
 import BasicTag from '../Tags/BasicTag';
 import BasicButton from '../Buttons/BasicButton';
 
-const Post = ({ post, className, isOpen, toggleOpenState, isInline, showOpportunityName }) => {
+interface Props {
+    className?: string
+    post: Post
+    isOpen?: boolean
+    isInline?: boolean
+    toggleOpenState?: Function
+    showOpportunityName?: boolean
+}
+
+const Post: React.StatelessComponent<Props> = ({ post, className, isOpen, toggleOpenState, isInline, showOpportunityName }) => {
     let wrapperClasses = classNames({
         'sh-shadow-2': ! isInline && isOpen,
         'sh-shadow-1': ! isInline && ! isOpen,
@@ -25,7 +33,7 @@ const Post = ({ post, className, isOpen, toggleOpenState, isInline, showOpportun
         });
 
         return (
-            <div className={headerClasses} onClick={(isOpen) ? toggleOpenState : null}>
+            <div className={headerClasses} onClick={() => (isOpen) ? toggleOpenState : null}>
                 <h2 className={classNames('mv0 lh-title', { 'f5': isInline, 'f4': ! isInline })}>
                     {post.title} {(isInline) ? <span className="f6 ml1 normal">({moment(post.date).format("MMMM Do, h:mm a")})</span> : null}
                 </h2>
@@ -44,7 +52,7 @@ const Post = ({ post, className, isOpen, toggleOpenState, isInline, showOpportun
     };
 
     const renderStatusTag = function () {
-        let tagType = 'positive';
+        let tagType: 'neutral' | 'positive' | 'negative' = 'positive';
         let tagText = 'You’ve responded';
 
         if (! post.responseRequired) {
@@ -67,7 +75,7 @@ const Post = ({ post, className, isOpen, toggleOpenState, isInline, showOpportun
                     <p className="ma0">Response {post.responseRequired ? 'required' : 'not required'}</p>
                 </div>
                 <div className="pa3 w-50">
-                    <textarea className="w-100 b--black-10" rows="3"/>
+                    <textarea className="w-100 b--black-10" rows={3}/>
 
                     <div className="tr mt2">
                         <BasicButton className="button--neutral">Reset</BasicButton>
@@ -91,10 +99,13 @@ const Post = ({ post, className, isOpen, toggleOpenState, isInline, showOpportun
     };
 
     return (
-        <article className={wrapperClasses} onClick={(isOpen) ? null : toggleOpenState}>
+        <article className={wrapperClasses} onClick={() => isOpen ? null : toggleOpenState}>
             {renderHeader()}
             <div className={classNames('bg-white ba b--black-20 ph3', { 'pv3': isInline, 'pv4': ! isInline })}>
-                <div className={classNames('app-serif measure', { 'f5': isInline, 'f4': ! isInline })} dangerouslySetInnerHTML={{ __html: (isOpen) ? post.content : renderExcerpt() }}/>
+                <div
+                    className={classNames('app-serif measure', { 'f5': isInline, 'f4': ! isInline })}
+                    dangerouslySetInnerHTML={{ __html: (isOpen) ? String(post.content) : String(renderExcerpt()) }}
+                />
             </div>
             {(isOpen) ? renderInteractionInterface() : null}
             {(! isInline) ? (
@@ -111,15 +122,6 @@ Post.defaultProps = {
     isOpen: true,
     isInline: false,
     showOpportunityName: false,
-};
-
-Post.propTypes = {
-    className: PropTypes.string,
-    // post: PostSchema.isRequired,
-    isOpen: PropTypes.bool,
-    isInline: PropTypes.bool,
-    toggleOpenState: PropTypes.func,
-    showOpportunityName: PropTypes.bool,
 };
 
 export default Post;
