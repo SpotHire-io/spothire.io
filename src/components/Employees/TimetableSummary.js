@@ -1,14 +1,9 @@
 import React from 'react';
-
-import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
-
 import moment from 'moment';
 import 'moment/locale/en-ca';
 import 'moment-duration-format';
-
-import PersonSchema from '../../schemas/Person';
+// import * as Schemas from '../../schemas';
 
 class TimetableSummary extends React.Component {
     render() {

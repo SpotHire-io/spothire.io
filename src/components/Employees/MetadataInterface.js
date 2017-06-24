@@ -1,10 +1,9 @@
 import Icons from '../Icons';
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import PersonSchema from '../../schemas/Person';
 import BasicButton from '../../components/Buttons/BasicButton';
 import Select from 'react-select';
+// import * as Schemas from '../../schemas'
 
 class MetadataInterface extends React.Component {
     constructor(props) {
