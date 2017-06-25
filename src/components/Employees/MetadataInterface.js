@@ -10,7 +10,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var Icons_1 = require("../Icons");
+var react_geomicons_1 = require("../../../libraries/react-geomicons");
 var React = require("react");
 var classNames = require("classnames");
 var BasicButton_1 = require("../../components/Buttons/BasicButton");
@@ -86,8 +86,8 @@ var MetadataInterface = (function (_super) {
     MetadataInterface.prototype.renderControls = function (metaPair) {
         var _this = this;
         return (React.createElement("div", { className: "tr self-center ml2" },
-            React.createElement(Icons_1.default, { color: "#555555", name: (metaPair.id !== this.state.currentlyEditingMetaPairId) ? 'compose' : 'check', className: "pointer mt1", onClick: function () { return _this.toggleEditingMetaPair(metaPair.id); } }),
-            React.createElement(Icons_1.default, { color: "#555555", name: "close", className: "pointer mt1 ml2", onClick: function () { return _this.deleteMetaPair(metaPair.key); } })));
+            React.createElement(react_geomicons_1.default, { color: "#555555", name: (metaPair.id !== this.state.currentlyEditingMetaPairId) ? 'compose' : 'check', className: "pointer mt1", onClick: function () { return _this.toggleEditingMetaPair(metaPair.id); } }),
+            React.createElement(react_geomicons_1.default, { color: "#555555", name: "close", className: "pointer mt1 ml2", onClick: function () { return _this.deleteMetaPair(metaPair.key); } })));
     };
     MetadataInterface.prototype.renderMetaPairValueEditor = function (metadata, metadataIndex) {
         var _this = this;

@@ -2,10 +2,12 @@ import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import * as classNames from 'classnames'
 const { Table, Thead, Th, Tr, Td } = require('reactable')
-const userData = require('../../data/people.json')
-import Icons from '../Icons'
+import Icon from '../../../libraries/react-geomicons'
 import BasicButton from '../Buttons/BasicButton'
 import {Person} from '../../schemas'
+
+// JSON Data
+const userData = require('../../data/people.json')
 
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
@@ -27,8 +29,8 @@ interface State {
 
 const renderControls = (user: Person) =>
     <div className='tr'>
-        <Icons color='#555555' name='compose' className='pointer' onClick={() => this.props.editUser(user.id)}/>
-        <Icons color='#555555' name='close' className='pointer ml2' onClick={() => this.props.deleteUser(user.id)}/>
+        <Icon color='#555555' name='compose' className='pointer' onClick={() => this.props.editUser(user.id)}/>
+        <Icon color='#555555' name='close' className='pointer ml2' onClick={() => this.props.deleteUser(user.id)}/>
     </div>
 
 

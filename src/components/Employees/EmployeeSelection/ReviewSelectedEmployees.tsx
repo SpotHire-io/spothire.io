@@ -1,4 +1,4 @@
-import Icons from '../../Icons'
+import Icon from '../../../../libraries/react-geomicons'
 import * as Schemas from '../../../schemas'
 import * as React from 'react';
 
@@ -44,7 +44,7 @@ export default class ReviewSelectedEmployees extends React.Component<Props, Stat
                         <li key={selection.id} className="mt0 flex">
                             {category.renderMethod(selection, 'flex-auto')}
                             <div className="tr">
-                                <Icons color="#555555" name="close" className="pointer" onClick={() => this.props.unSelectById(category.key, selection.id)}/>
+                                <Icon color="#555555" name="close" className="pointer" onClick={() => this.props.unSelectById(category.key, selection.id)}/>
                             </div>
                         </li>
                     );
