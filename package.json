@@ -9,7 +9,7 @@
     "@types/lodash": "^4.14.66",
     "@types/node": "^8.0.1",
     "@types/prop-types": "^15.5.1",
-    "@types/react": "^15.0.30",
+    "@types/react": "^15.0.31",
     "@types/react-modal": "^1.6.6",
     "@types/react-select": "^1.0.47",
     "@types/rebass": "^0.2.17",
