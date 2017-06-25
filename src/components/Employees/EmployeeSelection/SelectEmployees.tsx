@@ -1,8 +1,8 @@
-import * as React from 'react';
-import {ButtonBar, RadioButton} from '../../Buttons';
-import SelectIndividuals from './SelectEmployees/Individuals';
-import SelectGroups from './SelectEmployees/Groups';
-import SelectCustomRules from './SelectEmployees/CustomRules';
+import * as React from 'react'
+import {ButtonBar, RadioButton} from '../../Buttons'
+import SelectGroups from './SelectEmployees/Groups'
+import SelectIndividuals from './SelectEmployees/Individuals'
+import SelectCustomRules from './SelectEmployees/CustomRules'
 
 interface Category {
     key: 'employees' | 'custom' | 'groups'

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import * as classNames from 'classnames'
 import * as Select from 'react-select'
-import Icon from '../../../libraries/react-geomicons'
+import * as classNames from 'classnames'
+import Icon from '../../libraries/react-geomicons'
 import BasicButton from '../../components/Buttons/BasicButton'
 import {MetaPairs, Metadata, Person, MetadataType} from '../../schemas'
 
