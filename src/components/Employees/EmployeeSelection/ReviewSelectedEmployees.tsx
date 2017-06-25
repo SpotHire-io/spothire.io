@@ -1,4 +1,4 @@
-import Icon from '../../../libraries/react-geomicons'
+import Icon from '../../../../libraries/react-geomicons'
 import * as Schemas from '../../../schemas'
 import * as React from 'react';
 

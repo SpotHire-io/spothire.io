@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import * as classNames from 'classnames'
 const { Table, Thead, Th, Tr, Td } = require('reactable')
-import Icon from '../../libraries/react-geomicons'
+import Icon from '../../../libraries/react-geomicons'
 import {Person} from '../../schemas'
 import BasicButton from '../Buttons/BasicButton'
 
