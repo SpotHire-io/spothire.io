@@ -6,8 +6,12 @@ import Opportunity from './Opportunity'
 import Person from './Person'
 import Post from './Post'
 import TimeOffRequest from './TimeOffRequest'
+import {Metadata, MetaPairs, MetadataType} from './Metadata'
 
 export {
+  MetadataType,
+  Metadata,
+  MetaPairs,
   Availability,
   CustomFilter,
   Employee,

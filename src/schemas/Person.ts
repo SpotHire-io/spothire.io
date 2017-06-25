@@ -1,11 +1,5 @@
-import Availability from './Availability';
-
-interface Metadata {
-    id: number
-    key: string
-    type: 'string' | 'number' | 'boolean'
-    value?: string
-}
+import Availability from './Availability'
+import {Metadata} from './Metadata'
 
 interface Person {
     id: number
