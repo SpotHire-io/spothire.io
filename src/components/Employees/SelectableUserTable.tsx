@@ -36,9 +36,9 @@ export default class SelectableUserTable extends React.Component<Props, State> {
         this.selectAllUsers = this.selectAllUsers.bind(this);
         this.unselectAllUsers = this.unselectAllUsers.bind(this);
 
-        this.setState({
+        this.state = {
             selectedUserIds: []
-        })
+        }
     }
 
     toggleUser(userId: number) {
