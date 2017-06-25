@@ -140,17 +140,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-transition-group@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-1.1.1.tgz#372fd2b4777b96aa983ac15fb5cc0ce150550aeb"
-  dependencies:
-    "@types/react" "*"
-
-"@types/react@*":
-  version "15.0.30"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.30.tgz#a4e153e1e83fbef341fc9aad1a7d62bf8c1f52a3"
-
-"@types/react@^15.0.31":
+"@types/react@*", "@types/react@^15.0.31":
   version "15.0.31"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.31.tgz#21dfc5d41ee1600ff7d7b738ad21a9502aa3ecf2"
 

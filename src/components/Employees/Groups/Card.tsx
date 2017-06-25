@@ -1,19 +1,15 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
-import Box from '../../Global/Box';
-import GroupSchema from '../../../schemas/Group';
+import * as React from 'react'
+import * as classNames from 'classnames'
+import Box from '../../Global/Box'
+import {Group} from '../../../schemas'
 
 interface Props {
     className?: string
-    group: GroupSchema
+    group: Group
     displayAvatarPreview?: boolean
 }
 
-interface State {
-
-}
-
-export default class GroupCard extends React.Component<Props, State> {
+export default class Card extends React.Component<Props, {}> {
     public static defaultProps = {
         className: '',
         displayAvatarPreview: true,

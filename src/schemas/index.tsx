@@ -1,7 +1,7 @@
 import Availability from './Availability'
 import CustomFilter from './CustomFilter'
 import Employee from './Employee'
-import Group from './Group'
+import {Group, GroupType} from './Group'
 import Opportunity from './Opportunity'
 import Person from './Person'
 import Post from './Post'
@@ -16,6 +16,7 @@ export {
   CustomFilter,
   Employee,
   Group,
+  GroupType,
   Opportunity,
   Person,
   Post,

@@ -1,11 +1,12 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import * as classNames from 'classnames';
-import {range} from 'lodash';
-const GroupCardList = require('../../Groups/CardList');
+import * as React from 'react'
+import * as PropTypes from 'prop-types'
+import * as classNames from 'classnames'
+import {range} from 'lodash'
+import CardList from '../../Groups/CardList'
+import {Group, GroupType} from '../../../../schemas'
 
 // dummy data
-import users from '../../../../data/people.json';
+import users from '../../../../data/people.json'
 
 interface Props {
     className?: string
@@ -18,9 +19,11 @@ interface State {
 
 const n = Array(10).keys()
 
-const groups = range(10).map((number) => {
+const type: GroupType = 'virtual'
+const groups: Group[] = range(10).map((number) => {
     return {
         id: number,
+        type,
         name: `Sample Group ${number + 1}`,
         employees: users
     };
@@ -45,7 +48,7 @@ export default class SelectGroups extends React.Component<Props, State> {
 
                 <p className="f6 mt3 mb2">Groups</p>
 
-                <GroupCardList
+                <CardList
                     groups={groups}
                     className="nt3"
                     cardProps={{
