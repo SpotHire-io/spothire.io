@@ -1,20 +1,32 @@
-import React from 'react';
-import classNames from 'classnames';
-import moment from 'moment';
+import * as React from 'react';
+import * as classNames from 'classnames';
+import * as moment from 'moment';
 import 'moment/locale/en-ca';
 import 'moment-duration-format';
-// import * as Schemas from '../../schemas';
+import {Person} from '../../schemas';
 
-class TimetableSummary extends React.Component {
+
+interface Props {
+    className?: string
+    users: Person[]
+}
+
+interface State {}
+
+export default class TimetableSummary extends React.Component<Props, State> {
+    public static defaultProps = {
+        className: '',
+        hasShadow: true
+    }
     render() {
         const summaryData = [
             {
                 label: 'Total hours worked',
-                value: moment.duration(this.props.users.reduce((hours, user) => hours += user.hours.worked, 0), 'hours').format('h:mm'),
+                value: moment.duration(this.props.users.reduce((hours, user) => hours += user.hours.worked, 0), 'hours').asHours(),
             },
             {
                 label: 'Total hours submitted',
-                value: moment.duration(this.props.users.reduce((hours, user) => hours += user.hours.submitted, 0), 'hours').format('h:mm'),
+                value: moment.duration(this.props.users.reduce((hours, user) => hours += user.hours.submitted, 0), 'hours').asHours(),
             },
             {
                 label: 'Submitted hours greater than worked',
@@ -40,15 +52,3 @@ class TimetableSummary extends React.Component {
         )
     }
 }
-
-TimetableSummary.defaultProps = {
-    className: '',
-    hasShadow: true,
-};
-
-// TimetableSummary.propTypes = {
-//     className: PropTypes.string,
-//     users: PropTypes.arrayOf(PersonSchema).isRequired,
-// };
-
-export default TimetableSummary;

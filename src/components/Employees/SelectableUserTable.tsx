@@ -1,12 +1,30 @@
-import React from 'react';
-import classNames from 'classnames';
-import { Checkbox } from 'rebass';
-import { Table, Thead, Th, Tr, Td } from 'reactable';
+import * as React from 'react';
+import * as classNames from 'classnames';
+const { Checkbox } = require('rebass');
+const { Table, Thead, Th, Tr, Td } = require('reactable');
 import { CSSTransitionGroup } from 'react-transition-group';
-// import * as Schemas from '../../schemas';
+import { Person } from '../../schemas';
 import userData from '../../data/people.json';
 
-class SelectableUserTable extends React.Component {
+
+const commonCellClasses = 'pa3'
+
+interface Props {
+    className?: string
+    users: Person[]
+    hasShadow?: boolean
+}
+
+interface State {
+    selectedUserIds: any[]
+}
+
+export default class SelectableUserTable extends React.Component<Props, State> {
+    public static defaultProps = {
+        className: '',
+        users: userData,
+        hasShadow: true
+    }
     constructor() {
         super();
 
@@ -18,14 +36,12 @@ class SelectableUserTable extends React.Component {
         this.selectAllUsers = this.selectAllUsers.bind(this);
         this.unselectAllUsers = this.unselectAllUsers.bind(this);
 
-        this.commonCellClasses = 'pa3';
-
-        this.state = {
+        this.setState({
             selectedUserIds: []
-        };
+        })
     }
 
-    toggleUser(userId) {
+    toggleUser(userId: number) {
         const selectedUserIds = [...this.state.selectedUserIds];
 
         if (this.state.selectedUserIds.indexOf(userId) === -1) {
@@ -47,7 +63,7 @@ class SelectableUserTable extends React.Component {
         return this.setState({ selectedUserIds: [] });
     }
 
-    renderUserRow(user) {
+    renderUserRow(user: Person) {
         const userClasses = classNames({
             'ph3 pa2 mt0 hover-bg-black-10 pointer': true
         });
@@ -60,7 +76,7 @@ class SelectableUserTable extends React.Component {
                     if (this.state.selectedUserIds.indexOf(user.id) === -1) {
                         innerContent = (<img key={'image-' + user.id} className="db w1 h1 br-100 v-btm" src={user.imageSrc} alt="inner content"/>);
                     } else {
-                        innerContent = (<Checkbox key={'checkbox-' + user.id} theme="success" style={{ display: 'inline' }} checked label="" name="" onClick={(e) => e.stopPropagation()}/>);
+                        innerContent = (<Checkbox key={'checkbox-' + user.id} theme="success" style={{ display: 'inline' }} checked label="" name="" onClick={(e: any) => e.stopPropagation()}/>);
                     }
 
                     return (
@@ -80,10 +96,10 @@ class SelectableUserTable extends React.Component {
         );
     }
 
-    renderUserCell(column, value, className) {
+    renderUserCell(column: string, value: any, className?: string) {
         const cellClasses = classNames({
             'bb b--black-20': true,
-            [this.commonCellClasses]: true,
+            [commonCellClasses]: true,
             [className]: true
         });
 
@@ -97,10 +113,10 @@ class SelectableUserTable extends React.Component {
         );
     }
 
-    renderHeaderCell(column, value, className) {
+    renderHeaderCell(column: string, value: any, className?: string) {
         const cellClasses = classNames({
             'tl bg-teal white bb bw1 b--white-40': true,
-            [this.commonCellClasses]: true,
+            [commonCellClasses]: true,
             [className]: true
         });
 
@@ -140,17 +156,3 @@ class SelectableUserTable extends React.Component {
         )
     }
 }
-
-SelectableUserTable.defaultProps = {
-    className: '',
-    users: userData,
-    hasShadow: true,
-};
-
-// SelectableUserTable.propTypes = {
-//     className: PropTypes.string,
-//     users: PropTypes.arrayOf(PersonSchema).isRequired,
-//     hasShadow: PropTypes.bool,
-// };
-
-export default SelectableUserTable;

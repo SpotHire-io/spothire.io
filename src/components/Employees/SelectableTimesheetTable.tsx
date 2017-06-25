@@ -103,7 +103,6 @@ export default class SelectableTimesheetTable extends React.Component<Props, Sta
                     );
                 }, 'pr0 no-select')}
                 {this.renderUserCell('name', user.firstName + ' ' + user.lastName)}
-                {/*BEFORE REFACTORING => {moment.duration(user.hours.worked, 'hours').format('h:mm')}*/}
                 {this.renderUserCell('hours_worked', moment.duration(user.hours.worked, 'hours').asHours())}
                 {this.renderUserCell('hours_submitted', moment.duration(user.hours.submitted, 'hours').asHours())}
             </Tr>
