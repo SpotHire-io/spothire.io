@@ -50,10 +50,10 @@ export default class MetadataInterface extends React.Component<Props, State> {
 
         this.renderMetaPairValueEditor = this.renderMetaPairValueEditor.bind(this);
 
-        this.setState({
+        this.state = {
             currentlyEditingMetaPairId: null,
             metaPairs: props.employee.metadata
-        });
+        };
     }
 
     toggleEditingMetaPair(metaPairId: number) {
@@ -129,8 +129,8 @@ export default class MetadataInterface extends React.Component<Props, State> {
 
         return metaPairValueEditor;
     }
-
     render() {
+        console.log(this.state)
         return (
             <div className={classNames(this.props.className)}>
                 <ul className="list ma0 pa0 bg-near-white bb b--black-20">

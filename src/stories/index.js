@@ -59,10 +59,10 @@ import NewTimeOffRequestModal from '../components/Profile/TimeOffRequests/Modal'
 import ShiftList from '../components/Miscellaneous/ShiftList';
 // import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
 
-import samplePeople from '../data/people.json';
-import samplePosts from '../data/posts.json';
-import sampleEvents from '../data/opportunities.json';
-import sampleTimeOffRequests from '../data/timeOffRequests.json';
+const samplePeople = require('../data/people.json')
+const samplePosts = require('../data/posts.json')
+const sampleEvents = require('../data/opportunities.json')
+const sampleTimeOffRequests = require('../data/timeOffRequests.json')
 
 BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)

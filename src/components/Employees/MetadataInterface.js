@@ -41,10 +41,10 @@ var MetadataInterface = (function (_super) {
         _this.createMetaPair = _this.createMetaPair.bind(_this);
         _this.updateMetaPairFieldByIndex = _this.updateMetaPairFieldByIndex.bind(_this);
         _this.renderMetaPairValueEditor = _this.renderMetaPairValueEditor.bind(_this);
-        _this.setState({
+        _this.state = {
             currentlyEditingMetaPairId: null,
             metaPairs: props.employee.metadata
-        });
+        };
         return _this;
     }
     MetadataInterface.prototype.toggleEditingMetaPair = function (metaPairId) {
@@ -107,6 +107,7 @@ var MetadataInterface = (function (_super) {
     };
     MetadataInterface.prototype.render = function () {
         var _this = this;
+        console.log(this.state);
         return (React.createElement("div", { className: classNames(this.props.className) },
             React.createElement("ul", { className: "list ma0 pa0 bg-near-white bb b--black-20" }, this.state.metaPairs.map(function (metaPair, index) {
                 if (metaPair.id !== _this.state.currentlyEditingMetaPairId) {
