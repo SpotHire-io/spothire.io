@@ -19,19 +19,13 @@ interface Props {
     editUser?: Function,
     deleteUser?: Function,
     onClickUser?: Function,
-    users: Person[],
+    users?: Person[],
     tableProps?: object,
     enabledColumns: string[]
 }
 
 interface State {
 }
-
-const renderControls = (user: Person) =>
-    <div className='tr'>
-        <Icon color='#555555' name='compose' className='pointer' onClick={() => this.props.editUser(user.id)}/>
-        <Icon color='#555555' name='close' className='pointer ml2' onClick={() => this.props.deleteUser(user.id)}/>
-    </div>
 
 
 export default class UserTable extends React.Component<Props, State> {
@@ -110,6 +104,12 @@ export default class UserTable extends React.Component<Props, State> {
         const userClasses = classNames({
             'pointer ph3 pa2 mt0 hover-bg-black-10': true
         });
+
+        const renderControls = (user: Person) =>
+            <div className='tr'>
+                <Icon color='#555555' name='compose' className='pointer' onClick={() => this.props.editUser(user.id)}/>
+                <Icon color='#555555' name='close' className='pointer ml2' onClick={() => this.props.deleteUser(user.id)}/>
+            </div>
 
         return (
             <Tr key={user.id} className={userClasses} onClick={() => this.props.onClickUser(user.id)}>

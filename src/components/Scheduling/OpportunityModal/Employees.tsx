@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Modal from '../../../components/Global/Modal';
-const UserTable = require('../../../components/Employees/UserTable');
+import UserTable from '../../../components/Employees/UserTable';
 import BasicButton from '../../../components/Buttons/BasicButton';
 import Opportunity from '../../../schemas/Opportunity';
 const EmployeeSelectionInterface = require('../../../components/Employees/EmployeeSelectionInterface');

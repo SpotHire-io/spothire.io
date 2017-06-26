@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import * as classNames from 'classnames';
-const UserTable = require('../../UserTable');
+import UserTable from '../../UserTable';
 
 interface Props {
     className?: string
