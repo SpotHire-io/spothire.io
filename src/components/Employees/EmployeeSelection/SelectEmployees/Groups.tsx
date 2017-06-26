@@ -6,7 +6,7 @@ import CardList from '../../Groups/CardList'
 import {Group, GroupType} from '../../../../schemas'
 
 // dummy data
-import users from '../../../../data/people.json'
+const userData = require('../../../../data/people.json');
 
 interface Props {
     className?: string
@@ -25,7 +25,7 @@ const groups: Group[] = range(10).map((number) => {
         id: number,
         type,
         name: `Sample Group ${number + 1}`,
-        employees: users
+        employees: userData
     };
 });
 

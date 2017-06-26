@@ -9,20 +9,9 @@ interface Props {
     displayAvatarPreview?: boolean
 }
 
-export default class Card extends React.Component<Props, {}> {
-    public static defaultProps = {
-        className: '',
-        displayAvatarPreview: true,
-    };
-
-    constructor() {
-        super();
-
-        this.renderAvatarPreview = this.renderAvatarPreview.bind(this);
-    }
-
-    renderAvatarPreview() {
-        const groupEmployees = this.props.group.employees;
+const Card: React.StatelessComponent<Props> = ({ className = '', displayAvatarPreview = true, group }) => {
+    const renderAvatarPreview = () => {
+        const groupEmployees = group.employees;
 
         const largeImageSize = 80;
         const smallImageSize = 60;
@@ -69,20 +58,20 @@ export default class Card extends React.Component<Props, {}> {
         );
     }
 
-    render() {
-        const wrapperClasses = classNames({
-            'tc': true,
-            [this.props.className]: true
-        });
+    const wrapperClasses = classNames({
+        'tc': true,
+        [className]: true
+    });
 
-        return (
-            <Box className={wrapperClasses} contentWrapperClassName="pv4 ph3">
-                <h2 className="mt0">{this.props.group.name}</h2>
+    return (
+        <Box className={wrapperClasses} contentWrapperClassName="pv4 ph3">
+            <h2 className="mt0">{group.name}</h2>
 
-                {(this.props.displayAvatarPreview) ? this.renderAvatarPreview() : null}
+            {(displayAvatarPreview) ? renderAvatarPreview() : null}
 
-                <p className="gray mt3">{this.props.group.employees.length} {(this.props.group.employees.length > 1) ? 'employees' : 'employee'}</p>
-            </Box>
-        );
-    }
+            <p className="gray mt3">{group.employees.length} {(group.employees.length > 1) ? 'employees' : 'employee'}</p>
+        </Box>
+    );
 }
+
+export default Card;
