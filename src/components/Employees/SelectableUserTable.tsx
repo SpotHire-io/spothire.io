@@ -4,7 +4,7 @@ const { Checkbox } = require('rebass');
 const { Table, Thead, Th, Tr, Td } = require('reactable');
 import { CSSTransitionGroup } from 'react-transition-group';
 import { Person } from '../../schemas';
-import userData from '../../data/people.json';
+const userData = require('../../data/people.json');
 
 
 const commonCellClasses = 'pa3'
