@@ -22,11 +22,11 @@ export default class TimetableSummary extends React.Component<Props, State> {
         const summaryData = [
             {
                 label: 'Total hours worked',
-                value: moment.duration(this.props.users.reduce((hours, user) => hours += user.hours.worked, 0), 'hours').asHours(),
+                value: moment.duration(this.props.users.reduce((hours, user) => hours += user.hours.worked, 0), 'hours').format('h:mm'),
             },
             {
                 label: 'Total hours submitted',
-                value: moment.duration(this.props.users.reduce((hours, user) => hours += user.hours.submitted, 0), 'hours').asHours(),
+                value: moment.duration(this.props.users.reduce((hours, user) => hours += user.hours.submitted, 0), 'hours').format('h:mm'),
             },
             {
                 label: 'Submitted hours greater than worked',
