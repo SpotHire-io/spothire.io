@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
+import * as React from 'react'
+import * as classNames from 'classnames'
 
 interface Item {
     key?: any
@@ -13,23 +13,21 @@ interface Props {
     items: Item[]
     onClick: React.EventHandler<React.MouseEvent<{}>>
 }
+
 interface State {
 
 }
 
 export default class SecondaryMenu extends React.Component<Props, State> {
-    constructor() {
-        super();
-
-        this.renderNavItem = this.renderNavItem.bind(this);
+    public static defaultProps = {
+        className: ''
     }
-
-    renderNavItem(item: Item) {
+    renderNavItem = (item: Item) => {
         const aClasses = classNames({
             'b near-black hover-gray dib pv3 mr4 no-underline animate-all bb bw1 hover-b--white-40': true,
             'b--teal': ! item.isActive,
             'b--white-40': item.isActive
-        });
+        })
 
         return (
             <a
@@ -48,12 +46,12 @@ export default class SecondaryMenu extends React.Component<Props, State> {
         const wrapperClasses = classNames({
             'bb bw1 b--teal': true,
             [this.props.className]: true
-        });
+        })
 
         return (
             <nav className={wrapperClasses}>
                 {this.props.items.map((item: Item) => this.renderNavItem(item))}
             </nav>
-        );
+        )
     }
 }
