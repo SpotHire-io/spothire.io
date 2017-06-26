@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-const { Checkbox } = require('rebass');
+import { Checkbox } from 'rebass';
 const { Table, Thead, Th, Tr, Td } = require('reactable');
 import { CSSTransitionGroup } from 'react-transition-group';
 import { Person } from '../../schemas';
@@ -74,18 +74,18 @@ export default class SelectableUserTable extends React.Component<Props, State> {
                     let innerContent;
 
                     if (this.state.selectedUserIds.indexOf(user.id) === -1) {
-                        innerContent = (<img key={'image-' + user.id} className="db w1 h1 br-100 v-btm" src={user.imageSrc} alt="inner content"/>);
+                        innerContent = (<img key={'image-' + user.id} className='db w1 h1 br-100 v-btm' src={user.imageSrc} alt='inner content'/>);
                     } else {
-                        innerContent = (<Checkbox key={'checkbox-' + user.id} theme="success" style={{ display: 'inline' }} checked label="" name="" onClick={(e: any) => e.stopPropagation()}/>);
+                        innerContent = (<Checkbox key={'checkbox-' + user.id} theme='success' style={{ display: 'inline' }} checked label='' name='' onClick={(e: any) => e.stopPropagation()}/>);
                     }
 
                     return (
                         <CSSTransitionGroup
-                            transitionName="animation__image-checkbox"
+                            transitionName='animation__image-checkbox'
                             transitionEnterTimeout={150}
                             transitionLeaveTimeout={150}
-                            className="sh-rebass-checkbox-mr0 relative w1 h1"
-                            component="div"
+                            className='sh-rebass-checkbox-mr0 relative w1 h1'
+                            component='div'
                         >
                             {innerContent}
                         </CSSTransitionGroup>
@@ -139,13 +139,13 @@ export default class SelectableUserTable extends React.Component<Props, State> {
 
         return (
             <div className={wrapperClasses}>
-                <Table className="w-100" cellSpacing="0" sortable={['name']}>
+                <Table className='w-100' cellSpacing='0' sortable={['name']}>
                     <Thead>
                     {this.renderHeaderCell('avatar', () => {
                         if (this.state.selectedUserIds.length === this.props.users.length) {
-                            return (<div className="sh-rebass-checkbox-mr0"><Checkbox theme="white" style={{ display: 'inline' }} checked label="" name="" onClick={() => this.unselectAllUsers()}/></div>);
+                            return (<div className='sh-rebass-checkbox-mr0'><Checkbox theme='default' style={{ display: 'inline' }} checked label='' name='' onClick={() => this.unselectAllUsers()}/></div>);
                         } else {
-                            return (<div className="sh-rebass-checkbox-mr0"><Checkbox theme="white" style={{ display: 'inline' }} label="" name=""  onClick={() => this.selectAllUsers()}/></div>);
+                            return (<div className='sh-rebass-checkbox-mr0'><Checkbox theme='default' style={{ display: 'inline' }} label='' name=''  onClick={() => this.selectAllUsers()}/></div>);
                         }
                     }, 'w1')}
                     {this.renderHeaderCell('name', 'Name', '')}
