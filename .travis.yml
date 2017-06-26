@@ -4,6 +4,7 @@ node_js:
 cache: yarn
 script:
  - yarn build-css
+ - yarn build
  - yarn build-storybook
  - yarn lint
 deploy:
