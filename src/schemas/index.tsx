@@ -6,9 +6,12 @@ import Opportunity from './Opportunity'
 import Person from './Person'
 import Post from './Post'
 import TimeOffRequest from './TimeOffRequest'
+import {Shift} from './Shift'
 import {Metadata, MetaPairs, MetadataType} from './Metadata'
 
 export {
+  // Shift
+  Shift,
   // Availability
   Availability,
   Days,

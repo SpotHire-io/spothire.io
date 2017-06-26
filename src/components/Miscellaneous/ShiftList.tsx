@@ -1,63 +1,67 @@
-import 'moment/locale/en-ca';
-import React from 'react';
-import PropTypes from 'prop-types';
-import OpportunitySchema from '../../schemas/Opportunity';
-import moment from 'moment';
-import classNames from 'classnames';
-import BasicTag from '../Tags/BasicTag';
-import BasicButton from '../Buttons/BasicButton';
+import 'moment/locale/en-ca'
+import * as React from 'react'
+import * as moment from 'moment'
+import * as classNames from 'classnames'
+import BasicTag from '../Tags/BasicTag'
+import BasicButton from '../Buttons/BasicButton'
+import ShiftsData from '../../data/shifts'
+import {Opportunity, Shift} from '../../schemas'
 
-class ShiftList extends React.Component {
-    constructor(props) {
-        super();
+interface Props {
+    className?: string
+    shifts: Shift[]
+}
 
-        this.toggleShiftEditing = this.toggleShiftEditing.bind(this);
+interface State {
+    shifts: Shift[]
+    currentlyEditingShiftId: number
+}
 
-        this.renderShiftRow = this.renderShiftRow.bind(this);
-        this.renderShiftSummary = this.renderShiftSummary.bind(this);
-        this.renderShiftDetails = this.renderShiftDetails.bind(this);
-        this.renderShiftCell = this.renderShiftCell.bind(this);
-        this.renderControls = this.renderControls.bind(this);
-        this.renderHeaderCell = this.renderHeaderCell.bind(this);
-
+export default class ShiftList extends React.Component<Props, State> {
+    public static defaultProps = {
+        className: '',
+        shifts: ShiftsData
+    }
+    constructor(props: Props) {
+        super()
         this.state = {
             currentlyEditingShiftId: null,
             shifts: props.shifts
-        };
+        }
     }
 
-    toggleShiftEditing(shiftId) {
-        let currentlyEditingShiftId = parseInt(this.state.currentlyEditingShiftId, 10);
+    toggleShiftEditing = (shiftId: number) => {
+        let currentlyEditingShiftId = this.state.currentlyEditingShiftId
 
         // Unset the currently editing shift if we’re toggling that shift. Else, set to the new shift ID.
         if (shiftId === currentlyEditingShiftId) {
-            currentlyEditingShiftId = null;
+            currentlyEditingShiftId = null
         } else {
-            currentlyEditingShiftId = shiftId;
+            currentlyEditingShiftId = shiftId
         }
 
-        return this.setState({ currentlyEditingShiftId });
+        return this.setState({ currentlyEditingShiftId })
     }
 
-    renderShiftRow(shift, index) {
+    renderShiftRow = (shift: Shift, index: number) => {
         const shiftClasses = classNames({
             'pa2 mt0 bb b--black-20': true,
             'pointer hover-bg-black-10': shift.id !== this.state.currentlyEditingShiftId
-        });
+        })
 
         return (
             <div key={shift.id} className={shiftClasses} onClick={() => (shift.id !== this.state.currentlyEditingShiftId) ? this.toggleShiftEditing(shift.id) : null}>
                 {this.renderShiftSummary(shift, index)}
                 {(shift.id === this.state.currentlyEditingShiftId) ? this.renderShiftDetails(shift, index) : null}
             </div>
-        );
+        )
     }
 
-    renderShiftSummary(shift, index) {
+    renderShiftSummary = (shift: Shift, index: number) => {
         const summaryWrapperClasses = classNames({
             'flex items-baseline': true,
             'pointer hover-bg-black-10': shift.id === this.state.currentlyEditingShiftId,
-        });
+        })
 
         return (
             <div className={summaryWrapperClasses} onClick={() => (shift.id === this.state.currentlyEditingShiftId) ? this.toggleShiftEditing(shift.id) : null}>
@@ -70,39 +74,39 @@ class ShiftList extends React.Component {
         )
     }
 
-    renderShiftCell(column, value, className) {
+    renderShiftCell = (column: string, value: string | React.ReactNode, className: string) => {
         const cellClasses = classNames({
             'pa2': true,
             [className]: true
-        });
+        })
 
         return (
             <div
                 aria-labelledby={`columnHeader_${column}`}
                 className={cellClasses}
             >
-                {(typeof value === 'string') ? value : value()}
+                {value}
             </div>
-        );
+        )
     }
 
-    renderControls(shift) {
+    renderControls = (shift: Shift) => {
         const renderTag = () => {
-            if (! shift.isInvited) return;
+            if (! shift.isInvited) return
 
-            return <BasicTag type={(shift.isConfirmed) ? 'positive' : 'neutral'} isNarrow>{(shift.isConfirmed) ? 'confirmed' : 'invited'}</BasicTag>;
-        };
+            return <BasicTag type={(shift.isConfirmed) ? 'positive' : 'neutral'} isNarrow>{(shift.isConfirmed) ? 'confirmed' : 'invited'}</BasicTag>
+        }
 
         return (
             <div className="tr">
                 {renderTag()}
             </div>
-        );
+        )
     }
 
-    renderShiftDetails(shift, index) {
+    renderShiftDetails = (shift: Shift, index: number) => {
         const renderRsvp = () => {
-            if (! shift.isInvited) return;
+            if (! shift.isInvited) return
 
             return (
                 <div>
@@ -119,8 +123,8 @@ class ShiftList extends React.Component {
                         {(shift.isConfirmed) ? 'Cancel Confirmation' : 'Accept Invitation'}
                     </BasicButton>
                 </div>
-            );
-        };
+            )
+        }
 
         return (
             <div className="pa2">
@@ -143,11 +147,11 @@ class ShiftList extends React.Component {
         )
     }
 
-    renderHeaderCell(column, value, className) {
+    renderHeaderCell = (column: string, value: string | React.ReactNode, className: string) => {
         const cellClasses = classNames({
             'pa2 f6 normal tl no-select': true,
             [className]: true
-        });
+        })
 
         return (
             <div
@@ -156,14 +160,14 @@ class ShiftList extends React.Component {
             >
                 {value}
             </div>
-        );
+        )
     }
 
     render() {
         const wrapperClasses = classNames({
             'bg-white ba b--black-20 w-100': true,
             [this.props.className]: true
-        });
+        })
 
         return (
             <div className={wrapperClasses}>
@@ -174,45 +178,8 @@ class ShiftList extends React.Component {
                     {this.renderHeaderCell('endTime', 'End Time', 'w-20')}
                     {this.renderHeaderCell('controls', 'Controls', 'transparent w-20')}
                 </div>
-                {this.state.shifts.map((shift, index) => this.renderShiftRow(shift, index))}
+                {this.state.shifts.map((shift: Shift, index: number) => this.renderShiftRow(shift, index))}
             </div>
         )
     }
 }
-
-ShiftList.defaultProps = {
-    className: '',
-    shifts: [
-        {
-            id: 0,
-            start: moment(new Date(2017, 4, 1, 8, 0)),
-            end: moment(new Date(2017, 4, 1, 16, 0)),
-            notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
-            isInvited: true,
-            isConfirmed: false,
-        },
-        {
-            id: 1,
-            start: moment(new Date(2017, 4, 1, 16, 0)),
-            end: moment(new Date(2017, 4, 2, 0, 0)),
-            notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
-            isInvited: true,
-            isConfirmed: true,
-        },
-        {
-            id: 2,
-            start: moment(new Date(2017, 4, 1, 16, 0)),
-            end: moment(new Date(2017, 4, 2, 0, 0)),
-            notes: 'Elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis.',
-            isInvited: false,
-            isConfirmed: false,
-        }
-    ],
-};
-
-// ShiftList.propTypes = {
-//     className: PropTypes.string,
-//     shifts: PropTypes.arrayOf(OpportunitySchema).isRequired,
-// };
-
-export default ShiftList;
