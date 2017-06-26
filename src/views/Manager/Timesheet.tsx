@@ -26,7 +26,7 @@ interface Props {
 
 interface State {
     nameSearch: string
-    discrepancyType?: DiscrepancyTypes
+    discrepancyType?: null | DiscrepancyTypes
     selectedUserIds: number[]
 }
 
@@ -41,20 +41,25 @@ export default class TimesheetView extends React.Component<Props, State> {
 
         this.state = {
             nameSearch: '',
-            selectedUserIds: []
+            selectedUserIds: [],
+            discrepancyType: null,
         }
     }
 
     render() {
         let filteredUsers = this.props.employees.filter((user: Person) => `${user.firstName} ${user.lastName}`.indexOf(this.state.nameSearch) > -1)
-        console.log(filteredUsers)
-        console.log(this.state.discrepancyType)
-        switch (this.state.discrepancyType.value) {
-        case 'underSubmitted':
-            filteredUsers = filteredUsers.filter((user: Person) => user.hours.worked > user.hours.submitted)
-            break
-        case 'overSubmitted':
-            filteredUsers = filteredUsers.filter((user: Person) => user.hours.submitted > user.hours.worked)
+
+        if (this.state.discrepancyType !== null) {
+            switch (this.state.discrepancyType.value) {
+                case 'underSubmitted':
+                    filteredUsers = filteredUsers.filter((user: Person) => user.hours.worked > user.hours.submitted)
+                    break;
+                case 'overSubmitted':
+                    filteredUsers = filteredUsers.filter((user: Person) => user.hours.submitted > user.hours.worked)
+                    break;
+                default:
+                    break;
+            }
         }
 
         let summarizedUsers = filteredUsers
@@ -79,8 +84,8 @@ export default class TimesheetView extends React.Component<Props, State> {
                         name='employees_category'
                         className='mt0'
                         options={discrepancyTypesOptions}
-                        value={this.state.discrepancyType.label}
-                        onChange={(discrepancyType: DiscrepancyTypes) => (discrepancyType !== null) ? this.setState({ discrepancyType: discrepancyType }) : this.setState({ discrepancyType: null })}
+                        value={this.state.discrepancyType}
+                        onChange={(discrepancyType: null | DiscrepancyTypes) => this.setState({ discrepancyType: discrepancyType })}
                     />
 
                     <p className='mt3'>
