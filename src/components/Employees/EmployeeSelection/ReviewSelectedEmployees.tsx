@@ -24,19 +24,8 @@ interface Props {
     }
 }
 
-interface State {
-
-}
-
-export default class ReviewSelectedEmployees extends React.Component<Props, State> {
-    constructor() {
-        super();
-
-        this.renderSelections = this.renderSelections.bind(this);
-        this.renderEmptySelectionsMessage = this.renderEmptySelectionsMessage.bind(this);
-    }
-
-    renderSelections(category: Category) {
+const ReviewSelectedEmployees: React.StatelessComponent<Props> = ({ className, selectionCategories, unSelectById, selectedEmployees }) => {
+    const renderSelections = (category: Category) => {
         return (
             <ul className="list pa0 ma0">
                 {category.selections.map((selection) => {
@@ -44,7 +33,7 @@ export default class ReviewSelectedEmployees extends React.Component<Props, Stat
                         <li key={selection.id} className="mt0 flex">
                             {category.renderMethod(selection, 'flex-auto')}
                             <div className="tr">
-                                <Icon color="#555555" name="close" className="pointer" onClick={() => this.props.unSelectById(category.key, selection.id)}/>
+                                <Icon color="#555555" name="close" className="pointer" onClick={() => unSelectById(category.key, selection.id)}/>
                             </div>
                         </li>
                     );
@@ -53,25 +42,25 @@ export default class ReviewSelectedEmployees extends React.Component<Props, Stat
         )
     }
 
-    renderEmptySelectionsMessage(category: Category) {
+    const renderEmptySelectionsMessage = (category: Category) => {
         return (
             <p className="mt0 i">No {category.title.toLowerCase()} provided.</p>
         )
     }
 
-    render() {
-        return (
-            <div className={this.props.className}>
-                {this.props.selectionCategories.map((category: Category) => {
-                    return (
-                        <section className="mb3" key={category.key}>
-                            <h4 className="f6 normal mt0 mb2">{category.title}</h4>
+    return (
+        <div className={className}>
+            {selectionCategories.map((category: Category) => {
+                return (
+                    <section className="mb3" key={category.key}>
+                        <h4 className="f6 normal mt0 mb2">{category.title}</h4>
 
-                            {(category.selections.length > 0) ? this.renderSelections(category) : this.renderEmptySelectionsMessage(category)}
-                        </section>
-                    );
-                })}
-            </div>
-        );
-    }
+                        {(category.selections.length > 0) ? renderSelections(category) : renderEmptySelectionsMessage(category)}
+                    </section>
+                );
+            })}
+        </div>
+    );
 }
+
+export default ReviewSelectedEmployees;
