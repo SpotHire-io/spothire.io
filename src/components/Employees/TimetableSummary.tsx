@@ -19,6 +19,9 @@ export default class TimetableSummary extends React.Component<Props, State> {
         hasShadow: true
     }
     render() {
+        const overSubmittedUserCount = this.props.users.reduce((overSubmittedUsers, user) => (user.hours.submitted > user.hours.worked) ? overSubmittedUsers + 1 : overSubmittedUsers, 0);
+        const underSubmittedUserCount = this.props.users.reduce((underSubmittedUsers, user) => (user.hours.submitted < user.hours.worked) ? underSubmittedUsers + 1 : underSubmittedUsers, 0);
+
         const summaryData = [
             {
                 label: 'Total hours worked',
@@ -30,11 +33,11 @@ export default class TimetableSummary extends React.Component<Props, State> {
             },
             {
                 label: 'Submitted hours greater than worked',
-                value: `${this.props.users.reduce((overSubmittedUsers, user) => (user.hours.submitted > user.hours.worked) ? overSubmittedUsers + 1 : overSubmittedUsers, 0)} employees`,
+                value: `${overSubmittedUserCount} ${(overSubmittedUserCount === 1) ? 'employee' : 'employees'}`,
             },
             {
                 label: 'Submitted hours less than worked',
-                value: `${this.props.users.reduce((underSubmittedUsers, user) => (user.hours.submitted < user.hours.worked) ? underSubmittedUsers + 1 : underSubmittedUsers, 0)} employees`,
+                value: `${underSubmittedUserCount} ${(underSubmittedUserCount === 1) ? 'employee' : 'employees'}`,
             },
         ];
 
