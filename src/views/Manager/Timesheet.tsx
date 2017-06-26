@@ -5,7 +5,7 @@ import * as PropTypes from 'prop-types'
 import Box from '../../components/Global/Box'
 import BoxConnector from '../../components/Global/BoxConnector'
 import {Person} from '../../schemas'
-import TimetableSummary from '../../components/Employees/TimetableSummary'
+import TimesheetSummary from '../../components/Employees/TimesheetSummary'
 import SelectableTimesheetTable from '../../components/Employees/SelectableTimesheetTable'
 
 const discrepancyTypesOptions = [
@@ -73,7 +73,7 @@ export default class TimesheetView extends React.Component<Props, State> {
                 <Box title='Summary' headingType='inline'>
                     <p className='mt0 measure'>Timesheet summary for {summarizedUsers.length} {(this.state.selectedUserIds.length > 0) ? 'selected' : 'displayed'} {(summarizedUsers.length === 1) ? 'employee' : 'employees'}.</p>
 
-                    <TimetableSummary className='mt3' users={summarizedUsers}/>
+                    <TimesheetSummary className='mt3' users={summarizedUsers}/>
                 </Box>
 
                 <BoxConnector isActive={this.state.nameSearch.length > 0}/>

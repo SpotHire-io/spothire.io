@@ -13,7 +13,7 @@ interface Props {
 
 interface State {}
 
-export default class TimetableSummary extends React.Component<Props, State> {
+export default class TimesheetSummary extends React.Component<Props, State> {
     public static defaultProps = {
         className: '',
         hasShadow: true
