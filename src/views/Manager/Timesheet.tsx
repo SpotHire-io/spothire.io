@@ -1,7 +1,7 @@
 import 'react-select/dist/react-select.css';
-import React from 'react';
-import Select from 'react-select';
-import PropTypes from 'prop-types';
+import * as React from 'react';
+import * as Select from 'react-select';
+import * as PropTypes from 'prop-types';
 import Box from '../../components/Global/Box';
 import BoxConnector from '../../components/Global/BoxConnector';
 import PersonSchema from '../../schemas/Person';
