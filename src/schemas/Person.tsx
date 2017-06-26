@@ -1,4 +1,4 @@
-import Availability from './Availability'
+import {Availability} from './Availability'
 import {Metadata} from './Metadata'
 
 interface Person {

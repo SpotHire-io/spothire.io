@@ -1,20 +1,21 @@
+import * as moment from 'moment'
 
-interface  TimeSlot {
-    id: boolean
-    start: string
-    end: string
+export interface TimeSlot {
+    id?: number
+    start: moment.Moment
+    end: moment.Moment
+    [modifier: string]: moment.Moment | number
 }
 
-type DayAvailability = false | TimeSlot
+export type Days = 'monday' | 'tuesday' | 'wednesday' | 'thursday' | 'friday' | 'saturday' | 'sunday'
 
-interface Availability {
-    monday: DayAvailability
-    tuesday: DayAvailability
-    wednesday: DayAvailability
-    thursday: DayAvailability
-    friday: DayAvailability
-    saturday: DayAvailability
-    sunday: DayAvailability
+export interface Availability {
+    monday: TimeSlot[]
+    tuesday: TimeSlot[]
+    wednesday: TimeSlot[]
+    thursday: TimeSlot[]
+    friday: TimeSlot[]
+    saturday: TimeSlot[]
+    sunday: TimeSlot[]
+    [day: string]: TimeSlot[]
 }
-
-export default Availability;

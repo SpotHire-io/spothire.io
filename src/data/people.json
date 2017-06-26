@@ -17,7 +17,7 @@
       }
     ],
     "availability": {
-      "monday": false,
+      "monday": [],
       "tuesday": [
         {
           "id": 100,
@@ -25,8 +25,8 @@
           "end": "1970-01-01T12:00:00.000-05:00"
         }
       ],
-      "wednesday": false,
-      "thursday": false,
+      "wednesday": [],
+      "thursday": [],
       "friday": [
         {
           "id": 400,
@@ -39,7 +39,7 @@
           "end": "1970-01-01T22:00:00.000-05:00"
         }
       ],
-      "saturday": false,
+      "saturday": [],
       "sunday": [
         {
           "id": 600,
@@ -71,7 +71,7 @@
       }
     ],
     "availability": {
-      "monday": false,
+      "monday": [],
       "tuesday": [
         {
           "id": 100,
@@ -79,8 +79,8 @@
           "end": "1970-01-01T12:00:00.000-05:00"
         }
       ],
-      "wednesday": false,
-      "thursday": false,
+      "wednesday": [],
+      "thursday": [],
       "friday": [
         {
           "id": 400,
@@ -93,7 +93,7 @@
           "end": "1970-01-01T22:00:00.000-05:00"
         }
       ],
-      "saturday": false,
+      "saturday": [],
       "sunday": [
         {
           "id": 600,
@@ -125,7 +125,7 @@
       }
     ],
     "availability": {
-      "monday": false,
+      "monday": [],
       "tuesday": [
         {
           "id": 100,
@@ -133,8 +133,8 @@
           "end": "1970-01-01T12:00:00.000-05:00"
         }
       ],
-      "wednesday": false,
-      "thursday": false,
+      "wednesday": [],
+      "thursday": [],
       "friday": [
         {
           "id": 400,
@@ -147,7 +147,7 @@
           "end": "1970-01-01T22:00:00.000-05:00"
         }
       ],
-      "saturday": false,
+      "saturday": [],
       "sunday": [
         {
           "id": 600,
@@ -179,7 +179,7 @@
       }
     ],
     "availability": {
-      "monday": false,
+      "monday": [],
       "tuesday": [
         {
           "id": 100,
@@ -187,8 +187,8 @@
           "end": "1970-01-01T12:00:00.000-05:00"
         }
       ],
-      "wednesday": false,
-      "thursday": false,
+      "wednesday": [],
+      "thursday": [],
       "friday": [
         {
           "id": 400,
@@ -201,7 +201,7 @@
           "end": "1970-01-01T22:00:00.000-05:00"
         }
       ],
-      "saturday": false,
+      "saturday": [],
       "sunday": [
         {
           "id": 600,
@@ -233,7 +233,7 @@
       }
     ],
     "availability": {
-      "monday": false,
+      "monday": [],
       "tuesday": [
         {
           "id": 100,
@@ -241,8 +241,8 @@
           "end": "1970-01-01T12:00:00.000-05:00"
         }
       ],
-      "wednesday": false,
-      "thursday": false,
+      "wednesday": [],
+      "thursday": [],
       "friday": [
         {
           "id": 400,
@@ -255,7 +255,7 @@
           "end": "1970-01-01T22:00:00.000-05:00"
         }
       ],
-      "saturday": false,
+      "saturday": [],
       "sunday": [
         {
           "id": 600,
@@ -287,7 +287,7 @@
       }
     ],
     "availability": {
-      "monday": false,
+      "monday": [],
       "tuesday": [
         {
           "id": 100,
@@ -295,8 +295,8 @@
           "end": "1970-01-01T12:00:00.000-05:00"
         }
       ],
-      "wednesday": false,
-      "thursday": false,
+      "wednesday": [],
+      "thursday": [],
       "friday": [
         {
           "id": 400,
@@ -309,7 +309,7 @@
           "end": "1970-01-01T22:00:00.000-05:00"
         }
       ],
-      "saturday": false,
+      "saturday": [],
       "sunday": [
         {
           "id": 600,
@@ -341,7 +341,7 @@
       }
     ],
     "availability": {
-      "monday": false,
+      "monday": [],
       "tuesday": [
         {
           "id": 100,
@@ -349,8 +349,8 @@
           "end": "1970-01-01T12:00:00.000-05:00"
         }
       ],
-      "wednesday": false,
-      "thursday": false,
+      "wednesday": [],
+      "thursday": [],
       "friday": [
         {
           "id": 400,
@@ -363,7 +363,7 @@
           "end": "1970-01-01T22:00:00.000-05:00"
         }
       ],
-      "saturday": false,
+      "saturday": [],
       "sunday": [
         {
           "id": 600,
@@ -395,7 +395,7 @@
       }
     ],
     "availability": {
-      "monday": false,
+      "monday": [],
       "tuesday": [
         {
           "id": 100,
@@ -403,8 +403,8 @@
           "end": "1970-01-01T12:00:00.000-05:00"
         }
       ],
-      "wednesday": false,
-      "thursday": false,
+      "wednesday": [],
+      "thursday": [],
       "friday": [
         {
           "id": 400,
@@ -417,7 +417,7 @@
           "end": "1970-01-01T22:00:00.000-05:00"
         }
       ],
-      "saturday": false,
+      "saturday": [],
       "sunday": [
         {
           "id": 600,
@@ -449,7 +449,7 @@
       }
     ],
     "availability": {
-      "monday": false,
+      "monday": [],
       "tuesday": [
         {
           "id": 100,
@@ -457,8 +457,8 @@
           "end": "1970-01-01T12:00:00.000-05:00"
         }
       ],
-      "wednesday": false,
-      "thursday": false,
+      "wednesday": [],
+      "thursday": [],
       "friday": [
         {
           "id": 400,
@@ -471,7 +471,7 @@
           "end": "1970-01-01T22:00:00.000-05:00"
         }
       ],
-      "saturday": false,
+      "saturday": [],
       "sunday": [
         {
           "id": 600,
@@ -503,7 +503,7 @@
       }
     ],
     "availability": {
-      "monday": false,
+      "monday": [],
       "tuesday": [
         {
           "id": 100,
@@ -511,8 +511,8 @@
           "end": "1970-01-01T12:00:00.000-05:00"
         }
       ],
-      "wednesday": false,
-      "thursday": false,
+      "wednesday": [],
+      "thursday": [],
       "friday": [
         {
           "id": 400,
@@ -525,7 +525,7 @@
           "end": "1970-01-01T22:00:00.000-05:00"
         }
       ],
-      "saturday": false,
+      "saturday": [],
       "sunday": [
         {
           "id": 600,

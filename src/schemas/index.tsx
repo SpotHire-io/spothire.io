@@ -1,4 +1,4 @@
-import Availability from './Availability'
+import {Availability, Days, TimeSlot} from './Availability'
 import CustomFilter from './CustomFilter'
 import Employee from './Employee'
 import {Group, GroupType} from './Group'
@@ -9,10 +9,14 @@ import TimeOffRequest from './TimeOffRequest'
 import {Metadata, MetaPairs, MetadataType} from './Metadata'
 
 export {
-  MetadataType,
+  // Availability
+  Availability,
+  Days,
+  TimeSlot,
+  //Metadata
   Metadata,
   MetaPairs,
-  Availability,
+  MetadataType,
   CustomFilter,
   Employee,
   Group,
