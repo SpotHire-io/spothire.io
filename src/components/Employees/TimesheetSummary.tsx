@@ -12,17 +12,17 @@ interface Props {
 }
 
 const TimesheetSummary: React.StatelessComponent<Props> = ({ className = '', users }) => {
-    const overSubmittedUserCount = this.props.users.reduce((overSubmittedUsers: number, user: Person) => (user.hours.submitted > user.hours.worked) ? overSubmittedUsers + 1 : overSubmittedUsers, 0);
-    const underSubmittedUserCount = this.props.users.reduce((underSubmittedUsers: number, user: Person) => (user.hours.submitted < user.hours.worked) ? underSubmittedUsers + 1 : underSubmittedUsers, 0);
+    const overSubmittedUserCount = users.reduce((overSubmittedUsers: number, user: Person) => (user.hours.submitted > user.hours.worked) ? overSubmittedUsers + 1 : overSubmittedUsers, 0);
+    const underSubmittedUserCount = users.reduce((underSubmittedUsers: number, user: Person) => (user.hours.submitted < user.hours.worked) ? underSubmittedUsers + 1 : underSubmittedUsers, 0);
 
     const summaryData = [
         {
             label: 'Total hours worked',
-            value: moment.duration(this.props.users.reduce((hours: number, user: Person) => hours += user.hours.worked, 0), 'hours').format('h:mm'),
+            value: moment.duration(users.reduce((hours: number, user: Person) => hours += user.hours.worked, 0), 'hours').format('h:mm'),
         },
         {
             label: 'Total hours submitted',
-            value: moment.duration(this.props.users.reduce((hours: number, user: Person) => hours += user.hours.submitted, 0), 'hours').format('h:mm'),
+            value: moment.duration(users.reduce((hours: number, user: Person) => hours += user.hours.submitted, 0), 'hours').format('h:mm'),
         },
         {
             label: 'Submitted hours greater than worked',
@@ -35,7 +35,7 @@ const TimesheetSummary: React.StatelessComponent<Props> = ({ className = '', use
     ];
 
     return (
-        <dl className={classNames('cf ma0 nb3', this.props.className)}>
+        <dl className={classNames('cf ma0 nb3', className)}>
             {
                 summaryData.map((summaryDatum) => (
                     <div className="fl mw5 mb3 mr3">
