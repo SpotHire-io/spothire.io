@@ -8,8 +8,8 @@ import SelectEmployees from './EmployeeSelection/SelectEmployees'
 import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees'
 
 // Rule data
-import filterKeys from '../../data/peopleFilterRules/filterKeys.json'
-import filterTypes from '../../data/peopleFilterRules/filterTypes.json'
+const filterKeys = require('../../data/peopleFilterRules/filterKeys.json')
+const filterTypes = require('../../data/peopleFilterRules/filterTypes.json')
 
 interface FilterKey {
     label: string
