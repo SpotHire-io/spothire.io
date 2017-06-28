@@ -6,8 +6,8 @@ import * as classNames from 'classnames';
 import {BasicButton} from '../../../Buttons';
 
 // Rule data
-import filterKeys from '../../../../data/peopleFilterRules/filterKeys.json';
-import filterTypes from '../../../../data/peopleFilterRules/filterTypes.json';
+const filterKeys = require('../../../../data/peopleFilterRules/filterKeys.json');
+const filterTypes = require('../../../../data/peopleFilterRules/filterTypes.json');
 
 type FilterKeys = FilterKey[]
 interface FilterKey {
