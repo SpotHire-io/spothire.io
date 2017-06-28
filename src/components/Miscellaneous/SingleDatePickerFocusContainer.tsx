@@ -1,8 +1,9 @@
 import * as moment from 'moment'
 import * as React from 'react'
-import { SingleDatePicker, DayPickerRangeControllerShape } from 'react-dates'
+import { SingleDatePicker, SingleDatePickerShape } from 'react-dates'
 
-interface Props extends DayPickerRangeControllerShape {
+interface Props extends SingleDatePickerShape {
+
 }
 
 interface State {
@@ -23,7 +24,7 @@ export default class SingleDatePickerFocusContainer extends React.Component<Prop
             <SingleDatePicker
                 {...this.props}
                 focused={this.state.isFocused}
-                {/*onFocusChange={({ focused }) => this.setState({ isFocused: focused })}*/}
+                onFocusChange={({ focused }) => this.setState({ isFocused: focused })}
             />
         )
     }
