@@ -59,6 +59,7 @@ const OpportunityModalBasicInfo: React.StatelessComponent<Props> = ({ updateOppo
                     }}
                     withPortal={true}
                     displayFormat="MMMM Do, YYYY"
+                    id={`opp${end}Date`}
                 />
             </dd>
         </dl>
