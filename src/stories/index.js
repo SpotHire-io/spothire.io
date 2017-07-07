@@ -405,42 +405,42 @@ storiesOf('Buttons', module)
     .add('BasicButton:Standard', () => (
         <WithNotes>
             <div className="ma4">
-                <BasicButton className="button--standard">Add Employees</BasicButton>
+                <BasicButton type="standard">Add Employees</BasicButton>
             </div>
         </WithNotes>
     ))
     .add('BasicButton:Neutral', () => (
         <WithNotes>
             <div className="ma4">
-                <BasicButton className="button--neutral">Add Employees</BasicButton>
+                <BasicButton type="neutral">Add Employees</BasicButton>
             </div>
         </WithNotes>
     ))
     .add('BasicButton:Positive', () => (
         <WithNotes>
             <div className="ma4">
-                <BasicButton className="button--positive">Add Employees</BasicButton>
+                <BasicButton type="positive">Add Employees</BasicButton>
             </div>
         </WithNotes>
     ))
     .add('BasicButton:Negative', () => (
         <WithNotes>
             <div className="ma4">
-                <BasicButton className="button--negative">Remove Employees</BasicButton>
+                <BasicButton type="negative">Remove Employees</BasicButton>
             </div>
         </WithNotes>
     ))
     .add('IconButton:Plus', () => (
         <WithNotes>
             <div className="ma4">
-                <BasicButton className="button--positive button--with-icon button--icon-plus">Add Opportunity</BasicButton>
+                <BasicButton type="positive" className="button--with-icon button--icon-plus">Add Opportunity</BasicButton>
             </div>
         </WithNotes>
     ))
     .add('IconButton:Minus', () => (
         <WithNotes>
             <div className="ma4">
-                <BasicButton className="button--negative button--with-icon button--icon-minus">Delete Opportunity</BasicButton>
+                <BasicButton type="negative" className="button--with-icon button--icon-minus">Delete Opportunity</BasicButton>
             </div>
         </WithNotes>
     ))

@@ -30,8 +30,8 @@ class OpportunityModal extends React.Component<Props, State> {
                 </div>
 
                 <div className="tr">
-                    <BasicButton className="button--neutral mt3" onClick={this.props.closeModal}>Cancel</BasicButton>
-                    <BasicButton className="button--positive mt3 ml3" onClick={this.props.addOpportunity}>Create</BasicButton>
+                    <BasicButton type="neutral" className="mt3" onClick={this.props.closeModal}>Cancel</BasicButton>
+                    <BasicButton type="positive" className="mt3 ml3" onClick={this.props.addOpportunity}>Create</BasicButton>
                 </div>
             </Modal>
         )
