@@ -458,6 +458,8 @@ export declare const Stat: StatClass;
 
 export interface SwitchProps extends BaseProps<SwitchClass> {
     checked?: boolean;
+    onClick?: Function;
+    tabIndex: any;
 }
 type SwitchClass = React.StatelessComponent<SwitchProps>
 export declare const Switch: SwitchClass;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import Modal from '../../Global/Modal';
 import BasicButton from '../../Buttons/BasicButton';
 import {Opportunity} from '../../../schemas';
-const OpportunityModalBasicInfo = require('./BasicInfo');
+import OpportunityModalBasicInfo from './BasicInfo';
 
 interface Props {
     isOpen: boolean
@@ -26,7 +26,7 @@ class OpportunityModal extends React.Component<Props, State> {
                 <h2 className="absolute top-0 right-0 left-0 bg-teal white bb bw1 b--white-40 ma0 pa3 f5">New Opportunity</h2>
 
                 <div className="mt4 pt3">
-                    <OpportunityModalBasicInfo {...this.props}/>
+                    <OpportunityModalBasicInfo opportunity={this.props.opportunity} updateOpportunity={this.props.updateOpportunity}/>
                 </div>
 
                 <div className="tr">
