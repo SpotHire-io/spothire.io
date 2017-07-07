@@ -27,7 +27,7 @@ class TimeOffRequestNew extends React.Component {
     render() {
         return (
             <div className={this.props.className}>
-                <BasicButton className="button--positive" onClick={this.openNewTimeOffRequestModal}>New Request</BasicButton>
+                <BasicButton type="positive" onClick={this.openNewTimeOffRequestModal}>New Request</BasicButton>
                 <NewTimeOffRequestModal
                     isOpen={this.state.isNewTimeOffRequestModalOpen}
                     closeModal={this.closeNewTimeOffRequestModal}

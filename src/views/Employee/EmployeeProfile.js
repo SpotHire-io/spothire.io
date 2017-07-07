@@ -82,7 +82,7 @@ class EmployeeProfileView extends React.Component {
                         </Box>
 
                         <div className="mt3 tr">
-                            <BasicButton className="button--positive" onClick={() => alert('Profile changes saved!')}>Save Profile</BasicButton>
+                            <BasicButton type="positive" onClick={() => alert('Profile changes saved!')}>Save Profile</BasicButton>
                         </div>
                     </div>
                 </div>

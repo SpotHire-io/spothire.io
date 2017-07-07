@@ -69,7 +69,7 @@ class GroupSingleView extends React.Component {
                             <UserTable className="mt3" deleteUser={() => alert('User deleted')}/>
 
                             <div className="tr mt3">
-                                <BasicButton className="button--positive" onClick={() => this.openAddEmployeesModal()}>Add Employees to Group</BasicButton>
+                                <BasicButton type="positive" onClick={() => this.openAddEmployeesModal()}>Add Employees to Group</BasicButton>
                             </div>
                         </div>
                     </div>

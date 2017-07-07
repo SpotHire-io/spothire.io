@@ -20,7 +20,7 @@ const FilterContainer: React.StatelessComponent<Props>  = ({ children, className
         <Box className={wrapperClasses} headingSemanticLevel={headingSemanticLevel} title="Filters" headingType="inline">
             {children}
             <div className="tr">
-                <BasicButton className="button--neutral mt3" onClick={onResetFilters}>Reset Filters</BasicButton>
+                <BasicButton type="neutral" className="mt3" onClick={onResetFilters}>Reset Filters</BasicButton>
             </div>
         </Box>
     )

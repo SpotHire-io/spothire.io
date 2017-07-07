@@ -27,7 +27,7 @@ class EmployeeListView extends React.Component {
                         <p>Your organisation has {this.props.employees.length} employees.</p>
 
                         <div className="tr">
-                            <BasicButton className="mt3 button--positive" onClick={() => this.setState({ isAddingUser: ! this.state.isAddingUser })}>Add New</BasicButton>
+                            <BasicButton type="positive" className="mt3" onClick={() => this.setState({ isAddingUser: ! this.state.isAddingUser })}>Add New</BasicButton>
                         </div>
                     </Box>
                 </div>

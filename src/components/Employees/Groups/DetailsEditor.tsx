@@ -32,7 +32,7 @@ export default class GroupDetailsEditor extends React.Component<Props, State> {
                 </p>
 
                 <div className="tr mt3">
-                    <BasicButton className="button--negative" onClick={() => console.log('Delete Group')}>Delete Group</BasicButton>
+                    <BasicButton type="negative" onClick={() => console.log('Delete Group')}>Delete Group</BasicButton>
                 </div>
             </Box>
         );

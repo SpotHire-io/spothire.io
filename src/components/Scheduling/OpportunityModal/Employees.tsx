@@ -42,7 +42,7 @@ export default class OpportunityModalEmployees extends React.Component<Props, St
                 <UserTable className="mt3" enabledColumns={['avatar', 'name']} hasShadow={false}/>
 
                 <div className="tr mt3">
-                    <BasicButton className="button--positive" onClick={() => this.openAddEmployeesModal()}>Invite Employees to {(this.props.opportunity.isShift) ? 'Shift' : 'Opportunity'}</BasicButton>
+                    <BasicButton type="positive" onClick={() => this.openAddEmployeesModal()}>Invite Employees to {(this.props.opportunity.isShift) ? 'Shift' : 'Opportunity'}</BasicButton>
                 </div>
 
                 <Modal

@@ -162,7 +162,7 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
                 </div>
 
                 <div className="tr">
-                    <BasicButton className="button--positive">Add Employees</BasicButton>
+                    <BasicButton type="positive">Add Employees</BasicButton>
                 </div>
             </div>
         );

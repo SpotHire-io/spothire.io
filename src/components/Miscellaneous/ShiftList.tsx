@@ -114,11 +114,8 @@ export default class ShiftList extends React.Component<Props, State> {
                     <p className="mt0">You are <strong>{(shift.isConfirmed) ? 'confirmed' : 'invited'}</strong> {(shift.isConfirmed) ? 'for' : 'to'} this shift.</p>
 
                     <BasicButton
-                        className={classNames({
-                            'mt3 w-100': true,
-                            'button--negative': shift.isConfirmed,
-                            'button--positive': ! shift.isConfirmed,
-                        })}
+                        className="mt3 w-100"
+                        type={(shift.isConfirmed) ? 'negative' : 'positive'}
                     >
                         {(shift.isConfirmed) ? 'Cancel Confirmation' : 'Accept Invitation'}
                     </BasicButton>

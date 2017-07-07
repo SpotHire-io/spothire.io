@@ -45,7 +45,7 @@ class OpportunitySingleView extends React.Component {
                 <h1 className="ma0 f3">{this.state.opportunity.title}</h1>
 
                 <div className="tr">
-                    <BasicButton className="mt3 f6 button--neutral">Export</BasicButton>
+                    <BasicButton type="neutral" className="mt3 f6">Export</BasicButton>
                 </div>
             </Box>
         );
@@ -85,7 +85,7 @@ class OpportunitySingleView extends React.Component {
                                             <UserTable className="mt3" enabledColumns={['avatar', 'name']} hasShadow={false}/>
 
                                             <div className="tr mt3">
-                                                <BasicButton className="button--positive" onClick={() => this.openAddEmployeesModal()}>Invite Employees to Opportunity</BasicButton>
+                                                <BasicButton type="positive" onClick={() => this.openAddEmployeesModal()}>Invite Employees to Opportunity</BasicButton>
                                             </div>
                                         </Box>
                                     </div>

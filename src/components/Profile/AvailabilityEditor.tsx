@@ -121,7 +121,7 @@ export default class AvailabilityEditor extends React.Component<Props, State> {
                                                             <button className="ml2 input-reset bg-transparent hover-bg-red hover-white ba-0" onClick={() => this.deleteSlotFromDay(day, timeSlot.id)}><Close/></button>
                                                         </li>
                                                     ))}
-                                                    <li className="tr mt2"><BasicButton className="button--positive f6" onClick={() => this.addSlotToDay(day, index)}>Add Slot</BasicButton></li>
+                                                    <li className="tr mt2"><BasicButton type="positive" className="f6" onClick={() => this.addSlotToDay(day, index)}>Add Slot</BasicButton></li>
                                                 </ol>
                                             ) : null
                                     }
@@ -132,7 +132,7 @@ export default class AvailabilityEditor extends React.Component<Props, State> {
                 </ol>
 
                 <div className="tr mt3">
-                    <BasicButton className="button--positive" onClick={this.props.onSubmitAvailability}>Save Availability</BasicButton>
+                    <BasicButton type="positive" onClick={this.props.onSubmitAvailability}>Save Availability</BasicButton>
                 </div>
             </div>
         )

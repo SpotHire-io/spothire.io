@@ -73,18 +73,15 @@ class EmployeeOpportunitySingleView extends React.Component {
                         </dl>
 
                         <div className="tr">
-                            <BasicButton className="mt3 f6 button--neutral">Export</BasicButton>
+                            <BasicButton type="neutral" className="mt3 f6">Export</BasicButton>
                         </div>
                     </Box>
                     <Box className="mt3" title="RSVP" headingType="inline">
                         <p className="mt0">You are <strong>{rsvpState}</strong> {(rsvpState === 'confirmed' ? 'for' : 'to')} this opportunity.</p>
 
                         <BasicButton
-                            className={classNames({
-                                'mt3 w-100': true,
-                                'button--negative': rsvpState === 'confirmed',
-                                'button--positive': rsvpState === 'invited',
-                            })}
+                            className="mt3 w-100"
+                            type={(rsvpState === 'confirmed') ? 'negative' : 'positive'}
                         >
                             {(rsvpState === 'confirmed') ? 'Cancel Confirmation' : 'Accept Invitation'}
                         </BasicButton>

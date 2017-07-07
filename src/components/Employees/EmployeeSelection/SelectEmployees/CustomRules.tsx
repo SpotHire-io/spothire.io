@@ -140,12 +140,12 @@ export default class SelectCustomRules extends React.Component<Props, State> {
         return (
             <div className="tr">
                 {(this.state.selectedKey !== null || this.state.filterType !== null || this.state.filterValue.length > 0)
-                    ? <BasicButton className="mt3 button--negative" onClick={() => this.clearRule()}>Clear Rule</BasicButton>
+                    ? <BasicButton type="negative" className="mt3" onClick={() => this.clearRule()}>Clear Rule</BasicButton>
                     : null
                 }
 
                 {(this.state.selectedKey !== null && this.state.filterType !== null && this.state.filterValue.length > 0)
-                    ? <BasicButton className="ml2 mt3 button--positive" onClick={() => this.addRule()}>Add Rule</BasicButton>
+                    ? <BasicButton type="positive" className="ml2 mt3" onClick={() => this.addRule()}>Add Rule</BasicButton>
                     : null
                 }
             </div>

@@ -78,8 +78,8 @@ const Post: React.StatelessComponent<Props> = ({ post, className, isOpen, toggle
                     <textarea className="w-100 b--black-10" rows={3}/>
 
                     <div className="tr mt2">
-                        <BasicButton className="button--neutral">Reset</BasicButton>
-                        <BasicButton className="button--positive ml2">Submit</BasicButton>
+                        <BasicButton type="neutral">Reset</BasicButton>
+                        <BasicButton type="positive" className="ml2">Submit</BasicButton>
                     </div>
                 </div>
             </div>

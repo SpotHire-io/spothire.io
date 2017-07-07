@@ -80,7 +80,7 @@ export default class UserTable extends React.Component<Props, State> {
                 ), 'pv2')}
                 {this.renderUserCell('actions', () =>
                     <BasicButton
-                        className='button--positive'
+                        type="positive"
                         onClick={() => linkTo('Views (manager)', 'People:EmployeeSingleView')}>
                         Create
                     </BasicButton>, 'pv1')}

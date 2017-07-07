@@ -162,7 +162,7 @@ export default class MetadataInterface extends React.Component<Props, State> {
                     })}
                 </ul>
                 <div className="tr mt3">
-                    <BasicButton className="button--positive" onClick={this.createMetaPair}>Add Metadata</BasicButton>
+                    <BasicButton type="positive" onClick={this.createMetaPair}>Add Metadata</BasicButton>
                 </div>
             </div>
         )

@@ -150,8 +150,8 @@ class NewTimeOffRequestModal extends React.Component {
                 </div>
 
                 <div className="tr">
-                    <BasicButton className="button--neutral mt3" onClick={() => this.props.closeModal()}>Cancel</BasicButton>
-                    <BasicButton className="button--positive mt3 ml3" onClick={() => this.submitRequest()}>Submit</BasicButton>
+                    <BasicButton type="neutral" className="mt3" onClick={() => this.props.closeModal()}>Cancel</BasicButton>
+                    <BasicButton type="positive" className="mt3 ml3" onClick={() => this.submitRequest()}>Submit</BasicButton>
                 </div>
             </Modal>
         )
