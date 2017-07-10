@@ -20,18 +20,18 @@ export default class ProfileSetup extends React.Component<Props, State> {
 
     render() {
         return (
-            <div className="bg-near-white pa4">
-                <Box className="mw6 center">
-                    <img src="/img/logo-colour.svg" alt="SpotHire logo" className="db w-90 w-50-ns center mv4"/>
+            <div className="bg-near-white pa4 min-vh-100 flex flex-column justify-center items-center">
+                <form>
+                    <Box className="mw6">
+                        <img src="/img/logo-colour.svg" alt="SpotHire logo" className="db w-90 w-50-ns center mv4"/>
 
-                    <p>
-                        Welcome to SpotHire! You’ve been invited to join [Organisation’s] SpotHire organisation. Using SpotHire, [Organisation] will
-                        connect you with work opportunities that fit your schedule and capabilities.
-                    </p>
-                </Box>
+                        <p>
+                            Welcome to SpotHire! You’ve been invited to join [Organisation’s] SpotHire organisation. Using SpotHire, [Organisation] will
+                            connect you with work opportunities that fit your schedule and capabilities.
+                        </p>
+                    </Box>
 
-                <Box className="mt3 mw6 center" title="Account setup" headingType="inline">
-                    <form>
+                    <Box className="mt3 mw6" title="Account setup" headingType="inline">
                         <div className="flex-ns mt3">
                             <div className="w-50-ns mr4-ns">
                                 <label className="f6 db mb2" htmlFor="employee_first_name">First name</label>
@@ -57,8 +57,8 @@ export default class ProfileSetup extends React.Component<Props, State> {
                         </div>
 
                         <BasicButton className="mt3 w-100" type="positive">Create Account</BasicButton>
-                    </form>
-                </Box>
+                    </Box>
+                </form>
             </div>
         )
     }
