@@ -76,6 +76,8 @@ export default class SelectCustomRules extends React.Component<Props, State> {
             type: this.state.filterType.value,
             value: this.state.filterValue,
         });
+
+        this.clearRule();
     }
 
     renderValueInputs() {
