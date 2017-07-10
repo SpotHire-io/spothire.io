@@ -20,6 +20,7 @@ import DashboardView from '../views/Employee/Dashboard';
 import NewsfeedView from '../views/Employee/Newsfeed';
 import EmployeeOpportunitySingleView from '../views/Employee/Schedule/OpportunitySingle';
 import EmployeeProfileView from '../views/Employee/EmployeeProfile';
+import ProfileSetup from '../views/Employee/ProfileSetup';
 
 import MainMenu from '../components/Global/MainMenu';
 import SecondaryMenu from '../components/Global/SecondaryMenu';
@@ -279,6 +280,9 @@ storiesOf('Views (employee)', module)
                 />
             }
         />
+    ))
+    .add('ProfileSetup', () => (
+        <ProfileSetup employee={samplePeople[3]}/>
     ));
 
 storiesOf('Global', module)
