@@ -9,6 +9,12 @@ interface Props {
     children: Child[]
 }
 
+/**
+ * Wraps a collection of buttons in a row, adjusting border radii according to their position.
+ *
+ * Children can be either RadioButtons or BasicButtons, though RadioButtons (with their outlined
+ * and filled modes) make more sense.
+ */
 const ButtonBar: React.StatelessComponent<Props> = ({ children, className }) => {
     const wrapperClassName = classNames({
         'flex': true,

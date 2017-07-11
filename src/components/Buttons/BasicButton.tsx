@@ -9,7 +9,13 @@ interface Props {
     type?: 'neutral' | 'standard' |  'positive' | 'negative'
 }
 
-const BasicButton: React.StatelessComponent<Props> = ({ children, className='', onClick, type }) => {
+/**
+ * Used for most interactions requiring a button.
+ *
+ * Comes in four types, corresponding to different appearances.
+ * Can stand alone. When beside another button, the button to the right should have `mr3` added as a class.
+ */
+const BasicButton: React.StatelessComponent<Props> = ({ children, className = '', onClick, type = 'neutral' }) => {
     let buttonClasses = classNames({
         'button input-reset f5 no-select': true,
         'button--neutral': type === 'neutral',

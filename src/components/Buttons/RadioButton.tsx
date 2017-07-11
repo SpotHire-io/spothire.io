@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import * as classNames from 'classnames';
 
 interface Props {
@@ -12,6 +11,11 @@ interface Props {
     checked: boolean
 }
 
+/**
+ * A radio input appearing as a button.
+ *
+ * Makes most sense when used in a collection, grouped with a ButtonBar.
+ */
 const RadioButton: React.StatelessComponent<Props> = ({ checked, name, id, value, children, className='', onClick }: Props) => {
     const labelClassName = classNames({
         'button button--neutral': true,
