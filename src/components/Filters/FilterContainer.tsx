@@ -10,6 +10,9 @@ interface Props {
     onResetFilters?: React.EventHandler<any>
 }
 
+/**
+ * Basic container for label/input pairs, with a built-in reset feature (`props.onResetFilters`).
+ */
 const FilterContainer: React.StatelessComponent<Props>  = ({ children, className, headingSemanticLevel, onResetFilters }) => {
     let wrapperClasses = classNames({
         '': true,

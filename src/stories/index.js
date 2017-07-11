@@ -34,7 +34,6 @@ import Post from '../components/Newsfeed/Post';
 import PostList from '../components/Newsfeed/PostList';
 
 import FilterContainer from '../components/Filters/FilterContainer';
-import Filter from '../components/Filters/Filter';
 
 import OverviewCalendar from '../components/Scheduling/OverviewCalendar';
 import OpportunityModal from '../components/Scheduling/OpportunityModal';
@@ -519,101 +518,10 @@ storiesOf('Filters', module)
         <WithNotes>
             <div className="pa4 bg-near-white mw6">
                 <FilterContainer>
-                    <Filter
-                        id="text1"
-                        label="Other text filter"
-                        type="text"
-                        data={{
-                            placeholder: 'A text filter'
-                        }}
-                    />
-                    <Filter
-                        id="text2"
-                        label="Text filter"
-                        type="text"
-                        data={{
-                            placeholder: 'Another text filter'
-                        }}
-                    />
-                    <Filter
-                        id="select1"
-                        label="Single select"
-                        type="select"
-                        data={{
-                            inputProps: {
-                                id: 'select1'
-                            },
-                            options: [
-                                {
-                                    value: '1',
-                                    label: 'Option 1'
-                                },
-                                {
-                                    value: '2',
-                                    label: 'Option 2'
-                                }
-                            ]
-                        }}
-                    />
-                    <Filter
-                        id="select2"
-                        label="Multi select"
-                        type="select"
-                        data={{
-                            inputProps: {
-                                id: 'select2'
-                            },
-                            options: [
-                                {
-                                    value: '1',
-                                    label: 'Option 1'
-                                },
-                                {
-                                    value: '2',
-                                    label: 'Option 2'
-                                }
-                            ],
-                            selectConfig: {
-                                multi: true
-                            }
-                        }}
-                    />
+                    <label className="db mb2 f6" htmlFor="filterDemo">Label</label>
+                    <input type="text" className="w-100 pa1 mt0" name="filterDemo" id="filterDemo"/>
                 </FilterContainer>
             </div>
-        </WithNotes>
-    ))
-    .add('Filter:Text', () => (
-        <WithNotes notes="The `data` array should have a `value` set as the initial value. `onChange` should be a callback that alters the `data.value`.">
-            <Filter
-                id="text1"
-                type="text"
-                data={{
-                    placeholder: 'A text filter'
-                }}
-            />
-        </WithNotes>
-    ))
-    .add('Filter:Select', () => (
-        <WithNotes notes="The `data` array should have a `value` set as the initial value. `onChange` should be a callback that alters the `data.value`.">
-            <Filter
-                type="select"
-                data={{
-                    currentlySelectedId: 1,
-                    inputProps: {
-                        id: 'select2'
-                    },
-                    options: [
-                        {
-                            id: 1,
-                            text: 'Option 1'
-                        },
-                        {
-                            id: 2,
-                            text: 'Option 2'
-                        }
-                    ]
-                }}
-            />
         </WithNotes>
     ));
 
