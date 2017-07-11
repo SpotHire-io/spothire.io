@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Box from '../../components/Global/Box';
 import PersonSchema from '../../schemas/Person';
 import BasicButton from '../../components/Buttons/BasicButton';
+import {Switch} from 'rebass';
 
 class EmployeeProfileView extends React.Component {
     render() {
@@ -65,6 +67,33 @@ class EmployeeProfileView extends React.Component {
                                     <input className="w-100" type="text" id="employee_hair" name="employee_hair"/>
                                 </div>
                             </div>
+                        </Box>
+
+                        <Box className="mt3" title="Notification Settings" headingType="inline">
+                            <p>SpotHire can notify you via email and SMS when you need to see something. Configure your preferences to control when and how you are notified.</p>
+
+                            <table className="w-100 mt3" cellSpacing="0">
+                                <thead>
+                                    <tr>
+                                        {['Event', 'Email', 'SMS'].map((label) => (
+                                            <th className="pb2 pr2 bb b--black-10 f6 tl normal" key={label}>{label}</th>
+                                        ))}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {['Invited to opportunity', 'New post'].map((event, index, events) => {
+                                        const commonRowClasses = classNames('pr2 tl', {'bb b--black-10 pv2': index !== events.length - 1, 'pt2': index === events.length - 1});
+
+                                        return (
+                                            <tr key={event}>
+                                                <td className={commonRowClasses}>{event}</td>
+                                                <td className={commonRowClasses}><div className="sh-rebass-switch-small sh-rebass-switch-small--checked dib"><Switch checked/></div></td>
+                                                <td className={commonRowClasses}><div className="sh-rebass-switch-small dib"><Switch/></div></td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </table>
                         </Box>
 
                         <Box className="mt3" title="Account Settings" headingType="inline">
