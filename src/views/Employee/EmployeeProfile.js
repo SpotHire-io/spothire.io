@@ -47,7 +47,7 @@ class EmployeeProfileView extends React.Component {
                         </Box>
 
                         <Box className="mt3" title="Further Information" headingType="inline">
-                            <p>Managers who know more about you can schedule you for more opportunities. Answering these questions helps managers find you good opportunities.</p>
+                            <p>Managers who know more about you can schedule you for more opportunities. Answering these questions helps managers find you better opportunities.</p>
 
                             <div className="mt3">
                                 <label className="f6 db mb2" htmlFor="employee_location">Location</label>
