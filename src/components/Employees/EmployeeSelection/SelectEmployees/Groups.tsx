@@ -10,14 +10,12 @@ const userData = require('../../../../data/people.json');
 
 interface Props {
     className?: string
-    onAddGroup?: Function
+    onAddGroup?: (groupId: string) => any
 }
 
 interface State {
 
 }
-
-const n = Array(10).keys()
 
 const type: GroupType = 'virtual'
 const groups: Group[] = range(10).map((number) => {
@@ -29,6 +27,11 @@ const groups: Group[] = range(10).map((number) => {
     };
 });
 
+/**
+ * Interface to select all the employees within groups.
+ *
+ * Once a group is selected, it’s passed to the parent with `props.onAddGroup`.
+ */
 export default class SelectGroups extends React.Component<Props, State> {
     public static defaultProps: Props = {
         className: '',

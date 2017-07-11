@@ -33,6 +33,11 @@ interface State {
     filterValue: string
 }
 
+/**
+ * Interface to create custom filtering rules based on keys, comparators, and values.
+ *
+ * Once a rule is created, it’s passed to the parent with `props.onAddRule`.
+ */
 export default class SelectCustomRules extends React.Component<Props, State> {
     public filterKeys: FilterKeys
     public filterTypes: FilterTypes
@@ -132,7 +137,7 @@ export default class SelectCustomRules extends React.Component<Props, State> {
                     <p>
                         This rule will find all employees with <em>{currentFilterKey.label}</em> that <em>{currentFilterType.label}</em> {(this.state.filterValue.length > 0) ? `“${this.state.filterValue}”.` : '…'}
                     </p>
-                    <p className="f6">This is approximately {[10, 20, 30][Math.floor(Math.random()*3)]} employees.</p>
+                    <p className="f6">This is approximately {[10, 20, 30][Math.floor(Math.random()*3)]} employees.</p>{/*@TODO: Convert this random integer to an estimate from the API.*/}
                 </div>
             );
         }

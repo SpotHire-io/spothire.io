@@ -5,13 +5,18 @@ import UserTable from '../../UserTable';
 
 interface Props {
     className?: string
-    onAddUser?: Function
+    onAddUser?: (userId: string) => any
 }
 
 interface State {
     employeesSearch?: string
 }
 
+/**
+ * Interface to select individual employees.
+ *
+ * Once an employee is selected, it’s passed to the parent with `props.onAddUser`.
+ */
 export default class SelectIndividuals extends React.Component<Props, State> {
     public static defaultProps: Props = {
         className: '',

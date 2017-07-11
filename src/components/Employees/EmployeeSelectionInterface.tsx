@@ -60,6 +60,11 @@ interface State {
     }
 }
 
+/**
+ * Interface to select and review selected employees through several selection categories.
+ *
+ * Can enable which selection categories are enabled via `props.enabledSelectionCategories`.
+ */
 export default class EmployeeSelectionInterface extends React.Component<Props, State> {
     public filterKeys: FilterKey[]
     public filterTypes: FilterType[]
@@ -79,7 +84,7 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
         this.addCustomRule = this.addCustomRule.bind(this);
 
         this.state = {
-            selectedEmployees: {
+            selectedEmployees: { //@TODO: remove the calls to `props` here.
                 employees: [
                     props.employees[0],
                     props.employees[1],
@@ -126,7 +131,7 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
                     const filterType = this.filterTypes.find((filterType: FilterType) => filterType.value === rule.type);
 
                     return (
-                        <p className={className}>{filterKey.label} that {filterType.label} “{rule.value}”<span className="ml2 f6">(15 employees)</span></p>
+                        <p className={className}>{filterKey.label} that {filterType.label} “{rule.value}”<span className="ml2 f6">(15 employees)</span></p>{/*@TODO: Replace this 15 with an estimate from the API.*/}
                     );
                 },
             },

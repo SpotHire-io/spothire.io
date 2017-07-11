@@ -19,6 +19,9 @@ interface State {
     currentSelectionCategoryKey: string
 }
 
+/**
+ * Manages which employee selection interface is visible.
+ */
 class SelectEmployees extends React.Component<Props, State> {
     constructor(props: Props) {
         super();

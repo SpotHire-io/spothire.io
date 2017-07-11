@@ -15,7 +15,7 @@ interface Category {
 
 interface Props {
     className?: string
-    selectionCategories: any
+    selectionCategories: Category[]
     unSelectById(key: string, id: string): any
     selectedEmployees: {
         employees: Schemas.Employee[]
@@ -24,6 +24,9 @@ interface Props {
     }
 }
 
+/**
+ * Walks through the provided categories to display selected employees, including the ability to unselect employees.
+ */
 const ReviewSelectedEmployees: React.StatelessComponent<Props> = ({ className, selectionCategories, unSelectById, selectedEmployees }) => {
     const renderSelections = (category: Category) => {
         return (
