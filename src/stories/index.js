@@ -41,7 +41,6 @@ import OpportunityModal from '../components/Scheduling/OpportunityModal';
 import ShiftManager from '../components/Scheduling/ShiftManager';
 
 import UserTable from '../components/Employees/UserTable';
-import SelectableUserTable from '../components/Employees/SelectableUserTable';
 import EmployeeSelectionInterface from '../components/Employees/EmployeeSelectionInterface';
 import SelectIndividuals from '../components/Employees/EmployeeSelection/SelectEmployees/Individuals';
 import SelectGroups from '../components/Employees/EmployeeSelection/SelectEmployees/Groups';
@@ -696,13 +695,6 @@ storiesOf('Employees', module)
         <WithNotes notes="An experimental interface to add new users inline with the table interface.">
             <div className="pa4 bg-near-white">
                 <UserTable inlineAddingRowIsOpen={true}/>
-            </div>
-        </WithNotes>
-    ))
-    .add('SelectableUserTable', () => (
-        <WithNotes>
-            <div className="pa4 bg-near-white">
-                <SelectableUserTable/>
             </div>
         </WithNotes>
     ))

@@ -2,6 +2,5 @@ MetadataInterface.js
 UserTable.js
 EmployeeSelectionInterface.js
 TimesheetSummary.js
-SelectableUserTable.js
 SelectableTimesheetTable.js
 TimesheetSummary.js

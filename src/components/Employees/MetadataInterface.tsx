@@ -34,12 +34,16 @@ const metaTypes = [
     },
 ]
 
+/**
+ * Interface to manage the key/value pairs of an employee's metadata, taking into account
+ * that each key has an associated type (e.g. string, number, etc), affecting how their values are set.
+ */
 export default class MetadataInterface extends React.Component<Props, State> {
     constructor(props: Props) {
         super()
         this.state = {
             currentlyEditingMetaPairId: null,
-            metaPairs: props.employee.metadata
+            metaPairs: props.employee.metadata // @TODO: Refactor the class so that the metadata is stored in the Employee object and modified with a prop making an API call.
         }
     }
 

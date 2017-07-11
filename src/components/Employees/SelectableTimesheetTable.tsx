@@ -8,8 +8,6 @@ const { Table, Thead, Th, Tr, Td } = require('reactable')
 import { CSSTransitionGroup } from 'react-transition-group'
 import * as Schemas from '../../schemas'
 
-// const userData = require('../../data/people.json');
-
 interface Props {
     className?: string
     users: Schemas.Person[]
@@ -24,6 +22,13 @@ interface State {
 
 const commonCellClasses = 'pa3'
 
+/**
+ * Displays timesheet details about provided employees.
+ *
+ * Maintains a state of selected user IDs, provided to external components whenever updated
+ * via `props.onUpdateSelectedUsers`; this is used by the `TimesheetSummary` component to
+ * manage which employees to summarize.
+ */
 export default class SelectableTimesheetTable extends React.Component<Props, State> {
     public static defaultProps = {
         className: '',

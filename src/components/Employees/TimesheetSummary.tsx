@@ -11,6 +11,9 @@ interface Props {
     users: Person[]
 }
 
+/**
+ * Summarizes timesheet details for the provided employees by aggregating them.
+ */
 const TimesheetSummary: React.StatelessComponent<Props> = ({ className = '', users }) => {
     const overSubmittedUserCount = users.reduce((overSubmittedUsers: number, user: Person) => (user.hours.submitted > user.hours.worked) ? overSubmittedUsers + 1 : overSubmittedUsers, 0);
     const underSubmittedUserCount = users.reduce((underSubmittedUsers: number, user: Person) => (user.hours.submitted < user.hours.worked) ? underSubmittedUsers + 1 : underSubmittedUsers, 0);

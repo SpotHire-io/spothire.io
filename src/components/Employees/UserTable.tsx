@@ -27,7 +27,11 @@ interface Props {
 interface State {
 }
 
-
+/**
+ * Lists provided users, allowing various management functions (selecting, editing, deleteing).
+ *
+ * Can select the columns displayed with `props.enabledColumns`.
+ */
 export default class UserTable extends React.Component<Props, State> {
     public static defaultProps = {
         className: '',
