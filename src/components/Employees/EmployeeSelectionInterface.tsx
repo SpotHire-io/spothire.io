@@ -130,8 +130,8 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
                     const filterKey = this.filterKeys.find((filterKey: FilterKey) => filterKey.value === rule.key);
                     const filterType = this.filterTypes.find((filterType: FilterType) => filterType.value === rule.type);
 
-                    return (
-                        <p className={className}>{filterKey.label} that {filterType.label} “{rule.value}”<span className="ml2 f6">(15 employees)</span></p>{/*@TODO: Replace this 15 with an estimate from the API.*/}
+                    return (// @TODO: Replace the 15 below with an estimate from the API.
+                        <p className={className}>{filterKey.label} that {filterType.label} “{rule.value}”<span className="ml2 f6">(15 employees)</span></p>
                     );
                 },
             },
