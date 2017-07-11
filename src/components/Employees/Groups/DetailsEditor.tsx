@@ -13,6 +13,9 @@ interface State {
 
 }
 
+/**
+ * Form to edit basic details about a group, or to delete the group.
+ */
 export default class GroupDetailsEditor extends React.Component<Props, State> {
     render() {
         const wrapperClasses = classNames({

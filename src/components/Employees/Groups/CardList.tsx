@@ -6,10 +6,13 @@ import {Group} from '../../../schemas';
 interface Props {
     className?: string
     groups: Group[]
-    onSelectGroup?: Function
+    onSelectGroup?: (groupId: number) => any
     cardProps?: any
 }
 
+/**
+ * Render a list of `GroupCard`s, adding the ability to select them via `onSelectGroup`.
+ */
 const CardList: React.StatelessComponent<Props> = ({ className = '', cardProps, groups, onSelectGroup }) => (
     <div className={classNames("flex flex-wrap justify-around nr3", className)}>
         {groups.map((group) => (

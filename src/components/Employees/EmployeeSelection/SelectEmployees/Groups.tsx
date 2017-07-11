@@ -10,7 +10,7 @@ const userData = require('../../../../data/people.json');
 
 interface Props {
     className?: string
-    onAddGroup?: (groupId: string) => any
+    onAddGroup?: (groupId: number) => any
 }
 
 interface State {
@@ -35,7 +35,7 @@ const groups: Group[] = range(10).map((number) => {
 export default class SelectGroups extends React.Component<Props, State> {
     public static defaultProps: Props = {
         className: '',
-        onAddGroup: (groupId: string) => alert(`Group #${groupId} added!`),
+        onAddGroup: (groupId: number) => alert(`Group #${groupId} added!`),
     };
 
     render() {

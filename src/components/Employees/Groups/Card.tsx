@@ -9,6 +9,9 @@ interface Props {
     displayAvatarPreview?: boolean
 }
 
+/**
+ * Display quick overview of a group's details in card format (a Box).
+ */
 const Card: React.StatelessComponent<Props> = ({ className = '', displayAvatarPreview = true, group }) => {
     const renderAvatarPreview = () => {
         const groupEmployees = group.employees;
