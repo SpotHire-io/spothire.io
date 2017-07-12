@@ -38,6 +38,7 @@ import FilterContainer from '../components/Filters/FilterContainer';
 import OverviewCalendar from '../components/Scheduling/OverviewCalendar';
 import OpportunityModal from '../components/Scheduling/OpportunityModal';
 import ShiftManager from '../components/Scheduling/ShiftManager';
+import ShiftList from '../components/Scheduling/ShiftList';
 
 import UserTable from '../components/Employees/UserTable';
 import EmployeeSelectionInterface from '../components/Employees/EmployeeSelectionInterface';
@@ -55,7 +56,6 @@ import TimeOffRequestRequester from '../components/Profile/TimeOffRequests/Reque
 import TimeOffRequestReviewer from '../components/Profile/TimeOffRequests/Reviewer';
 import NewTimeOffRequestModal from '../components/Profile/TimeOffRequests/Modal';
 
-import ShiftList from '../components/Miscellaneous/ShiftList';
 // import SectionSwitcher from '../components/Miscellaneous/SectionSwitcher';
 
 const samplePeople = require('../data/people.json')
@@ -589,6 +589,13 @@ storiesOf('Scheduling', module)
                 <ShiftManager/>
             </div>
         </WithNotes>
+    ))
+    .add('ShiftList', () => (
+        <WithNotes>
+            <div className="pa4 bg-near-white">
+                <ShiftList/>
+            </div>
+        </WithNotes>
     ));
 
 storiesOf('Employees', module)
@@ -732,15 +739,5 @@ storiesOf('Profile', module)
                 isOpen={true}
                 onSubmitRequest={(request) => console.log(request)}
             />
-        </WithNotes>
-    ));
-
-
-storiesOf('Miscellaneous', module)
-    .add('ShiftList', () => (
-        <WithNotes>
-            <div className="pa4 bg-near-white">
-                <ShiftList/>
-            </div>
         </WithNotes>
     ));

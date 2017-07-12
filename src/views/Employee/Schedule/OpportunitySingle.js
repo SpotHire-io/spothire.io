@@ -13,7 +13,7 @@ import BasicButton from '../../../components/Buttons/BasicButton';
 
 import PostList from '../../../components/Newsfeed/PostList';
 
-import ShiftList from '../../../components/Miscellaneous/ShiftList';
+import ShiftList from '../../../components/Scheduling/ShiftList';
 
 import posts from '../../../data/posts.json';
 
