@@ -8,6 +8,14 @@ interface Props {
     type?: 'neutral' | 'positive' | 'negative'
 }
 
+/**
+ * Tag for quick status overviews.
+ *
+ * Used, for example, to show whether a post requires a response—what its replied-to status is.
+ *
+ * Use `props.type` to set its visual significance.
+ * Use `props.isNarrow` to slim the tag down for compressed displays.
+ */
 const BasicTag: React.StatelessComponent<Props> = ({ type, children, className, isNarrow }) => {
     let tagClasses = classNames({
         'dib f6 ba b--dashed br4': true,
