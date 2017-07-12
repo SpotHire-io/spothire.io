@@ -17,6 +17,9 @@ interface State {
     currentlyEditingShiftId: number
 }
 
+/**
+ * List an employee’s shifts, providing an overview and RSVP mechanism.
+ */
 export default class ShiftList extends React.Component<Props, State> {
     public static defaultProps = {
         className: '',
@@ -26,7 +29,7 @@ export default class ShiftList extends React.Component<Props, State> {
         super()
         this.state = {
             currentlyEditingShiftId: null,
-            shifts: props.shifts
+            shifts: props.shifts // @TODO: Pull this from the employee instead, and update via the API
         }
     }
 

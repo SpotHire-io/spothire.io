@@ -10,6 +10,9 @@ import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
 import OpportunityModalEmployees from './OpportunityModal/Employees';
 
+/**
+ * Manager interface to create/edit/delete shifts for an opportunity.
+ */
 class ShiftManager extends React.Component {
     constructor(props) {
         super();

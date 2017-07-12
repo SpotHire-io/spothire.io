@@ -13,6 +13,14 @@ BigCalendar.setLocalizer(
     BigCalendar.momentLocalizer(moment)
 );
 
+/**
+ * Main calendar component for viewing and managing opportunities.
+ *
+ * Includes `OpportunityModal` to create new opportunities.
+ *
+ * @TODO: Connect opportunity creation to the API, so that the list of opportunities actually updates.
+ *        Also, probably, remove the "in-progress" opportunity from the state.
+ */
 class OverviewCalendar extends React.Component {
     constructor() {
         super();
