@@ -11,7 +11,6 @@ interface Props {
     className?: string
     employee: Person
     onSubmitAvailability: React.EventHandler<React.MouseEvent<{}>>
-    availability?: Availability
 }
 
 interface State {
@@ -24,12 +23,17 @@ const defaultTimeSlot: TimeSlot = {
     end: moment('12:00', 'kk:mm'),
 }
 
+/**
+ * Editor for availability, allowing an employee to set their availability for each day of the week.
+ *
+ * Requires an employee (`props.employee`).
+ */
 export default class AvailabilityEditor extends React.Component<Props, State> {
     constructor(props: Props) {
         super()
         this.state = {
             defaultTimeSlot,
-            availability: props.employee.availability,
+            availability: props.employee.availability, // @TODO: Stop storing availability in state, use the API instead
         }
     }
 

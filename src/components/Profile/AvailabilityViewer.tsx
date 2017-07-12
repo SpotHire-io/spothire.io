@@ -9,6 +9,11 @@ interface Props {
     employee: Person
 }
 
+/**
+ * Display an employee’s availability for each day of the week.
+ *
+ * Requires an employee (`props.employee`).
+ */
 const AvailabilityViewer: React.StatelessComponent<Props> = ({ className, employee }) => {
     return (
         <div className={classNames(className)}>
