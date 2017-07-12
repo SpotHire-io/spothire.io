@@ -88,6 +88,11 @@ interface State {
     isFocused: boolean
 }
 
+/**
+ * Wrapper for react-dates/SingleDatePicker to handle its focused state.
+ *
+ * Takes all the props of the actual component.
+ */
 export default class SingleDatePickerFocusContainer extends React.Component<Props, State> {
     constructor() {
         super()
