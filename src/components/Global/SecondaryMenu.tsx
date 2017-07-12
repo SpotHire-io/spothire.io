@@ -18,6 +18,11 @@ interface State {
 
 }
 
+/**
+ * Secondary section menu.
+ *
+ * Provides navigation for a given section.
+ */
 export default class SecondaryMenu extends React.Component<Props, State> {
     public static defaultProps = {
         className: ''

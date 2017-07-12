@@ -10,6 +10,13 @@ interface Props {
     children: React.ReactNode
 };
 
+/**
+ * Standard UI container. Most content and interfaces should be wrapped in a Box.
+ *
+ * Can display a title (set as `props.title`) with two different styles (`props.headingType`),
+ * and the heading’s h-level can be controlled (`props.headingSemanticLevel`) to allow for
+ * proper hierarchies.
+ */
 const Box: React.StatelessComponent<Props> = ({ children, className, contentWrapperClassName, headingSemanticLevel, headingType, title }) => {
     let wrapperClasses = classNames({
         'bg-white ba b--black-20 sh-shadow-2': true,

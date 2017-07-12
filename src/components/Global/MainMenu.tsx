@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as classNames from 'classnames';
 
 // storybook stuff
-import { linkTo } from '@kadira/storybook';
+import { linkTo } from '@kadira/storybook'; // @TODO: Remove the Storybook dependency, replacing with react-router. (a more sensible dependency)
 
 interface Props {
     className?: string
@@ -29,6 +29,14 @@ const menuItems = {
     ],
 };
 
+/**
+ * Main application menu.
+ *
+ * Sits at the top of almost every view, allowing navigation between the main sections.
+ *
+ * The menu items vary according to the user type. Both types see a
+ * a user menu with links to their profile and to log out.
+ */
 export default class MainMenu extends React.Component<Props, State> {
     public static defaultProps = {
         className: '',

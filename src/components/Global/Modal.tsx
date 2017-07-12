@@ -11,6 +11,9 @@ interface Props {
     children: React.ReactNode
 }
 
+/**
+ * Wrapper for react-modal to set commonly used props.
+ */
 const Modal: React.StatelessComponent<Props> = (props) => {
     return (
         <RModal
