@@ -17,6 +17,11 @@ import ShiftList from '../../../components/Scheduling/ShiftList';
 
 import posts from '../../../data/posts.json';
 
+/**
+ * View for an employee to see the details of a single opportunity and to participate in it.
+ *
+ * Allows them access to the opportunity details, opportunity posts, and shifts.
+ */
 class EmployeeOpportunitySingleView extends React.Component {
     constructor() {
         super();
@@ -25,7 +30,7 @@ class EmployeeOpportunitySingleView extends React.Component {
     }
 
     render() {
-        const rsvpState = (Math.random() > 0.5) ? 'invited' : 'confirmed';
+        const rsvpState = (Math.random() > 0.5) ? 'invited' : 'confirmed'; // @TODO: replace this and calls to `rsvpState` with the individual employee's RSVP state for the opportunity
 
         return (
             <div className={classNames('pa4 bg-near-white flex', this.props.className)}>
@@ -34,7 +39,7 @@ class EmployeeOpportunitySingleView extends React.Component {
                         <h1 className="mb0 f3">{this.props.opportunity.title}</h1>
 
                         <dl className="ma0 flex flex-wrap nr3">
-                            {[
+                            {[// @TODO: pull all of this information from the opportunity, not just some of it
                                 {
                                     id: 'startDate',
                                     label: 'From',

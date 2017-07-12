@@ -13,6 +13,9 @@ import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSe
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
 
+/**
+ * Details for a given group, and interface to add new group members.
+ */
 class GroupSingleView extends React.Component {
     constructor() {
         super();

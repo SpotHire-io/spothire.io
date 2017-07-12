@@ -5,6 +5,9 @@ import GroupListView from './People/GroupList';
 import SectionSwitcher from '../../components/Miscellaneous/SectionSwitcher';
 import EmployeeListView from './People/EmployeeList';
 
+/**
+ * Wrapper view for the people and group list views.
+ */
 class PeopleView extends React.Component {
     render() {
         return (

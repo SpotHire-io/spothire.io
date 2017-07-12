@@ -9,6 +9,9 @@ import UserTable from '../../../components/Employees/UserTable';
 // storybook stuff
 import { linkTo } from '@kadira/storybook';
 
+/**
+ * Overview of all employees attached to the organisation, with management functions.
+ */
 class EmployeeListView extends React.Component {
     constructor() {
         super();

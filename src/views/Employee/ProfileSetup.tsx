@@ -10,6 +10,10 @@ interface Props {
 interface State {
 }
 
+/**
+ * View for when a user has been sent an invite to join SpotHire for the given organisation,
+ * allowing them to set their initial profile details.
+ */
 export default class ProfileSetup extends React.Component<Props, State> {
     constructor() {
         super()

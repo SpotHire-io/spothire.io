@@ -5,6 +5,9 @@ import { Switch } from 'rebass';
 import PostList from '../../components/Newsfeed/PostList';
 import FilterContainer from '../../components/Filters/FilterContainer';
 
+/**
+ * The aggregated posts from all of an employee’s opportunities.
+ */
 class NewsfeedView extends React.Component {
     constructor() {
         super();

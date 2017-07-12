@@ -12,6 +12,9 @@ import { linkTo } from '@kadira/storybook';
 // dummy data
 import users from '../../data/people.json';
 
+/**
+ * Calendar showing all opportunities within the organisation, optionally filtered by manager.
+ */
 class ScheduleView extends React.Component {
     constructor() {
         super();

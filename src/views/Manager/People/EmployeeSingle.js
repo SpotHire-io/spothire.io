@@ -13,6 +13,10 @@ import { linkTo } from '@kadira/storybook';
 // demo data
 import timeOffRequests from '../../../data/timeOffRequests.json';
 
+/**
+ * Manager version of a single employee’s details. Allows them to set private
+ * notes and metadata, visible only by managers and admin.
+ */
 class EmployeeSingleView extends React.Component {
     render() {
         return (

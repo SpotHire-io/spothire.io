@@ -6,6 +6,11 @@ import PersonSchema from '../../schemas/Person';
 import BasicButton from '../../components/Buttons/BasicButton';
 import {Switch} from 'rebass';
 
+/**
+ * Interface for an employee to manage their personal details and preferences.
+ *
+ * @TODO: Wire this all up to make it interactive via the API.
+ */
 class EmployeeProfileView extends React.Component {
     render() {
         return (

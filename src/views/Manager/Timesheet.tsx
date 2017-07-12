@@ -35,6 +35,9 @@ type DiscrepancyTypes = {
     label: string
 }
 
+/**
+ * At a glance timesheet information and reporting capabilities for all employees within the organisation.
+ */
 export default class TimesheetView extends React.Component<Props, State> {
     constructor() {
         super()

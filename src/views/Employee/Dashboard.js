@@ -22,6 +22,12 @@ import { linkTo } from '@kadira/storybook';
 // mock data
 import timeOffRequests from '../../data/timeOffRequests.json';
 
+/**
+ * Overview of the scheduling information relevent to an employee.
+ *
+ * At a glance, indicates upcoming events (in calendar and agenda formats), and allows them
+ * to set availability and manage time off requests.
+ */
 class DashboardView extends React.Component {
     constructor() {
         super();

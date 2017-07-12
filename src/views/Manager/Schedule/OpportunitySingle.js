@@ -10,6 +10,9 @@ import OpportunitySchema from '../../../schemas/Opportunity';
 import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
 import OpportunityModalBasicInfo from '../../../components/Scheduling/OpportunityModal/BasicInfo';
 
+/**
+ * Details for a single opportunity, with full editing capabilities.
+ */
 class OpportunitySingleView extends React.Component {
     constructor(props) {
         super();
