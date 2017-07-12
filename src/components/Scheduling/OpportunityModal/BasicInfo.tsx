@@ -12,6 +12,12 @@ interface Props {
     opportunity: OpportunitySchema
 }
 
+/**
+ * Interface to configure basic information about an opportunity.
+ *
+ * Pass the opportunity via `props.opportunity` and a function accepting the edited opportunity
+ * via `props.updateOpportunity`.
+ */
 const OpportunityModalBasicInfo: React.StatelessComponent<Props> = ({ updateOpportunity, opportunity }) => {
     const toggleAllDay = () => {
         const updatedOpportunity: OpportunitySchema = { ...opportunity };
@@ -86,7 +92,7 @@ const OpportunityModalBasicInfo: React.StatelessComponent<Props> = ({ updateOppo
         </dl>
     );
 
-    return (
+    return ( // @TODO: Update fields to save to the opportunity, instead of just defaultValue
         <div>
             <p>
                 <label className="f6 db" htmlFor="opp_title">Name</label>

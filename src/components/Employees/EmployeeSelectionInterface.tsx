@@ -47,9 +47,9 @@ const groups = range(10).map((number) => {
 
 interface Props {
     className?: string
-    employees: Schemas.Employee[]
-    groups: Schemas.Group[]
-    enabledSelectionCategories: any[]
+    employees?: Schemas.Employee[]
+    groups?: Schemas.Group[]
+    enabledSelectionCategories?: any[]
 }
 
 interface State {

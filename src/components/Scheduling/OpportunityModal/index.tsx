@@ -15,6 +15,11 @@ interface State {
 
 }
 
+/**
+ * Wrapper for the new opportunity modal, passing information about the opportunity to its parent.
+ *
+ * Use `props.updateOpportunity` to update the opportunity state, and `props.addOpportunity` (no params) to register its creation.
+ */
 class OpportunityModal extends React.Component<Props, State> {
     render() {
         return (

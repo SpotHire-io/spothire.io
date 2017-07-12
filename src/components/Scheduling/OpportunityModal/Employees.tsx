@@ -3,7 +3,7 @@ import Modal from '../../../components/Global/Modal';
 import UserTable from '../../../components/Employees/UserTable';
 import BasicButton from '../../../components/Buttons/BasicButton';
 import Opportunity from '../../../schemas/Opportunity';
-const EmployeeSelectionInterface = require('../../../components/Employees/EmployeeSelectionInterface');
+import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
 
 interface Props {
     updateOpportunity: Function
@@ -14,6 +14,9 @@ interface State {
     isAddEmployeesModalOpen: boolean
 }
 
+/**
+ * Interface to review employees added to an opportunity, and to select more via a modal.
+ */
 export default class OpportunityModalEmployees extends React.Component<Props, State> {
     constructor() {
         super();
@@ -51,7 +54,7 @@ export default class OpportunityModalEmployees extends React.Component<Props, St
                     contentLabel="Add employees modal"
                     fullWidth={true}
                 >
-                    <EmployeeSelectionInterface/>
+                    <EmployeeSelectionInterface />
                 </Modal>
             </div>
         )
