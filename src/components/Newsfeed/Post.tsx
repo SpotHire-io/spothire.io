@@ -16,6 +16,9 @@ interface Props {
     showOpportunityName?: boolean
 }
 
+/**
+ * A blog post linked to an opportunity, allowing user responses.
+ */
 const Post: React.StatelessComponent<Props> = ({ post, className, isOpen, toggleOpenState, isInline, showOpportunityName }) => {
     let wrapperClasses = classNames({
         'sh-shadow-2': ! isInline && isOpen,

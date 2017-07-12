@@ -13,6 +13,11 @@ interface State {
     openPosts: number[]
 }
 
+/**
+ * A list of blog posts.
+ *
+ * Maintains the open/closed state of its posts
+ */
 export default class PostList extends React.Component<Props, State> {
     constructor(props: Props) {
         super();
