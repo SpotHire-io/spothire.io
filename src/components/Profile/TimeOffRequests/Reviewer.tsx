@@ -13,6 +13,11 @@ interface State {
     requests: TimeOffRequest[]
 }
 
+/**
+ * Time off request interface for reviewers (managers).
+ *
+ * @TODO: Tie the requests to their employee.
+ */
 export default class TimeOffRequestReviewer extends React.Component<Props, State> {
     public static defaultProps = {
         className: ''
@@ -20,7 +25,7 @@ export default class TimeOffRequestReviewer extends React.Component<Props, State
     constructor(props: Props) {
         super()
         this.state = {
-            requests: props.timeOffRequests,
+            requests: props.timeOffRequests, // @TODO: Instead of storing the requests in state, update them via the API and just use props
         }
     }
 
@@ -37,7 +42,7 @@ export default class TimeOffRequestReviewer extends React.Component<Props, State
         const index = requests.findIndex((request: TimeOffRequest) => request.id === requestId)
 
         requests[index][field] = value
-        this.setState({ requests })
+        this.setState({ requests }) // @TODO: an API call instead
     }
 
     render() {

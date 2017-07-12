@@ -17,6 +17,13 @@ interface Props {
 
 type TagType = 'neutral' | 'positive' | 'negative'
 
+/**
+ * List of time off requests, with an interface according to whether the person is
+ * a requester (employee) or reviewer (manager).
+ *
+ * If in reviewer mode, include functions for `props.deleteRequest`, `props.approveRequest`,
+ * and `props.rejectRequest`.
+ */
 const TimeOffRequestList: React.StatelessComponent<Props> = (props) => {
     if (props.timeOffRequests.length <= 0) {
         return <p className="i">No requests found.</p>;

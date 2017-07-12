@@ -4,6 +4,11 @@ import PropTypes from 'prop-types';
 import BasicButton from '../../../components/Buttons/BasicButton';
 import NewTimeOffRequestModal from './Modal';
 
+/**
+ * Wrapper for time off request modal, managing its open state.
+ *
+ * `props.addRequest` is necessary to pass the created request from the modal to the parent.
+ */
 class TimeOffRequestNew extends React.Component {
     constructor() {
         super();

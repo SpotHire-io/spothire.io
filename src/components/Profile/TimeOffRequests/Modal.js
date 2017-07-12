@@ -9,6 +9,11 @@ import Modal from '../../Global/Modal';
 import BasicButton from '../../Buttons/BasicButton';
 import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
 
+/**
+ * Modal for creating a new time off request.
+ *
+ * `props.onSubmitRequest` is required to pass the request from the modal to the parent.
+ */
 class NewTimeOffRequestModal extends React.Component {
     constructor() {
         super();
