@@ -61,21 +61,21 @@ export default class UserTable extends React.Component<Props, State> {
         return (
             <Tr className='mt0'>
                 {this.renderUserCell('avatar', '', 'pv1')}
-                {this.renderUserCell('name', (
+                {this.renderUserCell('name', (// @TODO: Store this value in state
                     <input
                         className={inputClasses}
                         type='text'
                         placeholder='Name'
                     />
                 ), 'pv2')}
-                {this.renderUserCell('email', (
+                {this.renderUserCell('email', (// @TODO: Store this value in state
                     <input
                         className={inputClasses}
                         type='email'
                         placeholder='Email'
                     />
                 ), 'pv2')}
-                {this.renderUserCell('phone', (
+                {this.renderUserCell('phone', (// @TODO: Store this value in state
                     <input
                         className={inputClasses}
                         type='tel'
@@ -84,6 +84,7 @@ export default class UserTable extends React.Component<Props, State> {
                 ), 'pv2')}
                 {this.renderUserCell('actions', (
                     <div className="tr" title="Invite employee">
+                        {/* @TODO: Clicking this should create the new user via the API, inviting them, then redirect to their individual page */}
                         <Icon color='#555555' name='check' className='pointer v-mid' onClick={() => linkTo('Views (manager)', 'People:EmployeeSingleView')}/>
                     </div>
                 ), 'pv1')}
