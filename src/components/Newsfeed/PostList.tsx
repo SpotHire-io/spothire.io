@@ -58,19 +58,15 @@ export default class PostList extends React.Component<Props, State> {
         return (
             <div className={wrapperClasses}>
                 {this.props.posts.map((post: Schemas.Post, index) => {
-                    const postClasses = classNames({
-                        'mb3': this.props.posts.length !== index + 1
-                    });
-
-                    const boundTogglePost = this.togglePost.bind(null, post.id);
-
                     return (
                         <Post
                             key={post.id}
-                            className={postClasses}
+                            className={classNames({
+                                'mb3': this.props.posts.length !== index + 1
+                            })}
                             post={post}
                             isOpen={this.state.openPosts.indexOf(post.id) !== -1}
-                            toggleOpenState={boundTogglePost}
+                            toggleOpenState={() => this.togglePost(post.id)}
                             {...this.props.postProps}
                         />
                     )

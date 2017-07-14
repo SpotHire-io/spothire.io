@@ -36,7 +36,7 @@ const Post: React.StatelessComponent<Props> = ({ post, className, isOpen, toggle
         });
 
         return (
-            <div className={headerClasses} onClick={() => (isOpen) ? toggleOpenState : null}>
+            <div className={headerClasses} onClick={() => (isOpen) ? toggleOpenState() : null}>
                 <h2 className={classNames('mv0 lh-title', { 'f5': isInline, 'f4': ! isInline })}>
                     {post.title} {(isInline) ? <span className="f6 ml1 normal">({moment(post.date).format("MMMM Do, h:mm a")})</span> : null}
                 </h2>
@@ -102,7 +102,7 @@ const Post: React.StatelessComponent<Props> = ({ post, className, isOpen, toggle
     };
 
     return (
-        <article className={wrapperClasses} onClick={() => isOpen ? null : toggleOpenState}>
+        <article className={wrapperClasses} onClick={() => (isOpen) ? null : toggleOpenState()}>
             {renderHeader()}
             <div className={classNames('bg-white ba b--black-20 ph3', { 'pv3': isInline, 'pv4': ! isInline })}>
                 <div
