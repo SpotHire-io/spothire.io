@@ -113,6 +113,7 @@ const Post: React.StatelessComponent<Props> = ({ post, className, isOpen, toggle
             {(isOpen) ? renderInteractionInterface() : null}
             {(! isInline) ? (
                 <div className="bg-white-10 ba bt-0 b--black-10 ph3 pv2 f6">
+                    {/* @TODO: Pull actual opportunity name from opportunity identified in `Post.opportunityId` */}
                     {moment(post.date).format("MMMM Do, h:mm a")}{(showOpportunityName) ? <span> in <em>Opportunity Name</em></span> : null}
                 </div>
             ) : null}

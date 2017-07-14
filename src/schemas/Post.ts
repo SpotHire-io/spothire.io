@@ -6,6 +6,7 @@ interface Post {
     date: string
     responseRequired: boolean
     isRespondedTo: boolean
+    opportunityId: number
 }
 
 export default Post;
