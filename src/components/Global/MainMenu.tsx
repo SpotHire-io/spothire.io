@@ -96,7 +96,7 @@ export default class MainMenu extends React.Component<Props, State> {
             },
             {
                 text: 'Log out',
-                onClick: () => console.log('Log out clicked!'),
+                onClick: () => console.log('Log out clicked!'), // @TODO: this should log the user out
             },
         ];
 
