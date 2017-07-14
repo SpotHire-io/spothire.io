@@ -46,12 +46,12 @@ class SelectEmployees extends React.Component<Props, State> {
 
         switch (category.key) {
             case 'employees':
-                selectionInterface = (
+                selectionInterface = ( // @TODO: add `onAddUser` here to capture the users added via this method (to pass to the parent)
                     <SelectIndividuals className={commonWrapperClasses}/>
                 );
                 break;
             case 'groups':
-                selectionInterface = (
+                selectionInterface = ( // @TODO: add `onAddGroup` here to capture the groups added via this method (to pass to the parent)
                     <SelectGroups className={commonWrapperClasses}/>
                 );
                 break;

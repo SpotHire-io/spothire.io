@@ -5,7 +5,6 @@ import UserTable from '../../../components/Employees/UserTable';
 import GroupCard from '../../../components/Employees/Groups/Card';
 import GroupSchema from '../../../schemas/Group';
 import BasicButton from '../../../components/Buttons/BasicButton';
-import Box from '../../../components/Global/Box';
 import SecondaryMenu from '../../../components/Global/SecondaryMenu';
 import GroupDetailsEditor from '../../../components/Employees/Groups/DetailsEditor';
 import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';

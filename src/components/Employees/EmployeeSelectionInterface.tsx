@@ -8,6 +8,7 @@ import SelectEmployees from './EmployeeSelection/SelectEmployees'
 import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees'
 
 // Rule data
+// @TODO: Pull these from the admin settings, when we get to private metadata
 const filterKeys = require('../../data/peopleFilterRules/filterKeys.json')
 const filterTypes = require('../../data/peopleFilterRules/filterTypes.json')
 
@@ -64,6 +65,11 @@ interface State {
  * Interface to select and review selected employees through several selection categories.
  *
  * Can enable which selection categories are enabled via `props.enabledSelectionCategories`.
+ *
+ * @TODO: Refactor this somewhat so that "selectedEmployees" is really just a bundle of filters,
+ * with the current employee/group filters being special filters with key=employee|group, and
+ * value=employeeId|groupId, as appropriate. (Currently this component uses "custom rule"; this
+ * is interchangeable with "filter".)
  */
 export default class EmployeeSelectionInterface extends React.Component<Props, State> {
     public filterKeys: FilterKey[]
@@ -107,6 +113,8 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
                 title: 'Employees',
                 selections: this.state.selectedEmployees.employees,
                 renderMethod: (employee: Schemas.Employee, className: string) => {
+                    // @TODO: In shifting to the custom filter method, will have to resolve those filters to figure out which
+                    //         employee each refers to, to provide the employee object to this method.
                     return (
                         <p className={className}>{employee.firstName} {employee.lastName}</p>
                     );
@@ -117,6 +125,8 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
                 title: 'Groups',
                 selections: this.state.selectedEmployees.groups,
                 renderMethod: (group: Schemas.Group, className: string) => {
+                    // @TODO: In shifting to the custom filter method, will have to resolve those filters to figure out which
+                    //        group each refers to, to provide the group object to this method.
                     return (
                         <p className={className}>{group.name} <span className="ml2 f6">({group.employees.length} employees)</span></p>
                     );
@@ -138,6 +148,7 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
         ];
     }
 
+    // @TODO: Create methods similar to this one for employees and groups
     addCustomRule(rule: Rule) {
         let selectedEmployees = {...this.state.selectedEmployees};
 
@@ -146,6 +157,7 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
         this.setState({ selectedEmployees });
     }
 
+    // @TODO: Set this up to remove the value from `state.selectedEmployees`
     unSelectById(categoryKey: string, selectionId: string) {
         alert('Unselecting...');
     }
@@ -158,6 +170,7 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
                 <div className="flex">
                     <div className="w-50 mr4">
                         <h3 className="mt0 f6 lh-title ttu">Select Employees</h3>
+                        {/* @TODO: Create and pass through methods for onAddUser and onAddGroup */}
                         <SelectEmployees selectionCategories={filteredSelectionCategories} onAddCustomRule={this.addCustomRule}/>
                     </div>
                     <div className="w-50">
@@ -167,6 +180,7 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
                 </div>
 
                 <div className="tr">
+                    {/* @TODO: This should pass to the parent, via a prop, the bundle of filters created in this.state.selectedEmployees; the parent method would then save it to the API, presumably */}
                     <BasicButton type="positive">Add Employees</BasicButton>
                 </div>
             </div>
