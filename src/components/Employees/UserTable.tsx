@@ -42,7 +42,7 @@ export default class UserTable extends React.Component<Props, State> {
         enabledColumns: ['avatar', 'name', 'email', 'phone', 'actions']
     };
 
-    constructor(props: Props) {
+    constructor() {
         super();
 
         this.renderNewUserRow = this.renderNewUserRow.bind(this);
@@ -61,33 +61,32 @@ export default class UserTable extends React.Component<Props, State> {
         return (
             <Tr className='mt0'>
                 {this.renderUserCell('avatar', '', 'pv1')}
-                {this.renderUserCell('name', () => (
+                {this.renderUserCell('name', (
                     <input
                         className={inputClasses}
                         type='text'
                         placeholder='Name'
                     />
                 ), 'pv2')}
-                {this.renderUserCell('email', () => (
+                {this.renderUserCell('email', (
                     <input
                         className={inputClasses}
                         type='email'
                         placeholder='Email'
                     />
                 ), 'pv2')}
-                {this.renderUserCell('phone', () => (
+                {this.renderUserCell('phone', (
                     <input
                         className={inputClasses}
                         type='tel'
                         placeholder='Phone'
                     />
                 ), 'pv2')}
-                {this.renderUserCell('actions', () =>
-                    <BasicButton
-                        type="positive"
-                        onClick={() => linkTo('Views (manager)', 'People:EmployeeSingleView')}>
-                        Create
-                    </BasicButton>, 'pv1')}
+                {this.renderUserCell('actions', (
+                    <div className="tr" title="Invite employee">
+                        <Icon color='#555555' name='check' className='pointer v-mid' onClick={() => linkTo('Views (manager)', 'People:EmployeeSingleView')}/>
+                    </div>
+                ), 'pv1')}
             </Tr>
         )
     }
@@ -178,7 +177,7 @@ export default class UserTable extends React.Component<Props, State> {
                         {this.renderHeaderCell('phone', 'Phone')}
                         {this.renderHeaderCell('actions', '')}
                     </Thead>
-                    {/*{(this.props.inlineAddingRowIsOpen) ? this.renderNewUserRow() : null}*/}
+                    {(this.props.inlineAddingRowIsOpen) ? this.renderNewUserRow() : null}
                     {(this.props.users.length > 0) ? this.props.users.map((user) => this.renderUserRow(user)) : this.renderNoUsersRow()}
                 </Table>
             </div>
