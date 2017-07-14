@@ -28,6 +28,7 @@ const Card: React.StatelessComponent<Props> = ({ className = '', displayAvatarPr
             bottom: `${(largeImageSize - smallImageSize) / 2}px`,
         };
 
+        // @TODO: These images should come from the people attached to the group
         return (
             <div className="relative">
                 <img

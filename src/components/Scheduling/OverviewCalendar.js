@@ -85,6 +85,7 @@ class OverviewCalendar extends React.Component {
         const ImageEvent = ({ event }) => {
             return (
                 <div className="mt1">
+                    {/* @TODO: Pull the two below images from the people attached to the opportunity itself */}
                     <div>
                         <img className="w1 h1 br-100 mr1" src="http://placehold.it/40x40" alt="placeholder"/>
                         <img className="w1 h1 br-100 mr1" src="http://placehold.it/40x40" alt="placeholder"/>
@@ -100,6 +101,7 @@ class OverviewCalendar extends React.Component {
             return (
                 <div className="flex pointer hover-bg-near-white" onClick={this.props.onSelectEvent}>
                     <div className="flex flex-wrap justify-between content-start w-10 pr2">
+                        {/* @TODO: Pull the below images from the people attached to the opportunity itself */}
                         {[...Array(3).keys()].map((number) => <img key={number} className="w1 h1 br-100 mr1 mb1" src="http://placehold.it/40x40" alt="placehold"/>)}
                     </div>
                     <div className="w-90">
@@ -139,7 +141,7 @@ class OverviewCalendar extends React.Component {
                     closeModal={this.closeModal}
                     opportunity={this.state.opportunity}
                     updateOpportunity={this.updateOpportunity}
-                    addOpportunity={linkTo('Views (manager)', 'Schedule:OpportunitySingle')}
+                    addOpportunity={linkTo('Views (manager)', 'Schedule:OpportunitySingle')} // @TODO: This should trigger an API call before redirecting to the newly created opportunity's page
                 />
             </div>
         )

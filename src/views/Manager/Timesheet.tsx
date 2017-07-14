@@ -50,7 +50,7 @@ export default class TimesheetView extends React.Component<Props, State> {
     }
 
     render() {
-        let filteredUsers = this.props.employees.filter((user: Person) => `${user.firstName} ${user.lastName}`.indexOf(this.state.nameSearch) > -1)
+        let filteredUsers = this.props.employees.filter((user: Person) => `${user.firstName.toLowerCase()} ${user.lastName.toLowerCase()}`.indexOf(this.state.nameSearch.toLowerCase()) > -1)
 
         if (this.state.discrepancyType !== null) {
             switch (this.state.discrepancyType.value) {

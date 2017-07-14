@@ -48,6 +48,7 @@ class OpportunitySingleView extends React.Component {
                 <h1 className="ma0 f3">{this.state.opportunity.title}</h1>
 
                 <div className="tr">
+                    {/* @TODO: Save a .ics (or whatever export format makes sense) of the opportunity details */}
                     <BasicButton type="neutral" className="mt3 f6">Export</BasicButton>
                 </div>
             </Box>
@@ -70,6 +71,10 @@ class OpportunitySingleView extends React.Component {
                                     <div className="w-two-thirds">
                                         <Box title="Opportunity Settings" headingType="inline">
                                             <OpportunityModalBasicInfo opportunity={this.state.opportunity} updateOpportunity={this.updateOpportunity}/>
+                                            <div className="mt3 tr">
+                                                {/* @TODO: Save the opportunity details to the API */}
+                                                <BasicButton type="positive">Save</BasicButton>
+                                            </div>
                                         </Box>
                                     </div>
                                 </div>
@@ -85,6 +90,7 @@ class OpportunitySingleView extends React.Component {
                                         <Box title="Employees" headingType="inline">
                                             <p>The following employees are invited or confirmed for the opportunity.</p>
 
+                                            {/* @TODO: The employees passed to this table (via `props.users`) should come from those attached to the opportunity */}
                                             <UserTable className="mt3" enabledColumns={['avatar', 'name']} hasShadow={false}/>
 
                                             <div className="tr mt3">
@@ -123,6 +129,7 @@ class OpportunitySingleView extends React.Component {
                     contentLabel="Add employees modal"
                     fullWidth={true}
                 >
+                    {/* @TODO: Need to include a method to grab the selections from the modal on submit */}
                     <EmployeeSelectionInterface/>
                 </Modal>
             </div>

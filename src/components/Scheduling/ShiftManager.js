@@ -6,6 +6,7 @@ import OpportunitySchema from '../../schemas/Opportunity';
 import classNames from 'classnames';
 import { CSSTransitionGroup } from 'react-transition-group';
 import Box from '../Global/Box';
+import BasicButton from '../Buttons/BasicButton';
 import SectionSwitcher from '../Miscellaneous/SectionSwitcher';
 import OpportunityModalBasicInfo from './OpportunityModal/BasicInfo';
 import OpportunityModalEmployees from './OpportunityModal/Employees';
@@ -27,7 +28,7 @@ class ShiftManager extends React.Component {
 
         this.state = {
             currentlyEditingShiftId: 0,
-            shifts: props.shifts,
+            shifts: props.shifts, // @TODO: Need to update shifts in props directly, instead of in state, removing need for this
         };
     }
 
@@ -40,14 +41,14 @@ class ShiftManager extends React.Component {
     deleteShift(shiftId) {
         let shifts = [...this.state.shifts];
 
-        // find the shift's indexx
+        // find the shift's index
         const shiftIndex = shifts.findIndex((shift) => shift.id === shiftId);
 
         // drop the shift
         shifts.splice(shiftIndex, 1);
 
         // set the new shifts
-        this.setState({ shifts });
+        this.setState({ shifts }); // @TODO: API call
 
         // move the current shfit to the one previous to the one just deleted (or the first shift, if the deleted one was first)
         return this.setCurrentlyEditingShift(shifts[(shiftIndex > 0) ? shiftIndex - 1 : 0].id);
@@ -57,6 +58,7 @@ class ShiftManager extends React.Component {
         let shifts = [...this.state.shifts];
 
         // extract the highest ID currently existing so we have something to mock
+        // @TODO: get ID from API call creating new shift
         const highestId = shifts.reduce((currentHighestId, shift) => {
             return Math.max(currentHighestId, shift.id);
         }, -1);
@@ -76,7 +78,7 @@ class ShiftManager extends React.Component {
             }
         });
 
-        return this.setState({ shifts, currentlyEditingShiftId: highestId + 1 });
+        return this.setState({ shifts, currentlyEditingShiftId: highestId + 1 });  // @TODO: API call
     }
 
     updateShift( updatedShift ) {
@@ -85,7 +87,7 @@ class ShiftManager extends React.Component {
 
         shifts[shiftIndex] = updatedShift;
 
-        this.setState({ shifts });
+        this.setState({ shifts }); // @TODO: API call
     }
 
     render() {
@@ -144,10 +146,18 @@ class ShiftManager extends React.Component {
                                 {
                                     key: 'basic',
                                     name: 'Basic Info',
-                                    content: <OpportunityModalBasicInfo
-                                        opportunity={currentlyEditingShift}
-                                        updateOpportunity={this.updateShift}
-                                    />
+                                    content: (
+                                        <form>
+                                            <OpportunityModalBasicInfo
+                                                opportunity={currentlyEditingShift}
+                                                updateOpportunity={this.updateShift}
+                                            />
+                                            <div className="mt3 tr">
+                                                {/* Trigger updateShift */}
+                                                <BasicButton type="positive">Save</BasicButton>
+                                            </div>
+                                        </form>
+                                    )
                                 },
                                 {
                                     key: 'employees',

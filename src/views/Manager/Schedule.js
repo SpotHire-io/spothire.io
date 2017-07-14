@@ -51,7 +51,7 @@ class ScheduleView extends React.Component {
                             <Select
                                 id="schedule_userId_filter"
                                 multi
-                                options={users
+                                options={users // @TODO: This filtering should happen when pulling the user data for the component
                                     .filter((user) => user.type === 'admin' || user.type === 'manager')
                                     .map((user) => {
                                         return {

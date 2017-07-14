@@ -46,6 +46,7 @@ const groups = range(10).map((number) => {
         }
     })
 
+// @TODO: Need to add a method to pass the selections to the parent
 interface Props {
     className?: string
     employees?: Schemas.Employee[]
