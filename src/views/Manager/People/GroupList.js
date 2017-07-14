@@ -19,7 +19,8 @@ class GroupListView extends React.Component {
                     <Box title="Groups" headingType="inline">
                         <p>Your organisation has {this.props.groups.length} groups.</p>
 
-                        <div className="tr">{/* @TODO: onClick, send to a blank GroupSingleView page, allowing them to set new group details */}
+                        <div className="tr">
+                            {/* @TODO: onClick, send to a blank GroupSingleView page, allowing the manager to set new group details */}
                             <BasicButton type="positive" className="mt3" onClick={linkTo('Views (manager)', 'People:GroupSingleView')}>Add New</BasicButton>
                         </div>
                     </Box>
