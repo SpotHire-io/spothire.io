@@ -66,13 +66,14 @@ export default class MetadataInterface extends React.Component<Props, State> {
         // Drop the metaPair by finding its index
         metaPairs.splice(metaPairs.findIndex((metaPair) => metaPair.key === metaPairKey), 1)
 
-        return this.setState({ metaPairs })
+        return this.setState({ metaPairs }) // @TODO: Convert to an API call
     }
 
     private createMetaPair = () => {
         let metaPairs = [...this.state.metaPairs]
 
         // extract the highest ID currently existing so we have something to mock
+        // @TODO: Get the API from the API upon creating a new metapair
         const highestId = metaPairs.reduce((currentHighestId, metaPair) => {
             return Math.max(currentHighestId, metaPair.id)
         }, -1)
@@ -84,14 +85,14 @@ export default class MetadataInterface extends React.Component<Props, State> {
             value: ''
         })
 
-        return this.setState({ metaPairs, currentlyEditingMetaPairId: highestId + 1 })
+        return this.setState({ metaPairs, currentlyEditingMetaPairId: highestId + 1 }) // @TODO: Convert to an API call
     }
 
     private updateMetaPairFieldByIndex = (metaPairIndex: number, field: string, value: string) => {
         let metaPairs: any = [...this.state.metaPairs]
         metaPairs[metaPairIndex][field] = value
 
-        return this.setState({ metaPairs })
+        return this.setState({ metaPairs }) // @TODO: Convert to an API call
     }
 
     private renderControls = (metaPair: Metadata) => {
@@ -140,6 +141,7 @@ export default class MetadataInterface extends React.Component<Props, State> {
                                 <li className="flex ph3 pv1 ma0 bt bl br b--black-20" key={metaPair.id}>
                                     <dl className="ma0 pa0 list flex-auto flex">
                                         <dt className="w-third mr2" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}>
+                                            {/* @TODO: This should be a Select (in fashion of the metaType.type Select, below), filled with the admin-set meta key options */}
                                             <input className="pa1 ma0 nl1 w-100" type="text" value={metaPair.key} onChange={(e) => this.updateMetaPairFieldByIndex(index, 'key', e.target.value)} placeholder="key"/>
                                         </dt>
                                         <dt className="w-third mr2" style={{ marginLeft: '-1px', marginTop: '-1px', paddingBottom: '2px' }}>

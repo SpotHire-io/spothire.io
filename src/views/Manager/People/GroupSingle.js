@@ -39,6 +39,7 @@ class GroupSingleView extends React.Component {
     render() {
         return (
             <div>
+                {/* @TODO: Replace this with a wrapper component tying into react-router, to enable actual routing (see views/Manager/People/EmployeeSingle) */}
                 <SecondaryMenu
                     className="ph4 bg-white"
                     items={[

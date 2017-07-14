@@ -16,7 +16,7 @@ interface State {
 /**
  * Time off request interface for reviewers (managers).
  *
- * @TODO: Tie the requests to their employee.
+ * @TODO: Get requests via a GraphQL query on the employee, who should be passed via props
  */
 export default class TimeOffRequestReviewer extends React.Component<Props, State> {
     public static defaultProps = {

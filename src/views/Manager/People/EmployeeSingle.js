@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Box from '../../../components/Global/Box';
 import PersonSchema from '../../../schemas/Person';
 import SecondaryMenu from '../../../components/Global/SecondaryMenu';
+import BasicButton from '../../../components/Buttons/BasicButton';
 import MetadataInterface from '../../../components/Employees/MetadataInterface';
 import AvailabilityViewer from '../../../components/Profile/AvailabilityViewer';
 import TimeOffRequestReviewer from '../../../components/Profile/TimeOffRequests/Reviewer';
@@ -21,6 +22,7 @@ class EmployeeSingleView extends React.Component {
     render() {
         return (
             <div>
+                {/* @TODO: Replace this with a wrapper component tying into react-router, to enable actual routing (see views/Manager/People/GroupSingle) */}
                 <SecondaryMenu
                     className="ph4 bg-white"
                     items={[
@@ -83,11 +85,19 @@ class EmployeeSingleView extends React.Component {
                         </div>
                         <div className="w-two-thirds">
                             <Box title="Employee Settings" headingType="inline">
-                                <p className="mt3">
-                                    <label className="f6 db" htmlFor="employee_notes">Notes</label>
-                                    <textarea className="mt2 w-100" name="employee_notes" id="employee_notes" aria-describedby="employee_notes_desc" cols="30" rows="5"/>
-                                    <small className="f6 black-60" id="employee_notes_desc">Only managers can read these notes.</small>
-                                </p>
+                                <form>
+                                    <p className="mt3">
+                                        {/* @TODO: Pull this from/save it to the API */}
+                                        <label className="f6 db" htmlFor="employee_notes">Notes</label>
+                                        <textarea className="mt2 w-100" name="employee_notes" id="employee_notes" aria-describedby="employee_notes_desc" cols="30" rows="5"/>
+                                        <small className="f6 black-60" id="employee_notes_desc">Only managers can read these notes.</small>
+                                    </p>
+
+                                    <div className="mt3 tr">
+                                        {/* Save to API on click */}
+                                        <BasicButton type="positive">Save</BasicButton>
+                                    </div>
+                                </form>
                             </Box>
                             <Box className="mt3" title="Employee Metadata" headingType="inline">
                                 <MetadataInterface className="mt3" employee={this.props.employee}/>
