@@ -5,7 +5,7 @@ import BasicButton from '../../../components/Buttons/BasicButton';
 import GroupSchema from '../../../schemas/Group';
 import GroupCardList from '../../../components/Employees/Groups/CardList';
 
-// storybook stuff
+// storybook stuff; @TODO: Replace usage of linkTo with react-router Link
 import { linkTo } from '@kadira/storybook';
 
 /**

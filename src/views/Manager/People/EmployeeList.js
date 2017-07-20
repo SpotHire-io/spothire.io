@@ -6,7 +6,7 @@ import BoxConnector from '../../../components/Global/BoxConnector';
 import BasicButton from '../../../components/Buttons/BasicButton';
 import UserTable from '../../../components/Employees/UserTable';
 
-// storybook stuff
+// storybook stuff; @TODO: Replace usage of linkTo with react-router Link
 import { linkTo } from '@kadira/storybook';
 
 /**

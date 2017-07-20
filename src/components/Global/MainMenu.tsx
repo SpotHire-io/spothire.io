@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
 
-// storybook stuff
-import { linkTo } from '@kadira/storybook'; // @TODO: Remove the Storybook dependency, replacing with react-router. (a more sensible dependency)
+// storybook stuff; @TODO: Replace usage of linkTo with react-router Link
+import { linkTo } from '@kadira/storybook';
 
 interface Props {
     className?: string

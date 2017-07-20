@@ -8,7 +8,7 @@ import MetadataInterface from '../../../components/Employees/MetadataInterface';
 import AvailabilityViewer from '../../../components/Profile/AvailabilityViewer';
 import TimeOffRequestReviewer from '../../../components/Profile/TimeOffRequests/Reviewer';
 
-// storybook stuff
+// storybook stuff; @TODO: Replace usage of linkTo with react-router Link
 import { linkTo } from '@kadira/storybook';
 
 // demo data

@@ -9,14 +9,14 @@ import BasicButton from '../Buttons/BasicButton'
 // JSON Data
 const userData = require('../../data/people.json')
 
-// storybook stuff
+// storybook stuff; @TODO: Replace usage of linkTo with react-router Link
 import { linkTo } from '@kadira/storybook';
 
 interface Props {
     className?: string,
     hasShadow?: boolean,
     inlineAddingRowIsOpen?: boolean,
-    editUser?: Function,
+    editUser?: Function, // @TODO: This function should redirect to the employee’s page
     deleteUser?: Function,
     onClickUser?: Function,
     users?: Person[],

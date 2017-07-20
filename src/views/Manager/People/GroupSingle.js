@@ -9,7 +9,7 @@ import SecondaryMenu from '../../../components/Global/SecondaryMenu';
 import GroupDetailsEditor from '../../../components/Employees/Groups/DetailsEditor';
 import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
 
-// storybook stuff
+// storybook stuff; @TODO: Replace usage of linkTo with react-router Link
 import { linkTo } from '@kadira/storybook';
 
 /**

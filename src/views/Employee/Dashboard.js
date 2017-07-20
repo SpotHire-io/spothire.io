@@ -16,7 +16,7 @@ import OverviewCalendar from '../../components/Scheduling/OverviewCalendar';
 import AvailabilityEditor from '../../components/Profile/AvailabilityEditor';
 import TimeOffRequestRequester from '../../components/Profile/TimeOffRequests/Requester';
 
-// storybook stuff
+// storybook stuff; @TODO: Replace usage of linkTo with react-router Link
 import { linkTo } from '@kadira/storybook';
 
 // mock data

@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import BigCalendar from 'react-big-calendar';
 import OpportunityModal from './OpportunityModal';
 
-// storybook stuff
+// storybook stuff; @TODO: Replace usage of linkTo with react-router Link
 import { linkTo } from '@kadira/storybook';
 
 BigCalendar.setLocalizer(

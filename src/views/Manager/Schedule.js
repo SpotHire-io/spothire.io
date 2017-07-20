@@ -6,7 +6,7 @@ import FilterContainer from '../../components/Filters/FilterContainer';
 import OverviewCalendar from '../../components/Scheduling/OverviewCalendar';
 import OpportunitySchema from '../../schemas/Opportunity';
 
-// storybook stuff
+// storybook stuff; @TODO: Replace usage of linkTo with react-router Link
 import { linkTo } from '@kadira/storybook';
 
 // dummy data
