@@ -18,12 +18,15 @@ class EmployeeProfileView extends React.Component {
                 <div className="flex">
                     <Box className="w-third mr3 self-start" title="Your Profile" headingType="inline">
                         <h1 className="mb4 f3">{this.props.employee.firstName} {this.props.employee.lastName}</h1>
+                        {/* @TODO: onClick should trigger an upload dialog; maybe in a Modal */}
                         <img className="db w-100 ba bw1 b--silver border-box pointer" onClick={() => alert('upload main profile photo interface')} src={this.props.employee.imageSrc} alt={`Profile of ${this.props.employee.firstName}`}/>
 
                         <div className="mt3">
+                            {/* @TODO: onClick should trigger an upload dialog; maybe in a Modal */}
                             <h3 className="f6 normal ma0">Other photos <small>(<span onClick={() => alert('upload secondary profile photo interface')} className="pointer underline hover-no-underline">add more</span>)</small></h3>
 
                             <ul className="mt2 nb2 flex flex-wrap pa0 list nr2">
+                                {/* @TODO: Pull these photos from the employee */}
                                 {[...Array(6).keys()].map((number) => (
                                     <li className="dib mt0 mb2 pa0 w-25 pr2">
                                         <img className="db w-100 ba bw1 b--silver border-box" src={this.props.employee.imageSrc} alt={`Profile of ${this.props.employee.firstName}`}/>
@@ -33,6 +36,7 @@ class EmployeeProfileView extends React.Component {
                         </div>
                     </Box>
                     <div className="w-two-thirds">
+                        {/* @TODO: Connect all fields here to state */}
                         <Box title="Essential Information" headingType="inline">
                             <div className="flex mt3">
                                 <div className="w-50 mr4">
@@ -89,6 +93,7 @@ class EmployeeProfileView extends React.Component {
                                     {['Invited to opportunity', 'New post'].map((event, index, events) => {
                                         const commonRowClasses = classNames('pr2 tl', {'bb b--black-10 pv2': index !== events.length - 1, 'pt2': index === events.length - 1});
 
+                                        // @TODO: Rig these with state (onClick on the wrapper divs, checked state on the Switches and with the extra `sh-rebass-switch-small--checked` class on the wrapper div)
                                         return (
                                             <tr key={event}>
                                                 <td className={commonRowClasses}>{event}</td>
@@ -102,6 +107,7 @@ class EmployeeProfileView extends React.Component {
                         </Box>
 
                         <Box className="mt3" title="Account Settings" headingType="inline">
+                            {/* @TODO: Password strength validation */}
                             <div className="flex mt3">
                                 <div className="w-50 mr4">
                                     <label className="f6 db mb2" htmlFor="employee_password">New password</label>
@@ -116,6 +122,7 @@ class EmployeeProfileView extends React.Component {
                         </Box>
 
                         <div className="mt3 tr">
+                            {/* @TODO: Save changes to the API */}
                             <BasicButton type="positive" onClick={() => alert('Profile changes saved!')}>Save Profile</BasicButton>
                         </div>
                     </div>
