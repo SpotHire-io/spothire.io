@@ -1,13 +1,6 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import * as classNames from 'classnames';
-
-type Child = React.ReactElement<{className: string}>
-
-interface Props {
-    className?: string
-    children: Child[]
-}
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 /**
  * Wraps a collection of buttons in a row, adjusting border radii according to their position.
@@ -15,7 +8,7 @@ interface Props {
  * Children can be either RadioButtons or BasicButtons, though RadioButtons (with their outlined
  * and filled modes) make more sense.
  */
-const ButtonBar: React.StatelessComponent<Props> = ({ children, className }) => {
+const ButtonBar = ({ children, className }) => {
     const wrapperClassName = classNames({
         'flex': true,
         [className]: true
@@ -23,7 +16,7 @@ const ButtonBar: React.StatelessComponent<Props> = ({ children, className }) => 
 
     return (
         <div className={wrapperClassName}>
-            {React.Children.map(children, (child: Child, index) => {
+            {React.Children.map(children, (child, index) => {
                 let addedClassName;
                 if (index === 0) {
                     addedClassName = 'button--left';
