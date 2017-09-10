@@ -1,24 +1,14 @@
-import * as React from 'react'
-import * as PropTypes from 'prop-types'
-import * as classNames from 'classnames'
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
 import {range} from 'lodash'
 import CardList from '../../Groups/CardList'
-import {Group, GroupType} from '../../../../schemas'
 
 // dummy data
 const userData = require('../../../../data/people.json');
 
-interface Props {
-    className?: string
-    onAddGroup?: (groupId: number) => any
-}
-
-interface State {
-
-}
-
-const type: GroupType = 'virtual'
-const groups: Group[] = range(10).map((number) => {
+const type = 'virtual'
+const groups = range(10).map((number) => {
     return {
         id: number,
         type,
@@ -32,10 +22,10 @@ const groups: Group[] = range(10).map((number) => {
  *
  * Once a group is selected, it’s passed to the parent with `props.onAddGroup`.
  */
-export default class SelectGroups extends React.Component<Props, State> {
-    public static defaultProps: Props = {
+export default class SelectGroups extends React.Component {
+    defaultProps = {
         className: '',
-        onAddGroup: (groupId: number) => alert(`Group #${groupId} added!`),
+        onAddGroup: (groupId) => alert(`Group #${groupId} added!`),
     };
 
     render() {

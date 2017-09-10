@@ -1,49 +1,23 @@
 import 'react-select/dist/react-select.css';
-import * as React from 'react';
-import * as Select from 'react-select';
-import * as PropTypes from 'prop-types';
-import * as classNames from 'classnames';
+import React from 'react';
+import Select from 'react-select';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import {BasicButton} from '../../../Buttons';
 
 // Rule data
 const filterKeys = require('../../../../data/peopleFilterRules/filterKeys.json');
 const filterTypes = require('../../../../data/peopleFilterRules/filterTypes.json');
 
-type FilterKeys = FilterKey[]
-interface FilterKey {
-    label: string
-    value: string
-    disabled?: boolean
-}
-
-type FilterTypes = FilterType[]
-interface FilterType {
-    label: string
-    value: string
-}
-
-interface Props {
-    className?: string
-    onAddRule?: Function
-}
-
-interface State {
-    selectedKey: string
-    filterType: FilterType
-    filterValue: string
-}
-
 /**
  * Interface to create custom filtering rules based on keys, comparators, and values.
  *
  * Once a rule is created, it’s passed to the parent with `props.onAddRule`.
  */
-export default class SelectCustomRules extends React.Component<Props, State> {
-    public filterKeys: FilterKeys
-    public filterTypes: FilterTypes
-    public static defaultProps: Props = {
+export default class CustomRules extends React.Component {
+    defaultProps = {
         className: '',
-        onAddRule: (rule: any) => alert(rule)
+        onAddRule: (rule) => alert(rule)
     };
 
     constructor() {
@@ -90,12 +64,12 @@ export default class SelectCustomRules extends React.Component<Props, State> {
             return null;
         }
 
-        const categoryFilters: any = {
+        const categoryFilters = {
             text: ['equals', 'contains'],
             number: ['greater', 'equals', 'less'],
         };
 
-        const categoryValueTypes: any = {
+        const categoryValueTypes = {
             text: 'text',
             number: 'number',
         };
@@ -109,8 +83,8 @@ export default class SelectCustomRules extends React.Component<Props, State> {
                     <Select
                         name="custom_filter_type"
                         value={this.state.filterType}
-                        onChange={(newFilterType: FilterType) => this.setState({ filterType: newFilterType })}
-                        options={this.filterTypes.filter((filterType: FilterType) => categoryFilters[currentCategory].includes(filterType.value))}
+                        onChange={(newFilterType) => this.setState({ filterType: newFilterType })}
+                        options={this.filterTypes.filter((filterType) => categoryFilters[currentCategory].includes(filterType.value))}
                     />
                     <small className="dib f6 black-60 lh-title mt2">
                         The type of filtering you want to do.
@@ -171,7 +145,7 @@ export default class SelectCustomRules extends React.Component<Props, State> {
                         className="mt0"
                         value={this.state.selectedKey}
                         options={this.filterKeys}
-                        onChange={(newKey: {value: string}) => (newKey !== null) ? this.setState({ selectedKey: newKey.value, filterType: null }) : this.setState({ selectedKey: null, filterType: null })}
+                        onChange={newKey => (newKey !== null) ? this.setState({ selectedKey: newKey.value, filterType: null }) : this.setState({ selectedKey: null, filterType: null })}
                     />
                     <small className="dib f6 black-60 lh-title mt2">
                         The key you want to filter on. This can be a profile field, filled out by the employee, or a custom

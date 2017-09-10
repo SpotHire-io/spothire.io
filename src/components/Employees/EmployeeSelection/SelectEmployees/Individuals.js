@@ -1,26 +1,17 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
-import * as classNames from 'classnames';
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import UserTable from '../../UserTable';
-
-interface Props {
-    className?: string
-    onAddUser?: (userId: string) => any
-}
-
-interface State {
-    employeesSearch?: string
-}
 
 /**
  * Interface to select individual employees.
  *
  * Once an employee is selected, it’s passed to the parent with `props.onAddUser`.
  */
-export default class SelectIndividuals extends React.Component<Props, State> {
-    public static defaultProps: Props = {
+export default class SelectIndividuals extends React.Component {
+    defaultProps = {
         className: '',
-        onAddUser: (userId: string) => alert(`Adding employee #${userId}`),
+        onAddUser: userId => alert(`Adding employee #${userId}`),
     };
     constructor() {
         super();
