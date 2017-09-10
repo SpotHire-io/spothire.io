@@ -4,26 +4,11 @@ import SelectGroups from './SelectEmployees/Groups'
 import SelectIndividuals from './SelectEmployees/Individuals'
 import SelectCustomRules from './SelectEmployees/CustomRules'
 
-interface Category {
-    key: 'employees' | 'custom' | 'groups'
-    title: string
-}
-
-interface Props {
-    className?: string
-    selectionCategories: Category[]
-    onAddCustomRule: Function
-}
-
-interface State {
-    currentSelectionCategoryKey: string
-}
-
 /**
  * Manages which employee selection interface is visible.
  */
-class SelectEmployees extends React.Component<Props, State> {
-    constructor(props: Props) {
+export default class SelectEmployees extends React.Component {
+    constructor (props) {
         super();
 
         this.updateCurrentSelectionCategory = this.updateCurrentSelectionCategory.bind(this);
@@ -35,11 +20,11 @@ class SelectEmployees extends React.Component<Props, State> {
         }
     }
 
-    updateCurrentSelectionCategory(categoryKey: string) {
+    updateCurrentSelectionCategory(categoryKey) {
         return this.setState({ currentSelectionCategoryKey: categoryKey });
     }
 
-    renderCategorySelectionInterface(category: Category) {
+    renderCategorySelectionInterface(category) {
         let selectionInterface;
 
         const commonWrapperClasses = 'mt3';
@@ -91,5 +76,3 @@ class SelectEmployees extends React.Component<Props, State> {
         );
     }
 }
-
-export default SelectEmployees;
