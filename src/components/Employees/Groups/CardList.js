@@ -1,14 +1,6 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
+import React from 'react';
+import classNames from 'classnames';
 import Card from './Card';
-import {Group} from '../../../schemas';
-
-interface Props {
-    className?: string
-    groups: Group[]
-    onSelectGroup?: (groupId: number) => any
-    cardProps?: any
-}
 
 /**
  * Render a list of `GroupCard`s, adding the ability to select them via `onSelectGroup`.

@@ -1,18 +1,11 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
 import Box from '../../Global/Box'
-import {Group} from '../../../schemas'
-
-interface Props {
-    className?: string
-    group: Group
-    displayAvatarPreview?: boolean
-}
 
 /**
  * Display quick overview of a group's details in card format (a Box).
  */
-const Card: React.StatelessComponent<Props> = ({ className = '', displayAvatarPreview = true, group }) => {
+const Card = ({ className = '', displayAvatarPreview = true, group }) => {
     const renderAvatarPreview = () => {
         const groupEmployees = group.employees;
 

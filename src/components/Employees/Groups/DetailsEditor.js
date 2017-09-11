@@ -1,22 +1,12 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
+import React from 'react';
+import classNames from 'classnames';
 import Box from '../../Global/Box';
-import {Group} from '../../../schemas';
 import BasicButton from '../../Buttons/BasicButton';
-
-interface Props {
-    className?: string
-    group: Group
-}
-
-interface State {
-
-}
 
 /**
  * Form to edit basic details about a group, or to delete the group.
  */
-export default class GroupDetailsEditor extends React.Component<Props, State> {
+export default class DetailsEditor extends React.Component {
     render() {
         return (
             <Box className={this.props.className} title="Group Details" headingType="inline">
