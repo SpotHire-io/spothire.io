@@ -2,8 +2,6 @@ import 'moment/locale/en-ca';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import PersonSchema from '../../../schemas/Person';
-import TimeOffRequestSchema from '../../../schemas/TimeOffRequest';
 import TimeOffRequestList from './List';
 import TimeOffRequestNew from './New';
 
@@ -66,8 +64,6 @@ TimeOffRequestRequester.defaultProps = {
 
 // TimeOffRequestRequester.propTypes = {
 //     className: PropTypes.string,
-//     employee: PersonSchema.isRequired,
-//     timeOffRequests: PropTypes.arrayOf(TimeOffRequestSchema).isRequired,
 // };
 
 export default TimeOffRequestRequester;

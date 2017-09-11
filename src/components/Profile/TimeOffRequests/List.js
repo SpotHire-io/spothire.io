@@ -1,21 +1,8 @@
 import 'moment/locale/en-ca';
-import * as moment from 'moment';
-import * as React from 'react';
-import * as classNames from 'classnames';
+import moment from 'moment';
+import React from 'react';
+import classNames from 'classnames';
 import BasicTag from '../../../components/Tags/BasicTag';
-import {TimeOffRequest} from '../../../schemas';
-
-interface Props {
-    className?: string
-    timeOffRequests: TimeOffRequest[]
-    interfaceType: 'requester'| 'reviewer'
-    deleteRequest?: Function
-    approveRequest?: Function
-    rejectRequest?: Function
-    [key: string]: any
-}
-
-type TagType = 'neutral' | 'positive' | 'negative'
 
 /**
  * List of time off requests, with an interface according to whether the person is
@@ -24,13 +11,13 @@ type TagType = 'neutral' | 'positive' | 'negative'
  * If in reviewer mode, include functions for `props.deleteRequest`, `props.approveRequest`,
  * and `props.rejectRequest`.
  */
-const TimeOffRequestList: React.StatelessComponent<Props> = (props) => {
+const List = (props) => {
     if (props.timeOffRequests.length <= 0) {
         return <p className="i">No requests found.</p>;
     }
 
-    const renderControls = (request: TimeOffRequest) => {
-        const renderLink = (action: string) => (
+    const renderControls = (request) => {
+        const renderLink = (action) => (
             <a
                 className="child db f6 red hover-no-underline relative"
                 onClick={(e) => e.preventDefault() || props[`${action}Request`](request.id)}
@@ -57,7 +44,7 @@ const TimeOffRequestList: React.StatelessComponent<Props> = (props) => {
         <ol className={classNames('list ma0 pa0 nt3', props.className)}>
             {
                 props.timeOffRequests.map((request, index) => {
-                    let tagType: TagType = 'neutral';
+                    let tagType = 'neutral';
 
                     if (request.approvalState === 'approved') {
                         tagType = 'positive';
@@ -65,9 +52,9 @@ const TimeOffRequestList: React.StatelessComponent<Props> = (props) => {
                         tagType = 'negative';
                     }
 
-                    const renderDate = (end: string) => moment(request.dates[end]).format('MMMM Do, YYYY');
-                    const renderTime = (end: string) => (! request.isAllDay) ? <small className="mh1">({moment(request.dates[end]).format('h:mm a')})</small> : null;
-                    const renderDateTime = (end: string) => <span>{renderDate(end)} {renderTime(end)}</span>;
+                    const renderDate = end => moment(request.dates[end]).format('MMMM Do, YYYY');
+                    const renderTime = end => (! request.isAllDay) ? <small className="mh1">({moment(request.dates[end]).format('h:mm a')})</small> : null;
+                    const renderDateTime = end => <span>{renderDate(end)} {renderTime(end)}</span>;
 
                     return (
                         <li key={request.id} className="ma0 pa0 mt3 hide-child">
@@ -91,9 +78,9 @@ const TimeOffRequestList: React.StatelessComponent<Props> = (props) => {
     );
 }
 
-TimeOffRequestList.defaultProps = {
+List.defaultProps = {
     className: '',
     interfaceType: 'requester',
 };
 
-export default TimeOffRequestList;
+export default List;

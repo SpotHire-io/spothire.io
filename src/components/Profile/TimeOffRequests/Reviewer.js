@@ -1,45 +1,35 @@
 import 'moment/locale/en-ca'
 import * as React from 'react'
 import * as classNames from 'classnames'
-import {TimeOffRequest} from '../../../schemas'
 import TimeOffRequestList from './List'
-
-interface Props {
-    className?: string
-    timeOffRequests: TimeOffRequest[]
-}
-
-interface State {
-    requests: TimeOffRequest[]
-}
 
 /**
  * Time off request interface for reviewers (managers).
  *
  * @TODO: Get requests via a GraphQL query on the employee, who should be passed via props
  */
-export default class TimeOffRequestReviewer extends React.Component<Props, State> {
-    public static defaultProps = {
+export default class Reviewer extends React.Component {
+    defaultProps = {
         className: ''
     }
-    constructor(props: Props) {
+    constructor (props) {
         super()
         this.state = {
             requests: props.timeOffRequests, // @TODO: Instead of storing the requests in state, update them via the API and just use props
         }
     }
 
-    approveRequest = (requestId: number) => {
+    approveRequest = (requestId) => {
         this.updateRequestField(requestId, 'approvalState', 'approved')
     }
 
-    rejectRequest = (requestId: number) => {
+    rejectRequest = (requestId) => {
         this.updateRequestField(requestId, 'approvalState', 'rejected')
     }
 
-    updateRequestField = (requestId: number, field: 'approvalState', value: 'pending' | 'rejected' | 'approved') => {
+    updateRequestField = (requestId, field, value) => {
         let requests = [...this.state.requests]
-        const index = requests.findIndex((request: TimeOffRequest) => request.id === requestId)
+        const index = requests.findIndex(request => request.id === requestId)
 
         requests[index][field] = value
         this.setState({ requests }) // @TODO: an API call instead
