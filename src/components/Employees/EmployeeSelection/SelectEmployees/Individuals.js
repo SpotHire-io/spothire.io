@@ -9,10 +9,6 @@ import UserTable from '../../UserTable';
  * Once an employee is selected, it’s passed to the parent with `props.onAddUser`.
  */
 export default class SelectIndividuals extends React.Component {
-    defaultProps = {
-        className: '',
-        onAddUser: userId => alert(`Adding employee #${userId}`),
-    };
     constructor() {
         super();
 
@@ -47,3 +43,8 @@ export default class SelectIndividuals extends React.Component {
         );
     }
 }
+
+SelectIndividuals.defaultProps = {
+    className: '',
+    onAddUser: userId => alert(`Adding employee #${userId}`),
+};

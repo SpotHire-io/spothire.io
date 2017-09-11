@@ -9,10 +9,6 @@ import ShiftsData from '../../data/shifts'
  * List an employee’s shifts, providing an overview and RSVP mechanism.
  */
 export default class ShiftList extends React.Component {
-    defaultProps = {
-        className: '',
-        shifts: ShiftsData
-    }
     constructor(props) {
         super()
         this.state = {
@@ -170,4 +166,9 @@ export default class ShiftList extends React.Component {
             </div>
         )
     }
+}
+
+ShiftList.defaultProps = {
+    className: '',
+    shifts: ShiftsData
 }

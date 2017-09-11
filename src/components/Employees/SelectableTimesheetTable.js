@@ -17,12 +17,6 @@ const commonCellClasses = 'pa3'
  * manage which employees to summarize.
  */
 export default class SelectableTimesheetTable extends React.Component {
-    defaultProps = {
-        className: '',
-        hasShadow: true,
-        tableProps: {},
-        onUpdateSelectedUsers: (selectedUserIds) => console.log(selectedUserIds)
-    }
     constructor() {
         super();
 
@@ -162,4 +156,11 @@ export default class SelectableTimesheetTable extends React.Component {
             </div>
         )
     }
+}
+
+SelectableTimesheetTable.defaultProps = {
+    className: '',
+    hasShadow: true,
+    tableProps: {},
+    onUpdateSelectedUsers: (selectedUserIds) => console.log(selectedUserIds)
 }

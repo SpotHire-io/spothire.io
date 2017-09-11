@@ -9,9 +9,6 @@ import TimeOffRequestList from './List'
  * @TODO: Get requests via a GraphQL query on the employee, who should be passed via props
  */
 export default class Reviewer extends React.Component {
-    defaultProps = {
-        className: ''
-    }
     constructor (props) {
         super()
         this.state = {
@@ -47,4 +44,8 @@ export default class Reviewer extends React.Component {
             </div>
         )
     }
+}
+
+Reviewer.defaultProps = {
+    className: ''
 }

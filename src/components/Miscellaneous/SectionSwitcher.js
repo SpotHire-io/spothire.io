@@ -10,10 +10,6 @@ import SecondaryMenu from '../Global/SecondaryMenu'
  * Also desn’t allow deeplinking.
  */
 export default class SectionSwitcher extends React.Component {
-    defaultProps = {
-        className: '',
-        secondaryMenuClassName: ''
-    }
     constructor() {
         super()
         this.state = {
@@ -50,4 +46,9 @@ export default class SectionSwitcher extends React.Component {
             </div>
         )
     }
+}
+
+SectionSwitcher.defaultProps = {
+    className: '',
+    secondaryMenuClassName: ''
 }

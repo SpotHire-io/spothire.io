@@ -29,11 +29,6 @@ const menuItems = {
  * a user menu with links to their profile and to log out.
  */
 export default class MainMenu extends React.Component {
-    defaultProps = {
-        className: '',
-        selectedItem: 'Dashboard',
-        userType: 'manager',
-    };
     constructor() {
         super();
 
@@ -131,3 +126,8 @@ export default class MainMenu extends React.Component {
         )
     }
 }
+MainMenu.defaultProps = {
+    className: '',
+    selectedItem: 'Dashboard',
+    userType: 'manager',
+};

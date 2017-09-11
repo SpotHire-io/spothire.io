@@ -2,7 +2,6 @@ import 'moment/locale/en-ca';
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import OpportunitySchema from '../../schemas/Opportunity';
 import classNames from 'classnames';
 import { CSSTransitionGroup } from 'react-transition-group';
 import Box from '../Global/Box';
@@ -252,10 +251,10 @@ ShiftManager.defaultProps = {
     ],
 };
 
-ShiftManager.propTypes = {
-    className: PropTypes.string,
-    shifts: PropTypes.arrayOf(OpportunitySchema).isRequired,
-    instructionsContent: PropTypes.node,
-};
+// ShiftManager.propTypes = {
+//     className: PropTypes.string,
+//     shifts: PropTypes.arrayOf(OpportunitySchema).isRequired,
+//     instructionsContent: PropTypes.node,
+// };
 
 export default ShiftManager;

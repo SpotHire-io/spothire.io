@@ -10,13 +10,7 @@ import Post from './Post';
 export default class PostList extends React.Component {
     constructor (props) {
         super();
-        props = {
-            className: '',
-            postProps: {}
-        }
-
         this.togglePost = this.togglePost.bind(this);
-
         this.state = {
             openPosts: []
         };
@@ -63,4 +57,9 @@ export default class PostList extends React.Component {
             </div>
         )
     }
+}
+
+PostList.defaultProps = {
+    className: '',
+    postProps: {}
 }

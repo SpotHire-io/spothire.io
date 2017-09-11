@@ -32,17 +32,10 @@ const groups = range(10).map((number) => {
  * is interchangeable with "filter".)
  */
 export default class EmployeeSelectionInterface extends React.Component {
-    defaultProps = {
-        className: '',
-        employees: employees,
-        groups: groups,
-        enabledSelectionCategories: ['employees', 'groups', 'custom'],
-    }
     constructor(props) {
         super();
 
         this.unSelectById = this.unSelectById.bind(this);
-
         this.addCustomRule = this.addCustomRule.bind(this);
 
         this.state = {
@@ -142,4 +135,11 @@ export default class EmployeeSelectionInterface extends React.Component {
             </div>
         );
     }
+}
+
+EmployeeSelectionInterface.defaultProps = {
+    className: '',
+    employees: employees,
+    groups: groups,
+    enabledSelectionCategories: ['employees', 'groups', 'custom'],
 }

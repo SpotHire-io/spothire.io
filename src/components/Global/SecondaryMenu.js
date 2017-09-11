@@ -7,9 +7,6 @@ import classNames from 'classnames'
  * Provides navigation for a given section.
  */
 export default class SecondaryMenu extends React.Component {
-    defaultProps = {
-        className: ''
-    }
     renderNavItem = item => {
         const aClasses = classNames({
             'b near-black hover-gray dib pv3 mr4 no-underline animate-all bb bw1 hover-b--white-40': true,
@@ -42,4 +39,7 @@ export default class SecondaryMenu extends React.Component {
             </nav>
         )
     }
+}
+SecondaryMenu.defaultProps = {
+    className: ''
 }

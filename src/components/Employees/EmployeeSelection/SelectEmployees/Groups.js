@@ -23,11 +23,6 @@ const groups = range(10).map((number) => {
  * Once a group is selected, it’s passed to the parent with `props.onAddGroup`.
  */
 export default class SelectGroups extends React.Component {
-    defaultProps = {
-        className: '',
-        onAddGroup: (groupId) => alert(`Group #${groupId} added!`),
-    };
-
     render() {
         return (
             <div className={classNames('', this.props.className)}>
@@ -53,3 +48,8 @@ export default class SelectGroups extends React.Component {
         );
     }
 }
+
+SelectGroups.defaultProps = {
+    className: '',
+    onAddGroup: (groupId) => alert(`Group #${groupId} added!`),
+};

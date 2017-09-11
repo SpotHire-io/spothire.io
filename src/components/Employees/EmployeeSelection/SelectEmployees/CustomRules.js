@@ -15,11 +15,6 @@ const filterTypes = require('../../../../data/peopleFilterRules/filterTypes.json
  * Once a rule is created, it’s passed to the parent with `props.onAddRule`.
  */
 export default class CustomRules extends React.Component {
-    defaultProps = {
-        className: '',
-        onAddRule: (rule) => alert(rule)
-    };
-
     constructor() {
         super();
 
@@ -160,3 +155,8 @@ export default class CustomRules extends React.Component {
         );
     }
 }
+
+CustomRules.defaultProps = {
+    className: '',
+    onAddRule: (rule) => alert(rule)
+};

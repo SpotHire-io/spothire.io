@@ -15,15 +15,6 @@ const userData = require('../../data/people.json')
  * Can select the columns displayed with `props.enabledColumns`.
  */
 export default class UserTable extends React.Component {
-    defaultProps = {
-        className: '',
-        hasShadow: true,
-        users: userData,
-        inlineAddingRowIsOpen: false,
-        tableProps: {},
-        enabledColumns: ['avatar', 'name', 'email', 'phone', 'actions']
-    };
-
     constructor() {
         super();
 
@@ -167,3 +158,12 @@ export default class UserTable extends React.Component {
         )
     }
 }
+
+UserTable.defaultProps = {
+    className: '',
+    hasShadow: true,
+    users: userData,
+    inlineAddingRowIsOpen: false,
+    tableProps: {},
+    enabledColumns: ['avatar', 'name', 'email', 'phone', 'actions']
+};
