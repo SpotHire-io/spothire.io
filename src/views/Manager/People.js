@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PersonSchema from '../../schemas/Person';
 import GroupListView from './People/GroupList';
 import SectionSwitcher from '../../components/Miscellaneous/SectionSwitcher';
 import EmployeeListView from './People/EmployeeList';

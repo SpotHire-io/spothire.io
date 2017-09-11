@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '../../../components/Global/Box';
 import BasicButton from '../../../components/Buttons/BasicButton';
-import GroupSchema from '../../../schemas/Group';
 import GroupCardList from '../../../components/Employees/Groups/CardList';
 
 // storybook stuff; @TODO: Replace usage of linkTo with react-router Link

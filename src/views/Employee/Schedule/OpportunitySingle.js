@@ -1,20 +1,11 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-import OpportunitySchema from '../../../schemas/Opportunity';
-
 import classNames from 'classnames';
-
 import moment from 'moment';
-
 import Box from '../../../components/Global/Box';
-
 import BasicButton from '../../../components/Buttons/BasicButton';
-
 import PostList from '../../../components/Newsfeed/PostList';
-
 import ShiftList from '../../../components/Scheduling/ShiftList';
-
 import posts from '../../../data/posts.json';
 
 /**

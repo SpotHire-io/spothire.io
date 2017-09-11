@@ -6,7 +6,6 @@ import BasicButton from '../../../components/Buttons/BasicButton';
 import UserTable from '../../../components/Employees/UserTable';
 import ShiftManager from '../../../components/Scheduling/ShiftManager';
 import SectionSwitcher from '../../../components/Miscellaneous/SectionSwitcher';
-import OpportunitySchema from '../../../schemas/Opportunity';
 import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
 import OpportunityModalBasicInfo from '../../../components/Scheduling/OpportunityModal/BasicInfo';
 
