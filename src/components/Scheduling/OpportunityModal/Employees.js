@@ -1,23 +1,13 @@
-import * as React from 'react';
+import React from 'react';
 import Modal from '../../../components/Global/Modal';
 import UserTable from '../../../components/Employees/UserTable';
 import BasicButton from '../../../components/Buttons/BasicButton';
-import Opportunity from '../../../schemas/Opportunity';
 import EmployeeSelectionInterface from '../../../components/Employees/EmployeeSelectionInterface';
-
-interface Props {
-    updateOpportunity: Function
-    opportunity?: Opportunity
-}
-
-interface State {
-    isAddEmployeesModalOpen: boolean
-}
 
 /**
  * Interface to review employees added to an opportunity, and to select more via a modal.
  */
-export default class OpportunityModalEmployees extends React.Component<Props, State> {
+export default class OpportunityModalEmployees extends React.Component {
     constructor() {
         super();
 

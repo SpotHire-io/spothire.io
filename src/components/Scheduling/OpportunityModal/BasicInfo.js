@@ -1,16 +1,10 @@
 import 'moment/locale/en-ca';
-import * as React from 'react';
-import * as moment from 'moment';
-import * as classNames from 'classnames';
-const TimePicker = require('rc-time-picker');
-import OpportunitySchema from '../../../schemas/Opportunity';
+import React from 'react';
+import moment from 'moment';
+import classNames from 'classnames';
+import TimePicker from 'rc-time-picker';
 import SingleDatePickerFocusContainer from '../../Miscellaneous/SingleDatePickerFocusContainer';
 import { Switch } from 'rebass';
-
-interface Props {
-    updateOpportunity: Function,
-    opportunity: OpportunitySchema
-}
 
 /**
  * Interface to configure basic information about an opportunity.
@@ -18,39 +12,39 @@ interface Props {
  * Pass the opportunity via `props.opportunity` and a function accepting the edited opportunity
  * via `props.updateOpportunity`.
  */
-const OpportunityModalBasicInfo: React.StatelessComponent<Props> = ({ updateOpportunity, opportunity }) => {
+const BasicInfo = ({ updateOpportunity, opportunity }) => {
     const toggleAllDay = () => {
-        const updatedOpportunity: OpportunitySchema = { ...opportunity };
+        const updatedOpportunity = { ...opportunity };
 
         updatedOpportunity.isAllDay = ! opportunity.isAllDay;
 
         updateOpportunity(updatedOpportunity);
     }
 
-    const updateOpportunityField = (field: any, value: any) => {
-        const updatedOpportunity: OpportunitySchema = { ...opportunity };
+    const updateOpportunityField = (field, value) => {
+        const updatedOpportunity = { ...opportunity };
 
         updatedOpportunity[field] = value;
 
         updateOpportunity(updatedOpportunity);
     }
 
-    const renderDateTimePicker = (end: 'Start' | 'End') => (
+    const renderDateTimePicker = end => (
         <div className="flex" key={end}>
             {renderDatePicker(end)}
             {opportunity.isAllDay ? null : renderTimePicker(end)}
         </div>
     );
 
-    const renderDatePicker = (end: 'Start' | 'End') => (
+    const renderDatePicker = end => (
         <dl className={classNames('mb0 mt3', {'mr4 w-50': ! opportunity.isAllDay, 'w-100': opportunity.isAllDay})}>
             <dt className="f6 ml0 mb2">{end} date</dt>
             <dd className="ml0">
                 <SingleDatePickerFocusContainer
                     date={moment(opportunity.dates[end.toLowerCase()])}
-                    onDateChange={(newDate: moment.Moment) => {
-                        const updatedOpportunity: OpportunitySchema = {...opportunity};
-                        const oldTime: moment.Moment = moment(updatedOpportunity.dates[end.toLowerCase()]); // copy current time
+                    onDateChange={newDate => {
+                        const updatedOpportunity = {...opportunity};
+                        const oldTime = moment(updatedOpportunity.dates[end.toLowerCase()]); // copy current time
 
                         updatedOpportunity.dates[end.toLowerCase()] = moment({
                             year: newDate.year(),
@@ -71,7 +65,7 @@ const OpportunityModalBasicInfo: React.StatelessComponent<Props> = ({ updateOppo
         </dl>
     );
 
-    const renderTimePicker = (end: 'Start' | 'End') => (
+    const renderTimePicker = end => (
         <dl className={classNames('mb0 mt3 w-50')}>
             <dt className="f6 ml0 mb2">{end} time</dt>
             <dd className="ml0">
@@ -80,7 +74,7 @@ const OpportunityModalBasicInfo: React.StatelessComponent<Props> = ({ updateOppo
                     showSecond={false}
                     allowEmpty={false}
                     use12Hours={true}
-                    onChange={(newTime: moment.Moment) => {
+                    onChange={(newTime) => {
                         const updatedOpportunity = {...opportunity};
 
                         updatedOpportunity.dates[end.toLowerCase()] = newTime;
@@ -122,4 +116,4 @@ const OpportunityModalBasicInfo: React.StatelessComponent<Props> = ({ updateOppo
     );
 }
 
-export default OpportunityModalBasicInfo;
+export default BasicInfo;
