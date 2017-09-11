@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '../../../components/Global/Box';
-import PersonSchema from '../../../schemas/Person';
 import SecondaryMenu from '../../../components/Global/SecondaryMenu';
 import BasicButton from '../../../components/Buttons/BasicButton';
 import MetadataInterface from '../../../components/Employees/MetadataInterface';

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PersonSchema from '../../../schemas/Person';
 import Box from '../../../components/Global/Box';
 import BoxConnector from '../../../components/Global/BoxConnector';
 import BasicButton from '../../../components/Buttons/BasicButton';

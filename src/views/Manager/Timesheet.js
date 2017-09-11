@@ -1,10 +1,9 @@
 import 'react-select/dist/react-select.css'
-import * as React from 'react'
-import * as Select from 'react-select'
-import * as PropTypes from 'prop-types'
+import React from 'react'
+import Select from 'react-select'
+import PropTypes from 'prop-types'
 import Box from '../../components/Global/Box'
 import BoxConnector from '../../components/Global/BoxConnector'
-import {Person} from '../../schemas'
 import TimesheetSummary from '../../components/Employees/TimesheetSummary'
 import SelectableTimesheetTable from '../../components/Employees/SelectableTimesheetTable'
 
@@ -19,26 +18,10 @@ const discrepancyTypesOptions = [
     },
 ]
 
-interface Props {
-    className?: string
-    employees: Person[]
-}
-
-interface State {
-    nameSearch: string
-    discrepancyType?: null | DiscrepancyTypes
-    selectedUserIds: number[]
-}
-
-type DiscrepancyTypes = {
-    value: string
-    label: string
-}
-
 /**
  * At a glance timesheet information and reporting capabilities for all employees within the organisation.
  */
-export default class TimesheetView extends React.Component<Props, State> {
+export default class TimesheetView extends React.Component {
     constructor() {
         super()
 
@@ -50,15 +33,15 @@ export default class TimesheetView extends React.Component<Props, State> {
     }
 
     render() {
-        let filteredUsers = this.props.employees.filter((user: Person) => `${user.firstName.toLowerCase()} ${user.lastName.toLowerCase()}`.indexOf(this.state.nameSearch.toLowerCase()) > -1)
+        let filteredUsers = this.props.employees.filter(user => `${user.firstName.toLowerCase()} ${user.lastName.toLowerCase()}`.indexOf(this.state.nameSearch.toLowerCase()) > -1)
 
         if (this.state.discrepancyType !== null) {
             switch (this.state.discrepancyType.value) {
                 case 'underSubmitted':
-                    filteredUsers = filteredUsers.filter((user: Person) => user.hours.worked > user.hours.submitted)
+                    filteredUsers = filteredUsers.filter(user => user.hours.worked > user.hours.submitted)
                     break;
                 case 'overSubmitted':
-                    filteredUsers = filteredUsers.filter((user: Person) => user.hours.submitted > user.hours.worked)
+                    filteredUsers = filteredUsers.filter(user => user.hours.submitted > user.hours.worked)
                     break;
                 default:
                     break;
@@ -68,7 +51,7 @@ export default class TimesheetView extends React.Component<Props, State> {
         let summarizedUsers = filteredUsers
 
         if (this.state.selectedUserIds.length > 0) {
-            summarizedUsers = filteredUsers.filter((user: Person) => this.state.selectedUserIds.includes(user.id))
+            summarizedUsers = filteredUsers.filter(user => this.state.selectedUserIds.includes(user.id))
         }
 
         return (
@@ -88,7 +71,7 @@ export default class TimesheetView extends React.Component<Props, State> {
                         className='mt0'
                         options={discrepancyTypesOptions}
                         value={this.state.discrepancyType}
-                        onChange={(discrepancyType: null | DiscrepancyTypes) => this.setState({ discrepancyType: discrepancyType })}
+                        onChange={discrepancyType => this.setState({ discrepancyType: discrepancyType })}
                     />
 
                     <p className='mt3'>
@@ -101,7 +84,7 @@ export default class TimesheetView extends React.Component<Props, State> {
 
                 <SelectableTimesheetTable
                     users={filteredUsers}
-                    onUpdateSelectedUsers={(selectedUserIds: number[]) => this.setState({ selectedUserIds })}
+                    onUpdateSelectedUsers={selectedUserIds => this.setState({ selectedUserIds })}
                 />
             </div>
         )

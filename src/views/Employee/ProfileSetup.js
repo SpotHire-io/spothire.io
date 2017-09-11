@@ -1,20 +1,12 @@
-import * as React from 'react'
+import React from 'react'
 import Box from '../../components/Global/Box'
 import BasicButton from '../../components/Buttons/BasicButton'
-import { Person } from '../../schemas'
-
-interface Props {
-    employee: Person
-}
-
-interface State {
-}
 
 /**
  * View for when a user has been sent an invite to join SpotHire for the given organisation,
  * allowing them to set their initial profile details.
  */
-export default class ProfileSetup extends React.Component<Props, State> {
+export default class ProfileSetup extends React.Component {
     constructor() {
         super()
 

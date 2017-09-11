@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Modal from '../../../components/Global/Modal';
 import UserTable from '../../../components/Employees/UserTable';
 import GroupCard from '../../../components/Employees/Groups/Card';
-import GroupSchema from '../../../schemas/Group';
 import BasicButton from '../../../components/Buttons/BasicButton';
 import SecondaryMenu from '../../../components/Global/SecondaryMenu';
 import GroupDetailsEditor from '../../../components/Employees/Groups/DetailsEditor';
