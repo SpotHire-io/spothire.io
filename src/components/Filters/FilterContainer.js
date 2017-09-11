@@ -1,19 +1,12 @@
-import * as React from 'react'
-import * as classNames from 'classnames'
+import React from 'react'
+import classNames from 'classnames'
 import Box from '../Global/Box'
 import BasicButton from '../Buttons/BasicButton'
-
-interface Props {
-    className?: string
-    headingSemanticLevel?: number
-    children?: React.ReactChildren
-    onResetFilters?: React.EventHandler<any>
-}
 
 /**
  * Basic container for label/input pairs, with a built-in reset feature (`props.onResetFilters`).
  */
-const FilterContainer: React.StatelessComponent<Props>  = ({ children, className, headingSemanticLevel, onResetFilters }) => {
+const FilterContainer  = ({ children, className = '', headingSemanticLevel = 2, onResetFilters }) => {
     let wrapperClasses = classNames({
         '': true,
         [className]: true
@@ -27,11 +20,6 @@ const FilterContainer: React.StatelessComponent<Props>  = ({ children, className
             </div>
         </Box>
     )
-}
-
-FilterContainer.defaultProps = {
-    className: '',
-    headingSemanticLevel: 2
 }
 
 export default FilterContainer
