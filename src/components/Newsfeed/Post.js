@@ -1,25 +1,15 @@
 import 'moment/locale/en-ca';
 import * as React from 'react';
-import * as Schemas from '../../schemas';
 import * as moment from 'moment';
 import { Arrow } from 'rebass';
 import * as classNames from 'classnames';
 import BasicTag from '../Tags/BasicTag';
 import BasicButton from '../Buttons/BasicButton';
 
-interface Props {
-    className?: string
-    post: Schemas.Post
-    isOpen?: boolean
-    isInline?: boolean
-    toggleOpenState?: Function
-    showOpportunityName?: boolean
-}
-
 /**
  * A blog post linked to an opportunity, allowing user responses.
  */
-const Post: React.StatelessComponent<Props> = ({ post, className, isOpen, toggleOpenState, isInline, showOpportunityName }) => {
+const Post = ({ post, className, isOpen, toggleOpenState, isInline, showOpportunityName }) => {
     let wrapperClasses = classNames({
         'sh-shadow-2': ! isInline && isOpen,
         'sh-shadow-1': ! isInline && ! isOpen,
@@ -55,7 +45,7 @@ const Post: React.StatelessComponent<Props> = ({ post, className, isOpen, toggle
     };
 
     const renderStatusTag = function () {
-        let tagType: 'neutral' | 'positive' | 'negative' = 'positive';
+        let tagType = 'positive';
         let tagText = 'You’ve responded';
 
         if (! post.responseRequired) {

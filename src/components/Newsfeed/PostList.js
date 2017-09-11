@@ -1,25 +1,14 @@
 import * as React from 'react';
 import * as classNames from 'classnames';
-import * as Schemas from '../../schemas';
 import Post from './Post';
-
-interface Props {
-    className?: string
-    posts?: Schemas.Post[]
-    postProps?: any
-}
-
-interface State {
-    openPosts: number[]
-}
 
 /**
  * A list of blog posts.
  *
  * Maintains the open/closed state of its posts
  */
-export default class PostList extends React.Component<Props, State> {
-    constructor(props: Props) {
+export default class PostList extends React.Component {
+    constructor (props) {
         super();
         props = {
             className: '',
@@ -33,7 +22,7 @@ export default class PostList extends React.Component<Props, State> {
         };
     }
 
-    togglePost(postId: number) {
+    togglePost(postId) {
         // Grab a copy of the openPosts state
         let openPosts = [...this.state.openPosts];
         const postIndex = openPosts.indexOf(postId);
@@ -57,7 +46,7 @@ export default class PostList extends React.Component<Props, State> {
 
         return (
             <div className={wrapperClasses}>
-                {this.props.posts.map((post: Schemas.Post, index) => {
+                {this.props.posts.map((post, index) => {
                     return (
                         <Post
                             key={post.id}
