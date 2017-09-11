@@ -1,8 +1,6 @@
-import * as React from 'react'
-import * as classNames from 'classnames'
-import {range} from 'lodash'
-import PersonSchema from '../../schemas/Person'
-import * as Schemas from '../../schemas'
+import React from 'react'
+import classNames from 'classnames'
+import { range } from 'lodash'
 import BasicButton from '../../components/Buttons/BasicButton'
 import SelectEmployees from './EmployeeSelection/SelectEmployees'
 import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees'
@@ -11,29 +9,6 @@ import ReviewSelectedEmployees from './EmployeeSelection/ReviewSelectedEmployees
 // @TODO: Pull these from the admin settings, when we get to private metadata
 const filterKeys = require('../../data/peopleFilterRules/filterKeys.json')
 const filterTypes = require('../../data/peopleFilterRules/filterTypes.json')
-
-interface FilterKey {
-    label: string
-    value: string
-    disabled?: boolean
-}
-
-interface FilterType {
-    label: string
-    value: string
-    disabled?: boolean
-}
-
-interface Rule {
-    key: string
-    type: string
-    value: string
-}
-
-interface Category {
-    key: 'employees' | 'custom' | 'groups'
-    title: string
-}
 
 // demo data
 const employees = require('../../data/people.json')
@@ -46,22 +21,6 @@ const groups = range(10).map((number) => {
         }
     })
 
-// @TODO: Need to add a method to pass the selections to the parent
-interface Props {
-    className?: string
-    employees?: Schemas.Employee[]
-    groups?: Schemas.Group[]
-    enabledSelectionCategories?: any[]
-}
-
-interface State {
-    selectedEmployees: {
-        employees: Schemas.Employee[]
-        groups: Schemas.Group[]
-        customRules: any[]
-    }
-}
-
 /**
  * Interface to select and review selected employees through several selection categories.
  *
@@ -72,18 +31,14 @@ interface State {
  * value=employeeId|groupId, as appropriate. (Currently this component uses "custom rule"; this
  * is interchangeable with "filter".)
  */
-export default class EmployeeSelectionInterface extends React.Component<Props, State> {
-    public filterKeys: FilterKey[]
-    public filterTypes: FilterType[]
-    public selectionCategories: any
-
-    public static defaultProps = {
+export default class EmployeeSelectionInterface extends React.Component {
+    defaultProps = {
         className: '',
         employees: employees,
         groups: groups,
         enabledSelectionCategories: ['employees', 'groups', 'custom'],
     }
-    constructor(props: Props) {
+    constructor(props) {
         super();
 
         this.unSelectById = this.unSelectById.bind(this);
@@ -113,7 +68,7 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
                 key: 'employees',
                 title: 'Employees',
                 selections: this.state.selectedEmployees.employees,
-                renderMethod: (employee: Schemas.Employee, className: string) => {
+                renderMethod: (employee, className) => {
                     // @TODO: In shifting to the custom filter method, will have to resolve those filters to figure out which
                     //         employee each refers to, to provide the employee object to this method.
                     return (
@@ -125,7 +80,7 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
                 key: 'groups',
                 title: 'Groups',
                 selections: this.state.selectedEmployees.groups,
-                renderMethod: (group: Schemas.Group, className: string) => {
+                renderMethod: (group, className) => {
                     // @TODO: In shifting to the custom filter method, will have to resolve those filters to figure out which
                     //        group each refers to, to provide the group object to this method.
                     return (
@@ -137,9 +92,9 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
                 key: 'custom',
                 title: 'Custom Rules',
                 selections: this.state.selectedEmployees.customRules,
-                renderMethod: (rule: Rule, className: string) => {
-                    const filterKey = this.filterKeys.find((filterKey: FilterKey) => filterKey.value === rule.key);
-                    const filterType = this.filterTypes.find((filterType: FilterType) => filterType.value === rule.type);
+                renderMethod: (rule, className) => {
+                    const filterKey = this.filterKeys.find((filterKey) => filterKey.value === rule.key);
+                    const filterType = this.filterTypes.find((filterType) => filterType.value === rule.type);
 
                     return (// @TODO: Replace the 15 below with an estimate from the API.
                         <p className={className}>{filterKey.label} that {filterType.label} “{rule.value}”<span className="ml2 f6">(15 employees)</span></p>
@@ -150,7 +105,7 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
     }
 
     // @TODO: Create methods similar to this one for employees and groups
-    addCustomRule(rule: Rule) {
+    addCustomRule(rule) {
         let selectedEmployees = {...this.state.selectedEmployees};
 
         selectedEmployees.customRules.push(rule);
@@ -159,12 +114,12 @@ export default class EmployeeSelectionInterface extends React.Component<Props, S
     }
 
     // @TODO: Set this up to remove the value from `state.selectedEmployees`
-    unSelectById(categoryKey: string, selectionId: string) {
+    unSelectById(categoryKey, selectionId) {
         alert('Unselecting...');
     }
 
     render() {
-        const filteredSelectionCategories = this.selectionCategories.filter((category: Category) => this.props.enabledSelectionCategories.includes(category.key));
+        const filteredSelectionCategories = this.selectionCategories.filter((category) => this.props.enabledSelectionCategories.includes(category.key));
 
         return (
             <div className={classNames(this.props.className)}>

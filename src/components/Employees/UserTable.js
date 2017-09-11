@@ -1,39 +1,21 @@
-import * as React from 'react'
-import * as PropTypes from 'prop-types'
-import * as classNames from 'classnames'
-const { Table, Thead, Th, Tr, Td } = require('reactable')
+import React from 'react'
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+import { Table, Thead, Th, Tr, Td } from 'reactable'
 import Icon from '../../../libraries/react-geomicons'
-import {Person} from '../../schemas'
-import BasicButton from '../Buttons/BasicButton'
-
-// JSON Data
-const userData = require('../../data/people.json')
-
 // storybook stuff; @TODO: Replace usage of linkTo with react-router Link
 import { linkTo } from '@kadira/storybook';
 
-interface Props {
-    className?: string,
-    hasShadow?: boolean,
-    inlineAddingRowIsOpen?: boolean,
-    editUser?: Function, // @TODO: This function should redirect to the employee’s page
-    deleteUser?: Function,
-    onClickUser?: Function,
-    users?: Person[],
-    tableProps?: object,
-    enabledColumns: string[]
-}
-
-interface State {
-}
+// JSON Data
+const userData = require('../../data/people.json')
 
 /**
  * Lists provided users, allowing various management functions (selecting, editing, deleteing).
  *
  * Can select the columns displayed with `props.enabledColumns`.
  */
-export default class UserTable extends React.Component<Props, State> {
-    public static defaultProps = {
+export default class UserTable extends React.Component {
+    defaultProps = {
         className: '',
         hasShadow: true,
         users: userData,
@@ -104,12 +86,12 @@ export default class UserTable extends React.Component<Props, State> {
         );
     }
 
-    renderUserRow(user: Person) {
+    renderUserRow(user) {
         const userClasses = classNames({
             'pointer ph3 pa2 mt0 hover-bg-black-10': true
         });
 
-        const renderControls = (user: Person) =>
+        const renderControls = (user) =>
             <div className='tr'>
                 <Icon color='#555555' name='compose' className='pointer' onClick={() => this.props.editUser(user.id)}/>
                 <Icon color='#555555' name='close' className='pointer ml2' onClick={() => this.props.deleteUser(user.id)}/>
@@ -128,7 +110,7 @@ export default class UserTable extends React.Component<Props, State> {
         );
     }
 
-    renderUserCell(column: string, value: string | React.ReactNode, className?: string) {
+    renderUserCell(column, value, className) {
         const cellClasses = classNames({
             'pa3 bb b--black-20': true,
             'dn': ! this.props.enabledColumns.includes(column),
@@ -145,7 +127,7 @@ export default class UserTable extends React.Component<Props, State> {
         );
     }
 
-    renderHeaderCell(column: string, value: string | React.ReactNode) {
+    renderHeaderCell(column, value) {
         const cellClasses = classNames({
             'pa3 tl bg-teal white bb bw1 b--white-40': true,
             'dn': ! this.props.enabledColumns.includes(column),

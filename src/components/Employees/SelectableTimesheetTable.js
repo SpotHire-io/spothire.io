@@ -1,24 +1,11 @@
 import 'moment/locale/en-ca'
 import 'moment-duration-format'
-import * as React from 'react'
-import * as moment from 'moment'
-import * as classNames from 'classnames'
-const { Checkbox } = require('rebass')
-const { Table, Thead, Th, Tr, Td } = require('reactable')
+import React from 'react'
+import moment from 'moment'
+import classNames from 'classnames'
+import { Checkbox } from 'rebass'
+import { Table, Thead, Th, Tr, Td } from 'reactable'
 import { CSSTransitionGroup } from 'react-transition-group'
-import * as Schemas from '../../schemas'
-
-interface Props {
-    className?: string
-    users: Schemas.Person[]
-    hasShadow?: boolean
-    tableProps?: any
-    onUpdateSelectedUsers?: Function
-}
-
-interface State {
-    selectedUserIds: number[]
-}
 
 const commonCellClasses = 'pa3'
 
@@ -29,12 +16,12 @@ const commonCellClasses = 'pa3'
  * via `props.onUpdateSelectedUsers`; this is used by the `TimesheetSummary` component to
  * manage which employees to summarize.
  */
-export default class SelectableTimesheetTable extends React.Component<Props, State> {
-    public static defaultProps = {
+export default class SelectableTimesheetTable extends React.Component {
+    defaultProps = {
         className: '',
         hasShadow: true,
         tableProps: {},
-        onUpdateSelectedUsers: (selectedUserIds: number) => console.log(selectedUserIds)
+        onUpdateSelectedUsers: (selectedUserIds) => console.log(selectedUserIds)
     }
     constructor() {
         super();
@@ -52,7 +39,7 @@ export default class SelectableTimesheetTable extends React.Component<Props, Sta
         };
     }
 
-    toggleUser(userId: number) {
+    toggleUser(userId) {
         const selectedUserIds = [...this.state.selectedUserIds];
 
         if (this.state.selectedUserIds.indexOf(userId) === -1) {
@@ -77,7 +64,7 @@ export default class SelectableTimesheetTable extends React.Component<Props, Sta
         this.props.onUpdateSelectedUsers([]);
     }
 
-    renderUserRow(user: Schemas.Person) {
+    renderUserRow(user) {
         const userClasses = classNames({
             'ph3 pa2 mt0 hover-bg-black-10 pointer': true,
             'bg-washed-red': user.hours.submitted > user.hours.worked,
@@ -87,12 +74,12 @@ export default class SelectableTimesheetTable extends React.Component<Props, Sta
         return (
             <Tr key={user.id} className={userClasses} onClick={() => this.toggleUser(user.id)}>
                 {this.renderUserCell('avatar', () => {
-                    let innerContent: JSX.Element;
+                    let innerContent;
 
                     if (this.state.selectedUserIds.indexOf(user.id) === -1) {
                         innerContent = (<img key={'image-' + user.id} className='db w1 h1 br-100 v-btm' src={user.imageSrc} alt='inner content'/>);
                     } else {
-                        innerContent = (<Checkbox key={'checkbox-' + user.id} theme='success' style={{ display: 'inline' }} checked label='' name='' onClick={(e: any) => e.stopPropagation()}/>);
+                        innerContent = (<Checkbox key={'checkbox-' + user.id} theme='success' style={{ display: 'inline' }} checked label='' name='' onClick={e => e.stopPropagation()}/>);
                     }
 
                     return (
@@ -114,7 +101,7 @@ export default class SelectableTimesheetTable extends React.Component<Props, Sta
         );
     }
 
-    renderUserCell(column: string, value: any, className?: string): any {
+    renderUserCell(column, value, className) {
         const cellClasses = classNames({
             'bb b--black-20': true,
             [commonCellClasses]: true,
@@ -131,7 +118,7 @@ export default class SelectableTimesheetTable extends React.Component<Props, Sta
         );
     }
 
-    renderHeaderCell(column: string, value: any, className: string) {
+    renderHeaderCell(column, value, className) {
         const cellClasses = classNames({
             'tl bg-teal white bb bw1 b--white-40': true,
             [commonCellClasses]: true,

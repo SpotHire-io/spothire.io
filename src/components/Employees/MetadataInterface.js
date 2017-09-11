@@ -1,20 +1,8 @@
-import * as React from 'react'
-import * as Select from 'react-select'
-import * as classNames from 'classnames'
+import React from 'react'
+import Select from 'react-select'
+import classNames from 'classnames'
 import Icon from '../../../libraries/react-geomicons'
 import BasicButton from '../../components/Buttons/BasicButton'
-import {MetaPairs, Metadata, Person, MetadataType} from '../../schemas'
-
-
-interface Props {
-    className?: string
-    employee: Person
-}
-
-interface State {
-    metaPairs: MetaPairs
-    currentlyEditingMetaPairId: number
-}
 
 const metaTypes = [
     {
@@ -38,8 +26,8 @@ const metaTypes = [
  * Interface to manage the key/value pairs of an employee's metadata, taking into account
  * that each key has an associated type (e.g. string, number, etc), affecting how their values are set.
  */
-export default class MetadataInterface extends React.Component<Props, State> {
-    constructor(props: Props) {
+export default class MetadataInterface extends React.Component {
+    constructor (props) {
         super()
         this.state = {
             currentlyEditingMetaPairId: null,
@@ -47,7 +35,7 @@ export default class MetadataInterface extends React.Component<Props, State> {
         }
     }
 
-    private toggleEditingMetaPair = (metaPairId: number) => {
+    toggleEditingMetaPair = (metaPairId) => {
         let currentlyEditingMetaPairId = this.state.currentlyEditingMetaPairId
 
         // Unset the currently editing metaPair if we’re toggling that metaPair. Else, set to the new metaPair ID.
@@ -60,7 +48,7 @@ export default class MetadataInterface extends React.Component<Props, State> {
         return this.setState({ currentlyEditingMetaPairId })
     }
 
-    private deleteMetaPair = (metaPairKey: string) => {
+    deleteMetaPair = (metaPairKey) => {
         let metaPairs = [...this.state.metaPairs]
 
         // Drop the metaPair by finding its index
@@ -69,7 +57,7 @@ export default class MetadataInterface extends React.Component<Props, State> {
         return this.setState({ metaPairs }) // @TODO: Convert to an API call
     }
 
-    private createMetaPair = () => {
+    createMetaPair = () => {
         let metaPairs = [...this.state.metaPairs]
 
         // extract the highest ID currently existing so we have something to mock
@@ -88,14 +76,14 @@ export default class MetadataInterface extends React.Component<Props, State> {
         return this.setState({ metaPairs, currentlyEditingMetaPairId: highestId + 1 }) // @TODO: Convert to an API call
     }
 
-    private updateMetaPairFieldByIndex = (metaPairIndex: number, field: string, value: string) => {
-        let metaPairs: any = [...this.state.metaPairs]
+    updateMetaPairFieldByIndex = (metaPairIndex, field, value) => {
+        let metaPairs = [...this.state.metaPairs]
         metaPairs[metaPairIndex][field] = value
 
         return this.setState({ metaPairs }) // @TODO: Convert to an API call
     }
 
-    private renderControls = (metaPair: Metadata) => {
+    renderControls = (metaPair) => {
         return (
             <div className="tr self-center ml2">
                 <Icon color="#555555" name={(metaPair.id !== this.state.currentlyEditingMetaPairId) ? 'compose' : 'check'} className="pointer mt1" onClick={() => this.toggleEditingMetaPair(metaPair.id)}/>
@@ -104,8 +92,8 @@ export default class MetadataInterface extends React.Component<Props, State> {
         )
     }
 
-    private renderMetaPairValueEditor = (metadata: Metadata, metadataIndex: number) => {
-        let metaPairValueEditor: JSX.Element
+    renderMetaPairValueEditor = (metadata, metadataIndex) => {
+        let metaPairValueEditor
         let metaTypeConfig = metaTypes.find((metaType) => metaType.type === metadata.type)
 
         switch (metadata.type) {
@@ -121,7 +109,7 @@ export default class MetadataInterface extends React.Component<Props, State> {
 
         return metaPairValueEditor
     }
-    public render() {
+    render() {
         return (
             <div className={classNames(this.props.className)}>
                 <ul className="list ma0 pa0 bg-near-white bb b--black-20">
@@ -148,7 +136,7 @@ export default class MetadataInterface extends React.Component<Props, State> {
                                             <Select
                                                 value={metaPair.type}
                                                 clearable={false}
-                                                onChange={(newType: {value: string, label: string}) => this.updateMetaPairFieldByIndex(index, 'type', newType.value)}
+                                                onChange={(newType) => this.updateMetaPairFieldByIndex(index, 'type', newType.value)}
                                                 options={metaTypes.map((type) => {
                                                     return {
                                                         value: type.type,

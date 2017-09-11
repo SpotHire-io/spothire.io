@@ -1,31 +1,24 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
-import * as moment from 'moment';
+import React from 'react';
+import classNames from 'classnames';
+import moment from 'moment';
 import 'moment/locale/en-ca';
 import 'moment-duration-format';
-import {Person} from '../../schemas';
-
-
-interface Props {
-    className?: string
-    users: Person[]
-}
 
 /**
  * Summarizes timesheet details for the provided employees by aggregating them.
  */
-const TimesheetSummary: React.StatelessComponent<Props> = ({ className = '', users }) => {
-    const overSubmittedUserCount = users.reduce((overSubmittedUsers: number, user: Person) => (user.hours.submitted > user.hours.worked) ? overSubmittedUsers + 1 : overSubmittedUsers, 0);
-    const underSubmittedUserCount = users.reduce((underSubmittedUsers: number, user: Person) => (user.hours.submitted < user.hours.worked) ? underSubmittedUsers + 1 : underSubmittedUsers, 0);
+const TimesheetSummary = ({ className = '', users }) => {
+    const overSubmittedUserCount = users.reduce((overSubmittedUsers, user) => (user.hours.submitted > user.hours.worked) ? overSubmittedUsers + 1 : overSubmittedUsers, 0);
+    const underSubmittedUserCount = users.reduce((underSubmittedUsers, user) => (user.hours.submitted < user.hours.worked) ? underSubmittedUsers + 1 : underSubmittedUsers, 0);
 
     const summaryData = [
         {
             label: 'Total hours worked',
-            value: moment.duration(users.reduce((hours: number, user: Person) => hours += user.hours.worked, 0), 'hours').format('h:mm'),
+            value: moment.duration(users.reduce((hours, user) => hours += user.hours.worked, 0), 'hours').format('h:mm'),
         },
         {
             label: 'Total hours submitted',
-            value: moment.duration(users.reduce((hours: number, user: Person) => hours += user.hours.submitted, 0), 'hours').format('h:mm'),
+            value: moment.duration(users.reduce((hours, user) => hours += user.hours.submitted, 0), 'hours').format('h:mm'),
         },
         {
             label: 'Submitted hours greater than worked',
