@@ -1,20 +1,14 @@
 import 'moment/locale/en-ca'
-import * as React from 'react'
-import * as moment from 'moment'
-import * as classNames from 'classnames'
-import {Person} from '../../schemas'
-
-interface Props {
-    className?: string
-    employee: Person
-}
+import React from 'react'
+import moment from 'moment'
+import classNames from 'classnames'
 
 /**
  * Display an employee’s availability for each day of the week.
  *
  * Requires an employee (`props.employee`).
  */
-const AvailabilityViewer: React.StatelessComponent<Props> = ({ className, employee }) => {
+const AvailabilityViewer = ({ className, employee }) => {
     return (
         <div className={classNames(className)}>
             <ol className="list ma0 pa0 nt2">

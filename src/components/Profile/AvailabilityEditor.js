@@ -1,24 +1,13 @@
 import 'moment/locale/en-ca'
-import * as React from 'react'
-import * as moment from 'moment'
-import * as classNames from 'classnames'
+import React from 'react'
+import moment from 'moment'
+import classNames from 'classnames'
 import { Checkbox, Close } from 'rebass'
-const TimePicker = require('rc-time-picker')
+import TimePicker from 'rc-time-picker'
 import BasicButton from '../../components/Buttons/BasicButton'
-import {Person, TimeSlot, Availability, Days} from '../../schemas'
 
-interface Props {
-    className?: string
-    employee: Person
-    onSubmitAvailability: React.EventHandler<React.MouseEvent<{}>>
-}
 
-interface State {
-    availability?: Availability
-    defaultTimeSlot?: TimeSlot
-}
-
-const defaultTimeSlot: TimeSlot = {
+const defaultTimeSlot = {
     start: moment('08:00', 'kk:mm'),
     end: moment('12:00', 'kk:mm'),
 }
@@ -28,8 +17,8 @@ const defaultTimeSlot: TimeSlot = {
  *
  * Requires an employee (`props.employee`).
  */
-export default class AvailabilityEditor extends React.Component<Props, State> {
-    constructor(props: Props) {
+export default class AvailabilityEditor extends React.Component {
+    constructor(props) {
         super()
         this.state = {
             defaultTimeSlot,
@@ -37,7 +26,7 @@ export default class AvailabilityEditor extends React.Component<Props, State> {
         }
     }
 
-    private toggleDayAvailability = (day: Days, dayIndex: number) => {
+    toggleDayAvailability = (day, dayIndex) => {
         let availability = {...this.state.availability}
         let initialTimeSlot = {...this.state.defaultTimeSlot}
 
@@ -55,7 +44,7 @@ export default class AvailabilityEditor extends React.Component<Props, State> {
         this.setState({ availability })
     }
 
-    private addSlotToDay = (day: Days, dayIndex: number) => {
+    addSlotToDay = (day, dayIndex) => {
         let availability = {...this.state.availability}
         let timeSlot = {...defaultTimeSlot}
 
@@ -66,7 +55,7 @@ export default class AvailabilityEditor extends React.Component<Props, State> {
         this.setState({ availability })
     }
 
-    private deleteSlotFromDay = (day: Days, slotId: number) => {
+    deleteSlotFromDay = (day, slotId) => {
         let availability = {...this.state.availability}
 
         // find index of slot within day, then remove it from the day array
@@ -80,7 +69,7 @@ export default class AvailabilityEditor extends React.Component<Props, State> {
         this.setState({ availability })
     }
 
-    private setSlotTime = (day: Days, slotIndex: number, endToModify: string, newTime: moment.Moment) => {
+    setSlotTime = (day, slotIndex, endToModify, newTime) => {
         const availability = {...this.state.availability}
 
         availability[day][slotIndex][endToModify] = newTime
@@ -88,14 +77,14 @@ export default class AvailabilityEditor extends React.Component<Props, State> {
         this.setState({ availability })
     }
 
-    private renderTimePicker = (day: Days, timeSlot: TimeSlot, timeSlotIndex: number, end: string) => {
+    renderTimePicker = (day, timeSlot, timeSlotIndex, end) => {
         return (
             <TimePicker
                 value={moment(timeSlot[end])}
                 showSecond={false}
                 allowEmpty={false}
                 use12Hours={true}
-                onChange={(newTime: moment.Moment) => this.setSlotTime(day, timeSlotIndex, end, newTime)}
+                onChange={newTime => this.setSlotTime(day, timeSlotIndex, end, newTime)}
             />
         )
     }
@@ -106,7 +95,7 @@ export default class AvailabilityEditor extends React.Component<Props, State> {
             <div className={classNames(this.props.className)}>
                 <ol className="list ma0 pa0 nt2">
                     {
-                        Object.keys(this.state.availability).map((day: Days, index: number) => {
+                        Object.keys(this.state.availability).map((day, index) => {
                             const currentDay = this.state.availability[day]
 
                             return (

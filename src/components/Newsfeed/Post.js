@@ -1,8 +1,8 @@
 import 'moment/locale/en-ca';
-import * as React from 'react';
-import * as moment from 'moment';
+import React from 'react';
+import moment from 'moment';
 import { Arrow } from 'rebass';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import BasicTag from '../Tags/BasicTag';
 import BasicButton from '../Buttons/BasicButton';
 
