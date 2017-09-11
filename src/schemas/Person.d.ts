@@ -1,7 +1,7 @@
-import {Availability} from './Availability'
-import {Metadata} from './Metadata'
+import { Availability } from './Availability'
+import { Metadata } from './Metadata'
 
-interface Person {
+export interface Person {
     id: number
     firstName: string
     lastName: string
@@ -17,5 +17,3 @@ interface Person {
         submitted?: number
     }
 }
-
-export default Person;

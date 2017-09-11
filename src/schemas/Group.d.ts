@@ -1,5 +1,5 @@
-import CustomFilter from './CustomFilter'
-import Employee from './Employee'
+import { CustomFilter } from './CustomFilter'
+import { Employee } from './Employee'
 
 export type GroupType = 'static' | 'virtual'
 

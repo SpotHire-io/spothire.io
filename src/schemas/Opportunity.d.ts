@@ -1,6 +1,6 @@
-import Employee from './Employee'
+import { Employee } from './Employee'
 
-interface Opportunity {
+export interface Opportunity {
     id: number
     isShift: boolean
     title: string
@@ -16,4 +16,3 @@ interface Opportunity {
     },
     [key: string]: any
 }
-export default Opportunity;

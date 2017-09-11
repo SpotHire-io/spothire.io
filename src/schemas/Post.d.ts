@@ -1,4 +1,4 @@
-interface Post {
+export interface Post {
     id: number
     title: string
     content: React.ReactNode
@@ -8,5 +8,3 @@ interface Post {
     isRespondedTo: boolean
     opportunityId: number
 }
-
-export default Post;

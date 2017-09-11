@@ -1,4 +1,4 @@
-interface TimeOffRequest {
+export interface TimeOffRequest {
     id: number
     employeeId: number
     reason: string
@@ -10,5 +10,3 @@ interface TimeOffRequest {
     }
     approvalState: 'pending' | 'approved' | 'rejected'
 }
-
-export default TimeOffRequest;
