@@ -1,5 +1,5 @@
 import { StatelessComponent } from 'react'
-import { Group } from '../../../schemas';
+import { Group } from '../../../schemas'
 
 interface Props {
     className?: string

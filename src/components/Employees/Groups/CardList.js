@@ -5,7 +5,7 @@ import Card from './Card';
 /**
  * Render a list of `GroupCard`s, adding the ability to select them via `onSelectGroup`.
  */
-const CardList: React.StatelessComponent<Props> = ({ className = '', cardProps, groups, onSelectGroup }) => (
+const CardList = ({ className = '', cardProps, groups, onSelectGroup }) => (
     <div className={classNames("flex flex-wrap justify-around nr3", className)}>
         {groups.map((group) => (
             <div className="mt3 pr3 w-50" key={group.id}>
