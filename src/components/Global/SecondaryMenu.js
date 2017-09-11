@@ -1,33 +1,16 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
 
-interface Item {
-    key?: any
-    href?: string
-    text?: React.ReactNode
-    isActive?: boolean
-}
-
-interface Props {
-    className?: string
-    items: Item[]
-    onClick: React.EventHandler<React.MouseEvent<{}>>
-}
-
-interface State {
-
-}
-
 /**
  * Secondary section menu.
  *
  * Provides navigation for a given section.
  */
-export default class SecondaryMenu extends React.Component<Props, State> {
-    public static defaultProps = {
+export default class SecondaryMenu extends React.Component {
+    defaultProps = {
         className: ''
     }
-    renderNavItem = (item: Item) => {
+    renderNavItem = item => {
         const aClasses = classNames({
             'b near-black hover-gray dib pv3 mr4 no-underline animate-all bb bw1 hover-b--white-40': true,
             'b--teal': ! item.isActive,
@@ -55,7 +38,7 @@ export default class SecondaryMenu extends React.Component<Props, State> {
 
         return (
             <nav className={wrapperClasses}>
-                {this.props.items.map((item: Item) => this.renderNavItem(item))}
+                {this.props.items.map(item => this.renderNavItem(item))}
             </nav>
         )
     }

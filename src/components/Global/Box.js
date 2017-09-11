@@ -1,14 +1,5 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
-
-interface Props {
-    className?: string
-    contentWrapperClassName?: string
-    headingSemanticLevel?: number
-    headingType?: 'block' | 'inline'
-    title?: string
-    children: React.ReactNode
-};
+import React from 'react';
+import classNames from 'classnames';
 
 /**
  * Standard UI container. Most content and interfaces should be wrapped in a Box.
@@ -17,7 +8,7 @@ interface Props {
  * and the heading’s h-level can be controlled (`props.headingSemanticLevel`) to allow for
  * proper hierarchies.
  */
-const Box: React.StatelessComponent<Props> = ({ children, className, contentWrapperClassName, headingSemanticLevel, headingType, title }) => {
+const Box = ({ children, className, contentWrapperClassName, headingSemanticLevel, headingType, title }) => {
     let wrapperClasses = classNames({
         'bg-white ba b--black-20 sh-shadow-2': true,
         [className]: true

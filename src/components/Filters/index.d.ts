@@ -1,4 +1,4 @@
-import * as FilterContainer from './FilterContainer'
+import FilterContainer from './FilterContainer'
 
 export {
   FilterContainer

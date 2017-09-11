@@ -1,17 +1,8 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
+import React from 'react';
+import classNames from 'classnames';
 
 // storybook stuff; @TODO: Replace usage of linkTo with react-router Link
 import { linkTo } from '@kadira/storybook';
-
-interface Props {
-    className?: string
-    selectedItem?: string
-    userType?: 'manager' | 'employee'
-}
-interface State {
-    isUserMenuOpen: boolean
-}
 
 const commonItemWrapperClasses = 'white pv3 ph4';
 
@@ -37,8 +28,8 @@ const menuItems = {
  * The menu items vary according to the user type. Both types see a
  * a user menu with links to their profile and to log out.
  */
-export default class MainMenu extends React.Component<Props, State> {
-    public static defaultProps = {
+export default class MainMenu extends React.Component {
+    defaultProps = {
         className: '',
         selectedItem: 'Dashboard',
         userType: 'manager',
@@ -70,7 +61,7 @@ export default class MainMenu extends React.Component<Props, State> {
         );
     }
 
-    renderNavLink(linkText: string, isSelected: boolean) {
+    renderNavLink(linkText, isSelected) {
         const aClasses = classNames({
             [commonItemWrapperClasses]: true,
             'w-20 tc link dim pointer': true,

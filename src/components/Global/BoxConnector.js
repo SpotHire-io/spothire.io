@@ -1,10 +1,5 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
-
-interface Props {
-    className?: string
-    isActive: boolean
-}
+import React from 'react';
+import classNames from 'classnames';
 
 /**
  * Purely presentational component to visually connect two `Box`es.
@@ -13,7 +8,7 @@ interface Props {
  * form and the search results). `props.isActive` should be used to signal when this
  * relation is "active" (e.g. search term is entered and the results displayed).
  */
-const BoxConnector: React.StatelessComponent<Props> = ({ className, isActive }) => (
+const BoxConnector = ({ className, isActive }) => (
     <div className={classNames('mh5 animate-all bl br bt-0 bb-0', className, {
         'bw1 b--black-20': isActive,
         'b--black-10': ! isActive,
