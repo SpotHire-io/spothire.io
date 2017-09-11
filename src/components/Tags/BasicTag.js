@@ -1,12 +1,5 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
-
-interface Props {
-    className?: string
-    isNarrow?: boolean
-    children?: React.ReactNode
-    type?: 'neutral' | 'positive' | 'negative'
-}
+import React from 'react';
+import classNames from 'classnames';
 
 /**
  * Tag for quick status overviews.
@@ -16,7 +9,7 @@ interface Props {
  * Use `props.type` to set its visual significance.
  * Use `props.isNarrow` to slim the tag down for compressed displays.
  */
-const BasicTag: React.StatelessComponent<Props> = ({ type, children, className, isNarrow }) => {
+const BasicTag = ({ type, children, className, isNarrow }) => {
     let tagClasses = classNames({
         'dib f6 ba b--dashed br4': true,
         'gray': type === 'neutral',
