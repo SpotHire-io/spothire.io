@@ -1,21 +1,5 @@
-import * as React from 'react'
+import React from 'react'
 import SecondaryMenu from '../Global/SecondaryMenu'
-
-interface Section {
-    key: any
-    name: string
-    content: React.ReactNode
-}
-
-interface Props {
-    sections: Section[]
-    className?: string
-    secondaryMenuClassName?: string
-}
-
-interface State {
-    activeSectionIndex: number
-}
 
 /**
  * Simple container for hiding multiple sections behind a menu.
@@ -25,8 +9,8 @@ interface State {
  * Don’t use if you want to track the open section yourself; this component hides that state.
  * Also desn’t allow deeplinking.
  */
-export default class SectionSwitcher extends React.Component<Props, State> {
-    public static defaultProps = {
+export default class SectionSwitcher extends React.Component {
+    defaultProps = {
         className: '',
         secondaryMenuClassName: ''
     }
@@ -37,7 +21,7 @@ export default class SectionSwitcher extends React.Component<Props, State> {
         }
     }
 
-    setActiveSection = (sectionKey: any) => {
+    setActiveSection = sectionKey => {
         const activeSectionIndex = this.props.sections.findIndex((section) => section.key === sectionKey)
 
         return this.setState({ activeSectionIndex })

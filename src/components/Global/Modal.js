@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as classNames from 'classnames';
-import * as RModal from 'react-modal';
+import React from 'react'
+import classNames from 'classnames'
+import RModal from 'react-modal'
 
 /**
  * Wrapper for react-modal to set commonly used props.

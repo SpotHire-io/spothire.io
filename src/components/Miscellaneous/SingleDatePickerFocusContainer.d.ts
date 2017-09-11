@@ -1,6 +1,6 @@
 import * as moment from 'moment'
-import * as React from 'react'
 import { SingleDatePicker, OrientationShape, AnchorDirectionShape } from 'react-dates'
+import * as React from 'react'
 
 interface Props {
     // REQUIRED props
@@ -88,27 +88,4 @@ interface State {
     isFocused: boolean
 }
 
-/**
- * Wrapper for react-dates/SingleDatePicker to handle its focused state.
- *
- * Takes all the props of the actual component.
- */
-export default class SingleDatePickerFocusContainer extends React.Component<Props, State> {
-    constructor() {
-        super()
-
-        this.state = {
-            isFocused: false
-        }
-    }
-
-    render() {
-        return(
-            <SingleDatePicker
-                {...this.props}
-                focused={this.state.isFocused}
-                onFocusChange={({ focused }) => this.setState({ isFocused: focused })}
-            />
-        )
-    }
-}
+export default class SingleDatePickerFocusContainer extends React.Component<Props, State> {}
